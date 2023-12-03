@@ -70,3 +70,27 @@ This is to develop a subscription feature where users can signup to the services
 **EPIC 10 - Documentation**
 
 This epic is for all documents related stories and tasks to document the lifecycle of the project development. It aims to record the detailed documentations to all stages of development and necessary information on testing, deploying and running the application.
+
+# Notes:
+
+## Key commands
+
+- pip3 install django gunicorn
+
+- pip3 install dj_database_url psycopg2
+
+- pip3 install dj3-cloudinary-storage
+
+- pip3 freeze --local > requirements.txt
+
+- creating the django admin
+
+- django-admin startproject <project name>
+
+- python3 manage.py startapp <app name>
+
+- python manage.py migrate
+
+- running the app
+
+- python manage.py runserver
