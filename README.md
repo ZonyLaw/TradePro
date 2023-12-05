@@ -89,8 +89,15 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - python3 manage.py startapp <app name>
 
-- python manage.py migrate
+- python manage.py migrate - this builds some default tables and you can access them via admin route.
+
+- python manage.py createsuperuser
 
 - running the app
 
 - python manage.py runserver
+
+### challenges of connecting Heroku
+
+- the key wasn't set up correctly and this throw an error
+- wsgi.py reference to the wrong app name
