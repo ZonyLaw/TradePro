@@ -109,3 +109,11 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - the key wasn't set up correctly and this throw an error
 - wsgi.py reference to the wrong app name
+
+### General layout of env file if this file gets deleted
+
+import os
+
+os.environ['CLOUDINARY_URL'] = ''
+os.environ['DATABASE_URL'] = ''
+os.environ['SECRET_KEY'] = ''
