@@ -40,3 +40,13 @@ def updateTicker(request, pk):
     
     context = {'form': form}
     return render(request, "ticker/ticker_form.html", context)
+
+def deleteTicker(request, pk):
+    ticker = Ticker.objects.get(id=pk)
+    if request.method == 'POST':
+        ticker.delete()
+        return redirect('tickers')
+    
+    context = {'object': ticker}
+    print(ticker)
+    return render(request, 'ticker/delete_template.html', context)
