@@ -1,0 +1,135 @@
+{
+  "instrument": {
+    "epic": "CS.D.USDJPY.TODAY.IP",
+    "expiry": "DFB",
+    "name": "USD/JPY",
+    "forceOpenAllowed": true,
+    "stopsLimitsAllowed": true,
+    "lotSize": 1.0,
+    "unit": "AMOUNT",
+    "type": "CURRENCIES",
+    "controlledRiskAllowed": true,
+    "streamingPricesAvailable": true,
+    "marketId": "USDJPY",
+    "currencies": [
+      {
+        "code": "Y.",
+        "name": "JPY",
+        "symbol": "\u00a5",
+        "baseExchangeRate": 180.84175,
+        "exchangeRate": 0.007,
+        "isDefault": false
+      },
+      {
+        "code": "E.",
+        "name": "EUR",
+        "symbol": "E",
+        "baseExchangeRate": 1.165965,
+        "exchangeRate": 0.81,
+        "isDefault": false
+      },
+      {
+        "code": "#.",
+        "name": "GBP",
+        "symbol": "\u00a3",
+        "baseExchangeRate": 1.0,
+        "exchangeRate": 1.0,
+        "isDefault": true
+      },
+      {
+        "code": "$.",
+        "name": "USD",
+        "symbol": "$",
+        "baseExchangeRate": 1.259275,
+        "exchangeRate": 0.77,
+        "isDefault": false
+      }
+    ],
+    "marginDepositBands": [
+      {
+        "min": 0,
+        "max": 12775,
+        "margin": 3.33
+      },
+      {
+        "min": 12775,
+        "max": 127750,
+        "margin": 3.33
+      },
+      {
+        "min": 127750,
+        "max": 191625,
+        "margin": 3.33
+      },
+      {
+        "min": 191625,
+        "max": null,
+        "margin": 15
+      }
+    ],
+    "margin": 3.33,
+    "slippageFactor": {
+      "unit": "pct",
+      "value": 50.0
+    },
+    "openingHours": null,
+    "expiryDetails": {
+      "lastDealingDate": "06/04/29 20:00",
+      "settlementInfo": "DFBs settle on the Last Dealing Day basis the middle of the IG price at 20:00, plus or minus half the IG spread."
+    },
+    "rolloverDetails": null,
+    "newsCode": "JPY=",
+    "chartCode": "USDJPY",
+    "country": null,
+    "valueOfOnePip": null,
+    "onePipMeans": null,
+    "contractSize": null,
+    "specialInfo": [
+      "MIN KNOCK OUT LEVEL DISTANCE",
+      "MAX KNOCK OUT LEVEL DISTANCE",
+      "DEFAULT KNOCK OUT LEVEL DISTANCE"
+    ]
+  },
+  "dealingRules": {
+    "minStepDistance": {
+      "unit": "POINTS",
+      "value": 1.0
+    },
+    "minDealSize": {
+      "unit": "POINTS",
+      "value": 0.5
+    },
+    "minControlledRiskStopDistance": {
+      "unit": "POINTS",
+      "value": 5.0
+    },
+    "minNormalStopOrLimitDistance": {
+      "unit": "POINTS",
+      "value": 2.0
+    },
+    "maxStopOrLimitDistance": {
+      "unit": "PERCENTAGE",
+      "value": 75.0
+    },
+    "controlledRiskSpacing": {
+      "unit": "POINTS",
+      "value": 30.0
+    },
+    "marketOrderPreference": "AVAILABLE_DEFAULT_OFF"
+  },
+  "snapshot": {
+    "marketStatus": "TRADEABLE",
+    "netChange": -370.6,
+    "percentageChange": -2.52,
+    "updateTime": "20:44:44",
+    "delayTime": 0,
+    "bid": 14360.2,
+    "offer": 14361.2,
+    "high": 14736.0,
+    "low": 14159.1,
+    "binaryOdds": null,
+    "decimalPlacesFactor": 1,
+    "scalingFactor": 1,
+    "controlledRiskExtraSpread": 2
+  }
+}

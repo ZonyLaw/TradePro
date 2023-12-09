@@ -1,14 +1,42 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .models import Ticker
+from .form import TickerForm
 
 # Create your views here.
 def tickers(request):
-    page = 'Tickers'
-    return render(request, 'ticker/tickers.html', {'page':page})
+    tickers = Ticker.objects.all()
+    context = {'tickers': tickers}
+    return render(request, 'ticker/tickers.html', context)
 
 
 def ticker(request, pk):
+    ticker = Ticker.objects.get(id=pk)
     tickerObj = None
- 
-    return render(request, 'ticker/ticker.html')
+    context = {'ticker': ticker}
+    return render(request, 'ticker/ticker.html', context)
 
+
+def createTicker(request):
+    form = TickerForm()
+    
+    if request.method == 'POST':
+        form = TickerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('tickers')
+    
+    context = {'form': form}
+    return render(request, "ticker/ticker_form.html", context)
+
+def updateTicker(request, pk):
+    ticker = Ticker.objects.get(id=pk)
+    form = TickerForm(instance=ticker)
+    
+    if request.method == 'POST':
+        form = TickerForm(request.POST, instance=ticker)
+        if form.is_valid():
+            form.save()
+            return redirect('tickers')
+    
+    context = {'form': form}
+    return render(request, "ticker/ticker_form.html", context)

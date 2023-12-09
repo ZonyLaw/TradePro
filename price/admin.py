@@ -1,6 +1,9 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import Price
 
-admin.site.register(Price)
+class PriceAdmin(admin.ModelAdmin):
+    list_display = ('ticker', 'date', 'open', 'close', 'high', 'low','ask','bid', 'volume','open_next' )
+
+    
+
+admin.site.register(Price, PriceAdmin)

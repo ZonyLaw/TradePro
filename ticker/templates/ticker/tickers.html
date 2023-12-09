@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %}
+
+<main class="projects"> 
+   
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>information</th>
+      </tr>
+      {% for ticker in tickers %}
+      <td>
+        {{ticker.symbol}}
+      </td>
+      <td>
+        {{ticker.info}}
+      </td>
+      <td>
+        <a href="{% url 'ticker' ticker.id %}">View</a>
+        <a href="{% url 'update-ticker' ticker.id %}">Update</a>
+        {% comment %} <a href="{% url 'delete-ticker' ticker.id %}">Delete</a> {% endcomment %}
+      </td>
+      
+      
+
+  </table>
+
+
+  {% endfor %}
+</main>
+
+{% endblock content %}
