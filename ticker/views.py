@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Ticker
+from price.models import Price
 from .form import TickerForm
 
 # Create your views here.
@@ -11,8 +12,9 @@ def tickers(request):
 
 def ticker(request, pk):
     ticker = Ticker.objects.get(id=pk)
+    prices = ticker.price_set.all()
     tickerObj = None
-    context = {'ticker': ticker}
+    context = {'ticker': ticker, 'prices': prices}
     return render(request, 'ticker/ticker.html', context)
 
 

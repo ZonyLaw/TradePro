@@ -120,3 +120,9 @@ os.environ['SECRET_KEY'] = ''
 os.environ['IG_USERNAME'] = ''
 os.environ['IG_PASSWORD'] = ''
 os.environ['IG_API_KEY'] =  ''
+
+
+
+###conda env
+
+working env is myenv311 and myenv311test

@@ -1,0 +1,26 @@
+
+
+    def clean_ticker(self):
+        """
+        This function will get called automatically when form.is_valid() is used. 
+        This is part of the cleaned_data.
+        The function is to extract the instance.
+        Raises:
+            forms.ValidationError: _description_
+
+        Returns:
+            object: ticker instance
+        """
+        ticker = self.cleaned_data['ticker']
+
+        # If the ticker is a Ticker object, use it directly
+        if isinstance(ticker, Ticker):
+            ticker_instance = ticker
+        else:
+            # Assume it's a UUID and try to get the corresponding Ticker instance
+            try:
+                ticker_instance = Ticker.objects.get(id=str(ticker))
+            except Ticker.DoesNotExist:
+                raise forms.ValidationError("Invalid Ticker for the price.")
+
+        return ticker_instance
