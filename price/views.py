@@ -97,3 +97,16 @@ def export_prices(request):
         form = FileUploadForm()
         
         return render(request, 'price/export_prices.html', {'tickers': tickers_db})
+
+
+def delete_price(request, pk):
+    price = get_object_or_404(Price, id=pk)
+    ticker_id = price.ticker.id
+    print("ticker id////////", ticker_id)
+    if request.method == 'POST':
+        price.delete()
+        return redirect('ticker', ticker_id)  # Redirect to the page displaying the list of prices
+
+    context = {'object': price, 'ticker_id': ticker_id}
+   
+    return render(request, 'price/price_delete_template.html', context)

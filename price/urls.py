@@ -7,5 +7,6 @@ urlpatterns = [
     path('update-price/<str:pk>/', views.updatePrice, name="update-price"),
     path('upload-prices/', views.upload_prices, name='upload-prices'),
     path('export-prices/', views.export_prices, name='export-prices'),
+    path('delete-price/<str:pk>/', views.delete_price, name='delete-price'),
 
 ]
