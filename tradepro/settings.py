@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'ticker',
-    'price'
+    'price',
+    'ml_model',
 ]
 
 MIDDLEWARE = [

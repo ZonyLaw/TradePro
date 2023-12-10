@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ticker.urls')),
     path('', include('price.urls')),
+    path('', include('ml_model.urls')),
 ]

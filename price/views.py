@@ -102,7 +102,7 @@ def export_prices(request):
 def delete_price(request, pk):
     price = get_object_or_404(Price, id=pk)
     ticker_id = price.ticker.id
-    print("ticker id////////", ticker_id)
+  
     if request.method == 'POST':
         price.delete()
         return redirect('ticker', ticker_id)  # Redirect to the page displaying the list of prices
