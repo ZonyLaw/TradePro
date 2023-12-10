@@ -1,5 +1,6 @@
 import csv
 import os
+from io import StringIO
 from django.shortcuts import HttpResponse
 from datetime import datetime
 from .models import Price
@@ -9,7 +10,7 @@ from .models import Ticker
 def import_prices_from_csv(uploaded_file):
     """
     This function is to upload .csv file of historical prices.
-    The contents expected are: date, tikcer, open, close, high, & low prices.
+    The contents expected are: date, ticker, open, close, high, & low prices.
 
     Args:
         uploaded_file (object): this is extracted from request.FILES that the user specified
@@ -59,7 +60,7 @@ def import_prices_from_csv(uploaded_file):
 def import_prices_from_csv2(request):
     """
     This function is to upload .csv file of historical prices.
-    The contents expected are: date, tikcer, open, close, high, & low prices.
+    The contents expected are: date, ticker, open, close, high, & low prices.
     This was initial setup for testing and could be deleted.
 
     Args:
@@ -98,6 +99,24 @@ def import_prices_from_csv2(request):
             
     return HttpResponse("CSV import completed.")
 
-# Example usage
-# file_path = r'C:\Users\sunny\Desktop\Development\python\TradePro\USDJPY_prices.csv'
-# import_prices_from_csv(file_path)
+
+
+
+def generate_csv(prices):
+    csv_buffer = StringIO()
+    csv_writer = csv.writer(csv_buffer)
+
+    # Write header
+    csv_writer.writerow(['date', 'ticker', 'open', 'close', 'high', 'low'])
+
+    # Write data
+    for price in prices:
+        csv_writer.writerow([price.date, price.ticker, price.open, price.close, price.high, price.low])
+
+    # Get CSV data as a string
+    csv_data = csv_buffer.getvalue()
+
+    # Close the buffer
+    csv_buffer.close()
+
+    return csv_data

@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect,  get_object_or_404
+from django.shortcuts import render, redirect,  get_object_or_404, HttpResponse
+from django.urls import reverse 
 from ticker.models import Ticker
 from price.models import Price
 from .form import PriceForm
 
 from .form import FileUploadForm
-from .utils import import_prices_from_csv 
+from .utils import import_prices_from_csv, generate_csv
 
 
 def createPrice(request):
@@ -56,7 +57,7 @@ def updatePrice(request, pk):
     return render(request, 'price/price_form.html', {'form': form})
 
 
-def upload_file(request):
+def upload_prices(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
@@ -69,4 +70,30 @@ def upload_file(request):
     else:
         form = FileUploadForm()
 
-    return render(request, 'price/upload_file.html', {'form': form})
+    return render(request, 'price/upload_prices.html', {'form': form})
+
+
+def export_prices(request):
+    tickers_db = Ticker.objects.all()
+    if request.GET:
+        ticker = request.GET.get('ticker', None)
+
+        if ticker:
+            ticker_instance = get_object_or_404(Ticker, symbol=ticker)
+            prices = Price.objects.filter(ticker=ticker_instance)
+            csv_data = generate_csv(prices)
+            filename = f"{ticker}_prices.csv"
+        else:
+            prices = Price.objects.all()
+            csv_data = generate_csv(prices)
+            filename = "all_prices.csv"
+
+        response = HttpResponse(csv_data, content_type='text/csv')
+        response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+        return response
+
+    else:
+        form = FileUploadForm()
+        
+        return render(request, 'price/export_prices.html', {'tickers': tickers_db})

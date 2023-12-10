@@ -30,3 +30,6 @@ class PriceForm(ModelForm):
 class FileUploadForm(forms.Form):
     file = forms.FileField(label='Select a file')
     
+
+class ExportForm(forms.Form):
+    folder_path = forms.CharField(label='Folder Path', max_length=255)
