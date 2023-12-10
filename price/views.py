@@ -3,6 +3,9 @@ from ticker.models import Ticker
 from price.models import Price
 from .form import PriceForm
 
+from .form import FileUploadForm
+from .utils import import_prices_from_csv 
+
 
 def createPrice(request):
     if request.method == 'POST':
@@ -51,3 +54,19 @@ def updatePrice(request, pk):
         form = PriceForm(instance=price_instance)
 
     return render(request, 'price/price_form.html', {'form': form})
+
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            file = request.FILES['file']
+            print("File is valid!", file)
+            import_prices_from_csv(file)
+            return redirect('tickers')
+        else:
+            print("Form is not valid:", form.errors)
+    else:
+        form = FileUploadForm()
+
+    return render(request, 'price/upload_file.html', {'form': form})

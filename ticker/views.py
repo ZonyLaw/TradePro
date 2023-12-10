@@ -52,3 +52,4 @@ def deleteTicker(request, pk):
     context = {'object': ticker}
     print(ticker)
     return render(request, 'ticker/delete_template.html', context)
+

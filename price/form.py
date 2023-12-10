@@ -26,5 +26,7 @@ class PriceForm(ModelForm):
                 {'class': 'input'},
             )
             
-    
+
+class FileUploadForm(forms.Form):
+    file = forms.FileField(label='Select a file')
     
