@@ -4,8 +4,39 @@
 <main >
   <h1>Model predictions</h1>
 
-    <p> Model predictions {{predictions}} </p>
-
+  {% comment %} <p>{{predictions.proba1}}</p> {% endcomment %}
+  <table>
+    <table>
+      <tr>
+        <th>Profit/Loss</th>
+        <th>Probability</th>
+      </tr>
+        <tr>
+          <td>{{ predictions.category1 }}</td>
+          <td>{{ predictions.proba1 }}%</td>
+        </tr>
+        <tr>
+          <td>{{ predictions.category2 }}</td>
+          <td>{{ predictions.proba2 }}%</td>
+        </tr>
+        <tr>
+          <td>{{ predictions.category3 }}</td>
+          <td>{{ predictions.proba4 }}%</td>
+        </tr>
+        <tr>
+          <td>{{ predictions.category4 }}</td>
+          <td>{{ predictions.proba4 }}%</td>
+        </tr>
+        <tr>
+          <td>{{ predictions.category5 }}</td>
+          <td>{{ predictions.proba5 }}%</td>
+        </tr>
+        <tr>
+          <td>{{ predictions.category6 }}</td>
+          <td>{{ predictions.proba6 }}%</td>
+        </tr>
+   
+</table> 
 </main>
 
 {% endblock content %}

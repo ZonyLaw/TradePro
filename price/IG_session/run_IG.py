@@ -100,7 +100,7 @@ def run_IG(ticker):
     try:
         #fetching data from IG account
         data = ig_service.fetch_market_by_epic(ticker)
-        time.sleep(5)
+        time.sleep(10)
         data_next = ig_service.fetch_market_by_epic(ticker)
         recordIGPrice(data['snapshot'], data_next['snapshot'], 100)
 

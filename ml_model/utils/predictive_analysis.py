@@ -2,6 +2,7 @@ import os
 import joblib
 import pandas as pd
 from pathlib import Path
+from .data_processing import main
 
 
 def load_file(file_path):
@@ -58,9 +59,21 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     category_labels5 = model_label_map[4]
     proba6 = model_prediction_proba[0, 5]*100
     category_labels6 = model_label_map[5]
-
-   
-    print( model_prediction_proba[0,0]*100)
+    
+    result_dict = {
+        "proba1": model_prediction_proba[0, 0]*100,
+        "category1": model_label_map[0],
+        "proba2": model_prediction_proba[0, 1]*100,
+        "category2": model_label_map[1],
+        "proba3": model_prediction_proba[0, 2]*100,
+        "category3": model_label_map[2],
+        "proba4": model_prediction_proba[0, 3]*100,
+        "category4": model_label_map[3],
+        "proba5": model_prediction_proba[0, 4]*100,
+        "category5": model_label_map[4],
+        "proba6": model_prediction_proba[0, 5]*100,
+        "category6": model_label_map[5]  
+    }
 
     
     statement = (
@@ -84,18 +97,18 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
 
     )
     
-    print(statement)
-    return (statement)
+   
+    return (result_dict)
 
 
 def model_run():
     
     """
-    This groups all the key components to run the trained model where another function handles the formatting of the results.  
-    
+    This function handles the key input components and load the trained model. 
+    The formatting and production of results are handled by another function.   
 
     Returns:
-        _type_: returns the results from the model
+        _type_: returns calls on another function generating and formating of the results.
     """
     
     #get script directory
@@ -117,23 +130,7 @@ def model_run():
                        .to_list()
                        )
     
-    #creating some input to the model
-    X_live = pd.DataFrame([], index=[0])
-    X_live.loc[0, 'open_close_diff_1'] = -0.5
-    X_live.loc[0, 'open_close_diff1_lag1'] = 0.1
-    X_live.loc[0, 'close_ma50_1_diff_1'] = -0.5
-    X_live.loc[0, 'bb_status_1'] = "upper_near"
-    X_live.loc[0, 'up_bb20_low_bb20_diff_1'] = 1.5
-    X_live.loc[0, 'trend_strength_1'] = 1
-    X_live.loc[0, 'lagged_close_1'] = 144.80
-    X_live.loc[0, 'hr'] = 8
-    X_live.loc[0, 'up_bb20_low_bb20_diff_4'] = 6.0
-    X_live.loc[0, 'ma50_4_ma100_4_diff_4'] = -0.5
-    X_live.loc[0, 'ma20_4_ma50_4_diff_4'] = -0.5
-    X_live.loc[0, 'close_ma100_4_diff_4'] = -0.4
-
-    # Print the resulting DataFrame
-    print(X_live)
-
+    X_live = main()
+   
     return predict_profits(X_live, profit_features,
                                 profit_pip, profit_labels_map)

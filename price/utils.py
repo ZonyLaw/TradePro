@@ -36,7 +36,7 @@ def import_prices_from_csv(uploaded_file):
 
             # Reformatting date for DB
             date_str = row['date']
-            date_obj = datetime.strptime(date_str, "%m/%d/%Y %H:%M")
+            date_obj = datetime.strptime(date_str, "%d/%m/%Y %H:%M")
 
             open_price = float(row['open'])
             close_price = float(row['close'])
@@ -79,7 +79,7 @@ def import_prices_from_csv2(request):
             
             # reformatting date for DB
             date_str = row['date']
-            date_obj = datetime.strptime(date_str, "%m/%d/%Y %H:%M")
+            date_obj = datetime.strptime(date_str, "%d/%m/%Y %H:%M")
 
             # Assuming 'close' is a numeric field
             open_price = float(row['open'])
