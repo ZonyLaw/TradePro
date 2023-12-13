@@ -1,42 +1,22 @@
 {% extends 'main.html' %} 
 {% block content %}
 
-<main >
+<main>
   <h1>Model predictions</h1>
 
-  {% comment %} <p>{{predictions.proba1}}</p> {% endcomment %}
   <table>
-    <table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>Probability</th>
+    </tr>
+
+    {% for category, proba in predictions.items %}
       <tr>
-        <th>Profit/Loss</th>
-        <th>Probability</th>
+        <td>{{ category }}</td>
+        <td>{{ proba }}%</td>
       </tr>
-        <tr>
-          <td>{{ predictions.category1 }}</td>
-          <td>{{ predictions.proba1 }}%</td>
-        </tr>
-        <tr>
-          <td>{{ predictions.category2 }}</td>
-          <td>{{ predictions.proba2 }}%</td>
-        </tr>
-        <tr>
-          <td>{{ predictions.category3 }}</td>
-          <td>{{ predictions.proba4 }}%</td>
-        </tr>
-        <tr>
-          <td>{{ predictions.category4 }}</td>
-          <td>{{ predictions.proba4 }}%</td>
-        </tr>
-        <tr>
-          <td>{{ predictions.category5 }}</td>
-          <td>{{ predictions.proba5 }}%</td>
-        </tr>
-        <tr>
-          <td>{{ predictions.category6 }}</td>
-          <td>{{ predictions.proba6 }}%</td>
-        </tr>
-   
-</table> 
+    {% endfor %}
+  </table> 
 </main>
 
 {% endblock content %}

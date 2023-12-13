@@ -61,18 +61,8 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     category_labels6 = model_label_map[5]
     
     result_dict = {
-        "proba1": model_prediction_proba[0, 0]*100,
-        "category1": model_label_map[0],
-        "proba2": model_prediction_proba[0, 1]*100,
-        "category2": model_label_map[1],
-        "proba3": model_prediction_proba[0, 2]*100,
-        "category3": model_label_map[2],
-        "proba4": model_prediction_proba[0, 3]*100,
-        "category4": model_label_map[3],
-        "proba5": model_prediction_proba[0, 4]*100,
-        "category5": model_label_map[4],
-        "proba6": model_prediction_proba[0, 5]*100,
-        "category6": model_label_map[5]  
+        f"{model_label_map[i]}": model_prediction_proba[0, i] * 100
+        for i in range(6)
     }
 
     
