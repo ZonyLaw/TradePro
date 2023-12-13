@@ -38,55 +38,12 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     X_live_subset = X_live.filter(model_feature)
     
     # predict
-    model_prediction = model_pipeline.predict(X_live_subset)
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    # st.write(model_prediction_proba)
 
-    # create a logic to display the results
-    proba = model_prediction_proba[0, model_prediction][0]*100
-    category_labels = model_label_map[model_prediction[0]]
-
-    # output the entire array    
-    proba1 = model_prediction_proba[0, 0]*100
-    category_labels1 = model_label_map[0]
-    proba2 = model_prediction_proba[0, 1]*100
-    category_labels2 = model_label_map[1]
-    proba3 = model_prediction_proba[0, 2]*100
-    category_labels3 = model_label_map[2]
-    proba4 = model_prediction_proba[0, 3]*100
-    category_labels4 = model_label_map[3]
-    proba5 = model_prediction_proba[0, 4]*100
-    category_labels5 = model_label_map[4]
-    proba6 = model_prediction_proba[0, 5]*100
-    category_labels6 = model_label_map[5]
-    
     result_dict = {
-        f"{model_label_map[i]}": model_prediction_proba[0, i] * 100
+        f"{model_label_map[i]}": round(model_prediction_proba[0, i] * 100,2)
         for i in range(6)
     }
-
-    
-    statement = (
-        f"* If you are in this trade, there is a {proba.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels]} pips**.\n\n"
-        
-        f"-------------------------------All statistics-------------------------------\n\n"
-        
-        f"* If you are in this trade, there is a {proba1.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels1]} pips**.\n\n"
-        f"* If you are in this trade, there is a {proba2.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels2]} pips**.\n\n"
-        f"* If you are in this trade, there is a {proba3.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels3]} pips**.\n\n"
-        f"* If you are in this trade, there is a {proba4.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels4]} pips**.\n\n"
-        f"* If you are in this trade, there is a {proba5.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels5]} pips**.\n\n"
-        f"* If you are in this trade, there is a {proba6.round(2)}% probability the profit can "
-        f"reach **{category_phrase[category_labels6]} pips**.\n\n"
-
-    )
-    
    
     return (result_dict)
 
