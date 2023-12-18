@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'tickers',
     'prices',
+    'ml_models',
+    'users',
 ]
 
 MIDDLEWARE = [

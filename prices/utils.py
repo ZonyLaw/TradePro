@@ -21,12 +21,13 @@ def import_prices_from_csv(uploaded_file):
     
     # Handle the file in-memory or save it to a specific location
     # For example, you can save it to a temporary location
-    with open('price/data/temp_file.csv', 'wb+') as destination:
+    #update needed!!
+    with open('prices/data/temp_file.csv', 'wb+') as destination:
         for chunk in uploaded_file.chunks():
             destination.write(chunk)
 
     # Now, you have the file path (though temporary) to process
-    file_path = 'price/data/temp_file.csv'
+    file_path = 'prices/data/temp_file.csv'
 
     # Process the file as you were doing before
     with open(file_path, 'r') as csvfile:
