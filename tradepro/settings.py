@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ticker',
     'price',
     'ml_model',
+    'user',
 ]
 
 MIDDLEWARE = [

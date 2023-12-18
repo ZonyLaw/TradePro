@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include('ticker.urls')),
     path('', include('price.urls')),
     path('', include('ml_model.urls')),
+    path('user/', include('user.urls')),
 ]
