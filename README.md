@@ -70,3 +70,59 @@ This is to develop a subscription feature where users can signup to the services
 **EPIC 10 - Documentation**
 
 This epic is for all documents related stories and tasks to document the lifecycle of the project development. It aims to record the detailed documentations to all stages of development and necessary information on testing, deploying and running the application.
+
+# Notes:
+
+## Key commands
+
+- pip3 install django gunicorn
+
+- pip3 install dj_database_url psycopg2
+
+- pip3 install dj3-cloudinary-storage
+
+- pip3 freeze --local > requirements.txt
+
+- creating the django admin
+
+- django-admin startproject <project name>
+
+- python3 manage.py startapp <app name>
+
+- python manage.py makemigrations
+
+- python manage.py migrate - this builds some default tables and you can access them via admin route.
+
+- python manage.py createsuperuser
+
+- running the app
+
+- python manage.py runserver
+
+## commands to clean the local database
+
+- python manage.py flush
+
+- python manage.py migrate your_app_name zero.....also delete the migration you don't want
+
+### challenges of connecting Heroku
+
+- the key wasn't set up correctly and this throw an error
+- wsgi.py reference to the wrong app name
+
+### Content in the env file if this gets deleted
+
+import os
+
+os.environ['CLOUDINARY_URL'] = ''
+os.environ['DATABASE_URL'] = ''
+os.environ['SECRET_KEY'] = ''
+os.environ['IG_USERNAME'] = ''
+os.environ['IG_PASSWORD'] = ''
+os.environ['IG_API_KEY'] =  ''
+
+
+
+###conda env
+
+working env is myenv311 and myenv311test
