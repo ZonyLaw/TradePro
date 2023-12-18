@@ -1,14 +1,26 @@
 import pandas as pd
 import numpy as np
+from datetime import datetime
 import os
-from price.models import Price
-from ticker.models import Ticker
-from datetime import datetime, timedelta
 
 from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
 
+def import_data(file_path):
+ 
+    # script_directory = os.path.dirname(os.path.abspath(__file__))
+    # file_path = os.path.join(script_directory, file_name)
+    # file_path = file_path.replace("/", "\\")
+    # file_path = f"{script_directory}/{file_name}"
+    print(file_path)
+    # Read the CSV file into a DataFrame
+    df = pd.read_csv(file_path)
 
+    # Display the DataFrame
+    return df
+
+  
+    
 def calc_moving_average(df, timeframe):
     df[f'ma20_{timeframe}'] = df['close'].rolling(window=20).mean()
     df[f'ma50_{timeframe}'] = df['close'].rolling(window=50).mean()
@@ -20,13 +32,11 @@ def calc_moving_average(df, timeframe):
 
     return df
 
-
 def calc_bb(df, timeframe):
     df[f'upper_bb20_{timeframe}'] = df[f'ma20_{timeframe}']+2*df[f'dev20_{timeframe}']
     df[f'lower_bb20_{timeframe}'] = df[f'ma20_{timeframe}']-2*df[f'dev20_{timeframe}']
     
     return df
-
 
 def crossing_bb(df, timeframe):
     """
@@ -62,7 +72,6 @@ def crossing_bb(df, timeframe):
 
     return df
 
-
 def profit_calc(df, col, lag):
     """
     Does not need timeframe parameter!
@@ -87,9 +96,10 @@ def profit_calc(df, col, lag):
     #0 for sell and 1 for buy
     df[f'trade_{col}_{lag}_hr'] = 0 #'sell'
     df.loc[buy_condition, f'trade_{col}_{lag}_hr'] = 1 #'buy'
+
+    
     
     return df
-
 
 def date_split(df):
     """
@@ -104,6 +114,8 @@ def date_split(df):
 
     df['date'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M")
     
+    
+
     # Convert the entire 'date' column to datetime objects and apply the transformations
     df['date'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M")
     
@@ -171,6 +183,7 @@ def support_difference(df, price1, price2, timeframe, label1=None, label2=None):
     if label2 is None:
         label2 = price2
 
+    
     sign_comparison = np.sign(df['price1']) * np.sign(df['price2'])
 
     df[f"{label1}_{label2}_diff_{timeframe}"] = np.where(sign_comparison == -1,
@@ -241,6 +254,48 @@ def trend_measure(df, timeframe):
     return df
 
 
+def trend_measure2(df, timeframe):
+    """
+    The function indicate how strong a buy or sell
+    This function needs two columns:
+     *   trade_close column where buy is 1 and sell is 0
+     *   bb_status where it indicate if the price is close to the bollinger band
+
+    Args:
+        df (dataframe): dataframe containing column trade_close and bb_status
+        timeframe (integer): the timeframe to derive the strength for
+
+    Returns:
+        _type_: _description_
+    """
+    df[f'trend_strength2_{timeframe}'] = 0
+    #condition is to check that current trade is the same as previous
+    condition = (df['trade_close_1_hr'] == df['trade_close_1_hr'].shift(1))
+
+    cumulative_sum = 0
+    for i in range(len(df)):
+        if condition.iloc[i]:
+            #if the trade is sell it will get a -1 value and decrement cumulatively
+            if df.iloc[i, df.columns.get_loc(f'trade_close_{timeframe}_hr')] == 0:
+                cumulative_sum += -1
+            else:            
+                #otherwise it will take on 1 which is a buy in the trade_close
+                cumulative_sum += df.iloc[i, df.columns.get_loc(f'trade_close_{timeframe}_hr')]
+        else:
+            #this is when there is a change in the trade so different from previous trade (e.g. buy vs sell)
+            cumulative_sum = 0
+        
+      
+        if (df.iloc[i, df.columns.get_loc(f'bb_status_{timeframe}')] == "upper_near") | (df.iloc[i, df.columns.get_loc(f'bb_status_{timeframe}')] == "upper_hit"):
+            cumulative_sum = 99
+        elif (df.iloc[i, df.columns.get_loc(f'bb_status_{timeframe}')] == "lower_near") | (df.iloc[i, df.columns.get_loc(f'bb_status_{timeframe}')] == "lower_hit"):
+            cumulative_sum = -99
+        
+        df.iloc[i, df.columns.get_loc(f'trend_strength2_{timeframe}')] = cumulative_sum
+
+    return df
+
+
 def create_4hr_table(df_1hr):
     
     """
@@ -253,7 +308,6 @@ def create_4hr_table(df_1hr):
     df_4hr = df_4hr[['day','month', 'year','4hr_tf','open', 'high', 'low', 'close']]
 
     return df_4hr
-
 
 def find_support(df):
 
@@ -268,7 +322,7 @@ def find_support(df):
         count = len(similar_values)
         count_dict[df.loc[i, 'close']] = count
 
-    # print(count_dict)
+    print(count_dict)
     # Print the results
     # for timestamp, count in count_dict.items():
     #     print(f"At {timestamp}, there are {count} similar values.")
@@ -323,69 +377,10 @@ def tag_peak_trough_values(df, column_name, peak_values, trough_values, proximit
     return df
 
 
-def priceDB_to_df(ticker):
-    queryset = Price.objects.filter(ticker=ticker)
 
-    # Convert queryset to a list of dictionaries
-    data = list(queryset.values())
-
-    # Create a Pandas DataFrame
-    df = pd.DataFrame(data)
-    df.sort_values(by='date', inplace=True)
- 
-    return df
-
-
-def scenario_builder(df, close_adjustment, scenario):
-    """
-    This function is to build a forecast scneario of the next hour to see what
-    is the probability if the next candle stick reverse. 
-    the size of the candle stick is specified by the user.
-
-    Args:
-        df (dataframe): this is the dataframe containing the original prices
-        close_adjustment (float): this is the pips specified by the user to 
-        determine the size of the candle next hour candle stick.
-
-    Returns:
-        dataframe: new dataframe withe extra row of forecast price for the next hour.
-    """
-    # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_start-4.csv", index=False)
-    
-    #if it is continue then it change the sign to create candle stick going in same direction
-    if scenario == 'continue':
-        close_adjustment = -close_adjustment
-    
-    last_row = df.iloc[-1].copy()
-    last_row['date'] += timedelta(hours=1)
-    if(last_row['close'] > last_row['open']):
-        last_row['open'] = last_row['close']
-        last_row['close'] = last_row['open'] - close_adjustment
-    else:
-        last_row['open'] = last_row['close']
-        last_row['close'] = last_row['open'] + close_adjustment
-    
-    print("what is this last row?",last_row)
-    df.loc[len(df.index)] = last_row
-    # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_end-4.csv", index=False)
-
-    return df
-
-
-def stats_df_gen(df):
-    """
-    This is a general stats for generating stats based on the scneario prices.
-    
-
-    Args:
-        df (dataframe): this is expecting prices for the scenario to generate the stats
-
-    Returns:
-        dataframe: Returns the full stats dataframe based on the 
-        prices provided from the scneario of interest.
-        The last two rows are returned as inputs for the model predictions process.
-    """
-    
+def main(file_path):
+    file_name = "inputs/USDJPY_prices.csv"
+    df = import_data(file_path)
     df = calc_moving_average(df,1)
     df = calc_bb(df,1)
     
@@ -402,17 +397,25 @@ def stats_df_gen(df):
     df = price_difference(df, "ma50_1", "ma100_1", 1 )
     df = price_difference(df, "open", "close", 1 )
     df['open_close_diff1_lag1'] = df['open_close_diff_1'].shift(1)
-
-    df = trend_measure(df,1)   
+    # #find the supports
+    # peaks, troughs = find_peaks_and_troughs(df, 'close', prominence=1, width=1)
+    # df = tag_peak_trough_values(df, 'close', peaks, troughs, 0.04, 1)
+    # df = price_difference(df, "close", "support_indicator_1", 1, "close", "peak" )
     
-    # rows_with_na = df[df.isna().any(axis=1)]
-    # print("inside=======================", rows_with_na)
+    df = price_relative_difference(df,"close", "upper_bb20_1", "lower_bb20_1", 1, "up_bb20", "low_bb20" )
+    df = trend_measure(df,1)
+    df = trend_measure2(df,1)
+    
     
     df = df.dropna()
     columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
     df = df.drop(columns, axis=1)
     
+
     #create 4hr table with indicators
+    # df_4hr_expand = df.copy()
+    # df_4hr_expand = df_4hr_expand[['day','month', 'year','4hr_tf']]
+    
     df_4hr = create_4hr_table(df)
     df_4hr = calc_moving_average(df_4hr,4)
     df_4hr = calc_bb(df_4hr,4)
@@ -423,97 +426,57 @@ def stats_df_gen(df):
     df_4hr = price_difference(df_4hr, "ma20_4", "ma50_4",4 )
     df_4hr = price_difference(df_4hr, "ma50_4", "ma100_4",4 )
     
+    # #find the supports
+    # peaks, troughs = find_peaks_and_troughs(df_4hr, 'close', prominence=1, width=1)
+    # df_4hr = tag_peak_trough_values(df_4hr, 'close', peaks, troughs, 0.04, 4)
+    # df_4hr = price_difference(df_4hr, "close", "support_indicator_4", 4, "close", "peak" )
+    
+    df_4hr = price_relative_difference(df_4hr, "close", "upper_bb20_4", "lower_bb20_4", 4, "up_bb20", "low_bb20" )
     columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
     df_4hr = df_4hr.drop(columns, axis=1)
     df_4hr = df_4hr.dropna()
-    df_4hr.to_csv(r"C:\Users\sunny\Desktop\Development\df_4hr_finish.csv", index=False)
     
+  
+    
+    #print(df_4hr)
     # #merged the content from 4hr table into 1 hr.
     merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
     merged_df = merged_df.dropna()
 
-    #Create the live data dataframe to input into the model
-    last_row_df = merged_df.tail(2)[0:1]
-    # last_rows = merged_df.iloc[-2:]
-    print("data>>>>",last_row_df)
-    merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\merged_df-4.csv", index=False)
     
-    X_live = pd.DataFrame([], index=[0])
-    X_live.loc[0, 'open_close_diff_1'] = last_row_df['open_close_diff_1'].iloc[0]
-    X_live.loc[0, 'open_close_diff1_lag1'] = last_row_df['open_close_diff1_lag1'].iloc[0]
-    X_live.loc[0, 'close_ma50_1_diff_1'] = last_row_df['close_ma50_1_diff_1'].iloc[0]
-    X_live.loc[0, 'bb_status_1'] = last_row_df['bb_status_1'].iloc[0]
-    X_live.loc[0, 'up_bb20_low_bb20_diff_1'] = last_row_df['up_bb20_low_bb20_diff_1'].iloc[0]
-    X_live.loc[0, 'trend_strength_1'] = last_row_df['trend_strength_1'].iloc[0]
-    X_live.loc[0, 'lagged_close_1'] = last_row_df['lagged_close_1'].iloc[0]
-    X_live.loc[0, 'hr'] = last_row_df['hr'].iloc[0]
-    X_live.loc[0, 'up_bb20_low_bb20_diff_4'] = last_row_df['up_bb20_low_bb20_diff_4'].iloc[0]
-    X_live.loc[0, 'ma50_4_ma100_4_diff_4'] = last_row_df['ma50_4_ma100_4_diff_4'].iloc[0]
-    X_live.loc[0, 'ma20_4_ma50_4_diff_4'] = last_row_df['ma20_4_ma50_4_diff_4'].iloc[0]
-    X_live.loc[0, 'close_ma100_4_diff_4'] = last_row_df['close_ma100_4_diff_4'].iloc[0]
-    
-    #retain column and then take the last two.
-    subset_df = merged_df[['open_close_diff_1', 'open_close_diff1_lag1','close_ma50_1_diff_1',
-               'bb_status_1','up_bb20_low_bb20_diff_1','trend_strength_1',
-               'lagged_close_1','hr','up_bb20_low_bb20_diff_4', 
-               'ma50_4_ma100_4_diff_4', 'ma20_4_ma50_4_diff_4',
-               'close_ma100_4_diff_4']]
-    # print(test.tail(2))
-    X_live = subset_df.tail(2)
-    # print("xlive>>>>>>>", X_live)
-    
-    return X_live
 
+    print(merged_df.head(50))
+    print(merged_df.columns.to_list())
+    print(merged_df['open_close_diff1_lag1'])
     
-def scenario_reverse():
-    """
-    This function is to generate a reverse scneario based on reversal of candle sticks.
+    return merged_df
+ 
 
-    Returns:
-        dataframe: contains the new prices for the next row creating the scenario 
-        for the next hour.
-    """
+# def main2(file_path):
+#     file_name = "inputs/USDJPY_prices.csv"
+#     df = import_data(file_path)
+#     df = calc_moving_average(df,1)
+#     df = calc_bb(df,1)
     
-    ticker = Ticker.objects.get(symbol="USDJPY")
-    df = priceDB_to_df(ticker)
-    
-    #build the reverse candle stick scenario
-    #the base scenario is retained for the first dataframe
-    df = scenario_builder(df, 0.2, "reverse")
-    reverse_df_2pips = stats_df_gen(df)
-    
-    df = scenario_builder(df, 0.4, "reverse")
-    reverse_df_4pips = stats_df_gen(df)
-    
-    last_row = reverse_df_4pips.tail(1)
-    combined_df = pd.concat([reverse_df_2pips, last_row])
-    
-    return (combined_df)
+#     df = date_split(df)
+#     df = crossing_bb(df,1)
+#     df = profit_calc(df, "close", 1)
+#     df = profit_calc(df, "close", 4)
 
-   
-def scenario_continue():
-    """
-    This function is to generate a continue scneario based on continuing trend.
+#     peaks, troughs = find_peaks_and_troughs(df, 'close', prominence=1, width=1)
+#     df = tag_peak_trough_values(df, 'close', peaks, troughs, 0.04)
+#     print(peaks)
+#     print(troughs)
+#     print(df.head(10))
+#     return df
 
-    Returns:
-        dataframe: contains the new prices for the next row creating the scenario 
-        for the next hour.
-    """
-    
-    ticker = Ticker.objects.get(symbol="USDJPY")
-    df = priceDB_to_df(ticker)
-    
-    #build the reverse candle stick scenario
-    #the base scenario is retained for the first dataframe
-    df = scenario_builder(df, 0.2, "continue")
-    continue_df_2pips = stats_df_gen(df)
-    
-    df = scenario_builder(df, 0.4, "continue")
-    continue_df_4pips = stats_df_gen(df)
-    
-    last_row = continue_df_4pips.tail(1)
-    combined_df = pd.concat([continue_df_2pips, last_row])
-    
-    return (combined_df)
-   
+# if __name__ == '__main__':
+#     current_directory = os.getcwd()
+#     # Go one level up from the current working directory
+#     parent_directory = os.path.abspath(os.path.join(current_directory))
 
+#     file_path = rf"{parent_directory}\inputs\USDJPY_prices.csv"
+    
+#     df = main(file_path)
+    
+#     df.to_csv(rf"{parent_directory}\outputs\test.csv", index=False)
