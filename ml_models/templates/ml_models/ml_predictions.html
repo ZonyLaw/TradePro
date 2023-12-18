@@ -1,0 +1,50 @@
+{% extends 'main.html' %} 
+{% block content %}
+
+<main>
+  <h1>Model predictions for reverse</h1>
+
+  <table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>Current Proba</th>
+      <th>Reversed Proba (20 pips)</th>
+      <th>Reversed Proba (40 pips)</th>
+    </tr>
+    
+    {% for category, proba in pred_reverse.items %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ proba.0 }}%</td>
+        <td>{{ proba.1 }}%</td>
+        <td>{{ proba.2 }}%</td>
+      </tr>
+    
+    {% endfor %}
+  </table> 
+
+
+  <h1>Model predictions for continue</h1>
+
+  <table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>Current Proba</th>
+      <th>Continue Proba (20 pips)</th>
+      <th>Continue Proba (40 pips)</th>
+    </tr>
+    
+    {% for category, proba in pred_continue.items %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ proba.0 }}%</td>
+        <td>{{ proba.1 }}%</td>
+        <td>{{ proba.2 }}%</td>
+      </tr>
+    
+    {% endfor %}
+  </table> 
+
+</main>
+
+{% endblock content %}
