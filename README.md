@@ -110,6 +110,22 @@ This epic is for all documents related stories and tasks to document the lifecyc
 - the key wasn't set up correctly and this throw an error
 - wsgi.py reference to the wrong app name
 
+#### Using email as login
+
+- To convert from username to email as login, the database, migration files, and cach need to be deleted.
+
+- here are some key commands:
+
+  * clear all pycache
+    find . -name "*.pyc" -exec rm -f {} \;
+
+  * clean up any files after using "git restore ."
+    git clean -fdx
+
+- Ensure any custom made apps link to the user need to be deleted before following the steps found at this website:
+https://pypi.org/project/django-use-email-as-username/
+
+
 ### Content in the env file if this gets deleted
 
 import os
@@ -122,7 +138,6 @@ os.environ['IG_PASSWORD'] = ''
 os.environ['IG_API_KEY'] =  ''
 
 
-
-###conda env
+### conda env 
 
 working env is myenv311 and myenv311test
