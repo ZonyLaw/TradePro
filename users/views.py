@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate, logout
+from custom_user.models import User
 from users.models import Profile
 
 def profiles(request):
@@ -16,3 +18,32 @@ def userProfile(request, pk):
     
     context = {'profile': profile}
     return render(request, 'users/user-profile.html', context)
+
+
+def loginUser(request):
+    
+    if request.user.is_authenticated:
+        return redirect('profiles')
+    
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        
+        try:
+            user = User.objects.get(email=email)
+        except:
+            print('Email does not exist')
+            
+        user = authenticate(request, email=email, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('profiles')
+        else:
+            print('Email or passwrod is incorrect')
+    
+    return render(request, 'users/login_signup.html')
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
