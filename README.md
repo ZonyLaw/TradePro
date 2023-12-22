@@ -141,3 +141,8 @@ os.environ['IG_API_KEY'] =  ''
 ### conda env 
 
 working env is myenv311 and myenv311test
+
+### task
+
+need to find ways to store the results and records
+

@@ -88,6 +88,9 @@ def run_IG(ticker):
     
     """
     
+    #this is to access the name of the ticker interested
+    ticker_definition = {ticker:"CS.D.USDJPY.TODAY.IP"}
+    
     #autheticating IG account and creating session    
     username = os.environ.get('IG_USERNAME')
     password = os.environ.get('IG_PASSWORD')
@@ -99,10 +102,15 @@ def run_IG(ticker):
     
     try:
         #fetching data from IG account
-        data = ig_service.fetch_market_by_epic(ticker)
-        time.sleep(10)
-        data_next = ig_service.fetch_market_by_epic(ticker)
-        recordIGPrice(data['snapshot'], data_next['snapshot'], 100)
+        data = ig_service.fetch_market_by_epic(ticker_definition[ticker])
+        
+        #intial idea was to use prices from the next 10 second but this could lock up the api.
+        #therefore, we will just use the current data set.
+        #the purpose of this is to get the close price.
+        # time.sleep(10)
+        # data_next = ig_service.fetch_market_by_epic(ticker)
+        
+        recordIGPrice(data['snapshot'], data['snapshot'], 100)
 
     except:
         print("failed to retrieve data so running IG mock")
