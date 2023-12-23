@@ -7,6 +7,9 @@ from .form import PriceForm
 from .form import FileUploadForm
 from .utils import import_prices_from_csv, generate_csv
 
+from django.utils import timezone
+from datetime import datetime
+
 
 def createPrice(request):
     if request.method == 'POST':
@@ -110,3 +113,23 @@ def delete_price(request, pk):
     context = {'object': price, 'ticker_id': ticker_id}
    
     return render(request, 'prices/price_delete_template.html', context)
+
+
+def delete_prices(request):
+    # Get the 'from' and 'to' date parameters from the request
+    from_date_str = request.GET.get('from_date', '')
+    to_date_str = request.GET.get('to_date', '')
+
+    try:
+        # Convert the date strings to datetime objects
+        from_date = datetime.strptime(from_date_str, "%Y-%m-%d")
+        to_date = datetime.strptime(to_date_str, "%Y-%m-%d")
+
+        # Assuming the model has a 'timestamp' field
+        # Delete prices within the specified date range
+        Price.objects.filter(timestamp__range=(from_date, to_date)).delete()
+
+        return HttpResponse("Prices deleted successfully within the specified date range.")
+    except ValueError:
+        # Handle invalid date format
+        return HttpResponse("Invalid date format. Please use YYYY-MM-DD.")

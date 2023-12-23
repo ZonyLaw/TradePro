@@ -32,16 +32,6 @@ def recordIGPrice(ticker, df, scaling_factor):
     # Original timestamp
     original_timestamp_str = df['snapshotTime'][0]
     print(original_timestamp_str)
-    # original_datetime = datetime.strptime(original_timestamp_str, "%Y:%m:%d-%H:%M:%S")
-
-    # # Create a fixed offset for +00:00
-    # fixed_offset = timedelta(hours=0)
-
-    # # Convert to the desired format with microseconds and timezone information
-    # formatted_timestamp = original_datetime.replace(microsecond=632928, tzinfo=fixed_offset)
-
-    # # Format the datetime object as a string
-    # formatted_timestamp_str = formatted_timestamp.strftime("%Y-%m-%d %H:%M:%S.%f%z")
 
     date_str, time_str = original_timestamp_str.split('-')
 
@@ -51,14 +41,10 @@ def recordIGPrice(ticker, df, scaling_factor):
     # Split the time components
     hour, minute, second = map(int, time_str.split(':'))
 
-    # print(minute, second)
     # Create a datetime object
     result_datetime = datetime(year, month, day, hour, minute, second, tzinfo=timezone.utc)
     # manual_date = datetime(2023, 12, 22, 16, 00, 00, tzinfo=timezone.utc)
 
-    print(result_datetime)
-    
-    
     #calculate the open price
     new_price.date = result_datetime
     new_price.open =  np.average([df['openPrice'][0]['ask'], df['openPrice'][0]['bid']]) / scaling_factor
@@ -106,25 +92,46 @@ def run_IG(ticker):
     ticker (string): ticker symbol (epic)
     
     """
-    #this is to access the name of the ticker interested
-    ticker_definition = {ticker:"CS.D.USDJPY.TODAY.IP"}
     
-    #autheticating IG account and creating session    
-    username = os.environ.get('IG_USERNAME')
-    password = os.environ.get('IG_PASSWORD')
-    api_key = os.environ.get('IG_API_KEY')
-    acc_type = "LIVE"
+    #creating the time range for the fetch method
+    # current_time = datetime.now()
+    current_time_str = "2023-12-22 15:00:00"
+    current_time = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
+    next_hour = current_time + timedelta(hours=1)
+    start_time_rounded = current_time.replace(minute=0, second=0, microsecond=0)
+    end_time_rounded = next_hour.replace(minute=0, second=0, microsecond=0)
+    target_date = start_time_rounded.strftime("%Y-%m-%d %H:%M:%S")
+    start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
+    end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     
-    ig_service = IGService(username, password, api_key, acc_type)
-    ig_service.create_session()
-    
-    try:
-        #fetching data from IG account
-        
-        data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:22-14:00:00", "2023:12:22-15:00:00" )
-        df = data['prices']
-        recordIGPrice(ticker, df, 100)
 
-    except:
-        print("failed to retrieve data so running IG mock")
-        # run_IG_mock()
+    # Check if prices exist for the target date
+    # note the time format is different from the range date format
+    prices_exist = Price.objects.filter(date=target_date).exists()
+    print(prices_exist)
+    
+    if not prices_exist:
+        
+        #this is to access the name of the ticker interested
+        ticker_definition = {ticker:"CS.D.USDJPY.TODAY.IP"}
+        
+        #autheticating IG account and creating session    
+        username = os.environ.get('IG_USERNAME')
+        password = os.environ.get('IG_PASSWORD')
+        api_key = os.environ.get('IG_API_KEY')
+        acc_type = "LIVE"
+        
+        ig_service = IGService(username, password, api_key, acc_type)
+        ig_service.create_session()
+        
+        try:
+            #fetching data from IG account
+            print("get prices")
+            data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR",start_time_str, end_time_str )
+            # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:22-15:00:00", "2023:12:22-17:00:00" )
+            df = data['prices']
+            recordIGPrice(ticker, df, 100)
+
+        except:
+            print("failed to retrieve data so running IG mock")
+            # run_IG_mock()
