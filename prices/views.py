@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect,  get_object_or_404, HttpResponse
 from django.urls import reverse 
 from tickers.models import Ticker
 from prices.models import Price
-from .form import PriceForm
+from .form import PriceForm, PriceRangeForm
 
 from .form import FileUploadForm
 from .utils import import_prices_from_csv, generate_csv
@@ -111,21 +111,19 @@ def delete_price(request, pk):
     return render(request, 'prices/price_delete_template.html', context)
 
 
-def delete_prices(request):
-    # Get the 'from' and 'to' date parameters from the request
-    from_date_str = request.GET.get('from_date', '')
-    to_date_str = request.GET.get('to_date', '')
+def delete_prices_range(request):
+    if request.method == 'POST':
+        form = PriceRangeForm(request.POST)
+        if form.is_valid():
+            ticker = form.cleaned_data['ticker']
+            start_date = form.cleaned_data['start_date']
+            end_date = form.cleaned_data['end_date']
+            ticker_instance = Ticker.objects.get(symbol=ticker)
+            # Delete prices within the specified date range
+            Price.objects.filter(ticker=ticker_instance, date__range=[start_date, end_date]).delete()
+            
+            return redirect('tickers')  # Redirect to a success page or another view
+    else:
+        form = PriceRangeForm()
 
-    try:
-        # Convert the date strings to datetime objects
-        from_date = datetime.strptime(from_date_str, "%Y-%m-%d")
-        to_date = datetime.strptime(to_date_str, "%Y-%m-%d")
-
-        # Assuming the model has a 'timestamp' field
-        # Delete prices within the specified date range
-        Price.objects.filter(timestamp__range=(from_date, to_date)).delete()
-
-        return HttpResponse("Prices deleted successfully within the specified date range.")
-    except ValueError:
-        # Handle invalid date format
-        return HttpResponse("Invalid date format. Please use YYYY-MM-DD.")
+    return render(request, 'prices/delete_prices_range.html', {'form': form})
