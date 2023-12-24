@@ -109,6 +109,8 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - the key wasn't set up correctly and this throw an error
 - wsgi.py reference to the wrong app name
+- user specific timezone rendering needs {% load tz %} in html combined with filtering
+{{ price.date|timezone:user_timezone }}; backend needs a conversion process also.
 
 #### Using email as login
 
