@@ -35,29 +35,25 @@ def createPrice(request):
 
 
 def updatePrice(request, pk):
-    
+    # Get the existing Price instance
     price_instance = get_object_or_404(Price, id=pk)
-        
+
     if request.method == 'POST':
-        
-        form = PriceForm(request.POST)
-        # print(form)
-        
+        # Pass the existing instance to the form
+        form = PriceForm(request.POST, instance=price_instance)
+
         if form.is_valid():
-            # Save the price, associating it with the specified ticker
-            ticker_instance = form.cleaned_data['ticker']
+            # Save the updated price
+            form.save()
 
-            # Create the Price instance and assign the Ticker instance
-            price_instance = form.save(commit=False)
-            price_instance.ticker = ticker_instance
-            price_instance.save()
-
-            # messages.success(request, 'Price created successfully.')
-            return redirect('tickers')  # Redirect to the home page or any other page
+            # Redirect to the appropriate page
+            return redirect('tickers')  # Replace 'tickers' with your actual URL name
     else:
+        # Populate the form with the existing data
         form = PriceForm(instance=price_instance)
 
     return render(request, 'prices/price_form.html', {'form': form})
+
 
 
 def upload_prices(request):
