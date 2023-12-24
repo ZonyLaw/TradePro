@@ -6,7 +6,13 @@
   <h1>{{ticker.symbol}}</h1>
   <p>{{ticker.info}}</p>
 {% for price in prices %}
-  <p>Date: {{ price.date|timezone:user_timezone }} - Close price: {{price.close }}</p>
+  <table>
+    <tr>
+    <td> Date: {{ price.date|timezone:user_timezone }} - Close price: {{price.close }} </td>
+    <td> <a href = "{% url 'update-price' price.id %}" >Update Price </a> </td>
+    <td> <a href = "{% url 'delete-price' price.id %}" >Delete Price </a> </td>
+    </tr>
+  </table>
 
 {% endfor %}
 

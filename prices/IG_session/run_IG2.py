@@ -95,7 +95,7 @@ def run_IG(ticker):
     
     #creating the time range for the fetch method
     # current_time = datetime.now()
-    current_time_str = "2023-12-22 15:00:00"
+    current_time_str = "2023-12-22 13:00:00"
     current_time = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
     next_hour = current_time + timedelta(hours=1)
     start_time_rounded = current_time.replace(minute=0, second=0, microsecond=0)

@@ -24,15 +24,14 @@ def ticker(request, pk):
     
     profile = Profile.objects.get(user = request.user)
     user_timezone = profile.timezone
-    print(user_timezone)
+    # print(user_timezone)
     # Fetch prices in UTC for the specified ticker
-    prices_utc = ticker.price_set.all()
 
     # Convert prices to user's timezone
     prices_user_timezone = []
-    for price in prices_utc:
+    for price in prices:
         localized_date = price.date.astimezone(user_timezone)
-        prices_user_timezone.append({'date': localized_date, 'close': price.close})
+        prices_user_timezone.append({'id':price.id, 'date': localized_date, 'close': price.close})
 
     context = {'ticker': ticker, 'prices': prices_user_timezone,
                'user_timezone':user_timezone}

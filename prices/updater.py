@@ -14,5 +14,6 @@ def start():
     scheduler.add_job(run_IG, 'date', args=[ticker], run_date=datetime.now() + timedelta(seconds=1))
    
     # scheduler.add_job(run_IG, 'cron', args=[ticker], hour='*')
+    # scheduler.add_job(run_IG, 'interval', args=[ticker], hour=1)
     scheduler.start()
     print("ending scheduler")
