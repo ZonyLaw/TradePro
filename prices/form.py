@@ -2,7 +2,6 @@ from django.forms import ModelForm
 from .models import Price
 from tickers.models import Ticker
 from django import forms
-import uuid
 
 
 class PriceForm(ModelForm):
