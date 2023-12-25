@@ -96,15 +96,19 @@ def run_IG(ticker):
     #creating the time range for the fetch method
     current_time = datetime.now()
     print(current_time)
+    current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
+    
     # current_time_str = "2023-12-22 13:00:00"
-    current_time = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
+
+    current_time = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
     next_hour = current_time + timedelta(hours=1)
     start_time_rounded = current_time.replace(minute=0, second=0, microsecond=0)
     end_time_rounded = next_hour.replace(minute=0, second=0, microsecond=0)
     target_date = start_time_rounded.strftime("%Y-%m-%d %H:%M:%S")
     start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
-    
+    print(start_time_rounded)
+    print(end_time_rounded)
 
     # Check if prices exist for the target date
     # note the time format is different from the range date format
@@ -129,10 +133,10 @@ def run_IG(ticker):
             #fetching data from IG account
             print("get prices")
             data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR",start_time_str, end_time_str )
-            # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:22-15:00:00", "2023:12:22-17:00:00" )
+            # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
             df = data['prices']
             recordIGPrice(ticker, df, 100)
 
         except:
-            print("failed to retrieve data so running IG mock")
+            print("failed to retrieve data")
             # run_IG_mock()
