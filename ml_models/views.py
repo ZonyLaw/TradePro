@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .utils.predictive_analysis import model_run
+from .utils.predictive_analysis import standard_analysis, model_run
 from .utils.manual_model_input import manaul_price_input
 from .form import ModelParameters
 
@@ -12,7 +12,8 @@ def ml_predictions(request):
     Predictions is saved as dictionary of array for the values of each profit/loss cateogires.
     """
     # predictions={'fist':['12','23'],'second':['12','23']}
-    pred_reverse, pred_continue = model_run()
+    
+    pred_reverse, pred_continue = standard_analysis()
     context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue}
     
     return render(request, 'ml_models/ml_predictions.html', context)
@@ -27,6 +28,7 @@ def ml_parameters(request):
         if form.is_valid():
             model_input = manaul_price_input(form)
             results = "hi there from another function"
+            # results = model_run(model_input)
             print("to be save")
             request.session['ml_results'] = results
             

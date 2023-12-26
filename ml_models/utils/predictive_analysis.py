@@ -13,7 +13,7 @@ def load_file(file_path):
 
 def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     """
-        This function takes model components and feed the data to generate the results.
+        This function put all the model components to generate the results.
         The results are formatted.
 
     Args:
@@ -37,20 +37,13 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     
     # from live data, subset features related to this pipeline
     X_live_subset = X_live.filter(model_feature)
-    
-    # predict
+    print(X_live_subset)
+    # predict the probability
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-
-    #delete
-    result_dict ={
-        f"{model_label_map[i]}": round(model_prediction_proba[0, i] * 100,2)
-        for i in range(6)
-    }
-
     
-    result_dict2 = {}
+    result_dict = {}
     for i in range(6):
-            result_dict2.update({
+            result_dict.update({
                 f"{model_label_map[i]}": [
                     round(model_prediction_proba[0, i] * 100,2),
                     round(model_prediction_proba[1, i] * 100,2),
@@ -69,23 +62,23 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
                  result_df.columns.values[5]:f'{model_label_map[5]}'}
     
     result_df.rename(columns = new_label, inplace = True)
-    result_html = result_df.to_html()
-    # print("html-----------",result_html)
-    # print("dataframe>>>>>fun", result_df)
     
     print("predict profit model>>>>", model_prediction_proba[0,1])
-    print("result_dict2.....", result_dict2)
-    return (result_dict2)
+    print("result_dict.....", result_dict)
+    return (result_dict)
 
 
-def model_run():
+def model_run(X_live):
     
     """
-    This function handles the key input components and load the trained model. 
-    The formatting and production of results are handled by another function.   
+    This function gather all relevant model files needed to run the model. 
+    Another function is called to generate and format the results.
+    
+    Args:
+        X_live (dataframe): dataframe contains model attributes and can be more than one row. 
 
     Returns:
-        _type_: returns calls on another function generating and formating of the results.
+        _type_: returns model results.
     """
     
     #get script directory
@@ -107,13 +100,29 @@ def model_run():
                        .to_list()
                        )
     
+    
+    results = predict_profits(X_live, profit_features,
+                                profit_pip, profit_labels_map)
+   
+  
+   
+    return results
+
+def standard_analysis():
+    
+    """
+    This is a function to generate some standard analysis to show on the webpage.
+    Pre-defined scenarios are inputted into the model.
+    This calls on the model_run function which pulls all relevant inputs to generate results.
+
+    Returns:
+        _type_: returns results from model for the different scenarios
+    """
+    
     X_live_reverse = scenario_reverse()
     X_live_continue = scenario_continue()
     
-    pred_reverse = predict_profits(X_live_reverse, profit_features,
-                                profit_pip, profit_labels_map)
-   
-    pred_continue = predict_profits(X_live_continue, profit_features,
-                                profit_pip, profit_labels_map)
-   
+    pred_reverse = model_run( X_live_reverse )
+    pred_continue = model_run( X_live_continue )
+    
     return pred_reverse, pred_continue
