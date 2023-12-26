@@ -22,38 +22,40 @@ def recordIGPrice(ticker, df, scaling_factor):
     scaling_factor (integer): scale factor to turn the value into prices.
     """
 
-    #setting objects of the DB
-    ticker_instance = Ticker.objects.get(symbol=ticker)   
-    new_price = Price()
-    
-    #putting entries into price DB
-    new_price.ticker = ticker_instance
-        
-    # Original timestamp
-    original_timestamp_str = df['snapshotTime'][0]
-    print(original_timestamp_str)
+     # Setting objects of the DB
+    ticker_instance = Ticker.objects.get(symbol=ticker)
 
-    date_str, time_str = original_timestamp_str.split('-')
+    for _, row in df.iterrows():
+        # Creating a new Price instance for each row
+        new_price = Price()
 
-    # Split the date components
-    year, month, day = map(int, date_str.split(':'))
+        # Putting entries into price DB
+        new_price.ticker = ticker_instance
 
-    # Split the time components
-    hour, minute, second = map(int, time_str.split(':'))
+        # Original timestamp
+        original_timestamp_str = row['snapshotTime']
+        print(original_timestamp_str)
 
-    # Create a datetime object
-    result_datetime = datetime(year, month, day, hour, minute, second, tzinfo=timezone.utc)
-    # manual_date = datetime(2023, 12, 22, 16, 00, 00, tzinfo=timezone.utc)
+        date_str, time_str = original_timestamp_str.split('-')
 
-    #calculate the open price
-    new_price.date = result_datetime
-    new_price.open =  np.average([df['openPrice'][0]['ask'], df['openPrice'][0]['bid']]) / scaling_factor
-    new_price.close =  np.average([df['closePrice'][0]['ask'], df['closePrice'][0]['bid']]) / scaling_factor
-    new_price.high =  np.average([df['highPrice'][0]['ask'], df['highPrice'][0]['bid']]) / scaling_factor
-    new_price.low =  np.average([df['lowPrice'][0]['ask'], df['lowPrice'][0]['bid']]) / scaling_factor
-    new_price.volume = df['lastTradedVolume'][0]
-    
-    new_price.save()
+        # Split the date components
+        year, month, day = map(int, date_str.split(':'))
+
+        # Split the time components
+        hour, minute, second = map(int, time_str.split(':'))
+
+        # Create a datetime object
+        result_datetime = datetime(year, month, day, hour, minute, second, tzinfo=timezone.utc)
+
+        # Calculate the open price
+        new_price.date = result_datetime
+        new_price.open = np.average([row['openPrice']['ask'], row['openPrice']['bid']]) / scaling_factor
+        new_price.close = np.average([row['closePrice']['ask'], row['closePrice']['bid']]) / scaling_factor
+        new_price.high = np.average([row['highPrice']['ask'], row['highPrice']['bid']]) / scaling_factor
+        new_price.low = np.average([row['lowPrice']['ask'], row['lowPrice']['bid']]) / scaling_factor
+        new_price.volume = row['lastTradedVolume']
+
+        new_price.save()
     
 
 def run_IG_mock():

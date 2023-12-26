@@ -127,3 +127,6 @@ def delete_prices_range(request):
         form = PriceRangeForm()
 
     return render(request, 'prices/delete_prices_range.html', {'form': form})
+
+# def get_IG_prices(request):
+    
