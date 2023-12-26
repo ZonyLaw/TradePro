@@ -5,7 +5,7 @@ from pathlib import Path
 from .data_processing import scenario_reverse, scenario_continue
 import csv
 
-def manaul_price_input(form):
+def manual_price_input(form):
     
     # Assuming form.cleaned_data is a dictionary containing the required keys
 
@@ -24,8 +24,5 @@ def manaul_price_input(form):
     model_input['ma50_4_ma100_4_diff_4'] = [form.cleaned_data['ma50_4'] - form.cleaned_data['ma100_4']]
     model_input['ma20_4_ma50_4_diff_4'] = [form.cleaned_data['ma20_4'] - form.cleaned_data['ma50_4']]
     model_input['close_ma100_4_diff_4'] = [form.cleaned_data['close_4'] - form.cleaned_data['ma100_4']]
-
-    # Print the DataFrame
-    print("model input>>>", model_input)
 
     return model_input

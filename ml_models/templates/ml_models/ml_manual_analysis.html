@@ -1,0 +1,33 @@
+{% extends 'main.html' %} {% block content %}
+
+<h1>ML model parameters entry</h1>
+
+<form action="" method="POST">
+  {%csrf_token%} 
+  {{form.as_p}}
+  <input type="submit" />
+</form>
+
+{% if results %}
+  <table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>Current Proba</th>
+      <th>Reversed Proba (20 pips)</th>
+      <th>Reversed Proba (40 pips)</th>
+    </tr>
+
+    {% for category, proba in results.items %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ proba.0 }}%</td>
+
+      </tr>
+      
+    {% endfor %}
+  </table> 
+
+{% endif %}
+
+
+{% endblock content %}

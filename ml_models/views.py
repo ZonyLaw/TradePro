@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .utils.predictive_analysis import standard_analysis, model_run
-from .utils.manual_model_input import manaul_price_input
+from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters
 
 
@@ -19,22 +19,20 @@ def ml_predictions(request):
     return render(request, 'ml_models/ml_predictions.html', context)
 
 
-def ml_parameters(request):
+def ml_manual(request):
     
     form = ModelParameters(request.POST)
     
     if request.method == 'POST':
         form = ModelParameters(request.POST)
         if form.is_valid():
-            model_input = manaul_price_input(form)
-            results = "hi there from another function"
+            model_input = manual_price_input(form)
             results = model_run(model_input)
-            print("to be save")
             request.session['ml_results'] = results
             
-            return redirect('ml-manual-run')
-
     else:
+        
+        results = ''
         # Initialize the form with default values
         form = ModelParameters(initial={
             'open': 0.0,
@@ -56,23 +54,8 @@ def ml_parameters(request):
 
         })
 
+    context = {'form':form, 'results':results}
     
-    context = {'form': form}
-    
-    return render(request, 'ml_models/ml_parameters_form.html', context)
+    return render(request, 'ml_models/ml_manual_analysis.html', context)
 
-
-def ml_manual_run(request):
-    
-     # Retrieve the results from the session
-    results = request.session.get('ml_results', None)
-
-    # Check if results are available in the session
-    if results is None:
-        return render(request, 'ml_models/ml_manual_run.html', {'error_message': 'Results not found. Please input data first.'})
-
-    # Use 'results' in your template or view logic
-    return render(request, 'ml_models/ml_manual_run.html', {'results': results})
-    
-    
     
