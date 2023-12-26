@@ -9,7 +9,7 @@ def ml_predictions(request):
     """
     #outstanding...data should be saved as a text and accessed as static to avoid running the code again.
     This is a view function that pass the model predictions to the the frontend.
-    Predictions is saved as dictionary of array for the values of each profit/loss cateogires.
+    Predictions is saved as dictionary of array containing the values of each profit/loss cateogires.
     """
     # predictions={'fist':['12','23'],'second':['12','23']}
     
@@ -20,6 +20,13 @@ def ml_predictions(request):
 
 
 def ml_manual(request):
+    
+    """
+    This is a function to get user input for running the model manually.
+    The results are displayed in the same webpage as the input form.
+    User can update input to get new results.
+    
+    """
     
     form = ModelParameters(request.POST)
     
