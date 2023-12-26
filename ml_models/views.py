@@ -28,7 +28,7 @@ def ml_parameters(request):
         if form.is_valid():
             model_input = manaul_price_input(form)
             results = "hi there from another function"
-            # results = model_run(model_input)
+            results = model_run(model_input)
             print("to be save")
             request.session['ml_results'] = results
             

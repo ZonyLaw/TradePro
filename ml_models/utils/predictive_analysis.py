@@ -42,12 +42,13 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map):
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
     
     result_dict = {}
+    #First loop goes through the probability profit/loss categories
+    #Second loop goes through the array size of the probability dictionary
     for i in range(6):
             result_dict.update({
                 f"{model_label_map[i]}": [
-                    round(model_prediction_proba[0, i] * 100,2),
-                    round(model_prediction_proba[1, i] * 100,2),
-                    round(model_prediction_proba[2, i] * 100,2),
+                    round(model_prediction_proba[j, i] * 100, 2) 
+                    for j in range(model_prediction_proba.shape[0])
                 ]
             }
             )

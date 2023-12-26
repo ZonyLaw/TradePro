@@ -2,6 +2,23 @@
 
 <h1>Manual model run results</h1>
 
-<p>{{results}}</p>
+<table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>Current Proba</th>
+      <th>Reversed Proba (20 pips)</th>
+      <th>Reversed Proba (40 pips)</th>
+    </tr>
+
+{% for category, proba in results.items %}
+<tr>
+  <td>{{ category }}</td>
+  <td>{{ proba.0 }}%</td>
+
+</tr>
+    
+{% endfor %}
+</table> 
+
 
 {% endblock content %}
