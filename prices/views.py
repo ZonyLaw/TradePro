@@ -126,7 +126,21 @@ def delete_prices_range(request):
     else:
         form = PriceRangeForm()
 
-    return render(request, 'prices/delete_prices_range.html', {'form': form})
+    return render(request, 'prices/prices_range.html', {'form': form})
 
-# def get_IG_prices(request):
-    
+def get_IG_prices(request):
+        
+    if request.method == 'POST':
+        form = PriceRangeForm(request.POST)
+        if form.is_valid():
+            ticker = form.cleaned_data['ticker']
+            start_date = form.cleaned_data['start_date']
+            end_date = form.cleaned_data['end_date']
+            ticker_instance = Ticker.objects.get(symbol=ticker)
+                
+            print("inside get IG prices")
+            return redirect('tickers')  # Redirect to a success page or another view
+    else:
+        form = PriceRangeForm()
+
+    return render(request, 'prices/prices_range.html', {'form': form})

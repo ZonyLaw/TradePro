@@ -40,8 +40,6 @@ class PriceRangeForm(forms.Form):
     start_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     end_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     
-    
-
     def __init__(self, *args, **kwargs):
         super(PriceRangeForm, self).__init__(*args, **kwargs)
         # Customize the label for the ticker field if needed

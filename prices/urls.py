@@ -10,5 +10,6 @@ urlpatterns = [
     path('delete-price/<str:pk>/', views.delete_price, name='delete-price'),
     path('delete-prices/', views.delete_price, name='delete-prices'),
     path('delete-prices-range/', views.delete_prices_range, name='delete-prices-range'),
+    path('get-IG-prices/', views.get_IG_prices, name='get-IG-prices'),
 
 ]
