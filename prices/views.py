@@ -9,6 +9,7 @@ from .utils import import_prices_from_csv, generate_csv
 
 from django.utils import timezone
 from datetime import datetime
+from .IG_session.run_IG2 import run_IG
 
 
 def createPrice(request):
@@ -119,6 +120,7 @@ def delete_prices_range(request):
             start_date = form.cleaned_data['start_date']
             end_date = form.cleaned_data['end_date']
             ticker_instance = Ticker.objects.get(symbol=ticker)
+           
             # Delete prices within the specified date range
             Price.objects.filter(ticker=ticker_instance, date__range=[start_date, end_date]).delete()
             
@@ -137,7 +139,9 @@ def get_IG_prices(request):
             start_date = form.cleaned_data['start_date']
             end_date = form.cleaned_data['end_date']
             ticker_instance = Ticker.objects.get(symbol=ticker)
-                
+            
+            run_IG(ticker, start_date, end_date)
+            print("this is the start date", start_date)
             print("inside get IG prices")
             return redirect('tickers')  # Redirect to a success page or another view
     else:

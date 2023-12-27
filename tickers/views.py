@@ -32,8 +32,8 @@ def ticker(request, pk):
     for price in prices:
         localized_date = price.date.astimezone(user_timezone)
         prices_user_timezone.append({'id':price.id, 'date': localized_date, 'close': price.close})
-
-    context = {'ticker': ticker, 'prices': prices_user_timezone,
+        sorted_prices = sorted(prices_user_timezone, key=lambda x: x['date'], reverse=True)
+    context = {'ticker': ticker, 'prices': sorted_prices,
                'user_timezone':user_timezone}
     return render(request, 'tickers/ticker.html', context)
 

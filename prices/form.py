@@ -37,8 +37,11 @@ class ExportForm(forms.Form):
 class PriceRangeForm(forms.Form):
     # ticker = forms.ModelChoiceField(queryset=Price.objects.values_list('ticker', flat=True).distinct())
     ticker = forms.ModelChoiceField(queryset=Ticker.objects.all(), to_field_name='symbol')
-    start_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    end_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    start_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+    end_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+    
+    # start_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    # end_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     
     def __init__(self, *args, **kwargs):
         super(PriceRangeForm, self).__init__(*args, **kwargs)

@@ -83,8 +83,7 @@ def run_IG_mock():
 
     recordIGPrice(data['snapshot'], 100)
 
-
-def run_IG(ticker):
+def run_IG(ticker, start_date=None, end_date=None):
     
     """
     This function execute the IG account to fetch prices for a ticker using the history function.
@@ -97,15 +96,22 @@ def run_IG(ticker):
     
     #creating the time range for the fetch method
     current_time = datetime.now()
-    print(current_time)
     current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
     
     # current_time_str = "2023-12-22 13:00:00"
+    # 2023-12-26 02:19:00+00:00
 
-    current_time = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
-    next_hour = current_time + timedelta(hours=1)
-    start_time_rounded = current_time.replace(minute=0, second=0, microsecond=0)
-    end_time_rounded = next_hour.replace(minute=0, second=0, microsecond=0)
+    if start_date is not None:
+        print("first")
+        start_range = start_date
+        end_range = end_date
+    else:
+        start_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
+        end_range = current_time + timedelta(hours=1)
+    
+    
+    start_time_rounded = start_range.replace(minute=0, second=0, microsecond=0)
+    end_time_rounded = end_range.replace(minute=0, second=0, microsecond=0)
     target_date = start_time_rounded.strftime("%Y-%m-%d %H:%M:%S")
     start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
@@ -137,6 +143,7 @@ def run_IG(ticker):
             data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR",start_time_str, end_time_str )
             # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
             df = data['prices']
+            print("this is df>>>", df)
             recordIGPrice(ticker, df, 100)
 
         except:
