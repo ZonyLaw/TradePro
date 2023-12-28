@@ -9,6 +9,7 @@ Django==4.1
 django-timezone-field==6.1.0
 django-use-email-as-username==1.4.0
 feature-engine==1.6.2
+gunicorn==21.2.0
 idna==3.6
 joblib==1.3.2
 numpy==1.26.2
