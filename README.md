@@ -111,6 +111,8 @@ This epic is for all documents related stories and tasks to document the lifecyc
 - wsgi.py reference to the wrong app name
 - user specific timezone rendering needs {% load tz %} in html combined with filtering
 {{ price.date|timezone:user_timezone }}; backend needs a conversion process also.
+- heroku have a limit of 500mb storage
+
 
 #### Using email as login
 
