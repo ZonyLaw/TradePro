@@ -7,4 +7,4 @@ class PriceConfig(AppConfig):
 
     def ready(self):
         from prices import updater
-        updater.start()
+        # updater.start()
