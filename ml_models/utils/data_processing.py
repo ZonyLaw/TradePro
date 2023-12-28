@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import os
 from prices.models import Price
 from tickers.models import Ticker
 from datetime import datetime, timedelta

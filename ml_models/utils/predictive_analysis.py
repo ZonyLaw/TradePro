@@ -96,7 +96,7 @@ def model_run(X_live):
         f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
     profit_labels_map = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/label_map.pkl")
-    profit_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_train.csv")
+    profit_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_test.csv")
                        .columns
                        .to_list()
                        )

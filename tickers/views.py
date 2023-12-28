@@ -6,7 +6,6 @@ from users.models import Profile
 
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-import pytz
 
 # Create your views here.
 def tickers(request):
