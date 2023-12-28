@@ -1,5 +1,4 @@
 import json
-import os
 # from .utils.predictive_analysis import model_run
 
 def output_model_results():

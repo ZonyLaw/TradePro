@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .utils.predictive_analysis import standard_analysis, model_run
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters

@@ -3,10 +3,9 @@ import numpy as np
 import os
 from prices.models import Price
 from tickers.models import Ticker
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from scipy.signal import find_peaks
-import matplotlib.pyplot as plt
 
 
 def calc_moving_average(df, timeframe):

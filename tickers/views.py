@@ -1,20 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import Ticker
-from prices.models import Price
 from .form import TickerForm
 from users.models import Profile
 
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-import pytz
 
 # Create your views here.
 def tickers(request):
     tickers = Ticker.objects.all()
     context = {'tickers': tickers}
     return render(request, 'tickers/tickers.html', context)
-
-
 
 
 @login_required
