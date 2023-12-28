@@ -81,7 +81,7 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - pip3 install dj3-cloudinary-storage
 
-- pip3 freeze --local > requirements.txt
+- pip3 freeze > requirements.txt
 
 - creating the django admin
 
