@@ -139,10 +139,10 @@ def get_IG_prices(request):
             start_date = form.cleaned_data['start_date']
             end_date = form.cleaned_data['end_date']
             ticker_instance = Ticker.objects.get(symbol=ticker)
+            ticker_symbol = ticker_instance.symbol
             
-            run_IG(ticker, start_date, end_date)
-            print("this is the start date", start_date)
-            print("inside get IG prices")
+            print("ticker provide in view>>>", ticker)
+            run_IG(ticker_symbol, start_date, end_date)
             return redirect('tickers')  # Redirect to a success page or another view
     else:
         form = PriceRangeForm()

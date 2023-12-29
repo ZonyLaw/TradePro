@@ -18,6 +18,7 @@ def recordIGPrice(ticker, df, scaling_factor):
     This function is specifically designed for importing IG data into price DB.
     
     Args:
+    ticker (string): this is ticker symbol
     df (dataframe)): df containing open, close, high, low prices as bid and ask
     scaling_factor (integer): scale factor to turn the value into prices.
     """
@@ -34,7 +35,7 @@ def recordIGPrice(ticker, df, scaling_factor):
 
         # Original timestamp
         original_timestamp_str = row['snapshotTime']
-        print(original_timestamp_str)
+        print("Date for price recording:", original_timestamp_str)
 
         date_str, time_str = original_timestamp_str.split('-')
 
@@ -46,17 +47,27 @@ def recordIGPrice(ticker, df, scaling_factor):
 
         # Create a datetime object
         result_datetime = datetime(year, month, day, hour, minute, second, tzinfo=timezone.utc)
+        print("the result datatime:", result_datetime)
+        try:
+        
+            prices_exist = Price.objects.filter(ticker__symbol=ticker_instance.symbol, date=result_datetime).exists()
+            
+            print(prices_exist)
+            if not prices_exist:      
+                # Calculate the open price
+                new_price.date = result_datetime
+                new_price.open = np.average([row['openPrice']['ask'], row['openPrice']['bid']]) / scaling_factor
+                new_price.close = np.average([row['closePrice']['ask'], row['closePrice']['bid']]) / scaling_factor
+                new_price.high = np.average([row['highPrice']['ask'], row['highPrice']['bid']]) / scaling_factor
+                new_price.low = np.average([row['lowPrice']['ask'], row['lowPrice']['bid']]) / scaling_factor
+                new_price.volume = row['lastTradedVolume']
 
-        # Calculate the open price
-        new_price.date = result_datetime
-        new_price.open = np.average([row['openPrice']['ask'], row['openPrice']['bid']]) / scaling_factor
-        new_price.close = np.average([row['closePrice']['ask'], row['closePrice']['bid']]) / scaling_factor
-        new_price.high = np.average([row['highPrice']['ask'], row['highPrice']['bid']]) / scaling_factor
-        new_price.low = np.average([row['lowPrice']['ask'], row['lowPrice']['bid']]) / scaling_factor
-        new_price.volume = row['lastTradedVolume']
-
-        new_price.save()
-    
+                new_price.save()
+            else:
+                print("Already exist so price not updated for ", result_datetime)
+        except Exception as e:
+            print("Fail to record the price")
+            print(f"An unexpected error occurred: {e}")
 
 def run_IG_mock():
     
@@ -93,59 +104,51 @@ def run_IG(ticker, start_date=None, end_date=None):
     ticker (string): ticker symbol (epic)
     
     """
-    
+    #this is to access the name of the ticker interested
+    ticker_definition = {"USDJPY":"CS.D.USDJPY.TODAY.IP"}
     #creating the time range for the fetch method
     current_time = datetime.now()
     current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
     
-    # current_time_str = "2023-12-22 13:00:00"
+    # current_time_str = "2023-12-29 14:50:00+00"
     # 2023-12-26 02:19:00+00:00
 
     if start_date is not None:
-        print("first")
+        print("Using range")
         start_range = start_date
         end_range = end_date
     else:
-        start_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
-        end_range = current_time + timedelta(hours=1)
+        print("Using cron auto get price")
+        start_range = current_time - timedelta(hours=1)
+        end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
     
     
     start_time_rounded = start_range.replace(minute=0, second=0, microsecond=0)
     end_time_rounded = end_range.replace(minute=0, second=0, microsecond=0)
-    target_date = start_time_rounded.strftime("%Y-%m-%d %H:%M:%S")
     start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     print(start_time_rounded)
     print(end_time_rounded)
-
-    # Check if prices exist for the target date
-    # note the time format is different from the range date format
-    prices_exist = Price.objects.filter(date=target_date).exists()
-    print(prices_exist)
+   
     
-    if not prices_exist:
-        
-        #this is to access the name of the ticker interested
-        ticker_definition = {ticker:"CS.D.USDJPY.TODAY.IP"}
-        
-        #autheticating IG account and creating session    
-        username = os.environ.get('IG_USERNAME')
-        password = os.environ.get('IG_PASSWORD')
-        api_key = os.environ.get('IG_API_KEY')
-        acc_type = "LIVE"
-        
-        ig_service = IGService(username, password, api_key, acc_type)
-        ig_service.create_session()
-        
-        try:
-            #fetching data from IG account
-            print("get prices")
-            data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR",start_time_str, end_time_str )
-            # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
-            df = data['prices']
-            print("this is df>>>", df)
-            recordIGPrice(ticker, df, 100)
-
-        except:
-            print("failed to retrieve data")
-            # run_IG_mock()
+    #autheticating IG account and creating session    
+    username = os.environ.get('IG_USERNAME')
+    password = os.environ.get('IG_PASSWORD')
+    api_key = os.environ.get('IG_API_KEY')
+    acc_type = "LIVE"
+    
+    ig_service = IGService(username, password, api_key, acc_type)
+    ig_service.create_session()
+    
+    try:
+        #fetching data from IG account
+        print("Starting the fetch")
+        data = ig_service.fetch_historical_prices_by_epic_and_date_range(f"{ticker_definition[ticker]}", "HOUR",start_time_str, end_time_str )
+        # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
+        df = data['prices']
+        print("This is df retrieved>>>", df)
+        ig_service.logout()
+        recordIGPrice(ticker, df, 100)
+    
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
