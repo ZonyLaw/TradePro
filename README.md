@@ -105,13 +105,15 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - python manage.py migrate your_app_name zero.....also delete the migration you don't want
 
-### challenges of connecting Heroku
+### challenges in creating this app
 
 - the key wasn't set up correctly and this throw an error
 - wsgi.py reference to the wrong app name
 - user specific timezone rendering needs {% load tz %} in html combined with filtering
 {{ price.date|timezone:user_timezone }}; backend needs a conversion process also.
-- heroku have a limit of 500mb storage
+- heroku have a limit of 500mb storage so remove unneccesary packages
+- commented out the cloudinary setting as there seem to be issue with staticfile.json. This may be related to version issue or I have not set the cloudinary properly.
+- cst refer to wrong reference to dictionary
 
 
 #### Using email as login
