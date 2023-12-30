@@ -13,8 +13,17 @@ def ml_predictions(request):
     """
     # predictions={'fist':['12','23'],'second':['12','23']}
     
-    pred_reverse, pred_continue = standard_analysis()
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue}
+    pred_reverse, pred_continue, X_live_reverse = standard_analysis()
+   
+    #this use X_live data to get current directions but probably better to use the price table in the future
+    if  X_live_reverse['open_close_diff_1'].iloc[0] == 0:
+        trade = "Neutral / Doji"
+    elif  X_live_reverse['open_close_diff_1'].iloc[0] > 0:
+        trade = "Buy"
+    else:
+        trade = "Sell"
+    
+    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 

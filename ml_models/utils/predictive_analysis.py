@@ -126,4 +126,4 @@ def standard_analysis():
     pred_reverse = model_run( X_live_reverse )
     pred_continue = model_run( X_live_continue )
     
-    return pred_reverse, pred_continue
+    return pred_reverse, pred_continue, X_live_reverse
