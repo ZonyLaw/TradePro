@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.forms import UserCreationForm
 from custom_user.models import User
 from users.models import Profile
 
@@ -21,6 +22,7 @@ def userProfile(request, pk):
 
 
 def loginUser(request):
+    page = 'login'
     
     if request.user.is_authenticated:
         return redirect('profiles')
@@ -42,8 +44,15 @@ def loginUser(request):
         else:
             print('Email or passwrod is incorrect')
     
-    return render(request, 'users/login_signup.html')
+    return render(request, 'users/login_register.html')
 
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+def registerUser(request):
+    page = 'register'
+    form = UserCreationForm()
+    context = {'page': page, 'form':form}
+    return render(request, 'users/login_register.html', context)
+    
