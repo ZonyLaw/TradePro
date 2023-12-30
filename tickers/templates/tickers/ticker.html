@@ -8,9 +8,13 @@
 {% for price in prices %}
   <table>
     <tr>
-    <td> Date: {{ price.date|timezone:user_timezone }} - Close price: {{price.close }} </td>
-    <td> <a href = "{% url 'update-price' price.id %}" >Update Price </a> </td>
-    <td> <a href = "{% url 'delete-price' price.id %}" >Delete Price </a> </td>
+    <td> Date: {{ price.date|timezone:user_timezone }} </td>
+    <td> Open price: {{price.open }} - Close price: {{price.close }} </td>
+    <td> Trade: {{price.trade }} </td>
+    {% if request.user.is_superuser %}
+      <td> <a href = "{% url 'update-price' price.id %}" >Update Price </a> </td>
+      <td> <a href = "{% url 'delete-price' price.id %}" >Delete Price </a> </td>
+    {% endif %}
     </tr>
   </table>
 

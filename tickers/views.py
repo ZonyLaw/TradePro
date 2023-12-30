@@ -27,8 +27,11 @@ def ticker(request, pk):
     prices_user_timezone = []
     for price in prices:
         localized_date = price.date.astimezone(user_timezone)
-        prices_user_timezone.append({'id':price.id, 'date': localized_date, 'close': price.close})
+        prices_user_timezone.append({'id':price.id, 'date': localized_date, 
+                                     'open': price.open , 'close': price.close,
+                                     'trade': 'Buy' if price.open - price.close > 0 else 'Sell'})
         sorted_prices = sorted(prices_user_timezone, key=lambda x: x['date'], reverse=True)
+    
     context = {'ticker': ticker, 'prices': sorted_prices,
                'user_timezone':user_timezone}
     return render(request, 'tickers/ticker.html', context)
