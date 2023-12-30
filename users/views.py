@@ -63,8 +63,8 @@ def registerUser(request):
             user.email = user.email.lower()
             user.save()
             
-            # messages.success()
-            # login(request, user)
+            messages.success(request, "User successfully sign up.")
+            login(request, user)
             
     context = {'page': page, 'form':form}
     return render(request, 'users/login_register.html', context)
