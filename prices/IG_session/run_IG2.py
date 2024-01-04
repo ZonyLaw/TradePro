@@ -7,6 +7,7 @@ from django.utils import timezone
 from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
+from django.db.models import Count
 
 if os.path.isfile('env.py'):
     import env
@@ -64,10 +65,30 @@ def recordIGPrice(ticker, df, scaling_factor):
 
                 new_price.save()
             else:
-                print("Already exist so price not updated for ", result_datetime)
+                price_instance = Price.objects.get(ticker__symbol=ticker_instance.symbol, date=result_datetime)
+                print(price_instance)
+                price_instance.open = np.average([row['openPrice']['ask'], row['openPrice']['bid']]) / scaling_factor
+                price_instance.close = np.average([row['closePrice']['ask'], row['closePrice']['bid']]) / scaling_factor
+                price_instance.high = np.average([row['highPrice']['ask'], row['highPrice']['bid']]) / scaling_factor
+                price_instance.low = np.average([row['lowPrice']['ask'], row['lowPrice']['bid']]) / scaling_factor
+                price_instance.volume = row['lastTradedVolume']
+                price_instance.save()
+                print("Already exist so no new entry created", result_datetime)
         except Exception as e:
             print("Fail to record the price")
             print(f"An unexpected error occurred: {e}")
+            
+
+    # Assuming 'date' is the field you want to check for duplicates
+    duplicate_dates = Price.objects.values('date').annotate(count=Count('date')).filter(count__gt=1)
+    print(duplicate_dates)
+    for duplicate in duplicate_dates:
+        # Keep one instance and delete the others
+        duplicate_instances = Price.objects.filter(date=duplicate['date'])
+        instance_to_keep = duplicate_instances.order_by('id').first()
+        duplicate_instances.exclude(id=instance_to_keep.id).delete()
+
+
 
 def run_IG_mock():
     
