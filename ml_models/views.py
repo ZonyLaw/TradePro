@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .utils.predictive_analysis import standard_analysis, model_run
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters
+from prices.models import Price
+from tickers.models import Ticker
 
 
 # Create your views here.
@@ -14,16 +16,22 @@ def ml_predictions(request):
     # predictions={'fist':['12','23'],'second':['12','23']}
     
     pred_reverse, pred_continue, X_live_reverse = standard_analysis()
+    
+    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
+    prices = Price.objects.filter(ticker=ticker_instance)
+    sorted_prices = prices.order_by('date')
+    last_price = sorted_prices.last()
+    entry_price = last_price.close + 0.4
    
     #this use X_live data to get current directions but probably better to use the price table in the future
     if  X_live_reverse['open_close_diff_1'].iloc[0] == 0:
         trade = "Neutral / Doji"
-    elif  X_live_reverse['open_close_diff_1'].iloc[0] > 0:
+    elif  X_live_reverse['open_close_diff_1'].iloc[0] < 0:
         trade = "Buy"
     else:
         trade = "Sell"
     
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade}
+    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade, 'last_price':last_price, 'entry_price':entry_price}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 

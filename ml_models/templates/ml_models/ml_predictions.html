@@ -2,8 +2,10 @@
 {% block content %}
 
 <main>
-  <p><big>Current Trade direction: <b> {{trade}} </b></big></p>
-  <p>The analysis below show what are the probabilities if trade directions reverse or continue based on current trade direction.</p>
+  <p><big>Current Candle Stick direction: <b> {{trade}} </b></big></p>
+  <p>Current price: {{last_price.close}}</p>
+  <p>Potential Entry point: {{entry_price}} </p>
+  <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on current trade direction.</p>
   <h1>Model predictions for reverse</h1>
 
   <table>
