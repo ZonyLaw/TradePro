@@ -3,7 +3,6 @@ import joblib
 import pandas as pd
 from pathlib import Path
 from .data_processing import scenario_reverse, scenario_continue
-import csv
 
 
 def load_file(file_path):
@@ -91,7 +90,7 @@ def model_run(X_live):
     # Set the current working directory to the parent directory
     os.chdir(parent_directory)
 
-    version = 'v4'
+    version = 'v4-new_py'
     profit_pip = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
     profit_labels_map = load_file(

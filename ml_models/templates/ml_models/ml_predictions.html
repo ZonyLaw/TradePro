@@ -2,10 +2,16 @@
 {% block content %}
 
 <main>
-  <p><big>Current Candle Stick direction: <b> {{trade}} </b></big></p>
-  <p>Current price: {{last_price.close}}</p>
-  <p>Potential Entry point: {{entry_price}} </p>
-  <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on current trade direction.</p>
+  <p><big>Current 1 hr Candle Stick size: {{candle_size.one}}, direction: <b> {{trade.one}} </b> </big></p>
+  <p><big>Current 4 hr Candle Stick size: {{candle_size.four}}, direction: <b> {{trade.four}} </b> </big></p>
+  <p>Last open price 1 hr ago: £{{last_price.open}} </p>
+  <p>Last open price 4 hrs ago: £{{fourth_last_price.open}}. </p>
+  <p>Last close price 1hr ago: £{{last_price.close}}</p>
+  
+  <p>The model is only about 60 - 70% accurate predicting directions for a four hour timeframe.</p>
+  <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on previous trade direction.</p>
+  <p>Should there be any major news or events, the model results could be invalidated!%.</p>
+  <hr>
   <h1>Model predictions for reverse</h1>
 
   <table>

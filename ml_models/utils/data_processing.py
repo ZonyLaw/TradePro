@@ -77,7 +77,7 @@ def profit_calc(df, col, lag):
     """
     
     df[f'lagged_{col}_{lag}'] = df[col].shift(lag)
-    df[f'pl_{col}_{lag}_hr'] = df[f'lagged_{col}_{lag}'] - df[col]
+    df[f'pl_{col}_{lag}_hr'] = df[col] - df[f'lagged_{col}_{lag}']
     
     #check if it should be a buy or sell given if entry was made at the point of date and time.
     buy_condition  = (df[f'pl_{col}_{lag}_hr'] > 0)
@@ -373,7 +373,7 @@ def scenario_builder(df, close_adjustment, scenario):
 
 def stats_df_gen(df):
     """
-    This is a general stats for generating stats based on the scneario prices.
+    This is a function for generating general stats based on the scneario prices.
     
 
     Args:

@@ -4,6 +4,8 @@ from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters
 from prices.models import Price
 from tickers.models import Ticker
+import pandas as pd
+from .utils.utils import trade_direction
 
 
 # Create your views here.
@@ -19,19 +21,34 @@ def ml_predictions(request):
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
-    sorted_prices = prices.order_by('date')
-    last_price = sorted_prices.last()
-    entry_price = last_price.close + 0.4
-   
-    #this use X_live data to get current directions but probably better to use the price table in the future
-    if  X_live_reverse['open_close_diff_1'].iloc[0] == 0:
-        trade = "Neutral / Doji"
-    elif  X_live_reverse['open_close_diff_1'].iloc[0] < 0:
-        trade = "Buy"
-    else:
-        trade = "Sell"
     
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade, 'last_price':last_price, 'entry_price':entry_price}
+    #sort prices table in descending to get the latest price on top
+    sorted_prices = prices.order_by('-date')
+
+    #get the latest price    
+    last_price = sorted_prices[0]
+
+    #get the price 4 hr ago but not sure how useful it will be yet
+    last_four_prices = sorted_prices[:5]
+    prices_df = pd.DataFrame(list(last_four_prices.values()))
+
+    # Access prices using index, note that len() is 'index + 1'
+    if len(prices_df) >= 5:
+        fourth_last_price = prices_df.loc[4]
+        print(prices_df)
+    else:
+        fourth_last_price = None
+    
+    trade_diff_1hr = last_price.close - last_price.open
+    trade_diff_4hr = last_price.close - fourth_last_price.open
+    
+    trade = {"one" :trade_direction(trade_diff_1hr),
+    "four": trade_direction(trade_diff_4hr)}
+    
+    candle_size = {"one" :trade_diff_1hr,
+    "four": trade_diff_4hr}
+      
+    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade, 'candle_size': candle_size, 'last_price':last_price, 'fourth_last_price':fourth_last_price}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 
