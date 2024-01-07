@@ -57,8 +57,8 @@ def import_prices_from_csv(uploaded_file):
                 print(f"Price {'created' if created else 'updated'} for date {date_obj}")
 
         os.remove(file_path)
-    except:
-        print("error")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
     return HttpResponse("CSV import completed.")
 

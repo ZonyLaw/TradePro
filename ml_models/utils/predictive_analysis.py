@@ -1,6 +1,7 @@
 import os
 import joblib
 import pandas as pd
+import numpy as np
 from pathlib import Path
 from .data_processing import scenario_reverse, scenario_continue, model_test
 from feature_engine.discretisation import EqualFrequencyDiscretiser
@@ -43,12 +44,22 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
         'actual_labels': y_actual,
         'predicted_labels': model_prediction_labels,
     }
+
+    # Create a binary array based on the condition (value < 4)
+    binary_y_actual = (y_actual < 4).astype(int)
+    binary_mpl = (model_prediction_labels < 4).astype(int)
     
-    
+    comparison_results2 = {
+        'actual_labels': binary_y_actual,
+        'predicted_labels': binary_mpl,
+    }
     
     # Compare predictions with actual outcomes
-    accuracy = calculate_accuracy(model_prediction_labels, y_actual)
-    print("comparisoin>>>>>>>>>>>>>>>>>>>>>>>", comparison_results)
+    # accuracy = calculate_accuracy(model_prediction_labels, y_actual)
+    # print("comparisoin>>>>>>>>>>>>>>>>>>>>>>>", comparison_results)
+    # print("Accuracy", accuracy)
+    accuracy = calculate_accuracy(binary_mpl, binary_y_actual)
+    print("comparisoin>>>>>>>>>>>>>>>>>>>>>>>", comparison_results2)
     print("Accuracy", accuracy)
     
     
@@ -75,8 +86,8 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
     
     result_df.rename(columns = new_label, inplace = True)
     
-    print("predict profit model>>>>", model_prediction_proba[0,1])
-    print("result_dict.....", result_dict)
+    # print("predict profit model>>>>", model_prediction_proba[0,1])
+    # print("result_dict.....", result_dict)
     return (result_dict)
 
 
@@ -149,6 +160,7 @@ def standard_analysis():
     
     pred_reverse = model_run( X_live_reverse )
     pred_continue = model_run( X_live_continue )
+    print("historical input testing starts")
     pred_historical = model_run(X_live_historical)
     # pred_reverse, acc_rev = model_run( X_live_reverse )
     # pred_continue, acc_cont = model_run( X_live_continue )

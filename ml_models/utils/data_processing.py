@@ -510,6 +510,6 @@ def model_test():
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
 
-    historical_df = stats_df_gen(df, 30)
+    historical_df = stats_df_gen(df, 90)
    
     return (historical_df)
