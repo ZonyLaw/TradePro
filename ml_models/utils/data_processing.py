@@ -371,13 +371,14 @@ def scenario_builder(df, close_adjustment, scenario):
     return df
 
 
-def stats_df_gen(df):
+def stats_df_gen(df, subset_rows):
     """
     This is a function for generating general stats based on the scneario prices.
     
 
     Args:
         df (dataframe): this is expecting prices for the scenario to generate the stats
+        subset_rows (integer): specify the number of rows to retain in the subset dataframe
 
     Returns:
         dataframe: Returns the full stats dataframe based on the 
@@ -437,28 +438,7 @@ def stats_df_gen(df):
     print("data>>>>",last_row_df)
     merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\merged_df-4.csv", index=False)
     
-    X_live = pd.DataFrame([], index=[0])
-    X_live.loc[0, 'open_close_diff_1'] = last_row_df['open_close_diff_1'].iloc[0]
-    X_live.loc[0, 'open_close_diff1_lag1'] = last_row_df['open_close_diff1_lag1'].iloc[0]
-    X_live.loc[0, 'close_ma50_1_diff_1'] = last_row_df['close_ma50_1_diff_1'].iloc[0]
-    X_live.loc[0, 'bb_status_1'] = last_row_df['bb_status_1'].iloc[0]
-    X_live.loc[0, 'up_bb20_low_bb20_diff_1'] = last_row_df['up_bb20_low_bb20_diff_1'].iloc[0]
-    X_live.loc[0, 'trend_strength_1'] = last_row_df['trend_strength_1'].iloc[0]
-    X_live.loc[0, 'lagged_close_1'] = last_row_df['lagged_close_1'].iloc[0]
-    X_live.loc[0, 'hr'] = last_row_df['hr'].iloc[0]
-    X_live.loc[0, 'up_bb20_low_bb20_diff_4'] = last_row_df['up_bb20_low_bb20_diff_4'].iloc[0]
-    X_live.loc[0, 'ma50_4_ma100_4_diff_4'] = last_row_df['ma50_4_ma100_4_diff_4'].iloc[0]
-    X_live.loc[0, 'ma20_4_ma50_4_diff_4'] = last_row_df['ma20_4_ma50_4_diff_4'].iloc[0]
-    X_live.loc[0, 'close_ma100_4_diff_4'] = last_row_df['close_ma100_4_diff_4'].iloc[0]
-    
-    #retain column and then take the last two.
-    subset_df = merged_df[['open_close_diff_1', 'open_close_diff1_lag1','close_ma50_1_diff_1',
-               'bb_status_1','up_bb20_low_bb20_diff_1','trend_strength_1',
-               'lagged_close_1','hr','up_bb20_low_bb20_diff_4', 
-               'ma50_4_ma100_4_diff_4', 'ma20_4_ma50_4_diff_4',
-               'close_ma100_4_diff_4']]
-    # print(test.tail(2))
-    X_live = subset_df.tail(2)
+    X_live = merged_df.tail(subset_rows)
     # print("xlive>>>>>>>", X_live)
     
     return X_live
@@ -479,10 +459,10 @@ def scenario_reverse():
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
     df = scenario_builder(df, 0.2, "reverse")
-    reverse_df_2pips = stats_df_gen(df)
+    reverse_df_2pips = stats_df_gen(df, 2)
     
     df = scenario_builder(df, 0.4, "reverse")
-    reverse_df_4pips = stats_df_gen(df)
+    reverse_df_4pips = stats_df_gen(df, 2)
     
     last_row = reverse_df_4pips.tail(1)
     combined_df = pd.concat([reverse_df_2pips, last_row])
@@ -501,14 +481,14 @@ def scenario_continue():
     
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
-    
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
     df = scenario_builder(df, 0.2, "continue")
-    continue_df_2pips = stats_df_gen(df)
+    continue_df_2pips = stats_df_gen(df, 2)
+    print("for Xlive data---------", continue_df_2pips)
     
     df = scenario_builder(df, 0.4, "continue")
-    continue_df_4pips = stats_df_gen(df)
+    continue_df_4pips = stats_df_gen(df, 2)
     
     last_row = continue_df_4pips.tail(1)
     combined_df = pd.concat([continue_df_2pips, last_row])
@@ -516,3 +496,20 @@ def scenario_continue():
     return (combined_df)
    
 
+def model_test():
+    """
+    This function is to generate a continue scneario based on continuing trend.
+
+    Returns:
+        dataframe: contains the new prices for the next row creating the scenario 
+        for the next hour.
+    """
+    
+    ticker = Ticker.objects.get(symbol="USDJPY")
+    df = priceDB_to_df(ticker)
+    #build the reverse candle stick scenario
+    #the base scenario is retained for the first dataframe
+
+    historical_df = stats_df_gen(df, 30)
+   
+    return (historical_df)
