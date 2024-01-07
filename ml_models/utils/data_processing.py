@@ -347,7 +347,7 @@ def scenario_builder(df, close_adjustment, scenario):
         determine the size of the candle next hour candle stick.
 
     Returns:
-        dataframe: new dataframe withe extra row of forecast price for the next hour.
+        dataframe: new dataframe with extra row of forecast price for the next hour.
     """
     # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_start-4.csv", index=False)
     
