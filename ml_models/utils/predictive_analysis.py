@@ -29,65 +29,46 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
    
     # from live data, subset features related to this pipeline
     X_live_subset = X_live.filter(model_feature)
-    print(X_live_subset)
+    
     # predict the probability
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
     
-    
-    # Transform predicted probabilities to labels using label mapping
-    # model_prediction_labels = model_label_map.inverse_transform(model_prediction_proba.argmax(axis=1))
-    
+    #gets the maximum probability prediction categorical label
     model_prediction_labels = model_prediction_proba.argmax(axis=1)
 
-    # Compare predictions with actual outcomes
-    comparison_results = {
-        'actual_labels': y_actual,
-        'predicted_labels': model_prediction_labels,
-    }
-
-    # Create a binary array based on the condition (value < 4)
+    # Create a binary array based on the categorical value where value < 4 is a sell which gives True (1)
+    # Convert both actual and prediction into binary numbers.
     binary_y_actual = (y_actual < 4).astype(int)
-    binary_mpl = (model_prediction_labels < 4).astype(int)
+    binary_prediction= (model_prediction_labels < 4).astype(int)
     
-    comparison_results2 = {
-        'actual_labels': binary_y_actual,
-        'predicted_labels': binary_mpl,
-    }
-    
-    # Compare predictions with actual outcomes
-    # accuracy = calculate_accuracy(model_prediction_labels, y_actual)
-    # print("comparisoin>>>>>>>>>>>>>>>>>>>>>>>", comparison_results)
-    # print("Accuracy", accuracy)
-    accuracy = calculate_accuracy(binary_mpl, binary_y_actual)
-    print("comparisoin>>>>>>>>>>>>>>>>>>>>>>>", comparison_results2)
+    # Calculate the accuracy between the prediction and actual
+    accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
+
     print("Accuracy", accuracy)
     
-    
     result_dict = {}
-    #First loop goes through the probability profit/loss categories
-    #Second loop goes through the array size of the probability dictionary
-    for i in range(6):
-            result_dict.update({
+    #First loop goes through the probability profit/loss categories label, hard code range!
+    #Second loop goes through the array containing the probability dictionary
+    result_dict.update({
+        "Predicted Profit": [model_label_map[model_prediction_labels[j]]
+                        for j in range(model_prediction_labels.shape[0])
+                    ]
+        }
+        )
+    
+    for i in range(len(model_label_map)):
+        
+                result_dict.update({
                 f"{model_label_map[i]}": [
                     round(model_prediction_proba[j, i] * 100, 2) 
                     for j in range(model_prediction_proba.shape[0])
                 ]
             }
             )
-
-    #delete
-    result_df = pd.DataFrame(data= model_prediction_proba)
-    new_label = {result_df.columns.values[0]:f'{model_label_map[0]}',
-                 result_df.columns.values[1]:f'{model_label_map[1]}',
-                 result_df.columns.values[2]:f'{model_label_map[2]}',
-                 result_df.columns.values[3]:f'{model_label_map[3]}',
-                 result_df.columns.values[4]:f'{model_label_map[4]}',
-                 result_df.columns.values[5]:f'{model_label_map[5]}'}
+                
     
-    result_df.rename(columns = new_label, inplace = True)
-    
-    # print("predict profit model>>>>", model_prediction_proba[0,1])
-    # print("result_dict.....", result_dict)
+    print("prediction>>>>>>>", model_prediction_labels[0])
+    print(model_label_map[1])
     return (result_dict)
 
 

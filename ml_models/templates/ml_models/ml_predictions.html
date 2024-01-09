@@ -2,11 +2,11 @@
 {% block content %}
 
 <main>
-  <p><big>Current 1 hr Candle Stick size: {{candle_size.one}}, direction: <b> {{trade.one}} </b> </big></p>
-  <p><big>Current 4 hr Candle Stick size: {{candle_size.four}}, direction: <b> {{trade.four}} </b> </big></p>
-  <p>Last open price 1 hr ago: £{{last_price.open}} </p>
-  <p>Last open price 4 hrs ago: £{{fourth_last_price.open}}. </p>
-  <p>Last close price 1hr ago: £{{last_price.close}}</p>
+  <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
+  <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+  <p>Last open price 1 hr ago: £{{ last_price.open|floatformat:2 }} </p>
+  <p>Last close price 1hr ago: £{{ last_price.close|floatformat:2 }}</p>
+  <p>Last open price 4 hrs ago: £{{ fourth_last_price.open|floatformat:2 }}. </p>
   
   <p>The model is only about 60 - 70% accurate predicting directions for a four hour timeframe.</p>
   <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on previous trade direction.</p>
@@ -22,12 +22,22 @@
       <th>Reversed Proba (40 pips)</th>
     </tr>
     
+
     {% for category, proba in pred_reverse.items %}
       <tr>
         <td>{{ category }}</td>
-        <td>{{ proba.0 }}%</td>
-        <td>{{ proba.1 }}%</td>
-        <td>{{ proba.2 }}%</td>
+        {% if forloop.first %}
+        <td><b>{{ proba.0 }}</b></td>
+        <td><b>{{ proba.1 }}</b></td>
+        <td><b>{{ proba.2 }}</b></td>
+        <tr>
+          <td colspan="4"><hr></td>
+        </tr>
+        {% else %}
+          <td>{{ proba.0 }}%</td>
+          <td>{{ proba.1 }}%</td>
+          <td>{{ proba.2 }}%</td>
+        {% endif %}
       </tr>
     
     {% endfor %}
@@ -47,11 +57,20 @@
     {% for category, proba in pred_continue.items %}
       <tr>
         <td>{{ category }}</td>
-        <td>{{ proba.0 }}%</td>
-        <td>{{ proba.1 }}%</td>
-        <td>{{ proba.2 }}%</td>
+        {% if forloop.first %}
+          <td><b>{{ proba.0 }}</b></td>
+          <td><b>{{ proba.1 }}</b></td>
+          <td><b>{{ proba.2 }}</b></td>
+          <tr>
+            <td colspan="4"><hr></td>
+          </tr>
+        {% else %}
+          <td>{{ proba.0 }}%</td>
+          <td>{{ proba.1 }}%</td>
+          <td>{{ proba.2 }}%</td>
+        {% endif %}
       </tr>
-    
+  
     {% endfor %}
   </table> 
 
