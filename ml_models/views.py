@@ -17,7 +17,8 @@ def ml_predictions(request):
     """
     # predictions={'fist':['12','23'],'second':['12','23']}
     
-    pred_reverse, pred_continue, X_live_reverse = standard_analysis()
+    pred_reverse, pred_continue, pred_historical = standard_analysis()
+    print(pred_historical)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -48,7 +49,7 @@ def ml_predictions(request):
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
       
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'trade':trade, 'candle_size': candle_size, 'last_price':last_price, 'fourth_last_price':fourth_last_price}
+    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'trade':trade, 'candle_size': candle_size, 'last_price':last_price, 'fourth_last_price':fourth_last_price}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 

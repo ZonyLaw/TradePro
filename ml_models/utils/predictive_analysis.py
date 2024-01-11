@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import numpy as np
 from pathlib import Path
-from .data_processing import scenario_reverse, scenario_continue, model_test
+from .data_processing import scenario_reverse, scenario_continue, historical_record
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 
 
@@ -32,30 +32,25 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
     
     # predict the probability
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    
+    print("probability",model_prediction_proba)
     #gets the maximum probability prediction categorical label
     model_prediction_labels = model_prediction_proba.argmax(axis=1)
-
-    # Create a binary array based on the categorical value where value < 4 is a sell which gives True (1)
+    print("here are the label",model_prediction_labels)
+    # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
     # Convert both actual and prediction into binary numbers.
-    binary_y_actual = (y_actual < 4).astype(int)
-    binary_prediction= (model_prediction_labels < 4).astype(int)
+    binary_y_actual = (y_actual < 3).astype(int)
+    binary_prediction= (model_prediction_labels < 3).astype(int)
     
     # Calculate the accuracy between the prediction and actual
     accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
 
     print("Accuracy", accuracy)
     
-    result_dict = {}
-    #First loop goes through the probability profit/loss categories label, hard code range!
-    #Second loop goes through the array containing the probability dictionary
-    result_dict.update({
-        "Predicted Profit": [model_label_map[model_prediction_labels[j]]
-                        for j in range(model_prediction_labels.shape[0])
-                    ]
-        }
-        )
+    result_dict = {} 
+ 
     
+    #First loop goes through the probability profit/loss categories label
+    #Second loop goes through the array containing the probability dictionary
     for i in range(len(model_label_map)):
         
                 result_dict.update({
@@ -65,10 +60,17 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
                 ]
             }
             )
-                
     
-    print("prediction>>>>>>>", model_prediction_labels[0])
-    print(model_label_map[1])
+    result_dict["Potential Trade"]=[]
+    for j in range(model_prediction_labels.shape[0]):
+        direction = "Sell target: " if model_prediction_labels[j] < 3 else "Buy target: "
+        profit_label = model_label_map[model_prediction_labels[j]]
+        result_dict["Potential Trade"].append(
+            f"{direction} {profit_label}"
+        )
+    
+    # print("prediction>>>>>>>", model_prediction_labels[0])
+    # print(model_label_map[1])
     return (result_dict)
 
 
@@ -137,11 +139,10 @@ def standard_analysis():
     
     X_live_reverse = scenario_reverse()
     X_live_continue = scenario_continue()
-    X_live_historical = model_test()
+    X_live_historical = historical_record(4)
     
     pred_reverse = model_run( X_live_reverse )
     pred_continue = model_run( X_live_continue )
-    print("historical input testing starts")
     pred_historical = model_run(X_live_historical)
     # pred_reverse, acc_rev = model_run( X_live_reverse )
     # pred_continue, acc_cont = model_run( X_live_continue )
@@ -149,7 +150,7 @@ def standard_analysis():
     # print("accuracy reverse", acc_rev)
     # print("accuracy continue", acc_cont)
     
-    return pred_reverse, pred_continue, X_live_reverse
+    return pred_reverse, pred_continue, pred_historical
 
 
 def calculate_accuracy(predictions, y_actual):

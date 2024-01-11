@@ -496,7 +496,7 @@ def scenario_continue():
     return (combined_df)
    
 
-def model_test():
+def historical_record(num_rows):
     """
     This function is to generate a continue scneario based on continuing trend.
 
@@ -510,6 +510,6 @@ def model_test():
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
 
-    historical_df = stats_df_gen(df, 90)
+    historical_df = stats_df_gen(df, num_rows)
    
     return (historical_df)

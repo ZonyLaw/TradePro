@@ -6,13 +6,11 @@
   <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
   <p>Last open price 1 hr ago: £{{ last_price.open|floatformat:2 }} </p>
   <p>Last close price 1hr ago: £{{ last_price.close|floatformat:2 }}</p>
-  <p>Last open price 4 hrs ago: £{{ fourth_last_price.open|floatformat:2 }}. </p>
+  <p>Last open price 4 hrs ago: £{{ fourth_last_price.open|floatformat:2 }} </p>
   
-  <p>The model is only about 60 - 70% accurate predicting directions for a four hour timeframe.</p>
-  <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on previous trade direction.</p>
-  <p>Should there be any major news or events, the model results could be invalidated!%.</p>
   <hr>
   <h1>Model predictions for reverse</h1>
+  <p> Current candle direction <b>{{trade.one}}</b> </p>
 
   <table>
     <tr>
@@ -26,26 +24,29 @@
     {% for category, proba in pred_reverse.items %}
       <tr>
         <td>{{ category }}</td>
-        {% if forloop.first %}
-        <td><b>{{ proba.0 }}</b></td>
-        <td><b>{{ proba.1 }}</b></td>
-        <td><b>{{ proba.2 }}</b></td>
-        <tr>
-          <td colspan="4"><hr></td>
-        </tr>
-        {% else %}
+        {% if not forloop.last %}
           <td>{{ proba.0 }}%</td>
           <td>{{ proba.1 }}%</td>
           <td>{{ proba.2 }}%</td>
+        {% else %}
+          <td>{{ proba.0 }}</td>
+          <td>{{ proba.1 }}</td>
+          <td>{{ proba.2 }}</td>
         {% endif %}
       </tr>
+
+      {% if forloop.revcounter0 == 1 %}
+        <tr>
+          <td colspan="4"><hr></td>
+        </tr>
+      {% endif %}
     
     {% endfor %}
   </table> 
 
 
   <h1>Model predictions for continue</h1>
-
+  <p> Current candle direction <b>{{trade.one}}</b> </p>
   <table>
     <tr>
       <th>Profit/Loss</th>
@@ -55,24 +56,71 @@
     </tr>
     
     {% for category, proba in pred_continue.items %}
-      <tr>
+     <tr>
         <td>{{ category }}</td>
-        {% if forloop.first %}
-          <td><b>{{ proba.0 }}</b></td>
-          <td><b>{{ proba.1 }}</b></td>
-          <td><b>{{ proba.2 }}</b></td>
-          <tr>
-            <td colspan="4"><hr></td>
-          </tr>
-        {% else %}
+        {% if not forloop.last %}
           <td>{{ proba.0 }}%</td>
           <td>{{ proba.1 }}%</td>
           <td>{{ proba.2 }}%</td>
+        {% else %}
+          <td>{{ proba.0 }}</td>
+          <td>{{ proba.1 }}</td>
+          <td>{{ proba.2 }}</td>
         {% endif %}
       </tr>
-  
+      
+      {% if forloop.revcounter0 == 1 %}
+        <tr>
+          <td colspan="4"><hr></td>
+        </tr>
+      {% endif %}
+    
     {% endfor %}
-  </table> 
+
+    </table> 
+    
+    <h1>Historical prediction for the last 4 hours</h1>
+    <p> Current candle direction <b>{{trade.one}}</b> </p>
+    <table>
+      <tr>
+        <th>Profit/Loss</th>
+        <th>4 hr ago</th>
+        <th>3 hr ago</th>
+        <th>2 hr ago</th>
+        <th>1 hr ago</th>
+      </tr>
+      
+      {% for category, proba in pred_historical.items %}
+        <tr>
+          <td>{{ category }}</td>
+          {% if not forloop.last %}
+            <td>{{ proba.0 }}%</td>
+            <td>{{ proba.1 }}%</td>
+            <td>{{ proba.2 }}%</td>
+            <td>{{ proba.3 }}%</td>
+          {% else %}
+            <td>{{ proba.0 }}</td>
+            <td>{{ proba.1 }}</td>
+            <td>{{ proba.2 }}</td>
+            <td>{{ proba.3 }}</td>
+          {% endif %}
+        </tr>
+      
+        {% if forloop.revcounter0 == 1 %}
+          <tr>
+            <td colspan="4"><hr></td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table> 
+
+
+  <h2>Notes:</h2>
+  <p>The model is only about 60 - 70% accurate predicting directions for a four hour timeframe.</p>
+  <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on previous trade direction.</p>
+  <p>Should there be any major news or events, the model results could be invalidated!.</p>
+  <p>High probabilities (e.g. 80% to 90%) has a chance of exhaustion. Either a retracement or hard reversal!</p>
+  <p>If both the reversal and continuation results predict strongly in one direction, then it is a good chance it will go in that direction.</p>
 
 </main>
 
