@@ -344,14 +344,13 @@ def scenario_builder(df, close_adjustment, scenario):
     Args:
         df (dataframe): this is the dataframe containing the original prices
         close_adjustment (float): this is the pips specified by the user to 
-        determine the size of the candle next hour candle stick.
+        determine the size of the candle for the next hour.
 
     Returns:
         dataframe: new dataframe with extra row of forecast price for the next hour.
     """
-    # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_start-4.csv", index=False)
-    
-    #if it is continue then it change the sign to create candle stick going in same direction
+     
+    #if it is continue the sign is switched as the default calculation is used for generating reversal candle stick
     if scenario == 'continue':
         close_adjustment = -close_adjustment
     
@@ -364,7 +363,6 @@ def scenario_builder(df, close_adjustment, scenario):
         last_row['open'] = last_row['close']
         last_row['close'] = last_row['open'] + close_adjustment
     
-    print("what is this last row?",last_row)
     df.loc[len(df.index)] = last_row
     # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_end-4.csv", index=False)
 
@@ -405,9 +403,6 @@ def stats_df_gen(df, subset_rows):
 
     df = trend_measure(df,1)   
     
-    # rows_with_na = df[df.isna().any(axis=1)]
-    # print("inside=======================", rows_with_na)
-    
     df = df.dropna()
     columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
     df = df.drop(columns, axis=1)
@@ -426,20 +421,17 @@ def stats_df_gen(df, subset_rows):
     columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
     df_4hr = df_4hr.drop(columns, axis=1)
     df_4hr = df_4hr.dropna()
-    df_4hr.to_csv(r"C:\Users\sunny\Desktop\Development\df_4hr_finish.csv", index=False)
     
     # #merged the content from 4hr table into 1 hr.
     merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
     merged_df = merged_df.dropna()
 
-    #Create the live data dataframe to input into the model
+    #Check the last two rows
     last_row_df = merged_df.tail(2)[0:1]
-    # last_rows = merged_df.iloc[-2:]
-    print("data>>>>",last_row_df)
-    merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\merged_df-4.csv", index=False)
+    print("Last two rows of dataframe>>>>",last_row_df)
+    # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\merged_df-4.csv", index=False)
     
     X_live = merged_df.tail(subset_rows)
-    # print("xlive>>>>>>>", X_live)
     
     return X_live
 
@@ -485,8 +477,7 @@ def scenario_continue():
     #the base scenario is retained for the first dataframe
     df = scenario_builder(df, 0.2, "continue")
     continue_df_2pips = stats_df_gen(df, 2)
-    print("for Xlive data---------", continue_df_2pips)
-    
+        
     df = scenario_builder(df, 0.4, "continue")
     continue_df_4pips = stats_df_gen(df, 2)
     

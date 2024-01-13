@@ -34,10 +34,10 @@ def predict_trade(X_live, model_feature, model_pipeline, model_label_map):
     
     # predict the probability
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    print("probability",model_prediction_proba)
+    # print("probability",model_prediction_proba)
     #gets the maximum probability prediction categorical label
     model_prediction_labels = model_prediction_proba.argmax(axis=1)
-    print("here are the label",model_prediction_labels)
+    # print("here are the label",model_prediction_labels)
    
     #First loop goes through the probability profit/loss categories label
     #Second loop goes through the array containing the probability dictionary
@@ -74,7 +74,7 @@ def model_run(X_live):
                             The predict_trade() function will filter the relevant features.
 
     Returns:
-        _type_: returns model results.
+        dictionary: returns model results.
     """
     
     #get script directory
@@ -113,49 +113,61 @@ def standard_analysis():
     This calls on the model_run function which pulls all relevant inputs to generate results.
 
     Returns:
-        _type_: returns results from model for the different scenarios
+        dictionary: returns results from model for the different scenarios
     """
     
     X_live_reverse = scenario_reverse()
     X_live_continue = scenario_continue()
     X_live_historical = historical_record(4)
     
-    pred_reverse = model_run( X_live_reverse )
-    pred_continue = model_run( X_live_continue )
+    pred_reverse = model_run(X_live_reverse)
+    pred_continue = model_run(X_live_continue)
     pred_historical = model_run(X_live_historical)
-    # pred_reverse, acc_rev = model_run( X_live_reverse )
-    # pred_continue, acc_cont = model_run( X_live_continue )
-    
-    # print("accuracy reverse", acc_rev)
-    # print("accuracy continue", acc_cont)
-    
+    test = trade_forecast_assessment
+    print("looking at pre_historical>>>>>", test)  
+     
     return pred_reverse, pred_continue, pred_historical
 
 
 def trade_forecast_assessment():
+    """
+    This function is to assess the trade forecast accuracy and produce a csv file for further analysis.
+
+    Args:
+        y_actual (): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
+    X_live_historical = historical_record(60)
+    pred_historical = model_run(X_live_historical)
+    
+   
     # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
     # Convert both actual and prediction into binary numbers.
-    y_actual = X_live_discretized['pl_close_4_hr']
-    binary_y_actual = (y_actual < 3).astype(int)
-    binary_prediction= (model_prediction_labels < 3).astype(int)
+    # y_actual = X_live_discretized['pl_close_4_hr']
+    # binary_y_actual = (y_actual < 3).astype(int)
+    # binary_prediction= (model_prediction_labels < 3).astype(int)
     
     # Calculate the accuracy between the prediction and actual
-    accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
-
-    print("Accuracy", accuracy)
+    # accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
     
+
+    # print("Accuracy", accuracy)
+    
+    return pred_historical
 
 def calculate_accuracy(predictions, y_actual):
     """
-    Calculate the accuracy of the model.
+    Calculates the accuracy of the model.
 
     Args:
         predictions (array-like): Model predictions.
         y_actual (Series or array-like): Actual outcomes.
 
     Returns:
-        accuracy (float): Accuracy of the model.
+        (float): Accuracy of the model.
     """
     # You may use appropriate metrics based on your problem (e.g., accuracy_score)
     from sklearn.metrics import accuracy_score

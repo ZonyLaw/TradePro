@@ -15,10 +15,8 @@ def ml_predictions(request):
     This is a view function that pass the model predictions to the the frontend.
     Predictions is saved as dictionary of array containing the values of each profit/loss cateogires.
     """
-    # predictions={'fist':['12','23'],'second':['12','23']}
     
     pred_reverse, pred_continue, pred_historical = standard_analysis()
-    print(pred_historical)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -33,10 +31,10 @@ def ml_predictions(request):
     last_four_prices = sorted_prices[:5]
     prices_df = pd.DataFrame(list(last_four_prices.values()))
 
-    # Access prices using index, note that len() is 'index + 1'
+    # Access prices using index, note that len() returns 'index + 1' where index starts at zero
+    #TODO: we can use this prices_df in the front-end rather creating these individual variables.
     if len(prices_df) >= 5:
         fourth_last_price = prices_df.loc[4]
-        print(prices_df)
     else:
         fourth_last_price = None
     
