@@ -12,19 +12,21 @@ def load_file(file_path):
     return joblib.load(filename=file_path)
 
 
-def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_actual):
+def predict_trade(X_live, model_feature, model_pipeline, model_label_map):
     """
         This function put all the model components to generate the results.
-        The results are formatted.
+        The results are formatted as dictionary so the html can report the results dynamically
+        and not rely on harded coded categories.
+        TODO: May explore other ways of storing the results as the dictionary is difficult to interpret how the results are saved.
 
     Args:
         X_live (dataframe): dataframe contains model attributes and is one row of data
-        model_feature (_type_): this is referenced to the plk file containing the key features
-        model_pipeline (_type_): this conatins info about the pipline used to trained the model
-        model_label_map (_type_): this is the categories used to split the y(dependent) variable
+        model_feature (sklearn.pipeline.Pipeline): this is referenced to the plk file containing the key features
+        model_pipeline (sklearn.pipeline.Pipeline): this conatins info about the pipline used to trained the model
+        model_label_map (list): this is the categories used to split the trade variable (ie. y dependent)
 
     Returns:
-        _type_: return the formatted results
+        dictionary: return the formatted results
     """
    
     # from live data, subset features related to this pipeline
@@ -36,21 +38,10 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
     #gets the maximum probability prediction categorical label
     model_prediction_labels = model_prediction_proba.argmax(axis=1)
     print("here are the label",model_prediction_labels)
-    # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
-    # Convert both actual and prediction into binary numbers.
-    binary_y_actual = (y_actual < 3).astype(int)
-    binary_prediction= (model_prediction_labels < 3).astype(int)
-    
-    # Calculate the accuracy between the prediction and actual
-    accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
-
-    print("Accuracy", accuracy)
-    
-    result_dict = {} 
- 
-    
+   
     #First loop goes through the probability profit/loss categories label
     #Second loop goes through the array containing the probability dictionary
+    result_dict = {} 
     for i in range(len(model_label_map)):
         
                 result_dict.update({
@@ -69,8 +60,6 @@ def predict_profits(X_live, model_feature, model_pipeline, model_label_map, y_ac
             f"{direction} {profit_label}"
         )
     
-    # print("prediction>>>>>>>", model_prediction_labels[0])
-    # print(model_label_map[1])
     return (result_dict)
 
 
@@ -82,7 +71,7 @@ def model_run(X_live):
     
     Args:
         X_live (dataframe): dataframe contains all attributes and can be more than one row.
-                            The predict_profits() function will filter the relevant features.
+                            The predict_trade() function will filter the relevant features.
 
     Returns:
         _type_: returns model results.
@@ -107,23 +96,13 @@ def model_run(X_live):
                        .to_list()
                        )
     
-    
-    # results = predict_profits(X_live, profit_features,
-    #                             profit_pip, profit_labels_map)
-   
-  
-
     # Discretize the target variable
     disc = EqualFrequencyDiscretiser(q=6, variables=['pl_close_4_hr'])
     X_live_discretized = disc.fit_transform(X_live)
-    y_actual = X_live_discretized['pl_close_4_hr']
 
-    # Assuming predict_profits returns predictions
-    results = predict_profits(X_live_discretized, profit_features, profit_pip, profit_labels_map, y_actual)
+    # Assuming predict_trade returns predictions
+    results = predict_trade(X_live_discretized, profit_features, profit_pip, profit_labels_map)
 
-
-
-   
     return results
 
 def standard_analysis():
@@ -152,6 +131,20 @@ def standard_analysis():
     
     return pred_reverse, pred_continue, pred_historical
 
+
+def trade_forecast_assessment():
+    
+    # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
+    # Convert both actual and prediction into binary numbers.
+    y_actual = X_live_discretized['pl_close_4_hr']
+    binary_y_actual = (y_actual < 3).astype(int)
+    binary_prediction= (model_prediction_labels < 3).astype(int)
+    
+    # Calculate the accuracy between the prediction and actual
+    accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
+
+    print("Accuracy", accuracy)
+    
 
 def calculate_accuracy(predictions, y_actual):
     """
