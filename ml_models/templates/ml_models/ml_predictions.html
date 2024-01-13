@@ -2,11 +2,12 @@
 {% block content %}
 
 <main>
+  <p> Get the recent model prediction results for analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
   <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
   <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
-  <p>Last open price 1 hr ago: £{{ last_price.open|floatformat:2 }} </p>
-  <p>Last close price 1hr ago: £{{ last_price.close|floatformat:2 }}</p>
-  <p>Last open price 4 hrs ago: £{{ fourth_last_price.open|floatformat:2 }} </p>
+  <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
+  <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
+  <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
   
   <hr>
   <h1>Model predictions for reverse</h1>
@@ -89,7 +90,17 @@
         <th>2 hr ago</th>
         <th>1 hr ago</th>
       </tr>
+
+ 
+        <tr>
+          <td>Open price</td>
+          {% for price in open_prices %} 
       
+            <td> £{{ price|floatformat:2 }}</td>
+
+          {% endfor %} 
+        </tr> 
+
       {% for category, proba in pred_historical.items %}
         <tr>
           <td>{{ category }}</td>

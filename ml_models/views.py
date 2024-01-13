@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from .utils.predictive_analysis import standard_analysis, model_run
+from django.shortcuts import render, get_object_or_404, HttpResponse
+from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters
 from prices.models import Price
@@ -11,9 +11,8 @@ from .utils.utils import trade_direction
 # Create your views here.
 def ml_predictions(request):
     """
-    #outstanding...data should be saved as a text and accessed as static to avoid running the code again.
     This is a view function that pass the model predictions to the the frontend.
-    Predictions is saved as dictionary of array containing the values of each profit/loss cateogires.
+    Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
     
     pred_reverse, pred_continue, pred_historical = standard_analysis()
@@ -21,33 +20,26 @@ def ml_predictions(request):
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
     
-    #sort prices table in descending to get the latest price on top
-    sorted_prices = prices.order_by('-date')
-
-    #get the latest price    
-    last_price = sorted_prices[0]
-
-    #get the price 4 hr ago but not sure how useful it will be yet
-    last_four_prices = sorted_prices[:5]
-    prices_df = pd.DataFrame(list(last_four_prices.values()))
-
-    # Access prices using index, note that len() returns 'index + 1' where index starts at zero
-    #TODO: we can use this prices_df in the front-end rather creating these individual variables.
-    if len(prices_df) >= 5:
-        fourth_last_price = prices_df.loc[4]
-    else:
-        fourth_last_price = None
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+    open_prices = last_four_prices_df['open'].tolist()
+    close_prices = last_four_prices_df['close'].tolist()
     
-    trade_diff_1hr = last_price.close - last_price.open
-    trade_diff_4hr = last_price.close - fourth_last_price.open
+    #creating bespoke context for front-end    
+    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
+    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     
     trade = {"one" :trade_direction(trade_diff_1hr),
     "four": trade_direction(trade_diff_4hr)}
     
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
-      
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'trade':trade, 'candle_size': candle_size, 'last_price':last_price, 'fourth_last_price':fourth_last_price}
+    
+    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
+             'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 
@@ -98,4 +90,17 @@ def ml_manual(request):
     
     return render(request, 'ml_models/ml_manual_analysis.html', context)
 
+def export_model_results(request):
+    
+    if request.method == 'POST':
+    
+        model_results = trade_forecast_assessment()
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="model_results.csv"'
+        model_results.to_csv(path_or_buf=response, index=False, encoding='utf-8')
+
+        return response
+    
+    else:
+        return render(request, 'ml_models/export_model_results.html')
     

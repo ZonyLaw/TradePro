@@ -1,0 +1,11 @@
+{% extends 'main.html' %} {% block content %}
+
+    <h1>Download model results</h1>
+    
+    <form id="downloadForm" action="{% url 'export-model-results' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Download CSV</button>
+    </form>
+
+
+{% endblock content %}

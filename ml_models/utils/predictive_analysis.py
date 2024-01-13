@@ -12,32 +12,22 @@ def load_file(file_path):
     return joblib.load(filename=file_path)
 
 
-def predict_trade(X_live, model_feature, model_pipeline, model_label_map):
+def format_model_results(model_prediction_proba, model_prediction, model_label_map):
     """
-        This function put all the model components to generate the results.
+        This function format the results form the model run.
         The results are formatted as dictionary so the html can report the results dynamically
         and not rely on harded coded categories.
         TODO: May explore other ways of storing the results as the dictionary is difficult to interpret how the results are saved.
 
     Args:
-        X_live (dataframe): dataframe contains model attributes and is one row of data
-        model_feature (sklearn.pipeline.Pipeline): this is referenced to the plk file containing the key features
-        model_pipeline (sklearn.pipeline.Pipeline): this conatins info about the pipline used to trained the model
+        model_prediction_proba (array): array contains arrays of probabilities to each categories predicted.
+        model_prediction (array): array containing the prediction with max probability
         model_label_map (list): this is the categories used to split the trade variable (ie. y dependent)
 
     Returns:
         dictionary: return the formatted results
     """
    
-    # from live data, subset features related to this pipeline
-    X_live_subset = X_live.filter(model_feature)
-    
-    # predict the probability
-    model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    # print("probability",model_prediction_proba)
-    #gets the maximum probability prediction categorical label
-    model_prediction_labels = model_prediction_proba.argmax(axis=1)
-    # print("here are the label",model_prediction_labels)
    
     #First loop goes through the probability profit/loss categories label
     #Second loop goes through the array containing the probability dictionary
@@ -53,9 +43,9 @@ def predict_trade(X_live, model_feature, model_pipeline, model_label_map):
             )
     
     result_dict["Potential Trade"]=[]
-    for j in range(model_prediction_labels.shape[0]):
-        direction = "Sell target: " if model_prediction_labels[j] < 3 else "Buy target: "
-        profit_label = model_label_map[model_prediction_labels[j]]
+    for j in range(model_prediction.shape[0]):
+        direction = "Sell target: " if model_prediction[j] < 3 else "Buy target: "
+        profit_label = model_label_map[model_prediction[j]]
         result_dict["Potential Trade"].append(
             f"{direction} {profit_label}"
         )
@@ -66,15 +56,15 @@ def predict_trade(X_live, model_feature, model_pipeline, model_label_map):
 def model_run(X_live):
     
     """
-    This function gather all relevant model files needed to run the model. 
-    Another function is called to generate and format the results.
+    This function calls on model pipline and generate the results as dataframe. 
+    Another function is called to format the results into a dictionary format.
     
     Args:
-        X_live (dataframe): dataframe contains all attributes and can be more than one row.
-                            The predict_trade() function will filter the relevant features.
+        X_live (dataframe): dataframe contains live data of all attributes and can be more than one row.
 
     Returns:
-        dictionary: returns model results.
+        dictionary: returns model results, all predictions with probability, model predictions, model category label, 
+        and live data used in the model
     """
     
     #get script directory
@@ -87,23 +77,37 @@ def model_run(X_live):
     os.chdir(parent_directory)
 
     version = 'v4-new_py'
-    profit_pip = load_file(
+    model_pipeline = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
-    profit_labels_map = load_file(
+    model_labels_map = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/label_map.pkl")
-    profit_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_train.csv")
+    model_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_train.csv")
                        .columns
                        .to_list()
                        )
     
-    # Discretize the target variable
+    # Discretize the target variable (ie. y dependent) 
     disc = EqualFrequencyDiscretiser(q=6, variables=['pl_close_4_hr'])
     X_live_discretized = disc.fit_transform(X_live)
+    print("formated live data>>>>>>>>", (X_live_discretized))
+    
+    # extract the relevant subset features related to this pipeline
+    X_live_subset = X_live_discretized.filter(model_features)
+    
+    # predict the probability for each of the cateogries
+    model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
+    # print("probability>>>>>",model_prediction_proba)
+    #prediction of model by getting the category with the maximum probability
+    model_prediction = model_prediction_proba.argmax(axis=1)
+    # print("Here are the model predictions >>>>>",model_prediction)
+    
+    # format the results of the model
+    results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
 
-    # Assuming predict_trade returns predictions
-    results = predict_trade(X_live_discretized, profit_features, profit_pip, profit_labels_map)
 
-    return results
+
+    return results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
+
 
 def standard_analysis():
     
@@ -120,11 +124,9 @@ def standard_analysis():
     X_live_continue = scenario_continue()
     X_live_historical = historical_record(4)
     
-    pred_reverse = model_run(X_live_reverse)
-    pred_continue = model_run(X_live_continue)
-    pred_historical = model_run(X_live_historical)
-    test = trade_forecast_assessment
-    print("looking at pre_historical>>>>>", test)  
+    pred_reverse, _, _, _, _ = model_run(X_live_reverse)
+    pred_continue, _, _, _, _ = model_run(X_live_continue)
+    pred_historical, _, _, _, _ = model_run(X_live_historical)
      
     return pred_reverse, pred_continue, pred_historical
 
@@ -141,9 +143,17 @@ def trade_forecast_assessment():
     """
     
     X_live_historical = historical_record(60)
-    pred_historical = model_run(X_live_historical)
-    
+    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical)
    
+    #combined the live data and prediction dataframes.
+    df1 = pd.DataFrame(model_prediction_proba, columns=model_labels_map)
+    df1 = df1.reset_index(drop=True)
+    df2 = X_live_discretized.reset_index(drop=True)
+    model_results = pd.concat([df1, df2 ], axis=1)
+    model_results['prediction'] = model_prediction
+    # print("model dataframe >>>>>", combined_df)
+    # combined_df.to_csv(r"C:\Users\sunny\Desktop\Development\model_assessment_data.csv", index=False)
+    
     # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
     # Convert both actual and prediction into binary numbers.
     # y_actual = X_live_discretized['pl_close_4_hr']
@@ -156,7 +166,7 @@ def trade_forecast_assessment():
 
     # print("Accuracy", accuracy)
     
-    return pred_historical
+    return model_results
 
 def calculate_accuracy(predictions, y_actual):
     """
