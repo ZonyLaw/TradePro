@@ -62,31 +62,53 @@ def crossing_bb(df, timeframe):
     return df
 
 
-def profit_calc(df, col, lag):
+def profit_calc(df, col1, col2, lag):
     """
     Does not need timeframe parameter!
     This function create the lag price and calculates the profit for the time period specified.
 
     Args:
         df (dataframe): dataframe contain the data
-        col (string): price column to lag (e.g. high, low, open, close)
-        lag (integer): time period to lag the column
+        col1 (string): price column to lag (e.g. high, low, open, close)
+        col2 (string): price column to lag (e.g. high, low, open, close)
+        lag (integer): time period to lag the column with postive number and lead with negative number
 
     Returns:
-        dataframe: containing the new columns
+        dataframe: containing the new columns for profit and loss also with trade direction, buy or sell
+        the label for trade is 'trade_close_<timeframe>_hr' which is used by another function.
+        TODO could rename as trade in the future.
     """
+    num = abs(lag)
     
-    df[f'lagged_{col}_{lag}'] = df[col].shift(lag)
-    df[f'pl_{col}_{lag}_hr'] = df[col] - df[f'lagged_{col}_{lag}']
+    if lag > 0:
+        
+        #if the price is lagged, the profit is calculated by taking col1 as close price and col2 as entry; 
+        #in essence it taks the four hour as known to leaving only an hour or potential trade 
+        df[f'lagged_{col2}_{num}'] = df[col2].shift(lag)
+        df[f'pl_{col2}_{num}_hr'] =  df[col1] - df[f'lagged_{col2}_{num}']
+        
+        #check if it should be a buy or sell given if entry was made at the point of date and time.
+        buy_condition  = (df[f'pl_{col2}_{num}_hr'] > 0)
+            
+        #0 for sell and 1 for buy
+        #label we just kept it as close for simplicity
+         #label we just kept it as close for simplicity
+        df[f'trade_close_{num}_hr'] = 0 #'sell'
+        df.loc[buy_condition, f'trade_close_{num}_hr'] = 1 #'buy'
+        
+    else:
+        #if the price is lead or forward looking, we take col1 as entry and col2 as close
+        #this takes the true 4 hr profit and loss
+        df[f'lead_{col2}_{num}'] = df[col2].shift(lag)
+        df[f'pl_{col2}_f{num}_hr'] = df[f'lead_{col2}_{num}'] -  df[col1]
     
-    #check if it should be a buy or sell given if entry was made at the point of date and time.
-    buy_condition  = (df[f'pl_{col}_{lag}_hr'] > 0)
+        #check if it should be a buy or sell given if entry was made at the point of date and time.
+        buy_condition  = (df[f'pl_{col2}_f{num}_hr'] > 0)
 
-    
-    #0 for sell and 1 for buy
-    df[f'trade_{col}_{lag}_hr'] = 0 #'sell'
-    df.loc[buy_condition, f'trade_{col}_{lag}_hr'] = 1 #'buy'
-    
+        #label we just kept it as close for simplicity
+        df[f'trade_close_{num}_hr'] = 0 #'sell'
+        df.loc[buy_condition, f'trade_close_{num}_hr'] = 1 #'buy'
+
     return df
 
 
@@ -389,8 +411,8 @@ def stats_df_gen(df, subset_rows):
     
     df = date_split(df)
     df = crossing_bb(df,1)
-    df = profit_calc(df, "close", 1)
-    df = profit_calc(df, "close", 4)
+    df = profit_calc(df, "open", "open", -1)
+    df = profit_calc(df, "open", "open", -4)
     
     df = price_difference(df, "upper_bb20_1", "lower_bb20_1",1, "up_bb20", "low_bb20"  )
     df = price_difference(df, "close", "ma20_1", 1 )
@@ -489,18 +511,18 @@ def scenario_continue():
 
 def historical_record(num_rows):
     """
-    This function is to generate a continue scneario based on continuing trend.
+    This function is to generate a historical table.
+    TODO the ticker assignment needs updating for dynamic usage.
+    
+    Args:
+        num_rows (integer): number of rows to retrieve historical data
 
     Returns:
-        dataframe: contains the new prices for the next row creating the scenario 
-        for the next hour.
+        dataframe: contains the prices for the specific rows inputted
     """
     
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
-    #build the reverse candle stick scenario
-    #the base scenario is retained for the first dataframe
-
     historical_df = stats_df_gen(df, num_rows)
    
     return (historical_df)

@@ -87,9 +87,15 @@ def model_run(X_live):
                        )
     
     # Discretize the target variable (ie. y dependent) 
-    disc = EqualFrequencyDiscretiser(q=6, variables=['pl_close_4_hr'])
+    
+    y_test_headers = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/y_test.csv")
+                       .columns
+                       .to_list()
+                       )
+    
+    disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers[0]])
     X_live_discretized = disc.fit_transform(X_live)
-    print("formated live data>>>>>>>>", (X_live_discretized))
+    # print("formated live data>>>>>>>>", (X_live_discretized))
     
     # extract the relevant subset features related to this pipeline
     X_live_subset = X_live_discretized.filter(model_features)
