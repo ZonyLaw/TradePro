@@ -81,7 +81,7 @@ def model_run(X_live):
         f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
     model_labels_map = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/label_map.pkl")
-    model_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_train.csv")
+    model_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_test.csv")
                        .columns
                        .to_list()
                        )
@@ -92,10 +92,12 @@ def model_run(X_live):
                        .columns
                        .to_list()
                        )
-    
-    disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers[0]])
-    X_live_discretized = disc.fit_transform(X_live)
-    # print("formated live data>>>>>>>>", (X_live_discretized))
+    try:
+        disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers[0]])
+        X_live_discretized = disc.fit_transform(X_live)
+        # print("formated live data>>>>>>>>", (X_live_discretized))
+    except:
+        X_live_discretized = X_live
     
     # extract the relevant subset features related to this pipeline
     X_live_subset = X_live_discretized.filter(model_features)

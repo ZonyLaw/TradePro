@@ -17,15 +17,18 @@ class ModelParameters(forms.Form):
     open_lag1 = forms.FloatField(initial=0.0, label='Open Price from previous hour')
     close_lag1 = forms.FloatField(initial=0.0, label='Close Price from previous hour')
     ma50 = forms.FloatField(initial=0.0, label='MA 50 Days for 1 hour')
+    bb20_high = forms.FloatField(initial=0.0, label='Bollinger Bands 20 High for 1 hour')
+    bb20_low = forms.FloatField(initial=0.0, label='Bollinger Bands 20 Low for 1 hour')
+    
+    bb20_high_4 = forms.FloatField(initial=0.0, label='Bollinger Bands 20 High for 4 hour')
+    bb20_low_4 = forms.FloatField(initial=0.0, label='Bollinger Bands 20 Low for 4 hour')
     close_4 = forms.FloatField(initial=0.0, label='Close Price from 4 hour timeframe')
     ma20_4 = forms.FloatField(initial=0.0, label='MA 20 Days for 4 hour')
     ma50_4 = forms.FloatField(initial=0.0, label='MA 50 Days for 4 hour')
     ma100_4 = forms.FloatField(initial=0.0, label='MA 100 Days for 4 hour')
-    bb20_high = forms.FloatField(initial=0.0, label='Bollinger Bands 20 High for 1 hour')
-    bb20_low = forms.FloatField(initial=0.0, label='Bollinger Bands 20 Low for 1 hour')
-    bb20_high_4 = forms.FloatField(initial=0.0, label='Bollinger Bands 20 High for 4 hour')
-    bb20_low_4 = forms.FloatField(initial=0.0, label='Bollinger Bands 20 Low for 4 hour')
+    
     hour = forms.IntegerField(initial=0, label='Hour')
     trend_strength_1 = forms.IntegerField(initial=0.0, label='What is the strength of trend')
     bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')
+
   

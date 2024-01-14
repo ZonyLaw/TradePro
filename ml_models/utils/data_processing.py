@@ -426,7 +426,8 @@ def stats_df_gen(df, subset_rows):
     df = trend_measure(df,1)   
     
     df = df.dropna()
-    columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
+    columns = ['dev20_1', 'dev50_1', 'dev100_1' ]
+    # columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
     df = df.drop(columns, axis=1)
     
     #create 4hr table with indicators
@@ -440,9 +441,11 @@ def stats_df_gen(df, subset_rows):
     df_4hr = price_difference(df_4hr, "ma20_4", "ma50_4",4 )
     df_4hr = price_difference(df_4hr, "ma50_4", "ma100_4",4 )
     
-    columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
+    # columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
+    columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4' ]
     df_4hr = df_4hr.drop(columns, axis=1)
     df_4hr = df_4hr.dropna()
+    
     
     # #merged the content from 4hr table into 1 hr.
     merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')

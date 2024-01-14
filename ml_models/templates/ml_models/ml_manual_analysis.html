@@ -13,18 +13,20 @@
     <tr>
       <th>Profit/Loss</th>
       <th>Current Proba</th>
-      <th>Reversed Proba (20 pips)</th>
-      <th>Reversed Proba (40 pips)</th>
     </tr>
 
-    {% for category, proba in results.items %}
+   {% for category, proba in results.items %}
       <tr>
         <td>{{ category }}</td>
-        <td>{{ proba.0 }}%</td>
-
+          {% if not forloop.last %}
+            <td>{{ proba.0 }}%</td>
+          {% else %}
+            <td>{{ proba.0 }}</td>
+          {% endif %}
       </tr>
-      
-    {% endfor %}
+
+
+    {% endfor %} 
   </table> 
 
 {% endif %}

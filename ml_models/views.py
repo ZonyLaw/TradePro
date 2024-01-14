@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
+from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters
 from prices.models import Price
@@ -50,38 +51,52 @@ def ml_manual(request):
     This is a function to get user input for running the model manually.
     The results are displayed in the same webpage as the input form.
     User can update input to get new results.
+    NOTE: the results are slightly different becuase the 4hr close is assumed to be same as 1hr close.
     
     """
     
     form = ModelParameters(request.POST)
     
+    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    prices_df = pd.DataFrame(list(prices.values()))
+    prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_prices_df = prices_df.tail(2)
+    last_price_stats = stats_df_gen(prices_df,2)
+    
+    results = []
     if request.method == 'POST':
         form = ModelParameters(request.POST)
         if form.is_valid():
-            model_input = manual_price_input(form)
-            results = model_run(model_input)
-            request.session['ml_results'] = results
-            
+            user_input = manual_price_input(form)
+            results, _, _, _, _ = model_run(user_input)            
+     
     else:
-        
-        results = ''
+           
         # Initialize the form with default values
-        form = ModelParameters(initial={
-            'open': 0.0,
-            'close': 0.0,
-            'open_lag1': 0.0,
-            'close_lag1': 0.0,
-            'ma50': 0.0,
-            'close_4': 0.0,
-            'ma20_4': 0.0,
-            'ma50_4': 0.0,
-            'ma100_4': 0.0,
-            'bb20_high': 0.0,
-            'bb20_low': 0.0,
-            'bb20_high_4': 0.0,
-            'bb20_low_4': 0.0,
-            'hour': 0,
-            'trend_strength_1':0,
+        form = ModelParameters(initial={           
+            
+            #note current prices are used 
+            'open': last_price_stats['open'].values[1],
+            'close': last_price_stats['close'].values[1],
+            'open_lag1': last_price_stats['open'].values[0],
+            'close_lag1': last_price_stats['close'].values[0],
+            'ma50': last_price_stats['ma50_1'].values[1],
+            
+            # note we just take the current close as four close but is different in actual fact.
+            'close_4': last_price_stats['close'].values[1],
+            
+            #the rest of the indicator is lagged
+            'ma20_4': last_price_stats['ma20_4'].values[1],
+            'ma50_4': last_price_stats['ma50_4'].values[1],
+            'ma100_4': last_price_stats['ma100_4'].values[1],
+            'bb20_high': last_price_stats['upper_bb20_1'].values[1],
+            'bb20_low': last_price_stats['lower_bb20_1'].values[1],
+            'bb20_high_4': last_price_stats['upper_bb20_4'].values[1],
+            'bb20_low_4': last_price_stats['lower_bb20_4'].values[1],
+            'hour': last_price_stats['hr'].values[1],
+            'trend_strength_1': last_price_stats['trend_strength_1'].values[1],
             'bb_status_1': "inside_bb",
 
         })
