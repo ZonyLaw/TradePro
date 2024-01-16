@@ -74,8 +74,7 @@ def profit_calc(df, col1, col2, lag):
         lag (integer): time period to lag the column with postive number and lead with negative number
 
     Returns:
-        dataframe: containing the new columns for profit and loss also with trade direction, buy or sell
-        the label for trade is 'trade_close_<timeframe>_hr' which is used by another function.
+        dataframe: containing the new columns for profit/loss and lag or lead attribute for the price specified.
         TODO could rename as trade in the future.
     """
     num = abs(lag)
@@ -87,14 +86,6 @@ def profit_calc(df, col1, col2, lag):
         df[f'lagged_{col2}_{num}'] = df[col2].shift(lag)
         df[f'pl_{col2}_{num}_hr'] =  df[col1] - df[f'lagged_{col2}_{num}']
         
-        #check if it should be a buy or sell given if entry was made at the point of date and time.
-        buy_condition  = (df[f'pl_{col2}_{num}_hr'] > 0)
-            
-        #0 for sell and 1 for buy
-        #label we just kept it as close for simplicity
-         #label we just kept it as close for simplicity
-        df[f'trade_close_{num}_hr'] = 0 #'sell'
-        df.loc[buy_condition, f'trade_close_{num}_hr'] = 1 #'buy'
         
     else:
         #if the price is lead or forward looking, we take col1 as entry and col2 as close
@@ -102,12 +93,6 @@ def profit_calc(df, col1, col2, lag):
         df[f'lead_{col2}_{num}'] = df[col2].shift(lag)
         df[f'pl_{col2}_f{num}_hr'] = df[f'lead_{col2}_{num}'] -  df[col1]
     
-        #check if it should be a buy or sell given if entry was made at the point of date and time.
-        buy_condition  = (df[f'pl_{col2}_f{num}_hr'] > 0)
-
-        #label we just kept it as close for simplicity
-        df[f'trade_close_{num}_hr'] = 0 #'sell'
-        df.loc[buy_condition, f'trade_close_{num}_hr'] = 1 #'buy'
 
     return df
 
@@ -240,9 +225,19 @@ def trend_measure(df, timeframe):
     Returns:
         _type_: _description_
     """
-    df[f'trend_strength_{timeframe}'] = 0
+    
+    #check if it should be a buy or sell given if entry was made at the point of date and time.
+    df['pl_close'] = df['close'] - df['open']
+    buy_condition  = (df['pl_close'] > 0)
+
+    #label we just kept it as close for simplicity
+    df[f'trade_close_{timeframe}_hr'] = 0 #'sell'
+    df.loc[buy_condition, f'trade_close_{timeframe}_hr'] = 1 #'buy'
+    
     #condition is to check that current trade is the same as previous
     condition = (df[f'trade_close_{timeframe}_hr'] == df[f'trade_close_{timeframe}_hr'].shift(1))
+    #initialise the column
+    df[f'trend_strength_{timeframe}'] = 0
 
     cumulative_sum = 0
     for i in range(len(df)):
@@ -424,11 +419,13 @@ def stats_df_gen(df, subset_rows):
     df['open_close_diff1_lag1'] = df['open_close_diff_1'].shift(1)
 
     df = trend_measure(df,1)   
-    
-    df = df.dropna()
-    columns = ['dev20_1', 'dev50_1', 'dev100_1' ]
-    # columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
+    df['pl_open_f1_hr'] = df['pl_open_f1_hr'].fillna(method='ffill')
+    df['pl_open_f4_hr'] = df['pl_open_f4_hr'].fillna(method='ffill')
+    columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
     df = df.drop(columns, axis=1)
+    df = df.dropna()
+    # df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
+    # columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
     
     #create 4hr table with indicators
     df_4hr = create_4hr_table(df)
@@ -442,19 +439,22 @@ def stats_df_gen(df, subset_rows):
     df_4hr = price_difference(df_4hr, "ma50_4", "ma100_4",4 )
     
     # columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
-    columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4' ]
+    columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4'  ]
     df_4hr = df_4hr.drop(columns, axis=1)
     df_4hr = df_4hr.dropna()
     
     
     # #merged the content from 4hr table into 1 hr.
     merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
+    # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
     merged_df = merged_df.dropna()
 
     #Check the last two rows
     last_row_df = merged_df.tail(2)[0:1]
     print("Last two rows of dataframe>>>>",last_row_df)
-    # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\merged_df-4.csv", index=False)
+  
+    
+    
     
     X_live = merged_df.tail(subset_rows)
     
@@ -527,5 +527,6 @@ def historical_record(num_rows):
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
     historical_df = stats_df_gen(df, num_rows)
+    historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
    
     return (historical_df)
