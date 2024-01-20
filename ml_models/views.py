@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
 from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
-from .form import ModelParameters
+from .form import ModelParameters, ModelSelection
 from prices.models import Price
 from tickers.models import Ticker
 import pandas as pd
@@ -16,7 +16,16 @@ def ml_predictions(request):
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
     
-    pred_reverse, pred_continue, pred_historical = standard_analysis()
+    form = ModelSelection(request.POST)
+    
+    if request.method == 'POST' and form.is_valid():
+        model_version = form.cleaned_data['model_version']
+        print("second version")
+    else:
+        model_version = 'v4'
+        
+        
+    pred_reverse, pred_continue, pred_historical = standard_analysis(model_version)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -39,7 +48,7 @@ def ml_predictions(request):
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
     
-    context={'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
+    context={'form': form, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
     
     return render(request, 'ml_models/ml_predictions.html', context)

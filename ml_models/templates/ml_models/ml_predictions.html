@@ -2,6 +2,13 @@
 {% block content %}
 
 <main>
+
+  <form action="" method="POST">
+    {%csrf_token%} 
+    {{form.as_p}}
+    <input type="submit" />
+  </form>
+
   <p> Get the recent model prediction results for analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
   <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
   <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>

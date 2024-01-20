@@ -32,3 +32,5 @@ class ModelParameters(forms.Form):
     bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')
 
   
+class ModelSelection(forms.Form):
+      model_version = forms.ChoiceField(choices=[('v4', 'v4'), ('v5', 'v5')], initial='v4', label='Select the model version')

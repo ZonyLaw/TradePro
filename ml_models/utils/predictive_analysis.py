@@ -53,7 +53,7 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
     return (result_dict)
 
 
-def model_run(X_live):
+def model_run(X_live, model_version):
     
     """
     This function calls on model pipline and generate the results as dataframe. 
@@ -76,7 +76,7 @@ def model_run(X_live):
     # Set the current working directory to the parent directory
     os.chdir(parent_directory)
 
-    version = 'v4-new_py'
+    version = model_version
     model_pipeline = load_file(
         f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
     model_labels_map = load_file(
@@ -117,7 +117,7 @@ def model_run(X_live):
     return results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
 
 
-def standard_analysis():
+def standard_analysis(model_version):
     
     """
     This is a function to generate some standard analysis to show on the webpage.
@@ -132,9 +132,9 @@ def standard_analysis():
     X_live_continue = scenario_continue()
     X_live_historical = historical_record(4)
     
-    pred_reverse, _, _, _, _ = model_run(X_live_reverse)
-    pred_continue, _, _, _, _ = model_run(X_live_continue)
-    pred_historical, _, _, _, _ = model_run(X_live_historical)
+    pred_reverse, _, _, _, _ = model_run(X_live_reverse, model_version)
+    pred_continue, _, _, _, _ = model_run(X_live_continue, model_version)
+    pred_historical, _, _, _, _ = model_run(X_live_historical, model_version)
      
     return pred_reverse, pred_continue, pred_historical
 
