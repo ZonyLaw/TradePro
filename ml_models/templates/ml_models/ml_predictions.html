@@ -8,7 +8,7 @@
     {{form.as_p}}
     <input type="submit" />
   </form>
-
+  <p> These results are meant to give you a direction but not to replace your strategy </p>
   <p> Get the recent model prediction results for analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
   <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
   <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
@@ -89,13 +89,14 @@
     
     <h1>Historical prediction for the last 4 hours</h1>
     <p> Current candle direction <b>{{trade.one}}</b> </p>
+    <p> Current hour can fluctuate depending on new data retrieved within the hour! </p>
     <table>
       <tr>
         <th>Profit/Loss</th>
-        <th>4 hr ago</th>
         <th>3 hr ago</th>
-        <th>2 hr ago</th>
+        <th>4 hr ago</th>
         <th>1 hr ago</th>
+        <th>Current hr</th>
       </tr>
 
  
