@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from .data_processing import scenario_reverse, scenario_continue
+
 
 def manual_price_input(form):
 

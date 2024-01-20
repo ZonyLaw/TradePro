@@ -5,7 +5,7 @@ import joblib
 import pandas as pd
 import numpy as np
 from pathlib import Path
-from .data_processing import scenario_reverse, scenario_continue, historical_record
+# from .data_processing import scenario_reverse, scenario_continue, historical_record
 
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 
@@ -167,7 +167,21 @@ def trade_forecast_assessment(model_version):
         _type_: _description_
     """
     
-    X_live_historical = historical_record(60)
+    
+    # Dynamically get the module path involves defining the parent directory
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # Add the parent directory to the Python path
+    sys.path.append(parent_directory)
+    module_name = f'trained_models.USDJPY.pl_predictions.{model_version}.data_processing'
+
+    try:
+        dp = importlib.import_module(module_name)
+    except ImportError:
+        print(f"Error importing data_processing module for model_version: {model_version}")
+        dp = None
+    
+    
+    X_live_historical = dp.historical_record(60)
     _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical, model_version)
    
     #combined the live data and prediction dataframes.

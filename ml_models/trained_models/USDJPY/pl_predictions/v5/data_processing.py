@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import os
 from prices.models import Price
 from tickers.models import Ticker
 from datetime import timedelta
@@ -62,37 +61,41 @@ def crossing_bb(df, timeframe):
     return df
 
 
-def profit_calc(df, col1, col2, lag):
+def profit_calc(df, col1, col2, offset_hr):
     """
-    Does not need timeframe parameter!
-    This function create the lag price and calculates the profit for the time period specified.
+
+    This function creates the lead/lag price and calculates the profit for the offset_hr specified.
+    when offset_hr is negative you are leading and when positive you are lagging.
+    NOTE: please read comments in the if else statment
 
     Args:
         df (dataframe): dataframe contain the data
-        col1 (string): price column to lag (e.g. high, low, open, close)
-        col2 (string): price column to lag (e.g. high, low, open, close)
-        lag (integer): time period to lag the column as negative number and lead with positive number
+        col1 (string): price column to shift (e.g. high, low, open, close)
+        col2 (string): price column to shift (e.g. high, low, open, close)
+        offset_hr (integer): time period to lag the column as negative number and lead with positive number
 
     Returns:
-        dataframe: containing the new columns for profit/loss and lag or lead attribute for the price specified.
+        dataframe: containing the new columns for profit/loss for the price specified.
         TODO could rename as trade in the future.
     """
-    timeframe = abs(lag)
+    timeframe = abs(offset_hr)
     
-    if lag > 0:
+    if offset_hr < 0:
         
-        # the lagged price is the exit price compared to current price which taken as entry 
-   
-        df[f'lagged_{col2}_{timeframe}'] = df[col2].shift(lag)
-        df[f'pl_{col2}_{timeframe}_hr'] =  df[f'lagged_{col2}_{timeframe}'] - df[col1]
+        # this bring future price which is exit to present price which is the entry; So we are trying to predict potential profit and loss. 
+        # the offset is negative to bring future to current price.
+        df[f'lead_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
+        df[f'pl_{col2}_{timeframe}_hr'] =  df[f'lead_{col2}_{timeframe}'] - df[col1]
         
         
     else:
-        # the lead price reverse the subtraction above.   
-        df[f'lead_{col2}_{timeframe}'] = df[col2].shift(lag)
-        df[f'pl_{col2}_f{timeframe}_hr'] = df[col1] - df[f'lead_{col2}_{timeframe}'] 
-    
-
+        # this brings the past price which become the entry and the present price is the exit price. 
+        # the offset is positive to bring price forward.
+        # normally, we use previous price to explain current price but this case is probably not that useful as the model will be
+        # explaining previous timeframe to achieve current profit or loss. This is not useful as it already happened.
+        df[f'lag_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
+        df[f'pl_{col2}_f{timeframe}_hr'] = df[col1] - df[f'lag_{col2}_{timeframe}']
+        
     return df
 
 
@@ -420,8 +423,8 @@ def stats_df_gen(df, subset_rows):
     df = price_difference(df, "low", "lower_bb20_1", 1 )
 
     df = trend_measure(df,1)   
-    df['pl_open_f1_hr'] = df['pl_open_f1_hr'].fillna(method='ffill')
-    df['pl_open_f4_hr'] = df['pl_open_f4_hr'].fillna(method='ffill')
+    df['pl_open_1_hr'] = df['pl_open_1_hr'].fillna(method='ffill')
+    df['pl_open_4_hr'] = df['pl_open_4_hr'].fillna(method='ffill')
     columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
     df = df.drop(columns, axis=1)
     df = df.dropna()
@@ -530,6 +533,6 @@ def historical_record(num_rows):
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
     historical_df = stats_df_gen(df, num_rows)
-    historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
+    # historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
    
     return (historical_df)

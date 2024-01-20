@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
-from .utils.data_processing import stats_df_gen
+# from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters, ModelSelection
 from prices.models import Price
 from tickers.models import Ticker
 import pandas as pd
 from .utils.utils import trade_direction
+import os
+import sys
+import importlib.util
 
 
 # Create your views here.
@@ -63,6 +66,19 @@ def ml_manual(request):
     
     """
     
+    # Dynamically get the module path involves defining the parent directory
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # Add the parent directory to the Python path
+    sys.path.append(parent_directory)
+    module_name = f'trained_models.USDJPY.pl_predictions.v4.data_processing'
+
+    try:
+        dp = importlib.import_module(module_name)
+    except ImportError:
+        print(f"Error importing data_processing module for model_version: v4")
+        dp = None
+    
+    
     form = ModelParameters(request.POST)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
@@ -71,7 +87,7 @@ def ml_manual(request):
     prices_df = pd.DataFrame(list(prices.values()))
     prices_df = prices_df.sort_values(by='date', ascending=True)
     last_prices_df = prices_df.tail(2)
-    last_price_stats = stats_df_gen(prices_df,2)
+    last_price_stats = dp.stats_df_gen(prices_df,2)
     
     results = []
     if request.method == 'POST':
