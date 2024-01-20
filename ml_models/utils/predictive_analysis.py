@@ -1,9 +1,12 @@
 import os
+import sys
+import importlib.util
 import joblib
 import pandas as pd
 import numpy as np
 from pathlib import Path
 from .data_processing import scenario_reverse, scenario_continue, historical_record
+
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 
 
@@ -128,13 +131,27 @@ def standard_analysis(model_version):
         dictionary: returns results from model for the different scenarios
     """
     
-    X_live_reverse = scenario_reverse()
-    X_live_continue = scenario_continue()
-    X_live_historical = historical_record(4)
+    # Dynamically get the module path involves defining the parent directory
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # Add the parent directory to the Python path
+    sys.path.append(parent_directory)
+    module_name = f'trained_models.USDJPY.pl_predictions.{model_version}.data_processing'
+
+    try:
+        dp = importlib.import_module(module_name)
+    except ImportError:
+        print(f"Error importing data_processing module for model_version: {model_version}")
+        dp = None
+    
+    
+    X_live_reverse = dp.scenario_reverse()
+    X_live_continue = dp.scenario_continue()
+    X_live_historical = dp.historical_record(4)
     
     pred_reverse, _, _, _, _ = model_run(X_live_reverse, model_version)
     pred_continue, _, _, _, _ = model_run(X_live_continue, model_version)
     pred_historical, _, _, _, _ = model_run(X_live_historical, model_version)
+    
      
     return pred_reverse, pred_continue, pred_historical
 

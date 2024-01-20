@@ -20,7 +20,6 @@ def ml_predictions(request):
     
     if request.method == 'POST' and form.is_valid():
         model_version = form.cleaned_data['model_version']
-        print("second version")
     else:
         model_version = 'v4'
         
