@@ -11,7 +11,10 @@ BB_CHOICES = [
 ]
 
 
+MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5')]
+
 class ModelParameters(forms.Form):
+    model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v4', label='Select the model version')
     open = forms.FloatField(initial=0.0, label='Open Price')
     close = forms.FloatField(initial=0.0, label='Close Price')
     open_lag1 = forms.FloatField(initial=0.0, label='Open Price from previous hour')
@@ -33,4 +36,5 @@ class ModelParameters(forms.Form):
 
   
 class ModelSelection(forms.Form):
-      model_version = forms.ChoiceField(choices=[('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5')], initial='v4', label='Select the model version')
+      
+      model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v4', label='Select the model version')

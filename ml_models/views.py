@@ -41,8 +41,10 @@ def ml_predictions(request):
     close_prices = last_four_prices_df['close'].tolist()
     
     #creating bespoke context for front-end    
+    date = last_four_prices_df.iloc[3]['date']
     trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
     trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
+    
     
     trade = {"one" :trade_direction(trade_diff_1hr),
     "four": trade_direction(trade_diff_4hr)}
@@ -50,7 +52,7 @@ def ml_predictions(request):
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
     
-    context={'form': form, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
+    context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
     
     return render(request, 'ml_models/ml_predictions.html', context)
@@ -80,6 +82,7 @@ def ml_manual(request):
     
     
     form = ModelParameters(request.POST)
+
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -93,14 +96,15 @@ def ml_manual(request):
     if request.method == 'POST':
         form = ModelParameters(request.POST)
         if form.is_valid():
+            model_version = form.cleaned_data['model_version']
             user_input = manual_price_input(form)
-            results, _, _, _, _ = model_run(user_input)            
+            results, _, _, _, _ = model_run(user_input, model_version)            
      
     else:
            
         # Initialize the form with default values
         form = ModelParameters(initial={           
-            
+            'model_version': "v4",
             #note current prices are used 
             'open': last_price_stats['open'].values[1],
             'close': last_price_stats['close'].values[1],

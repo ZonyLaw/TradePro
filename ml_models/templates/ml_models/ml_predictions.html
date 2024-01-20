@@ -8,8 +8,10 @@
     {{form.as_p}}
     <input type="submit" />
   </form>
+
   <p> These results are meant to give you a direction but not to replace your strategy </p>
   <p> Get the recent model prediction results for analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
+  <p> Last Date price was extracted: <b>{{date}}</b> </p>
   <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
   <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
   <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
@@ -31,12 +33,13 @@
 
     {% for category, proba in pred_reverse.items %}
       <tr>
-        <td>{{ category }}</td>
         {% if not forloop.last %}
+          <td>{{ category }}</td>
           <td>{{ proba.0 }}%</td>
           <td>{{ proba.1 }}%</td>
           <td>{{ proba.2 }}%</td>
         {% else %}
+          <td><b>{{ category }}</b></td>
           <td>{{ proba.0 }}</td>
           <td>{{ proba.1 }}</td>
           <td>{{ proba.2 }}</td>
@@ -65,12 +68,13 @@
     
     {% for category, proba in pred_continue.items %}
      <tr>
-        <td>{{ category }}</td>
-        {% if not forloop.last %}
+       {% if not forloop.last %}
+          <td>{{ category }}</td>
           <td>{{ proba.0 }}%</td>
           <td>{{ proba.1 }}%</td>
           <td>{{ proba.2 }}%</td>
         {% else %}
+          <td><b>{{ category }}</b></td>
           <td>{{ proba.0 }}</td>
           <td>{{ proba.1 }}</td>
           <td>{{ proba.2 }}</td>
@@ -111,13 +115,14 @@
 
       {% for category, proba in pred_historical.items %}
         <tr>
-          <td>{{ category }}</td>
           {% if not forloop.last %}
+            <td>{{ category }}</td>
             <td>{{ proba.0 }}%</td>
             <td>{{ proba.1 }}%</td>
             <td>{{ proba.2 }}%</td>
             <td>{{ proba.3 }}%</td>
           {% else %}
+            <td><b>{{ category }}</b></td>
             <td>{{ proba.0 }}</td>
             <td>{{ proba.1 }}</td>
             <td>{{ proba.2 }}</td>
