@@ -116,14 +116,19 @@ def ml_manual(request):
 def export_model_results(request):
     
     if request.method == 'POST':
-    
-        model_results = trade_forecast_assessment()
-        response = HttpResponse(content_type='text/csv')
-        response['Content-Disposition'] = 'attachment; filename="model_results.csv"'
-        model_results.to_csv(path_or_buf=response, index=False, encoding='utf-8')
+        form = ModelSelection(request.POST)
 
-        return response
-    
+        if form.is_valid():
+            model_version = form.cleaned_data['model_version']
+            model_results = trade_forecast_assessment(model_version)
+
+            response = HttpResponse(content_type='text/csv')
+            response['Content-Disposition'] = f'attachment; filename="model_results_{model_version}.csv"'
+            model_results.to_csv(path_or_buf=response, index=False, encoding='utf-8')
+
+            return response
     else:
-        return render(request, 'ml_models/export_model_results.html')
+        form = ModelSelection()
+
+    return render(request, 'ml_models/export_model_results.html', {'form': form})
     

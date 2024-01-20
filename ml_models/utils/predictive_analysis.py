@@ -156,7 +156,7 @@ def standard_analysis(model_version):
     return pred_reverse, pred_continue, pred_historical
 
 
-def trade_forecast_assessment():
+def trade_forecast_assessment(model_version):
     """
     This function is to assess the trade forecast accuracy and produce a csv file for further analysis.
 
@@ -168,7 +168,7 @@ def trade_forecast_assessment():
     """
     
     X_live_historical = historical_record(60)
-    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical)
+    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical, model_version)
    
     #combined the live data and prediction dataframes.
     df1 = pd.DataFrame(model_prediction_proba, columns=model_labels_map)

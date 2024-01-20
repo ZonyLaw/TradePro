@@ -4,6 +4,7 @@
     
     <form id="downloadForm" action="{% url 'export-model-results' %}" method="POST">
         {% csrf_token %}
+        {{ form }}
         <button type="submit">Download CSV</button>
     </form>
 

@@ -9,7 +9,7 @@
   <table>
     <tr>
     <td> Date: {{ price.date|timezone:user_timezone }} </td>
-    <td> Open price: {{price.open }} - Close price: {{price.close }} </td>
+    <td> Open price: {{price.open|floatformat:2 }} - Close price: {{price.close|floatformat:2 }} </td>
     <td> Trade: {{price.trade }} </td>
     {% if request.user.is_superuser %}
       <td> <a href = "{% url 'update-price' price.id %}" >Update Price </a> </td>
