@@ -117,7 +117,7 @@ Here are some notes for future referencing.
 - heroku have a limit of 500mb storage so remove unneccesary packages
 - commented out the cloudinary setting as there seem to be issue with staticfile.json. This may be related to version issue or I have not set the cloudinary properly.
 - cst refer to wrong reference to dictionary
-- it is not recommended that development access production database.
+- it is not recommended that development access production database. If you want to access the PostgresSQL, so Django version 4.1 is used rather the latest version.
 
 
 #### Using email as login
@@ -135,7 +135,7 @@ Here are some notes for future referencing.
 - Ensure any custom made apps link to the user need to be deleted before following the steps found at this website:
 https://pypi.org/project/django-use-email-as-username/
 
-
+- A package is installed for using email instead of username (pacakge installation: pip install django-use-email-as-username)
 
 ### Content in the env file if this gets deleted
 
