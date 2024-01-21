@@ -2,6 +2,8 @@
 
 This app gives you some insights on potential targets and profits based on current prices. It uses machine learning to capture what trade is expected within a specific timeframe.
 
+Currently it is still underdevelopment and only provide one product. The main structure is there but will need cleaning up.
+
 ## Table of Contents
 
 - [TradePro](#TradePro)
@@ -107,6 +109,7 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 ### challenges in creating this app
 
+Here are some notes for future referencing.
 - the key wasn't set up correctly and this throw an error
 - wsgi.py reference to the wrong app name
 - user specific timezone rendering needs {% load tz %} in html combined with filtering
@@ -114,6 +117,7 @@ This epic is for all documents related stories and tasks to document the lifecyc
 - heroku have a limit of 500mb storage so remove unneccesary packages
 - commented out the cloudinary setting as there seem to be issue with staticfile.json. This may be related to version issue or I have not set the cloudinary properly.
 - cst refer to wrong reference to dictionary
+- it is not recommended that development access production database.
 
 
 #### Using email as login
@@ -130,6 +134,7 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - Ensure any custom made apps link to the user need to be deleted before following the steps found at this website:
 https://pypi.org/project/django-use-email-as-username/
+
 
 
 ### Content in the env file if this gets deleted
