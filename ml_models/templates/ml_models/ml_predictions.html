@@ -18,9 +18,95 @@
   <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
   <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
   
-  <hr>
-  <h1>Model predictions for reverse</h1>
+
+  <h1>Historical prediction for the last 4 hours</h1>
   <p> Current candle direction <b>{{trade.one}}</b> </p>
+  <p> Current hour can fluctuate depending on new data retrieved within the hour! </p>
+  <table>
+    <tr>
+      <th>Profit/Loss</th>
+      <th>3 hr ago</th>
+      <th>4 hr ago</th>
+      <th>1 hr ago</th>
+      <th>Current hr</th>
+    </tr>
+
+
+      <tr>
+        <td>Open price</td>
+        {% for price in open_prices %} 
+    
+          <td> £{{ price|floatformat:2 }}</td>
+
+        {% endfor %} 
+      </tr> 
+
+    {% for category, proba in pred_historical.items %}
+      <tr>
+        {% if not forloop.last %}
+          <td>{{ category }}</td>
+          <td>{{ proba.0 }}%</td>
+          <td>{{ proba.1 }}%</td>
+          <td>{{ proba.2 }}%</td>
+          <td>{{ proba.3 }}%</td>
+        {% else %}
+          <td><b>{{ category }}</b></td>
+          <td>{{ proba.0 }}</td>
+          <td>{{ proba.1 }}</td>
+          <td>{{ proba.2 }}</td>
+          <td>{{ proba.3 }}</td>
+        {% endif %}
+      </tr>
+    
+      {% if forloop.revcounter0 == 1 %}
+        <tr>
+          <td colspan="4"><hr></td>
+        </tr>
+      {% endif %}
+      
+    {% endfor %}
+
+
+    </table> 
+
+    <table>
+
+    <h1>Sensitivity test on the prediction if movement reversed</h1>
+    <p> Current candle direction <b>{{trade.one}}</b> </p>
+    <p> This is to see if prediction holds if movement flips of 15 pips </p>
+    <p> and also retaining the trend strenghts </p>
+    <table>
+      <tr>
+        <th>Profit/Loss</th>
+        <th>Fliped Movement (15 pips)</th>
+
+      </tr>
+
+    {% for category, proba in pred_variability.items %}
+    <tr>
+      {% if not forloop.last %}
+        <td>{{ category }}</td>
+        <td>{{ proba.0 }}%</td>
+      {% else %}
+        <td><b>{{ category }}</b></td>
+        <td>{{ proba.0 }}</td>
+      {% endif %}
+    </tr>
+
+      {% if forloop.revcounter0 == 1 %}
+      <tr>
+        <td colspan="4"><hr></td>
+      </tr>
+    {% endif %}
+    
+    {% endfor %}
+  </table> 
+
+
+  <hr>
+  <h1>Model predictions for next reversed candle</h1>
+  <p> Current candle direction <b>{{trade.one}}</b> </p>
+  <p> Two scenarios tested (ie., 20 & 40 pips) </p>
 
   <table>
     <tr>
@@ -56,8 +142,9 @@
   </table> 
 
 
-  <h1>Model predictions for continue</h1>
+  <h1>Model predictions for next candle continuing</h1>
   <p> Current candle direction <b>{{trade.one}}</b> </p>
+  <p> Two scenarios tested (ie., 20 & 40 pips)</p>
   <table>
     <tr>
       <th>Profit/Loss</th>
@@ -91,59 +178,14 @@
 
     </table> 
     
-    <h1>Historical prediction for the last 4 hours</h1>
-    <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> Current hour can fluctuate depending on new data retrieved within the hour! </p>
-    <table>
-      <tr>
-        <th>Profit/Loss</th>
-        <th>3 hr ago</th>
-        <th>4 hr ago</th>
-        <th>1 hr ago</th>
-        <th>Current hr</th>
-      </tr>
-
- 
-        <tr>
-          <td>Open price</td>
-          {% for price in open_prices %} 
-      
-            <td> £{{ price|floatformat:2 }}</td>
-
-          {% endfor %} 
-        </tr> 
-
-      {% for category, proba in pred_historical.items %}
-        <tr>
-          {% if not forloop.last %}
-            <td>{{ category }}</td>
-            <td>{{ proba.0 }}%</td>
-            <td>{{ proba.1 }}%</td>
-            <td>{{ proba.2 }}%</td>
-            <td>{{ proba.3 }}%</td>
-          {% else %}
-            <td><b>{{ category }}</b></td>
-            <td>{{ proba.0 }}</td>
-            <td>{{ proba.1 }}</td>
-            <td>{{ proba.2 }}</td>
-            <td>{{ proba.3 }}</td>
-          {% endif %}
-        </tr>
-      
-        {% if forloop.revcounter0 == 1 %}
-          <tr>
-            <td colspan="4"><hr></td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </table> 
+   
 
 
   <h2>Notes:</h2>
   <p>The model is only about 60 - 70% accurate predicting directions for a four hour timeframe.</p>
+  <p>The model is only about 80-90% accurate predicting directions for a one hour timeframe.</p>
   <p>The analysis below show what are the probabilities if the trade directions reverse or continue based on previous trade direction.</p>
   <p>Should there be any major news or events, the model results could be invalidated!.</p>
-  <p>High probabilities (e.g. 80% to 90%) has a chance of exhaustion. Either a retracement or hard reversal!</p>
   <p>If both the reversal and continuation results predict strongly in one direction, then it is a good chance it will go in that direction.</p>
 
 </main>

@@ -147,13 +147,16 @@ def standard_analysis(model_version):
     X_live_reverse = dp.scenario_reverse()
     X_live_continue = dp.scenario_continue()
     X_live_historical = dp.historical_record(4)
+    X_live_variability = dp.prediction_variability(0.15)
+    
     
     pred_reverse, _, _, _, _ = model_run(X_live_reverse, model_version)
     pred_continue, _, _, _, _ = model_run(X_live_continue, model_version)
     pred_historical, _, _, _, _ = model_run(X_live_historical, model_version)
+    pred_variability, _, _, _, _ = model_run(X_live_variability, model_version)
     
      
-    return pred_reverse, pred_continue, pred_historical
+    return pred_reverse, pred_continue, pred_historical, pred_variability
 
 
 def trade_forecast_assessment(model_version):

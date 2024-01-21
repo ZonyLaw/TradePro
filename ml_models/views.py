@@ -27,7 +27,7 @@ def ml_predictions(request):
         model_version = 'v4'
         
         
-    pred_reverse, pred_continue, pred_historical = standard_analysis(model_version)
+    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -52,7 +52,7 @@ def ml_predictions(request):
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
     
-    context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 
+    context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
     
     return render(request, 'ml_models/ml_predictions.html', context)

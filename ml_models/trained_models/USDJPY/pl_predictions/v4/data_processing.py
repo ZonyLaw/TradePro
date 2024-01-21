@@ -530,3 +530,37 @@ def historical_record(num_rows):
     historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
    
     return (historical_df)
+
+
+def prediction_variability(adjustment):
+    """
+    This function is to test the sensitivity of the model predictions by flipping direction of the candle stick.
+    A consistent predictions means a stronger confidence.
+    
+    Args:
+        adjustment (float): adjustment is the amount to flip the candle movement to test the sensitivity of the model results
+
+    Returns:
+        dataframe: contains the results of prediction after a small adjustment to the current price.
+    """
+    
+    ticker = Ticker.objects.get(symbol="USDJPY")
+    df = priceDB_to_df(ticker)
+      
+    # Make adjustments directly to the last row in the DataFrame
+    variability_df = df.copy()
+    last_row = variability_df.iloc[-1]
+    
+    if last_row['close'] > last_row['open']:
+        adjustment = -adjustment
+  
+    
+    # print("looking at var>>>>>>>>", variability_df)
+    variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] + adjustment
+    variability_df = stats_df_gen(variability_df,2)
+    #Takes the last trend strength to minismise the overly switching
+    variability_df.loc[variability_df.index[1], 'trend_strength_1'] = variability_df.loc[variability_df.index[0], 'trend_strength_1']
+    # print("AFTER>>>>>>>>", variability_df['trend_strength_1'])
+        
+    
+    return (variability_df.tail(1))
