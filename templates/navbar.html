@@ -4,6 +4,7 @@
 
 {% if request.user.is_superuser %}
 <a href="{% url 'profiles' %}">User Profile</a>
+<a href="{% url 'edit-profile' %}">Update Profile</a>
 <a href="{% url 'create-ticker' %}">Add Ticker</a>
 <a href="{% url 'create-price' %}">Add Price</a>
 <a href="{% url 'get-IG-prices' %}">Get IG Prices</a>
