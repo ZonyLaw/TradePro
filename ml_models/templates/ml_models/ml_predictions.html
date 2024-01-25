@@ -71,14 +71,15 @@
 
     <table>
 
-    <h1>Sensitivity test on the prediction if movement reversed</h1>
+    <h1>Sensitivity test of forward looking</h1>
     <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> This is to see if prediction holds if movement flips of 15 pips </p>
-    <p> and also retaining the trend strenghts </p>
+    <p> This is to see if prediction is consistent with +/- 15 pips </p>
+    <p> As with current prices it can fluctuate between positve and negative candles. </p>
     <table>
       <tr>
         <th>Profit/Loss</th>
-        <th>Fliped Movement (15 pips)</th>
+        <th>15 pips</th>
+        <th>-15 pips</th>
 
       </tr>
 
@@ -87,9 +88,11 @@
       {% if not forloop.last %}
         <td>{{ category }}</td>
         <td>{{ proba.0 }}%</td>
+        <td>{{ proba.1 }}%</td>
       {% else %}
         <td><b>{{ category }}</b></td>
         <td>{{ proba.0 }}</td>
+        <td>{{ proba.1 }}</td>
       {% endif %}
     </tr>
 

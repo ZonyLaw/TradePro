@@ -37,4 +37,4 @@ class ModelParameters(forms.Form):
   
 class ModelSelection(forms.Form):
       
-      model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v4', label='Select the model version')
+      model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v5', label='Select the model version')

@@ -62,36 +62,30 @@ def crossing_bb(df, timeframe):
     return df
 
 
-def profit_calc(df, col1, col2, lag):
+def profit_calc(df, col, lag):
     """
     Does not need timeframe parameter!
     This function create the lag price and calculates the profit for the time period specified.
 
     Args:
         df (dataframe): dataframe contain the data
-        col1 (string): price column to lag (e.g. high, low, open, close)
-        col2 (string): price column to lag (e.g. high, low, open, close)
-        lag (integer): time period to lag the column with postive number and lead with negative number
+        col (string): price column to lag (e.g. high, low, open, close)
+        lag (integer): time period to lag the column
 
     Returns:
-        dataframe: containing the new columns for profit/loss and lag or lead attribute for the price specified.
-        TODO could rename as trade in the future.
+        dataframe: containing the new columns
     """
-    num = abs(lag)
     
-    if lag > 0:
-        
-        #if the price is lagged, the profit is calculated by taking col1 as close price and col2 as entry; 
-        #in essence it taks the four hour as known to leaving only an hour or potential trade 
-        df[f'lagged_{col2}_{num}'] = df[col2].shift(lag)
-        df[f'pl_{col2}_{num}_hr'] =  df[col1] - df[f'lagged_{col2}_{num}']
-        
-        
-    else:
-        #if the price is lead or forward looking, we take col1 as entry and col2 as close
-        #this takes the true 4 hr profit and loss
-        df[f'lead_{col2}_{num}'] = df[col2].shift(lag)
-        df[f'pl_{col2}_f{num}_hr'] = df[f'lead_{col2}_{num}'] -  df[col1]
+    df[f'lagged_{col}_{lag}'] = df[col].shift(lag)
+    df[f'pl_{col}_{lag}_hr'] =  df[col] - df[f'lagged_{col}_{lag}']
+    
+    #check if it should be a buy or sell given if entry was made at the point of date and time.
+    buy_condition  = (df[f'pl_{col}_{lag}_hr'] > 0)
+
+    
+    #0 for sell and 1 for buy
+    df[f'trade_{col}_{lag}_hr'] = 0 #'sell'
+    df.loc[buy_condition, f'trade_{col}_{lag}_hr'] = 1 #'buy'
     
 
     return df
@@ -340,6 +334,17 @@ def tag_peak_trough_values(df, column_name, peak_values, trough_values, proximit
 
 
 def priceDB_to_df(ticker):
+    """
+    This function filter the ticker interested and sort the price time series by date.
+    The index is relabelled in sequence so can be used for extracting top and last prices.
+
+    Args:
+        ticker (string): user specify the ticker to get price for.
+
+    Returns:
+        dataframe: a sorted dataframe by date and relabelled index.
+    """
+    
     queryset = Price.objects.filter(ticker=ticker)
 
     # Convert queryset to a list of dictionaries
@@ -348,6 +353,7 @@ def priceDB_to_df(ticker):
     # Create a Pandas DataFrame
     df = pd.DataFrame(data)
     df.sort_values(by='date', inplace=True)
+    df.reset_index(drop=True, inplace=True)
  
     return df
 
@@ -406,8 +412,8 @@ def stats_df_gen(df, subset_rows):
     
     df = date_split(df)
     df = crossing_bb(df,1)
-    df = profit_calc(df, "open", "open", -1)
-    df = profit_calc(df, "open", "open", -4)
+    df = profit_calc(df, "close", 1)
+    df = profit_calc(df, "close", 4)
     
     df = price_difference(df, "upper_bb20_1", "lower_bb20_1",1, "up_bb20", "low_bb20"  )
     df = price_difference(df, "close", "ma20_1", 1 )
@@ -419,9 +425,9 @@ def stats_df_gen(df, subset_rows):
     df['open_close_diff1_lag1'] = df['open_close_diff_1'].shift(1)
 
     df = trend_measure(df,1)   
-    df['pl_open_f1_hr'] = df['pl_open_f1_hr'].fillna(method='ffill')
-    df['pl_open_f4_hr'] = df['pl_open_f4_hr'].fillna(method='ffill')
-    columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
+    df['pl_close_1_hr'] = df['pl_close_1_hr'].fillna(method='ffill')
+    df['pl_close_4_hr'] = df['pl_close_4_hr'].fillna(method='ffill')
+    columns = ['dev20_1', 'dev50_1', 'dev100_1' ]
     df = df.drop(columns, axis=1)
     df = df.dropna()
     # df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
@@ -446,7 +452,7 @@ def stats_df_gen(df, subset_rows):
     
     # #merged the content from 4hr table into 1 hr.
     merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
-    # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
+    # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\new_4.csv", index=False)
     merged_df = merged_df.dropna()
 
     #Check the last two rows
@@ -550,17 +556,30 @@ def prediction_variability(adjustment):
     # Make adjustments directly to the last row in the DataFrame
     variability_df = df.copy()
     last_row = variability_df.iloc[-1]
+
     
-    if last_row['close'] > last_row['open']:
-        adjustment = -adjustment
-  
-    
+    #Prediction based on positive candle stick
     # print("looking at var>>>>>>>>", variability_df)
     variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] + adjustment
-    variability_df = stats_df_gen(variability_df,2)
+    variability_df_pos = stats_df_gen(variability_df,2)
+    # print("last row", variability_df.loc[last_row.id])
+    print("AFTER>>>>>>>>", variability_df_pos)
+  
     #Takes the last trend strength to minismise the overly switching
-    variability_df.loc[variability_df.index[1], 'trend_strength_1'] = variability_df.loc[variability_df.index[0], 'trend_strength_1']
-    # print("AFTER>>>>>>>>", variability_df['trend_strength_1'])
-        
+    variability_df_pos.loc[variability_df_pos.index[1], 'trend_strength_1'] = variability_df_pos.loc[variability_df_pos.index[0], 'trend_strength_1']
     
-    return (variability_df.tail(1))
+    #Prediction based on positive candle stick
+    # print("looking at var>>>>>>>>", variability_df)
+    variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] - adjustment
+    variability_df_neg = stats_df_gen(variability_df,2)
+    # print("last row", variability_df.loc[last_row.id])
+    print("AFTER>>>>>>>>", variability_df_neg)
+  
+    #Takes the last trend strength to minismise the overly switching
+    variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
+    
+   
+    variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
+    print("9999999999999999999999" ,variability_all) 
+    
+    return (variability_all)

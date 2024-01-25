@@ -551,22 +551,31 @@ def prediction_variability(adjustment):
     
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
-    
       
     # Make adjustments directly to the last row in the DataFrame
     variability_df = df.copy()
     last_row = variability_df.iloc[-1]
+
     
-    if last_row['close'] > last_row['open']:
-        adjustment = -adjustment
+    #Prediction based on positive candle stick
+    print("looking at var>>>>>>>>", variability_df)
+    variability_df.loc[last_row.id, 'close'] = last_row['open'] + adjustment
+    variability_df_pos = stats_df_gen(variability_df,2)
+    print("AFTER>>>>>>>>", variability_df_pos)
   
-    
-   # print("looking at var>>>>>>>>", variability_df)
-    variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] + adjustment
-    variability_df = stats_df_gen(variability_df,2)
     #Takes the last trend strength to minismise the overly switching
-    variability_df.loc[variability_df.index[1], 'trend_strength_1'] = variability_df.loc[variability_df.index[0], 'trend_strength_1']
-    # print("AFTER>>>>>>>>", variability_df['trend_strength_1'])
-        
+    variability_df_pos.loc[variability_df_pos.index[1], 'trend_strength_1'] = variability_df_pos.loc[variability_df_pos.index[0], 'trend_strength_1']
     
-    return (variability_df.tail(1))
+    #Prediction based on negative candle stick
+    # print("looking at var>>>>>>>>", variability_df)
+    variability_df.loc[last_row.id, 'close'] = last_row['open'] - adjustment
+    variability_df_neg = stats_df_gen(variability_df,2)
+    #Takes the last trend strength to minismise the overly switching
+    variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
+    # print("AFTER>>>>>>>>", variability_df['trend_strength_1'])
+    
+   
+    variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
+    # print("9999999999999999999999" ,variability_all) 
+    
+    return (variability_all)
