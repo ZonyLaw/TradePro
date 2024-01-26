@@ -423,8 +423,8 @@ def stats_df_gen(df, subset_rows):
     df = price_difference(df, "low", "lower_bb20_1", 1 )
 
     df = trend_measure(df,1)   
-    df['pl_open_1_hr'] = df['pl_open_1_hr'].fillna(method='ffill')
-    df['pl_open_4_hr'] = df['pl_open_4_hr'].fillna(method='ffill')
+    df['pl_open_1_hr'] = df['pl_open_1_hr'].ffill()
+    df['pl_open_4_hr'] = df['pl_open_4_hr'].ffill()
     columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
     df = df.drop(columns, axis=1)
     df = df.dropna()
@@ -554,7 +554,7 @@ def prediction_variability(adjustment):
       
     # Make adjustments directly to the last row in the DataFrame
     variability_df = df.copy()
-    variability_df['scenario'] = 0 
+    variability_df['scenario'] = 0.0 
     last_row = variability_df.iloc[-1]
 
     
@@ -567,7 +567,7 @@ def prediction_variability(adjustment):
     # print("AFTER>>>>>>>>", variability_df_pos)
   
     #Takes the last trend strength to minismise the overly switching
-    variability_df_pos.loc[variability_df_pos.index[1], 'trend_strength_1'] = variability_df_pos.loc[variability_df_pos.index[0], 'trend_strength_1']
+    # variability_df_pos.loc[variability_df_pos.index[1], 'trend_strength_1'] = variability_df_pos.loc[variability_df_pos.index[0], 'trend_strength_1']
     
     #Prediction based on positive candle stick
     # print("looking at var>>>>>>>>", variability_df)
@@ -578,7 +578,7 @@ def prediction_variability(adjustment):
     # print("AFTER>>>>>>>>", variability_df_neg)
   
     #Takes the last trend strength to minismise the overly switching
-    variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
+    # variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
     
    
     variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
