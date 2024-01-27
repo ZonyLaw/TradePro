@@ -10,10 +10,77 @@ from .utils.utils import trade_direction
 import os
 import sys
 import importlib.util
+import json
 
+
+def read_prediction_from_json(filename):
+    
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
+
+    # Move up two levels from the current module's directory
+    base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
+
+    relative_path = os.path.join( 'tradepro', 'media','model_results', filename)
+    # Construct the absolute path
+    absolute_path = os.path.join(base_dir_up_one_levels, relative_path)
+    print("test path>>>>>",absolute_path)
+    
+    with open(absolute_path, 'r') as file:
+        data = json.load(file)
+
+    return data
 
 # Create your views here.
 def ml_predictions(request):
+    """
+    This is a view function that pass the model predictions to the the frontend.
+    Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
+    """
+    
+    form = ModelSelection(request.POST)
+    
+    if request.method == 'POST' and form.is_valid():
+        model_version = form.cleaned_data['model_version']
+    else:
+        model_version = 'v4'
+        
+    # pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
+
+    pred_reverse = read_prediction_from_json(f'USDJPY_pred_reverse_{model_version}.json')
+    pred_continue = read_prediction_from_json(f'USDJPY_pred_continue_{model_version}.json')
+    pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
+    pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
+    
+    
+    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+    open_prices = last_four_prices_df['open'].tolist()
+    close_prices = last_four_prices_df['close'].tolist()
+    
+    #creating bespoke context for front-end    
+    date = last_four_prices_df.iloc[3]['date']
+    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
+    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
+    
+    
+    trade = {"one" :trade_direction(trade_diff_1hr),
+    "four": trade_direction(trade_diff_4hr)}
+    
+    candle_size = {"one" :trade_diff_1hr,
+    "four": trade_diff_4hr}
+    
+    context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
+             'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
+    
+    return render(request, 'ml_models/ml_predictions.html', context)
+
+def ml_predictions2(request):
     """
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.

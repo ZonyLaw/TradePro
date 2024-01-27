@@ -5,6 +5,7 @@ import joblib
 import pandas as pd
 import numpy as np
 from pathlib import Path
+import json
 # from .data_processing import scenario_reverse, scenario_continue, historical_record
 
 from feature_engine.discretisation import EqualFrequencyDiscretiser
@@ -13,6 +14,56 @@ from feature_engine.discretisation import EqualFrequencyDiscretiser
 def load_file(file_path):
     #data management-loads the filepath to get the model
     return joblib.load(filename=file_path)
+
+
+def write_to_json(data, filename):
+    """
+    This function is write the data to a json file as a temporary storage.
+
+    Args:
+        data (dictionary): containing the model prediction results
+        filename (string): filename of the json file.
+    """
+    
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
+
+    # Move up two levels from the current module's directory
+    base_dir_up_two_levels = os.path.abspath(os.path.join(base_dir, os.pardir, os.pardir))
+
+    relative_path = os.path.join(base_dir_up_two_levels, 'tradepro/media', 'model_results', filename)
+    # Construct the absolute path
+    absolute_path = os.path.join(base_dir, relative_path)
+
+    # Ensure that the directory structure exists, creating directories if necessary
+    os.makedirs(os.path.dirname(absolute_path), exist_ok=True)
+
+    # Write to the JSON file
+    with open(absolute_path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    
+
+def transform_format(pred_name, heading_labels, original_data):
+    """
+    This is to add the name tag to the prediction results and some heading labels to the data set
+    used for producing the table in html.
+
+    Args:
+        pred_name (string): the name of the scenario predction 
+        heading_labels (array): an array of labels for headers in the html table
+        original_data (dictionary): the model prediction results in dictionary format
+
+    Returns:
+        dictionary: the new dictionary with scenario predction name and header to the table.
+    """
+    
+    transformed_data = {
+        pred_name: [
+            {"heading": heading_labels},
+            {"item": original_data}
+        ]
+    }
+    
+    return transformed_data
 
 
 def format_model_results(model_prediction_proba, model_prediction, model_label_map):
@@ -155,6 +206,17 @@ def standard_analysis(model_version):
     pred_historical, _, _, _, _ = model_run(X_live_historical, model_version)
     pred_variability, _, _, _, _ = model_run(X_live_variability, model_version)
     
+    
+    pred_reverse = transform_format(f"pred_reverse", ["Current", "20pips", "40pips"], pred_reverse)
+    pred_continue = transform_format(f"pred_continue", ["Current", "20pips", "40pips"], pred_continue)
+    pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical)
+    pred_variability = transform_format(f"pred_variability", ["15pips", "-15pips"], pred_variability)
+    
+    
+    write_to_json(pred_reverse, f"USDJPY_pred_reverse_{model_version}.json")
+    write_to_json(pred_continue, f"USDJPY_pred_continue_{model_version}.json")
+    write_to_json(pred_historical, f"USDJPY_pred_historical_{model_version}.json")
+    write_to_json(pred_variability, f"USDJPY_pred_variability_{model_version}.json")
      
     return pred_reverse, pred_continue, pred_historical, pred_variability
 

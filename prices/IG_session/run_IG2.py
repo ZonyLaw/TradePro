@@ -1,4 +1,6 @@
 import os
+import sys
+import importlib.util
 import json
 import numpy as np
 from datetime import datetime, timedelta
@@ -151,6 +153,23 @@ def run_IG(ticker, start_date=None, end_date=None):
     print(start_time_rounded)
     print(end_time_rounded)
    
+    #######Running the model predictions
+    current_module_dir = os.path.dirname(os.path.abspath(__file__))
+    ml_models_path = os.path.abspath(os.path.join(current_module_dir, '..', '..', 'ml_models','utils'))
+    sys.path.append(ml_models_path)
+    
+    
+    try:
+        pa = importlib.import_module('predictive_analysis')
+    except ImportError:
+        print(f"Error importing predictive_analysis.")
+        pa = None
+
+    # Now you can import your function
+    pa.standard_analysis("v4")
+    pa.standard_analysis("v5")
+    pa.standard_analysis("1h_v5")
+    ###end
     
     #autheticating IG account and creating session    
     username = os.environ.get('IG_USERNAME')
@@ -161,6 +180,8 @@ def run_IG(ticker, start_date=None, end_date=None):
     ig_service = IGService(username, password, api_key, acc_type)
     ig_service.create_session()
     
+
+    
     try:
         #fetching data from IG account
         print("Starting the fetch")
@@ -170,6 +191,9 @@ def run_IG(ticker, start_date=None, end_date=None):
         print("This is df retrieved>>>", df)
         ig_service.logout()
         recordIGPrice(ticker, df, 100)
+        
+        
+        
     
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
