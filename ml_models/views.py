@@ -1,16 +1,16 @@
+import pandas as pd
+import os
+import sys
+import importlib.util
+import json
 from django.shortcuts import render, get_object_or_404, HttpResponse
+from .utils.utils import trade_direction, comment_model_results, compare_version_results
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
 # from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters, ModelSelection
 from prices.models import Price
 from tickers.models import Ticker
-import pandas as pd
-from .utils.utils import trade_direction
-import os
-import sys
-import importlib.util
-import json
 
 
 def read_prediction_from_json(filename):
@@ -46,11 +46,17 @@ def ml_predictions(request):
         
     # pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
 
+    pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
+    pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
+    pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
+    
     pred_reverse = read_prediction_from_json(f'USDJPY_pred_reverse_{model_version}.json')
     pred_continue = read_prediction_from_json(f'USDJPY_pred_continue_{model_version}.json')
     pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
     pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
     
+    comment = comment_model_results(pred_continue,"pred_continue")
+    version_comment = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -76,7 +82,7 @@ def ml_predictions(request):
     "four": trade_diff_4hr}
     
     context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
-             'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
+             'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size, 'comment':comment, 'version_comment': version_comment}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 

@@ -9,7 +9,7 @@ from .utils import import_prices_from_csv, generate_csv
 
 from django.utils import timezone
 from datetime import datetime
-from .IG_session.run_IG2 import run_IG
+from .IG_session.run_IG import run_IG
 
 
 def createPrice(request):

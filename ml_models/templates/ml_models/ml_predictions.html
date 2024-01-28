@@ -9,14 +9,21 @@
         <input type="submit" />
     </form>
     
+    <h1>Analysis Comments</h1>
+    <p> {{version_comment}} </p>
+    <p> {{comment}} </p>
+ 
     <p> These results are meant to give you a direction but not to replace your strategy </p>
-    <p> Get the recent model prediction results for analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
+    <p> Get the recent model prediction results for further analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
+
+    <h1>Market Information</h1>
     <p> Last Date price was extracted: <b>{{date}}</b> </p>
     <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
     <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
     <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
     <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
     <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
+    
 
     <h1>Historical prediction for the last 4 hours</h1>
     <p> Current candle direction <b>{{trade.one}}</b> </p>
@@ -123,6 +130,7 @@
     <h1>Model predictions for next candle continuing</h1>
     <p> Current candle direction <b>{{trade.one}}</b> </p>
     <p> Two scenarios tested (ie., 20 & 40 pips)</p>
+    
 
     <table border="1">
         <thead>
