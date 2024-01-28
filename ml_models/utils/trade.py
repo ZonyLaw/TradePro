@@ -65,7 +65,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
     current_trade2 = array2[0].split()[0]
     
     key_label3 = list(model_dict3.keys())[0]
-    array3 = model_dict2[key_label3][1]['item']['Potential Trade']
+    array3 = model_dict3[key_label3][1]['item']['Potential Trade']
     current_trade3 = array3[0].split()[0]
    
     if current_trade1 == current_trade2 == current_trade3:

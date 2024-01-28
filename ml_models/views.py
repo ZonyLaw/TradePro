@@ -4,7 +4,8 @@ import sys
 import importlib.util
 import json
 from django.shortcuts import render, get_object_or_404, HttpResponse
-from .utils.utils import trade_direction, comment_model_results, compare_version_results
+from .utils.trade import trade_direction
+from .utils.analysis_comments import comment_model_results, compare_version_results
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
 # from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
@@ -20,7 +21,7 @@ def read_prediction_from_json(filename):
     # Move up two levels from the current module's directory
     base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
 
-    relative_path = os.path.join( 'tradepro', 'media','model_results', filename)
+    relative_path = os.path.join( 'media','model_results', filename)
     # Construct the absolute path
     absolute_path = os.path.join(base_dir_up_one_levels, relative_path)
     print("test path>>>>>",absolute_path)

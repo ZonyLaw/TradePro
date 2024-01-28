@@ -30,7 +30,7 @@ def write_to_json(data, filename):
     # Move up two levels from the current module's directory
     base_dir_up_two_levels = os.path.abspath(os.path.join(base_dir, os.pardir, os.pardir))
 
-    relative_path = os.path.join(base_dir_up_two_levels, 'tradepro/media', 'model_results', filename)
+    relative_path = os.path.join(base_dir_up_two_levels, 'media', 'model_results', filename)
     # Construct the absolute path
     absolute_path = os.path.join(base_dir, relative_path)
 
