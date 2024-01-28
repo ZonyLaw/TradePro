@@ -58,15 +58,15 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
     
     key_label1 = list(model_dict1.keys())[0]
     array1 = model_dict1[key_label1][1]['item']['Potential Trade']
-    current_trade1 = array1[0][:3]
+    current_trade1 = array1[0].split()[0]
     
     key_label2 = list(model_dict2.keys())[0]
     array2 = model_dict2[key_label2][1]['item']['Potential Trade']
-    current_trade2 = array2[0][:3]
+    current_trade2 = array2[0].split()[0]
     
     key_label3 = list(model_dict3.keys())[0]
     array3 = model_dict2[key_label3][1]['item']['Potential Trade']
-    current_trade3 = array3[0][:3]
+    current_trade3 = array3[0].split()[0]
    
     if current_trade1 == current_trade2 == current_trade3:
         comment = f"All model versions predict a {current_trade1}"
@@ -82,7 +82,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
                 print(f"Error sending email: {e}")
             
     elif current_trade2 == current_trade3:
-        comment = f"4hr model and 1hr model predict the same {current_trade1}"
+        comment = f"4hr model and 1hr model predict the same {current_trade2}"
     else:
         comment = f"Unreliable predictions"
            
