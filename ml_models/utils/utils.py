@@ -1,5 +1,8 @@
-import csv
-from io import StringIO
+import os
+import sys
+import importlib.util
+import datetime
+
 
 def trade_direction(trade_diff):
     """_summary_
@@ -19,25 +22,6 @@ def trade_direction(trade_diff):
     else:
         return "Sell"
     
-def export_results(df):
-    csv_buffer = StringIO()
-    csv_writer = csv.writer(csv_buffer)
-
-    # Write header
-    csv_writer.writerow(['date', 'ticker', 'open', 'close', 'high', 'low'])
-
-    # Write data
-    for price in prices:
-        csv_writer.writerow([price.date, price.ticker, price.open, price.close, price.high, price.low])
-
-    # Get CSV data as a string
-    csv_data = csv_buffer.getvalue()
-
-    # Close the buffer
-    csv_buffer.close()
-
-    return csv_data
-
 def comment_model_results(model_results_dict, model_results_label):
     array = model_results_dict[model_results_label][1]['item']['Potential Trade']
     current_trade = array[0]
@@ -57,6 +41,21 @@ def comment_model_results(model_results_dict, model_results_label):
 
 
 def compare_version_results(model_dict1, model_dict2, model_dict3):
+    
+    
+    
+    # Dynamically get the module path involves defining the parent directory
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # Add the parent directory to the Python path
+    sys.path.append(parent_directory)
+    module_name = 'tradepro.utils.email'
+
+    try:
+        email = importlib.import_module(module_name)
+    except ImportError:
+        print("Error importing email module!")
+        email = None
+    
     key_label1 = list(model_dict1.keys())[0]
     array1 = model_dict1[key_label1][1]['item']['Potential Trade']
     current_trade1 = array1[0][:3]
@@ -71,9 +70,20 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
    
     if current_trade1 == current_trade2 == current_trade3:
         comment = f"All model versions predict a {current_trade1}"
+        
+        current_day = datetime.datetime.now().weekday()
+        if current_day in [5, 6]:
+            print("It's the weekend. Email sending is disabled.")
+        else:
+            try:
+                email.send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
+            except Exception as e:
+            # Catch specific exception types if possible, instead of a broad 'except' clause
+                print(f"Error sending email: {e}")
+            
     elif current_trade2 == current_trade3:
         comment = f"4hr model and 1hr model predict the same {current_trade1}"
     else:
         comment = f"Unreliable predictions"
-    
+           
     return comment
