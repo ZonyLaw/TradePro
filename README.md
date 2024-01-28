@@ -147,6 +147,7 @@ os.environ['SECRET_KEY'] = ''
 os.environ['IG_USERNAME'] = ''
 os.environ['IG_PASSWORD'] = ''
 os.environ['IG_API_KEY'] =  ''
+os.environ['GMAIL_PASSWORD2'] = ''
 
 
 ### conda env 
