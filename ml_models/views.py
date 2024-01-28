@@ -145,8 +145,8 @@ def ml_manual(request):
     parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     # Add the parent directory to the Python path
     sys.path.append(parent_directory)
-    module_name = f'trained_models.USDJPY.pl_predictions.v4.data_processing'
-
+    module_name = f'ml_models.trained_models.USDJPY.pl_predictions.v4.data_processing'
+    print("Module Path:", os.path.join(parent_directory, module_name.replace('.', os.sep) + ".py"))
     try:
         dp = importlib.import_module(module_name)
     except ImportError:
@@ -162,7 +162,7 @@ def ml_manual(request):
     
     prices_df = pd.DataFrame(list(prices.values()))
     prices_df = prices_df.sort_values(by='date', ascending=True)
-    last_prices_df = prices_df.tail(2)
+    # last_prices_df = prices_df.tail(2)
     last_price_stats = dp.stats_df_gen(prices_df,2)
     
     results = []

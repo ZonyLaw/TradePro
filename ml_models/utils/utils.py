@@ -50,7 +50,7 @@ def comment_model_results(model_results_dict, model_results_label):
         print(trade)
         comment = f"Scenario {model_results_label} - indicates there could be oscilation pattern or near-term retracement!"
     else:
-        comment = f"Scenario {model_results_label} - indicates direction continues in {trade}!"
+        comment = f"Scenario {model_results_label} - indicates consistent {current_trade.split()[0]} direction up to 40pips!"
         
         
     return comment
