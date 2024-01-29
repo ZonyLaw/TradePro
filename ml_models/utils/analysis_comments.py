@@ -54,9 +54,10 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
         comment = f"All model versions predict a {current_trade1}"
         
         current_day = datetime.datetime.now().weekday()
+        current_time = datetime.now().time()
         if current_day in [5, 6]:
             print("It's the weekend. Email sending is disabled.")
-        else:
+        elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35):
             try:
                 email.send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
             except Exception as e:
