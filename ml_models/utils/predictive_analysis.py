@@ -1,13 +1,12 @@
 import os
 import sys
-import importlib.util
-import joblib
-import pandas as pd
-import numpy as np
-from pathlib import Path
 import json
+import joblib
+import importlib.util
+import pandas as pd
 # from .data_processing import scenario_reverse, scenario_continue, historical_record
-
+from django.conf import settings
+from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 
 
@@ -40,7 +39,36 @@ def write_to_json(data, filename):
     # Write to the JSON file
     with open(absolute_path, 'w') as json_file:
         json.dump(data, json_file, indent=4)
+
+
+def read_prediction_from_json(filename):
+    """_summary_
+
+    Args:
+        filename (string): the json filename where the model resutls is saved.
+
+    Returns:
+        dictionary: the data contained in the json file.
+    """
     
+    levels_to_move_up = 2
+    
+    current_file_path = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
+
+    # Move up the specified number of levels
+    for _ in range(levels_to_move_up):
+        current_file_path = os.path.dirname(current_file_path)
+
+    relative_path = os.path.join( 'media','model_results', filename)
+    # Construct the absolute path
+    absolute_path = os.path.join(current_file_path, relative_path)
+    print("absolute_path>>>>>",absolute_path)
+    
+    with open(absolute_path, 'r') as file:
+        data = json.load(file)
+
+    return data
+
 
 def transform_format(pred_name, heading_labels, original_data):
     """

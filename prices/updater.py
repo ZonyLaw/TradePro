@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from apscheduler.schedulers.background import BackgroundScheduler
-from .IG_session.run_IG import run_IG, run_IG_mock
+from .IG_session.run_IG import run_IG
 
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds
 

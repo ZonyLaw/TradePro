@@ -1,15 +1,22 @@
 import os
 import sys
+import pandas as pd
 import importlib.util
-import json
+import datetime
 import numpy as np
+
+from django.conf import settings
 from datetime import datetime, timedelta
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 
 from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
+from ml_models.utils.analysis_comments import compare_version_results
+from ml_models.utils.predictive_analysis import read_prediction_from_json
+from tradepro.utils.email import send_email
 
 if os.path.isfile('env.py'):
     import env
@@ -91,32 +98,6 @@ def recordIGPrice(ticker, df, scaling_factor):
         duplicate_instances.exclude(id=instance_to_keep.id).delete()
 
 
-
-def run_IG_mock():
-    
-    """
-    This function executes a mock version to test the import of data into price DB.
-    This is for development purpose.
-    """
-    
-    print("Mock executed!")
-    current_directory = os.getcwd()
-    output_file_path = "price/data/IG_output.txt"
-    file_path = os.path.abspath(os.path.join(current_directory, output_file_path))
-
-    # Reading data from the file
-    # Now 'data' is a Python dictionary containing the JSON data
-    with open(file_path, 'r') as input_file:
-        data = json.load(input_file)
-
-    print(data['snapshot']['bid'])
-    print(data['snapshot']['offer'])
-    print(data['snapshot']['high'])
-    print(data['snapshot']['low'])
-    print(data['snapshot']['updateTime'])
-
-    recordIGPrice(data['snapshot'], 100)
-
 def run_IG(ticker, start_date=None, end_date=None):
     
     """
@@ -180,7 +161,6 @@ def run_IG(ticker, start_date=None, end_date=None):
     ig_service = IGService(username, password, api_key, acc_type)
     ig_service.create_session()
     
-
     
     try:
         #fetching data from IG account
@@ -194,3 +174,37 @@ def run_IG(ticker, start_date=None, end_date=None):
         
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+        
+        
+        
+    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+        
+    pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
+    pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
+    pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
+    
+    version_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 1 )
+    
+    check_email_alert(version_comment, send_email_enabled)
+
+
+def check_email_alert(comment, send_email_enabled):
+    print("here is the tag for email >>>>>>", send_email_enabled)
+    current_day = datetime.now().weekday()
+    current_time = datetime.now().time()
+    if current_day in [5, 6]:
+        print("It's the weekend. Email sending is disabled.")
+    # elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35) and (send_email_enabled):
+    elif (send_email_enabled):
+        try:
+            send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
+        except Exception as e:
+        # Catch specific exception types if possible, instead of a broad 'except' clause
+            print(f"Error sending email: {e}")

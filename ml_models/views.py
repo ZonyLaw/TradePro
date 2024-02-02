@@ -2,11 +2,10 @@ import pandas as pd
 import os
 import sys
 import importlib.util
-import json
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
-from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
+from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment, read_prediction_from_json
 # from .utils.data_processing import stats_df_gen
 from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters, ModelSelection
@@ -14,22 +13,6 @@ from prices.models import Price
 from tickers.models import Ticker
 
 
-def read_prediction_from_json(filename):
-    
-    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
-
-    # Move up two levels from the current module's directory
-    base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
-
-    relative_path = os.path.join( 'media','model_results', filename)
-    # Construct the absolute path
-    absolute_path = os.path.join(base_dir_up_one_levels, relative_path)
-    print("test path>>>>>",absolute_path)
-    
-    with open(absolute_path, 'r') as file:
-        data = json.load(file)
-
-    return data
 
 # Create your views here.
 def ml_predictions(request):
@@ -56,8 +39,7 @@ def ml_predictions(request):
     pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
     pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
     
-    comment = comment_model_results(pred_continue,"pred_continue")
-    version_comment = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5)
+   
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -81,6 +63,9 @@ def ml_predictions(request):
     
     candle_size = {"one" :trade_diff_1hr,
     "four": trade_diff_4hr}
+    
+    comment = comment_model_results(pred_continue,"pred_continue")
+    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0 )
     
     context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size, 'comment':comment, 'version_comment': version_comment}

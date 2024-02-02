@@ -18,7 +18,7 @@ def send_email(to_email, msg, subject):
 
     # Set the subject and body of the email
 
-    body = "Thank you for using Market Tracker!\n" + msg
+    body = "Thank you for using TradePro!\n" + msg
 
     em = EmailMessage()
     em['From'] = email_sender

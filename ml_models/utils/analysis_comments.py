@@ -1,7 +1,5 @@
-import os
-import sys
-import importlib.util
-import datetime
+
+
 
     
 def comment_model_results(model_results_dict, model_results_label):
@@ -22,21 +20,20 @@ def comment_model_results(model_results_dict, model_results_label):
     return comment
 
 
-def compare_version_results(model_dict1, model_dict2, model_dict3):
-    
-    
-    
-    # Dynamically get the module path involves defining the parent directory
-    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    # Add the parent directory to the Python path
-    sys.path.append(parent_directory)
-    module_name = 'tradepro.utils.email'
+def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, newline_syntax):
+    """
+    The function provides some comments to the model after comparison. 
 
-    try:
-        email = importlib.import_module(module_name)
-    except ImportError:
-        print("Error importing email module!")
-        email = None
+    Args:
+        model_dict1 (dictionary): results from first model
+        model_dict2 (dictionary): results from the second model
+        model_dict3 (dictionary): results from the third model
+        prices_df (dataframe): a list of prices in dataframe
+        newline_syntax (integer): 1 for '\n' otherwise <br> 
+
+    Returns:
+        string: analysis comments
+    """
     
     key_label1 = list(model_dict1.keys())[0]
     array1 = model_dict1[key_label1][1]['item']['Potential Trade']
@@ -49,24 +46,62 @@ def compare_version_results(model_dict1, model_dict2, model_dict3):
     key_label3 = list(model_dict3.keys())[0]
     array3 = model_dict3[key_label3][1]['item']['Potential Trade']
     current_trade3 = array3[0].split()[0]
-   
-    if current_trade1 == current_trade2 == current_trade3:
-        comment = f"All model versions predict a {current_trade1}"
-        
-        current_day = datetime.datetime.now().weekday()
-        current_time = datetime.datetime.now().time()
-        if current_day in [5, 6]:
-            print("It's the weekend. Email sending is disabled.")
-        elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35):
-            try:
-                email.send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
-            except Exception as e:
-            # Catch specific exception types if possible, instead of a broad 'except' clause
-                print(f"Error sending email: {e}")
-            
-    elif current_trade2 == current_trade3:
-        comment = f"4hr model and 1hr model predict the same {current_trade2}"
+    
+    date = prices_df.iloc[3]['date']
+    open_price_1hr = round(prices_df.iloc[3]['open'], 2)
+    open_price_4hr = round(prices_df.iloc[0]['open'], 2)
+    close_price_1hr = round(prices_df.iloc[3]['close'], 2)
+    entry_price_avg_1hr_4hr = round((prices_df.iloc[3]['open'] + prices_df.iloc[0]['open']) / 2, 2)
+    
+    
+    if newline_syntax:
+        next_line = "\n"
     else:
-        comment = f"WARNING: Model predictions are inconsistant so not recommended for use!"
-           
-    return comment
+        next_line = "<br>"
+    
+    market_comments = (
+            f"Market Information:{next_line}"
+            f"Date: {date}{next_line}"
+            f"The current open price is {open_price_1hr}.{next_line}"
+            f"The current close price is {close_price_1hr}.{next_line}"
+            f"The price 4 hours ago is {open_price_4hr}.{next_line}"
+            f"The average entry price 4 hours ago is {entry_price_avg_1hr_4hr}"
+    )
+    
+    send_email = 0
+    if current_trade1 == current_trade2 == current_trade3:
+        comment = (
+            f"All model versions predict a {current_trade1}{next_line}"
+            f"{market_comments}.{next_line}"
+        )
+        send_email = 1
+                
+    elif current_trade1 == current_trade2:
+        comment = (
+            f"All 4hr models predict the same {current_trade2}{next_line}"
+            f"{market_comments}.{next_line}"
+        )
+        send_email = 1
+    
+    elif current_trade2 == current_trade3:
+        comment = (
+            f"4hr model and 1hr model predict the same {current_trade2}.{next_line}"
+            f"{market_comments}.{next_line}"
+        )
+        send_email = 1
+        
+    elif current_trade1 == current_trade3:
+        comment = (
+            f"4hr LAGGED model and 1hr model predict the same {current_trade2}{next_line}"
+            f"{market_comments}.{next_line}"
+        )
+        send_email = 1
+        
+    else:
+        comment = (
+            f"WARNING: Model predictions are inconsistant so not recommended for use!{next_line}"
+            f"{market_comments}.{next_line}"
+        )
+        send_email = 0
+        
+    return comment, send_email

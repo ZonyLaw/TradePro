@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'cloudinary',
     'tickers',
-    'prices',
+    'prices',   
     'ml_models',
     'users',
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
