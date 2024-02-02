@@ -201,8 +201,7 @@ def check_email_alert(comment, send_email_enabled):
     current_time = datetime.now().time()
     if current_day in [5, 6]:
         print("It's the weekend. Email sending is disabled.")
-    # elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35) and (send_email_enabled):
-    elif (send_email_enabled):
+    elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35) and (send_email_enabled):
         try:
             send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
         except Exception as e:

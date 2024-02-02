@@ -41,8 +41,16 @@
         </thead>
         <tbody>
             <tr>
-                {% for key, values in pred_historical.pred_historical.1.item.items %}
-                
+                <td>Price</td>
+                {% for price in open_prices %}
+                <td>£{{ price|floatformat:2 }}</td>
+                {% endfor %}
+
+            </tr>
+
+
+            {% for key, values in pred_historical.pred_historical.1.item.items %}
+                <tr>    
                     <td>{{ key }}</td>
                     {% if key == "Potential Trade" %}
                         {% for value in values %}
@@ -56,6 +64,7 @@
                   
                 </tr>
             {% endfor %}
+            
         </tbody>
     </table>
 
@@ -75,9 +84,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {% for key, values in pred_variability.pred_variability.1.item.items %}
-                
+            {% for key, values in pred_variability.pred_variability.1.item.items %}
+                <tr>
                     <td>{{ key }}</td>
                     {% if key == "Potential Trade" %}
                         {% for value in values %}
@@ -108,9 +116,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {% for key, values in pred_reverse.pred_reverse.1.item.items %}
-                
+            {% for key, values in pred_reverse.pred_reverse.1.item.items %}
+                <tr>
                     <td>{{ key }}</td>
                     {% if key == "Potential Trade" %}
                         {% for value in values %}
@@ -142,9 +149,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {% for key, values in pred_continue.pred_continue.1.item.items %}
-                
+            {% for key, values in pred_continue.pred_continue.1.item.items %}
+                <tr>
                     <td>{{ key }}</td>
                     {% if key == "Potential Trade" %}
                         {% for value in values %}
