@@ -140,18 +140,9 @@ def run_IG(ticker, start_date=None, end_date=None):
     ml_models_path = os.path.abspath(os.path.join(current_module_dir, '..', '..', 'ml_models','utils'))
     sys.path.append(ml_models_path)
     
-    
-    # try:
-    #     pa = importlib.import_module('predictive_analysis')
-    # except ImportError:
-    #     print(f"Error importing predictive_analysis.")
-    #     pa = None
-
-    # Now you can import your function
     standard_analysis("v4")
     standard_analysis("v5")
     standard_analysis("1h_v5")
-    ###end
     
     #autheticating IG account and creating session    
     username = os.environ.get('IG_USERNAME')

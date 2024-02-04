@@ -2,6 +2,8 @@ import pandas as pd
 import os
 import sys
 
+
+import importlib.util
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
