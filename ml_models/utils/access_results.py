@@ -1,55 +1,58 @@
+import os
 import json
-# from .utils.predictive_analysis import model_run
 
-def output_model_results():
-    pred_reverse = {"key1":0.3, "key2":0.4}
-    # parent_directory = r"C:\Users\sunny\Desktop\Development\python\TradePro"
-    # pred_reverse_file = rf"{parent_directory}\pred_reverse.txt"
-    
-    pred_reverse_file = "/ml_models/temp/pred_reverse.txt"
 
-    # pred_reverse, pred_continue = model_run()
-
-    with open(pred_reverse_file, 'w') as file: 
-        json.dumps(pred_reverse, file)
-    
-    print("completed", pred_reverse_file)
-        
-    # with open('pred_continue.txt', 'w') as convert_file: 
-    #     convert_file.write(json.dumps(pred_continue))
-    
-    
-
-def read_json_file(file_path):
+def write_to_json(data, filename):
     """
-    Read data from a JSON file.
+    This function is write the data to a json file as a temporary storage.
 
-    Parameters:
-    - file_path (str): The path to the JSON file.
+    Args:
+        data (dictionary): containing the model prediction results
+        filename (string): filename of the json file.
+    """
+    
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
+
+    # Move up two levels from the current module's directory
+    base_dir_up_two_levels = os.path.abspath(os.path.join(base_dir, os.pardir, os.pardir))
+
+    relative_path = os.path.join(base_dir_up_two_levels, 'media', 'model_results', filename)
+    # Construct the absolute path
+    absolute_path = os.path.join(base_dir, relative_path)
+
+    # Ensure that the directory structure exists, creating directories if necessary
+    os.makedirs(os.path.dirname(absolute_path), exist_ok=True)
+
+    # Write to the JSON file
+    with open(absolute_path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+
+
+def read_prediction_from_json(filename):
+    """_summary_
+
+    Args:
+        filename (string): the json filename where the model resutls is saved.
 
     Returns:
-    - data (dict): The data read from the JSON file.
+        dictionary: the data contained in the json file.
     """
-    try:
-        with open(file_path, 'r') as json_file:
-            data = json.load(json_file)
-        return data
-    except FileNotFoundError:
-        print(f"File not found: {file_path}")
-        return None
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON in file {file_path}: {e}")
-        return None
-
-# # Example usage:
-# file_path = r"C:\Users\sunny\Desktop\Development\python\TradePro\pred_reverse.txt"
-# result = read_json_file(file_path)
-
-# if result is not None:
-#     print("Data read from JSON file:")
-#     print(result)
-# else:
-#     print("Error reading JSON file.")
     
+    levels_to_move_up = 2
+    
+    current_file_path = os.path.dirname(os.path.abspath(__file__))  # Assuming this is in a module
 
-output_model_results()
+    # Move up the specified number of levels
+    for _ in range(levels_to_move_up):
+        current_file_path = os.path.dirname(current_file_path)
+
+    relative_path = os.path.join( 'media','model_results', filename)
+    # Construct the absolute path
+    absolute_path = os.path.join(current_file_path, relative_path)
+    print("absolute_path>>>>>",absolute_path)
+    
+    with open(absolute_path, 'r') as file:
+        data = json.load(file)
+
+    return data
+

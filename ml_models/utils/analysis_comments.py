@@ -1,7 +1,3 @@
-
-
-
-    
 def comment_model_results(model_results_dict, model_results_label):
     array = model_results_dict[model_results_label][1]['item']['Potential Trade']
     current_trade = array[0]

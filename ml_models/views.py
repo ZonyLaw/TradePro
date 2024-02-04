@@ -1,13 +1,14 @@
 import pandas as pd
 import os
 import sys
-import importlib.util
+
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
-from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment, read_prediction_from_json
-# from .utils.data_processing import stats_df_gen
+from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
+from .utils.access_results import read_prediction_from_json
 from .utils.manual_model_input import manual_price_input
+
 from .form import ModelParameters, ModelSelection
 from prices.models import Price
 from tickers.models import Ticker

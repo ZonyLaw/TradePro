@@ -15,7 +15,8 @@ from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
 from ml_models.utils.analysis_comments import compare_version_results
-from ml_models.utils.predictive_analysis import read_prediction_from_json
+from ml_models.utils.access_results import read_prediction_from_json
+from ml_models.utils.predictive_analysis import standard_analysis
 from tradepro.utils.email import send_email
 
 if os.path.isfile('env.py'):
@@ -140,16 +141,16 @@ def run_IG(ticker, start_date=None, end_date=None):
     sys.path.append(ml_models_path)
     
     
-    try:
-        pa = importlib.import_module('predictive_analysis')
-    except ImportError:
-        print(f"Error importing predictive_analysis.")
-        pa = None
+    # try:
+    #     pa = importlib.import_module('predictive_analysis')
+    # except ImportError:
+    #     print(f"Error importing predictive_analysis.")
+    #     pa = None
 
     # Now you can import your function
-    pa.standard_analysis("v4")
-    pa.standard_analysis("v5")
-    pa.standard_analysis("1h_v5")
+    standard_analysis("v4")
+    standard_analysis("v5")
+    standard_analysis("1h_v5")
     ###end
     
     #autheticating IG account and creating session    
