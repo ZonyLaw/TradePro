@@ -11,7 +11,7 @@ BB_CHOICES = [
 ]
 
 
-MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5')]
+MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5'), ('1h_v5_trade', '1h_v5_trade')]
 
 class ModelParameters(forms.Form):
     model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v4', label='Select the model version')

@@ -143,6 +143,7 @@ def run_IG(ticker, start_date=None, end_date=None):
     standard_analysis("v4")
     standard_analysis("v5")
     standard_analysis("1h_v5")
+    standard_analysis("1h_v5_trade")
     
     #autheticating IG account and creating session    
     username = os.environ.get('IG_USERNAME')
