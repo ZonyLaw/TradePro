@@ -7,9 +7,9 @@ from .form import PriceForm, PriceRangeForm
 from .form import FileUploadForm
 from .utils import import_prices_from_csv, generate_csv
 
-from django.utils import timezone
 from datetime import datetime
-from .IG_session.run_IG import run_IG
+from django.conf import settings
+from .IG_session.run_IG import run_IG, rerun_analysis
 
 
 def createPrice(request):
@@ -46,6 +46,7 @@ def updatePrice(request, pk):
         if form.is_valid():
             # Save the updated price
             form.save()
+            rerun_analysis()
 
             # Redirect to the appropriate page
             return redirect('tickers')  # Replace 'tickers' with your actual URL name

@@ -140,11 +140,6 @@ def run_IG(ticker, start_date=None, end_date=None):
     ml_models_path = os.path.abspath(os.path.join(current_module_dir, '..', '..', 'ml_models','utils'))
     sys.path.append(ml_models_path)
     
-    standard_analysis("v4")
-    standard_analysis("v5")
-    standard_analysis("1h_v5")
-    standard_analysis("1h_v5_trade")
-    
     #autheticating IG account and creating session    
     username = os.environ.get('IG_USERNAME')
     password = os.environ.get('IG_PASSWORD')
@@ -167,8 +162,31 @@ def run_IG(ticker, start_date=None, end_date=None):
         
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-        
-        
+           
+    email_alert(1)
+
+
+def email_freq_controller(freq_enabler):
+    """
+    This checks the condition to send email
+    Args:
+    freq_enabler(boolean): if 1 then email will be condition to be sent only around 00 and 30 minutes;
+        otherwise it will send despite of time
+    
+    """
+    
+    if freq_enabler:
+        current_time = datetime.now().time()
+        return 1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35
+    else:
+        return 1
+
+
+def rerun_analysis():
+    standard_analysis("v4")
+    standard_analysis("v5")
+    standard_analysis("1h_v5")
+    standard_analysis("1h_v5_trade")
         
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -183,18 +201,22 @@ def run_IG(ticker, start_date=None, end_date=None):
     pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
     pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
     
-    version_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 1 )
+    comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 1 )
+
+    return comment, send_email_enabled
+
+
+def email_alert(email_freq_enabler):
+
+    comment, send_email_enabled = rerun_analysis()
     
-    check_email_alert(version_comment, send_email_enabled)
-
-
-def check_email_alert(comment, send_email_enabled):
     print("here is the tag for email >>>>>>", send_email_enabled)
     current_day = datetime.now().weekday()
-    current_time = datetime.now().time()
+    email_freq_condition = email_freq_controller(email_freq_enabler)
+    
     if current_day in [5, 6]:
         print("It's the weekend. Email sending is disabled.")
-    elif (1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35) and (send_email_enabled):
+    elif (email_freq_condition) and (send_email_enabled):
         try:
             send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
         except Exception as e:

@@ -42,7 +42,6 @@ def ml_predictions(request):
     # pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
     # pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
     
-   
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -194,6 +193,7 @@ def ml_manual(request):
     context = {'form':form, 'results':results}
     
     return render(request, 'ml_models/ml_manual_analysis.html', context)
+
 
 def export_model_results(request):
     
