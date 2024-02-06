@@ -32,10 +32,15 @@ def ml_predictions(request):
         model_version = 'v4'
         
     pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, pred_variability_v4 = standard_analysis('v4')
+    pred_reverse_v5, pred_continue_v5, pred_historical_v5, pred_variability_v5 = standard_analysis('v5')
+    pred_reverse_1h_v5, pred_continue_1h_v5, pred_historical_1h_v5, pred_variability_1h_v5 = standard_analysis('1h_v5')
+    
+    
 
-    pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
-    pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
-    pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
+    # pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
+    # pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
+    # pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
     
     # pred_reverse = read_prediction_from_json(f'USDJPY_pred_reverse_{model_version}.json')
     # pred_continue = read_prediction_from_json(f'USDJPY_pred_continue_{model_version}.json')
