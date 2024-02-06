@@ -186,7 +186,7 @@ def rerun_analysis():
     standard_analysis("v4")
     standard_analysis("v5")
     standard_analysis("1h_v5")
-    standard_analysis("1h_v5_trade")
+    # standard_analysis("1h_v5_trade")
         
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
