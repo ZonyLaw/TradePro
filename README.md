@@ -150,6 +150,8 @@ os.environ['IG_API_KEY'] =  ''
 os.environ['GMAIL_PASSWORD2'] = ''
 
 
+DISABLE_COLLECTSTATIC = 1
+
 ### conda env 
 
 working env is myenv311 and myenv311test
