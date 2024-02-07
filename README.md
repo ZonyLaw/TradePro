@@ -149,8 +149,12 @@ os.environ['IG_PASSWORD'] = ''
 os.environ['IG_API_KEY'] =  ''
 os.environ['GMAIL_PASSWORD2'] = ''
 
+making static work on heroku
+remove this variable in heroku: DISABLE_COLLECTSTATIC = 1
+install whitenoise as middleware
+ensure the dubug is false
 
-DISABLE_COLLECTSTATIC = 1
+
 
 ### conda env 
 
