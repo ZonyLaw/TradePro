@@ -5,17 +5,22 @@
         <a href="{% url 'tickers' %}" class="header__logo">
           <img src='/static/images/logo.svg' alt="TickerTracker Logo" style="fill: rgb(5, 69, 9)"/>
         </a>
+        
+        
         <nav class="header__nav">
           <input type="checkbox" id="responsive-menu" />
           <label for="responsive-menu" class="toggle-menu">
             <span>Menu</span>
             <div class="toggle-menu__lines"></div>
           </label>
+          
+          
           <ul class="header__menu">
-            <li class="header__menuItem"><a href="{% url 'tickers' %}">Home</a></li>
+            <li class="header__menuItem"><a href="{% url 'ml-predictions' %}">Predictions</a></li>
+            <li class="header__menuItem"><a href="{% url 'ml-variability' %}">Variability</a></li>
+            <li class="header__menuItem"><a href="{% url 'tickers' %}">Prices</a></li>
             <li class="header__menuItem"><a href="{% url 'edit-profile' %}">Update Profile</a></li>
-            <li class="header__menuItem"><a href="{% url 'ml-predictions' %}">Model predictions</a></li>
-            <li class="header__menuItem"><a href="{% url 'ml-manual' %}">Model Analysis</a></li>
+            <li class="header__menuItem"><a href="{% url 'ml-manual' %}">User Analysis</a></li>
             
             
             {% if request.user.is_superuser %}
@@ -25,7 +30,6 @@
                 <li class="header__menuItem"><a href="{% url 'get-IG-prices' %}">Get IG Prices</a></li>
                 <li class="header__menuItem"> <a href="{% url 'delete-prices-range' %}">Delete price range</a></li>
                 <li class="header__menuItem"><a href="{% url 'upload-prices' %}">Upload prices</a></li>
-                <li class="header__menuItem"><a href="{% url 'export-prices' %}">Export prices</a></li>
     
             {% endif %}
             

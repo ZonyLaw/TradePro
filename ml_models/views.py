@@ -72,28 +72,19 @@ def ml_predictions(request):
     "four": trade_diff_4hr}
     
     comment = comment_model_results(pred_continue,"pred_continue")
-    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0 )
+    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0, 0 )
     
     context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size, 'comment':comment, 'version_comment': version_comment}
     
     return render(request, 'ml_models/ml_predictions.html', context)
 
-def ml_predictions2(request):
+
+def ml_variability(request):
     """
-    This is a view function that pass the model predictions to the the frontend.
-    Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
+    return:
+    This returns the variability_results for all 3 models.
     """
-    
-    form = ModelSelection(request.POST)
-    
-    if request.method == 'POST' and form.is_valid():
-        model_version = form.cleaned_data['model_version']
-    else:
-        model_version = 'v4'
-        
-        
-    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
     
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -103,25 +94,19 @@ def ml_predictions2(request):
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
-    open_prices = last_four_prices_df['open'].tolist()
-    close_prices = last_four_prices_df['close'].tolist()
-    
-    #creating bespoke context for front-end    
-    date = last_four_prices_df.iloc[3]['date']
-    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
-    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     
     
-    trade = {"one" :trade_direction(trade_diff_1hr),
-    "four": trade_direction(trade_diff_4hr)}
+    pred_variability_v4 = read_prediction_from_json(f'USDJPY_pred_variability_v4.json')
+    pred_variability_v5 = read_prediction_from_json(f'USDJPY_pred_variability_v5.json')
+    pred_variability_1h_v5 = read_prediction_from_json(f'USDJPY_pred_variability_1h_v5.json')
     
-    candle_size = {"one" :trade_diff_1hr,
-    "four": trade_diff_4hr}
     
-    context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
-             'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size}
+    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 0, 0 )
+    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 1, 0 )
     
-    return render(request, 'ml_models/ml_predictions.html', context)
+    context = {'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg }
+    
+    return render(request, 'ml_models/ml_variability.html', context)
 
 
 def ml_manual(request):

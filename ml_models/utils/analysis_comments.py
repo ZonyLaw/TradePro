@@ -16,15 +16,16 @@ def comment_model_results(model_results_dict, model_results_label):
     return comment
 
 
-def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, newline_syntax):
+def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, arr_index, newline_syntax):
     """
-    The function provides some comments to the model after comparison. 
+    The function provides comments based on consistency of models output. 
 
     Args:
         model_dict1 (dictionary): results from first model
         model_dict2 (dictionary): results from the second model
         model_dict3 (dictionary): results from the third model
         prices_df (dataframe): a list of prices in dataframe
+        arr_index (integer): a index in the array to extract model results for comparison - refer to the json file
         newline_syntax (integer): 1 for '\n' otherwise <br> 
 
     Returns:
@@ -33,15 +34,15 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ne
     
     key_label1 = list(model_dict1.keys())[0]
     array1 = model_dict1[key_label1][1]['item']['Potential Trade']
-    current_trade1 = array1[0].split()[0]
+    current_trade1 = array1[arr_index].split()[0]
     
     key_label2 = list(model_dict2.keys())[0]
     array2 = model_dict2[key_label2][1]['item']['Potential Trade']
-    current_trade2 = array2[0].split()[0]
+    current_trade2 = array2[arr_index].split()[0]
     
     key_label3 = list(model_dict3.keys())[0]
     array3 = model_dict3[key_label3][1]['item']['Potential Trade']
-    current_trade3 = array3[0].split()[0]
+    current_trade3 = array3[arr_index].split()[0]
     
     date = prices_df.iloc[3]['date']
     open_price_1hr = round(prices_df.iloc[3]['open'], 2)

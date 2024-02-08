@@ -1,0 +1,16 @@
+{% extends 'main.html' %} 
+{% block content %}
+
+<main>
+
+    <h1>Analysis Comments</h1>
+    
+    <h2> The model output comparison for 15pips </h2>
+    <p> {{version_comment_pos|safe}} </p>
+
+    <h2> The model output comparison for -15pips </h2>
+    <p> {{version_comment_neg|safe}} </p>
+
+</main>
+
+{% endblock content %}
