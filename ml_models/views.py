@@ -8,7 +8,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
-from .utils.access_results import read_prediction_from_json
+from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
 
 from .form import ModelParameters, ModelSelection
@@ -103,6 +103,8 @@ def ml_variability(request):
     
     version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 0, 0 )
     version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 1, 0 )
+    
+    write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
     
     context = {'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg }
     
@@ -204,3 +206,28 @@ def export_model_results(request):
 
     return render(request, 'ml_models/export_model_results.html', {'form': form})
     
+    
+def delete_file(request, filename):
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this view is in a module
+    base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
+    file_path = os.path.join(base_dir_up_one_levels, 'media', 'model_results', filename)
+    
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        return HttpResponse("File deleted successfully.")
+    else:
+        return HttpResponse("File does not exist.")
+    
+
+def export_file(request, filename):
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this view is in a module
+    base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
+    file_path = os.path.join(base_dir_up_one_levels, 'media', 'model_results', filename)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as f:
+            response = HttpResponse(f.read(), content_type='application/octet-stream')
+            response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename)
+        return response
+    else:
+        return HttpResponse("File does not exist.")

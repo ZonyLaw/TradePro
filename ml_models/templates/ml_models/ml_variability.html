@@ -11,6 +11,14 @@
     <h2> The model output comparison for -15pips </h2>
     <p> {{version_comment_neg|safe}} </p>
 
+
+    <h1>Delete csv File</h1>
+    <p>Variability_results file: <a href="{% url 'delete_file' filename='variability_results.csv' %}">Delete</a></p> 
+
+
+    <h1>Export File</h1>
+    <p>Click the link below to export the file: <a href="{% url 'export_file' filename='variability_results.csv' %}">Export</a></p>
+
 </main>
 
 {% endblock content %}
