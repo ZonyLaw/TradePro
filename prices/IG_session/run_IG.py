@@ -201,7 +201,7 @@ def rerun_analysis():
     pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
     pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
     
-    comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 1 )
+    comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0, 1 )
 
     return comment, send_email_enabled
 
