@@ -75,7 +75,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ar
                 
     elif current_trade1 == current_trade2:
         comment = (
-            f"Oscillation: Both 4hr models predict the same {current_trade2}{next_line}"
+            f"Oscillation: Both 4hr models predict the same {current_trade1}{next_line}"
             f"{market_comments}.{next_line}"
         )
         send_email = 0
@@ -89,7 +89,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ar
         
     elif current_trade1 == current_trade3:
         comment = (
-            f"Oscillation: 4hr LAGGED model and 1hr model predict the same {current_trade2}{next_line}"
+            f"Oscillation: 4hr LAGGED model and 1hr model predict the same {current_trade1}{next_line}"
             f"{market_comments}.{next_line}"
         )
         send_email = 0
