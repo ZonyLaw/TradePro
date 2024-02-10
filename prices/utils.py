@@ -23,7 +23,7 @@ def import_prices_from_csv(uploaded_file):
     
     # Handle the file in-memory or save it to a specific location
     # For example, you can save it to a temporary location
-    #update needed!!
+    # TODO: update needed!!
     try:
         with open('prices/data/temp_file.csv', 'wb+') as destination:
             for chunk in uploaded_file.chunks():
@@ -68,11 +68,15 @@ def generate_csv(prices):
     csv_writer = csv.writer(csv_buffer)
 
     # Write header
-    csv_writer.writerow(['date', 'ticker', 'open', 'close', 'high', 'low'])
-
+    csv_writer.writerow(['date', 'ticker', 'open', 'close', 'high', 'low', 'volume'])
+    
+    
+  
     # Write data
     for price in prices:
-        csv_writer.writerow([price.date, price.ticker, price.open, price.close, price.high, price.low])
+
+        formatted_date = price.date.strftime("%d/%m/%Y %H:%M")
+        csv_writer.writerow([formatted_date, price.ticker, price.open, price.close, price.high, price.low, price.volume])
 
     # Get CSV data as a string
     csv_data = csv_buffer.getvalue()

@@ -95,7 +95,6 @@ def export_prices(request):
         return response
 
     else:
-        form = FileUploadForm()
         
         return render(request, 'prices/export_prices.html', {'tickers': tickers_db})
 
