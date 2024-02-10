@@ -1,35 +1,42 @@
 {% extends 'main.html' %} {% block content %}
 
-<h1>ML model parameters entry</h1>
+<main class="formPage my-xl">
 
-<form action="" method="POST">
-  {%csrf_token%} 
-  {{form.as_p}}
-  <input type="submit" />
-</form>
+  <div class="content-box">
+    <div class="formWrapper">
+      <h1>ML model parameters entry</h1>
 
-{% if results %}
-  <table>
-    <tr>
-      <th>Profit/Loss</th>
-      <th>Current Proba</th>
-    </tr>
-
-   {% for category, proba in results.items %}
+      <form action="" method="POST">
+        {%csrf_token%} 
+        {{form.as_p}}
+        <input type="submit" />
+      </form>
+ 
+  {% if results %}
+    <table>
       <tr>
-        <td>{{ category }}</td>
-          {% if not forloop.last %}
-            <td>{{ proba.0 }}%</td>
-          {% else %}
-            <td>{{ proba.0 }}</td>
-          {% endif %}
+        <th>Profit/Loss</th>
+        <th>Current Proba</th>
       </tr>
 
+    {% for category, proba in results.items %}
+        <tr>
+          <td>{{ category }}</td>
+            {% if not forloop.last %}
+              <td>{{ proba.0 }}%</td>
+            {% else %}
+              <td>{{ proba.0 }}</td>
+            {% endif %}
+        </tr>
 
-    {% endfor %} 
-  </table> 
 
-{% endif %}
+      {% endfor %} 
+    </table> 
+
+  {% endif %}
 
 
+  </div>
+</div>
+</main>
 {% endblock content %}
