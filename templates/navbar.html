@@ -16,15 +16,15 @@
           
           
           <ul class="header__menu">
+            <li class="header__menuItem"><a href="{% url 'tickers' %}">Prices</a></li>
             <li class="header__menuItem"><a href="{% url 'ml-predictions' %}">Predictions</a></li>
             <li class="header__menuItem"><a href="{% url 'ml-variability' %}">Variability</a></li>
-            <li class="header__menuItem"><a href="{% url 'tickers' %}">Prices</a></li>
-            <li class="header__menuItem"><a href="{% url 'edit-profile' %}">Update Profile</a></li>
-            <li class="header__menuItem"><a href="{% url 'ml-manual' %}">User Analysis</a></li>
+            <li class="header__menuItem"><a href="{% url 'edit-profile' %}">Update Account</a></li>
             
             
             {% if request.user.is_superuser %}
-                <li class="header__menuItem"><a href="{% url 'profiles' %}">User Profile</a></li>
+              <li class="header__menuItem"><a href="{% url 'profiles' %}">Users List</a></li>
+              <li class="header__menuItem"><a href="{% url 'ml-manual' %}">Manual Runs</a></li>
 
     
             {% endif %}

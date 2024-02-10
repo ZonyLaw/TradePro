@@ -1,24 +1,29 @@
 {% extends 'main.html' %} 
 {% block content %}
 
-<main>
+<main class="formPage my-xl">
+    <div class="content-box">
+        <h1>Variability testing predictions</h1>
+        
+            <p>1. The purpose of these results is to determine the strength of the prediction.</p>
 
-    <h1>Analysis Comments</h1>
-    
-    <h2> The model output comparison for 15pips </h2>
-    <p> {{version_comment_pos|safe}} </p>
+            <p>2. Consistent predictions, despite the positive and negative movements around the opening price, indicate a strong prediction.</p>
 
-    <h2> The model output comparison for -15pips </h2>
-    <p> {{version_comment_neg|safe}} </p>
+            <p>3. Additionally, the 4-hour and 1-hour models are the more reliable versions.</p>
 
+        <h2> For 15pips movement show: </h2>
+        <p> {{version_comment_pos|safe}} </p>
 
-    <h1>Delete csv File</h1>
-    <p>Variability_results file: <a href="{% url 'delete_file' filename='variability_results.csv' %}">Delete</a></p> 
+        <h2> For -15pips movement show: </h2>
+        <p> {{version_comment_neg|safe}} </p>
 
-
-    <h1>Export File</h1>
-    <p>Click the link below to export the file: <a href="{% url 'export_file' filename='variability_results.csv' %}">Export</a></p>
-
+        <h1>Variability Results Records</h1>
+            <p>Each time this page is refreshed, it will save a new record will be saved.</p>
+            <h2>Export Record as *.csv</h2>
+                <p>File contains records of the variability tests: <a href="{% url 'export_file' filename='variability_results.csv' %}">Export</a></p>
+            <h2>Delete *.csv file</h2>
+                <p>Remove all records: <a href="{% url 'delete_file' filename='variability_results.csv' %}">Reset save file</a></p> 
+    </div>
 </main>
 
 {% endblock content %}

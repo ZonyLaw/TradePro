@@ -219,7 +219,7 @@ def trade_forecast_assessment(model_version):
         dp = None
     
     
-    X_live_historical = dp.historical_record(60)
+    X_live_historical = dp.historical_record(120)
     _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical, model_version)
    
     #combined the live data and prediction dataframes.

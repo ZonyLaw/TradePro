@@ -1,18 +1,14 @@
 {% extends 'main.html' %} {% block content %}
 
-<main class="projects"> 
-    <p>For further analysis: <a href="{% url 'export-prices' %}">Export prices</a></p> 
-    <p>Ticker Porfolio: <a href="{% url 'create-ticker' %}">Add Ticker</a></p>
-    <p>Enter new price:<a href="{% url 'create-price' %}">Create price</a></p>
-    <p>Get rnage of prices:<a href="{% url 'get-IG-prices' %}">Get IG Prices</a></p>
-    <p>Remove prices:<a href="{% url 'delete-prices-range' %}">Delete price range</a></p>
-    <p>Import external prices:<a href="{% url 'upload-prices' %}">Upload prices</a></p>
-
+<main class="formPage my-xl">
+  <div class="content-box">
+    <h1>Ticker List</h1>
     <table>
       <tr>
         <th>Symbol</th>
         <th>information</th>
       </tr>
+      
       {% for ticker in tickers %}
       <td>
         {{ticker.symbol}}
@@ -25,11 +21,19 @@
         <a href="{% url 'update-ticker' ticker.id %}">Update</a>
         <a href="{% url 'delete-ticker' ticker.id %}">Delete</a>
       </td>    
-
-  </table>
-
-  {% endfor %}
-
+      
+    </table>
+    {% endfor %}
+    
+    <h1>Update Ticker</h1>
+    <p>For further analysis: <a href="{% url 'export-prices' %}">Export prices</a></p> 
+    <p>Ticker Porfolio: <a href="{% url 'create-ticker' %}">Add Ticker</a></p>
+    <p>Enter new price:<a href="{% url 'create-price' %}">Create price</a></p>
+    <p>Get rnage of prices:<a href="{% url 'get-IG-prices' %}">Get IG Prices</a></p>
+    <p>Remove prices:<a href="{% url 'delete-prices-range' %}">Delete price range</a></p>
+    <p>Import external prices:<a href="{% url 'upload-prices' %}">Upload prices</a></p>
+    
+  </div>
 
 </main>
 

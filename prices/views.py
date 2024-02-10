@@ -12,6 +12,9 @@ from .IG_session.run_IG import run_IG, rerun_analysis
 
 
 def createPrice(request):
+    
+    page = "Enter new price"
+    
     if request.method == 'POST':
         
         form = PriceForm(request.POST)
@@ -30,11 +33,15 @@ def createPrice(request):
             return redirect('tickers')  # Redirect to the home page or any other page
     else:
         form = PriceForm()
+        
+    context = {"page":page, 'form': form}
 
-    return render(request, 'prices/price_form.html', {'form': form})
+    return render(request, 'prices/price_form.html', context)
 
 
 def updatePrice(request, pk):
+    
+    page = "Update Price"
     # Get the existing Price instance
     price_instance = get_object_or_404(Price, id=pk)
 
@@ -52,8 +59,10 @@ def updatePrice(request, pk):
     else:
         # Populate the form with the existing data
         form = PriceForm(instance=price_instance)
+    
+    context = {"page":page, 'form': form}
 
-    return render(request, 'prices/price_form.html', {'form': form})
+    return render(request, 'prices/price_form.html', context)
 
 
 

@@ -1,172 +1,173 @@
 {% extends 'main.html' %} 
 {% block content %}
 
-<main>
+<main class="formPage my-xl">
+    <div class="content-box">
 
-    <form action="" method="POST">
-        {%csrf_token%} 
-        {{form.as_p}}
-        <input type="submit" />
-    </form>
+        <form action="" method="POST">
+            {%csrf_token%} 
+            {{form.as_p}}
+            <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+        </form>
+        <p> Get the last 120 results on model prediction for further analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
+        
+        <h1>Analysis Comments</h1>
+        <p> {{version_comment|safe}} </p>
+        <p> {{comment}} </p>
     
-    <h1>Analysis Comments</h1>
-    <p> {{version_comment|safe}} </p>
-    <p> {{comment}} </p>
- 
-    <p> These results are meant to give you a direction but not to replace your strategy </p>
-    <p> Get the recent model prediction results for further analysis, <a href = {% url 'export-model-results'%}>Click Here</a>.</p>
+        <p> These results are meant to give you a direction but not to replace your strategy </p>
 
-    <h1>Market Information</h1>
-    <p> Last Date price was extracted: <b>{{date}}</b> </p>
-    <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
-    <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
-    <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
-    <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
-    <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
-    
+        <h1>Market Information</h1>
+        <p> Last Date price was extracted: <b>{{date}}</b> </p>
+        <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
+        <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+        <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
+        <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
+        <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
+        
 
-    <h1>Historical prediction for the last 4 hours</h1>
-    <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> Current hour can fluctuate depending on new data retrieved within the hour! </p>
+        <h1>Prediction for the last 4 hours</h1>
+        <p> Current candle direction <b>{{trade.one}}</b> </p>
+        <p> Current hour can fluctuate depending on new data retrieved within the hour! </p>
+
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% for heading in pred_historical.pred_historical.0.heading %}
+                        <th>{{ heading }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Price</td>
+                    {% for price in open_prices %}
+                    <td>£{{ price|floatformat:2 }}</td>
+                    {% endfor %}
+
+                </tr>
+
+
+                {% for key, values in pred_historical.pred_historical.1.item.items %}
+                    <tr>    
+                        <td>{{ key }}</td>
+                        {% if key == "Potential Trade" %}
+                            {% for value in values %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                        {% else %}
+                            {% for value in values %}
+                                <td>{{ value }}%</td>
+                            {% endfor %}
+                        {% endif %}
+                    
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
+        <h1>Variability testing both directions</h1>
+        <p> Current candle direction <b>{{trade.one}}</b> </p>
+        <p> This is to see if prediction is consistent with +/- 15 pips </p>
+        <p> As with current prices it can fluctuate between positve and negative candles. </p>
 
 
     <table border="1">
-        <thead>
-            <tr>
-                <th></th>
-                {% for heading in pred_historical.pred_historical.0.heading %}
-                    <th>{{ heading }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Price</td>
-                {% for price in open_prices %}
-                <td>£{{ price|floatformat:2 }}</td>
-                {% endfor %}
-
-            </tr>
-
-
-            {% for key, values in pred_historical.pred_historical.1.item.items %}
-                <tr>    
-                    <td>{{ key }}</td>
-                    {% if key == "Potential Trade" %}
-                        {% for value in values %}
-                        <td>{{ value }}</td>
-                        {% endfor %}
-                    {% else %}
-                        {% for value in values %}
-                            <td>{{ value }}%</td>
-                        {% endfor %}
-                    {% endif %}
-                  
-                </tr>
-            {% endfor %}
-            
-        </tbody>
-    </table>
-
-    <h1>Sensitivity test of forward looking</h1>
-    <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> This is to see if prediction is consistent with +/- 15 pips </p>
-    <p> As with current prices it can fluctuate between positve and negative candles. </p>
-
-
-  <table border="1">
-        <thead>
-            <tr>
-                <th></th>
-                {% for heading in pred_variability.pred_variability.0.heading %}
-                    <th>{{ heading }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for key, values in pred_variability.pred_variability.1.item.items %}
+            <thead>
                 <tr>
-                    <td>{{ key }}</td>
-                    {% if key == "Potential Trade" %}
-                        {% for value in values %}
-                        <td>{{ value }}</td>
-                        {% endfor %}
-                    {% else %}
-                        {% for value in values %}
-                            <td>{{ value }}%</td>
-                        {% endfor %}
-                    {% endif %}
-                  
+                    <th></th>
+                    {% for heading in pred_variability.pred_variability.0.heading %}
+                        <th>{{ heading }}</th>
+                    {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <h1>Model predictions for next reversed candle</h1>
-    <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> Two scenarios tested (ie., 20 & 40 pips) </p>
-  
-    <table border="1">
-        <thead>
-            <tr>
-                <th></th>
-                {% for heading in pred_reverse.pred_reverse.0.heading %}
-                    <th>{{ heading }}</th>
+            </thead>
+            <tbody>
+                {% for key, values in pred_variability.pred_variability.1.item.items %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        {% if key == "Potential Trade" %}
+                            {% for value in values %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                        {% else %}
+                            {% for value in values %}
+                                <td>{{ value }}%</td>
+                            {% endfor %}
+                        {% endif %}
+                    
+                    </tr>
                 {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for key, values in pred_reverse.pred_reverse.1.item.items %}
-                <tr>
-                    <td>{{ key }}</td>
-                    {% if key == "Potential Trade" %}
-                        {% for value in values %}
-                        <td>{{ value }}</td>
-                        {% endfor %}
-                    {% else %}
-                        {% for value in values %}
-                            <td>{{ value }}%</td>
-                        {% endfor %}
-                    {% endif %}
-                  
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <h1>Model predictions for next candle continuing</h1>
-    <p> Current candle direction <b>{{trade.one}}</b> </p>
-    <p> Two scenarios tested (ie., 20 & 40 pips)</p>
+        <h1>Predictions for REVERSED candle</h1>
+        <p> Current candle direction <b>{{trade.one}}</b> </p>
+        <p> Two scenarios tested (ie., 20 & 40 pips) </p>
     
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th></th>
-                {% for heading in pred_continue.pred_continue.0.heading %}
-                    <th>{{ heading }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for key, values in pred_continue.pred_continue.1.item.items %}
+        <table border="1">
+            <thead>
                 <tr>
-                    <td>{{ key }}</td>
-                    {% if key == "Potential Trade" %}
-                        {% for value in values %}
-                        <td>{{ value }}</td>
-                        {% endfor %}
-                    {% else %}
-                        {% for value in values %}
-                            <td>{{ value }}%</td>
-                        {% endfor %}
-                    {% endif %}
-                  
+                    <th></th>
+                    {% for heading in pred_reverse.pred_reverse.0.heading %}
+                        <th>{{ heading }}</th>
+                    {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for key, values in pred_reverse.pred_reverse.1.item.items %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        {% if key == "Potential Trade" %}
+                            {% for value in values %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                        {% else %}
+                            {% for value in values %}
+                                <td>{{ value }}%</td>
+                            {% endfor %}
+                        {% endif %}
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
+        <h1>Predictions for CONTINUING candle</h1>
+        <p> Current candle direction <b>{{trade.one}}</b> </p>
+        <p> Two scenarios tested (ie., 20 & 40 pips)</p>
+        
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% for heading in pred_continue.pred_continue.0.heading %}
+                        <th>{{ heading }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, values in pred_continue.pred_continue.1.item.items %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        {% if key == "Potential Trade" %}
+                            {% for value in values %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                        {% else %}
+                            {% for value in values %}
+                                <td>{{ value }}%</td>
+                            {% endfor %}
+                        {% endif %}
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 </main>
 
