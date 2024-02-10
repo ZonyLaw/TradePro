@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect,  get_object_or_404, HttpResponse
-from django.urls import reverse 
 from tickers.models import Ticker
 from prices.models import Price
 from .form import PriceForm, PriceRangeForm
