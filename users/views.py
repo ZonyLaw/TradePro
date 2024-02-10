@@ -5,6 +5,12 @@ from .form import CustomUserCreationForm, ProfileForm
 from custom_user.models import User
 from users.models import Profile
 
+
+def home(request):
+    context = {}
+    return render(request, 'home.html', context)
+
+
 def profiles(request):
     
     profiles = Profile.objects.all()
