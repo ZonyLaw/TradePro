@@ -32,9 +32,18 @@ def ml_predictions(request):
         model_version = 'v4'
         
     pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
-    pred_reverse_v4, pred_continue_v4, pred_historical_v4, pred_variability_v4 = standard_analysis('v4')
-    pred_reverse_v5, pred_continue_v5, pred_historical_v5, pred_variability_v5 = standard_analysis('v5')
-    pred_reverse_1h_v5, pred_continue_1h_v5, pred_historical_1h_v5, pred_variability_1h_v5 = standard_analysis('1h_v5')
+    if model_version == "v4":
+        pred_reverse_v5, _, _, _  = standard_analysis('v5')
+        pred_reverse_1h_v5, _, _, _ = standard_analysis('1h_v5')
+        pred_reverse_v4 = pred_reverse
+    elif model_version == "v5":
+        pred_reverse_v4, _, _, _ = standard_analysis('v4')
+        pred_reverse_1h_v5, _, _, _  = standard_analysis('1h_v5')
+        pred_reverse_v5 = pred_reverse
+    elif model_version == "1h_v5":
+        pred_reverse_v4, _, _, _ = standard_analysis('v4')
+        pred_reverse_v5, _, _, _  = standard_analysis('v5')
+        pred_reverse_1h_v5 = pred_reverse
     
     
 
@@ -73,6 +82,8 @@ def ml_predictions(request):
     
     comment = comment_model_results(pred_continue,"pred_continue")
     version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0, 0 )
+    
+    write_to_csv(date, version_comment, "variability_results.csv")
     
     context={'form': form, 'date': date, 'pred_reverse': pred_reverse, 'pred_continue':pred_continue, 'pred_historical': pred_historical, 'pred_variability': pred_variability, 
              'open_prices': open_prices, 'close_prices': close_prices,'trade':trade, 'candle_size':candle_size, 'comment':comment, 'version_comment': version_comment}
