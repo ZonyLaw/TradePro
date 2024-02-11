@@ -20,6 +20,13 @@ def users_list(request):
     return render(request, 'users/users_list.html', context)
 
 
+def userAccount(request):
+    profile = request.user.profile
+
+    context = {'profile': profile}
+    return render(request, 'users/account.html', context)
+
+
 def userProfile(request, pk):
     
     profile = Profile.objects.get(id=pk)
@@ -27,12 +34,12 @@ def userProfile(request, pk):
     context = {'profile': profile}
     return render(request, 'users/user_profile.html', context)
 
-
+#TODO: after login it returns the whole user list...this is wrong.
 def loginUser(request):
     page = 'login'
     
     if request.user.is_authenticated:
-        return redirect('user-profile')
+        return redirect('users-list')
     
     if request.method == 'POST':
         email = request.POST['email']
@@ -47,7 +54,7 @@ def loginUser(request):
         
         if user is not None:
             login(request, user)
-            return redirect('user-profile')
+            return redirect('account')
         else:
             messages.error(request, "Email or passwrod is incorrect")
     
