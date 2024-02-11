@@ -32,7 +32,7 @@ def loginUser(request):
     page = 'login'
     
     if request.user.is_authenticated:
-        return redirect('profiles')
+        return redirect('user-profile')
     
     if request.method == 'POST':
         email = request.POST['email']
@@ -47,7 +47,7 @@ def loginUser(request):
         
         if user is not None:
             login(request, user)
-            return redirect('profiles')
+            return redirect('user-profile')
         else:
             messages.error(request, "Email or passwrod is incorrect")
     
