@@ -11,13 +11,13 @@ def home(request):
     return render(request, 'home.html', context)
 
 
-def profiles(request):
+def users_list(request):
     
     profiles = Profile.objects.all()
     
     context = {"profiles": profiles}
     
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/users_list.html', context)
 
 
 def userProfile(request, pk):
@@ -25,7 +25,7 @@ def userProfile(request, pk):
     profile = Profile.objects.get(id=pk)
     
     context = {'profile': profile}
-    return render(request, 'users/user-profile.html', context)
+    return render(request, 'users/user_profile.html', context)
 
 
 def loginUser(request):

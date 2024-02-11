@@ -10,20 +10,21 @@
       </tr>
       
       {% for ticker in tickers %}
-      <td>
-        {{ticker.symbol}}
-      </td>
-      <td>
-        {{ticker.info}}
-      </td>
-      <td>
-        <a href="{% url 'ticker' ticker.id %}">View</a>
-        <a href="{% url 'update-ticker' ticker.id %}">Update</a>
-        <a href="{% url 'delete-ticker' ticker.id %}">Delete</a>
-      </td>    
-      
+        <tr>
+          <td>
+            {{ticker.symbol}}
+          </td>
+          <td>
+            {{ticker.info}}
+          </td>
+          <td>
+            <a href="{% url 'ticker' ticker.id %}">View</a>
+            <a href="{% url 'update-ticker' ticker.id %}">Update</a>
+            <a href="{% url 'delete-ticker' ticker.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
     </table>
-    {% endfor %}
     
     <h1>Update Ticker</h1>
     <p>For further analysis: <a href="{% url 'export-prices' %}">Export prices</a></p> 

@@ -49,7 +49,7 @@ img {
   display: inline-flex;
   align-items: center;
   list-style: none;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .header__menuItem > a {
@@ -890,4 +890,31 @@ img {
 
 .footer-copyright {
   color: azure;
+}
+
+
+/*=======================
+  table
+========================*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+.price-table th:first-child,
+.price-table td:first-child{
+  width: 300px;
+}
+
+.special-table th:nth-child(2),
+.special-table td:nth-child(2) {  
+  width: 350px;
 }

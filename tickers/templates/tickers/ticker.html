@@ -2,25 +2,26 @@
 
 {% load tz %}
 
-<main class="projects">
-  <h1>{{ticker.symbol}}</h1>
-  <p>{{ticker.info}}</p>
+<main class="formPage my-xl">
+  <div class="content-box">
+    <h1>{{ticker.symbol}}</h1>
+    <p>{{ticker.info}}</p>
 
-{% for price in prices %}
-  <table>
-    <tr>
-    <td> Date: {{ price.date|timezone:user_timezone }} </td>
-    <td> Open price: {{price.open|floatformat:2 }} - Close price: {{price.close|floatformat:2 }} </td>
-    <td> Trade: {{price.trade }} </td>
-    {% if request.user.is_superuser %}
-      <td> <a href = "{% url 'update-price' price.id %}" >Update Price </a> </td>
-      <td> <a href = "{% url 'delete-price' price.id %}" >Delete Price </a> </td>
-    {% endif %}
-    </tr>
-  </table>
+    <table class="price-table">
+        {% for price in prices %}
+        <tr>
+        <td > Date: {{ price.date|timezone:user_timezone }} </td>
+        <td> Open price: {{price.open|floatformat:2 }} - Close price: {{price.close|floatformat:2 }} </td>
+        <td> Trade: {{price.trade }} </td>
+        {% if request.user.is_superuser %}
+          <td> <a href = "{% url 'update-price' price.id %}" >Update </a> </td>
+          <td> <a href = "{% url 'delete-price' price.id %}" >Delete </a> </td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
 
-{% endfor %}
-
+  </div>
 </main>
 
 {% endblock content %}
