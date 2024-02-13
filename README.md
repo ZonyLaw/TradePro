@@ -1,15 +1,20 @@
 # TradePro
 
-This app gives you some insights on potential targets and profits based on current prices. It uses machine learning to capture what trade is expected within a specific timeframe.
 
-Currently it is still underdevelopment and only provide one product. The main structure is there but will need cleaning up.
+Currently, the app is still under development and provides only one product, USDJPY. While the main structure is in place, it requires cleaning up. 
+The app offers insights into potential market direction. It utilises machine learning to predict trading activity within a specific timeframe (ie. 1hr and 4 hr).
+
+![image](https://github.com/ZonyLaw/TradePro/assets/104385712/f10fa398-f032-4f1f-9521-05175c052b83)
+
 
 ## Table of Contents
 
 - [TradePro](#TradePro)
   - [Table of Contents](#table-of-contents)
+    - [Project-Management-Plan](#Project-Management-Plan)
+    - [Webpage-Structure-Plan](#Webpage-Structure-Plan)
 
-# User-Experience-Design
+# Project-Management-Plan
 
 ## The-Strategy-Plan
 
@@ -75,6 +80,43 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 # Notes:
 
+
+# Webpage-Structure-Plan
+
+## Features
+
+**Home Page**
+
+*User Story*
+
+``As a trader, I can view the model results and analysis to get a potential direction of the market trend.``
+
+*1. Navigation Menu*
+
+*User Story*
+
+``As a developer, I can have the navbar so that users can navigate the website from any device``
+<details open>
+<summary>Implementation:</summary>
+
+
+ The Navigation bar contains links for Home, prices, , Register, Login and Contact.
+  * Home -> index.html - Visible to all
+  * Prices -> show the prices of the ticker - Visible to all
+    * export prices - export all prices for the specified ticker - Visible to Admin
+    * upload prices  - upload prices for the specified ticker - Visible to Admin
+    * update prices  - manual update of a prices for the specified ticker - Visible to Admin
+  * Predictions -> show the model results and anslysis - Visible to all
+  * Variability -> show the variability of results giving the sensistivity test - Visible to all
+  * Account -> view user profile and update details - visible to user
+    
+  * Login -> login.html - Visible to logged out users
+  * Register -> signup.html - Visible to logged out users
+  * Logout -> logout.html - Visible to logged in users
+
+
+# Appendix
+
 ## Key commands
 
 - pip3 install django gunicorn
@@ -101,13 +143,13 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - python manage.py runserver
 
-## commands to clean the local database
+### commands to clean the local database
 
 - python manage.py flush
 
 - python manage.py migrate your_app_name zero.....also delete the migration you don't want
 
-### challenges in creating this app
+## challenges in creating this app
 
 Here are some notes for future referencing.
 - the key wasn't set up correctly and this throw an error
@@ -137,7 +179,7 @@ https://pypi.org/project/django-use-email-as-username/
 
 - A package is installed for using email instead of username (pacakge installation: pip install django-use-email-as-username)
 
-### Content in the env file if this gets deleted
+## Env file content
 
 import os
 
@@ -156,10 +198,8 @@ ensure the dubug is false
 
 
 
-### conda env 
+## conda env 
 
-working env is myenv311 and myenv311test
+ - Using Python 3.11, as it aligns with the requirements of PostgreSQL.
+ - Use conda env, myenv311 and myenv311test.
 
-### task
-
-need to find ways to store the results and records
