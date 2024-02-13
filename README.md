@@ -3,6 +3,7 @@
 
 Currently, the app is still under development and provides only one product, USDJPY. While the main structure is in place, it requires cleaning up. 
 The app offers insights into potential market direction. It utilises machine learning to predict trading activity within a specific timeframe (ie. 1hr and 4 hr).
+[Live Site - TradePro ](https://trade-pro-4909851596e5.herokuapp.com/)
 
 ![image](https://github.com/ZonyLaw/TradePro/assets/104385712/f10fa398-f032-4f1f-9521-05175c052b83)
 
