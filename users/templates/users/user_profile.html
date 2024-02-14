@@ -2,9 +2,13 @@
 
 {% block content %}
 
-<h1>{{profile.first_name}} {{profile.last_name}}</h1>
+
+<h1>Account Details</h1>
+<h2>{{profile.first_name}} {{profile.last_name}}</h2>
 <p> {{profile.username}}</p>
-{% comment %} <p> {{profile.email}}</p> {% endcomment %}
+<p> {{profile.email}}</p>
 <p> {{profile.bio}}</p>
+
+<a href="{% url 'edit-profile' %}">Update Details</a>
 
 {% endblock content %}

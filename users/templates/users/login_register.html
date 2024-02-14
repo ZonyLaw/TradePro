@@ -6,9 +6,11 @@
         <div class="formWrapper">
 
             {% if page == 'register' %}
-
-                <h1>Register User </h1>
-                
+           
+                <div class="auto__header text-center">
+                    <h1>Register User </h1>
+                    <p>Create a new account</p>
+                </div>
                 <form class="form" method="POST" action="{% url 'register' %}">
                     {% csrf_token%}
 
@@ -31,15 +33,28 @@
                     
                 </form>
                 <p> Already have an account <a href = "{% url 'login' %}"> Login </a></p>
-
+            
            
             {% else %}
 
-                <h1>Login</h1>
+                <div class="auto__header text-center">
+                    <h1>Login</h1>
+                    <p>Welcome back!</p>
+                </div>
                 <form class="form" action="{% url 'login' %}" method="POST" >
                     {% csrf_token %}
-                    <input type="text" name="email" placeholder="Email"/>
-                    <input type="password" name="password"placeholder="Enter password" />
+                    <div class="form__field">
+                        <label for="formInput#text">Email: </label>
+                        <input 
+                            class="input input--text" id="formInput#text" 
+                            type="text" name="email" placeholder="Email"/>
+                    </div>
+                    <div class="form__field">
+                        <label for="formInput#password">Password: </label>
+                        <input 
+                            class="input input--password" id="formInput#passowrd"
+                            type="password" name="password"placeholder="Enter password" />
+                    </div>
                     <input class="btn btn--sub btn--lg  my-md"  type="submit" name="Login" />
                     <p> Don't have an account <a href = "{% url 'register' %}"> Sign Up</a></p>
                 </form>
