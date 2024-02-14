@@ -2,67 +2,74 @@
 {% block content %}
 
 <main class="formPage my-xl">
-    <div class="content-box">
-        <div class="formWrapper">
+
 
             {% if page == 'register' %}
-           
-                <div class="auto__header text-center">
-                    <h1>Register User </h1>
-                    <p>Create a new account</p>
-                </div>
-                <form class="form" method="POST" action="{% url 'register' %}">
-                    {% csrf_token%}
-
-                    {%for field in form %}
-                    <div class="form__field">
-                        <label for="formInput#text">{{field.label}} </label>
-                        {{field}}
-                        {% if field.label == 'Password' %}
-                            <ul>
-                                <li>Your password can’t be too similar to your other personal information.</li>
-                                <li>Your password must contain at least 8 characters.</li>
-                                <li>Your password can’t be a commonly used password.</li>
-                                <li>Your password can’t be entirely numeric.</li>
-                            </ul>
-                        {% endif %}
+            <div class="auth">
+                <div class="card">
+                    <div class="auto__header text-center">
+                        <h1>Register User </h1>
+                        <p>Create a new account</p>
                     </div>
-                    {% endfor %}
+                    <form class="form" method="POST" action="{% url 'register' %}">
+                        {% csrf_token%}
 
-                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Register User"/>
-                    
-                </form>
-                <p> Already have an account <a href = "{% url 'login' %}"> Login </a></p>
-            
+                        {%for field in form %}
+                        <div class="form__field">
+                            <label for="formInput#text">{{field.label}} </label>
+                            {{field}}
+                            {% if field.label == 'Password' %}
+                                <ul>
+                                    <li>Your password can’t be too similar to your other personal information.</li>
+                                    <li>Your password must contain at least 8 characters.</li>
+                                    <li>Your password can’t be a commonly used password.</li>
+                                    <li>Your password can’t be entirely numeric.</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+
+                        <input class="btn btn--sub btn--lg  my-md" type="submit" value="Register User"/>
+                        
+                    </form>
+                    <p> Already have an account <a href = "{% url 'login' %}"> Login </a></p>
+                </div>
+            </div>
            
             {% else %}
-
-                <div class="auto__header text-center">
-                    <h1>Login</h1>
-                    <p>Welcome back!</p>
+            <div class="auth">
+                <div class="card">
+                    <div class="auto__header text-center">
+                        <h1>Login</h1>
+                        <p>Welcome back!</p>
+                    </div>
+                    <form class="form" action="{% url 'login' %}" method="POST" >
+                        {% csrf_token %}
+                        <div class="form__field">
+                            <label for="formInput#text">Email: </label>
+                            <input 
+                                class="input input--text" id="formInput#text" 
+                                type="text" name="email" placeholder="Email"/>
+                        </div>
+                        <div class="form__field">
+                            <label for="formInput#password">Password: </label>
+                            <input 
+                                class="input input--password" id="formInput#passowrd"
+                                type="password" name="password"placeholder="Enter password" />
+                        </div>
+                        <div class="auth__actions">
+                            <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+                            <a href="{% url 'reset_password' %}">Forget Password?</a>
+                        </div>
+                        
+                    </form>
+                    <p> Don't have an account </p> 
+                    <a href = "{% url 'register' %}">Sign Up</a>
+                    
                 </div>
-                <form class="form" action="{% url 'login' %}" method="POST" >
-                    {% csrf_token %}
-                    <div class="form__field">
-                        <label for="formInput#text">Email: </label>
-                        <input 
-                            class="input input--text" id="formInput#text" 
-                            type="text" name="email" placeholder="Email"/>
-                    </div>
-                    <div class="form__field">
-                        <label for="formInput#password">Password: </label>
-                        <input 
-                            class="input input--password" id="formInput#passowrd"
-                            type="password" name="password"placeholder="Enter password" />
-                    </div>
-                    <input class="btn btn--sub btn--lg  my-md"  type="submit" name="Login" />
-                    <p> Don't have an account <a href = "{% url 'register' %}"> Sign Up</a></p>
-                </form>
-
+            </div>
             {% endif %}
 
-        </div>
-    </div>
 </main>
 
 {% endblock content %}
