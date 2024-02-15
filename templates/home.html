@@ -1,11 +1,57 @@
 {% extends 'main.html' %} {% block content %}
 
-<main class="formPage my-xl">
-    <div class="content-box">
+<main class="projects">
+    <section class="hero-section text-center">
+        <div class="container container--narrow">
+          <div class="hero-section__box">
+            <h2>TradePro <span>Tool</span></h2>
+            <p>Know current market direction to help your trade</p>
+          </div>
+        </div>
+    </section>
+
+    <section class="projectsList">
+        <div class="container">
+        <h1>Analysis Tools</h1>
+            <div class="grid grid--two">
+                    <div class="column">
+                        <div class="card project">
+                        <a href="single-project.html" class="project">
+                            <img class="project__thumbnail" src="" alt="project thumbnail" />
+                                <div class="card__body">
+                                <h3 class="project__title">Prediction</h3>
+                                <p class="project--rating">
+                                    Predictions on market trends from machine learning models. Provide a potential trade opportunities.
+                                </p>
+                                <p><a class="project__author" href="{% url 'ml-predictions' %}">View Results</a></p>
+                                </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="column">
+                        <div class="card project">
+                            <a href="single-project.html" class="project">
+                                <img class="project__thumbnail" src="" alt="project thumbnail" />
+                                    <div class="card__body">
+                                    <h3 class="project__title">Sensitivity Test</h3>
+                                    <p class="project--rating">
+                                        Understand the variation of model predictions within a range of +/-15 pips to help confirm the current prediction.
+                                    </p>
+                                    <p><a class="project__author" href="{% url 'ml-variability' %}">View Results</a></p>
+                                    </div>
+                                </div>
+                            </a>
+                    </div>
+
+                </div>
+            </div>
+
+      <div class="content-box">
         <h1>About</h1>
-        <p>Do you find yourself lost and not knowing what market direction is doing?</p>
+       
         <p>This is a tool to help give you a sense of the direction at the hour. 
-            It is trained on some key parameters like: </p>
+            It is models trained on some key parameters like: </p>
 
         <ul>
             <li>
