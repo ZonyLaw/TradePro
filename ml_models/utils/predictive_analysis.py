@@ -3,6 +3,7 @@ import sys
 import joblib
 import importlib.util
 import pandas as pd
+import datetime
 # from .data_processing import scenario_reverse, scenario_continue, historical_record
 from django.conf import settings
 from pathlib import Path
@@ -29,8 +30,12 @@ def transform_format(pred_name, heading_labels, original_data):
         dictionary: the new dictionary with scenario predction name and header to the table.
     """
     
+    # Adding the current timestamp in the format: day-month-year hour:minute:second
+    current_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    
     transformed_data = {
         pred_name: [
+            {"date": current_timestamp},
             {"heading": heading_labels},
             {"item": original_data}
         ]
@@ -80,14 +85,16 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
     return (result_dict)
 
 
-def model_run(X_live, model_version):
+def model_run(ticker, X_live, model_version):
     
     """
     This function calls on model pipline and generate the results as dataframe. 
     Another function is called to format the results into a dictionary format.
     
     Args:
+        ticker (string): the ticker to run the model
         X_live (dataframe): dataframe contains live data of all attributes and can be more than one row.
+        model_version: the model version to run
 
     Returns:
         dictionary: returns model results, all predictions with probability, model predictions, model category label, 
@@ -105,17 +112,17 @@ def model_run(X_live, model_version):
 
     version = model_version
     model_pipeline = load_file(
-        f"trained_models/USDJPY/pl_predictions/{version}/clf_pipeline.pkl")
+        f"trained_models/{ticker}/pl_predictions/{version}/clf_pipeline.pkl")
     model_labels_map = load_file(
-        f"trained_models/USDJPY/pl_predictions/{version}/label_map.pkl")
-    model_features = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/X_test.csv")
+        f"trained_models/{ticker}/pl_predictions/{version}/label_map.pkl")
+    model_features = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/X_test.csv")
                        .columns
                        .to_list()
                        )
     
     # Discretize the target variable (ie. y dependent) 
     
-    y_test_headers = (pd.read_csv(f"trained_models/USDJPY/pl_predictions/{version}/y_test.csv")
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
                        .columns
                        .to_list()
                        )
@@ -139,12 +146,10 @@ def model_run(X_live, model_version):
     # format the results of the model
     results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
 
-
-
     return results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
 
 
-def standard_analysis(model_version):
+def standard_analysis(ticker, model_version):
     
     """
     This is a function to generate some standard analysis to show on the webpage.
@@ -159,7 +164,7 @@ def standard_analysis(model_version):
     parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     # Add the parent directory to the Python path
     sys.path.append(parent_directory)
-    module_name = f'trained_models.USDJPY.pl_predictions.{model_version}.data_processing'
+    module_name = f'trained_models.{ticker}.pl_predictions.{model_version}.data_processing'
 
     try:
         dp = importlib.import_module(module_name)
@@ -174,10 +179,10 @@ def standard_analysis(model_version):
     X_live_variability = dp.prediction_variability(0.15)
     
     
-    pred_reverse, _, _, _, _ = model_run(X_live_reverse, model_version)
-    pred_continue, _, _, _, _ = model_run(X_live_continue, model_version)
-    pred_historical, _, _, _, _ = model_run(X_live_historical, model_version)
-    pred_variability, _, _, _, _ = model_run(X_live_variability, model_version)
+    pred_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
+    pred_continue, _, _, _, _ = model_run(ticker, X_live_continue, model_version)
+    pred_historical, _, _, _, _ = model_run(ticker, X_live_historical, model_version)
+    pred_variability, _, _, _, _ = model_run(ticker, X_live_variability, model_version)
     
     
     pred_reverse = transform_format(f"pred_reverse", ["Current", "20pips", "40pips"], pred_reverse)
@@ -220,7 +225,7 @@ def trade_forecast_assessment(model_version):
     
     
     X_live_historical = dp.historical_record(120)
-    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run(X_live_historical, model_version)
+    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run("USDJPY", X_live_historical, model_version)
    
     #combined the live data and prediction dataframes.
     df1 = pd.DataFrame(model_prediction_proba, columns=model_labels_map)

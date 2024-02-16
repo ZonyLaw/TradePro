@@ -11,40 +11,43 @@ from .utils.predictive_analysis import standard_analysis, model_run, trade_forec
 from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
 
-from .form import ModelParameters, ModelSelection
+from .form import ModelParameters, ModelSelection, VersionSelection
 from prices.models import Price
 from tickers.models import Ticker
 
 
 
-# Create your views here.
 def ml_predictions(request):
     """
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
     
-    form = ModelSelection(request.POST)
+    form = VersionSelection(request.POST)
     
     if request.method == 'POST' and form.is_valid():
         model_version = form.cleaned_data['model_version']
     else:
         model_version = 'v4'
         
-    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_version)
+    model_ticker = "USDJPY"
+        
+    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_ticker, model_version)
     if model_version == "v4":
-        pred_reverse_v5, _, _, _  = standard_analysis('v5')
-        pred_reverse_1h_v5, _, _, _ = standard_analysis('1h_v5')
+        pred_reverse_v5, _, _, _  = standard_analysis(model_ticker,'v5')
+        pred_reverse_1h_v5, _, _, _ = standard_analysis(model_ticker,'1h_v5')
         pred_reverse_v4 = pred_reverse
     elif model_version == "v5":
-        pred_reverse_v4, _, _, _ = standard_analysis('v4')
-        pred_reverse_1h_v5, _, _, _  = standard_analysis('1h_v5')
+        pred_reverse_v4, _, _, _ = standard_analysis(model_ticker,'v4')
+        pred_reverse_1h_v5, _, _, _  = standard_analysis(model_ticker,'1h_v5')
         pred_reverse_v5 = pred_reverse
     elif model_version == "1h_v5":
-        pred_reverse_v4, _, _, _ = standard_analysis('v4')
-        pred_reverse_v5, _, _, _  = standard_analysis('v5')
+        pred_reverse_v4, _, _, _ = standard_analysis(model_ticker,'v4')
+        pred_reverse_v5, _, _, _  = standard_analysis(model_ticker,'v5')
         pred_reverse_1h_v5 = pred_reverse
     
+    
+    print("for prediction page", pred_reverse)
     
 
     # pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
@@ -81,7 +84,7 @@ def ml_predictions(request):
     "four": trade_diff_4hr}
     
     comment = comment_model_results(pred_continue,"pred_continue")
-    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0, 0 )
+    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 0 )
     
     write_to_csv(date, version_comment, "variability_results.csv")
     
@@ -112,14 +115,58 @@ def ml_variability(request):
     pred_variability_1h_v5 = read_prediction_from_json(f'USDJPY_pred_variability_1h_v5.json')
     
     
-    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 0, 0 )
-    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, last_four_prices_df, 1, 0 )
+    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 0 )
+    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 0 )
     
     write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
     
     context = {'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg }
     
     return render(request, 'ml_models/ml_variability.html', context)
+
+
+def ml_report(request):
+    """
+    This is a view function that pass the model predictions to the the frontend.
+    Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
+    """
+    
+    
+    
+    form = ModelSelection(request.POST)
+    
+    if request.method == 'POST' and form.is_valid():
+        model_ticker = form.cleaned_data['ticker']
+    else:
+        model_ticker = 'USDJPY'
+    
+    
+    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_ticker, "v4")
+    model_versions = ['v4', 'v5', '1h_v5']   
+    
+    for model_version in model_versions:
+        globals()[f'pred_reverse_{model_version}'], \
+        globals()[f'pred_continue_{model_version}'], \
+        globals()[f'pred_historical_{model_version}'], \
+        globals()[f'pred_variability_{model_version}'] = standard_analysis(model_ticker, model_version)
+
+    # pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
+    # pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
+    # pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
+    
+    # pred_reverse = read_prediction_from_json(f'USDJPY_pred_reverse_{model_version}.json')
+    # pred_continue = read_prediction_from_json(f'USDJPY_pred_continue_{model_version}.json')
+    # pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
+    # pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
+    
+    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
+    prices = Price.objects.filter(ticker=ticker_instance)
+
+
+    
+    context={'form': form,  'pred_historical': pred_historical}
+    
+    return render(request, 'ml_models/ml_report.html', context)
 
 
 def ml_manual(request):
@@ -162,7 +209,7 @@ def ml_manual(request):
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
             user_input = manual_price_input(form)
-            results, _, _, _, _ = model_run(user_input, model_version)            
+            results, _, _, _, _ = model_run("USDJPY", user_input, model_version)            
      
     else:
            

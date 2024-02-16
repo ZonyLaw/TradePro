@@ -5,7 +5,7 @@ import csv
 
 def write_to_json(data, filename):
     """
-    This function is write the data to a json file as a temporary storage.
+    This function writes the data to a json file as a temporary storage.
 
     Args:
         data (dictionary): containing the model prediction results

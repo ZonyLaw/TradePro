@@ -1,0 +1,26 @@
+{% extends 'main.html' %} 
+{% block content %}
+
+<main class="formPage my-xl">
+    <div class="content-box">
+
+        <form action="" method="POST">
+            {%csrf_token%} 
+            {{form.as_p}}
+            <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+        </form>
+       
+        
+        <h1>Trade Opportunities</h1>
+
+
+        <h1>Analysis Report</h1>
+        <h2>History</h2>
+        <h2>Sensitivity Test</h2>
+        <h2>Reversed</h2>
+        <h2>Continuation</h2>
+        
+
+</main>
+
+{% endblock content %}

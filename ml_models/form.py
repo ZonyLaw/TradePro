@@ -1,4 +1,6 @@
 from django import forms
+from django.conf import settings
+from tickers.models import Ticker
 
 BB_CHOICES = [
     ('inside_bb', 'inside_bb'),
@@ -36,5 +38,21 @@ class ModelParameters(forms.Form):
 
   
 class ModelSelection(forms.Form):
-      
-      model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v5', label='Select the model version')
+    def __init__(self, *args, **kwargs):
+        super(ModelSelection, self).__init__(*args, **kwargs)
+        self.fields['ticker'] = forms.ChoiceField(
+            choices=self.get_ticker(), 
+            label='Select the ticker'
+        )
+
+    def get_ticker(self):
+        return Ticker.objects.all().values_list('symbol', 'full_name')
+
+
+class VersionSelection(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(VersionSelection, self).__init__(*args, **kwargs)
+        self.fields['model_version'] = forms.ChoiceField(
+            choices=MODEL_LIST,
+            label='Select the model version'
+        )

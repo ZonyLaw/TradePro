@@ -1,5 +1,5 @@
 def comment_model_results(model_results_dict, model_results_label):
-    array = model_results_dict[model_results_label][1]['item']['Potential Trade']
+    array = model_results_dict[model_results_label][2]['item']['Potential Trade']
     current_trade = array[0]
     if "Buy" in current_trade:
         trade = "Sell"
@@ -16,7 +16,7 @@ def comment_model_results(model_results_dict, model_results_label):
     return comment
 
 
-def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, arr_index, newline_syntax):
+def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):
     """
     The function provides comments based on consistency of models output. 
 
@@ -25,7 +25,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ar
         model_dict2 (dictionary): results from the second model
         model_dict3 (dictionary): results from the third model
         prices_df (dataframe): a list of prices in dataframe
-        arr_index (integer): a index in the array to extract model results for comparison - refer to the json file
+        arr_index (integer): an index in the array to extract model results for comparison - refer to the json file
         newline_syntax (integer): 1 for '\n' otherwise <br> 
 
     Returns:
@@ -33,16 +33,68 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ar
     """
     
     key_label1 = list(model_dict1.keys())[0]
-    array1 = model_dict1[key_label1][1]['item']['Potential Trade']
+    array1 = model_dict1[key_label1][2]['item']['Potential Trade']
     current_trade1 = array1[arr_index].split()[0]
     
     key_label2 = list(model_dict2.keys())[0]
-    array2 = model_dict2[key_label2][1]['item']['Potential Trade']
+    array2 = model_dict2[key_label2][2]['item']['Potential Trade']
     current_trade2 = array2[arr_index].split()[0]
     
     key_label3 = list(model_dict3.keys())[0]
-    array3 = model_dict3[key_label3][1]['item']['Potential Trade']
+    array3 = model_dict3[key_label3][2]['item']['Potential Trade']
     current_trade3 = array3[arr_index].split()[0]
+        
+    if newline_syntax:
+        next_line = "\n"
+    else:
+        next_line = "<br>"
+    
+    
+    send_email = 0
+    if current_trade1 == current_trade2 == current_trade3:
+        comment = (
+            f"All model versions predict a {current_trade1}{next_line}"
+        )
+        send_email = 1
+                
+    elif current_trade1 == current_trade2:
+        comment = (
+            f"Oscillation: Both 4hr models predict the same {current_trade1}{next_line}"
+        )
+        send_email = 0
+    
+    elif current_trade2 == current_trade3:
+        comment = (
+            f"4hr model and 1hr model predict the same {current_trade2}.{next_line}"
+        )
+        send_email = 1
+        
+    elif current_trade1 == current_trade3:
+        comment = (
+            f"Oscillation: 4hr LAGGED model and 1hr model predict the same {current_trade1}{next_line}"
+        )
+        send_email = 0
+        
+    else:
+        comment = (
+            f"WARNING: Model predictions are inconsistant so not recommended for use!{next_line}"
+        )
+        send_email = 0
+        
+    return comment, send_email
+
+
+def general_ticker_info(prices_df, newline_syntax):
+    """
+    The function provides general ticker information. 
+
+    Args:
+        prices_df (dataframe): a list of prices in dataframe
+        newline_syntax (integer): 1 for '\n' otherwise <br> 
+
+    Returns:
+        string: analysis comments
+    """
     
     date = prices_df.iloc[3]['date']
     open_price_1hr = round(prices_df.iloc[3]['open'], 2)
@@ -65,40 +117,4 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, prices_df, ar
             f"The average entry price 4 hours ago is {entry_price_avg_1hr_4hr}"
     )
     
-    send_email = 0
-    if current_trade1 == current_trade2 == current_trade3:
-        comment = (
-            f"All model versions predict a {current_trade1}{next_line}"
-            f"{market_comments}.{next_line}"
-        )
-        send_email = 1
-                
-    elif current_trade1 == current_trade2:
-        comment = (
-            f"Oscillation: Both 4hr models predict the same {current_trade1}{next_line}"
-            f"{market_comments}.{next_line}"
-        )
-        send_email = 0
-    
-    elif current_trade2 == current_trade3:
-        comment = (
-            f"4hr model and 1hr model predict the same {current_trade2}.{next_line}"
-            f"{market_comments}.{next_line}"
-        )
-        send_email = 1
-        
-    elif current_trade1 == current_trade3:
-        comment = (
-            f"Oscillation: 4hr LAGGED model and 1hr model predict the same {current_trade1}{next_line}"
-            f"{market_comments}.{next_line}"
-        )
-        send_email = 0
-        
-    else:
-        comment = (
-            f"WARNING: Model predictions are inconsistant so not recommended for use!{next_line}"
-            f"{market_comments}.{next_line}"
-        )
-        send_email = 0
-        
-    return comment, send_email
+    return market_comments

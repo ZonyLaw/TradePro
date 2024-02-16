@@ -14,7 +14,7 @@ from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
-from ml_models.utils.analysis_comments import compare_version_results
+from ml_models.utils.analysis_comments import compare_version_results, general_ticker_info
 from ml_models.utils.access_results import read_prediction_from_json
 from ml_models.utils.predictive_analysis import standard_analysis
 from tradepro.utils.email import send_email
@@ -183,10 +183,16 @@ def email_freq_controller(freq_enabler):
 
 
 def rerun_analysis():
-    standard_analysis("v4")
-    standard_analysis("v5")
-    standard_analysis("1h_v5")
-    # standard_analysis("1h_v5_trade")
+    """
+    This function set off model run for different versions and compares results.
+    It will set send_email_enabled if there is a potential trade.
+    
+    TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
+    """
+    standard_analysis("USDJPY", "v4")
+    standard_analysis("USDJPY","v5")
+    standard_analysis("USDJPY", "1h_v5")
+
         
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -201,7 +207,9 @@ def rerun_analysis():
     pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
     pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
     
-    comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, last_four_prices_df, 0, 1 )
+    comparison_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 1 )
+    general_ticker_info = general_ticker_info(prices_df, 1)
+    comment = comparison_comment + general_ticker_info
 
     return comment, send_email_enabled
 

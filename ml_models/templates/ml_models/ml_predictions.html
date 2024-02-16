@@ -35,7 +35,7 @@
             <thead>
                 <tr>
                     <th></th>
-                    {% for heading in pred_historical.pred_historical.0.heading %}
+                    {% for heading in pred_historical.pred_historical.1.heading %}
                         <th>{{ heading }}</th>
                     {% endfor %}
                 </tr>
@@ -50,7 +50,7 @@
                 </tr>
 
 
-                {% for key, values in pred_historical.pred_historical.1.item.items %}
+                {% for key, values in pred_historical.pred_historical.2.item.items %}
                     <tr>    
                         <td>{{ key }}</td>
                         {% if key == "Potential Trade" %}
@@ -79,13 +79,13 @@
             <thead>
                 <tr>
                     <th></th>
-                    {% for heading in pred_variability.pred_variability.0.heading %}
+                    {% for heading in pred_variability.pred_variability.1.heading %}
                         <th>{{ heading }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for key, values in pred_variability.pred_variability.1.item.items %}
+                {% for key, values in pred_variability.pred_variability.2.item.items %}
                     <tr>
                         <td>{{ key }}</td>
                         {% if key == "Potential Trade" %}
@@ -111,13 +111,13 @@
             <thead>
                 <tr>
                     <th></th>
-                    {% for heading in pred_reverse.pred_reverse.0.heading %}
+                    {% for heading in pred_reverse.pred_reverse.1.heading %}
                         <th>{{ heading }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for key, values in pred_reverse.pred_reverse.1.item.items %}
+                {% for key, values in pred_reverse.pred_reverse.2.item.items %}
                     <tr>
                         <td>{{ key }}</td>
                         {% if key == "Potential Trade" %}
@@ -144,13 +144,13 @@
             <thead>
                 <tr>
                     <th></th>
-                    {% for heading in pred_continue.pred_continue.0.heading %}
+                    {% for heading in pred_continue.pred_continue.1.heading %}
                         <th>{{ heading }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for key, values in pred_continue.pred_continue.1.item.items %}
+                {% for key, values in pred_continue.pred_continue.2.item.items %}
                     <tr>
                         <td>{{ key }}</td>
                         {% if key == "Potential Trade" %}
