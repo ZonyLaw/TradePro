@@ -14,9 +14,9 @@ from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
-from ml_models.utils.analysis_comments import compare_version_results, general_ticker_info
+from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results
 from ml_models.utils.access_results import read_prediction_from_json
-from ml_models.utils.predictive_analysis import standard_analysis
+from ml_models.utils.predictive_analysis import standard_analysis, run_model_predictions
 from tradepro.utils.email import send_email
 
 if os.path.isfile('env.py'):
@@ -162,71 +162,6 @@ def run_IG(ticker, start_date=None, end_date=None):
         
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-           
-    email_alert(1)
 
 
-def email_freq_controller(freq_enabler):
-    """
-    This checks the condition to send email
-    Args:
-    freq_enabler(boolean): if 1 then email will be condition to be sent only around 00 and 30 minutes;
-        otherwise it will send despite of time
-    
-    """
-    
-    if freq_enabler:
-        current_time = datetime.now().time()
-        return 1 <= current_time.minute <= 5 or 31 <= current_time.minute <= 35
-    else:
-        return 1
 
-
-def rerun_analysis():
-    """
-    This function set off model run for different versions and compares results.
-    It will set send_email_enabled if there is a potential trade.
-    
-    TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
-    """
-    standard_analysis("USDJPY", "v4")
-    standard_analysis("USDJPY","v5")
-    standard_analysis("USDJPY", "1h_v5")
-
-        
-    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
-    prices = Price.objects.filter(ticker=ticker_instance)
-    
-    #sort prices table in ascending so latest price on the bottom
-    #note that html likes to work with array if using indexing
-    prices_df = pd.DataFrame(list(prices.values()))
-    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
-    last_four_prices_df = sorted_prices_df.tail(4)
-        
-    pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
-    pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
-    pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
-    
-    comparison_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 1 )
-    general_ticker_info = general_ticker_info(prices_df, 1)
-    comment = comparison_comment + general_ticker_info
-
-    return comment, send_email_enabled
-
-
-def email_alert(email_freq_enabler):
-
-    comment, send_email_enabled = rerun_analysis()
-    
-    print("here is the tag for email >>>>>>", send_email_enabled)
-    current_day = datetime.now().weekday()
-    email_freq_condition = email_freq_controller(email_freq_enabler)
-    
-    if current_day in [5, 6]:
-        print("It's the weekend. Email sending is disabled.")
-    elif (email_freq_condition) and (send_email_enabled):
-        try:
-            send_email("sunny_law@hotmail.com", comment, "Alert-USDJPY potential trade")
-        except Exception as e:
-        # Catch specific exception types if possible, instead of a broad 'except' clause
-            print(f"Error sending email: {e}")

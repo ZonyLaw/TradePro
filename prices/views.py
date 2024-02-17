@@ -8,7 +8,8 @@ from .utils import import_prices_from_csv, generate_csv
 
 from datetime import datetime
 from django.conf import settings
-from .IG_session.run_IG import run_IG, rerun_analysis
+from prices.IG_session.run_IG import run_IG
+from ml_models.utils.predictive_analysis import run_model_predictions
 
 
 def createPrice(request):
@@ -52,7 +53,7 @@ def updatePrice(request, pk):
         if form.is_valid():
             # Save the updated price
             form.save()
-            rerun_analysis()
+            run_model_predictions()
 
             # Redirect to the appropriate page
             return redirect('tickers')  # Replace 'tickers' with your actual URL name

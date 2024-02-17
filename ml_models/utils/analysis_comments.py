@@ -84,12 +84,12 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
     return comment, send_email
 
 
-def general_ticker_info(prices_df, newline_syntax):
+def general_ticker_results(prices_df, newline_syntax):
     """
     The function provides general ticker information. 
 
     Args:
-        prices_df (dataframe): a list of prices in dataframe
+        prices_df (dataframe): a list of four prices with latest price at top and previous price at bottom
         newline_syntax (integer): 1 for '\n' otherwise <br> 
 
     Returns:
@@ -108,7 +108,7 @@ def general_ticker_info(prices_df, newline_syntax):
     else:
         next_line = "<br>"
     
-    market_comments = (
+    ticker_info = (
             f"Market Information:{next_line}"
             f"Date: {date}{next_line}"
             f"The current open price is {open_price_1hr}.{next_line}"
@@ -117,4 +117,4 @@ def general_ticker_info(prices_df, newline_syntax):
             f"The average entry price 4 hours ago is {entry_price_avg_1hr_4hr}"
     )
     
-    return market_comments
+    return ticker_info

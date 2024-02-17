@@ -4,12 +4,14 @@ import joblib
 import importlib.util
 import pandas as pd
 import datetime
-# from .data_processing import scenario_reverse, scenario_continue, historical_record
 from django.conf import settings
+from tickers.models import Ticker
+from prices.models import Price
+from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results
 from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json
-
+from django.shortcuts import get_object_or_404
 
 def load_file(file_path):
     #data management-loads the filepath to get the model
@@ -155,7 +157,7 @@ def standard_analysis(ticker, model_version):
     This is a function to generate some standard analysis to show on the webpage.
     Pre-defined scenarios are inputted into the model.
     This calls on the model_run function which pulls all relevant inputs to generate results.
-
+    Json file will be produced saving the results.
     Returns:
         dictionary: returns results from model for the different scenarios
     """
@@ -266,3 +268,31 @@ def calculate_accuracy(predictions, y_actual):
 
     accuracy = accuracy_score(y_actual, predictions)
     return accuracy
+
+
+def run_model_predictions(model_ticker):
+    """
+    This function set off model run for three different versions and compares results.
+    It will return the comments and ticker info which can be sent out by email if enabled.
+    
+    TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
+    """
+    
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+    pred_reverse_v5, _, _, _ = standard_analysis(model_ticker,"v5")
+    pred_reverse_1h_v5, _, _, _ = standard_analysis(model_ticker, "1h_v5")
+
+    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+        
+    comparison_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 1 )
+    general_ticker_info = general_ticker_results(last_four_prices_df, 1)
+
+    print("test>>>>>>>>", comparison_comment)
+    return comparison_comment, general_ticker_info, send_email_enabled
