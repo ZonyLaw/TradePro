@@ -53,7 +53,7 @@ def updatePrice(request, pk):
         if form.is_valid():
             # Save the updated price
             form.save()
-            run_model_predictions()
+            run_model_predictions(price_instance.ticker.symbol)
 
             # Redirect to the appropriate page
             return redirect('tickers')  # Replace 'tickers' with your actual URL name

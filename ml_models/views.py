@@ -137,10 +137,18 @@ def ml_report(request):
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
+    date = last_four_prices_df.iloc[3]['date']
     open_prices = last_four_prices_df['open'].tolist()
     close_prices = last_four_prices_df['close'].tolist()
     volume = last_four_prices_df['volume'].tolist()
     
+    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
+    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
+    candle_size = {"one" :trade_diff_1hr,
+        "four": trade_diff_4hr}
+    
+    trade = {"one" :trade_direction(trade_diff_1hr),
+        "four": trade_direction(trade_diff_4hr)}
     
     #retrieve saved results from last calculation performed by updater.py
     pred_historical_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_v4.json')
@@ -166,7 +174,7 @@ def ml_report(request):
     potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
     
     #calculate entry and exit point
-    entry_point = open_prices[-1] + 0.4
+    entry_point = open_prices[-1] + 0.04
     exit_point = open_prices[-1]+trade_target/100
 
     #sensitivity test save as dictionary for front-end access
@@ -202,7 +210,8 @@ def ml_report(request):
     #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
 
 
-    context={'form': form,  'open_prices': open_prices, 'volume': volume,
+    context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade,
+             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,

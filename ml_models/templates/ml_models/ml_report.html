@@ -12,10 +12,21 @@
        
         
         <h1>Trade Opportunities</h1>
-        <p> Trade direction: {{potential_trade}} </P>
-        <p>Entry point: {{entry_point|floatformat:3}}</P>
-        <p>Exit point: {{exit_point|floatformat:3}}</P>
+            <p> Trade direction: {{potential_trade}} </p>
+            <p>Entry point: {{entry_point|floatformat:3}}</p>
+            <p>Exit point: {{exit_point|floatformat:3}}</p>
+            <p>On average profit taking should be 10, 20, 25 pips. 
+                The exit point is what the model predicts but the accuracy varies depending on many market factors.
+                It is provided as an indication.</p>
 
+
+        <h1>Market Information</h1>
+            <p> Last Date price was extracted: <b>{{date}}</b> </p>
+            <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
+            <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+            <p>Last open price 1 hr ago: £{{ open_prices.3|floatformat:2 }} </p>
+            <p>Last close price 1hr ago: £{{ close_prices.3|floatformat:2 }}</p>
+            <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
 
         <h1>Analysis Report</h1>
         <h2>History</h2>
