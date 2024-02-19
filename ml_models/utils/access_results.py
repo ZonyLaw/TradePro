@@ -3,7 +3,7 @@ import json
 import csv
 
 
-def write_to_json(data, filename):
+def write_to_json(data,model_ticker, filename):
     """
     This function writes the data to a json file as a temporary storage.
 
@@ -17,7 +17,7 @@ def write_to_json(data, filename):
     # Move up two levels from the current module's directory
     base_dir_up_two_levels = os.path.abspath(os.path.join(base_dir, os.pardir, os.pardir))
 
-    relative_path = os.path.join(base_dir_up_two_levels, 'media', 'model_results', filename)
+    relative_path = os.path.join(base_dir_up_two_levels, 'media', 'model_results', model_ticker, filename)
     # Construct the absolute path
     absolute_path = os.path.join(base_dir, relative_path)
 
@@ -29,7 +29,7 @@ def write_to_json(data, filename):
         json.dump(data, json_file, indent=4)
 
 
-def read_prediction_from_json(filename):
+def read_prediction_from_json(model_ticker, filename):
     """_summary_
 
     Args:
@@ -47,7 +47,7 @@ def read_prediction_from_json(filename):
     for _ in range(levels_to_move_up):
         current_file_path = os.path.dirname(current_file_path)
 
-    relative_path = os.path.join( 'media','model_results', filename)
+    relative_path = os.path.join( 'media','model_results', model_ticker, filename)
     # Construct the absolute path
     absolute_path = os.path.join(current_file_path, relative_path)
     print("absolute_path>>>>>",absolute_path)

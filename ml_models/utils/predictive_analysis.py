@@ -10,7 +10,7 @@ from prices.models import Price
 from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results
 from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
-from .access_results import write_to_json
+from .access_results import write_to_json, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
 
 def load_file(file_path):
@@ -193,10 +193,10 @@ def standard_analysis(ticker, model_version):
     pred_variability = transform_format(f"pred_variability", ["15pips", "-15pips"], pred_variability)
     
     
-    write_to_json(pred_reverse, f"USDJPY_pred_reverse_{model_version}.json")
-    write_to_json(pred_continue, f"USDJPY_pred_continue_{model_version}.json")
-    write_to_json(pred_historical, f"USDJPY_pred_historical_{model_version}.json")
-    write_to_json(pred_variability, f"USDJPY_pred_variability_{model_version}.json")
+    write_to_json(pred_reverse, ticker, f"USDJPY_pred_reverse_{model_version}.json")
+    write_to_json(pred_continue, ticker, f"USDJPY_pred_continue_{model_version}.json")
+    write_to_json(pred_historical, ticker, f"USDJPY_pred_historical_{model_version}.json")
+    write_to_json(pred_variability, ticker, f"USDJPY_pred_variability_{model_version}.json")
      
     return pred_reverse, pred_continue, pred_historical, pred_variability
 
@@ -296,3 +296,27 @@ def run_model_predictions(model_ticker):
 
     print("test>>>>>>>>", comparison_comment)
     return comparison_comment, general_ticker_info, send_email_enabled
+
+
+def variability_analysis(model_ticker):
+    """
+    This function is carry out a sensitivity test on 15 and -15pips movements.
+
+    Args:
+        model_ticker (string): the ticker to run the variability test
+
+    Returns:
+        string: comments on the variability test for positive and negative movements.
+    """
+    
+    pred_variability_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_v4.json')
+    pred_variability_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_v5.json')
+    pred_variability_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_1h_v5.json')
+    
+    
+    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 0 )
+    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 0 )
+    
+    write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
+    
+    return version_comment_pos, version_comment_neg

@@ -3,7 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from django.conf import settings
 from prices.IG_session.run_IG import run_IG
 from tradepro.utils.email_alert import email_alert
-from ml_models.utils.predictive_analysis import run_model_predictions
+from ml_models.utils.predictive_analysis import run_model_predictions, variability_analysis
 
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds
 
@@ -42,4 +42,5 @@ def run_procedure_sequence():
         #update the price table
         run_IG(ticker)
         comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+        variability_analysis(ticker)
         email_alert(ticker, comparison_comment, general_ticker_info, send_email_enabled,1)

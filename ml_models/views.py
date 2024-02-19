@@ -7,7 +7,7 @@ import importlib.util
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
-from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment
+from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
 from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
 
@@ -109,16 +109,7 @@ def ml_variability(request):
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
     
-    
-    pred_variability_v4 = read_prediction_from_json(f'USDJPY_pred_variability_v4.json')
-    pred_variability_v5 = read_prediction_from_json(f'USDJPY_pred_variability_v5.json')
-    pred_variability_1h_v5 = read_prediction_from_json(f'USDJPY_pred_variability_1h_v5.json')
-    
-    
-    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 0 )
-    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 0 )
-    
-    write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
+    version_comment_pos, version_comment_neg = variability_analysis(ticker_instance.symbol)
     
     context = {'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg }
     
@@ -131,8 +122,6 @@ def ml_report(request):
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
     
-    
-    
     form = ModelSelection(request.POST)
     
     if request.method == 'POST' and form.is_valid():
@@ -140,15 +129,57 @@ def ml_report(request):
     else:
         model_ticker = 'USDJPY'
     
+    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
+    prices = Price.objects.filter(ticker=ticker_instance)
     
-    pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_ticker, "v4")
-    model_versions = ['v4', 'v5', '1h_v5']   
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+    open_prices = last_four_prices_df['open'].tolist()
+    close_prices = last_four_prices_df['close'].tolist()
+    volume = last_four_prices_df['volume'].tolist()
     
-    for model_version in model_versions:
-        globals()[f'pred_reverse_{model_version}'], \
-        globals()[f'pred_continue_{model_version}'], \
-        globals()[f'pred_historical_{model_version}'], \
-        globals()[f'pred_variability_{model_version}'] = standard_analysis(model_ticker, model_version)
+    
+    #retrieve saved results from last calculation performed by updater.py
+    pred_historical_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_v4.json')
+    pred_historical_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_v5.json')
+    pred_historical_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_1h_v5.json')
+    
+    #extracting final results
+    trade_headers = pred_historical_v4['pred_historical'][1]['heading']
+    potential_trade_list_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_list_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_list_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
+    split_potential_trade_list = [trade.split(':') for trade in potential_trade_list_v5]
+    trade_target = float(split_potential_trade_list[-1][-1].strip())
+    
+    #save the array as a dictionary for frontend access
+    potential_trade_lists = {
+    'v4': potential_trade_list_v4,
+    'v5': potential_trade_list_v5,
+    '1h_v5': potential_trade_list_1h_v5
+    }
+    
+    trade_headers = {'Periods': trade_headers,}
+    
+    print(potential_trade_lists)
+    
+    #calculate entry and exit point
+    entry_point = open_prices[-1] + 0.4
+    exit_point = open_prices[-1]+trade_target/100
+
+    potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
+    print(potential_trade_list_v5)
+
+
+    
+    # model_versions = ['v4', 'v5', '1h_v5']   
+    
+    # for model_version in model_versions:
+    #     globals()[f'pred_historical_{model_version}'] \
+    #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
 
     # pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
     # pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
@@ -159,12 +190,12 @@ def ml_report(request):
     # pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
     # pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
     
-    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
-    prices = Price.objects.filter(ticker=ticker_instance)
 
 
     
-    context={'form': form,  'pred_historical': pred_historical}
+    context={'form': form,  'open_prices': open_prices, 'volume': volume,
+             'entry_point':entry_point, 'exit_point':exit_point, 'potential_trade': potential_trade, 
+             'trade_headers': trade_headers, 'potential_trade_lists': potential_trade_lists}
     
     return render(request, 'ml_models/ml_report.html', context)
 

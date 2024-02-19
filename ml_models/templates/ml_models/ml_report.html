@@ -12,10 +12,60 @@
        
         
         <h1>Trade Opportunities</h1>
+        <p> Trade direction: {{potential_trade}} </P>
+        <p>Entry point: {{entry_point|floatformat:3}}</P>
+        <p>Exit point: {{exit_point|floatformat:3}}</P>
 
 
         <h1>Analysis Report</h1>
         <h2>History</h2>
+
+        <table>
+            <thead>
+
+                <tr>
+                    {% for label, headers in trade_headers.items %}
+                        <th>{{ label }}</th>
+                        {% for header in headers %}
+                        <th>{{ header }}</th>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                    
+            </thead>
+            <tbody>
+
+
+                {% for version, trades in potential_trade_lists.items %}
+                <tr>
+                    <td>{{ version }}</td>
+                    {% for trade in trades %}
+                        <td>{{ trade }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+
+                <tr>
+                    <td>Open price</td>
+                    {% for price in open_prices %}
+                    <td>£{{ price|floatformat:2 }}</td>
+                    {% endfor %}
+
+                </tr>
+
+                <tr>
+                    <td>Volume</td>
+                    {% for vol in volume %}
+                    <td>{{ vol }}</td>
+                    {% endfor %}
+
+                </tr>
+                
+            </tbody>
+        </table>
+
+
+
         <h2>Sensitivity Test</h2>
         <h2>Reversed</h2>
         <h2>Continuation</h2>

@@ -87,12 +87,6 @@ def profit_calc(df, col1, col2, offset_hr):
         df[f'lead_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
         df[f'pl_{col2}_{timeframe}_hr'] =  df[f'lead_{col2}_{timeframe}'] - df[col1]
         
-        buy_condition  = (df[f'pl_{col1}_{timeframe}_hr'] > 0)
-
-        #0 for sell and 1 for buy
-        df[f'trade_{col1}_{timeframe}_hr'] = 0 #'sell'
-        df.loc[buy_condition, f'trade_{col1}_{timeframe}_hr'] = 1 #'buy'
-        
         
     else:
         # this brings the past price which become the entry and the present price is the exit price. 
@@ -100,15 +94,8 @@ def profit_calc(df, col1, col2, offset_hr):
         # normally, we use previous price to explain current price but this case is probably not that useful as the model will be
         # explaining previous timeframe to achieve current profit or loss. This is not useful as it already happened.
         df[f'lag_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
-        df[f'pl_{col2}_{timeframe}_hr'] = df[col1] - df[f'lag_{col2}_{timeframe}'] 
+        df[f'pl_{col2}_f{timeframe}_hr'] = df[col1] - df[f'lag_{col2}_{timeframe}']
         
-        #check if it should be a buy or sell given if entry was made at the point of date and time.
-        buy_condition  = (df[f'pl_{col1}_{timeframe}_hr'] > 0)
-
-        #0 for sell and 1 for buy
-        df[f'trade_{col1}_{timeframe}_hr'] = 0 #'sell'
-        df.loc[buy_condition, f'trade_{col1}_{timeframe}_hr'] = 1 #'buy'
-    
     return df
 
 
@@ -595,6 +582,6 @@ def prediction_variability(adjustment):
     
    
     variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
-    # print("variability all >>>>>>" ,variability_all['trend_strength_1']) 
+    # print("variability all >>>>>>" ,variability_all['scenario']) 
     
     return (variability_all)
