@@ -176,11 +176,14 @@ def ml_report(request):
     #calculate entry and exit point
     if trade_target > 0:
         entry_adjustment = -0.04
+        stop_adjustment = -0.1
     else:
         entry_adjustment = 0.04
+        stop_adjustment = 0.1
         
     entry_point = open_prices[-1] + entry_adjustment
     exit_point = open_prices[-1] + trade_target/100 + entry_adjustment
+    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
 
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
@@ -218,7 +221,7 @@ def ml_report(request):
 
     context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume,
-             'entry_point': entry_point, 'exit_point': exit_point, 'potential_trade': potential_trade, 
+             'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,}
