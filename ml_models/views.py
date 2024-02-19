@@ -174,8 +174,13 @@ def ml_report(request):
     potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
     
     #calculate entry and exit point
-    entry_point = open_prices[-1] + 0.04
-    exit_point = open_prices[-1]+trade_target/100
+    if trade_target > 0:
+        entry_adjustment = -0.04
+    else:
+        entry_adjustment = 0.04
+        
+    entry_point = open_prices[-1] + entry_adjustment
+    exit_point = open_prices[-1] + trade_target/100 + entry_adjustment
 
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
@@ -204,13 +209,14 @@ def ml_report(request):
     '1h_v5': reverse_trade_results_1h_v5
     }
 
-
+    version_comment, _ = compare_version_results(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+    
     # for model_version in model_versions:
     #     globals()[f'pred_historical_{model_version}'] \
     #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
 
 
-    context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade,
+    context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
