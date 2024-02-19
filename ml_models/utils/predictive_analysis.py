@@ -193,10 +193,10 @@ def standard_analysis(ticker, model_version):
     pred_variability = transform_format(f"pred_variability", ["15pips", "-15pips"], pred_variability)
     
     
-    write_to_json(pred_reverse, ticker, f"USDJPY_pred_reverse_{model_version}.json")
-    write_to_json(pred_continue, ticker, f"USDJPY_pred_continue_{model_version}.json")
-    write_to_json(pred_historical, ticker, f"USDJPY_pred_historical_{model_version}.json")
-    write_to_json(pred_variability, ticker, f"USDJPY_pred_variability_{model_version}.json")
+    write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
+    write_to_json(pred_continue, ticker, f"{ticker}_pred_continue_{model_version}.json")
+    write_to_json(pred_historical, ticker, f"{ticker}_pred_historical_{model_version}.json")
+    write_to_json(pred_variability, ticker, f"{ticker}_pred_variability_{model_version}.json")
      
     return pred_reverse, pred_continue, pred_historical, pred_variability
 
@@ -314,8 +314,8 @@ def variability_analysis(model_ticker):
     pred_variability_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_1h_v5.json')
     
     
-    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 0 )
-    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 0 )
+    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 1 )
+    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 1 )
     
     write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
     

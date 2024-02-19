@@ -148,54 +148,65 @@ def ml_report(request):
     pred_historical_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_1h_v5.json')
     
     #extracting final results
-    trade_headers = pred_historical_v4['pred_historical'][1]['heading']
-    potential_trade_list_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_list_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_list_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
-    split_potential_trade_list = [trade.split(':') for trade in potential_trade_list_v5]
-    trade_target = float(split_potential_trade_list[-1][-1].strip())
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
+    split_potential_trade_result = [trade.split(':') for trade in potential_trade_results_v5]
+    trade_target = float(split_potential_trade_result[-1][-1].strip())
     
-    #save the array as a dictionary for frontend access
-    potential_trade_lists = {
-    'v4': potential_trade_list_v4,
-    'v5': potential_trade_list_v5,
-    '1h_v5': potential_trade_list_1h_v5
+    #save historical array as a dictionary for frontend access
+    historical_labels = {'Periods': historical_headers}
+    historical_trade_results = {
+    'v4': potential_trade_results_v4,
+    'v5': potential_trade_results_v5,
+    '1h_v5': potential_trade_results_1h_v5
     }
-    
-    trade_headers = {'Periods': trade_headers,}
-    
-    print(potential_trade_lists)
+        
+    potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
     
     #calculate entry and exit point
     entry_point = open_prices[-1] + 0.4
     exit_point = open_prices[-1]+trade_target/100
 
-    potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
-    print(potential_trade_list_v5)
+    #sensitivity test save as dictionary for front-end access
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
+    pred_var_list = {
+        '15 pips':pred_var_pos,
+        '-15 pips':pred_var_neg,
+    }
+    
+    
+    #retrieve saved results from last calculation performed by updater.py
+    pred_reverse_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_v4.json')
+    pred_reverse_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_v5.json')
+    pred_reverse_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_1h_v5.json')
+    
+    #extracting final results
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['item']['Potential Trade']
+    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['item']['Potential Trade']
+    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['item']['Potential Trade']
+    
+    #save array of reversed results as a dictionary for frontend access
+    reverse_labels = {'Periods': reverse_headers}
+    reverse_trade_lists = {
+    'v4': reverse_trade_results_v4,
+    'v5': reverse_trade_results_v5,
+    '1h_v5': reverse_trade_results_1h_v5
+    }
 
 
-    
-    # model_versions = ['v4', 'v5', '1h_v5']   
-    
     # for model_version in model_versions:
     #     globals()[f'pred_historical_{model_version}'] \
     #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
 
-    # pred_reverse_v4 = read_prediction_from_json(f'USDJPY_pred_reverse_v4.json')
-    # pred_reverse_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_v5.json')
-    # pred_reverse_1h_v5 = read_prediction_from_json(f'USDJPY_pred_reverse_1h_v5.json')
-    
-    # pred_reverse = read_prediction_from_json(f'USDJPY_pred_reverse_{model_version}.json')
-    # pred_continue = read_prediction_from_json(f'USDJPY_pred_continue_{model_version}.json')
-    # pred_historical = read_prediction_from_json(f'USDJPY_pred_historical_{model_version}.json')
-    # pred_variability = read_prediction_from_json(f'USDJPY_pred_variability_{model_version}.json')
-    
 
-
-    
     context={'form': form,  'open_prices': open_prices, 'volume': volume,
-             'entry_point':entry_point, 'exit_point':exit_point, 'potential_trade': potential_trade, 
-             'trade_headers': trade_headers, 'potential_trade_lists': potential_trade_lists}
+             'entry_point': entry_point, 'exit_point': exit_point, 'potential_trade': potential_trade, 
+             'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
+             'pred_var_list': pred_var_list,
+             'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,}
     
     return render(request, 'ml_models/ml_report.html', context)
 

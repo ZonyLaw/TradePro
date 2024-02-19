@@ -24,7 +24,7 @@
             <thead>
 
                 <tr>
-                    {% for label, headers in trade_headers.items %}
+                    {% for label, headers in historical_labels.items %}
                         <th>{{ label }}</th>
                         {% for header in headers %}
                         <th>{{ header }}</th>
@@ -36,7 +36,7 @@
             <tbody>
 
 
-                {% for version, trades in potential_trade_lists.items %}
+                {% for version, trades in historical_trade_results.items %}
                 <tr>
                     <td>{{ version }}</td>
                     {% for trade in trades %}
@@ -64,12 +64,59 @@
             </tbody>
         </table>
 
-
-
         <h2>Sensitivity Test</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Movement</th>
+                        <th>Sensitivity Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for variability, result  in pred_var_list.items %}
+                    <tr>
+                        <td>{{ variability }}</td>
+                 
+                            <td>{{ result }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
         <h2>Reversed</h2>
+
+        <table>
+            <thead>
+
+                <tr>
+                    {% for label, headers in reverse_labels.items %}
+                        <th>{{ label }}</th>
+                        {% for header in headers %}
+                        <th>{{ header }}</th>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                    
+            </thead>
+            <tbody>
+
+
+                {% for version, trades in reverse_trade_results.items %}
+                <tr>
+                    <td>{{ version }}</td>
+                    {% for trade in trades %}
+                        <td>{{ trade }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+
+
+                
+            </tbody>
+        </table>
+
         <h2>Continuation</h2>
-        
 
 </main>
 

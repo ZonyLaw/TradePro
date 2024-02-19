@@ -42,5 +42,5 @@ def run_procedure_sequence():
         #update the price table
         run_IG(ticker)
         comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
-        variability_analysis(ticker)
+        # variability_analysis(ticker)
         email_alert(ticker, comparison_comment, general_ticker_info, send_email_enabled,1)
