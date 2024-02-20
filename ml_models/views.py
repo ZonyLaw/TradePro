@@ -188,8 +188,8 @@ def ml_report(request):
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
     pred_var_list = {
-        '15 pips':pred_var_pos,
-        '-15 pips':pred_var_neg,
+        '10 pips':pred_var_pos,
+        '-10 pips':pred_var_neg,
     }
     
     

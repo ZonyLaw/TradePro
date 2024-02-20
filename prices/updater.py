@@ -30,6 +30,7 @@ def start():
     # next_hour = (current_time + timedelta(hours=1)).replace(minute=34, second=0, microsecond=0)
     next_hour = (current_time).replace(minute=1, second=0, microsecond=0)
     scheduler.add_job(run_procedure_sequence, 'interval', minutes=15, start_date=next_hour)
+    
     # scheduler.add_job(run_IG, 'interval', args=[ticker], hours=1, start_date=next_hour)
     
     # these are extra versions but can be deleted later

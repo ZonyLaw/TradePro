@@ -178,7 +178,7 @@ def standard_analysis(ticker, model_version):
     X_live_reverse = dp.scenario_reverse()
     X_live_continue = dp.scenario_continue()
     X_live_historical = dp.historical_record(4)
-    X_live_variability = dp.prediction_variability(0.15)
+    X_live_variability = dp.prediction_variability(0.10)
     
     
     pred_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
@@ -190,7 +190,7 @@ def standard_analysis(ticker, model_version):
     pred_reverse = transform_format(f"pred_reverse", ["Current", "20pips", "40pips"], pred_reverse)
     pred_continue = transform_format(f"pred_continue", ["Current", "20pips", "40pips"], pred_continue)
     pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical)
-    pred_variability = transform_format(f"pred_variability", ["15pips", "-15pips"], pred_variability)
+    pred_variability = transform_format(f"pred_variability", ["10pips", "-10pips"], pred_variability)
     
     
     write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
