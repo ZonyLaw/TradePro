@@ -55,11 +55,12 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
     
     
     send_email = 0
-    if current_trade1 == current_trade2 == current_trade3 and pip_size1 >= 5 and pip_size2 >=5 and pip_size3 >=5:
+    if current_trade1 == current_trade2 == current_trade3 :
         comment = (
             f"All model versions predict a {current_trade1}{next_line}"
         )
-        send_email = 1
+        if pip_size1 >= 5 and pip_size2 >=5 and pip_size3 >=5:
+            send_email = 1
                 
     elif current_trade1 == current_trade2:
         comment = (
@@ -67,11 +68,12 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
         )
         send_email = 0
     
-    elif current_trade2 == current_trade3 and pip_size2 >=5 and pip_size3 >=5:
+    elif current_trade2 == current_trade3:
         comment = (
             f"4hr model and 1hr model predict the same {current_trade2}.{next_line}"
         )
-        send_email = 1
+        if pip_size2 >=5 and pip_size3 >=5:
+            send_email = 1
         
     elif current_trade1 == current_trade3:
         comment = (
