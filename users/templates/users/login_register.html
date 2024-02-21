@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
 
-<main class="formPage my-xl">
+
 
 
             {% if page == 'register' %}
@@ -18,14 +18,9 @@
                         <div class="form__field">
                             <label for="formInput#text">{{field.label}} </label>
                             {{field}}
-                            {% if field.label == 'Password' %}
-                                <ul>
-                                    <li>Your password can’t be too similar to your other personal information.</li>
-                                    <li>Your password must contain at least 8 characters.</li>
-                                    <li>Your password can’t be a commonly used password.</li>
-                                    <li>Your password can’t be entirely numeric.</li>
-                                </ul>
-                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red;">{{error}}</p>
+                            {% endfor %}
                         </div>
                         {% endfor %}
 
@@ -70,6 +65,6 @@
             </div>
             {% endif %}
 
-</main>
+
 
 {% endblock content %}

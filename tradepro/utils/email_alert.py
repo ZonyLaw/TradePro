@@ -27,6 +27,8 @@ def email_alert( model_ticker, comment, general_ticker_info, send_email_enabled,
 
     Args:
         model_ticker (string): specify the ticker to run predictions and email alert.
+        general_ticker_info (string): this contains general market information about ticker.
+        send_email_enabled (integer): When this is 1, it will allow email to be sent.
         email_freq_enabler (integer): This is boolean where 1 limits sending to certain time 
             and 0 allowing to happen any time. 
     """

@@ -40,12 +40,12 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
     key_label2 = list(model_dict2.keys())[0]
     array2 = model_dict2[key_label2][2]['item']['Potential Trade']
     current_trade2 = array2[arr_index].split()[0]
-    pip_size2 = abs(int(array1[arr_index].split()[2]))
+    pip_size2 = abs(int(array2[arr_index].split()[2]))
     
     key_label3 = list(model_dict3.keys())[0]
     array3 = model_dict3[key_label3][2]['item']['Potential Trade']
     current_trade3 = array3[arr_index].split()[0]
-    pip_size3 = abs(int(array1[arr_index].split()[2]))
+    pip_size3 = abs(int(array3[arr_index].split()[2]))
     
         
     if newline_syntax:

@@ -1,5 +1,5 @@
 .alert {
-  display: flex;
+  display: inline-flex;
 
   gap: 3rem;
   justify-content: center;
