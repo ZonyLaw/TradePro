@@ -308,7 +308,7 @@ def ml_manual(request):
 def export_model_results(request):
     
     if request.method == 'POST':
-        form = ModelSelection(request.POST)
+        form = VersionSelection(request.POST)
 
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
@@ -320,7 +320,7 @@ def export_model_results(request):
 
             return response
     else:
-        form = ModelSelection()
+        form = VersionSelection()
 
     return render(request, 'ml_models/export_model_results.html', {'form': form})
     
