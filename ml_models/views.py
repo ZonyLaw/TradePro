@@ -2,8 +2,8 @@ import pandas as pd
 import os
 import sys
 
-
 import importlib.util
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results
@@ -22,10 +22,12 @@ def ml_predictions(request):
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
+    if request.method == 'POST':
+        form = VersionSelection(request.POST)
+    else:
+        form = VersionSelection()
     
-    form = VersionSelection(request.POST)
-    
-    if request.method == 'POST' and form.is_valid():
+    if form.is_valid():
         model_version = form.cleaned_data['model_version']
     else:
         model_version = 'v4'
@@ -121,10 +123,12 @@ def ml_report(request):
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
-    
-    form = ModelSelection(request.POST)
-    
-    if request.method == 'POST' and form.is_valid():
+    if request.method == 'POST':
+        form = ModelSelection(request.POST)
+    else:
+        form = ModelSelection()
+        
+    if form.is_valid():
         model_ticker = form.cleaned_data['ticker']
     else:
         model_ticker = 'USDJPY'
@@ -306,6 +310,8 @@ def ml_manual(request):
 
 
 def export_model_results(request):
+    
+    messages.clear(request)
     
     if request.method == 'POST':
         form = VersionSelection(request.POST)

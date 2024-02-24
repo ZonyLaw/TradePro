@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
 from .models import Ticker
 from .form import TickerForm
 from users.models import Profile
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
@@ -28,7 +29,7 @@ def ticker(request, pk):
     for price in prices:
         localized_date = price.date.astimezone(user_timezone)
         prices_user_timezone.append({'id':price.id, 'date': localized_date, 
-                                     'open': price.open , 'close': price.close,
+                                     'open': price.open , 'close': price.close, 'volume': price.volume,
                                      'trade': 'Buy' if price.open - price.close < 0 else 'Sell'})
         sorted_prices = sorted(prices_user_timezone, key=lambda x: x['date'], reverse=True)
     
@@ -37,6 +38,7 @@ def ticker(request, pk):
     return render(request, 'tickers/ticker.html', context)
 
 #this is a simple version of showing the date time but will use setting timezone
+#TODO: could delete
 def ticker2(request, pk):
     profile = Profile.objects.get(user = request.user)
     print("test", profile.timezone)
@@ -68,6 +70,11 @@ def updateTicker(request, pk):
         if form.is_valid():
             form.save()
             return redirect('tickers')
+        
+    if not request.user.is_superuser:
+        messages.warning(request, "You don't have permission to update tickers.")
+        return redirect('tickers')
+    
     
     context = {'form': form}
     return render(request, "tickers/ticker_form.html", context)
@@ -78,7 +85,10 @@ def deleteTicker(request, pk):
         ticker.delete()
         return redirect('tickers')
     
+    if not request.user.is_superuser:
+        messages.warning(request, "You don't have permission to delete tickers.")
+        return redirect('tickers')
+       
     context = {'object': ticker}
-    print(ticker)
     return render(request, 'tickers/delete_template.html', context)
 

@@ -5,8 +5,9 @@ from .form import PriceForm, PriceRangeForm
 
 from .form import FileUploadForm
 from .utils import import_prices_from_csv, generate_csv
-
 from datetime import datetime
+
+from django.contrib import messages
 from django.conf import settings
 from prices.IG_session.run_IG import run_IG
 from ml_models.utils.predictive_analysis import run_model_predictions
@@ -60,11 +61,11 @@ def updatePrice(request, pk):
     else:
         # Populate the form with the existing data
         form = PriceForm(instance=price_instance)
+        
     
     context = {"page":page, 'form': form}
 
     return render(request, 'prices/price_form.html', context)
-
 
 
 def upload_prices(request):

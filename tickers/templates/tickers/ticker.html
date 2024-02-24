@@ -8,15 +8,32 @@
     <p>{{ticker.info}}</p>
 
     <table class="price-table">
-        {% for price in prices %}
+      <thead>
         <tr>
-        <td > Date: {{ price.date|timezone:user_timezone }} </td>
-        <td> Open price: {{price.open|floatformat:2 }} - Close price: {{price.close|floatformat:2 }} </td>
-        <td> Trade: {{price.trade }} </td>
-        {% if request.user.is_superuser %}
-          <td> <a href = "{% url 'update-price' price.id %}" >Update </a> </td>
-          <td> <a href = "{% url 'delete-price' price.id %}" >Delete </a> </td>
-        {% endif %}
+          <th>Date</th>
+          <th>Open price</th>
+          <th>Close price</th>
+          <th>Volume</th>
+          <th>Direction</th>
+          {% if request.user.is_superuser %}
+            <th>Update</th>
+            <th>Delete</th>
+          {% endif %}
+        </tr>
+      </thead>
+        {% for price in prices %}
+
+
+        <tr>
+          <td> {{ price.date|timezone:user_timezone }} </td>
+          <td> £{{price.open|floatformat:2 }} </td>
+          <td> £{{price.close|floatformat:2 }} </td>
+          <td> {{price.volume|floatformat:2 }} </td>
+          <td> {{price.trade }} </td>
+          {% if request.user.is_superuser %}
+            <td> <a href = "{% url 'update-price' price.id %}" >Update </a> </td>
+            <td> <a href = "{% url 'delete-price' price.id %}" >Delete </a> </td>
+          {% endif %}
         </tr>
         {% endfor %}
       </table>
