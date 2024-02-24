@@ -3,7 +3,7 @@ import json
 import csv
 
 
-def write_to_json(data,model_ticker, filename):
+def write_to_json(data, model_ticker, filename):
     """
     This function writes the data to a json file as a temporary storage.
 

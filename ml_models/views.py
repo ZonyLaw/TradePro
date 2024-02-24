@@ -97,6 +97,7 @@ def ml_predictions(request):
 
 
 def ml_variability(request):
+    #TODO: add a input for user which can test different pips movement
     """
     return:
     This returns the variability_results for all 3 models.
@@ -166,6 +167,8 @@ def ml_report(request):
     potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
     split_potential_trade_result = [trade.split(':') for trade in potential_trade_results_v5]
     trade_target = float(split_potential_trade_result[-1][-1].strip())
+    split_potential_trade_result_v4 = [trade.split(':') for trade in potential_trade_results_v4]
+    trade_target_v4 = float(split_potential_trade_result_v4[-1][-1].strip())
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -175,27 +178,7 @@ def ml_report(request):
     '1h_v5': potential_trade_results_1h_v5
     }
         
-    potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
-    
-    #calculate entry and exit point
-    if trade_target > 0:
-        entry_adjustment = -0.04
-        stop_adjustment = -0.1
-    else:
-        entry_adjustment = 0.04
-        stop_adjustment = 0.1
-        
-    entry_point = open_prices[-1] + entry_adjustment
-    exit_point = open_prices[-1] + trade_target/100 + entry_adjustment
-    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
 
-    #sensitivity test save as dictionary for front-end access
-    pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
-    pred_var_list = {
-        '10 pips':pred_var_pos,
-        '-10 pips':pred_var_neg,
-    }
-    
     
     #retrieve saved results from last calculation performed by updater.py
     pred_reverse_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_v4.json')
@@ -215,12 +198,65 @@ def ml_report(request):
     'v5': reverse_trade_results_v5,
     '1h_v5': reverse_trade_results_1h_v5
     }
-
-    version_comment, _ = compare_version_results(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
     
+    
+    #retrieve saved results from last calculation performed by updater.py
+    pred_continue_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_v4.json')
+    pred_continue_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_v5.json')
+    pred_continue_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_1h_v5.json')
+    
+    #extracting final results
+    continue_headers = pred_continue_v4['pred_continue'][1]['heading']
+    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['item']['Potential Trade']
+    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['item']['Potential Trade']
+    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['item']['Potential Trade']
+    
+    #save array of continued results as a dictionary for frontend access
+    continue_labels = {'Periods': continue_headers}
+    continue_trade_lists = {
+    'v4': continue_trade_results_v4,
+    'v5': continue_trade_results_v5,
+    '1h_v5': continue_trade_results_1h_v5
+    }
+    
+
+    if abs(trade_target_v4) >= 20:
+        version_comment = "V4 model is suggesting a different trade."
+        trade_target = trade_target_v4
+        potential_trade = pred_historical_v4['pred_historical'][2]['item']['Potential Trade'][3]
+    else:
+        version_comment, _ = compare_version_results(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+        potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
+       
     # for model_version in model_versions:
     #     globals()[f'pred_historical_{model_version}'] \
     #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
+    
+    
+      #calculate entry and exit point  
+    
+    if trade_target > 0:
+        entry_adjustment = -0.04
+        stop_adjustment = -0.1
+    else:
+        entry_adjustment = 0.04
+        stop_adjustment = 0.1
+    
+    if volume[3] < 2000:
+        exit_adjustment = 2
+    else:
+        exit_adjustment = 1
+        
+    entry_point = open_prices[-1] + entry_adjustment
+    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
+    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
+
+    #sensitivity test save as dictionary for front-end access
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
+    pred_var_list = {
+        '10 pips':pred_var_pos,
+        '-10 pips':pred_var_neg,
+    }
 
 
     context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
@@ -228,7 +264,8 @@ def ml_report(request):
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
-             'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,}
+             'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
+             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,}
     
     return render(request, 'ml_models/ml_report.html', context)
 

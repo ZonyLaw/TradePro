@@ -15,10 +15,12 @@
             <p> With current movement, here is the summary of models prediction: </p>
             <p><b> {{version_comment}} </b> </p>
 
-            <p> Trade direction: {{potential_trade}} </p>
-            <p>Entry point: {{entry_point|floatformat:3}}</p>
-            <p>Stop loss: {{stop_loss|floatformat:3}}</p>
-            <p>Target point: {{exit_point|floatformat:3}}</p>
+            <p> Trade direction: <b> {{potential_trade}} </b></p>
+            <p>Open price: <b> £{{open_prices.3|floatformat:2}} </b></p>
+            <p style="color:blue;">Entry point: <b> £{{entry_point|floatformat:2}} </b></p>
+            <p style="color:red;">Stop loss: <b> £{{stop_loss|floatformat:2}} </b></p>
+            <p style="color:green;">Target point: <b> £{{exit_point|floatformat:2}} </b></p>
+            <p>Volume: <b> {{ volume.3 }} </b></p>
             <p>On average profit taking should be 10, 20, 25 pips. 
                 The exit point is what the model predicts but the accuracy varies depending on many market factors.
                 It is provided as an indication.</p>
@@ -100,7 +102,7 @@
                 </tbody>
             </table>
         <h2>Reversed</h2>
-
+        <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then reversed candle stick is only a retracement.</p>
         <table>
             <thead>
 
@@ -125,13 +127,40 @@
                     {% endfor %}
                 </tr>
                 {% endfor %}
-
-
                 
             </tbody>
         </table>
 
         <h2>Continuation</h2>
+        <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
+
+        <table>
+            <thead>
+
+                <tr>
+                    {% for label, headers in continue_labels.items %}
+                        <th>{{ label }}</th>
+                        {% for header in headers %}
+                        <th>{{ header }}</th>
+                        {% endfor %}
+                    {% endfor %}
+                </tr>
+                    
+            </thead>
+            <tbody>
+
+                {% for version, trades in continue_trade_results.items %}
+                <tr>
+                    <td>{{ version }}</td>
+                    {% for trade in trades %}
+                        <td>{{ trade }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
 
 </main>
 

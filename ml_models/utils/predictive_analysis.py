@@ -187,8 +187,8 @@ def standard_analysis(ticker, model_version):
     pred_variability, _, _, _, _ = model_run(ticker, X_live_variability, model_version)
     
     
-    pred_reverse = transform_format(f"pred_reverse", ["Current", "20pips", "40pips"], pred_reverse)
-    pred_continue = transform_format(f"pred_continue", ["Current", "20pips", "40pips"], pred_continue)
+    pred_reverse = transform_format(f"pred_reverse", ["Current", "20pips Reversed", "40pips Reversed"], pred_reverse)
+    pred_continue = transform_format(f"pred_continue", ["Current", "20pips Continue", "40pips Continue"], pred_continue)
     pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical)
     pred_variability = transform_format(f"pred_variability", ["10pips", "-10pips"], pred_variability)
     
