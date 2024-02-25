@@ -16,8 +16,7 @@
           <th>Volume</th>
           <th>Direction</th>
           {% if request.user.is_superuser %}
-            <th>Update</th>
-            <th>Delete</th>
+            <th>Actions</th>
           {% endif %}
         </tr>
       </thead>
@@ -31,8 +30,8 @@
           <td> {{price.volume|floatformat:2 }} </td>
           <td> {{price.trade }} </td>
           {% if request.user.is_superuser %}
-            <td> <a href = "{% url 'update-price' price.id %}" >Update </a> </td>
-            <td> <a href = "{% url 'delete-price' price.id %}" >Delete </a> </td>
+            <td> <a href = "{% url 'update-price' price.id %}" >Update </a>
+            <a href = "{% url 'delete-price' price.id %}" >Delete </a> </td>
           {% endif %}
         </tr>
         {% endfor %}

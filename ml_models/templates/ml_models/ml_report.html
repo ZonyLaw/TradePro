@@ -12,7 +12,8 @@
        
         
         <h1>Trade Opportunities</h1>
-            <p> With current movement, here is the summary of models prediction: </p>
+            <p> To check the strength of model prediction, go to variability to test different pips movements.</p>
+            <p> With current movement, summary of models prediction is: </p>
             <p><b> {{version_comment}} </b> </p>
 
             <p> Trade direction: <b> {{potential_trade}} </b></p>
@@ -21,9 +22,8 @@
             <p style="color:red;">Stop loss: <b> £{{stop_loss|floatformat:2}} </b></p>
             <p style="color:green;">Target point: <b> £{{exit_point|floatformat:2}} </b></p>
             <p>Volume: <b> {{ volume.3 }} </b></p>
-            <p>On average profit taking should be 10, 20, 25 pips. 
-                The exit point is what the model predicts but the accuracy varies depending on many market factors.
-                It is provided as an indication.</p>
+            <p>Profit target can vary depending on the strength of the trade volume. It is recommended to take profit at 10, 20, 25 pips. 
+                If volume is above 33 per minute (equivalent to 2000 per hour) then there is a strong chance it can exceed 10 pips in profits.</p>
 
 
         <h1>Market Information</h1>

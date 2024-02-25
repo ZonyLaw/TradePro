@@ -104,7 +104,7 @@ def run_IG(ticker, start_date=None, end_date=None):
     
     """
     #this is to access the name of the ticker interested
-    ticker_definition = {"USDJPY":"CS.D.USDJPY.TODAY.IP"}
+    ticker_definition = {"USDJPY":"CS.D.USDJPY.TODAY.IP", "EURUSD":"CS.D.EURUSD.TODAY.IP",}
     #creating the time range for the fetch method
     current_time = datetime.now()
     current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
