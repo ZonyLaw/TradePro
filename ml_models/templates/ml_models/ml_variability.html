@@ -3,6 +3,13 @@
 
 <main class="formPage my-xl">
     <div class="content-box">
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+
         <h1>Variability testing predictions</h1>
         
             <p>1. The purpose of these results is to determine the strength of the prediction.</p>
@@ -11,10 +18,10 @@
 
             <p>3. Additionally, the 4-hour and 1-hour models are the more reliable versions.</p>
 
-        <h2> For 15pips movement show: </h2>
+        <h2> For {{adjustment}}pips movement show: </h2>
         <p> {{version_comment_pos|safe}} </p>
 
-        <h2> For -15pips movement show: </h2>
+        <h2> For -{{adjustment}}pips movement show: </h2>
         <p> {{version_comment_neg|safe}} </p>
 
         <h1>Variability Results Records</h1>

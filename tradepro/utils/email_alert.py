@@ -1,7 +1,7 @@
 from django.conf import settings
 from datetime import datetime
 from .email import send_email
-from ml_models.utils.predictive_analysis import run_model_predictions
+
 
 
 def email_freq_controller(freq_enabler):

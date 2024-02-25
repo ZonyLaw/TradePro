@@ -581,7 +581,7 @@ def prediction_variability(adjustment):
   
     #Takes the last trend strength to minismise the overly switching
     # variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
-    
+
    
     variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
     # print("variability all >>>>>>" ,variability_all['scenario']) 

@@ -1,23 +1,17 @@
 import os
 import sys
-import pandas as pd
-import importlib.util
 import datetime
 import numpy as np
 
 from django.conf import settings
 from datetime import datetime, timedelta
-from django.shortcuts import get_object_or_404
 from django.utils import timezone
 
 from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
-from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results
-from ml_models.utils.access_results import read_prediction_from_json
-from ml_models.utils.predictive_analysis import standard_analysis, run_model_predictions
-from tradepro.utils.email import send_email
+
 
 if os.path.isfile('env.py'):
     import env

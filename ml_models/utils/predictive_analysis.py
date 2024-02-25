@@ -151,7 +151,7 @@ def model_run(ticker, X_live, model_version):
     return results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
 
 
-def standard_analysis(ticker, model_version):
+def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     
     """
     This is a function to generate some standard analysis to show on the webpage.
@@ -178,7 +178,7 @@ def standard_analysis(ticker, model_version):
     X_live_reverse = dp.scenario_reverse()
     X_live_continue = dp.scenario_continue()
     X_live_historical = dp.historical_record(4)
-    X_live_variability = dp.prediction_variability(0.10)
+    X_live_variability = dp.prediction_variability(sensitivity_adjustment)
     
     
     pred_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
@@ -270,7 +270,7 @@ def calculate_accuracy(predictions, y_actual):
     return accuracy
 
 
-def run_model_predictions(model_ticker):
+def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     """
     This function set off model run for three different versions and compares results.
     It will return the comments and ticker info which can be sent out by email if enabled.
@@ -298,25 +298,39 @@ def run_model_predictions(model_ticker):
     return comparison_comment, general_ticker_info, send_email_enabled
 
 
-def variability_analysis(model_ticker):
+def variability_analysis(model_ticker, sensitivity_adjustment):
     """
-    This function is carry out a sensitivity test on 15 and -15pips movements.
+        Perform variability analysis for multiple model versions depending on the sensitivity adjustment.
 
     Args:
-        model_ticker (string): the ticker to run the variability test
+        model_ticker (str): The ticker symbol of the model.
+        sensitivity_adjustment (float): The sensitivity adjustment value for prediction variability.
 
     Returns:
-        string: comments on the variability test for positive and negative movements.
+        string: Comments on how the three model compare and what trading direction to take.
     """
     
-    pred_variability_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_v4.json')
-    pred_variability_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_v5.json')
-    pred_variability_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_variability_1h_v5.json')
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    sys.path.append(parent_directory)
+    
+    model_versions = ["v4", "v5", "1h_v5"]
+    pred_variability_results = {}  # Dictionary to store results
+    
+    for model_version in model_versions:
+        module_name = f'trained_models.{model_ticker}.pl_predictions.{model_version}.data_processing'
+
+        try:
+            dp = importlib.import_module(module_name)
+        except ImportError:
+            print(f"Error importing data_processing module for model_version: {model_version}")
+            continue
+        
+        X_live_variability = dp.prediction_variability(sensitivity_adjustment)
+        pred_variability, _, _, _, _ = model_run(model_ticker, X_live_variability, model_version)
+        pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability)
     
     
-    version_comment_pos, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 0, 1 )
-    version_comment_neg, _ = compare_version_results(pred_variability_v4, pred_variability_v5, pred_variability_1h_v5, 1, 1 )
-    
-    write_to_csv(version_comment_pos, version_comment_neg, "variability_results.csv")
+    version_comment_pos, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 0, 1 )
+    version_comment_neg, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 1, 1 )
     
     return version_comment_pos, version_comment_neg

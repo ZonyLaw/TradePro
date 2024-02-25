@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 import sys
-
 import importlib.util
+
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
@@ -11,10 +11,9 @@ from .utils.predictive_analysis import standard_analysis, model_run, trade_forec
 from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
 
-from .form import ModelParameters, ModelSelection, VersionSelection
+from .form import ModelParameters, ModelSelection, VersionSelection, VariabilitySize
 from prices.models import Price
 from tickers.models import Ticker
-
 
 
 def ml_predictions(request):
@@ -97,25 +96,26 @@ def ml_predictions(request):
 
 
 def ml_variability(request):
-    #TODO: add a input for user which can test different pips movement
-    """
-    return:
-    This returns the variability_results for all 3 models.
-    """
-    
     ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
     prices = Price.objects.filter(ticker=ticker_instance)
     
-    #sort prices table in ascending so latest price on the bottom
-    #note that html likes to work with array if using indexing
+    # Sort prices table in ascending order so the latest price is at the bottom
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
     
-    version_comment_pos, version_comment_neg = variability_analysis(ticker_instance.symbol)
+    if request.method == 'POST':
+        
+        form = VariabilitySize(request.POST)
+        if form.is_valid():
+            sensitivity_adjustment = form.cleaned_data['sensitivity_adjustment']
+            version_comment_pos, version_comment_neg = variability_analysis(ticker_instance.symbol, sensitivity_adjustment/100)
+            context = {'adjustment': sensitivity_adjustment, 'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg, 'form': form}
+            return render(request, 'ml_models/ml_variability.html', context)
+    else:
+        form = VariabilitySize()
     
-    context = {'version_comment_pos': version_comment_pos, 'version_comment_neg': version_comment_neg }
-    
+    context = {'form': form}
     return render(request, 'ml_models/ml_variability.html', context)
 
 
@@ -124,6 +124,7 @@ def ml_report(request):
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
+    
     if request.method == 'POST':
         form = ModelSelection(request.POST)
     else:
@@ -219,22 +220,16 @@ def ml_report(request):
     '1h_v5': continue_trade_results_1h_v5
     }
     
-
     if abs(trade_target_v4) >= 20:
-        version_comment = "V4 model is suggesting a different trade."
+        #v4 model overrides the other predictions if target point is at or greater than 20pips.
+        version_comment = "V4 model is suggesting the trade below."
         trade_target = trade_target_v4
         potential_trade = pred_historical_v4['pred_historical'][2]['item']['Potential Trade'][3]
     else:
         version_comment, _ = compare_version_results(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
         potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
        
-    # for model_version in model_versions:
-    #     globals()[f'pred_historical_{model_version}'] \
-    #         = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_{model_version}.json')
-    
-    
-      #calculate entry and exit point  
-    
+    #calculate entry and exit point  
     if trade_target > 0:
         entry_adjustment = -0.04
         stop_adjustment = -0.1
@@ -252,12 +247,11 @@ def ml_report(request):
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
 
     #sensitivity test save as dictionary for front-end access
-    pred_var_pos, pred_var_neg = variability_analysis(model_ticker)
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
     pred_var_list = {
         '10 pips':pred_var_pos,
         '-10 pips':pred_var_neg,
     }
-
 
     context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume,

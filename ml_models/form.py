@@ -1,6 +1,7 @@
 from django import forms
 from django.conf import settings
 from tickers.models import Ticker
+from django.core.validators import MaxValueValidator
 
 BB_CHOICES = [
     ('inside_bb', 'inside_bb'),
@@ -55,4 +56,12 @@ class VersionSelection(forms.Form):
         self.fields['model_version'] = forms.ChoiceField(
             choices=MODEL_LIST,
             label='Select the model version'
+        )
+
+
+class VariabilitySize(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(VariabilitySize, self).__init__(*args, **kwargs)
+        self.fields['sensitivity_adjustment'] = forms.FloatField(
+            label='Enter sensitivity adjustment in pips:'
         )
