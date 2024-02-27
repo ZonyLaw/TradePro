@@ -3,6 +3,8 @@ import os
 import sys
 import importlib.util
 
+import datetime
+
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
@@ -237,7 +239,26 @@ def ml_report(request):
         entry_adjustment = 0.04
         stop_adjustment = 0.1
     
-    if volume[3] < 2000:
+    
+    current_time = datetime.datetime.now()
+
+    # Extract hour, minute, and second from the current time
+  
+    minute = current_time.minute
+    second = current_time.second
+
+    # Calculate the total number of seconds elapsed in the current hour
+    total_seconds_in_hour = 3600  # 60 seconds * 60 minutes
+
+    # Calculate the total number of seconds elapsed so far in the current hour
+    elapsed_seconds = (minute * 60) + second
+
+    # Calculate the percentage of the hour elapsed
+    percentage_elapsed = (elapsed_seconds / total_seconds_in_hour) * 100
+
+    projected_volume = volume[3] / percentage_elapsed * 100
+    
+    if projected_volume / 100 < 2000:
         exit_adjustment = 2
     else:
         exit_adjustment = 1
@@ -254,7 +275,7 @@ def ml_report(request):
     }
 
     context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
-             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume,
+             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,

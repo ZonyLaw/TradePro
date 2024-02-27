@@ -1,6 +1,5 @@
 .alert {
   display: inline-flex;
-
   gap: 3rem;
   justify-content: center;
   align-items: center;
@@ -11,6 +10,7 @@
   /* margin-bottom: 1rem;
   margin-right: 1rem; */
 }
+
 
 .alert,
 .alert > .alert__message {
@@ -43,4 +43,16 @@
 
 .alert > .alert__close:hover {
   opacity: 0.85;
+}
+
+.alert_wrapper {
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  z-index: 1;
+  background: transparent;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
