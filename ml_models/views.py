@@ -258,7 +258,7 @@ def ml_report(request):
 
     projected_volume = volume[3] / percentage_elapsed * 100
     
-    if projected_volume / 100 < 2000:
+    if projected_volume < 2000:
         exit_adjustment = 2
     else:
         exit_adjustment = 1
