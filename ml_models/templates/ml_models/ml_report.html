@@ -11,14 +11,14 @@
         </form>
        
         
-        <h1>Trade Opportunities</h1>
+        <h1>Trade Opportunity</h1>
             <p> To check the strength of model prediction, go to variability to test different pips movements.</p>
             <p> With current movement, summary of models prediction is: </p>
             <p><b> {{version_comment}} </b> </p>
 
             <p style="color:purple"> Trade direction: <b> {{potential_trade}} </b></p>
             <p>Open price: <b> £{{open_prices.3|floatformat:2}} </b></p>
-            <p>Current price: <b> £{{ close_prices.3|floatformat:2 }}</b></p>
+            <p style="color:orange;">Current price: <b> £{{ close_prices.3|floatformat:2 }}</b></p>
             <p style="color:blue;">Entry point: <b> £{{entry_point|floatformat:2}} </b></p>
             <p style="color:green;">Target point: <b> £{{exit_point|floatformat:2}} </b></p>
             <p style="color:red;">Stop loss: <b> £{{stop_loss|floatformat:2}} </b></p>
@@ -81,6 +81,12 @@
         </table>
 
         <h2>Sensitivity Test</h2>
+            <p>This is a look ahead to see if current prediction hold. There are three cases:</p>
+            <ul>
+                <li>Current prediction is the same for both movements - Strong</li>
+                <li>Current prediction is different from both models - Retracement</li>
+                <li>Current prediction is consistent with forecast movement - Medium</li>
+            </ul>
             <table>
                 <thead>
                     <tr>
@@ -100,7 +106,7 @@
                     
                 </tbody>
             </table>
-        <h2>Reversed of {{trade.one}} </h2>
+        <h2>Reversed of {{potential_trade}} </h2>
         <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then reversed candle stick is only a retracement.</p>
         <table>
             <thead>
@@ -130,7 +136,7 @@
             </tbody>
         </table>
 
-        <h2>Continuation of {{trade.one}} </h2>
+        <h2>Continuation of {{potential_trade}} </h2>
         <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
 
         <table>

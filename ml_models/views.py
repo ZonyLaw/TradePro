@@ -224,7 +224,7 @@ def ml_report(request):
     
     if abs(trade_target_v4) >= 20:
         #v4 model overrides the other predictions if target point is at or greater than 20pips.
-        version_comment = "V4 model is suggesting the trade below."
+        version_comment = "V4 model override v5 model prediction with below trade."
         trade_target = trade_target_v4
         potential_trade = pred_historical_v4['pred_historical'][2]['item']['Potential Trade'][3]
     else:
