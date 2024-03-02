@@ -363,7 +363,7 @@ def ml_manual(request):
 
 def export_model_results(request):
     
-    messages.clear(request)
+    # messages.clear(request)
     
     if request.method == 'POST':
         form = VersionSelection(request.POST)
