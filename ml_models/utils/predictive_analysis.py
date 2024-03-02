@@ -131,7 +131,17 @@ def model_run(ticker, X_live, model_version):
     try:
         disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers[0]])
         X_live_discretized = disc.fit_transform(X_live)
-        # print("formated live data>>>>>>>>", (X_live_discretized))
+        
+        # Rename the new column to indicate it's discretized
+        original_column_name = y_test_headers[0]
+        discretized_column_name = f"{original_column_name}_discretized"
+        X_live_discretized.rename(columns={original_column_name: discretized_column_name}, inplace=True)
+        
+        # If you want to keep the original column as well
+        X_live_discretized[original_column_name] = X_live[original_column_name]
+        
+        X_live_discretized.to_csv(r"C:\Users\sunny\Desktop\Development\discretized_data.csv", index=False)
+    
     except:
         X_live_discretized = X_live
     
@@ -249,6 +259,7 @@ def trade_forecast_assessment(model_version):
     
 
     # print("Accuracy", accuracy)
+
     
     return model_results
 
