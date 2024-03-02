@@ -85,7 +85,13 @@ def profit_calc(df, col1, col2, offset_hr):
         # this bring future price which is exit to present price which is the entry; So we are trying to predict potential profit and loss. 
         # the offset is negative to bring future to current price.
         df[f'lead_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
-        df[f'pl_{col2}_{timeframe}_hr'] =  df[f'lead_{col2}_{timeframe}'] - df[col1]
+        df[f'pl_{col2}_f{timeframe}_hr'] =  df[f'lead_{col2}_{timeframe}'] - df[col1]
+        
+        buy_condition  = (df[f'pl_{col1}_f{timeframe}_hr'] > 0)
+
+        #0 for sell and 1 for buy
+        df[f'trade_{col1}_{timeframe}_hr'] = 0 #'sell'
+        df.loc[buy_condition, f'trade_{col1}_{timeframe}_hr'] = 1 #'buy'
         
         
     else:
@@ -94,8 +100,16 @@ def profit_calc(df, col1, col2, offset_hr):
         # normally, we use previous price to explain current price but this case is probably not that useful as the model will be
         # explaining previous timeframe to achieve current profit or loss. This is not useful as it already happened.
         df[f'lag_{col2}_{timeframe}'] = df[col2].shift(offset_hr)
-        df[f'pl_{col2}_f{timeframe}_hr'] = df[col1] - df[f'lag_{col2}_{timeframe}']
+        df[f'pl_{col2}_{timeframe}_hr'] = df[col1] - df[f'lag_{col2}_{timeframe}'] 
         
+        #check if it should be a buy or sell given if entry was made at the point of date and time.
+        buy_condition  = (df[f'pl_{col1}_{timeframe}_hr'] > 0)
+
+        #0 for sell and 1 for buy
+        df[f'trade_{col1}_{timeframe}_hr'] = 0 #'sell'
+        df.loc[buy_condition, f'trade_{col1}_{timeframe}_hr'] = 1 #'buy'
+    
+
     return df
 
 
@@ -423,8 +437,8 @@ def stats_df_gen(df, subset_rows):
     df = price_difference(df, "low", "lower_bb20_1", 1 )
 
     df = trend_measure(df,1)   
-    df['pl_open_1_hr'] = df['pl_open_1_hr'].ffill()
-    df['pl_open_4_hr'] = df['pl_open_4_hr'].ffill()
+    df['pl_open_f1_hr'] = df['pl_open_f1_hr'].ffill()
+    df['pl_open_f4_hr'] = df['pl_open_f4_hr'].ffill()
     columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
     df = df.drop(columns, axis=1)
     df = df.dropna()

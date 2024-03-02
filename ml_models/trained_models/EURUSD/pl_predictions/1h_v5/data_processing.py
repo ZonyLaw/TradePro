@@ -423,7 +423,7 @@ def stats_df_gen(df, subset_rows):
     df = price_difference(df, "low", "lower_bb20_1", 1 )
 
     df = trend_measure(df,1)   
-    df['pl_open_1_hr'] = df['pl_open_1_hr'].ffill()
+    df['pl_open_f1_hr'] = df['pl_open_f1_hr'].ffill()
     df['pl_open_4_hr'] = df['pl_open_4_hr'].ffill()
     columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4' ]
     df = df.drop(columns, axis=1)
