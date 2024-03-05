@@ -53,7 +53,7 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
     else:
         next_line = "<br>"
     
-    
+    comment = ""
     send_email = 0
     if current_trade1 == current_trade2 == current_trade3 :
         if pip_size2 >= 20:

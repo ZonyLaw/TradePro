@@ -926,13 +926,13 @@ th, td {
 
 .price-notifications {
   position: sticky;
-  top: 80px;
+  top: 65px;
   z-index: 99;
   display: flex;
   justify-content: space-around; 
   align-items: center;
   background-color: #f0f0f0; 
-  padding: 10px;
+  padding: 20px;
 }
 
 .price-notification {
