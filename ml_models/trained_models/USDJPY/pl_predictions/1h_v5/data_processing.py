@@ -495,10 +495,10 @@ def scenario_reverse():
     
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
-    df = scenario_builder(df, 0.2, "reverse")
+    df = scenario_builder(df, 0.1, "reverse")
     reverse_df_2pips = stats_df_gen(df, 2)
     
-    df = scenario_builder(df, 0.4, "reverse")
+    df = scenario_builder(df, 0.2, "reverse")
     reverse_df_4pips = stats_df_gen(df, 2)
     
     last_row = reverse_df_4pips.tail(1)
@@ -520,10 +520,10 @@ def scenario_continue():
     df = priceDB_to_df(ticker)
     #build the reverse candle stick scenario
     #the base scenario is retained for the first dataframe
-    df = scenario_builder(df, 0.2, "continue")
+    df = scenario_builder(df, 0.1, "continue")
     continue_df_2pips = stats_df_gen(df, 2)
         
-    df = scenario_builder(df, 0.4, "continue")
+    df = scenario_builder(df, 0.2, "continue")
     continue_df_4pips = stats_df_gen(df, 2)
     
     last_row = continue_df_4pips.tail(1)

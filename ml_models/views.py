@@ -140,6 +140,23 @@ def ml_report(request):
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
     
+    # TODO: This is only temp, this is probably a better way of importing the module.
+    # Dynamically get the module path involves defining the parent directory
+    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))
+    # Add the parent directory to the Python path
+    sys.path.append(parent_directory)
+    
+    module_name = f'trained_models.USDJPY.pl_predictions.v4.data_processing'
+    try:
+        dp = importlib.import_module(module_name)
+    except ImportError:
+        print(f"Error importing data_processing module for model_version: {module_name}")
+        dp = None
+    
+    X_live = dp.historical_record(4)
+    
+    bb_status = X_live['bb_status_1'].tolist()
+    
     #sort prices table in ascending so latest price on the bottom
     #note that html likes to work with array if using indexing
     prices_df = pd.DataFrame(list(prices.values()))
@@ -241,6 +258,10 @@ def ml_report(request):
     
     
     current_time = datetime.datetime.now()
+    
+    rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
+                                                seconds=current_time.second,
+                                                microseconds=current_time.microsecond)
 
     # Extract hour, minute, and second from the current time
   
@@ -274,13 +295,13 @@ def ml_report(request):
         '-10 pips':pred_var_neg,
     }
 
-    context={'form': form,  'date': date, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
+    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss, 'potential_trade': potential_trade, 
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
-             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,}
+             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,"bb_status":bb_status}
     
     return render(request, 'ml_models/ml_report.html', context)
 

@@ -1,6 +1,6 @@
 {% extends 'main.html' %} {% block content %}
 
-<main class="projects">
+<div class="projects">
     <section class="hero-section text-center">
         <div class="container container--narrow">
           <div class="hero-section__box">
@@ -13,10 +13,28 @@
     <section class="projectsList">
         <div class="container">
         <h1>Analysis Tools</h1>
+
+       
             <div class="grid grid--two">
+
                     <div class="column">
                         <div class="card project">
-                        <a href="single-project.html" class="project">
+                       
+                            <img class="trade_image" src="/static/images/noun-report-6647086.svg" alt="report" />
+                                <div class="card__body">
+                                <h3 class="project__title">Trade Report</h3>
+                                <p class="project--rating">
+                                    Report on trade opportunity with summary of results and analysis.
+                                </p>
+                                <p><a class="project__author" href="{% url 'ml-report' %}">View Results</a></p>
+                                </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="column">
+                        <div class="card project">
+                      
                             <img class="project__thumbnail" src="" alt="project thumbnail" />
                                 <div class="card__body">
                                 <h3 class="project__title">Prediction</h3>
@@ -26,12 +44,12 @@
                                 <p><a class="project__author" href="{% url 'ml-predictions' %}">View Results</a></p>
                                 </div>
                         </div>
-                        </a>
+                        
                     </div>
 
                     <div class="column">
                         <div class="card project">
-                            <a href="single-project.html" class="project">
+                           
                                 <img class="project__thumbnail" src="" alt="project thumbnail" />
                                     <div class="card__body">
                                     <h3 class="project__title">Sensitivity Test</h3>
@@ -41,13 +59,13 @@
                                     <p><a class="project__author" href="{% url 'ml-variability' %}">View Results</a></p>
                                     </div>
                                 </div>
-                            </a>
+                           
                     </div>
 
                 </div>
             </div>
 
-      <div class="content-box">
+      <div class="container">
         <h1>About</h1>
        
         <p>This is a tool to help give you a sense of the direction at the hour. 
@@ -74,6 +92,6 @@
 
     </div>
 
-</main> 
+</div> 
 
 {% endblock content %}

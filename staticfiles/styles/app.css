@@ -516,7 +516,7 @@ img {
 }
 
 .trade_image {
-  height: 70rem;
+  height: 20rem;
   object-fit: contain;
   object-position: top center;
 }
