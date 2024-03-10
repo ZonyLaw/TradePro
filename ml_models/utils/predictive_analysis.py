@@ -247,7 +247,7 @@ def trade_forecast_assessment(model_version):
     
     
     X_live_historical = dp.historical_record(120)
-    _ , model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run("USDJPY", X_live_historical, model_version)
+    _ , _, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run("USDJPY", X_live_historical, model_version)
    
     #combined the live data and prediction dataframes.
     df1 = pd.DataFrame(model_prediction_proba, columns=model_labels_map)
