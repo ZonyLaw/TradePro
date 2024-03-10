@@ -18,59 +18,31 @@ def load_file(file_path):
     return joblib.load(filename=file_path)
 
 
-def transform_format(pred_name, heading_labels, main_results, extra_results):
-    """
-    This is to add the name tag to the prediction results and some heading labels to the data set
-    used for producing the table in html.
-
-    Args:
-        pred_name (string): the name of the scenario predction 
-        heading_labels (array): an array of labels for headers in the html table
-        main_results (dictionary): the model prediction results in dictionary format
-        extra_results (dictionary): extra results in dictionary format to provide other information
-
-    Returns:
-        dictionary: the new dictionary with scenario predction name and header to the table.
-    """
-    
-    # Adding the current timestamp in the format: day-month-year hour:minute:second
-    current_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    
-    transformed_data = {
-        pred_name: [
-            {"date": current_timestamp},
-            {"heading": heading_labels},
-            {"item": main_results},
-            {"extra": extra_results},
-        ]
-    }
-    
-    return transformed_data
-
-
-def format_model_results(model_prediction_proba, model_prediction, model_label_map):
+def format_model_results(
+        pred_name, heading_labels, model_prediction_proba, model_prediction, model_labels_map):
     """
         This function format the results form the model run.
         The results are formatted as dictionary so the html can report the results dynamically
         and not rely on hard coded categories.
-        TODO: May explore other ways of storing the results as the dictionary is difficult to interpret how the results are saved.
 
     Args:
+        pred_name (string): the name of the scenario predction 
+        heading_labels (array): an array of labels for headers in the html table
         model_prediction_proba (array): array contains arrays of probabilities to each categories predicted.
         model_prediction (array): array containing the prediction with the max probability
         model_label_map (list): this is the categories used to split the trade variable (ie. y dependent)
 
     Returns:
-        dictionary: return the formatted results
+        dictionary: return results grouped as dictionary
     """
    
    
     #First loop goes through the probability profit/loss categories label
-    result_dict = {} 
-    for i in range(len(model_label_map)):
+    main_results = {} 
+    for i in range(len(model_labels_map)):
         
-                result_dict.update({
-                f"{model_label_map[i]}": [
+                main_results.update({
+                f"{model_labels_map[i]}": [
                     round(model_prediction_proba[j, i] * 100, 2) 
                     for j in range(model_prediction_proba.shape[0])
                 ]
@@ -84,18 +56,30 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
 
     for prediction in model_prediction:
         direction = "Sell" if prediction < 3 else "Buy"
-        profit_label = model_label_map[prediction]
+        profit_label = model_labels_map[prediction]
         potential_trade.append(f"{direction} target: {profit_label}")
         trade_type.append(direction)
         trade_target.append(profit_label)
 
-    result_dict["Potential Trade"] = potential_trade
+    main_results["Potential Trade"] = potential_trade
     extra_results = {
         "Trade Type": trade_type,
         "Trade Target": trade_target
     }
 
-    return result_dict, extra_results
+    # Adding the current timestamp in the format: day-month-year hour:minute:second
+    current_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    
+    group_results = {
+        pred_name: [
+            {"date": current_timestamp},
+            {"heading": heading_labels},
+            {"item": main_results},
+            {"extra": extra_results},
+        ]
+    }
+    
+    return group_results
 
 
 def model_run(ticker, X_live, model_version):
@@ -165,10 +149,15 @@ def model_run(ticker, X_live, model_version):
     #prediction of model by getting the category with the maximum probability
     model_prediction = model_prediction_proba.argmax(axis=1)
     
-    # format the results of the model
-    results, extra_results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
-
-    return results, extra_results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
+    # # format the results of the model
+    # results, extra_results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
+    
+    return {
+            'model_prediction_proba': model_prediction_proba,
+            'model_prediction': model_prediction,
+            'model_labels_map': model_labels_map,
+            'X_live_discretized': X_live_discretized
+        }
 
 
 def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
@@ -201,16 +190,40 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     X_live_variability = dp.prediction_variability(sensitivity_adjustment)
     
     
-    pred_reverse, extra_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
-    pred_continue, extra_continue, _, _, _, _ = model_run(ticker, X_live_continue, model_version)
-    pred_historical, extra_hitorical, _, _, _, _ = model_run(ticker, X_live_historical, model_version)
-    pred_variability, extra_variability, _, _, _, _ = model_run(ticker, X_live_variability, model_version)
-    
-    
-    pred_reverse = transform_format(f"pred_reverse", ["Current", "10pips Reversed", "20pips Reversed"], pred_reverse, extra_reverse)
-    pred_continue = transform_format(f"pred_continue", ["Current", "10pips Continue", "20pips Continue"], pred_continue, extra_continue)
-    pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical, extra_hitorical)
-    pred_variability = transform_format(f"pred_variability", ["10pips", "-10pips"], pred_variability, extra_variability)
+    pred_reverse_results = model_run(ticker, X_live_reverse, model_version)
+    pred_continue_results = model_run(ticker, X_live_continue, model_version)
+    pred_historical_results = model_run(ticker, X_live_historical, model_version)
+    pred_variability_results = model_run(ticker, X_live_variability, model_version)
+      
+
+    pred_reverse = format_model_results(
+                        pred_name="pred_reverse", 
+                        heading_labels=["Current", "10pips Reversed", "20pips Reversed"], 
+                        model_prediction_proba=pred_reverse_results['model_prediction_proba'],
+                        model_prediction=pred_reverse_results['model_prediction'],
+                        model_labels_map=pred_reverse_results['model_labels_map']
+                    )
+    pred_continue = format_model_results(
+                        pred_name="pred_continue", 
+                        heading_labels=["Current", "10pips Continue", "20pips Continue"], 
+                        model_prediction_proba=pred_continue_results['model_prediction_proba'],
+                        model_prediction=pred_continue_results['model_prediction'],
+                        model_labels_map=pred_continue_results['model_labels_map']
+                    )
+    pred_historical = format_model_results(
+                        pred_name="pred_historical", 
+                        heading_labels=["3hr ago", "2hr ago", "1hr ago", "Current"], 
+                        model_prediction_proba=pred_historical_results['model_prediction_proba'],
+                        model_prediction=pred_historical_results['model_prediction'],
+                        model_labels_map=pred_historical_results['model_labels_map']
+                    )
+    pred_variability = format_model_results(
+                        pred_name="pred_variability", 
+                        heading_labels=["10pips", "-10pips"], 
+                        model_prediction_proba=pred_variability_results['model_prediction_proba'],
+                        model_prediction=pred_variability_results['model_prediction'],
+                        model_labels_map=pred_variability_results['model_labels_map']
+                    )
     
     
     write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
@@ -247,7 +260,12 @@ def trade_forecast_assessment(model_version):
     
     
     X_live_historical = dp.historical_record(120)
-    _ , _, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized = model_run("USDJPY", X_live_historical, model_version)
+    pred_historical = model_run("USDJPY", X_live_historical, model_version)
+    
+    model_prediction_proba = pred_historical['model_prediction_proba']
+    model_labels_map = pred_historical['model_labels_map']
+    model_prediction = pred_historical['model_prediction']
+    X_live_discretized = pred_historical['X_live_discretized']
    
     #combined the live data and prediction dataframes.
     df1 = pd.DataFrame(model_prediction_proba, columns=model_labels_map)
@@ -347,8 +365,16 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
             continue
         
         X_live_variability = dp.prediction_variability(sensitivity_adjustment)
-        pred_variability, extra_variability, _, _, _, _ = model_run(model_ticker, X_live_variability, model_version)
-        pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability, extra_variability)
+        pred_variability = model_run(model_ticker, X_live_variability, model_version)
+        pred_variability_results[model_version]  = format_model_results(
+                                                        pred_name="pred_variability", 
+                                                        heading_labels=[sensitivity_adjustment, -sensitivity_adjustment], 
+                                                        model_prediction_proba=pred_variability['model_prediction_proba'],
+                                                        model_prediction=pred_variability['model_prediction'],
+                                                        model_labels_map=pred_variability['model_labels_map']
+                                                    )
+        
+        # pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability, extra_variability)
     
     
     version_comment_pos, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 0, 1 )
