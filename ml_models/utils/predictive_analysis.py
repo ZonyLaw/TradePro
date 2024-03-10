@@ -50,12 +50,12 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
     """
         This function format the results form the model run.
         The results are formatted as dictionary so the html can report the results dynamically
-        and not rely on harded coded categories.
+        and not rely on hard coded categories.
         TODO: May explore other ways of storing the results as the dictionary is difficult to interpret how the results are saved.
 
     Args:
         model_prediction_proba (array): array contains arrays of probabilities to each categories predicted.
-        model_prediction (array): array containing the prediction with max probability
+        model_prediction (array): array containing the prediction with the max probability
         model_label_map (list): this is the categories used to split the trade variable (ie. y dependent)
 
     Returns:
@@ -64,7 +64,6 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
    
    
     #First loop goes through the probability profit/loss categories label
-    #Second loop goes through the array containing the probability dictionary
     result_dict = {} 
     for i in range(len(model_label_map)):
         
@@ -76,14 +75,19 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
             }
             )
     
+    #Second loop goes through the array containing the probability dictionary
     result_dict["Potential Trade"]=[]
+    result_dict["Trade Type"]=[]
+    result_dict["Trade Target"]=[]
     for j in range(model_prediction.shape[0]):
-        direction = "Sell target: " if model_prediction[j] < 3 else "Buy target: "
+        direction = "Sell" if model_prediction[j] < 3 else "Buy"
         profit_label = model_label_map[model_prediction[j]]
         result_dict["Potential Trade"].append(
-            f"{direction} {profit_label}"
+            f"{direction} target: {profit_label}"
         )
-    
+        result_dict["Trade Type"].append(direction)
+        result_dict["Trade Target"].append(profit_label)
+       
     return (result_dict)
 
 
@@ -137,10 +141,10 @@ def model_run(ticker, X_live, model_version):
         discretized_column_name = f"{original_column_name}_discretized"
         X_live_discretized.rename(columns={original_column_name: discretized_column_name}, inplace=True)
         
-        # If you want to keep the original column as well
+        # Keep the original column as well
         X_live_discretized[original_column_name] = X_live[original_column_name]
         
-        X_live_discretized.to_csv(r"C:\Users\sunny\Desktop\Development\discretized_data.csv", index=False)
+        # X_live_discretized.to_csv(r"C:\Users\sunny\Desktop\Development\discretized_data.csv", index=False)
     
     except:
         X_live_discretized = X_live
@@ -150,10 +154,9 @@ def model_run(ticker, X_live, model_version):
     
     # predict the probability for each of the cateogries
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    # print("probability>>>>>",model_prediction_proba)
+    
     #prediction of model by getting the category with the maximum probability
     model_prediction = model_prediction_proba.argmax(axis=1)
-    # print("Here are the model predictions >>>>>",model_prediction)
     
     # format the results of the model
     results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)

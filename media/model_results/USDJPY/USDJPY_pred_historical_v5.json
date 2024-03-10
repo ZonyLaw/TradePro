@@ -1,7 +1,7 @@
 {
     "pred_historical": [
         {
-            "date": "09-03-2024 23:51:06"
+            "date": "10-03-2024 09:24:06"
         },
         {
             "heading": [
@@ -50,10 +50,22 @@
                     2.96
                 ],
                 "Potential Trade": [
-                    "Sell target:  -25",
-                    "Sell target:  -25",
-                    "Sell target:  -25",
-                    "Sell target:  -25"
+                    "Sell target: -25",
+                    "Sell target: -25",
+                    "Sell target: -25",
+                    "Sell target: -25"
+                ],
+                "Trade Type": [
+                    "Sell",
+                    "Sell",
+                    "Sell",
+                    "Sell"
+                ],
+                "Trade Target": [
+                    "-25",
+                    "-25",
+                    "-25",
+                    "-25"
                 ]
             }
         }
