@@ -35,10 +35,25 @@
         <p> To check the strength of model prediction, go to variability to test different pips movements.</p>
         <p> With current movement, summary of models prediction is: </p>
         <p><b> {{version_comment}} </b> </p>
-        <p style="color:purple"> Trade direction: <b> {{potential_trade}} </b></p>
-        <p style="color:blue;">Best Entry point: <b> £{{open_prices.3|floatformat:2}} - £{{entry_point|floatformat:2}} </b></p>
-        <p style="color:green;">Target point: <b> £{{exit_point|floatformat:2}} </b></p>
-        <p style="color:red;">Stop loss: <b> £{{stop_loss|floatformat:2}} </b></p>
+        <table>
+            <tr  style="color:purple"> 
+                <td> Trade direction: </td> 
+                <td><b> {{potential_trade}} </b></td>
+            </tr>
+            <tr style="color:blue;">
+                <td>Best Entry point: </td>
+                <td> <b> £{{open_prices.3|floatformat:2}} - £{{entry_point|floatformat:2}} </b></td>
+            </tr>
+            <tr style="color:green;">
+                <td>Target point: </td>
+                <td> <b> £{{exit_point|floatformat:2}} </b></td>
+            </tr>
+
+            <tr style="color:red;">
+                <td>Stop loss: </td>
+                <td> <b> £{{stop_loss|floatformat:2}} </b></td>
+            </tr>
+        </table>
         <p>Profit target can vary depending on the strength of the trade volume. It is recommended to take profit at 10, 20, 25 pips. 
             If volume is above 33 per minute (equivalent to 2000 per hour) then there is a strong chance it can exceed 10 pips in profits.</p>
 
