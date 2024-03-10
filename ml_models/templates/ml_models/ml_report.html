@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="formPage my-sm">
+    <div class="formPage my-md">
         <form action="" method="POST">
             {%csrf_token%} 
             {{form.as_p}}
@@ -32,7 +32,7 @@
     </div>
     
     <h1>Trade Opportunity</h1>
-        <p> To check the strength of model prediction, go to variability to test different pips movements.</p>
+        <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
         <p> With current movement, summary of models prediction is: </p>
         <p><b> {{version_comment}} </b> </p>
         <table>
@@ -139,7 +139,7 @@
             </tbody>
         </table>
 
-    <h2>Continuation of {{potential_trade}} </h2>
+    <h2 style="color: green;">Continuation of {{potential_trade}} </h2>
     <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
 
     <table>
@@ -170,7 +170,7 @@
     </table>
 
 
-    <h2>Reversed of {{potential_trade}} </h2>
+    <h2 style="color: red;">Reversed of {{potential_trade}} </h2>
     <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then reversed candle stick is only a retracement.</p>
     <table>
         <thead>
@@ -200,7 +200,7 @@
         </tbody>
     </table>
 
-
+    <br>
     {% comment %} <p>{{bb_status.2}}</p> {% endcomment %}
 
 </div>

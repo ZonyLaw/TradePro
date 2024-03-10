@@ -3,12 +3,16 @@
 {% block content %}
 
 
-<h1>Account Details</h1>
-<h2>{{profile.first_name}} {{profile.last_name}}</h2>
-<p> {{profile.username}}</p>
-<p> {{profile.email}}</p>
-<p> {{profile.bio}}</p>
+<div class="formPage my-xl">
+    <div class="content-box">
+        <h1>Account Details</h1>
+        <h2>{{profile.first_name}} {{profile.last_name}}</h2>
+        <p> {{profile.username}}</p>
+        <p> {{profile.email}}</p>
+        <p> {{profile.bio}}</p>
 
-<a href="{% url 'edit-profile' %}">Update Details</a>
+        <a href="{% url 'edit-profile' %}">Update Details</a>
+    </div>
+</div>
 
 {% endblock content %}

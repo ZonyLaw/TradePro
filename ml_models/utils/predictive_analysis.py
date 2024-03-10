@@ -18,7 +18,7 @@ def load_file(file_path):
     return joblib.load(filename=file_path)
 
 
-def transform_format(pred_name, heading_labels, original_data):
+def transform_format(pred_name, heading_labels, main_results, extra_results):
     """
     This is to add the name tag to the prediction results and some heading labels to the data set
     used for producing the table in html.
@@ -26,7 +26,8 @@ def transform_format(pred_name, heading_labels, original_data):
     Args:
         pred_name (string): the name of the scenario predction 
         heading_labels (array): an array of labels for headers in the html table
-        original_data (dictionary): the model prediction results in dictionary format
+        main_results (dictionary): the model prediction results in dictionary format
+        extra_results (dictionary): extra results in dictionary format to provide other information
 
     Returns:
         dictionary: the new dictionary with scenario predction name and header to the table.
@@ -39,7 +40,8 @@ def transform_format(pred_name, heading_labels, original_data):
         pred_name: [
             {"date": current_timestamp},
             {"heading": heading_labels},
-            {"item": original_data}
+            {"item": main_results},
+            {"extra": extra_results},
         ]
     }
     
@@ -76,19 +78,24 @@ def format_model_results(model_prediction_proba, model_prediction, model_label_m
             )
     
     #Second loop goes through the array containing the probability dictionary
-    result_dict["Potential Trade"]=[]
-    result_dict["Trade Type"]=[]
-    result_dict["Trade Target"]=[]
-    for j in range(model_prediction.shape[0]):
-        direction = "Sell" if model_prediction[j] < 3 else "Buy"
-        profit_label = model_label_map[model_prediction[j]]
-        result_dict["Potential Trade"].append(
-            f"{direction} target: {profit_label}"
-        )
-        result_dict["Trade Type"].append(direction)
-        result_dict["Trade Target"].append(profit_label)
-       
-    return (result_dict)
+    potential_trade = []
+    trade_type = []
+    trade_target = []
+
+    for prediction in model_prediction:
+        direction = "Sell" if prediction < 3 else "Buy"
+        profit_label = model_label_map[prediction]
+        potential_trade.append(f"{direction} target: {profit_label}")
+        trade_type.append(direction)
+        trade_target.append(profit_label)
+
+    result_dict["Potential Trade"] = potential_trade
+    extra_results = {
+        "Trade Type": trade_type,
+        "Trade Target": trade_target
+    }
+
+    return result_dict, extra_results
 
 
 def model_run(ticker, X_live, model_version):
@@ -159,9 +166,9 @@ def model_run(ticker, X_live, model_version):
     model_prediction = model_prediction_proba.argmax(axis=1)
     
     # format the results of the model
-    results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
+    results, extra_results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
 
-    return results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
+    return results, extra_results, model_prediction_proba, model_prediction, model_labels_map, X_live_discretized
 
 
 def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
@@ -194,16 +201,16 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     X_live_variability = dp.prediction_variability(sensitivity_adjustment)
     
     
-    pred_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
-    pred_continue, _, _, _, _ = model_run(ticker, X_live_continue, model_version)
-    pred_historical, _, _, _, _ = model_run(ticker, X_live_historical, model_version)
-    pred_variability, _, _, _, _ = model_run(ticker, X_live_variability, model_version)
+    pred_reverse, extra_reverse, _, _, _, _ = model_run(ticker, X_live_reverse, model_version)
+    pred_continue, extra_continue, _, _, _, _ = model_run(ticker, X_live_continue, model_version)
+    pred_historical, extra_hitorical, _, _, _, _ = model_run(ticker, X_live_historical, model_version)
+    pred_variability, extra_variability, _, _, _, _ = model_run(ticker, X_live_variability, model_version)
     
     
-    pred_reverse = transform_format(f"pred_reverse", ["Current", "10pips Reversed", "20pips Reversed"], pred_reverse)
-    pred_continue = transform_format(f"pred_continue", ["Current", "10pips Continue", "20pips Continue"], pred_continue)
-    pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical)
-    pred_variability = transform_format(f"pred_variability", ["10pips", "-10pips"], pred_variability)
+    pred_reverse = transform_format(f"pred_reverse", ["Current", "10pips Reversed", "20pips Reversed"], pred_reverse, extra_reverse)
+    pred_continue = transform_format(f"pred_continue", ["Current", "10pips Continue", "20pips Continue"], pred_continue, extra_continue)
+    pred_historical = transform_format(f"pred_historical", ["3hr ago", "2hr ago", "1hr ago", "Current"], pred_historical, extra_hitorical)
+    pred_variability = transform_format(f"pred_variability", ["10pips", "-10pips"], pred_variability, extra_variability)
     
     
     write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
@@ -340,8 +347,8 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
             continue
         
         X_live_variability = dp.prediction_variability(sensitivity_adjustment)
-        pred_variability, _, _, _, _ = model_run(model_ticker, X_live_variability, model_version)
-        pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability)
+        pred_variability, extra_variability, _, _, _, _ = model_run(model_ticker, X_live_variability, model_version)
+        pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability, extra_variability)
     
     
     version_comment_pos, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 0, 1 )

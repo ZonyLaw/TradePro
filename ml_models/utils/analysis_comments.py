@@ -54,30 +54,30 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
         next_line = "<br>"
     
     comment = ""
-    send_email = 0
+    send_email=False
     if current_trade1 == current_trade2 == current_trade3 :
         if pip_size2 >= 20:
             comment = (
                 f"All model versions predict a STRONG {current_trade1}{next_line}"
             )
-            send_email = 1
+            send_email=True
         elif pip_size1 <= 10 or pip_size2 <=10:
             comment = (
                 f"All model versions predict a weak {current_trade1}{next_line}"
             )
-            send_email = 0
+            send_email=False
                 
     elif current_trade1 == current_trade2:
         if pip_size2 >= 20:
             comment = (
                 f"Both 4hr models predict a STRONG {current_trade1}.{next_line}"
             )
-            send_email = 1
+            send_email=True
         elif pip_size1 <= 10:
             comment = (
                 f"Both 4hr models predict a weak {current_trade1}.{next_line}"
             )
-            send_email = 0
+            send_email=False
     
     elif current_trade2 == current_trade3:
         
@@ -85,24 +85,24 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
             comment = (
                 f"4hr model and 1hr model predict a strong {current_trade2}.{next_line}"
             )
-            send_email = 1
+            send_email=True
         elif pip_size1 >= 10:
             comment = (
                 f"4hr LAGGED model has a strong prediction for {current_trade1}.{next_line}"
             )
-            send_email = 1
+            send_email=True
         else:
             comment = (
             f"WARNING: Not a good time to trade!{next_line}"
             )
-            send_email = 0
+            send_email=False
              
         
     else:
         comment = (
             f"WARNING: Not a good time to trade!{next_line}"
         )
-        send_email = 0
+        send_email=False
         
     return comment, send_email
 

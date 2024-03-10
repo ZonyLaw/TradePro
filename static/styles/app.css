@@ -34,6 +34,7 @@ img {
   z-index: 111;
   background-color: var(--color-sub);
   padding: 1.5rem 0;
+  height: 85px;
 }
 
 .header > .container {
@@ -926,7 +927,7 @@ th, td {
 
 .price-notifications {
   position: sticky;
-  top: 65px;
+  top: 85px;
   z-index: 99;
   display: flex;
   justify-content: space-around; 

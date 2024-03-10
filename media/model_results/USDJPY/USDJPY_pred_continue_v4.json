@@ -1,7 +1,7 @@
 {
     "pred_continue": [
         {
-            "date": "10-03-2024 09:24:02"
+            "date": "10-03-2024 13:57:27"
         },
         {
             "heading": [
@@ -46,7 +46,11 @@
                     "Sell target: -25",
                     "Buy target: 5",
                     "Buy target: 25"
-                ],
+                ]
+            }
+        },
+        {
+            "extra": {
                 "Trade Type": [
                     "Sell",
                     "Buy",
