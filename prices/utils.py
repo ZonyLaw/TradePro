@@ -46,12 +46,13 @@ def import_prices_from_csv(uploaded_file):
                 close_price = float(row['close'])
                 high_price = float(row['high'])
                 low_price = float(row['low'])
+                volume = float(row['volume'])
 
                 # Create or update the Price object
                 price, created = Price.objects.update_or_create(
                     ticker=ticker_obj,
                     date=date_obj,
-                    defaults={'open': open_price, 'close': close_price, 'high': high_price, 'low': low_price}
+                    defaults={'open': open_price, 'close': close_price, 'high': high_price, 'low': low_price, 'volume': volume}
                 )
 
                 print(f"Price {'created' if created else 'updated'} for date {date_obj}")

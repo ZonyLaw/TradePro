@@ -1,5 +1,7 @@
 {% extends 'main.html' %} {% block content %}
 
+
+<dev class="formPage my-xl">
     <h1>Download model results</h1>
     
     <form id="downloadForm" action="{% url 'export-model-results' %}" method="POST">
@@ -7,6 +9,6 @@
         {{ form }}
         <button type="submit">Download CSV</button>
     </form>
-
+</div>
 
 {% endblock content %}

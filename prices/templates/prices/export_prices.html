@@ -1,17 +1,22 @@
 {% extends 'main.html' %} {% block content %}
 
+  <div class="formPage my-xl">
+    <div class="content-box">
+      <div class="formWrapper">
+        <h2>Export File</h2>
 
-  <h2>Export File</h2>
+        <form method="GET" action="{% url 'export-prices' %}">
+          <label for="ticker">Ticker:</label>
+          <select id="ticker" name="ticker">
+              <option value="">Select a ticker</option>
+              {% for ticker in tickers %}
+                  <option value="{{ ticker.symbol }}">{{ ticker.symbol }}</option>
+              {% endfor %}
+          </select>
+          <button type="submit">Download Prices</button>  
+        </form>
 
-  <form method="GET" action="{% url 'export-prices' %}">
-    <label for="ticker">Ticker:</label>
-    <select id="ticker" name="ticker">
-        <option value="">Select a ticker</option>
-        {% for ticker in tickers %}
-            <option value="{{ ticker.symbol }}">{{ ticker.symbol }}</option>
-        {% endfor %}
-    </select>
-    <button type="submit">Download Prices</button>  
-  </form>
-
+      </div>
+    </div>
+  </div>
 {% endblock content %}
