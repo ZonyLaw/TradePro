@@ -12,6 +12,9 @@ from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
+from ml_models.utils.model_price_processing import v4Processing
+from ml_models.utils.price_processing import StandardPriceProcessing
+
 
 def load_file(file_path):
     #data management-loads the filepath to get the model
@@ -172,17 +175,21 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     """
     
     # Dynamically get the module path involves defining the parent directory
-    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    # Add the parent directory to the Python path
-    sys.path.append(parent_directory)
-    module_name = f'trained_models.{ticker}.pl_predictions.{model_version}.data_processing'
+    # parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # # Add the parent directory to the Python path
+    # sys.path.append(parent_directory)
+    # module_name = f'trained_models.{ticker}.pl_predictions.{model_version}.data_processing'
 
-    try:
-        dp = importlib.import_module(module_name)
-    except ImportError:
-        print(f"Error importing data_processing module for model_version: {model_version}")
-        dp = None
+    # try:
+    #     dp = importlib.import_module(module_name)
+    # except ImportError:
+    #     print(f"Error importing data_processing module for model_version: {model_version}")
+    #     dp = None
     
+    if model_version == "v4":
+        dp = v4Processing()
+    else:
+        dp = StandardPriceProcessing()
     
     X_live_reverse = dp.scenario_reverse()
     X_live_continue = dp.scenario_continue()
