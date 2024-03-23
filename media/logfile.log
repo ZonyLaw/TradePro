@@ -832,3 +832,146 @@ AttributeError: 'NoneType' object has no attribute 'stats_df_gen'
 2024-03-23 16:28:44,190 - INFO - Scheduler started
 2024-03-23 16:28:44,190 - INFO - Ending scheduler
 2024-03-23 16:28:44,211 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:37:38,942 - INFO - Starting scheduler
+2024-03-23 16:37:38,942 - INFO - Updater date and time: 2024-03-23 16:37:38.942828
+2024-03-23 16:37:38,942 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:37:38,942 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:37:38,942 - INFO - Scheduler started
+2024-03-23 16:37:38,942 - INFO - Ending scheduler
+2024-03-23 16:37:40,689 - INFO - Starting scheduler
+2024-03-23 16:37:40,690 - INFO - Updater date and time: 2024-03-23 16:37:40.690669
+2024-03-23 16:37:40,691 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:37:40,691 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:37:40,691 - INFO - Scheduler started
+2024-03-23 16:37:40,692 - INFO - Ending scheduler
+2024-03-23 16:37:40,702 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:37:45,462 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-03-23 16:37:58,884 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 155, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 109, in run_IG
+    ticker_definitions = read_json()['ticker_definitions']
+                         ^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2024-03-23 16:39:34,708 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-03-23 16:39:36,819 - INFO - Starting scheduler
+2024-03-23 16:39:36,819 - INFO - Updater date and time: 2024-03-23 16:39:36.819143
+2024-03-23 16:39:36,819 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:39:36,819 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:39:36,819 - INFO - Scheduler started
+2024-03-23 16:39:36,819 - INFO - Ending scheduler
+2024-03-23 16:39:36,848 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:40:35,040 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-03-23 16:40:37,000 - INFO - Starting scheduler
+2024-03-23 16:40:37,000 - INFO - Updater date and time: 2024-03-23 16:40:37.000101
+2024-03-23 16:40:37,000 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:40:37,000 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:40:37,000 - INFO - Scheduler started
+2024-03-23 16:40:37,000 - INFO - Ending scheduler
+2024-03-23 16:40:37,020 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:45:01,520 - INFO - Starting scheduler
+2024-03-23 16:45:01,520 - INFO - Updater date and time: 2024-03-23 16:45:01.520036
+2024-03-23 16:45:01,520 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:45:01,520 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:45:01,520 - INFO - Scheduler started
+2024-03-23 16:45:01,520 - INFO - Ending scheduler
+2024-03-23 16:45:03,202 - INFO - Starting scheduler
+2024-03-23 16:45:03,202 - INFO - Updater date and time: 2024-03-23 16:45:03.202183
+2024-03-23 16:45:03,203 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:45:03,204 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:45:03,204 - INFO - Scheduler started
+2024-03-23 16:45:03,205 - INFO - Ending scheduler
+2024-03-23 16:45:03,223 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:45:23,203 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 155, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 109, in run_IG
+    full_list = read_json()['ticker_definitions']
+                ^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2024-03-23 16:45:48,797 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-03-23 16:45:50,675 - INFO - Starting scheduler
+2024-03-23 16:45:50,675 - INFO - Updater date and time: 2024-03-23 16:45:50.675765
+2024-03-23 16:45:50,691 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:45:50,691 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:45:50,691 - INFO - Scheduler started
+2024-03-23 16:45:50,691 - INFO - Ending scheduler
+2024-03-23 16:45:50,691 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:46:00,017 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 16:46:00 GMT)" (scheduled at 2024-03-23 16:46:00+00:00)
+2024-03-23 16:46:00,017 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 16:51:00 GMT)" (scheduled at 2024-03-23 16:46:00+00:00)
+2024-03-23 16:46:00,018 - INFO - Inside the procedure sequence
+2024-03-23 16:46:00,018 - INFO - Inside the procedure sequence
+2024-03-23 16:46:00,020 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 16:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 55, in run_procedure_sequence
+    tickers = read_json()['tickers']
+              ^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2024-03-23 16:46:00,020 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 16:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 55, in run_procedure_sequence
+    tickers = read_json()['tickers']
+              ^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2024-03-23 16:46:09,065 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 155, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 109, in run_IG
+    full_list = read_json()
+                ^^^^^^^^^^^
+TypeError: 'module' object is not callable
+2024-03-23 16:47:00,528 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-03-23 16:48:39,905 - INFO - Starting scheduler
+2024-03-23 16:48:39,905 - INFO - Updater date and time: 2024-03-23 16:48:39.905500
+2024-03-23 16:48:39,921 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:48:39,921 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:48:39,921 - INFO - Scheduler started
+2024-03-23 16:48:39,921 - INFO - Ending scheduler
+2024-03-23 16:48:39,938 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:49:11,212 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-03-23 16:49:13,262 - INFO - Starting scheduler
+2024-03-23 16:49:13,277 - INFO - Updater date and time: 2024-03-23 16:49:13.277741
+2024-03-23 16:49:13,277 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 16:49:13,277 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 16:49:13,277 - INFO - Scheduler started
+2024-03-23 16:49:13,277 - INFO - Ending scheduler
+2024-03-23 16:49:13,298 - INFO - Watching for file changes with StatReloader
+2024-03-23 16:49:17,755 - ERROR - Internal Server Error: /ml_models/ml-manual/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 337, in ml_manual
+    last_price_stats = dp.stats_df_gen(prices_df,2)
+                       ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'stats_df_gen'

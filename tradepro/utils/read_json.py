@@ -1,7 +1,7 @@
 import os
 import json
 
-def read_currency_list():
+def read_ticker_list():
     """
     Read a json file contain the ticker list and defintions.
 
@@ -25,5 +25,3 @@ def read_currency_list():
 
     return data
 
-results = read_currency_list()
-print(results['ticker_definitions'])

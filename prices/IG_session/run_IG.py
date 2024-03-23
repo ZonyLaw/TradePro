@@ -11,7 +11,7 @@ from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
-from tradepro.utils import read_json
+from tradepro.utils.read_json import read_ticker_list
 
 
 if os.path.isfile('env.py'):
@@ -106,7 +106,9 @@ def run_IG(ticker, start_date=None, end_date=None):
     """
     #this is to access the name of the ticker interested
     # ticker_definitions = {"USDJPY":"CS.D.USDJPY.TODAY.IP", "EURUSD":"CS.D.EURUSD.TODAY.IP",}
-    ticker_definitions = read_json()['ticker_definitions']
+    ticker_definitions = read_ticker_list()['ticker_definitions']
+    
+    
     
     #creating the time range for the fetch method
     current_time = datetime.now()
