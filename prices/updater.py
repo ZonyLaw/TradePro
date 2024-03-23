@@ -4,7 +4,9 @@ from django.conf import settings
 from prices.IG_session.run_IG import run_IG
 from tradepro.utils.email_alert import email_alert
 from ml_models.utils.predictive_analysis import run_model_predictions
+from tradepro.utils import read_json
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds
+
 
 import logging
 import os
@@ -48,7 +50,10 @@ def start():
 def run_procedure_sequence():
     logging.info("Inside the procedure sequence")
     print("inside the procedure sequence!!!!")
-    tickers = ["USDJPY"]
+    # tickers = ["USDJPY","EURUSD"]
+    #defines the list of tickers
+    tickers = read_json()['tickers']
+    
     for ticker in tickers:
         #update the price table
         run_IG(ticker)

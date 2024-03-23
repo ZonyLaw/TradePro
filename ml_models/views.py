@@ -16,6 +16,8 @@ from .utils.manual_model_input import manual_price_input
 from .form import ModelParameters, ModelSelection, VersionSelection, VariabilitySize
 from prices.models import Price
 from tickers.models import Ticker
+from ml_models.utils.model_price_processing import v4Processing
+from ml_models.utils.price_processing import StandardPriceProcessing
 
 
 def ml_predictions(request):
@@ -140,22 +142,16 @@ def ml_report(request):
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
     
-    # TODO: This is only temp, this is probably a better way of importing the module.
-    # Dynamically get the module path involves defining the parent directory
-    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))
-    # Add the parent directory to the Python path
-    sys.path.append(parent_directory)
-    
-    module_name = f'trained_models.USDJPY.pl_predictions.v4.data_processing'
-    try:
-        dp = importlib.import_module(module_name)
-    except ImportError:
-        print(f"Error importing data_processing module for model_version: {module_name}")
-        dp = None
+    model_version = "v4"
+    if model_version == "v4":
+        dp = v4Processing()
+    else:
+        dp = StandardPriceProcessing()
     
     X_live = dp.historical_record(4)
     
     bb_status = X_live['bb_status_1'].tolist()
+
     
     #sort prices table in ascending so latest price on the bottom
     #note that html likes to work with array if using indexing
@@ -176,9 +172,9 @@ def ml_report(request):
         "four": trade_direction(trade_diff_4hr)}
     
     #retrieve saved results from last calculation performed by updater.py
-    pred_historical_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_v4.json')
-    pred_historical_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_v5.json')
-    pred_historical_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_historical_1h_v5.json')
+    pred_historical_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_historical_v4.json')
+    pred_historical_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_historical_v5.json')
+    pred_historical_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_historical_1h_v5.json')
     
     #extracting final results
     historical_headers = pred_historical_v4['pred_historical'][1]['heading']
@@ -201,9 +197,9 @@ def ml_report(request):
 
     
     #retrieve saved results from last calculation performed by updater.py
-    pred_reverse_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_v4.json')
-    pred_reverse_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_v5.json')
-    pred_reverse_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_reverse_1h_v5.json')
+    pred_reverse_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_v4.json')
+    pred_reverse_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_v5.json')
+    pred_reverse_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_1h_v5.json')
     
     #extracting final results
     reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
@@ -221,9 +217,9 @@ def ml_report(request):
     
     
     #retrieve saved results from last calculation performed by updater.py
-    pred_continue_v4 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_v4.json')
-    pred_continue_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_v5.json')
-    pred_continue_1h_v5 = read_prediction_from_json(model_ticker, f'USDJPY_pred_continue_1h_v5.json')
+    pred_continue_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_v4.json')
+    pred_continue_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_v5.json')
+    pred_continue_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_1h_v5.json')
     
     #extracting final results
     continue_headers = pred_continue_v4['pred_continue'][1]['heading']

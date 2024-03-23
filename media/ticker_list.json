@@ -1,0 +1,8 @@
+{
+    "ticker_definitions": {
+        "USDJPY": "CS.D.USDJPY.TODAY.IP",
+        "EURUSD": "CS.D.EURUSD.TODAY.IP"
+    },
+  
+    "tickers": ["USDJPY"]
+}

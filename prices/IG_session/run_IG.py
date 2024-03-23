@@ -11,6 +11,7 @@ from .ig_service import IGService
 from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
+from tradepro.utils import read_json
 
 
 if os.path.isfile('env.py'):
@@ -104,7 +105,9 @@ def run_IG(ticker, start_date=None, end_date=None):
     
     """
     #this is to access the name of the ticker interested
-    ticker_definition = {"USDJPY":"CS.D.USDJPY.TODAY.IP", "EURUSD":"CS.D.EURUSD.TODAY.IP",}
+    # ticker_definitions = {"USDJPY":"CS.D.USDJPY.TODAY.IP", "EURUSD":"CS.D.EURUSD.TODAY.IP",}
+    ticker_definitions = read_json()['ticker_definitions']
+    
     #creating the time range for the fetch method
     current_time = datetime.now()
     current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
@@ -147,7 +150,7 @@ def run_IG(ticker, start_date=None, end_date=None):
     try:
         #fetching data from IG account
         print("Starting the fetch")
-        data = ig_service.fetch_historical_prices_by_epic_and_date_range(f"{ticker_definition[ticker]}", "HOUR",start_time_str, end_time_str )
+        data = ig_service.fetch_historical_prices_by_epic_and_date_range(f"{ticker_definitions[ticker]}", "HOUR",start_time_str, end_time_str )
         # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
         df = data['prices']
         print("This is df retrieved>>>", df)

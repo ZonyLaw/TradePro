@@ -363,13 +363,11 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
     pred_variability_results = {}  # Dictionary to store results
     
     for model_version in model_versions:
-        module_name = f'trained_models.{model_ticker}.pl_predictions.{model_version}.data_processing'
 
-        try:
-            dp = importlib.import_module(module_name)
-        except ImportError:
-            print(f"Error importing data_processing module for model_version: {model_version}")
-            continue
+        if model_version == "v4":
+            dp = v4Processing()
+        else:
+            dp = StandardPriceProcessing()
         
         X_live_variability = dp.prediction_variability(sensitivity_adjustment)
         pred_variability = model_run(model_ticker, X_live_variability, model_version)
