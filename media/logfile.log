@@ -975,3 +975,486 @@ Traceback (most recent call last):
     last_price_stats = dp.stats_df_gen(prices_df,2)
                        ^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'stats_df_gen'
+2024-03-23 20:42:32,868 - INFO - Starting scheduler
+2024-03-23 20:42:32,868 - INFO - Updater date and time: 2024-03-23 20:42:32.868589
+2024-03-23 20:42:32,868 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:42:32,868 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:42:32,875 - INFO - Scheduler started
+2024-03-23 20:42:32,875 - INFO - Ending scheduler
+2024-03-23 20:42:34,561 - INFO - Starting scheduler
+2024-03-23 20:42:34,561 - INFO - Updater date and time: 2024-03-23 20:42:34.561811
+2024-03-23 20:42:34,561 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:42:34,561 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:42:34,561 - INFO - Scheduler started
+2024-03-23 20:42:34,561 - INFO - Ending scheduler
+2024-03-23 20:42:34,582 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:42:35,899 - WARNING - Not Found: /images/favicon.ico
+2024-03-23 20:42:40,359 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 387, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+TypeError: format_model_results() missing 1 required positional argument: 'model_input_data'
+2024-03-23 20:42:40,486 - WARNING - Not Found: /favicon.ico
+2024-03-23 20:43:55,549 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:45:14,182 - INFO - Starting scheduler
+2024-03-23 20:45:14,182 - INFO - Updater date and time: 2024-03-23 20:45:14.182162
+2024-03-23 20:45:14,182 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:45:14,182 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:45:14,182 - INFO - Scheduler started
+2024-03-23 20:45:14,182 - INFO - Ending scheduler
+2024-03-23 20:45:14,206 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:45:19,629 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 388, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 66, in format_model_results
+    input_bb.append(data['upper_bb20_4'])
+                    ~~~~^^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-03-23 20:46:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 20:46:00 GMT)" (scheduled at 2024-03-23 20:46:00+00:00)
+2024-03-23 20:46:00,008 - INFO - Inside the procedure sequence
+2024-03-23 20:46:00,008 - INFO - Inside the procedure sequence
+2024-03-23 20:46:04,088 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 20:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 60, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 341, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 216, in standard_analysis
+    pred_reverse = format_model_results(
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 66, in format_model_results
+    input_bb.append(data['upper_bb20_4'])
+                    ~~~~^^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-03-23 20:46:04,127 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 20:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 60, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 340, in run_model_predictions
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 216, in standard_analysis
+    pred_reverse = format_model_results(
+                   ^^^^^^^^^^^^^^^^^^^^^
+TypeError: format_model_results() got an unexpected keyword argument 'input_data'
+2024-03-23 20:46:40,750 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:46:45,918 - INFO - Starting scheduler
+2024-03-23 20:46:45,918 - INFO - Updater date and time: 2024-03-23 20:46:45.918596
+2024-03-23 20:46:45,918 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:46:45,918 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:46:45,918 - INFO - Scheduler started
+2024-03-23 20:46:45,918 - INFO - Ending scheduler
+2024-03-23 20:46:47,654 - INFO - Starting scheduler
+2024-03-23 20:46:47,654 - INFO - Updater date and time: 2024-03-23 20:46:47.654323
+2024-03-23 20:46:47,654 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:46:47,654 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:46:47,654 - INFO - Scheduler started
+2024-03-23 20:46:47,654 - INFO - Ending scheduler
+2024-03-23 20:46:47,675 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:46:56,282 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 388, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 66, in format_model_results
+    print(data['upper_bb20_4'])
+          ~~~~^^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2024-03-23 20:47:40,533 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:47:42,556 - INFO - Starting scheduler
+2024-03-23 20:47:42,556 - INFO - Updater date and time: 2024-03-23 20:47:42.556220
+2024-03-23 20:47:42,557 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:47:42,557 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:47:42,558 - INFO - Scheduler started
+2024-03-23 20:47:42,558 - INFO - Ending scheduler
+2024-03-23 20:47:42,576 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:47:44,294 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:47:46,343 - INFO - Starting scheduler
+2024-03-23 20:47:46,343 - INFO - Updater date and time: 2024-03-23 20:47:46.343915
+2024-03-23 20:47:46,343 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:47:46,343 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:47:46,343 - INFO - Scheduler started
+2024-03-23 20:47:46,343 - INFO - Ending scheduler
+2024-03-23 20:47:46,365 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:47:49,699 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-23 20:48:19,775 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:48:21,842 - INFO - Starting scheduler
+2024-03-23 20:48:21,842 - INFO - Updater date and time: 2024-03-23 20:48:21.842781
+2024-03-23 20:48:21,842 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:48:21,842 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:48:21,842 - INFO - Scheduler started
+2024-03-23 20:48:21,842 - INFO - Ending scheduler
+2024-03-23 20:48:21,880 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:52:59,345 - INFO - Starting scheduler
+2024-03-23 20:52:59,345 - INFO - Updater date and time: 2024-03-23 20:52:59.345636
+2024-03-23 20:52:59,345 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:52:59,345 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:52:59,345 - INFO - Scheduler started
+2024-03-23 20:52:59,345 - INFO - Ending scheduler
+2024-03-23 20:53:01,110 - INFO - Starting scheduler
+2024-03-23 20:53:01,110 - INFO - Updater date and time: 2024-03-23 20:53:01.110880
+2024-03-23 20:53:01,110 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:53:01,110 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:53:01,110 - INFO - Scheduler started
+2024-03-23 20:53:01,110 - INFO - Ending scheduler
+2024-03-23 20:53:01,128 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:53:07,805 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 389, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 20:53:57,945 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:54:00,061 - INFO - Starting scheduler
+2024-03-23 20:54:00,061 - INFO - Updater date and time: 2024-03-23 20:54:00.061745
+2024-03-23 20:54:00,061 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:54:00,061 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:54:00,061 - INFO - Scheduler started
+2024-03-23 20:54:00,077 - INFO - Ending scheduler
+2024-03-23 20:54:00,077 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:54:02,433 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 389, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 20:58:12,376 - INFO - Starting scheduler
+2024-03-23 20:58:12,376 - INFO - Updater date and time: 2024-03-23 20:58:12.376785
+2024-03-23 20:58:12,376 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:58:12,376 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:58:12,376 - INFO - Scheduler started
+2024-03-23 20:58:12,376 - INFO - Ending scheduler
+2024-03-23 20:58:14,253 - INFO - Starting scheduler
+2024-03-23 20:58:14,253 - INFO - Updater date and time: 2024-03-23 20:58:14.253172
+2024-03-23 20:58:14,253 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:58:14,253 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:58:14,253 - INFO - Scheduler started
+2024-03-23 20:58:14,253 - INFO - Ending scheduler
+2024-03-23 20:58:14,280 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:58:18,471 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 390, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 20:58:51,219 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:58:53,259 - INFO - Starting scheduler
+2024-03-23 20:58:53,275 - INFO - Updater date and time: 2024-03-23 20:58:53.259784
+2024-03-23 20:58:53,276 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:58:53,276 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:58:53,276 - INFO - Scheduler started
+2024-03-23 20:58:53,277 - INFO - Ending scheduler
+2024-03-23 20:58:53,296 - INFO - Watching for file changes with StatReloader
+2024-03-23 20:59:00,825 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 390, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 20:59:09,311 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 20:59:11,495 - INFO - Starting scheduler
+2024-03-23 20:59:11,495 - INFO - Updater date and time: 2024-03-23 20:59:11.495040
+2024-03-23 20:59:11,495 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 20:59:11,495 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 20:59:11,495 - INFO - Scheduler started
+2024-03-23 20:59:11,495 - INFO - Ending scheduler
+2024-03-23 20:59:11,513 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:10:12,993 - INFO - Starting scheduler
+2024-03-23 21:10:12,994 - INFO - Updater date and time: 2024-03-23 21:10:12.994346
+2024-03-23 21:10:12,995 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:10:12,995 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:10:12,995 - INFO - Scheduler started
+2024-03-23 21:10:12,996 - INFO - Ending scheduler
+2024-03-23 21:10:14,690 - INFO - Starting scheduler
+2024-03-23 21:10:14,690 - INFO - Updater date and time: 2024-03-23 21:10:14.690310
+2024-03-23 21:10:14,690 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:10:14,690 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:10:14,690 - INFO - Scheduler started
+2024-03-23 21:10:14,690 - INFO - Ending scheduler
+2024-03-23 21:10:14,708 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:10:58,213 - INFO - Starting scheduler
+2024-03-23 21:10:58,213 - INFO - Updater date and time: 2024-03-23 21:10:58.213036
+2024-03-23 21:10:58,213 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:10:58,213 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:10:58,213 - INFO - Scheduler started
+2024-03-23 21:10:58,213 - INFO - Ending scheduler
+2024-03-23 21:11:00,027 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:11:00 GMT)" (scheduled at 2024-03-23 21:11:00+00:00)
+2024-03-23 21:11:00,028 - INFO - Inside the procedure sequence
+2024-03-23 21:11:00,053 - INFO - Starting scheduler
+2024-03-23 21:11:00,053 - INFO - Updater date and time: 2024-03-23 21:11:00.053865
+2024-03-23 21:11:00,055 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:11:00,055 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:11:00,055 - INFO - Scheduler started
+2024-03-23 21:11:00,056 - INFO - Ending scheduler
+2024-03-23 21:11:00,079 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:11:03,810 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:16:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 60, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 343, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 218, in standard_analysis
+    pred_reverse = format_model_results(
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 21:11:07,833 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 288, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 390, in variability_analysis
+    pred_variability_results[model_version]  = format_model_results(
+                                               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 65, in format_model_results
+    for index, row in model_input_data:
+        ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-03-23 21:12:43,059 - INFO - Starting scheduler
+2024-03-23 21:12:43,059 - INFO - Updater date and time: 2024-03-23 21:12:43.059320
+2024-03-23 21:12:43,059 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:12:43,059 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:12:43,059 - INFO - Scheduler started
+2024-03-23 21:12:43,059 - INFO - Ending scheduler
+2024-03-23 21:12:44,807 - INFO - Starting scheduler
+2024-03-23 21:12:44,807 - INFO - Updater date and time: 2024-03-23 21:12:44.807033
+2024-03-23 21:12:44,807 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:12:44,807 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:12:44,807 - INFO - Scheduler started
+2024-03-23 21:12:44,807 - INFO - Ending scheduler
+2024-03-23 21:12:44,850 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:13:35,477 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-23 21:13:37,589 - INFO - Starting scheduler
+2024-03-23 21:13:37,590 - INFO - Updater date and time: 2024-03-23 21:13:37.590953
+2024-03-23 21:13:37,592 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:13:37,592 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:13:37,592 - INFO - Scheduler started
+2024-03-23 21:13:37,593 - INFO - Ending scheduler
+2024-03-23 21:13:37,611 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:45:54,993 - INFO - Starting scheduler
+2024-03-23 21:45:54,993 - INFO - Updater date and time: 2024-03-23 21:45:54.993609
+2024-03-23 21:45:54,993 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:45:54,993 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:45:54,993 - INFO - Scheduler started
+2024-03-23 21:45:54,993 - INFO - Ending scheduler
+2024-03-23 21:45:56,932 - INFO - Starting scheduler
+2024-03-23 21:45:56,932 - INFO - Updater date and time: 2024-03-23 21:45:56.932040
+2024-03-23 21:45:56,948 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:45:56,948 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:45:56,948 - INFO - Scheduler started
+2024-03-23 21:45:56,948 - INFO - Ending scheduler
+2024-03-23 21:45:56,965 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:46:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:51:00 GMT)" (scheduled at 2024-03-23 21:46:00+00:00)
+2024-03-23 21:46:00,013 - INFO - Inside the procedure sequence
+2024-03-23 21:46:00,034 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:46:00 GMT)" (scheduled at 2024-03-23 21:46:00+00:00)
+2024-03-23 21:46:00,034 - INFO - Inside the procedure sequence
+2024-03-23 21:46:00,618 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 59, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-23 21:46:08,445 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 21:51:00 GMT)" executed successfully
+2024-03-23 21:56:59,255 - INFO - Starting scheduler
+2024-03-23 21:56:59,255 - INFO - Updater date and time: 2024-03-23 21:56:59.255283
+2024-03-23 21:56:59,255 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:56:59,255 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:56:59,255 - INFO - Scheduler started
+2024-03-23 21:56:59,255 - INFO - Ending scheduler
+2024-03-23 21:57:00,945 - INFO - Starting scheduler
+2024-03-23 21:57:00,945 - INFO - Updater date and time: 2024-03-23 21:57:00.945911
+2024-03-23 21:57:00,945 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:57:00,945 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:57:00,945 - INFO - Scheduler started
+2024-03-23 21:57:00,945 - INFO - Ending scheduler
+2024-03-23 21:57:00,974 - INFO - Watching for file changes with StatReloader
+2024-03-23 21:59:56,569 - INFO - Starting scheduler
+2024-03-23 21:59:56,569 - INFO - Updater date and time: 2024-03-23 21:59:56.569920
+2024-03-23 21:59:56,569 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:59:56,569 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:59:56,569 - INFO - Scheduler started
+2024-03-23 21:59:56,569 - INFO - Ending scheduler
+2024-03-23 21:59:58,407 - INFO - Starting scheduler
+2024-03-23 21:59:58,408 - INFO - Updater date and time: 2024-03-23 21:59:58.408802
+2024-03-23 21:59:58,409 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 21:59:58,409 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 21:59:58,409 - INFO - Scheduler started
+2024-03-23 21:59:58,411 - INFO - Ending scheduler
+2024-03-23 21:59:58,424 - INFO - Watching for file changes with StatReloader
+2024-03-23 22:04:42,831 - INFO - Starting scheduler
+2024-03-23 22:04:42,847 - INFO - Updater date and time: 2024-03-23 22:04:42.847560
+2024-03-23 22:04:42,847 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:04:42,847 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:04:42,847 - INFO - Scheduler started
+2024-03-23 22:04:42,847 - INFO - Ending scheduler
+2024-03-23 22:04:44,540 - INFO - Starting scheduler
+2024-03-23 22:04:44,540 - INFO - Updater date and time: 2024-03-23 22:04:44.540695
+2024-03-23 22:04:44,540 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:04:44,540 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:04:44,540 - INFO - Scheduler started
+2024-03-23 22:04:44,540 - INFO - Ending scheduler
+2024-03-23 22:04:44,560 - INFO - Watching for file changes with StatReloader
+2024-03-23 22:06:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:06:00 GMT)" (scheduled at 2024-03-23 22:06:00+00:00)
+2024-03-23 22:06:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:11:00 GMT)" (scheduled at 2024-03-23 22:06:00+00:00)
+2024-03-23 22:06:00,008 - INFO - Inside the procedure sequence
+2024-03-23 22:06:00,008 - INFO - Inside the procedure sequence
+2024-03-23 22:06:09,271 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:11:00 GMT)" executed successfully
+2024-03-23 22:06:09,348 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:11:00 GMT)" executed successfully
+2024-03-23 22:08:23,833 - INFO - Starting scheduler
+2024-03-23 22:08:23,833 - INFO - Updater date and time: 2024-03-23 22:08:23.833217
+2024-03-23 22:08:23,833 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:08:23,833 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:08:23,833 - INFO - Scheduler started
+2024-03-23 22:08:23,837 - INFO - Ending scheduler
+2024-03-23 22:08:25,540 - INFO - Starting scheduler
+2024-03-23 22:08:25,540 - INFO - Updater date and time: 2024-03-23 22:08:25.540183
+2024-03-23 22:08:25,540 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:08:25,540 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:08:25,540 - INFO - Scheduler started
+2024-03-23 22:08:25,556 - INFO - Ending scheduler
+2024-03-23 22:08:25,572 - INFO - Watching for file changes with StatReloader
+2024-03-23 22:08:29,321 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-03-23 22:08:32,428 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-03-23 22:11:23,278 - INFO - Starting scheduler
+2024-03-23 22:11:23,278 - INFO - Updater date and time: 2024-03-23 22:11:23.278825
+2024-03-23 22:11:23,278 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:11:23,278 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:11:23,278 - INFO - Scheduler started
+2024-03-23 22:11:23,295 - INFO - Ending scheduler
+2024-03-23 22:11:25,054 - INFO - Starting scheduler
+2024-03-23 22:11:25,055 - INFO - Updater date and time: 2024-03-23 22:11:25.055446
+2024-03-23 22:11:25,055 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:11:25,056 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:11:25,056 - INFO - Scheduler started
+2024-03-23 22:11:25,057 - INFO - Ending scheduler
+2024-03-23 22:11:25,073 - INFO - Watching for file changes with StatReloader
+2024-03-23 22:15:03,294 - INFO - Starting scheduler
+2024-03-23 22:15:03,294 - INFO - Updater date and time: 2024-03-23 22:15:03.294548
+2024-03-23 22:15:03,294 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:15:03,294 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:15:03,294 - INFO - Scheduler started
+2024-03-23 22:15:03,294 - INFO - Ending scheduler
+2024-03-23 22:15:05,042 - INFO - Starting scheduler
+2024-03-23 22:15:05,043 - INFO - Updater date and time: 2024-03-23 22:15:05.043357
+2024-03-23 22:15:05,044 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-23 22:15:05,045 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-23 22:15:05,045 - INFO - Scheduler started
+2024-03-23 22:15:05,045 - INFO - Ending scheduler
+2024-03-23 22:15:05,059 - INFO - Watching for file changes with StatReloader
+2024-03-23 22:15:41,793 - WARNING - Not Found: /prices/update-price/2fb07161-915b-4c3e-9556-0f3a88223d86/images/favicon.ico
+2024-03-23 22:16:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:16:00 GMT)" (scheduled at 2024-03-23 22:16:00+00:00)
+2024-03-23 22:16:00,004 - INFO - Inside the procedure sequence
+2024-03-23 22:16:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:16:00 GMT)" (scheduled at 2024-03-23 22:16:00+00:00)
+2024-03-23 22:16:00,013 - INFO - Inside the procedure sequence
+2024-03-23 22:16:10,390 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:21:00 GMT)" executed successfully
+2024-03-23 22:16:10,452 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-23 22:21:00 GMT)" executed successfully
