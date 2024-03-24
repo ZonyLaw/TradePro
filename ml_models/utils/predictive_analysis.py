@@ -68,15 +68,13 @@ def format_model_results(
         
     for row in model_input_data['lower_bb20_4']:
         lower_bb4.append(row)
-        print(f"prediction {pred_name} for row", row)
-  
+ 
     for prediction in model_prediction:
         direction = "Sell" if prediction < 3 else "Buy"
         profit_label = model_labels_map[prediction]
         potential_trade.append(f"{direction} target: {profit_label}")
         trade_type.append(direction)
         trade_target.append(profit_label)
-        print(f"prediction {pred_name}", prediction)
 
     main_results["Potential Trade"] = potential_trade
     extra_results = {

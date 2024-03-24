@@ -33,13 +33,16 @@
     
     <h1>Trade Opportunity</h1>
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
-        <p> With current movement, summary of models prediction is: </p>
+        <p> Model prediction is: </p>
         <p><b> {{version_comment}} </b> </p>
         <table>
-            <tr  2
-            > 
+            <tr style="color:purple;"> 
                 <td> Trade direction: </td> 
                 <td><b> {{potential_trade}} </b></td>
+            </tr>
+            <tr style="color:red;">
+                <td>Stop loss: </td>
+                <td> <b> £{{stop_loss|floatformat:2}} </b></td>
             </tr>
             <tr style="color:blue;">
                 <td>Best Entry point: </td>
@@ -49,14 +52,12 @@
                 <td>Target point: </td>
                 <td> <b> £{{exit_point|floatformat:2}} </b></td>
             </tr>
-
-            <tr style="color:red;">
-                <td>Stop loss: </td>
-                <td> <b> £{{stop_loss|floatformat:2}} </b></td>
+            <tr style="color:orange;">
+                <td>{{potential_trade}} at Bollinger Band: </td>
+                <td> <b> £{{bb_target|floatformat:2}} </b></td>
             </tr>
         </table>
-        <p>Profit target can vary depending on the strength of the trade volume. It is recommended to take profit at 10, 20, 25 pips. 
-            If volume is above 33 per minute (equivalent to 2000 per hour) then there is a strong chance it can exceed 10 pips in profits.</p>
+        <p>If you must trade then please get in at the bollinger band in reverse direction!</p>
 
 
     <h1>Extra Market Information</h1>

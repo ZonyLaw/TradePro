@@ -8,7 +8,7 @@ import datetime
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
-from .utils.analysis_comments import comment_model_results, compare_version_results
+from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
 from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
 from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
@@ -18,6 +18,7 @@ from prices.models import Price
 from tickers.models import Ticker
 from ml_models.utils.model_price_processing import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
+
 
 
 def ml_predictions(request):
@@ -181,10 +182,7 @@ def ml_report(request):
     potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
     potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
     potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
-    split_potential_trade_result = [trade.split(':') for trade in potential_trade_results_v5]
-    trade_target = float(split_potential_trade_result[-1][-1].strip())
-    split_potential_trade_result_v4 = [trade.split(':') for trade in potential_trade_results_v4]
-    trade_target_v4 = float(split_potential_trade_result_v4[-1][-1].strip())
+ 
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -195,7 +193,6 @@ def ml_report(request):
     }
         
 
-    
     #retrieve saved results from last calculation performed by updater.py
     pred_reverse_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_v4.json')
     pred_reverse_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_v5.json')
@@ -235,15 +232,13 @@ def ml_report(request):
     '1h_v5': continue_trade_results_1h_v5
     }
     
-    if abs(trade_target_v4) >= 20:
-        #v4 model overrides the other predictions if target point is at or greater than 20pips.
-        version_comment = "V4 model override v5 model prediction with below trade."
-        trade_target = trade_target_v4
-        potential_trade = pred_historical_v4['pred_historical'][2]['item']['Potential Trade'][3]
-    else:
-        version_comment, _ = compare_version_results(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
-        potential_trade = pred_historical_v5['pred_historical'][2]['item']['Potential Trade'][3]
-       
+
+    model_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+    version_comment = model_comparer.comment
+    potential_trade = model_comparer.trade_position
+    trade_target = model_comparer.trade_target
+    bb_target = model_comparer.bb_target
+          
     #calculate entry and exit point  
     if trade_target > 0:
         entry_adjustment = -0.04
@@ -293,7 +288,8 @@ def ml_report(request):
 
     context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
-             'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss, 'potential_trade': potential_trade, 
+             'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
+             'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
@@ -312,17 +308,11 @@ def ml_manual(request):
     
     """
     
-    # Dynamically get the module path involves defining the parent directory
-    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    # Add the parent directory to the Python path
-    sys.path.append(parent_directory)
-    module_name = f'ml_models.trained_models.USDJPY.pl_predictions.v4.data_processing'
-    print("Module Path:", os.path.join(parent_directory, module_name.replace('.', os.sep) + ".py"))
-    try:
-        dp = importlib.import_module(module_name)
-    except ImportError:
-        print(f"Error importing data_processing module for model_version: v4")
-        dp = None
+    model_version = "v4"
+    if model_version == "v4":
+        dp = v4Processing()
+    else:
+        dp = StandardPriceProcessing()
     
     
     form = ModelParameters(request.POST)
