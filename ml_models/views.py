@@ -33,10 +33,10 @@ def ml_predictions(request):
     
     if form.is_valid():
         model_version = form.cleaned_data['model_version']
+        model_ticker = form.cleaned_data['ticker']
     else:
         model_version = 'v4'
-        
-    model_ticker = "USDJPY"
+        model_ticker = "USDJPY"
         
     pred_reverse, pred_continue, pred_historical, pred_variability = standard_analysis(model_ticker, model_version)
     if model_version == "v4":
@@ -143,15 +143,15 @@ def ml_report(request):
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
     
-    model_version = "v4"
-    if model_version == "v4":
-        dp = v4Processing()
-    else:
-        dp = StandardPriceProcessing()
+    # model_version = "v4"
+    # if model_version == "v4":
+    #     dp = v4Processing(ticker=model_ticker)
+    # else:
+    #     dp = StandardPriceProcessing(ticker=model_ticker)
     
-    X_live = dp.historical_record(4)
+    # X_live = dp.historical_record(4)
     
-    bb_status = X_live['bb_status_1'].tolist()
+    # bb_status = X_live['bb_status_1'].tolist()
 
     
     #sort prices table in ascending so latest price on the bottom
@@ -293,7 +293,7 @@ def ml_report(request):
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
-             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,"bb_status":bb_status}
+             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists}
     
     return render(request, 'ml_models/ml_report.html', context)
 
@@ -310,9 +310,9 @@ def ml_manual(request):
     
     model_version = "v4"
     if model_version == "v4":
-        dp = v4Processing()
+        dp = v4Processing("USDJPY")
     else:
-        dp = StandardPriceProcessing()
+        dp = StandardPriceProcessing("USDJPY")
     
     
     form = ModelParameters(request.POST)
@@ -377,7 +377,8 @@ def export_model_results(request):
 
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
-            model_results = trade_forecast_assessment(model_version)
+            ticker = form.cleaned_data['ticker']
+            model_results = trade_forecast_assessment(ticker, model_version)
 
             response = HttpResponse(content_type='text/csv')
             response['Content-Disposition'] = f'attachment; filename="model_results_{model_version}.csv"'

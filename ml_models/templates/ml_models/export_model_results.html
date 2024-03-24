@@ -2,13 +2,17 @@
 
 
 <dev class="formPage my-xl">
-    <h1>Download model results</h1>
-    
-    <form id="downloadForm" action="{% url 'export-model-results' %}" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Download CSV</button>
-    </form>
+    <div class="content-box">
+        <div class="formWrapper">
+            <h1>Download model results</h1>
+            
+            <form id="downloadForm" action="{% url 'export-model-results' %}" method="POST">
+                    {%csrf_token%} 
+                    {{form.as_p}}
+                <button type="submit">Download CSV</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

@@ -7,6 +7,9 @@ from datetime import timedelta
 from scipy.signal import find_peaks
 
 class StandardPriceProcessing():
+
+    def __init__(self, ticker):
+        self.ticker = ticker
     
     @staticmethod
     def calc_moving_average(df, timeframe):

@@ -16,6 +16,8 @@ BB_CHOICES = [
 
 MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5'), ('1h_v5_trade', '1h_v5_trade')]
 
+TICKER_LIST = [("USDJPY", "USDJPY"), ("EURUSD","EURUSD")]
+
 class ModelParameters(forms.Form):
     model_version = forms.ChoiceField(choices=MODEL_LIST, initial='v4', label='Select the model version')
     open = forms.FloatField(initial=0.0, label='Open Price')
@@ -42,7 +44,7 @@ class ModelSelection(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ModelSelection, self).__init__(*args, **kwargs)
         self.fields['ticker'] = forms.ChoiceField(
-            choices=self.get_ticker(), 
+            choices=TICKER_LIST, 
             label='Select the ticker'
         )
 
@@ -53,9 +55,17 @@ class ModelSelection(forms.Form):
 class VersionSelection(forms.Form):
     def __init__(self, *args, **kwargs):
         super(VersionSelection, self).__init__(*args, **kwargs)
+        
+        # Add ChoiceField for model version selection
         self.fields['model_version'] = forms.ChoiceField(
             choices=MODEL_LIST,
             label='Select the model version'
+        )
+        
+        # Add ChoiceField for ticker selection
+        self.fields['ticker'] = forms.ChoiceField(
+            choices=TICKER_LIST,
+            label='Select the ticker'
         )
 
 

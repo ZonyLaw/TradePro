@@ -205,9 +205,9 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     #     dp = None
     
     if model_version == "v4":
-        dp = v4Processing()
+        dp = v4Processing(ticker=ticker)
     else:
-        dp = StandardPriceProcessing()
+        dp = StandardPriceProcessing(ticker=ticker)
     
     X_live_reverse = dp.scenario_reverse()
     X_live_continue = dp.scenario_continue()
@@ -263,7 +263,7 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     return pred_reverse, pred_continue, pred_historical, pred_variability
 
 
-def trade_forecast_assessment(model_version):
+def trade_forecast_assessment(ticker, model_version):
     """
     This function is to produce the model results use for assessment or exporting.
 
@@ -275,13 +275,13 @@ def trade_forecast_assessment(model_version):
     """
     
     if model_version == "v4":
-        dp = v4Processing()
+        dp = v4Processing(ticker=ticker)
     else:
-        dp = StandardPriceProcessing()
+        dp = StandardPriceProcessing(ticker=ticker)
     
     
     X_live_historical = dp.historical_record(120)
-    pred_historical = model_run("USDJPY", X_live_historical, model_version)
+    pred_historical = model_run(ticker, X_live_historical, model_version)
     
     model_prediction_proba = pred_historical['model_prediction_proba']
     model_labels_map = pred_historical['model_labels_map']
@@ -376,9 +376,9 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
     for model_version in model_versions:
 
         if model_version == "v4":
-            dp = v4Processing()
+            dp = v4Processing(ticker=model_ticker)
         else:
-            dp = StandardPriceProcessing()
+            dp = StandardPriceProcessing(ticker=model_ticker)
         
         X_live_variability = dp.prediction_variability(sensitivity_adjustment)
         pred_variability = model_run(model_ticker, X_live_variability, model_version)
