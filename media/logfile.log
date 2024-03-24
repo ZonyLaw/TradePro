@@ -1744,3 +1744,19 @@ Traceback (most recent call last):
                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
 IndexError: list index out of range
 2024-03-24 00:07:40,159 - WARNING - Not Found: /favicon.ico
+2024-03-24 08:22:03,288 - INFO - Starting scheduler
+2024-03-24 08:22:03,288 - INFO - Updater date and time: 2024-03-24 08:22:03.288408
+2024-03-24 08:22:03,288 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-24 08:22:03,288 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-24 08:22:03,288 - INFO - Scheduler started
+2024-03-24 08:22:03,288 - INFO - Ending scheduler
+2024-03-24 08:22:05,170 - INFO - Starting scheduler
+2024-03-24 08:22:05,170 - INFO - Updater date and time: 2024-03-24 08:22:05.170894
+2024-03-24 08:22:05,170 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-24 08:22:05,170 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-24 08:22:05,170 - INFO - Scheduler started
+2024-03-24 08:22:05,170 - INFO - Ending scheduler
+2024-03-24 08:22:05,194 - INFO - Watching for file changes with StatReloader
+2024-03-24 08:22:10,275 - WARNING - Not Found: /images/favicon.ico
+2024-03-24 08:22:26,262 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
+2024-03-24 08:22:29,634 - WARNING - Not Found: /ml_models/export-model-results/images/favicon.ico

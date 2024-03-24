@@ -265,27 +265,19 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
 
 def trade_forecast_assessment(model_version):
     """
-    This function is to assess the trade forecast accuracy and produce a csv file for further analysis.
+    This function is to produce the model results use for assessment or exporting.
 
     Args:
-        y_actual (): _description_
-
+        model_version (string): the model version to produce the results for assessment.
+        
     Returns:
-        _type_: _description_
+        dataframe: a dataframe containing the results
     """
     
-    
-    # Dynamically get the module path involves defining the parent directory
-    parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    # Add the parent directory to the Python path
-    sys.path.append(parent_directory)
-    module_name = f'trained_models.USDJPY.pl_predictions.{model_version}.data_processing'
-
-    try:
-        dp = importlib.import_module(module_name)
-    except ImportError:
-        print(f"Error importing data_processing module for model_version: {model_version}")
-        dp = None
+    if model_version == "v4":
+        dp = v4Processing()
+    else:
+        dp = StandardPriceProcessing()
     
     
     X_live_historical = dp.historical_record(120)
@@ -302,7 +294,7 @@ def trade_forecast_assessment(model_version):
     df2 = X_live_discretized.reset_index(drop=True)
     model_results = pd.concat([df1, df2 ], axis=1)
     model_results['prediction'] = model_prediction
-    # print("model dataframe >>>>>", combined_df)
+ 
     # combined_df.to_csv(r"C:\Users\sunny\Desktop\Development\model_assessment_data.csv", index=False)
     
     # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
@@ -313,10 +305,7 @@ def trade_forecast_assessment(model_version):
     
     # Calculate the accuracy between the prediction and actual
     # accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
-    
-
     # print("Accuracy", accuracy)
-
     
     return model_results
 
