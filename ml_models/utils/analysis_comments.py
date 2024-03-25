@@ -133,7 +133,7 @@ class ModelComparer:
         upper_bb = self.model_dict1[key_label1][4]['bb4_results']['upper_bb4']
         lower_bb = self.model_dict1[key_label1][4]['bb4_results']['lower_bb4']
         
-        if self.trade_position == "buy":
+        if self.trade_position == "Buy":
             self.bb_target = lower_bb[self.arr_index]
         else:
             self.bb_target = upper_bb[self.arr_index]
