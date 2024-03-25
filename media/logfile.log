@@ -2423,3 +2423,16 @@ KeyError: 'cst'
 2024-03-25 06:58:22,231 - INFO - Watching for file changes with StatReloader
 2024-03-25 06:58:23,990 - WARNING - Not Found: /images/favicon.ico
 2024-03-25 06:58:28,463 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-25 07:14:52,632 - INFO - Starting scheduler
+2024-03-25 07:14:52,633 - INFO - Updater date and time: 2024-03-25 07:14:52.633329
+2024-03-25 07:14:52,633 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 07:14:52,633 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 07:14:52,633 - INFO - Scheduler started
+2024-03-25 07:14:52,633 - INFO - Ending scheduler
+2024-03-25 07:14:54,707 - INFO - Starting scheduler
+2024-03-25 07:14:54,707 - INFO - Updater date and time: 2024-03-25 07:14:54.707371
+2024-03-25 07:14:54,707 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 07:14:54,722 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 07:14:54,722 - INFO - Scheduler started
+2024-03-25 07:14:54,722 - INFO - Ending scheduler
+2024-03-25 07:14:54,747 - INFO - Watching for file changes with StatReloader

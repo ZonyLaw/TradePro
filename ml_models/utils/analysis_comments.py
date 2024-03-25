@@ -94,12 +94,12 @@ class ModelComparer:
                 self.trade_position = current_trade1
                 self.trade_target = pip_size1
         elif current_trade1 == current_trade2:
-            if pip_size2 >= 20:
+            if pip_size3 >= 5:
                 self.comment = f"A retracement so it is a {current_trade3}."
                 self.send_email = False
                 self.trade_position = current_trade3
                 self.trade_target = pip_size3
-            elif pip_size1 <= 10:
+            elif pip_size3 <= 5:
                 self.comment = f"A weak retracement so it is a {current_trade3}."
                 self.send_email = False
                 self.trade_position = current_trade3
