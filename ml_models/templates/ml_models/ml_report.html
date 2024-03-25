@@ -46,14 +46,19 @@
             </tr>
             <tr style="color:blue;">
                 <td>Best Entry point: </td>
-                <td> <b> £{{open_prices.3|floatformat:2}} - £{{entry_point|floatformat:2}} </b></td>
+                {% if open_prices.3|floatformat:2 > entry_point|floatformat:2 %}
+                    <td> <b>£{{entry_point|floatformat:2}} - £{{open_prices.3|floatformat:2}} </b></td>
+                {% else %}
+                    <td> <b>£{{open_prices.3|floatformat:2}} - £{{entry_point|floatformat:2}} </b></td>
+                {% endif %}
+                
             </tr>
             <tr style="color:green;">
                 <td>Target point: </td>
                 <td> <b> £{{exit_point|floatformat:2}} </b></td>
             </tr>
             <tr style="color:orange;">
-                <td>{{potential_trade}} at Bollinger Band: </td>
+                <td>Entry at Bollinger Band: </td>
                 <td> <b> £{{bb_target|floatformat:2}} </b></td>
             </tr>
         </table>

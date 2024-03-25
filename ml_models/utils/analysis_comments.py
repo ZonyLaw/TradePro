@@ -93,8 +93,9 @@ class ModelComparer:
                 self.send_email = False
                 self.trade_position = current_trade1
                 self.trade_target = pip_size1
-        elif current_trade1 == current_trade2:
+        elif current_trade1 == current_trade2 and current_trade3 != current_trade1:
             if pip_size3 >= 5:
+                #shows a contradiction between long and short term position, but we take the short position
                 self.comment = f"A retracement so it is a {current_trade3}."
                 self.send_email = False
                 self.trade_position = current_trade3
@@ -104,14 +105,14 @@ class ModelComparer:
                 self.send_email = False
                 self.trade_position = current_trade3
                 self.trade_target = pip_size3
-        elif current_trade2 == current_trade3:
-            if pip_size3 >= 5:
-                self.comment = f"4hr model(v5) and 1hr model predict a strong {current_trade2}.{next_line}"
+        elif current_trade1 == current_trade3:
+            if pip_size1 <= 5:
+                self.comment = f"4hr model(v4) and 1hr model predict a weak {current_trade1}.{next_line}"
                 self.send_email = True
-                self.trade_position = current_trade2
-                self.trade_target = pip_size2
-            elif pip_size1 >= 10:
-                self.comment = f"4hr model(v5) has a strong prediction for {current_trade1}.{next_line}"
+                self.trade_position = current_trade1
+                self.trade_target = pip_size1
+            elif pip_size1 >= 5:
+                self.comment = f"4hr model(v4) and 1hr model predict a strong {current_trade1}.{next_line}"
                 self.send_email = True
                 self.trade_position = current_trade1
                 self.trade_target = pip_size1
