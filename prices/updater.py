@@ -32,6 +32,7 @@ def start():
     # Method 2: create the scheduler with adjusted time specified by next_hour
     # next_hour specify the minutes and seconds
     # next_hour = (current_time + timedelta(hours=1)).replace(minute=34, second=0, microsecond=0)
+
     next_hour = (current_time).replace(minute=1, second=0, microsecond=0)
     scheduler.add_job(run_procedure_sequence, 'interval', minutes=5, start_date=next_hour)
     

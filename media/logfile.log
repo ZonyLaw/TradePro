@@ -2321,3 +2321,105 @@ NameError: name 'bb_status' is not defined
 2024-03-24 09:16:00,007 - INFO - Inside the procedure sequence
 2024-03-24 09:16:13,666 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-24 09:21:00 GMT)" executed successfully
 2024-03-24 09:16:13,992 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-24 09:21:00 GMT)" executed successfully
+2024-03-24 18:59:15,867 - INFO - Starting scheduler
+2024-03-24 18:59:16,106 - INFO - Updater date and time: 2024-03-24 18:59:16.105149
+2024-03-24 18:59:16,117 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-24 18:59:16,117 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-24 18:59:16,117 - INFO - Scheduler started
+2024-03-24 18:59:16,119 - INFO - Ending scheduler
+2024-03-24 18:59:17,982 - INFO - Starting scheduler
+2024-03-24 18:59:18,114 - INFO - Updater date and time: 2024-03-24 18:59:18.114847
+2024-03-24 18:59:18,127 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-24 18:59:18,127 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-24 18:59:18,127 - INFO - Scheduler started
+2024-03-24 18:59:18,129 - INFO - Ending scheduler
+2024-03-24 18:59:18,146 - INFO - Watching for file changes with StatReloader
+2024-03-24 18:59:19,576 - WARNING - Not Found: /images/favicon.ico
+2024-03-24 18:59:25,290 - WARNING - Not Found: /favicon.ico
+2024-03-25 00:13:28,699 - INFO - Starting scheduler
+2024-03-25 00:13:28,699 - INFO - Updater date and time: 2024-03-25 00:13:28.699606
+2024-03-25 00:13:28,699 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 00:13:28,699 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 00:13:28,699 - INFO - Scheduler started
+2024-03-25 00:13:28,699 - INFO - Ending scheduler
+2024-03-25 00:13:30,797 - INFO - Starting scheduler
+2024-03-25 00:13:30,797 - INFO - Updater date and time: 2024-03-25 00:13:30.797385
+2024-03-25 00:13:30,799 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 00:13:30,799 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 00:13:30,799 - INFO - Scheduler started
+2024-03-25 00:13:30,799 - INFO - Ending scheduler
+2024-03-25 00:13:30,816 - INFO - Watching for file changes with StatReloader
+2024-03-25 00:13:32,554 - WARNING - Not Found: /images/favicon.ico
+2024-03-25 00:13:37,467 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-25 00:13:42,355 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-03-25 00:13:44,500 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-03-25 00:15:16,929 - INFO - Starting scheduler
+2024-03-25 00:15:16,932 - INFO - Updater date and time: 2024-03-25 00:15:16.931922
+2024-03-25 00:15:16,933 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 00:15:16,933 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 00:15:16,933 - INFO - Scheduler started
+2024-03-25 00:15:16,935 - INFO - Ending scheduler
+2024-03-25 00:15:17,938 - INFO - Running job "run_procedure_sequence (trigger: date[2024-03-25 00:15:17 GMT], next run at: 2024-03-25 00:15:17 GMT)" (scheduled at 2024-03-25 00:15:17.932241+00:00)
+2024-03-25 00:15:17,938 - INFO - Removed job e5ce4c16c5374d0c8fda7c923e01df1a
+2024-03-25 00:15:17,939 - INFO - Inside the procedure sequence
+2024-03-25 00:15:18,517 - ERROR - Job "run_procedure_sequence (trigger: date[2024-03-25 00:15:17 GMT], next run at: 2024-03-25 00:15:17 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 60, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-25 00:15:19,023 - INFO - Starting scheduler
+2024-03-25 00:15:19,023 - INFO - Updater date and time: 2024-03-25 00:15:19.023853
+2024-03-25 00:15:19,023 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 00:15:19,023 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 00:15:19,023 - INFO - Scheduler started
+2024-03-25 00:15:19,030 - INFO - Ending scheduler
+2024-03-25 00:15:19,053 - INFO - Watching for file changes with StatReloader
+2024-03-25 00:15:20,026 - INFO - Running job "run_procedure_sequence (trigger: date[2024-03-25 00:15:20 GMT], next run at: 2024-03-25 00:15:20 GMT)" (scheduled at 2024-03-25 00:15:20.023853+00:00)
+2024-03-25 00:15:20,026 - INFO - Removed job 155cd0e145724abeaa8b3aea89d07c4e
+2024-03-25 00:15:20,026 - INFO - Inside the procedure sequence
+2024-03-25 00:15:20,617 - ERROR - Job "run_procedure_sequence (trigger: date[2024-03-25 00:15:20 GMT], next run at: 2024-03-25 00:15:20 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 60, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-25 06:58:20,266 - INFO - Starting scheduler
+2024-03-25 06:58:20,266 - INFO - Updater date and time: 2024-03-25 06:58:20.266366
+2024-03-25 06:58:20,266 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 06:58:20,266 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 06:58:20,266 - INFO - Scheduler started
+2024-03-25 06:58:20,266 - INFO - Ending scheduler
+2024-03-25 06:58:22,200 - INFO - Starting scheduler
+2024-03-25 06:58:22,200 - INFO - Updater date and time: 2024-03-25 06:58:22.200320
+2024-03-25 06:58:22,201 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-25 06:58:22,201 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-25 06:58:22,201 - INFO - Scheduler started
+2024-03-25 06:58:22,203 - INFO - Ending scheduler
+2024-03-25 06:58:22,231 - INFO - Watching for file changes with StatReloader
+2024-03-25 06:58:23,990 - WARNING - Not Found: /images/favicon.ico
+2024-03-25 06:58:28,463 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
