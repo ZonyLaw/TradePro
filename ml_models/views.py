@@ -240,7 +240,7 @@ def ml_report(request):
     bb_target = model_comparer.bb_target
           
     #calculate entry and exit point  
-    if potential_trade == 'buy':
+    if potential_trade == 'Buy':
         entry_adjustment = -0.04
         stop_adjustment = -0.1
     else:
