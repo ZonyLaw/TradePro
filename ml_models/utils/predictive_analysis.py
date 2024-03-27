@@ -7,13 +7,14 @@ import datetime
 from django.conf import settings
 from tickers.models import Ticker
 from prices.models import Price
-from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results
+from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results, ModelComparer
 from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
 from ml_models.utils.model_price_processing import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
+
 
 
 def load_file(file_path):
@@ -391,10 +392,13 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
                                                         model_input_data=pred_variability['X_live_discretized']
                                                     )
         
-        # pred_variability_results[model_version] = transform_format(f"pred_variability_{model_version}", [sensitivity_adjustment, -sensitivity_adjustment], pred_variability, extra_variability)
+    pred_historical_v4 = pred_variability_results[model_versions[0]]
+    pred_historical_v5 = pred_variability_results[model_versions[1]]
+    pred_historical_1h_v5 = pred_variability_results[model_versions[2]]
     
-    
-    version_comment_pos, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 0, 1 )
-    version_comment_neg, _ = compare_version_results(pred_variability_results[model_versions[0]], pred_variability_results[model_versions[1]], pred_variability_results[model_versions[2]], 1, 1 )
+    model_comparer_pos = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 0, 1 )
+    model_comparer_neg = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 0, 1 )
+    version_comment_pos = model_comparer_pos.comment
+    version_comment_neg = model_comparer_neg.comment
     
     return version_comment_pos, version_comment_neg

@@ -96,12 +96,12 @@ class ModelComparer:
         elif current_trade1 == current_trade2 and current_trade3 != current_trade1:
             if pip_size3 >= 5:
                 #shows a contradiction between long and short term position, but we take the short position
-                self.comment = f"A retracement so it is a {current_trade3}."
+                self.comment = f"A {current_trade3} retracement or reverse point here!"
                 self.send_email = False
                 self.trade_position = current_trade3
                 self.trade_target = pip_size3
             elif pip_size3 <= 5:
-                self.comment = f"A weak retracement so it is a {current_trade3}."
+                self.comment = f"A weak {current_trade3} retracement or reverse point here!."
                 self.send_email = False
                 self.trade_position = current_trade3
                 self.trade_target = pip_size3

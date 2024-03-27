@@ -246,6 +246,7 @@ def ml_report(request):
     else:
         entry_adjustment = 0.04
         stop_adjustment = 0.1
+        trade_target = -trade_target
     
     
     current_time = datetime.datetime.now()
