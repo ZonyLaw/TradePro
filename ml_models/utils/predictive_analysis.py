@@ -397,7 +397,7 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
     pred_historical_1h_v5 = pred_variability_results[model_versions[2]]
     
     model_comparer_pos = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 0, 1 )
-    model_comparer_neg = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 0, 1 )
+    model_comparer_neg = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 1, 1 )
     version_comment_pos = model_comparer_pos.comment
     version_comment_neg = model_comparer_neg.comment
     

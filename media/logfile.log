@@ -2861,3 +2861,16 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port
 2024-03-27 20:28:22,941 - INFO - Scheduler started
 2024-03-27 20:28:22,942 - INFO - Ending scheduler
 2024-03-27 20:28:22,961 - INFO - Watching for file changes with StatReloader
+2024-03-27 20:36:27,257 - INFO - Starting scheduler
+2024-03-27 20:36:27,257 - INFO - Updater date and time: 2024-03-27 20:36:27.257857
+2024-03-27 20:36:27,273 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-27 20:36:27,273 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-27 20:36:27,273 - INFO - Scheduler started
+2024-03-27 20:36:27,275 - INFO - Ending scheduler
+2024-03-27 20:36:29,015 - INFO - Starting scheduler
+2024-03-27 20:36:29,016 - INFO - Updater date and time: 2024-03-27 20:36:29.016700
+2024-03-27 20:36:29,017 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-27 20:36:29,017 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-27 20:36:29,017 - INFO - Scheduler started
+2024-03-27 20:36:29,019 - INFO - Ending scheduler
+2024-03-27 20:36:29,060 - INFO - Watching for file changes with StatReloader
