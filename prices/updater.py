@@ -3,7 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from django.conf import settings
 from prices.IG_session.run_IG import run_IG
 from tradepro.utils.email_alert import email_alert
-from ml_models.utils.predictive_analysis import run_model_predictions
+from ml_models.utils.trade_model import run_model_predictions
 from tradepro.utils.read_json import read_ticker_list
 
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds

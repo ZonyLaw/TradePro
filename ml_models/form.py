@@ -14,7 +14,7 @@ BB_CHOICES = [
 ]
 
 
-MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5'), ('1h_v5_trade', '1h_v5_trade')]
+MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5'),('v1_reverse', 'v1_reverse')]
 
 TICKER_LIST = [("USDJPY", "USDJPY"), ("EURUSD","EURUSD")]
 

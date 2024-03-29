@@ -9,14 +9,14 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
-from .utils.predictive_analysis import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
+from .utils.trade_model import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
 from .utils.access_results import read_prediction_from_json, write_to_csv
 from .utils.manual_model_input import manual_price_input
 
 from .form import ModelParameters, ModelSelection, VersionSelection, VariabilitySize
 from prices.models import Price
 from tickers.models import Ticker
-from ml_models.utils.model_price_processing import v4Processing
+from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 
 from ml_models.utils.reverse_model import standard_analysis_reverse

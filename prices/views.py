@@ -10,7 +10,7 @@ from datetime import datetime
 from django.contrib import messages
 from django.conf import settings
 from prices.IG_session.run_IG import run_IG
-from ml_models.utils.predictive_analysis import run_model_predictions
+from ml_models.utils.trade_model import run_model_predictions
 
 
 def createPrice(request):

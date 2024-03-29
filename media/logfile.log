@@ -3888,3 +3888,540 @@ KeyError: 'prediction_label'
 2024-03-29 11:41:59,319 - INFO - Scheduler started
 2024-03-29 11:41:59,320 - INFO - Ending scheduler
 2024-03-29 11:41:59,330 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:08:38,435 - INFO - Starting scheduler
+2024-03-29 18:08:38,435 - INFO - Updater date and time: 2024-03-29 18:08:38.435122
+2024-03-29 18:08:38,435 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:08:38,435 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:08:38,435 - INFO - Scheduler started
+2024-03-29 18:08:38,435 - INFO - Ending scheduler
+2024-03-29 18:08:40,583 - INFO - Starting scheduler
+2024-03-29 18:08:40,583 - INFO - Updater date and time: 2024-03-29 18:08:40.583643
+2024-03-29 18:08:40,583 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:08:40,583 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:08:40,583 - INFO - Scheduler started
+2024-03-29 18:08:40,599 - INFO - Ending scheduler
+2024-03-29 18:08:40,600 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:08:43,276 - WARNING - Not Found: /images/favicon.ico
+2024-03-29 18:09:00,619 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 292, in ml_report
+    reverse = standard_analysis_reverse("USDJPY", "v1_reverse")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 105, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in reverse_model_run
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in <listcomp>
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                         ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '1.0'
+2024-03-29 18:09:05,696 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 292, in ml_report
+    reverse = standard_analysis_reverse("USDJPY", "v1_reverse")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 105, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in reverse_model_run
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in <listcomp>
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                         ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '1.0'
+2024-03-29 18:09:09,568 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
+2024-03-29 18:09:12,142 - WARNING - Not Found: /ml_models/export-model-results/images/favicon.ico
+2024-03-29 18:09:17,695 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 285, in trade_forecast_assessment
+    pred_historical = model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 132, in model_run
+    model_pipeline = load_file(
+                     ^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 22, in load_file
+    return joblib.load(filename=file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/pl_predictions/v1_reverse/clf_pipeline.pkl'
+2024-03-29 18:09:17,809 - WARNING - Not Found: /favicon.ico
+2024-03-29 18:11:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:11:00 GMT)" (scheduled at 2024-03-29 18:11:00+00:00)
+2024-03-29 18:11:00,010 - INFO - Inside the procedure sequence
+2024-03-29 18:11:00,027 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:11:00 GMT)" (scheduled at 2024-03-29 18:11:00+00:00)
+2024-03-29 18:11:00,027 - INFO - Inside the procedure sequence
+2024-03-29 18:11:00,738 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:16:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:11:08,983 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:16:00 GMT)" executed successfully
+2024-03-29 18:11:52,904 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-29 18:11:55,231 - INFO - Starting scheduler
+2024-03-29 18:11:55,232 - INFO - Updater date and time: 2024-03-29 18:11:55.232681
+2024-03-29 18:11:55,233 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:11:55,234 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:11:55,234 - INFO - Scheduler started
+2024-03-29 18:11:55,235 - INFO - Ending scheduler
+2024-03-29 18:11:55,259 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:12:20,747 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 288, in trade_forecast_assessment
+    pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 70, in reverse_model_run
+    X_live_subset= reverse_pipeline_data_cleaning.transform(X_live_subset)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 206, in transform
+    X = self._check_transform_input_and_state(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 185, in _check_transform_input_and_state
+    _check_X_matches_training_df(X, self.n_features_in_)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\dataframe_checks.py", line 239, in _check_X_matches_training_df
+    raise ValueError(
+ValueError: The number of columns in this dataset is different from the one used to fit this transformer (when using the fit() method).
+2024-03-29 18:16:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:21:00 GMT)" (scheduled at 2024-03-29 18:16:00+00:00)
+2024-03-29 18:16:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:16:00 GMT)" (scheduled at 2024-03-29 18:16:00+00:00)
+2024-03-29 18:16:00,009 - INFO - Inside the procedure sequence
+2024-03-29 18:16:00,009 - INFO - Inside the procedure sequence
+2024-03-29 18:16:00,598 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:21:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:16:08,664 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:21:00 GMT)" executed successfully
+2024-03-29 18:16:34,575 - INFO - Starting scheduler
+2024-03-29 18:16:34,575 - INFO - Updater date and time: 2024-03-29 18:16:34.575985
+2024-03-29 18:16:34,575 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:16:34,575 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:16:34,575 - INFO - Scheduler started
+2024-03-29 18:16:34,575 - INFO - Ending scheduler
+2024-03-29 18:16:36,764 - INFO - Starting scheduler
+2024-03-29 18:16:36,766 - INFO - Updater date and time: 2024-03-29 18:16:36.765627
+2024-03-29 18:16:36,767 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:16:36,767 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:16:36,767 - INFO - Scheduler started
+2024-03-29 18:16:36,769 - INFO - Ending scheduler
+2024-03-29 18:16:36,793 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:16:57,318 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 288, in trade_forecast_assessment
+    pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in reverse_model_run
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in <listcomp>
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                         ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '0.0'
+2024-03-29 18:19:43,990 - INFO - Starting scheduler
+2024-03-29 18:19:43,992 - INFO - Updater date and time: 2024-03-29 18:19:43.992484
+2024-03-29 18:19:43,993 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:19:43,993 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:19:43,993 - INFO - Scheduler started
+2024-03-29 18:19:43,995 - INFO - Ending scheduler
+2024-03-29 18:19:46,191 - INFO - Starting scheduler
+2024-03-29 18:19:46,192 - INFO - Updater date and time: 2024-03-29 18:19:46.192604
+2024-03-29 18:19:46,193 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:19:46,193 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:19:46,194 - INFO - Scheduler started
+2024-03-29 18:19:46,195 - INFO - Ending scheduler
+2024-03-29 18:19:46,214 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:20:03,606 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 288, in trade_forecast_assessment
+    pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in reverse_model_run
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in <listcomp>
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                         ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '0.0'
+2024-03-29 18:23:25,582 - INFO - Starting scheduler
+2024-03-29 18:23:25,582 - INFO - Updater date and time: 2024-03-29 18:23:25.582928
+2024-03-29 18:23:25,584 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:23:25,584 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:23:25,584 - INFO - Scheduler started
+2024-03-29 18:23:25,585 - INFO - Ending scheduler
+2024-03-29 18:23:27,698 - INFO - Starting scheduler
+2024-03-29 18:23:27,699 - INFO - Updater date and time: 2024-03-29 18:23:27.699302
+2024-03-29 18:23:27,700 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:23:27,700 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:23:27,700 - INFO - Scheduler started
+2024-03-29 18:23:27,701 - INFO - Ending scheduler
+2024-03-29 18:23:27,721 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:23:33,255 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 292, in ml_report
+    reverse = standard_analysis_reverse("USDJPY", "v1_reverse")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 105, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in reverse_model_run
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 75, in <listcomp>
+    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
+                         ~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: '1.0'
+2024-03-29 18:24:33,721 - INFO - Starting scheduler
+2024-03-29 18:24:33,721 - INFO - Updater date and time: 2024-03-29 18:24:33.721968
+2024-03-29 18:24:33,721 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:24:33,721 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:24:33,721 - INFO - Scheduler started
+2024-03-29 18:24:33,721 - INFO - Ending scheduler
+2024-03-29 18:24:35,873 - INFO - Starting scheduler
+2024-03-29 18:24:35,873 - INFO - Updater date and time: 2024-03-29 18:24:35.873657
+2024-03-29 18:24:35,873 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:24:35,873 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:24:35,873 - INFO - Scheduler started
+2024-03-29 18:24:35,873 - INFO - Ending scheduler
+2024-03-29 18:24:35,912 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:24:43,732 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 293, in ml_report
+    reverse_pred = reverse['predictions_label']
+                   ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'predictions_label'
+2024-03-29 18:27:15,691 - INFO - Starting scheduler
+2024-03-29 18:27:15,691 - INFO - Updater date and time: 2024-03-29 18:27:15.691668
+2024-03-29 18:27:15,691 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:27:15,691 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:27:15,691 - INFO - Scheduler started
+2024-03-29 18:27:15,691 - INFO - Ending scheduler
+2024-03-29 18:27:17,770 - INFO - Starting scheduler
+2024-03-29 18:27:17,771 - INFO - Updater date and time: 2024-03-29 18:27:17.771024
+2024-03-29 18:27:17,772 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:27:17,772 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:27:17,772 - INFO - Scheduler started
+2024-03-29 18:27:17,774 - INFO - Ending scheduler
+2024-03-29 18:27:17,801 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:27:23,032 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-29 18:29:31,373 - INFO - Starting scheduler
+2024-03-29 18:29:31,373 - INFO - Updater date and time: 2024-03-29 18:29:31.373139
+2024-03-29 18:29:31,373 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:29:31,373 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:29:31,373 - INFO - Scheduler started
+2024-03-29 18:29:31,373 - INFO - Ending scheduler
+2024-03-29 18:29:33,514 - INFO - Starting scheduler
+2024-03-29 18:29:33,514 - INFO - Updater date and time: 2024-03-29 18:29:33.514478
+2024-03-29 18:29:33,514 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:29:33,514 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:29:33,514 - INFO - Scheduler started
+2024-03-29 18:29:33,530 - INFO - Ending scheduler
+2024-03-29 18:29:33,530 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:29:53,306 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 288, in trade_forecast_assessment
+    pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 70, in reverse_model_run
+    X_live_subset= reverse_pipeline_data_cleaning.transform(X_live_subset)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 206, in transform
+    X = self._check_transform_input_and_state(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 185, in _check_transform_input_and_state
+    _check_X_matches_training_df(X, self.n_features_in_)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\dataframe_checks.py", line 239, in _check_X_matches_training_df
+    raise ValueError(
+ValueError: The number of columns in this dataset is different from the one used to fit this transformer (when using the fit() method).
+2024-03-29 18:30:33,267 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py changed, reloading.
+2024-03-29 18:30:35,559 - INFO - Starting scheduler
+2024-03-29 18:30:35,559 - INFO - Updater date and time: 2024-03-29 18:30:35.559033
+2024-03-29 18:30:35,559 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:30:35,559 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:30:35,559 - INFO - Scheduler started
+2024-03-29 18:30:35,563 - INFO - Ending scheduler
+2024-03-29 18:30:35,585 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:30:37,322 - WARNING - Not Found: /images/favicon.ico
+2024-03-29 18:30:47,488 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
+2024-03-29 18:30:49,166 - WARNING - Not Found: /ml_models/export-model-results/images/favicon.ico
+2024-03-29 18:31:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:31:00 GMT)" (scheduled at 2024-03-29 18:31:00+00:00)
+2024-03-29 18:31:00,011 - INFO - Inside the procedure sequence
+2024-03-29 18:31:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:31:00 GMT)" (scheduled at 2024-03-29 18:31:00+00:00)
+2024-03-29 18:31:00,011 - INFO - Inside the procedure sequence
+2024-03-29 18:31:00,762 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:36:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:31:10,903 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:36:00 GMT)" executed successfully
+2024-03-29 18:32:29,317 - INFO - Starting scheduler
+2024-03-29 18:32:29,317 - INFO - Updater date and time: 2024-03-29 18:32:29.317596
+2024-03-29 18:32:29,317 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:32:29,317 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:32:29,317 - INFO - Scheduler started
+2024-03-29 18:32:29,317 - INFO - Ending scheduler
+2024-03-29 18:32:31,451 - INFO - Starting scheduler
+2024-03-29 18:32:31,452 - INFO - Updater date and time: 2024-03-29 18:32:31.452238
+2024-03-29 18:32:31,453 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 18:32:31,453 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 18:32:31,453 - INFO - Scheduler started
+2024-03-29 18:32:31,454 - INFO - Ending scheduler
+2024-03-29 18:32:31,476 - INFO - Watching for file changes with StatReloader
+2024-03-29 18:32:38,062 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-29 18:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:36:00 GMT)" (scheduled at 2024-03-29 18:36:00+00:00)
+2024-03-29 18:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:36:00 GMT)" (scheduled at 2024-03-29 18:36:00+00:00)
+2024-03-29 18:36:00,008 - INFO - Inside the procedure sequence
+2024-03-29 18:36:00,009 - INFO - Inside the procedure sequence
+2024-03-29 18:36:00,691 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:41:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:36:00,691 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:41:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:41:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:46:00 GMT)" (scheduled at 2024-03-29 18:41:00+00:00)
+2024-03-29 18:41:00,007 - INFO - Inside the procedure sequence
+2024-03-29 18:41:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:46:00 GMT)" (scheduled at 2024-03-29 18:41:00+00:00)
+2024-03-29 18:41:00,007 - INFO - Inside the procedure sequence
+2024-03-29 18:41:00,760 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:46:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-29 18:41:08,482 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-29 18:46:00 GMT)" executed successfully
+2024-03-29 19:21:22,371 - INFO - Starting scheduler
+2024-03-29 19:21:22,371 - INFO - Updater date and time: 2024-03-29 19:21:22.371577
+2024-03-29 19:21:22,371 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:21:22,371 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:21:22,371 - INFO - Scheduler started
+2024-03-29 19:21:22,371 - INFO - Ending scheduler
+2024-03-29 19:21:24,129 - INFO - Starting scheduler
+2024-03-29 19:21:24,129 - INFO - Updater date and time: 2024-03-29 19:21:24.129738
+2024-03-29 19:21:24,129 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:21:24,129 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:21:24,129 - INFO - Scheduler started
+2024-03-29 19:21:24,129 - INFO - Ending scheduler
+2024-03-29 19:21:24,147 - INFO - Watching for file changes with StatReloader
+2024-03-29 19:21:41,050 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\predictive_analysis.py", line 288, in trade_forecast_assessment
+    pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 70, in reverse_model_run
+    X_live_subset= reverse_pipeline_data_cleaning.transform(X_live_subset)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 206, in transform
+    X = self._check_transform_input_and_state(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\encoding\base_encoder.py", line 185, in _check_transform_input_and_state
+    _check_X_matches_training_df(X, self.n_features_in_)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\dataframe_checks.py", line 239, in _check_X_matches_training_df
+    raise ValueError(
+ValueError: The number of columns in this dataset is different from the one used to fit this transformer (when using the fit() method).
+2024-03-29 19:21:41,170 - WARNING - Not Found: /favicon.ico
+2024-03-29 19:25:15,101 - INFO - Starting scheduler
+2024-03-29 19:25:15,102 - INFO - Updater date and time: 2024-03-29 19:25:15.101294
+2024-03-29 19:25:15,103 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:25:15,103 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:25:15,103 - INFO - Scheduler started
+2024-03-29 19:25:15,103 - INFO - Ending scheduler
+2024-03-29 19:25:16,806 - INFO - Starting scheduler
+2024-03-29 19:25:16,807 - INFO - Updater date and time: 2024-03-29 19:25:16.807777
+2024-03-29 19:25:16,808 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:25:16,808 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:25:16,808 - INFO - Scheduler started
+2024-03-29 19:25:16,810 - INFO - Ending scheduler
+2024-03-29 19:25:16,826 - INFO - Watching for file changes with StatReloader
+2024-03-29 19:31:43,655 - INFO - Starting scheduler
+2024-03-29 19:31:43,655 - INFO - Updater date and time: 2024-03-29 19:31:43.655898
+2024-03-29 19:31:43,657 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:31:43,658 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:31:43,658 - INFO - Scheduler started
+2024-03-29 19:31:43,658 - INFO - Ending scheduler
+2024-03-29 19:31:43,681 - INFO - Watching for file changes with StatReloader
+2024-03-29 19:32:01,206 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-03-29 19:32:03,148 - INFO - Starting scheduler
+2024-03-29 19:32:03,149 - INFO - Updater date and time: 2024-03-29 19:32:03.149237
+2024-03-29 19:32:03,150 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-29 19:32:03,150 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-29 19:32:03,150 - INFO - Scheduler started
+2024-03-29 19:32:03,151 - INFO - Ending scheduler
+2024-03-29 19:32:03,168 - INFO - Watching for file changes with StatReloader

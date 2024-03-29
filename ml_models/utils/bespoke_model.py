@@ -66,6 +66,7 @@ class v4Processing(StandardPriceProcessing):
         df = self.price_difference(df, "ma50_1", "ma100_1", 1 )
         df = self.price_difference(df, "open", "close", 1 )
         df['open_close_diff1_lag1'] = df['open_close_diff_1'].shift(1)
+     
 
         df = self.trend_measure(df,1)   
         df['pl_close_1_hr'] = df['pl_close_1_hr'].ffill()
@@ -86,6 +87,8 @@ class v4Processing(StandardPriceProcessing):
         df_4hr = self.price_difference(df_4hr, "close", "ma100_4",4 )
         df_4hr = self.price_difference(df_4hr, "ma20_4", "ma50_4",4 )
         df_4hr = self.price_difference(df_4hr, "ma50_4", "ma100_4",4 )
+        df_4hr = self.price_difference(df_4hr, "high", "upper_bb20_4", 4)
+        df_4hr = self.price_difference(df_4hr, "low", "lower_bb20_4", 4) 
         
         # columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4', "lower_bb20_4",  "upper_bb20_4" ]
         columns = ['high', 'low', 'open', 'close', 'dev20_4', 'dev50_4', 'dev100_4'  ]

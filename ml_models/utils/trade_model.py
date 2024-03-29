@@ -12,8 +12,9 @@ from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
-from ml_models.utils.model_price_processing import v4Processing
+from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
+from ml_models.utils.reverse_model import reverse_model_run
 
 
 
@@ -275,14 +276,18 @@ def trade_forecast_assessment(ticker, model_version):
         dataframe: a dataframe containing the results
     """
     
-    if model_version == "v4":
+    if model_version == "v4" or model_version == "v1_reverse":
         dp = v4Processing(ticker=ticker)
     else:
         dp = StandardPriceProcessing(ticker=ticker)
     
     
     X_live_historical = dp.historical_record(120)
-    pred_historical = model_run(ticker, X_live_historical, model_version)
+    
+    if model_version == "v1_reverse":
+        pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
+    else:
+        pred_historical = model_run(ticker, X_live_historical, model_version)
     
     model_prediction_proba = pred_historical['model_prediction_proba']
     model_labels_map = pred_historical['model_labels_map']

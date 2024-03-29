@@ -12,7 +12,7 @@ from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
-from ml_models.utils.model_price_processing import v4Processing
+from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 
 
@@ -22,7 +22,7 @@ def load_file(file_path):
     return joblib.load(filename=file_path)
 
 
-def model_run(ticker, X_live, model_version):
+def reverse_model_run(ticker, X_live, model_version):
     
     """
     This function calls on model pipline and generate the results as dataframe. 
@@ -56,7 +56,7 @@ def model_run(ticker, X_live, model_version):
                        .columns
                        .to_list()
                        )
-    label_map = {"0":"same", "1":"reverse"}
+    label_map = {"0":"continue", "1":"reverse"}
     
     # Discretize the target variable (ie. y dependent) 
     
@@ -72,15 +72,14 @@ def model_run(ticker, X_live, model_version):
     # predict the probability for each of the cateogries
     model_prediction = model_pipeline.predict(X_live_subset)
     model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
-    predictions_label = [label_map[str(prediction)] for prediction in model_prediction]
-
+    predictions_label = [label_map[str(int(prediction))] for prediction in model_prediction]
     
-    # # format the results of the model
-    # results, extra_results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
-    
+    #
     return {
             'model_prediction_proba': model_prediction_proba,
             'model_prediction': model_prediction,
+            'model_labels_map': ['continue','reverse'],
+            'X_live_discretized': X_live,
             'predictions_label': predictions_label
         }
 
@@ -95,19 +94,7 @@ def standard_analysis_reverse(ticker, model_version, sensitivity_adjustment=0.1)
     Returns:
         dictionary: returns results from model for the different scenarios
     """
-    
-    # Dynamically get the module path involves defining the parent directory
-    # parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    # # Add the parent directory to the Python path
-    # sys.path.append(parent_directory)
-    # module_name = f'trained_models.{ticker}.pl_predictions.{model_version}.data_processing'
-
-    # try:
-    #     dp = importlib.import_module(module_name)
-    # except ImportError:
-    #     print(f"Error importing data_processing module for model_version: {model_version}")
-    #     dp = None
-    
+       
     if model_version == "v1_reverse1":
         dp = v4Processing(ticker=ticker)
     else:
@@ -116,7 +103,7 @@ def standard_analysis_reverse(ticker, model_version, sensitivity_adjustment=0.1)
     X_live_reverse = dp.historical_record(4)
     
     
-    pred_reverse_results = model_run(ticker, X_live_reverse, model_version)
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
 
     
     print("reverse prediction results:>>>>>>>", pred_reverse_results)
