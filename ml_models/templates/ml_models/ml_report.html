@@ -207,7 +207,40 @@
     </table>
 
     <br>
-    {% comment %} <p>{{bb_status.2}}</p> {% endcomment %}
+    
+    <h2>Prediction of reversal</h2>
+
+    <table>
+        <thead>
+
+            <tr>
+
+                    <th>3hr ago</th>
+                    <th>2hr ago</th>
+                    <th>1hr ago</th>
+                    <th>current</th>
+
+
+            </tr>
+                
+        </thead>
+        <tbody>
+
+            <tr>
+                {% for pred in reverse_pred %}
+                    <td>{{ pred }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for prob in reverse_prob%}
+                    <td>{{ prob }}</td>
+                {% endfor %}
+            </tr>
+            
+        </tbody>
+    </table>
+
+
 
 </div>
 

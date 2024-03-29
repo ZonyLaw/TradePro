@@ -149,6 +149,25 @@ class StandardPriceProcessing():
         
 
         return df
+    
+    
+    @staticmethod
+    def reverse_point(df, col2, offset_hr):
+        timeframe = abs(offset_hr)
+        if offset_hr < 0:
+            pl_header = f'pl_{col2}_f{timeframe}_hr'
+        else:
+            pl_header = f'pl_{col2}_{timeframe}_hr'
+        
+             
+        df['reverse_point'] = 0
+
+        # Identify rows where the sign of the current value is different from the sign of the previous value
+        df.loc[df[pl_header] * df[pl_header].shift(1) < 0, 'reverse_point'] = 1
+        
+
+        return df
+
 
     @staticmethod
     def profit_calc2(df, col1, col2, offset_hr):
@@ -439,6 +458,10 @@ class StandardPriceProcessing():
 
     @staticmethod
     def priceDB_to_df(ticker):
+        """
+        This extract prices and turn it into a dataframe with recent price at the bottom.
+        """
+        
         queryset = Price.objects.filter(ticker=ticker)
 
         # Convert queryset to a list of dictionaries
@@ -506,6 +529,7 @@ class StandardPriceProcessing():
         df = self.crossing_bb(df, 1)
         df = self.profit_calc(df, "open", "open", -1)
         df = self.profit_calc(df, "open", "open", -4)
+        df = self.reverse_point(df, "open", -1)
         
         df = self.price_difference(df, "upper_bb20_1", "lower_bb20_1", 1, "up_bb20", "low_bb20"  )
         df = self.price_difference(df, "close", "ma20_1", 1 )

@@ -19,6 +19,8 @@ from tickers.models import Ticker
 from ml_models.utils.model_price_processing import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 
+from ml_models.utils.reverse_model import standard_analysis_reverse
+
 
 
 def ml_predictions(request):
@@ -287,6 +289,11 @@ def ml_report(request):
         '-10 pips':pred_var_neg,
     }
 
+    reverse = standard_analysis_reverse("USDJPY", "v1_reverse")
+    reverse_pred = reverse['predictions_label']
+    reverse_prob = reverse['model_prediction_proba']
+
+
     context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
@@ -294,7 +301,8 @@ def ml_report(request):
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
-             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists}
+             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
+             "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
     
     return render(request, 'ml_models/ml_report.html', context)
 

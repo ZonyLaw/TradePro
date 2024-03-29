@@ -5,6 +5,7 @@ from prices.IG_session.run_IG import run_IG
 from tradepro.utils.email_alert import email_alert
 from ml_models.utils.predictive_analysis import run_model_predictions
 from tradepro.utils.read_json import read_ticker_list
+
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds
 
 
@@ -17,6 +18,10 @@ logging.basicConfig(filename=f'{current_directory}/media/logfile.log', level=log
 def start():
     logging.info("Starting scheduler")
     print("starting scheduler")
+    
+
+    
+    
     ticker = "USDJPY"
     scheduler = BackgroundScheduler()
    
@@ -42,6 +47,7 @@ def start():
     # scheduler.add_job(run_IG, 'interval', args=[ticker], hours=1)
     # scheduler.add_job(run_IG, 'cron', args=[ticker], hour='*')
 
+ 
     
     scheduler.start()
     print("ending scheduler")
@@ -54,6 +60,7 @@ def run_procedure_sequence():
     # tickers = ["USDJPY","EURUSD"]
     #defines the list of tickers
     tickers = read_ticker_list()['tickers']
+    
     
     for ticker in tickers:
         #update the price table
