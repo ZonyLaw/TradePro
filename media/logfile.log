@@ -4425,3 +4425,903 @@ ValueError: The number of columns in this dataset is different from the one used
 2024-03-29 19:32:03,150 - INFO - Scheduler started
 2024-03-29 19:32:03,151 - INFO - Ending scheduler
 2024-03-29 19:32:03,168 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:34:03,164 - INFO - Starting scheduler
+2024-03-30 07:34:03,180 - INFO - Updater date and time: 2024-03-30 07:34:03.180105
+2024-03-30 07:34:03,180 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:34:03,180 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:34:03,180 - INFO - Scheduler started
+2024-03-30 07:34:03,182 - INFO - Ending scheduler
+2024-03-30 07:34:05,299 - INFO - Starting scheduler
+2024-03-30 07:34:05,299 - INFO - Updater date and time: 2024-03-30 07:34:05.299838
+2024-03-30 07:34:05,299 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:34:05,299 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:34:05,299 - INFO - Scheduler started
+2024-03-30 07:34:05,311 - INFO - Ending scheduler
+2024-03-30 07:34:05,333 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:34:06,621 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\views.py", line 11, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'model_accuracy' with no arguments not found. 1 pattern(s) tried: ['ml_models/model\\-accuracy/(?P<model_version>[^/]+)/\\Z']
+2024-03-30 07:34:06,968 - WARNING - Not Found: /favicon.ico
+2024-03-30 07:34:53,712 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\urls.py changed, reloading.
+2024-03-30 07:34:56,111 - INFO - Starting scheduler
+2024-03-30 07:34:56,112 - INFO - Updater date and time: 2024-03-30 07:34:56.112442
+2024-03-30 07:34:56,113 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:34:56,114 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:34:56,114 - INFO - Scheduler started
+2024-03-30 07:34:56,115 - INFO - Ending scheduler
+2024-03-30 07:34:56,125 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:35:21,209 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\views.py", line 11, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'model-accuracy' with no arguments not found. 1 pattern(s) tried: ['ml_models/model\\-accuracy/(?P<model_version>[^/]+)/\\Z']
+2024-03-30 07:36:00,019 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:36:00 GMT)" (scheduled at 2024-03-30 07:36:00+00:00)
+2024-03-30 07:36:00,019 - INFO - Inside the procedure sequence
+2024-03-30 07:36:00,019 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:36:00 GMT)" (scheduled at 2024-03-30 07:36:00+00:00)
+2024-03-30 07:36:00,019 - INFO - Inside the procedure sequence
+2024-03-30 07:36:08,241 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-03-30 07:36:09,015 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\views.py", line 11, in home
+    return render(request, 'home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'model-accuracy' with no arguments not found. 1 pattern(s) tried: ['ml_models/model\\-accuracy/(?P<model_version>[^/]+)/\\Z']
+2024-03-30 07:36:11,152 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:41:00 GMT)" executed successfully
+2024-03-30 07:36:11,497 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:41:00 GMT)" executed successfully
+2024-03-30 07:36:33,774 - INFO - Starting scheduler
+2024-03-30 07:36:33,774 - INFO - Updater date and time: 2024-03-30 07:36:33.774544
+2024-03-30 07:36:33,774 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:36:33,774 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:36:33,774 - INFO - Scheduler started
+2024-03-30 07:36:33,774 - INFO - Ending scheduler
+2024-03-30 07:36:35,964 - INFO - Starting scheduler
+2024-03-30 07:36:35,964 - INFO - Updater date and time: 2024-03-30 07:36:35.964035
+2024-03-30 07:36:35,964 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:36:35,964 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:36:35,964 - INFO - Scheduler started
+2024-03-30 07:36:35,964 - INFO - Ending scheduler
+2024-03-30 07:36:35,997 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:36:36,584 - WARNING - Not Found: /images/favicon.ico
+2024-03-30 07:36:40,482 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 416, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+                                                                                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+2024-03-30 07:37:47,025 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:37:49,429 - INFO - Starting scheduler
+2024-03-30 07:37:49,429 - INFO - Updater date and time: 2024-03-30 07:37:49.429334
+2024-03-30 07:37:49,429 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:37:49,429 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:37:49,429 - INFO - Scheduler started
+2024-03-30 07:37:49,429 - INFO - Ending scheduler
+2024-03-30 07:37:49,462 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:37:55,242 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 416, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+                                                                                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+2024-03-30 07:38:37,436 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:38:40,026 - INFO - Starting scheduler
+2024-03-30 07:38:40,026 - INFO - Updater date and time: 2024-03-30 07:38:40.026923
+2024-03-30 07:38:40,026 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:38:40,026 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:38:40,026 - INFO - Scheduler started
+2024-03-30 07:38:40,026 - INFO - Ending scheduler
+2024-03-30 07:38:40,060 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:38:41,663 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 416, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+                                                                                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+2024-03-30 07:39:03,645 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 416, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+                                                                                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+2024-03-30 07:39:51,340 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:39:53,871 - INFO - Starting scheduler
+2024-03-30 07:39:53,871 - INFO - Updater date and time: 2024-03-30 07:39:53.871534
+2024-03-30 07:39:53,871 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:39:53,871 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:39:53,871 - INFO - Scheduler started
+2024-03-30 07:39:53,871 - INFO - Ending scheduler
+2024-03-30 07:39:53,887 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:39:58,832 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 416, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+                                                                                       ^^^^^^^^
+UnboundLocalError: cannot access local variable 'accuracy' where it is not associated with a value
+2024-03-30 07:41:00,019 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:41:00 GMT)" (scheduled at 2024-03-30 07:41:00+00:00)
+2024-03-30 07:41:00,019 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:41:00 GMT)" (scheduled at 2024-03-30 07:41:00+00:00)
+2024-03-30 07:41:00,019 - INFO - Inside the procedure sequence
+2024-03-30 07:41:00,019 - INFO - Inside the procedure sequence
+2024-03-30 07:41:00,886 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:46:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-30 07:41:11,715 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:46:00 GMT)" executed successfully
+2024-03-30 07:42:08,030 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-03-30 07:42:10,533 - INFO - Starting scheduler
+2024-03-30 07:42:10,533 - INFO - Updater date and time: 2024-03-30 07:42:10.533042
+2024-03-30 07:42:10,533 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:42:10,533 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:42:10,533 - INFO - Scheduler started
+2024-03-30 07:42:10,533 - INFO - Ending scheduler
+2024-03-30 07:42:10,573 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:42:14,670 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    return render(request, 'ml_models/model_accuracy.html', {'form': form, "accuracy": accuracy})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ml_models/model_accuracy.html
+2024-03-30 07:44:27,935 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
+2024-03-30 07:45:17,328 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:45:19,690 - INFO - Starting scheduler
+2024-03-30 07:45:19,690 - INFO - Updater date and time: 2024-03-30 07:45:19.690042
+2024-03-30 07:45:19,690 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:45:19,690 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:45:19,690 - INFO - Scheduler started
+2024-03-30 07:45:19,690 - INFO - Ending scheduler
+2024-03-30 07:45:19,719 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:45:23,263 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 412, in display_model_accuracy
+    model_results, accuracy = trade_forecast_assessment(ticker, model_version)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 321, in trade_forecast_assessment
+    accuracy = calculate_accuracy(model_prediction, y_actual)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 343, in calculate_accuracy
+    accuracy = accuracy_score(y_actual, predictions)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\metrics\_classification.py", line 220, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\metrics\_classification.py", line 93, in _check_targets
+    raise ValueError(
+ValueError: Classification metrics can't handle a mix of continuous and multiclass targets
+2024-03-30 07:45:46,131 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:45:48,668 - INFO - Starting scheduler
+2024-03-30 07:45:48,669 - INFO - Updater date and time: 2024-03-30 07:45:48.669626
+2024-03-30 07:45:48,670 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:45:48,670 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:45:48,670 - INFO - Scheduler started
+2024-03-30 07:45:48,671 - INFO - Ending scheduler
+2024-03-30 07:45:48,674 - INFO - Watching for file changes with StatReloader
+2024-03-30 07:46:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:51:00 GMT)" (scheduled at 2024-03-30 07:46:00+00:00)
+2024-03-30 07:46:00,004 - INFO - Inside the procedure sequence
+2024-03-30 07:46:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:51:00 GMT)" (scheduled at 2024-03-30 07:46:00+00:00)
+2024-03-30 07:46:00,004 - INFO - Inside the procedure sequence
+2024-03-30 07:46:00,782 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:51:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-30 07:46:09,181 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 07:51:00 GMT)" executed successfully
+2024-03-30 07:46:19,657 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 07:46:35,633 - INFO - Starting scheduler
+2024-03-30 07:46:35,634 - INFO - Updater date and time: 2024-03-30 07:46:35.634313
+2024-03-30 07:46:35,636 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:46:35,636 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:46:35,636 - INFO - Scheduler started
+2024-03-30 07:46:35,637 - INFO - Ending scheduler
+2024-03-30 07:46:37,669 - INFO - Starting scheduler
+2024-03-30 07:46:37,669 - INFO - Updater date and time: 2024-03-30 07:46:37.669889
+2024-03-30 07:46:37,669 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 07:46:37,669 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 07:46:37,669 - INFO - Scheduler started
+2024-03-30 07:46:37,669 - INFO - Ending scheduler
+2024-03-30 07:46:37,690 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:00:10,314 - INFO - Starting scheduler
+2024-03-30 08:00:10,314 - INFO - Updater date and time: 2024-03-30 08:00:10.314773
+2024-03-30 08:00:10,314 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:00:10,314 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:00:10,314 - INFO - Scheduler started
+2024-03-30 08:00:10,314 - INFO - Ending scheduler
+2024-03-30 08:00:12,305 - INFO - Starting scheduler
+2024-03-30 08:00:12,321 - INFO - Updater date and time: 2024-03-30 08:00:12.321399
+2024-03-30 08:00:12,322 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:00:12,322 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:00:12,322 - INFO - Scheduler started
+2024-03-30 08:00:12,322 - INFO - Ending scheduler
+2024-03-30 08:00:12,351 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:00:28,168 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 412, in display_model_accuracy
+    model_results, accuracy = trade_forecast_assessment(ticker, model_version)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 318, in trade_forecast_assessment
+    disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\discretisation\equal_frequency.py", line 146, in __init__
+    self.variables = _check_init_parameter_variables(variables)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\variable_handling\_init_parameter_checks.py", line 27, in _check_init_parameter_variables
+    raise ValueError(msg)
+ValueError: variables should be a string, an int or a list of strings or integers.
+2024-03-30 08:01:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:01:00 GMT)" (scheduled at 2024-03-30 08:01:00+00:00)
+2024-03-30 08:01:00,010 - INFO - Inside the procedure sequence
+2024-03-30 08:01:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:01:00 GMT)" (scheduled at 2024-03-30 08:01:00+00:00)
+2024-03-30 08:01:00,011 - INFO - Inside the procedure sequence
+2024-03-30 08:01:11,007 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:06:00 GMT)" executed successfully
+2024-03-30 08:01:11,534 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:06:00 GMT)" executed successfully
+2024-03-30 08:02:01,557 - INFO - Starting scheduler
+2024-03-30 08:02:01,557 - INFO - Updater date and time: 2024-03-30 08:02:01.557890
+2024-03-30 08:02:01,557 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:02:01,557 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:02:01,557 - INFO - Scheduler started
+2024-03-30 08:02:01,557 - INFO - Ending scheduler
+2024-03-30 08:02:03,759 - INFO - Starting scheduler
+2024-03-30 08:02:03,760 - INFO - Updater date and time: 2024-03-30 08:02:03.759443
+2024-03-30 08:02:03,760 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:02:03,760 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:02:03,760 - INFO - Scheduler started
+2024-03-30 08:02:03,761 - INFO - Ending scheduler
+2024-03-30 08:02:03,787 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:02:09,711 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 412, in display_model_accuracy
+    model_results, accuracy = trade_forecast_assessment(ticker, model_version)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 317, in trade_forecast_assessment
+    disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\discretisation\equal_frequency.py", line 146, in __init__
+    self.variables = _check_init_parameter_variables(variables)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\variable_handling\_init_parameter_checks.py", line 27, in _check_init_parameter_variables
+    raise ValueError(msg)
+ValueError: variables should be a string, an int or a list of strings or integers.
+2024-03-30 08:04:53,548 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:04:55,868 - INFO - Starting scheduler
+2024-03-30 08:04:55,868 - INFO - Updater date and time: 2024-03-30 08:04:55.868895
+2024-03-30 08:04:55,868 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:04:55,884 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:04:55,884 - INFO - Scheduler started
+2024-03-30 08:04:55,884 - INFO - Ending scheduler
+2024-03-30 08:04:55,902 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:05:40,761 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:05:43,187 - INFO - Starting scheduler
+2024-03-30 08:05:43,187 - INFO - Updater date and time: 2024-03-30 08:05:43.187243
+2024-03-30 08:05:43,189 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:05:43,189 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:05:43,189 - INFO - Scheduler started
+2024-03-30 08:05:43,189 - INFO - Ending scheduler
+2024-03-30 08:05:43,206 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:05:45,452 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 412, in display_model_accuracy
+    model_results, accuracy = trade_forecast_assessment(ticker, model_version)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 318, in trade_forecast_assessment
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers[0]])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 916, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\discretisation\equal_frequency.py", line 162, in fit
+    X = super().fit(X)
+        ^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\_base_transformers\base_numerical.py", line 58, in fit
+    X = check_X(X)
+        ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\feature_engine\dataframe_checks.py", line 79, in check_X
+    raise TypeError(
+TypeError: X must be a numpy array or pandas dataframe. Got <class 'pandas.core.series.Series'> instead.
+2024-03-30 08:06:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:06:00 GMT)" (scheduled at 2024-03-30 08:06:00+00:00)
+2024-03-30 08:06:00,012 - INFO - Inside the procedure sequence
+2024-03-30 08:06:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:06:00 GMT)" (scheduled at 2024-03-30 08:06:00+00:00)
+2024-03-30 08:06:00,014 - INFO - Inside the procedure sequence
+2024-03-30 08:06:11,060 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:11:00 GMT)" executed successfully
+2024-03-30 08:06:11,290 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:11:00 GMT)" executed successfully
+2024-03-30 08:07:32,088 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:07:39,867 - INFO - Starting scheduler
+2024-03-30 08:07:39,867 - INFO - Updater date and time: 2024-03-30 08:07:39.867251
+2024-03-30 08:07:39,867 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:07:39,867 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:07:39,867 - INFO - Scheduler started
+2024-03-30 08:07:39,867 - INFO - Ending scheduler
+2024-03-30 08:07:41,890 - INFO - Starting scheduler
+2024-03-30 08:07:41,890 - INFO - Updater date and time: 2024-03-30 08:07:41.890226
+2024-03-30 08:07:41,890 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:07:41,890 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:07:41,890 - INFO - Scheduler started
+2024-03-30 08:07:41,890 - INFO - Ending scheduler
+2024-03-30 08:07:41,921 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:08:20,223 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:08:22,634 - INFO - Starting scheduler
+2024-03-30 08:08:22,634 - INFO - Updater date and time: 2024-03-30 08:08:22.634060
+2024-03-30 08:08:22,634 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:08:22,634 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:08:22,634 - INFO - Scheduler started
+2024-03-30 08:08:22,634 - INFO - Ending scheduler
+2024-03-30 08:08:22,669 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:22:38,561 - INFO - Starting scheduler
+2024-03-30 08:22:38,561 - INFO - Updater date and time: 2024-03-30 08:22:38.561446
+2024-03-30 08:22:38,561 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:22:38,561 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:22:38,561 - INFO - Scheduler started
+2024-03-30 08:22:38,561 - INFO - Ending scheduler
+2024-03-30 08:22:40,690 - INFO - Starting scheduler
+2024-03-30 08:22:40,691 - INFO - Updater date and time: 2024-03-30 08:22:40.690029
+2024-03-30 08:22:40,692 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:22:40,692 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:22:40,692 - INFO - Scheduler started
+2024-03-30 08:22:40,693 - INFO - Ending scheduler
+2024-03-30 08:22:40,718 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:22:44,954 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:23:22,095 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:23:24,526 - INFO - Starting scheduler
+2024-03-30 08:23:24,527 - INFO - Updater date and time: 2024-03-30 08:23:24.527658
+2024-03-30 08:23:24,528 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:23:24,528 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:23:24,529 - INFO - Scheduler started
+2024-03-30 08:23:24,530 - INFO - Ending scheduler
+2024-03-30 08:23:24,553 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:24:54,804 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:24:57,197 - INFO - Starting scheduler
+2024-03-30 08:24:57,197 - INFO - Updater date and time: 2024-03-30 08:24:57.197335
+2024-03-30 08:24:57,197 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:24:57,197 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:24:57,197 - INFO - Scheduler started
+2024-03-30 08:24:57,197 - INFO - Ending scheduler
+2024-03-30 08:24:57,228 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:25:31,674 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:25:34,148 - INFO - Starting scheduler
+2024-03-30 08:25:34,148 - INFO - Updater date and time: 2024-03-30 08:25:34.148901
+2024-03-30 08:25:34,153 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:25:34,153 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:25:34,153 - INFO - Scheduler started
+2024-03-30 08:25:34,153 - INFO - Ending scheduler
+2024-03-30 08:25:34,178 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:25:39,479 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:26:00 GMT)" (scheduled at 2024-03-30 08:26:00+00:00)
+2024-03-30 08:26:00,015 - INFO - Inside the procedure sequence
+2024-03-30 08:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:26:00 GMT)" (scheduled at 2024-03-30 08:26:00+00:00)
+2024-03-30 08:26:00,015 - INFO - Inside the procedure sequence
+2024-03-30 08:26:10,284 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:31:00 GMT)" executed successfully
+2024-03-30 08:26:10,862 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:31:00 GMT)" executed successfully
+2024-03-30 08:26:21,393 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:26:26,634 - INFO - Starting scheduler
+2024-03-30 08:26:26,635 - INFO - Updater date and time: 2024-03-30 08:26:26.635330
+2024-03-30 08:26:26,636 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:26:26,636 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:26:26,636 - INFO - Scheduler started
+2024-03-30 08:26:26,637 - INFO - Ending scheduler
+2024-03-30 08:26:28,749 - INFO - Starting scheduler
+2024-03-30 08:26:28,749 - INFO - Updater date and time: 2024-03-30 08:26:28.749575
+2024-03-30 08:26:28,749 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:26:28,749 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:26:28,749 - INFO - Scheduler started
+2024-03-30 08:26:28,749 - INFO - Ending scheduler
+2024-03-30 08:26:28,773 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:26:34,433 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:28:20,036 - INFO - Starting scheduler
+2024-03-30 08:28:20,036 - INFO - Updater date and time: 2024-03-30 08:28:20.036920
+2024-03-30 08:28:20,036 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:28:20,036 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:28:20,036 - INFO - Scheduler started
+2024-03-30 08:28:20,036 - INFO - Ending scheduler
+2024-03-30 08:28:22,156 - INFO - Starting scheduler
+2024-03-30 08:28:22,156 - INFO - Updater date and time: 2024-03-30 08:28:22.156085
+2024-03-30 08:28:22,157 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:28:22,158 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:28:22,158 - INFO - Scheduler started
+2024-03-30 08:28:22,158 - INFO - Ending scheduler
+2024-03-30 08:28:22,175 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:28:26,179 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:28:34,456 - WARNING - Not Found: /images/favicon.ico
+2024-03-30 08:28:37,414 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:28:37,523 - WARNING - Not Found: /favicon.ico
+2024-03-30 08:29:53,433 - INFO - Starting scheduler
+2024-03-30 08:29:53,433 - INFO - Updater date and time: 2024-03-30 08:29:53.433726
+2024-03-30 08:29:53,449 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:29:53,449 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:29:53,449 - INFO - Scheduler started
+2024-03-30 08:29:53,449 - INFO - Ending scheduler
+2024-03-30 08:29:55,365 - INFO - Starting scheduler
+2024-03-30 08:29:55,365 - INFO - Updater date and time: 2024-03-30 08:29:55.365005
+2024-03-30 08:29:55,365 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:29:55,365 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:29:55,365 - INFO - Scheduler started
+2024-03-30 08:29:55,365 - INFO - Ending scheduler
+2024-03-30 08:29:55,394 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:29:58,742 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 418, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+                                                ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'profit_accuracy' where it is not associated with a value
+2024-03-30 08:31:04,786 - INFO - Starting scheduler
+2024-03-30 08:31:04,787 - INFO - Updater date and time: 2024-03-30 08:31:04.787597
+2024-03-30 08:31:04,788 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:31:04,788 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:31:04,788 - INFO - Scheduler started
+2024-03-30 08:31:04,790 - INFO - Ending scheduler
+2024-03-30 08:31:06,983 - INFO - Starting scheduler
+2024-03-30 08:31:06,983 - INFO - Updater date and time: 2024-03-30 08:31:06.983659
+2024-03-30 08:31:06,983 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:31:06,983 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:31:06,983 - INFO - Scheduler started
+2024-03-30 08:31:06,983 - INFO - Ending scheduler
+2024-03-30 08:31:07,019 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:31:08,382 - WARNING - Not Found: /images/favicon.ico
+2024-03-30 08:31:10,590 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
+2024-03-30 08:31:13,198 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 413, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 325, in trade_forecast_assessment
+    y_actual_binary = y_actual.apply(lambda x: 0 if x > 2 else 1)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 10034, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\apply.py", line 837, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\apply.py", line 965, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\apply.py", line 981, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 325, in <lambda>
+    y_actual_binary = y_actual.apply(lambda x: 0 if x > 2 else 1)
+                                                    ^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 1519, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2024-03-30 08:31:13,335 - WARNING - Not Found: /favicon.ico
+2024-03-30 08:35:14,052 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:35:16,822 - INFO - Starting scheduler
+2024-03-30 08:35:16,823 - INFO - Updater date and time: 2024-03-30 08:35:16.823875
+2024-03-30 08:35:16,824 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:35:16,824 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:35:16,824 - INFO - Scheduler started
+2024-03-30 08:35:16,825 - INFO - Ending scheduler
+2024-03-30 08:35:16,853 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:35:29,258 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-03-30 08:35:31,731 - INFO - Starting scheduler
+2024-03-30 08:35:31,732 - INFO - Updater date and time: 2024-03-30 08:35:31.732851
+2024-03-30 08:35:31,733 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:35:31,733 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:35:31,733 - INFO - Scheduler started
+2024-03-30 08:35:31,735 - INFO - Ending scheduler
+2024-03-30 08:35:31,758 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:39:11,468 - INFO - Starting scheduler
+2024-03-30 08:39:11,468 - INFO - Updater date and time: 2024-03-30 08:39:11.468647
+2024-03-30 08:39:11,468 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:39:11,468 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:39:11,468 - INFO - Scheduler started
+2024-03-30 08:39:11,468 - INFO - Ending scheduler
+2024-03-30 08:39:13,686 - INFO - Starting scheduler
+2024-03-30 08:39:13,687 - INFO - Updater date and time: 2024-03-30 08:39:13.687077
+2024-03-30 08:39:13,688 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:39:13,689 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:39:13,689 - INFO - Scheduler started
+2024-03-30 08:39:13,690 - INFO - Ending scheduler
+2024-03-30 08:39:13,700 - INFO - Watching for file changes with StatReloader
+2024-03-30 08:39:32,949 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 413, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 319, in trade_forecast_assessment
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers])
+                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6176, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['pl_open_4_hr'], dtype='object')] are in the [columns]"
+2024-03-30 08:39:58,694 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 413, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 319, in trade_forecast_assessment
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers])
+                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6176, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['pl_open_4_hr'], dtype='object')] are in the [columns]"
+2024-03-30 08:41:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:41:00 GMT)" (scheduled at 2024-03-30 08:41:00+00:00)
+2024-03-30 08:41:00,002 - INFO - Inside the procedure sequence
+2024-03-30 08:41:00,019 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:41:00 GMT)" (scheduled at 2024-03-30 08:41:00+00:00)
+2024-03-30 08:41:00,019 - INFO - Inside the procedure sequence
+2024-03-30 08:41:11,054 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:46:00 GMT)" executed successfully
+2024-03-30 08:41:11,123 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:46:00 GMT)" executed successfully

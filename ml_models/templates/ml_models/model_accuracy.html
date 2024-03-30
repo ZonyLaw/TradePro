@@ -1,0 +1,20 @@
+{% extends 'main.html' %} 
+{% block content %}
+
+<div class="formPage my-xl">
+    <div class="content-box">
+
+        <form action="" method="POST">
+            {%csrf_token%} 
+            {{form.as_p}}
+            <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+        </form>
+        <p> Here is the model prediction of profit accuracy: {{profit_accuracy|floatformat:2}}%</p>
+        <p> Here is the model prediction of trade accuracy: {{trade_accuracy|floatformat:2}}%</p>
+        
+
+       
+    </div>
+</div>
+
+{% endblock content %}

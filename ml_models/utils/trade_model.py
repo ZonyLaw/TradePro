@@ -1,7 +1,7 @@
 import os
 import sys
 import joblib
-import importlib.util
+import numpy as np
 import pandas as pd
 import datetime
 from django.conf import settings
@@ -303,17 +303,32 @@ def trade_forecast_assessment(ticker, model_version):
  
     # combined_df.to_csv(r"C:\Users\sunny\Desktop\Development\model_assessment_data.csv", index=False)
     
-    # Create a binary array based on the categorical value where value < 3 is a sell (true is returned)
-    # Convert both actual and prediction into binary numbers.
-    # y_actual = X_live_discretized['pl_close_4_hr']
-    # binary_y_actual = (y_actual < 3).astype(int)
-    # binary_prediction= (model_prediction_labels < 3).astype(int)
+    #Getting the header of the y variable
+    version = model_version
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
+                       .columns
+                       .to_list()
+                       )
     
+
+    # Using engine feature package to classify the actual numbers. 
+    # Note that the EqualFrequencyDiscretiser only takes in a string for the variables, not a list;
+    # hence, we use an index. Another way is use bin.
+    # TODO: the q is hardcoded as 6 which may require to be made dynamic counting the size o the label map.
+    disc = EqualFrequencyDiscretiser(q=6, variables=[y_test_headers[0]])
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers])
+     
     # Calculate the accuracy between the prediction and actual
-    # accuracy = calculate_accuracy(binary_prediction, binary_y_actual)
-    # print("Accuracy", accuracy)
+    profit_accuracy = calculate_accuracy(model_prediction, y_actual)
+
+    # this examine the accuracy of the trade predictions converted to buy(1) or sell(0)
+    y_actual_binary = np.where(y_actual > 2, 0, 1)
+    model_prediction_binary = np.where(model_prediction > 2, 0, 1)
+    trade_accuracy = calculate_accuracy(model_prediction_binary, y_actual_binary)
+
     
-    return model_results
+    return model_results, profit_accuracy, trade_accuracy
+
 
 def calculate_accuracy(predictions, y_actual):
     """

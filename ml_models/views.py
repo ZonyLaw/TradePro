@@ -399,7 +399,28 @@ def export_model_results(request):
 
     return render(request, 'ml_models/export_model_results.html', {'form': form})
     
+def display_model_accuracy(request):
     
+    profit_accuracy = None
+    trade_accuracy = None
+    
+    if request.method == 'POST':
+        form = VersionSelection(request.POST)
+
+        if form.is_valid():
+            model_version = form.cleaned_data['model_version']
+            ticker = form.cleaned_data['ticker']
+            model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+            profit_accuracy = profit_accuracy * 100
+            trade_accuracy = trade_accuracy * 100
+
+    else:
+        form = VersionSelection()
+        
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+
+    return render(request, 'ml_models/model_accuracy.html', context )
+
 def delete_file(request, filename):
     base_dir = os.path.dirname(os.path.abspath(__file__))  # Assuming this view is in a module
     base_dir_up_one_levels = os.path.abspath(os.path.join(base_dir, os.pardir))
