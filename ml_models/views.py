@@ -387,7 +387,7 @@ def export_model_results(request):
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
             ticker = form.cleaned_data['ticker']
-            model_results = trade_forecast_assessment(ticker, model_version)
+            model_results, _, _ = trade_forecast_assessment(ticker, model_version)
 
             response = HttpResponse(content_type='text/csv')
             response['Content-Disposition'] = f'attachment; filename="model_results_{model_version}.csv"'

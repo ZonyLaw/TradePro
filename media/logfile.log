@@ -5325,3 +5325,149 @@ KeyError: "None of [Index(['pl_open_4_hr'], dtype='object')] are in the [columns
 2024-03-30 08:41:00,019 - INFO - Inside the procedure sequence
 2024-03-30 08:41:11,054 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:46:00 GMT)" executed successfully
 2024-03-30 08:41:11,123 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 08:46:00 GMT)" executed successfully
+2024-03-30 08:59:56,653 - INFO - Starting scheduler
+2024-03-30 08:59:56,653 - INFO - Updater date and time: 2024-03-30 08:59:56.653615
+2024-03-30 08:59:56,669 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:59:56,669 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:59:56,669 - INFO - Scheduler started
+2024-03-30 08:59:56,669 - INFO - Ending scheduler
+2024-03-30 08:59:58,651 - INFO - Starting scheduler
+2024-03-30 08:59:58,652 - INFO - Updater date and time: 2024-03-30 08:59:58.652331
+2024-03-30 08:59:58,654 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 08:59:58,654 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 08:59:58,654 - INFO - Scheduler started
+2024-03-30 08:59:58,656 - INFO - Ending scheduler
+2024-03-30 08:59:58,684 - INFO - Watching for file changes with StatReloader
+2024-03-30 09:00:23,893 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 390, in export_model_results
+    model_results = trade_forecast_assessment(ticker, model_version)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 319, in trade_forecast_assessment
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers])
+                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6176, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['pl_open_4_hr'], dtype='object')] are in the [columns]"
+2024-03-30 09:00:46,511 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 413, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 319, in trade_forecast_assessment
+    y_actual = disc.fit_transform(X_live_discretized[y_test_headers])
+                                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3899, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6115, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 6176, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['pl_open_4_hr'], dtype='object')] are in the [columns]"
+2024-03-30 09:01:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:01:00 GMT)" (scheduled at 2024-03-30 09:01:00+00:00)
+2024-03-30 09:01:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:01:00 GMT)" (scheduled at 2024-03-30 09:01:00+00:00)
+2024-03-30 09:01:00,004 - INFO - Inside the procedure sequence
+2024-03-30 09:01:00,004 - INFO - Inside the procedure sequence
+2024-03-30 09:01:00,917 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:06:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-30 09:01:09,150 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:06:00 GMT)" executed successfully
+2024-03-30 09:02:25,292 - INFO - Starting scheduler
+2024-03-30 09:02:25,292 - INFO - Updater date and time: 2024-03-30 09:02:25.292090
+2024-03-30 09:02:25,292 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 09:02:25,292 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 09:02:25,292 - INFO - Scheduler started
+2024-03-30 09:02:25,307 - INFO - Ending scheduler
+2024-03-30 09:02:27,461 - INFO - Starting scheduler
+2024-03-30 09:02:27,461 - INFO - Updater date and time: 2024-03-30 09:02:27.461438
+2024-03-30 09:02:27,463 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 09:02:27,463 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 09:02:27,463 - INFO - Scheduler started
+2024-03-30 09:02:27,464 - INFO - Ending scheduler
+2024-03-30 09:02:27,487 - INFO - Watching for file changes with StatReloader
+2024-03-30 09:03:27,651 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-30 09:04:17,420 - ERROR - Internal Server Error: /ml_models/export-model-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 394, in export_model_results
+    model_results.to_csv(path_or_buf=response, index=False, encoding='utf-8')
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'to_csv'
+2024-03-30 09:04:56,204 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-03-30 09:04:58,702 - INFO - Starting scheduler
+2024-03-30 09:04:58,702 - INFO - Updater date and time: 2024-03-30 09:04:58.702714
+2024-03-30 09:04:58,702 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 09:04:58,702 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 09:04:58,702 - INFO - Scheduler started
+2024-03-30 09:04:58,702 - INFO - Ending scheduler
+2024-03-30 09:04:58,738 - INFO - Watching for file changes with StatReloader
+2024-03-30 09:05:03,780 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-03-30 09:05:06,044 - INFO - Starting scheduler
+2024-03-30 09:05:06,044 - INFO - Updater date and time: 2024-03-30 09:05:06.044182
+2024-03-30 09:05:06,044 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-30 09:05:06,044 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-30 09:05:06,044 - INFO - Scheduler started
+2024-03-30 09:05:06,044 - INFO - Ending scheduler
+2024-03-30 09:05:06,067 - INFO - Watching for file changes with StatReloader
+2024-03-30 09:05:20,007 - WARNING - Not Found: /ml_models
+2024-03-30 09:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:06:00 GMT)" (scheduled at 2024-03-30 09:06:00+00:00)
+2024-03-30 09:06:00,011 - INFO - Inside the procedure sequence
+2024-03-30 09:06:00,018 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:06:00 GMT)" (scheduled at 2024-03-30 09:06:00+00:00)
+2024-03-30 09:06:00,019 - INFO - Inside the procedure sequence
+2024-03-30 09:06:00,925 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:11:00 GMT)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 67, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-03-30 09:06:13,383 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-30 09:11:00 GMT)" executed successfully

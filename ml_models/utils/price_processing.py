@@ -529,6 +529,8 @@ class StandardPriceProcessing():
         df = self.crossing_bb(df, 1)
         df = self.profit_calc(df, "open", "open", -1)
         df = self.profit_calc(df, "open", "open", -4)
+        df = self.profit_calc(df, "open", "open", 1)
+        df = self.profit_calc(df, "open", "open", 4)
         df = self.reverse_point(df, "open", -1)
         
         df = self.price_difference(df, "upper_bb20_1", "lower_bb20_1", 1, "up_bb20", "low_bb20"  )
@@ -545,6 +547,8 @@ class StandardPriceProcessing():
         df = self.trend_measure(df, 1)   
         df['pl_open_f1_hr'] = df['pl_open_f1_hr'].ffill()
         df['pl_open_f4_hr'] = df['pl_open_f4_hr'].ffill()
+        df['pl_open_1_hr'] = df['pl_open_1_hr'].ffill()
+        df['pl_open_4_hr'] = df['pl_open_4_hr'].ffill()
         columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4']
         df = df.drop(columns, axis=1)
         df = df.dropna()
