@@ -14,6 +14,7 @@ The app offers insights into potential market direction. It utilises machine lea
   - [Table of Contents](#table-of-contents)
     - [Project-Management-Plan](#Project-Management-Plan)
     - [Webpage-Structure-Plan](#Webpage-Structure-Plan)
+    - [Appendix](#Appendix)
 
 # Project-Management-Plan
 
@@ -88,15 +89,26 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 **Home Page**
 
-*User Story*
-
-``As a trader, I can view the model results and analysis to get a potential direction of the market trend.``
-
 *1. Navigation Menu*
 
 *User Story*
 
-``As a developer, I can have the navbar so that users can navigate the website from any device``
+``As a developer and user, I can have use the navbar to navigate the website from any device.``
+``As a trader, I can view the model results and analysis to get a potential direction of the market trend.``
+
+
+**Price**
+``As a developer and user, I can view the prices for a specific currency.``
+``As a developer , I edit, export of a specific currency.``
+
+
+**Report**
+
+*User Story*
+``As a trader, I can view the model analysis for specific currency.``
+
+
+
 <details open>
 <summary>Implementation:</summary>
 
@@ -161,6 +173,8 @@ Here are some notes for future referencing.
 - commented out the cloudinary setting as there seem to be issue with staticfile.json. This may be related to version issue or I have not set the cloudinary properly.
 - cst refer to wrong reference to dictionary
 - it is not recommended that development access production database. If you want to access the PostgresSQL, so Django version 4.1 is used rather the latest version.
+- The local development server runs a separate process for the auto-reloader during a cron schedule. You can turn off the auto-reload process by passing the --noreload flag -> python manage.py runserver --noreload
+- In heruko, to prevent the cron scheduler runing twice, the environment setting needs to have WEB_CONCURRENCY = 1.
 
 
 #### Using email as login
