@@ -5883,3 +5883,127 @@ FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/p
 2024-03-31 17:06:00,010 - INFO - Inside the procedure sequence
 2024-03-31 17:06:11,022 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:11:00 BST)" executed successfully
 2024-03-31 17:06:12,273 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:11:00 BST)" executed successfully
+2024-03-31 17:12:22,080 - INFO - Starting scheduler
+2024-03-31 17:12:22,080 - INFO - Updater date and time: 2024-03-31 17:12:22.080680
+2024-03-31 17:12:22,080 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:12:22,080 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:12:22,080 - INFO - Scheduler started
+2024-03-31 17:12:22,080 - INFO - Ending scheduler
+2024-03-31 17:12:23,835 - INFO - Starting scheduler
+2024-03-31 17:12:23,835 - INFO - Updater date and time: 2024-03-31 17:12:23.835791
+2024-03-31 17:12:23,835 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:12:23,835 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:12:23,835 - INFO - Scheduler started
+2024-03-31 17:12:23,835 - INFO - Ending scheduler
+2024-03-31 17:12:23,855 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:12:25,254 - WARNING - Not Found: /images/favicon.ico
+2024-03-31 17:12:32,518 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-31 17:14:39,519 - INFO - Starting scheduler
+2024-03-31 17:14:39,519 - INFO - Updater date and time: 2024-03-31 17:14:39.519636
+2024-03-31 17:14:39,519 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:14:39,519 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:14:39,519 - INFO - Scheduler started
+2024-03-31 17:14:39,519 - INFO - Ending scheduler
+2024-03-31 17:14:41,446 - INFO - Starting scheduler
+2024-03-31 17:14:41,446 - INFO - Updater date and time: 2024-03-31 17:14:41.446964
+2024-03-31 17:14:41,446 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:14:41,446 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:14:41,446 - INFO - Scheduler started
+2024-03-31 17:14:41,446 - INFO - Ending scheduler
+2024-03-31 17:14:41,475 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:16:00,021 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:16:00 BST)" (scheduled at 2024-03-31 17:16:00+01:00)
+2024-03-31 17:16:00,022 - INFO - Inside the procedure sequence
+2024-03-31 17:16:00,021 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:21:00 BST)" (scheduled at 2024-03-31 17:16:00+01:00)
+2024-03-31 17:16:00,022 - INFO - Inside the procedure sequence
+2024-03-31 17:16:10,463 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:21:00 BST)" executed successfully
+2024-03-31 17:16:10,695 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:21:00 BST)" executed successfully
+2024-03-31 17:19:01,255 - INFO - Starting scheduler
+2024-03-31 17:19:01,255 - INFO - Updater date and time: 2024-03-31 17:19:01.255279
+2024-03-31 17:19:01,255 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:19:01,255 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:19:01,255 - INFO - Scheduler started
+2024-03-31 17:19:01,255 - INFO - Ending scheduler
+2024-03-31 17:19:03,015 - INFO - Starting scheduler
+2024-03-31 17:19:03,015 - INFO - Updater date and time: 2024-03-31 17:19:03.015903
+2024-03-31 17:19:03,015 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:19:03,015 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:19:03,015 - INFO - Scheduler started
+2024-03-31 17:19:03,015 - INFO - Ending scheduler
+2024-03-31 17:19:03,039 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:19:04,365 - WARNING - Not Found: /images/favicon.ico
+2024-03-31 17:19:11,091 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-03-31 17:21:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:21:00 BST)" (scheduled at 2024-03-31 17:21:00+01:00)
+2024-03-31 17:21:00,012 - INFO - Inside the procedure sequence
+2024-03-31 17:21:00,027 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:21:00 BST)" (scheduled at 2024-03-31 17:21:00+01:00)
+2024-03-31 17:21:00,027 - INFO - Inside the procedure sequence
+2024-03-31 17:21:11,432 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:26:00 BST)" executed successfully
+2024-03-31 17:21:11,711 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:26:00 BST)" executed successfully
+2024-03-31 17:23:57,272 - INFO - Starting scheduler
+2024-03-31 17:23:57,272 - INFO - Updater date and time: 2024-03-31 17:23:57.272617
+2024-03-31 17:23:57,272 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:23:57,272 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:23:57,272 - INFO - Scheduler started
+2024-03-31 17:23:57,272 - INFO - Ending scheduler
+2024-03-31 17:23:58,973 - INFO - Starting scheduler
+2024-03-31 17:23:58,973 - INFO - Updater date and time: 2024-03-31 17:23:58.973823
+2024-03-31 17:23:58,973 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:23:58,973 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:23:58,973 - INFO - Scheduler started
+2024-03-31 17:23:58,973 - INFO - Ending scheduler
+2024-03-31 17:23:58,995 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:27:20,277 - INFO - Starting scheduler
+2024-03-31 17:27:20,278 - INFO - Updater date and time: 2024-03-31 17:27:20.278096
+2024-03-31 17:27:20,278 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:27:20,278 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:27:20,278 - INFO - Scheduler started
+2024-03-31 17:27:20,278 - INFO - Ending scheduler
+2024-03-31 17:27:22,111 - INFO - Starting scheduler
+2024-03-31 17:27:22,111 - INFO - Updater date and time: 2024-03-31 17:27:22.111250
+2024-03-31 17:27:22,111 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:27:22,111 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:27:22,111 - INFO - Scheduler started
+2024-03-31 17:27:22,111 - INFO - Ending scheduler
+2024-03-31 17:27:22,126 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:31:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:31:00 BST)" (scheduled at 2024-03-31 17:31:00+01:00)
+2024-03-31 17:31:00,006 - INFO - Inside the procedure sequence
+2024-03-31 17:31:00,028 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:36:00 BST)" (scheduled at 2024-03-31 17:31:00+01:00)
+2024-03-31 17:31:00,029 - INFO - Inside the procedure sequence
+2024-03-31 17:31:11,528 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:36:00 BST)" executed successfully
+2024-03-31 17:31:12,090 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:36:00 BST)" executed successfully
+2024-03-31 17:31:47,558 - INFO - Starting scheduler
+2024-03-31 17:31:47,558 - INFO - Updater date and time: 2024-03-31 17:31:47.558340
+2024-03-31 17:31:47,558 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:31:47,558 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:31:47,558 - INFO - Scheduler started
+2024-03-31 17:31:47,558 - INFO - Ending scheduler
+2024-03-31 17:31:49,236 - INFO - Starting scheduler
+2024-03-31 17:31:49,236 - INFO - Updater date and time: 2024-03-31 17:31:49.236444
+2024-03-31 17:31:49,236 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:31:49,236 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:31:49,236 - INFO - Scheduler started
+2024-03-31 17:31:49,236 - INFO - Ending scheduler
+2024-03-31 17:31:49,256 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:36:00,017 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:41:00 BST)" (scheduled at 2024-03-31 17:36:00+01:00)
+2024-03-31 17:36:00,018 - INFO - Inside the procedure sequence
+2024-03-31 17:36:00,018 - INFO - Inside the procedure sequence
+2024-03-31 17:36:09,122 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:41:00 BST)" executed successfully
+2024-03-31 17:36:09,238 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:41:00 BST)" executed successfully
+2024-03-31 17:46:45,648 - INFO - Starting scheduler
+2024-03-31 17:46:45,648 - INFO - Updater date and time: 2024-03-31 17:46:45.648764
+2024-03-31 17:46:45,648 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:46:45,648 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:46:45,648 - INFO - Scheduler started
+2024-03-31 17:46:45,648 - INFO - Ending scheduler
+2024-03-31 17:46:49,121 - INFO - Starting scheduler
+2024-03-31 17:46:49,122 - INFO - Updater date and time: 2024-03-31 17:46:49.122510
+2024-03-31 17:46:49,123 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:46:49,123 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:46:49,123 - INFO - Scheduler started
+2024-03-31 17:46:49,124 - INFO - Ending scheduler
+2024-03-31 17:46:50,804 - INFO - Starting scheduler
+2024-03-31 17:46:50,804 - INFO - Updater date and time: 2024-03-31 17:46:50.804600
+2024-03-31 17:46:50,804 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:46:50,804 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:46:50,804 - INFO - Scheduler started
+2024-03-31 17:46:50,821 - INFO - Ending scheduler
+2024-03-31 17:46:50,821 - INFO - Watching for file changes with StatReloader

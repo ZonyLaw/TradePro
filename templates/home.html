@@ -37,11 +37,11 @@
                       
                             <img class="project__thumbnail" src="" alt="project thumbnail" />
                                 <div class="card__body">
-                                <h3 class="project__title">Prediction</h3>
+                                <h3 class="project__title">Price</h3>
                                 <p class="project--rating">
-                                    Predictions on market trends from machine learning models. Provide a potential trade opportunities.
+                                    A collection of market prices for references.
                                 </p>
-                                <p><a class="project__author" href="{% url 'ml-predictions' %}">View Results</a></p>
+                                <p><a class="project__author" href="{% url 'tickers' %}">View Results</a></p>
                                 </div>
                         </div>
                         
@@ -68,8 +68,8 @@
       <div class="container">
         <h1>About</h1>
        
-        <p>This is a tool to help give you a sense of the direction at the hour. 
-            It is models trained on some key parameters like: </p>
+        <p>This tool provides insights on the direction of trade within the next 4 hours. 
+            There are three version of the models trained on key parameters relating to: </p>
 
         <ul>
             <li>
@@ -83,11 +83,10 @@
             </li>
         </ul>
 
-        <p>It will tell you whether the trend is mostly oscillating or trending in a particular direction.
-             Often, we use technical indicators and fundamentals to confirm a direction, but these are based on experience and there is 
+        <p>  Often, we use technical indicators and fundamentals to confirm a direction, but these are based on experience and there is 
              too many different combinations. With machine model, it helps decipher these patterns and gives an good indication of the direction. 
-             It is found the pattern proceed the news because commercial trading knows more than retail and already has set the trend. 
-             The big players have already placed their bet.
+             It is found commercial trading determine the major direction despite how we may view the news, commercial trader already have their view.
+             This tool will help capture their behaviour and give confidence in the market direction.
         </p>
 
     </div>

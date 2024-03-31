@@ -31,17 +31,22 @@
         </form>
     </div>
       
-    <h1>Extra Market Information</h1>
+    <h2>Extra Market Information</h2>
         <p> Last Date price was extracted: <b>{{date}}</b> </p>
         <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
         <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
         <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
 
 
-    <h1>Trade Opportunity</h1>
+    <h1>Trade Opportunity<small>for next 1 to 4 hrs</small></h1>
+
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
-        <p> Model prediction is: </p>
-        <p style="color:purple;"><b> {{version_comment}} </b> </p>
+        <p> Model prediction </p>
+        <div class=="flash-container">
+            <div class="flash-box">
+                <p><b> {{version_comment}} </b> </p>
+            </div>
+        </div>
         <table>
             <tr style="color:purple;"> 
                 <td> Trade direction: </td> 
@@ -189,7 +194,7 @@
     
     <br>
     <hr>
-    <h2 style="color: green;">Continuation of {{potential_trade}} </h2>
+    <h2 style="color: green;">Continuation of a {{potential_trade}} </h2>
     <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
 
     <table>
@@ -220,7 +225,7 @@
     </table>
 
 
-    <h2 style="color: red;">Reversed of {{potential_trade}} </h2>
+    <h2 style="color: red;">Reversal of a {{potential_trade}} </h2>
     <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then reversed candle stick is only a retracement.</p>
     <table>
         <thead>
