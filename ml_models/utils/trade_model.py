@@ -206,7 +206,7 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     #     print(f"Error importing data_processing module for model_version: {model_version}")
     #     dp = None
     
-    if model_version == "v4":
+    if model_version == "v4" or model_version == "v5":
         dp = v4Processing(ticker=ticker)
     else:
         dp = StandardPriceProcessing(ticker=ticker)
@@ -276,7 +276,7 @@ def trade_forecast_assessment(ticker, model_version):
         dataframe: a dataframe containing the results
     """
     
-    if model_version == "v4" or model_version == "v1_reverse":
+    if model_version == "v4" or model_version == "v1_reverse" or model_version == "v5":
         dp = v4Processing(ticker=ticker)
     else:
         dp = StandardPriceProcessing(ticker=ticker)
@@ -396,7 +396,7 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
     
     for model_version in model_versions:
 
-        if model_version == "v4":
+        if model_version == "v4" or model_version == "v5":
             dp = v4Processing(ticker=model_ticker)
         else:
             dp = StandardPriceProcessing(ticker=model_ticker)

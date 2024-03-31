@@ -5698,3 +5698,188 @@ KeyError: 'cst'
 2024-03-31 14:11:09,993 - WARNING - Not Found: /users-list/images/favicon.ico
 2024-03-31 14:11:11,362 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 14:16:00 BST)" executed successfully
 2024-03-31 14:11:11,766 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 14:16:00 BST)" executed successfully
+2024-03-31 16:15:57,473 - INFO - Starting scheduler
+2024-03-31 16:15:57,474 - INFO - Updater date and time: 2024-03-31 16:15:57.474683
+2024-03-31 16:15:57,475 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 16:15:57,475 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 16:15:57,475 - INFO - Scheduler started
+2024-03-31 16:15:57,476 - INFO - Ending scheduler
+2024-03-31 16:15:59,408 - INFO - Starting scheduler
+2024-03-31 16:15:59,409 - INFO - Updater date and time: 2024-03-31 16:15:59.409130
+2024-03-31 16:15:59,410 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 16:15:59,410 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 16:15:59,410 - INFO - Scheduler started
+2024-03-31 16:15:59,411 - INFO - Ending scheduler
+2024-03-31 16:15:59,426 - INFO - Watching for file changes with StatReloader
+2024-03-31 16:16:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:16:00 BST)" (scheduled at 2024-03-31 16:16:00+01:00)
+2024-03-31 16:16:00,007 - INFO - Inside the procedure sequence
+2024-03-31 16:16:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:21:00 BST)" (scheduled at 2024-03-31 16:16:00+01:00)
+2024-03-31 16:16:00,008 - INFO - Inside the procedure sequence
+2024-03-31 16:16:05,989 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 68, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 360, in run_model_predictions
+    pred_reverse_v5, _, _, _ = standard_analysis(model_ticker,"v5")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 220, in standard_analysis
+    pred_reverse_results = model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 144, in model_run
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/pl_predictions/v5/y_test.csv'
+2024-03-31 16:16:06,344 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 68, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 360, in run_model_predictions
+    pred_reverse_v5, _, _, _ = standard_analysis(model_ticker,"v5")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 220, in standard_analysis
+    pred_reverse_results = model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 144, in model_run
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/pl_predictions/v5/y_test.csv'
+2024-03-31 16:16:13,032 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 287, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 405, in variability_analysis
+    pred_variability = model_run(model_ticker, X_live_variability, model_version)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 144, in model_run
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/pl_predictions/v5/y_test.csv'
+2024-03-31 16:19:55,066 - INFO - Starting scheduler
+2024-03-31 16:19:55,066 - INFO - Updater date and time: 2024-03-31 16:19:55.066582
+2024-03-31 16:19:55,066 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 16:19:55,066 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 16:19:55,066 - INFO - Scheduler started
+2024-03-31 16:19:55,066 - INFO - Ending scheduler
+2024-03-31 16:19:56,797 - INFO - Starting scheduler
+2024-03-31 16:19:56,797 - INFO - Updater date and time: 2024-03-31 16:19:56.797673
+2024-03-31 16:19:56,797 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 16:19:56,797 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 16:19:56,797 - INFO - Scheduler started
+2024-03-31 16:19:56,797 - INFO - Ending scheduler
+2024-03-31 16:19:56,824 - INFO - Watching for file changes with StatReloader
+2024-03-31 16:20:02,441 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 287, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 405, in variability_analysis
+    pred_variability = model_run(model_ticker, X_live_variability, model_version)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 144, in model_run
+    y_test_headers = (pd.read_csv(f"trained_models/{ticker}/pl_predictions/{version}/y_test.csv")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\parsers\readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 863, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/USDJPY/pl_predictions/v5/y_test.csv'
+2024-03-31 16:21:00,027 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:21:00 BST)" (scheduled at 2024-03-31 16:21:00+01:00)
+2024-03-31 16:21:00,027 - INFO - Inside the procedure sequence
+2024-03-31 16:21:00,027 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 16:21:00 BST)" (scheduled at 2024-03-31 16:21:00+01:00)
+2024-03-31 16:21:00,027 - INFO - Inside the procedure sequence
+2024-03-31 17:05:04,597 - INFO - Starting scheduler
+2024-03-31 17:05:04,599 - INFO - Updater date and time: 2024-03-31 17:05:04.598910
+2024-03-31 17:05:04,599 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:05:04,599 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:05:04,599 - INFO - Scheduler started
+2024-03-31 17:05:04,600 - INFO - Ending scheduler
+2024-03-31 17:05:06,541 - INFO - Starting scheduler
+2024-03-31 17:05:06,541 - INFO - Updater date and time: 2024-03-31 17:05:06.541516
+2024-03-31 17:05:06,541 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-03-31 17:05:06,541 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-03-31 17:05:06,541 - INFO - Scheduler started
+2024-03-31 17:05:06,541 - INFO - Ending scheduler
+2024-03-31 17:05:06,562 - INFO - Watching for file changes with StatReloader
+2024-03-31 17:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:11:00 BST)" (scheduled at 2024-03-31 17:06:00+01:00)
+2024-03-31 17:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:06:00 BST)" (scheduled at 2024-03-31 17:06:00+01:00)
+2024-03-31 17:06:00,010 - INFO - Inside the procedure sequence
+2024-03-31 17:06:00,010 - INFO - Inside the procedure sequence
+2024-03-31 17:06:11,022 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:11:00 BST)" executed successfully
+2024-03-31 17:06:12,273 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-03-31 17:11:00 BST)" executed successfully

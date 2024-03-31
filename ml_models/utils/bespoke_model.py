@@ -8,7 +8,9 @@ class v4Processing(StandardPriceProcessing):
     def profit_calc(df, col, lag):
         """
         Does not need timeframe parameter!
-        This function create the lag price and calculates the profit for the time period specified.
+        This function create the lag price and calculates the profit for the time period specified. 
+        However the difference between entry and exit point is swap compared to the standard model calculation.
+        This is just another way to look at the profit and loss.
 
         Args:
             df (dataframe): dataframe contain the data
