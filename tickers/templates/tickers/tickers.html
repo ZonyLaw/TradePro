@@ -20,8 +20,11 @@
           </td>
           <td>
             <a href="{% url 'ticker' ticker.id %}">View</a>
+            {% if request.user.is_superuser %}
             <a href="{% url 'update-ticker' ticker.id %}">Update</a>
             <a href="{% url 'delete-ticker' ticker.id %}">Delete</a>
+            {% endif %}
+
           </td>
         </tr>
       {% endfor %}

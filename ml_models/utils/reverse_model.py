@@ -14,7 +14,7 @@ from .access_results import write_to_json, read_prediction_from_json, write_to_c
 from django.shortcuts import get_object_or_404
 from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
-
+import numpy as np
 
 
 def load_file(file_path):
@@ -71,10 +71,10 @@ def reverse_model_run(ticker, X_live, model_version):
     
     # predict the probability for each of the cateogries
     model_prediction = model_pipeline.predict(X_live_subset)
-    model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
+    model_prediction_proba = np.amax(model_pipeline.predict_proba(X_live_subset), axis=1)
     predictions_label = [label_map[str(int(prediction))] for prediction in model_prediction]
     
-    #
+    #the dictionary is kept the same as trade model with additional prediction label. This is to make sure it works consistently with the code.
     return {
             'model_prediction_proba': model_prediction_proba,
             'model_prediction': model_prediction,
@@ -105,8 +105,6 @@ def standard_analysis_reverse(ticker, model_version, sensitivity_adjustment=0.1)
     
     pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
 
-    
-    print("reverse prediction results:>>>>>>>", pred_reverse_results)
      
     return pred_reverse_results
 

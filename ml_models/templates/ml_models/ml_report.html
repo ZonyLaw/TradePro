@@ -30,7 +30,14 @@
             <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
         </form>
     </div>
-    
+      
+    <h1>Extra Market Information</h1>
+        <p> Last Date price was extracted: <b>{{date}}</b> </p>
+        <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
+        <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+        <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
+
+
     <h1>Trade Opportunity</h1>
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
         <p> Model prediction is: </p>
@@ -58,18 +65,17 @@
                 <td> <b> £{{exit_point|floatformat:2}} </b></td>
             </tr>
             <tr style="color:orange;">
+                <td>Risk Reward ratio: </td>
+                <td> <b> {{risk_reward|floatformat:2}}</b></td>
+            </tr>
+            <tr style="color:orange;">
                 <td>Entry at Bollinger Band: </td>
                 <td> <b> £{{bb_target|floatformat:2}} </b></td>
             </tr>
         </table>
-        <p>If you must trade then please get in at the bollinger band in reverse direction!</p>
-
-
-    <h1>Extra Market Information</h1>
-        <p> Last Date price was extracted: <b>{{date}}</b> </p>
-        <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
-        <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
-        <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
+        <p>NOTE:</p>
+        <p>Risk Reward greater than 1 is a good risk</p>
+        <p>Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry.</p>
 
     <h1>Analysis Report</h1>
     <h2>History</h2>
@@ -79,16 +85,17 @@
 
             <tr>
                 {% for label, headers in historical_labels.items %}
-                    <th>{{ label }}</th>
-                    {% for header in headers %}
-                    <th>{{ header }}</th>
-                    {% endfor %}
+                  
+                        <th></th>
+                        {% for header in headers %}
+                        <th>{{ header }}</th>
+                        {% endfor %}
+                
                 {% endfor %}
             </tr>
                 
         </thead>
         <tbody>
-
 
             {% for version, trades in historical_trade_results.items %}
             <tr>
@@ -145,6 +152,43 @@
             </tbody>
         </table>
 
+
+     <h2>Prediction of reversal</h2>
+
+        <table>
+            <thead>
+    
+                <tr>
+                        <th></th>
+                        <th>3hr ago</th>
+                        <th>2hr ago</th>
+                        <th>1hr ago</th>
+                        <th>current</th>
+    
+    
+                </tr>
+                    
+            </thead>
+            <tbody>
+    
+                <tr>
+                    <td>Confirmation of Direction</td>
+                    {% for pred in reverse_pred %}
+                        <td>{{ pred }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>Accuracy</td>
+                    {% for prob in reverse_prob%}
+                        <td>{{ prob|floatformat:2 }}%</td>
+                    {% endfor %}
+                </tr>
+                
+            </tbody>
+        </table>
+    
+    <br>
+    <hr>
     <h2 style="color: green;">Continuation of {{potential_trade}} </h2>
     <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
 
@@ -153,7 +197,7 @@
 
             <tr>
                 {% for label, headers in continue_labels.items %}
-                    <th>{{ label }}</th>
+                    <th></th>
                     {% for header in headers %}
                     <th>{{ header }}</th>
                     {% endfor %}
@@ -183,7 +227,7 @@
 
             <tr>
                 {% for label, headers in reverse_labels.items %}
-                    <th>{{ label }}</th>
+                    <th></th>
                     {% for header in headers %}
                     <th>{{ header }}</th>
                     {% endfor %}
@@ -207,39 +251,6 @@
     </table>
 
     <br>
-    
-    <h2>Prediction of reversal</h2>
-
-    <table>
-        <thead>
-
-            <tr>
-
-                    <th>3hr ago</th>
-                    <th>2hr ago</th>
-                    <th>1hr ago</th>
-                    <th>current</th>
-
-
-            </tr>
-                
-        </thead>
-        <tbody>
-
-            <tr>
-                {% for pred in reverse_pred %}
-                    <td>{{ pred }}</td>
-                {% endfor %}
-            </tr>
-            <tr>
-                {% for prob in reverse_prob%}
-                    <td>{{ prob }}</td>
-                {% endfor %}
-            </tr>
-            
-        </tbody>
-    </table>
-
 
 
 </div>

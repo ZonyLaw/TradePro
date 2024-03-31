@@ -281,6 +281,7 @@ def ml_report(request):
     entry_point = open_prices[-1] + entry_adjustment
     exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
+    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
 
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
@@ -289,15 +290,16 @@ def ml_report(request):
         '-10 pips':pred_var_neg,
     }
 
-    reverse = standard_analysis_reverse("USDJPY", "v1_reverse")
-    reverse_pred = reverse['predictions_label']
-    reverse_prob = reverse['model_prediction_proba']
+    reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
+    reverse_pred = reverse_pred_results['predictions_label']
+    reverse_prob = reverse_pred_results['model_prediction_proba']*100
+    
 
 
     context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
-             'bb_target': bb_target,
+             'risk_reward': risk_reward, 'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
