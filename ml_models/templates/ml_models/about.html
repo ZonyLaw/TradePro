@@ -1,0 +1,34 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="container container--narrow">
+
+    <div class="container">
+        <h1>About</h1>
+    
+        <p>This tool provides insights on the direction of trade within the next 4 hours. 
+            There are three version of the models trained on key parameters relating to: </p>
+
+        <ul class="list_indent">
+            <li>
+                MA20, MA50, MA100
+            </li>
+            <li>
+                Bollinger Band
+            </li>
+            <li>
+                market trend strength
+            </li>
+        </ul>
+
+        <p>  Traders use technical indicators and fundamentals to confirm a direction, but these trades are based on experience and there are 
+            many different combinations. With machine model, it helps decipher these patterns and provide an indication of the direction. 
+            Why technical analysis works because it captures the behaviour of the commercial trader who already have execute their view while retail 
+            trader try to make sense of the direction. 
+            
+            This tool will help provide some clarity and give you a sense what is going to unfold.
+        </p>
+
+    </div>
+</div>
+
+{% endblock content %}

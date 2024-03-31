@@ -38,10 +38,10 @@
         <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
 
 
-    <h1>Trade Opportunity<small>for next 1 to 4 hrs</small></h1>
+    <h1>Trade Opportunity</h1>
 
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
-        <p> Model prediction </p>
+        <p> Model prediction for the next 4 hrs.</p>
         <div class=="flash-container">
             <div class="flash-box">
                 <p><b> {{version_comment}} </b> </p>
@@ -120,6 +120,14 @@
             </tr>
 
             <tr>
+                <td>Profit / Loss </td>
+                {% for pl in pred_pl %}
+                <td>{{ pl }} pips</td>
+                {% endfor %}
+
+            </tr>
+
+            <tr>
                 <td>Volume</td>
                 {% for vol in volume %}
                 <td>{{ vol }}</td>
@@ -131,11 +139,11 @@
     </table>
 
     <h2>Sensitivity Test</h2>
-        <p>This is a look ahead to see if current prediction hold. There are three cases:</p>
-        <ul>
-            <li>Current prediction is the same for both movements - Strong</li>
-            <li>Current prediction is different from both models - Retracement</li>
-            <li>Current prediction is consistent with forecast movement - Medium</li>
+        <p>What if scenarios:</p>
+        <ul class="list_indent">
+            <li>What happens if price move 10 pips up?</li>
+            <li>What happens if price move 10 pips down?</li>
+            <li>Does the prediction become stronger or weaker?</li>
         </ul>
         <table>
             <thead>
@@ -159,7 +167,7 @@
 
 
      <h2>Prediction of reversal</h2>
-
+        
         <table>
             <thead>
     
@@ -169,7 +177,6 @@
                         <th>2hr ago</th>
                         <th>1hr ago</th>
                         <th>current</th>
-    
     
                 </tr>
                     

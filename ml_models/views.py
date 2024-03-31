@@ -22,6 +22,8 @@ from ml_models.utils.price_processing import StandardPriceProcessing
 from ml_models.utils.reverse_model import standard_analysis_reverse
 
 
+def about(request):
+      return render(request, 'ml_models/about.html')
 
 def ml_predictions(request):
     """
@@ -185,6 +187,7 @@ def ml_report(request):
     potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
     potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
  
+    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['extra']['trade_type']
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -274,7 +277,7 @@ def ml_report(request):
     projected_volume = volume[3] / percentage_elapsed * 100
     
     if projected_volume < 2000:
-        exit_adjustment = 2
+        exit_adjustment = 1.2
     else:
         exit_adjustment = 1
         
@@ -282,6 +285,15 @@ def ml_report(request):
     exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
     risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
+
+    pred_pl = []
+    for price, trade in zip(open_prices,potential_trade_label_v4):
+        if trade == "Buy":
+            pl = close_prices[-1] - price
+        else:
+            pl = price - close_prices[-1]
+            
+        pred_pl.append(round(pl*100))
 
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
@@ -301,7 +313,7 @@ def ml_report(request):
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
-             'pred_var_list': pred_var_list,
+             'pred_pl': pred_pl, 'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
              "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
