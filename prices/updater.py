@@ -35,16 +35,16 @@ def start():
      
     logging.info("Updater date and time: %s", current_time)
     # Method 1: call the scheduler when app is loaded
-    scheduler.add_job(run_procedure_sequence, 'date', run_date=datetime.now() + timedelta(seconds=1))
+    # scheduler.add_job(run_procedure_sequence, 'date', run_date=datetime.now() + timedelta(seconds=1))
 
         
     # Method 2: create the scheduler with adjusted time specified by next_hour
     # next_hour specify the minutes and seconds
     # next_hour = (current_time + timedelta(hours=1)).replace(minute=34, second=0, microsecond=0)
 
-    # next_hour = (current_time).replace(minute=1, second=0, microsecond=0)
-    # scheduler.add_job(run_procedure_sequence, 'interval', minutes=5, start_date=next_hour)
-    
+    next_hour = (current_time).replace(minute=1, second=0, microsecond=0)
+    scheduler.add_job(run_procedure_sequence, 'interval', minutes=5, start_date=next_hour)
+ 
     # scheduler.add_job(run_IG, 'interval', args=[ticker], hours=1, start_date=next_hour)
     
     # these are extra versions but can be deleted later

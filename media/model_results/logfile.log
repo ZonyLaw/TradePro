@@ -491,3 +491,20 @@ KeyError: 'cst'
 2024-04-01 21:15:31,265 - WARNING - Not Found: /images/favicon.ico
 2024-04-01 21:15:33,840 - WARNING - Not Found: /tickers/images/favicon.ico
 2024-04-01 21:15:38,179 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-04-01 21:19:01,674 - INFO - Starting scheduler
+2024-04-01 21:19:01,674 - INFO - Updater date and time: 2024-04-01 21:19:01.674530
+2024-04-01 21:19:01,674 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 21:19:01,674 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 21:19:01,674 - INFO - Scheduler started
+2024-04-01 21:19:01,674 - INFO - Current time of the scheduler: 2024-04-01 21:19:01.674530
+2024-04-01 21:19:01,674 - INFO - Ending scheduler
+2024-04-01 21:19:03,461 - INFO - Starting scheduler
+2024-04-01 21:19:03,461 - INFO - Updater date and time: 2024-04-01 21:19:03.461761
+2024-04-01 21:19:03,461 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 21:19:03,461 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 21:19:03,461 - INFO - Scheduler started
+2024-04-01 21:19:03,477 - INFO - Current time of the scheduler: 2024-04-01 21:19:03.477462
+2024-04-01 21:19:03,477 - INFO - Ending scheduler
+2024-04-01 21:19:03,477 - INFO - Watching for file changes with StatReloader
+2024-04-01 21:19:04,959 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 21:19:21,034 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
