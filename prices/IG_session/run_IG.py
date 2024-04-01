@@ -134,8 +134,8 @@ def run_IG(ticker, start_date=None, end_date=None):
         end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
     
     
-    start_time_rounded = start_range.replace( second=0, microsecond=0)
-    end_time_rounded = end_range.replace( second=0, microsecond=0)
+    start_time_rounded = start_range.replace( minute=0, second=0, microsecond=0)
+    end_time_rounded = end_range.replace( minute=0, second=0, microsecond=0)
     start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     print("rounded start time", start_time_rounded)
