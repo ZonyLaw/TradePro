@@ -124,15 +124,17 @@ def run_IG(ticker, start_date=None, end_date=None):
     # current_time_str = "2023-12-29 14:50:00+00"
     # 2023-12-26 02:19:00+00:00
 
+    #TODO: there is an issue how it deals with time so I subtract two hours below.
     if start_date is not None:
         print("Using range")
         start_range = start_date
         end_range = end_date
     else:
         print("Using cron auto get price")
-        start_range = current_time - timedelta(hours=1)
-        end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
-    
+        start_range = current_time - timedelta(hours=2)
+        end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S") 
+        print("using Cron start time", start_range)
+        print("using Cron end time", end_range)
     
     start_time_rounded = start_range.replace( minute=0, second=0, microsecond=0)
     end_time_rounded = end_range.replace( minute=0, second=0, microsecond=0)
