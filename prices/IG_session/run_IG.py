@@ -12,7 +12,10 @@ from tickers.models import Ticker
 from ..models import Price
 from django.db.models import Count
 from tradepro.utils.read_json import read_ticker_list
+import logging
 
+current_directory = os.getcwd()
+logging.basicConfig(filename=f'{current_directory}/media/model_results/logfile.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 if os.path.isfile('env.py'):
     import env
@@ -119,11 +122,11 @@ def run_IG(ticker, start_date=None, end_date=None):
 
     if start_date is not None:
         print("Using range")
-        start_range = start_date - timedelta(minutes=50)
+        start_range = start_date
         end_range = end_date
     else:
         print("Using cron auto get price")
-        start_range = current_time - timedelta(hours=1) - timedelta(minutes=50)
+        start_range = current_time - timedelta(hours=1)
         end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
     
     
@@ -131,8 +134,9 @@ def run_IG(ticker, start_date=None, end_date=None):
     end_time_rounded = end_range.replace( second=0, microsecond=0)
     start_time_str = start_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
     end_time_str = end_time_rounded.strftime("%Y:%m:%d-%H:%M:%S")
-    print(start_time_rounded)
-    print(end_time_rounded)
+    print("rounded start time", start_time_rounded)
+    print("rounded end time", end_time_rounded)
+    logging.info(f"The input start time: {start_time_rounded}")
    
     #######Running the model predictions
     current_module_dir = os.path.dirname(os.path.abspath(__file__))

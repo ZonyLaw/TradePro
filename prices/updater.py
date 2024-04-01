@@ -13,7 +13,7 @@ import logging
 import os
 
 current_directory = os.getcwd()
-logging.basicConfig(filename=f'{current_directory}/media/logfile.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename=f'{current_directory}/media/model_results/logfile.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def start():
     logging.info("Starting scheduler")
@@ -38,7 +38,7 @@ def start():
     # next_hour specify the minutes and seconds
     # next_hour = (current_time + timedelta(hours=1)).replace(minute=34, second=0, microsecond=0)
 
-    next_hour = (current_time).replace(minute=0, second=30, microsecond=0)
+    next_hour = (current_time).replace(minute=1, second=0, microsecond=0)
     scheduler.add_job(run_procedure_sequence, 'interval', minutes=5, start_date=next_hour)
     
     # scheduler.add_job(run_IG, 'interval', args=[ticker], hours=1, start_date=next_hour)
@@ -47,10 +47,10 @@ def start():
     # scheduler.add_job(run_IG, 'interval', args=[ticker], hours=1)
     # scheduler.add_job(run_IG, 'cron', args=[ticker], hour='*')
 
- 
-    
     scheduler.start()
-    print("ending scheduler")
+    
+    current_time = datetime.now()
+    logging.info(f"Current time of the scheduler: {current_time}")
     logging.info("Ending scheduler")
 
 

@@ -221,7 +221,6 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
             )
             send_email=False
              
-        
     else:
         comment = (
             f"WARNING: Not a good time to trade!{next_line}"

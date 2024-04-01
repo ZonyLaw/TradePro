@@ -1,0 +1,128 @@
+2024-04-01 18:48:12,961 - INFO - Starting scheduler
+2024-04-01 18:48:12,961 - INFO - Updater date and time: 2024-04-01 18:48:12.961239
+2024-04-01 18:48:12,961 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:48:12,961 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:48:12,961 - INFO - Scheduler started
+2024-04-01 18:48:12,961 - INFO - Ending scheduler
+2024-04-01 18:48:14,685 - INFO - Starting scheduler
+2024-04-01 18:48:14,685 - INFO - Updater date and time: 2024-04-01 18:48:14.685549
+2024-04-01 18:48:14,685 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:48:14,685 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:48:14,685 - INFO - Scheduler started
+2024-04-01 18:48:14,685 - INFO - Ending scheduler
+2024-04-01 18:48:14,723 - INFO - Watching for file changes with StatReloader
+2024-04-01 18:50:12,062 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py changed, reloading.
+2024-04-01 18:50:14,004 - INFO - Starting scheduler
+2024-04-01 18:50:14,009 - INFO - Updater date and time: 2024-04-01 18:50:14.009252
+2024-04-01 18:50:14,010 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:50:14,010 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:50:14,010 - INFO - Scheduler started
+2024-04-01 18:50:14,046 - INFO - Watching for file changes with StatReloader
+2024-04-01 18:53:42,594 - INFO - Starting scheduler
+2024-04-01 18:53:42,595 - INFO - Updater date and time: 2024-04-01 18:53:42.595759
+2024-04-01 18:53:42,596 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:53:42,596 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:53:42,596 - INFO - Scheduler started
+2024-04-01 18:53:44,422 - INFO - Starting scheduler
+2024-04-01 18:53:44,422 - INFO - Updater date and time: 2024-04-01 18:53:44.422120
+2024-04-01 18:53:44,422 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:53:44,422 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:53:44,422 - INFO - Scheduler started
+2024-04-01 18:53:44,443 - INFO - Watching for file changes with StatReloader
+2024-04-01 18:54:07,015 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py changed, reloading.
+2024-04-01 18:54:09,076 - INFO - Starting scheduler
+2024-04-01 18:54:09,076 - INFO - Updater date and time: 2024-04-01 18:54:09.076077
+2024-04-01 18:54:09,076 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 18:54:09,076 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 18:54:09,076 - INFO - Scheduler started
+2024-04-01 18:54:09,076 - INFO - Current time of the scheduler: 2024-04-01 18:54:09.076077
+2024-04-01 18:54:09,076 - INFO - Ending scheduler
+2024-04-01 18:54:09,099 - INFO - Watching for file changes with StatReloader
+2024-04-01 18:54:11,289 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 18:54:14,125 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-04-01 18:54:15,370 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-04-01 19:30:15,976 - INFO - Starting scheduler
+2024-04-01 19:30:15,976 - INFO - Updater date and time: 2024-04-01 19:30:15.976366
+2024-04-01 19:30:15,976 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:30:15,976 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:30:15,976 - INFO - Scheduler started
+2024-04-01 19:30:15,976 - INFO - Current time of the scheduler: 2024-04-01 19:30:15.976366
+2024-04-01 19:30:15,976 - INFO - Ending scheduler
+2024-04-01 19:30:17,709 - INFO - Starting scheduler
+2024-04-01 19:30:17,709 - INFO - Updater date and time: 2024-04-01 19:30:17.709522
+2024-04-01 19:30:17,709 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:30:17,709 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:30:17,709 - INFO - Scheduler started
+2024-04-01 19:30:17,709 - INFO - Current time of the scheduler: 2024-04-01 19:30:17.709522
+2024-04-01 19:30:17,709 - INFO - Ending scheduler
+2024-04-01 19:30:17,734 - INFO - Watching for file changes with StatReloader
+2024-04-01 19:30:27,011 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 19:31:00,021 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 19:31:00 BST)" (scheduled at 2024-04-01 19:31:00+01:00)
+2024-04-01 19:31:00,021 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 19:31:00 BST)" (scheduled at 2024-04-01 19:31:00+01:00)
+2024-04-01 19:31:00,021 - INFO - Inside the procedure sequence
+2024-04-01 19:31:00,021 - INFO - The input start time: 2024-04-01 18:31:00
+2024-04-01 19:31:00,021 - INFO - The input start time: 2024-04-01 18:31:00
+2024-04-01 19:31:12,744 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 19:36:00 BST)" executed successfully
+2024-04-01 19:31:12,863 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 19:36:00 BST)" executed successfully
+2024-04-01 19:39:08,381 - INFO - Starting scheduler
+2024-04-01 19:39:08,381 - INFO - Updater date and time: 2024-04-01 19:39:08.381583
+2024-04-01 19:39:08,381 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:39:08,381 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:39:08,381 - INFO - Scheduler started
+2024-04-01 19:39:08,397 - INFO - Current time of the scheduler: 2024-04-01 19:39:08.397296
+2024-04-01 19:39:08,397 - INFO - Ending scheduler
+2024-04-01 19:39:10,089 - INFO - Starting scheduler
+2024-04-01 19:39:10,089 - INFO - Updater date and time: 2024-04-01 19:39:10.089589
+2024-04-01 19:39:10,089 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:39:10,105 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:39:10,105 - INFO - Scheduler started
+2024-04-01 19:39:10,106 - INFO - Current time of the scheduler: 2024-04-01 19:39:10.106253
+2024-04-01 19:39:10,106 - INFO - Ending scheduler
+2024-04-01 19:39:10,121 - INFO - Watching for file changes with StatReloader
+2024-04-01 19:39:15,248 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-04-01 19:39:29,561 - ERROR - Internal Server Error: /ml_models/delete-file/logfile.log/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 454, in delete_file
+    os.remove(file_path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\sunny\\Desktop\\Development\\python\\TradePro\\media\\model_results\\logfile.log'
+2024-04-01 19:39:29,657 - WARNING - Not Found: /favicon.ico
+2024-04-01 19:55:50,938 - INFO - Starting scheduler
+2024-04-01 19:55:50,939 - INFO - Updater date and time: 2024-04-01 19:55:50.938638
+2024-04-01 19:55:50,939 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:55:50,940 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:55:50,940 - INFO - Scheduler started
+2024-04-01 19:55:50,941 - INFO - Current time of the scheduler: 2024-04-01 19:55:50.941667
+2024-04-01 19:55:50,941 - INFO - Ending scheduler
+2024-04-01 19:55:52,786 - INFO - Starting scheduler
+2024-04-01 19:55:52,787 - INFO - Updater date and time: 2024-04-01 19:55:52.787425
+2024-04-01 19:55:52,788 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 19:55:52,788 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 19:55:52,788 - INFO - Scheduler started
+2024-04-01 19:55:52,789 - INFO - Current time of the scheduler: 2024-04-01 19:55:52.789425
+2024-04-01 19:55:52,789 - INFO - Ending scheduler
+2024-04-01 19:55:52,801 - INFO - Watching for file changes with StatReloader
+2024-04-01 19:56:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 19:56:00 BST)" (scheduled at 2024-04-01 19:56:00+01:00)
+2024-04-01 19:56:00,011 - INFO - Inside the procedure sequence
+2024-04-01 19:56:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 20:01:00 BST)" (scheduled at 2024-04-01 19:56:00+01:00)
+2024-04-01 19:56:00,013 - INFO - Inside the procedure sequence
+2024-04-01 19:56:00,014 - INFO - The input start time: 2024-04-01 18:56:00
+2024-04-01 19:56:00,019 - INFO - The input start time: 2024-04-01 18:56:00
+2024-04-01 19:56:07,852 - ERROR - Internal Server Error: /ml_models/delete-file/logfile.log/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 454, in delete_file
+    os.remove(file_path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\sunny\\Desktop\\Development\\python\\TradePro\\media\\model_results\\logfile.log'
+2024-04-01 19:56:16,996 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 20:01:00 BST)" executed successfully
+2024-04-01 19:56:18,025 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-01 20:01:00 BST)" executed successfully
