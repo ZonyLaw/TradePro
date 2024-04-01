@@ -14,11 +14,15 @@ from django.db.models import Count
 from tradepro.utils.read_json import read_ticker_list
 import logging
 
-current_directory = os.getcwd()
-logging.basicConfig(filename=f'{current_directory}/media/model_results/logfile.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 if os.path.isfile('env.py'):
     import env
+    
+#getting directory of the script.
+base_dir = os.path.dirname(os.path.abspath(__file__))  
+# Move up two levels from the current module's directory
+base_dir_up_two_levels = os.path.abspath(os.path.join(base_dir, os.pardir, os.pardir))
+relative_path = os.path.join(base_dir_up_two_levels, 'media', 'model_results', "logfile.log")
+logging.basicConfig(filename=relative_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def recordIGPrice(ticker, df, scaling_factor):

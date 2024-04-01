@@ -12,8 +12,12 @@ from tradepro.utils.read_json import read_ticker_list
 import logging
 import os
 
-current_directory = os.getcwd()
-logging.basicConfig(filename=f'{current_directory}/media/model_results/logfile.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+#getting directory of the script.
+base_dir = os.path.dirname(os.path.abspath(__file__))  
+# Move up two levels from the current module's directory
+base_dir_up_one_level = os.path.abspath(os.path.join(base_dir, os.pardir))
+relative_path = os.path.join(base_dir_up_one_level, 'media', 'model_results', "logfile.log")
+logging.basicConfig(filename=relative_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def start():
     logging.info("Starting scheduler")
