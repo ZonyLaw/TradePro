@@ -6670,3 +6670,62 @@ TypeError: 'builtin_function_or_method' object is not subscriptable
 2024-04-01 16:03:01,187 - INFO - Watching for file changes with StatReloader
 2024-04-01 16:03:35,043 - WARNING - Not Found: /images/favicon.ico
 2024-04-01 16:03:40,460 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 16:37:00,325 - INFO - Starting scheduler
+2024-04-01 16:37:00,325 - INFO - Updater date and time: 2024-04-01 16:37:00.325153
+2024-04-01 16:37:00,325 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:37:00,325 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:37:00,325 - INFO - Scheduler started
+2024-04-01 16:37:00,325 - INFO - Ending scheduler
+2024-04-01 16:37:02,135 - INFO - Starting scheduler
+2024-04-01 16:37:02,135 - INFO - Updater date and time: 2024-04-01 16:37:02.135847
+2024-04-01 16:37:02,135 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:37:02,135 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:37:02,135 - INFO - Scheduler started
+2024-04-01 16:37:02,135 - INFO - Ending scheduler
+2024-04-01 16:37:02,158 - INFO - Watching for file changes with StatReloader
+2024-04-01 16:37:06,712 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-04-01 16:37:07,983 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-04-01 16:37:19,010 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 155, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 149, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-01 16:37:19,119 - WARNING - Not Found: /favicon.ico
+2024-04-01 16:37:33,370 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-04-01 16:41:50,657 - INFO - Starting scheduler
+2024-04-01 16:41:50,657 - INFO - Updater date and time: 2024-04-01 16:41:50.657217
+2024-04-01 16:41:50,657 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:41:50,657 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:41:50,657 - INFO - Scheduler started
+2024-04-01 16:41:50,672 - INFO - Ending scheduler
+2024-04-01 16:41:52,387 - INFO - Starting scheduler
+2024-04-01 16:41:52,387 - INFO - Updater date and time: 2024-04-01 16:41:52.387038
+2024-04-01 16:41:52,387 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:41:52,387 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:41:52,387 - INFO - Scheduler started
+2024-04-01 16:41:52,387 - INFO - Ending scheduler
+2024-04-01 16:41:52,402 - INFO - Watching for file changes with StatReloader
+2024-04-01 16:42:24,161 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py changed, reloading.
+2024-04-01 16:42:26,238 - INFO - Starting scheduler
+2024-04-01 16:42:26,238 - INFO - Updater date and time: 2024-04-01 16:42:26.238989
+2024-04-01 16:42:26,238 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:42:26,238 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:42:26,238 - INFO - Scheduler started
+2024-04-01 16:42:26,238 - INFO - Ending scheduler
+2024-04-01 16:42:26,259 - INFO - Watching for file changes with StatReloader
