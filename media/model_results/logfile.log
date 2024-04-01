@@ -508,3 +508,45 @@ KeyError: 'cst'
 2024-04-01 21:19:03,477 - INFO - Watching for file changes with StatReloader
 2024-04-01 21:19:04,959 - WARNING - Not Found: /images/favicon.ico
 2024-04-01 21:19:21,034 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 22:27:29,382 - INFO - Starting scheduler
+2024-04-01 22:27:29,382 - INFO - Updater date and time: 2024-04-01 22:27:29.382500
+2024-04-01 22:27:29,382 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 22:27:29,382 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 22:27:29,382 - INFO - Scheduler started
+2024-04-01 22:27:29,382 - INFO - Current time of the scheduler: 2024-04-01 22:27:29.382500
+2024-04-01 22:27:29,382 - INFO - Ending scheduler
+2024-04-01 22:27:30,397 - INFO - Running job "run_procedure_sequence (trigger: date[2024-04-01 22:27:30 BST], next run at: 2024-04-01 22:27:30 BST)" (scheduled at 2024-04-01 22:27:30.382500+01:00)
+2024-04-01 22:27:30,398 - INFO - Removed job c8faf250e08f49b7b2e2a290fb62c193
+2024-04-01 22:27:30,398 - INFO - Inside the procedure sequence
+2024-04-01 22:27:30,680 - INFO - The input start time: 2024-04-01 21:00:00
+2024-04-01 22:27:31,593 - INFO - Starting scheduler
+2024-04-01 22:27:31,593 - INFO - Updater date and time: 2024-04-01 22:27:31.593970
+2024-04-01 22:27:31,593 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 22:27:31,593 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 22:27:31,593 - INFO - Scheduler started
+2024-04-01 22:27:31,593 - INFO - Current time of the scheduler: 2024-04-01 22:27:31.593970
+2024-04-01 22:27:31,593 - INFO - Ending scheduler
+2024-04-01 22:27:31,625 - INFO - Watching for file changes with StatReloader
+2024-04-01 22:27:32,612 - INFO - Running job "run_procedure_sequence (trigger: date[2024-04-01 22:27:32 BST], next run at: 2024-04-01 22:27:32 BST)" (scheduled at 2024-04-01 22:27:32.593970+01:00)
+2024-04-01 22:27:32,612 - INFO - Removed job 8acdaeee0cfb42919ae1755d51661dea
+2024-04-01 22:27:32,612 - INFO - Inside the procedure sequence
+2024-04-01 22:27:32,840 - INFO - The input start time: 2024-04-01 21:00:00
+2024-04-01 22:27:33,410 - ERROR - Job "run_procedure_sequence (trigger: date[2024-04-01 22:27:32 BST], next run at: 2024-04-01 22:27:32 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-01 22:27:39,177 - INFO - Job "run_procedure_sequence (trigger: date[2024-04-01 22:27:30 BST], next run at: 2024-04-01 22:27:30 BST)" executed successfully

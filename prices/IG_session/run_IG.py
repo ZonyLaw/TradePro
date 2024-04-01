@@ -2,6 +2,7 @@ import os
 import sys
 import datetime
 import numpy as np
+import pytz
 
 from django.conf import settings
 from datetime import datetime, timedelta
@@ -119,7 +120,7 @@ def run_IG(ticker, start_date=None, end_date=None):
     
     #creating the time range for the fetch method
     current_time = datetime.now()
-    current_time_str = current_time.strftime("%Y-%m-%d %H:%M:%S")
+
     
     # current_time_str = "2023-12-29 14:50:00+00"
     # 2023-12-26 02:19:00+00:00
@@ -131,7 +132,12 @@ def run_IG(ticker, start_date=None, end_date=None):
         end_range = end_date
     else:
         print("Using cron auto get price")
-        start_range = current_time - timedelta(hours=2)
+        
+        london_timezone = pytz.timezone('Europe/London')
+        current_time_london = current_time.replace(tzinfo=pytz.utc).astimezone(london_timezone)
+        current_time_str = current_time_london.strftime("%Y-%m-%d %H:%M:%S")
+        
+        start_range = current_time - timedelta(hours=1)
         end_range = datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S") 
         print("using Cron start time", start_range)
         print("using Cron end time", end_range)
