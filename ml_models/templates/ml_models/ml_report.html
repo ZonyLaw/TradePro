@@ -83,7 +83,7 @@
         <p>Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry.</p>
 
     <h1>Analysis Report</h1>
-    <h2>History</h2>
+    <h2>History to Current</h2>
 
     <table>
         <thead>
@@ -184,6 +184,12 @@
             <tbody>
     
                 <tr>
+                    <td>Trade Direction</td>
+                    {% for trade in trade_dict %}
+                        <td>{{ trade }}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
                     <td>Confirmation of Direction</td>
                     {% for pred in reverse_pred %}
                         <td>{{ pred }}</td>
@@ -201,6 +207,7 @@
     
     <br>
     <hr>
+    <h1> Next Candle Stick Predictions</h1>
     <h2 style="color: green;">Continuation of a {{potential_trade}} </h2>
     <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
 

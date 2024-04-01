@@ -6469,3 +6469,204 @@ KeyError: 'cst'
 2024-03-31 20:41:52,932 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
 2024-03-31 20:42:26,501 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
 2024-03-31 20:42:35,314 - WARNING - Not Found: /ml_models/ml-variability/images/favicon.ico
+2024-04-01 15:29:56,041 - INFO - Starting scheduler
+2024-04-01 15:29:56,057 - INFO - Updater date and time: 2024-04-01 15:29:56.057535
+2024-04-01 15:29:56,057 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:29:56,057 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:29:56,057 - INFO - Scheduler started
+2024-04-01 15:29:56,057 - INFO - Ending scheduler
+2024-04-01 15:29:57,755 - INFO - Starting scheduler
+2024-04-01 15:29:57,755 - INFO - Updater date and time: 2024-04-01 15:29:57.755188
+2024-04-01 15:29:57,755 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:29:57,755 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:29:57,755 - INFO - Scheduler started
+2024-04-01 15:29:57,755 - INFO - Ending scheduler
+2024-04-01 15:29:57,776 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:30:00,148 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:30:03,679 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-04-01 15:30:04,502 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-04-01 15:30:08,563 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:36:19,413 - INFO - Starting scheduler
+2024-04-01 15:36:19,414 - INFO - Updater date and time: 2024-04-01 15:36:19.414394
+2024-04-01 15:36:19,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:36:19,415 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:36:19,416 - INFO - Scheduler started
+2024-04-01 15:36:19,417 - INFO - Ending scheduler
+2024-04-01 15:36:21,204 - INFO - Starting scheduler
+2024-04-01 15:36:21,220 - INFO - Updater date and time: 2024-04-01 15:36:21.204981
+2024-04-01 15:36:21,220 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:36:21,220 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:36:21,220 - INFO - Scheduler started
+2024-04-01 15:36:21,220 - INFO - Ending scheduler
+2024-04-01 15:36:21,243 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:36:22,654 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:36:28,114 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:37:28,372 - INFO - Starting scheduler
+2024-04-01 15:37:28,373 - INFO - Updater date and time: 2024-04-01 15:37:28.373481
+2024-04-01 15:37:28,374 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:37:28,374 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:37:28,374 - INFO - Scheduler started
+2024-04-01 15:37:28,375 - INFO - Ending scheduler
+2024-04-01 15:37:30,093 - INFO - Starting scheduler
+2024-04-01 15:37:30,093 - INFO - Updater date and time: 2024-04-01 15:37:30.093169
+2024-04-01 15:37:30,093 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:37:30,093 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:37:30,093 - INFO - Scheduler started
+2024-04-01 15:37:30,093 - INFO - Ending scheduler
+2024-04-01 15:37:30,122 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:37:31,515 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:37:46,845 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:39:01,643 - INFO - Starting scheduler
+2024-04-01 15:39:01,644 - INFO - Updater date and time: 2024-04-01 15:39:01.644382
+2024-04-01 15:39:01,645 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:39:01,646 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:39:01,646 - INFO - Scheduler started
+2024-04-01 15:39:01,646 - INFO - Ending scheduler
+2024-04-01 15:39:03,364 - INFO - Starting scheduler
+2024-04-01 15:39:03,364 - INFO - Updater date and time: 2024-04-01 15:39:03.364832
+2024-04-01 15:39:03,380 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:39:03,380 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:39:03,380 - INFO - Scheduler started
+2024-04-01 15:39:03,380 - INFO - Ending scheduler
+2024-04-01 15:39:03,387 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:39:04,627 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:39:10,106 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:43:15,759 - INFO - Starting scheduler
+2024-04-01 15:43:15,760 - INFO - Updater date and time: 2024-04-01 15:43:15.760978
+2024-04-01 15:43:15,761 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:43:15,761 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:43:15,761 - INFO - Scheduler started
+2024-04-01 15:43:15,763 - INFO - Ending scheduler
+2024-04-01 15:43:17,460 - INFO - Starting scheduler
+2024-04-01 15:43:17,460 - INFO - Updater date and time: 2024-04-01 15:43:17.460740
+2024-04-01 15:43:17,460 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:43:17,460 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:43:17,460 - INFO - Scheduler started
+2024-04-01 15:43:17,476 - INFO - Ending scheduler
+2024-04-01 15:43:17,476 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:43:18,788 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:43:20,987 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 188, in ml_report
+    trade_dict.append['Sell']
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: 'builtin_function_or_method' object is not subscriptable
+2024-04-01 15:43:21,064 - WARNING - Not Found: /favicon.ico
+2024-04-01 15:43:50,341 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-04-01 15:43:52,456 - INFO - Starting scheduler
+2024-04-01 15:43:52,456 - INFO - Updater date and time: 2024-04-01 15:43:52.456284
+2024-04-01 15:43:52,457 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:43:52,457 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:43:52,457 - INFO - Scheduler started
+2024-04-01 15:43:52,458 - INFO - Ending scheduler
+2024-04-01 15:43:52,474 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:43:57,733 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:44:37,996 - INFO - Starting scheduler
+2024-04-01 15:44:37,996 - INFO - Updater date and time: 2024-04-01 15:44:37.996569
+2024-04-01 15:44:37,996 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:44:37,996 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:44:37,996 - INFO - Scheduler started
+2024-04-01 15:44:37,996 - INFO - Ending scheduler
+2024-04-01 15:44:39,752 - INFO - Starting scheduler
+2024-04-01 15:44:39,752 - INFO - Updater date and time: 2024-04-01 15:44:39.752062
+2024-04-01 15:44:39,752 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:44:39,752 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:44:39,752 - INFO - Scheduler started
+2024-04-01 15:44:39,752 - INFO - Ending scheduler
+2024-04-01 15:44:39,779 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:44:41,246 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:44:45,481 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:52:03,202 - INFO - Starting scheduler
+2024-04-01 15:52:03,202 - INFO - Updater date and time: 2024-04-01 15:52:03.202107
+2024-04-01 15:52:03,202 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:52:03,202 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:52:03,202 - INFO - Scheduler started
+2024-04-01 15:52:03,217 - INFO - Ending scheduler
+2024-04-01 15:52:04,940 - INFO - Starting scheduler
+2024-04-01 15:52:04,941 - INFO - Updater date and time: 2024-04-01 15:52:04.941504
+2024-04-01 15:52:04,942 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:52:04,942 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:52:04,942 - INFO - Scheduler started
+2024-04-01 15:52:04,943 - INFO - Ending scheduler
+2024-04-01 15:52:04,960 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:52:06,417 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:52:10,542 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:53:02,278 - INFO - Starting scheduler
+2024-04-01 15:53:02,279 - INFO - Updater date and time: 2024-04-01 15:53:02.278400
+2024-04-01 15:53:02,280 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:53:02,280 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:53:02,280 - INFO - Scheduler started
+2024-04-01 15:53:02,281 - INFO - Ending scheduler
+2024-04-01 15:53:03,963 - INFO - Starting scheduler
+2024-04-01 15:53:03,963 - INFO - Updater date and time: 2024-04-01 15:53:03.963473
+2024-04-01 15:53:03,963 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:53:03,963 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:53:03,963 - INFO - Scheduler started
+2024-04-01 15:53:03,963 - INFO - Ending scheduler
+2024-04-01 15:53:03,991 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:56:16,595 - INFO - Starting scheduler
+2024-04-01 15:56:16,595 - INFO - Updater date and time: 2024-04-01 15:56:16.595563
+2024-04-01 15:56:16,595 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:56:16,595 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:56:16,595 - INFO - Scheduler started
+2024-04-01 15:56:16,595 - INFO - Ending scheduler
+2024-04-01 15:56:18,305 - INFO - Starting scheduler
+2024-04-01 15:56:18,306 - INFO - Updater date and time: 2024-04-01 15:56:18.306967
+2024-04-01 15:56:18,307 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:56:18,307 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:56:18,307 - INFO - Scheduler started
+2024-04-01 15:56:18,309 - INFO - Ending scheduler
+2024-04-01 15:56:18,310 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:56:19,634 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:56:24,366 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 15:58:14,119 - INFO - Starting scheduler
+2024-04-01 15:58:14,119 - INFO - Updater date and time: 2024-04-01 15:58:14.119542
+2024-04-01 15:58:14,119 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:58:14,119 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:58:14,119 - INFO - Scheduler started
+2024-04-01 15:58:14,119 - INFO - Ending scheduler
+2024-04-01 15:58:15,843 - INFO - Starting scheduler
+2024-04-01 15:58:15,859 - INFO - Updater date and time: 2024-04-01 15:58:15.859065
+2024-04-01 15:58:15,860 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 15:58:15,860 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 15:58:15,860 - INFO - Scheduler started
+2024-04-01 15:58:15,861 - INFO - Ending scheduler
+2024-04-01 15:58:15,876 - INFO - Watching for file changes with StatReloader
+2024-04-01 15:58:17,215 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 15:58:21,173 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 16:00:50,211 - INFO - Starting scheduler
+2024-04-01 16:00:50,211 - INFO - Updater date and time: 2024-04-01 16:00:50.211996
+2024-04-01 16:00:50,222 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:00:50,222 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:00:50,222 - INFO - Scheduler started
+2024-04-01 16:00:50,222 - INFO - Ending scheduler
+2024-04-01 16:00:52,000 - INFO - Starting scheduler
+2024-04-01 16:00:52,000 - INFO - Updater date and time: 2024-04-01 16:00:52.000332
+2024-04-01 16:00:52,000 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:00:52,000 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:00:52,000 - INFO - Scheduler started
+2024-04-01 16:00:52,000 - INFO - Ending scheduler
+2024-04-01 16:00:52,022 - INFO - Watching for file changes with StatReloader
+2024-04-01 16:00:55,722 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 16:01:02,035 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-01 16:02:59,455 - INFO - Starting scheduler
+2024-04-01 16:02:59,455 - INFO - Updater date and time: 2024-04-01 16:02:59.455434
+2024-04-01 16:02:59,455 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:02:59,455 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:02:59,455 - INFO - Scheduler started
+2024-04-01 16:02:59,455 - INFO - Ending scheduler
+2024-04-01 16:03:01,172 - INFO - Starting scheduler
+2024-04-01 16:03:01,172 - INFO - Updater date and time: 2024-04-01 16:03:01.172334
+2024-04-01 16:03:01,172 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-01 16:03:01,187 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-01 16:03:01,187 - INFO - Scheduler started
+2024-04-01 16:03:01,187 - INFO - Ending scheduler
+2024-04-01 16:03:01,187 - INFO - Watching for file changes with StatReloader
+2024-04-01 16:03:35,043 - WARNING - Not Found: /images/favicon.ico
+2024-04-01 16:03:40,460 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico

@@ -168,13 +168,23 @@ def ml_report(request):
     close_prices = last_four_prices_df['close'].tolist()
     volume = last_four_prices_df['volume'].tolist()
     
+    #looking at the 1hr and 4hr candle sticks direction
     trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
     trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     candle_size = {"one" :trade_diff_1hr,
         "four": trade_diff_4hr}
     
-    trade = {"one" :trade_direction(trade_diff_1hr),
+    trade = {"one": trade_direction(trade_diff_1hr),
         "four": trade_direction(trade_diff_4hr)}
+    
+    # Iterate through the last 4 rows of the DataFrame
+    trade_dict = []
+    for i in range(0, len(last_four_prices_df), 1):
+        trade_diff = last_four_prices_df.iloc[i]['close'] - last_four_prices_df.iloc[i]['open']
+        if trade_diff > 0:
+            trade_dict.append('Buy')
+        elif trade_diff < 0:
+            trade_dict.append('Sell')
     
     #retrieve saved results from last calculation performed by updater.py
     pred_historical_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_historical_v4.json')
@@ -287,8 +297,9 @@ def ml_report(request):
     risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
 
     pred_pl = []
-    for price, trade in zip(open_prices,potential_trade_label_v4):
-        if trade == "Buy":
+    #calculate the profit or loss according to the predictions.
+    for price, direction in zip(open_prices,potential_trade_label_v4):
+        if direction == "Buy":
             pl = close_prices[-1] - price
         else:
             pl = price - close_prices[-1]
@@ -306,9 +317,8 @@ def ml_report(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-
-
-    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'version_comment':version_comment,
+    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
+             'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 'bb_target': bb_target,
