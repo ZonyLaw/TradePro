@@ -282,7 +282,7 @@ def trade_forecast_assessment(ticker, model_version):
         dp = StandardPriceProcessing(ticker=ticker)
     
     
-    X_live_historical = dp.historical_record(120)
+    X_live_historical = dp.historical_record(10)
     
     if model_version == "v1_reverse":
         pred_historical = reverse_model_run(ticker, X_live_historical, model_version)

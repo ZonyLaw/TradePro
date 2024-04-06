@@ -550,3 +550,340 @@ Traceback (most recent call last):
            ~~~~~~~~~~~^^^^^^^^^^^^^
 KeyError: 'cst'
 2024-04-01 22:27:39,177 - INFO - Job "run_procedure_sequence (trigger: date[2024-04-01 22:27:30 BST], next run at: 2024-04-01 22:27:30 BST)" executed successfully
+2024-04-06 11:59:25,536 - INFO - Starting scheduler
+2024-04-06 11:59:25,536 - INFO - Updater date and time: 2024-04-06 11:59:25.536096
+2024-04-06 11:59:25,536 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 11:59:25,536 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 11:59:25,536 - INFO - Scheduler started
+2024-04-06 11:59:25,536 - INFO - Current time of the scheduler: 2024-04-06 11:59:25.536096
+2024-04-06 11:59:25,536 - INFO - Ending scheduler
+2024-04-06 11:59:27,139 - INFO - Starting scheduler
+2024-04-06 11:59:27,139 - INFO - Updater date and time: 2024-04-06 11:59:27.139705
+2024-04-06 11:59:27,139 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 11:59:27,139 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 11:59:27,139 - INFO - Scheduler started
+2024-04-06 11:59:27,139 - INFO - Current time of the scheduler: 2024-04-06 11:59:27.139705
+2024-04-06 11:59:27,139 - INFO - Ending scheduler
+2024-04-06 11:59:27,156 - INFO - Watching for file changes with StatReloader
+2024-04-06 11:59:29,086 - WARNING - Not Found: /images/favicon.ico
+2024-04-06 11:59:36,330 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-06 12:02:19,107 - INFO - Starting scheduler
+2024-04-06 12:02:19,108 - INFO - Updater date and time: 2024-04-06 12:02:19.108812
+2024-04-06 12:02:19,108 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:02:19,108 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:02:19,108 - INFO - Scheduler started
+2024-04-06 12:02:19,111 - INFO - Current time of the scheduler: 2024-04-06 12:02:19.111308
+2024-04-06 12:02:19,111 - INFO - Ending scheduler
+2024-04-06 12:02:20,719 - INFO - Starting scheduler
+2024-04-06 12:02:20,719 - INFO - Updater date and time: 2024-04-06 12:02:20.719616
+2024-04-06 12:02:20,719 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:02:20,719 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:02:20,719 - INFO - Scheduler started
+2024-04-06 12:02:20,719 - INFO - Current time of the scheduler: 2024-04-06 12:02:20.719616
+2024-04-06 12:02:20,719 - INFO - Ending scheduler
+2024-04-06 12:02:20,740 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:02:22,157 - WARNING - Not Found: /images/favicon.ico
+2024-04-06 12:02:28,523 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-06 12:05:20,534 - WARNING - Not Found: /images/favicon.ico
+2024-04-06 12:05:22,054 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-04-06 12:05:23,461 - WARNING - Not Found: /ml_models/about/notes.html
+2024-04-06 12:05:23,507 - WARNING - Not Found: /favicon.ico
+2024-04-06 12:05:53,180 - WARNING - Not Found: /ml_models/about/notes.html
+2024-04-06 12:06:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:06:00 BST)" (scheduled at 2024-04-06 12:06:00+01:00)
+2024-04-06 12:06:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:06:00 BST)" (scheduled at 2024-04-06 12:06:00+01:00)
+2024-04-06 12:06:00,007 - INFO - Inside the procedure sequence
+2024-04-06 12:06:00,007 - INFO - Inside the procedure sequence
+2024-04-06 12:06:00,226 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:06:00,226 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:06:00,239 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001EACA806850>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EACA806850>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001EACA806850>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-04-06 12:06:00,239 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002C96CA42D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002C96CA42D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002C96CA42D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-04-06 12:09:28,359 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\urls.py changed, reloading.
+2024-04-06 12:09:30,504 - INFO - Starting scheduler
+2024-04-06 12:09:30,505 - INFO - Updater date and time: 2024-04-06 12:09:30.505752
+2024-04-06 12:09:30,506 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:09:30,506 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:09:30,506 - INFO - Scheduler started
+2024-04-06 12:09:30,507 - INFO - Current time of the scheduler: 2024-04-06 12:09:30.507755
+2024-04-06 12:09:30,507 - INFO - Ending scheduler
+2024-04-06 12:09:30,522 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:10:20,115 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-04-06 12:10:22,286 - INFO - Starting scheduler
+2024-04-06 12:10:22,287 - INFO - Updater date and time: 2024-04-06 12:10:22.287892
+2024-04-06 12:10:22,289 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:10:22,289 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:10:22,289 - INFO - Scheduler started
+2024-04-06 12:10:22,290 - INFO - Current time of the scheduler: 2024-04-06 12:10:22.290653
+2024-04-06 12:10:22,290 - INFO - Ending scheduler
+2024-04-06 12:10:22,315 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:11:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:16:00 BST)" (scheduled at 2024-04-06 12:11:00+01:00)
+2024-04-06 12:11:00,002 - INFO - Inside the procedure sequence
+2024-04-06 12:11:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:11:00 BST)" (scheduled at 2024-04-06 12:11:00+01:00)
+2024-04-06 12:11:00,003 - INFO - Inside the procedure sequence
+2024-04-06 12:11:00,012 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:11:00,263 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:11:15,246 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:16:00 BST)" executed successfully
+2024-04-06 12:11:15,571 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:16:00 BST)" executed successfully
+2024-04-06 12:11:38,922 - INFO - Starting scheduler
+2024-04-06 12:11:38,922 - INFO - Updater date and time: 2024-04-06 12:11:38.922981
+2024-04-06 12:11:38,922 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:11:38,922 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:11:38,922 - INFO - Scheduler started
+2024-04-06 12:11:38,922 - INFO - Current time of the scheduler: 2024-04-06 12:11:38.922981
+2024-04-06 12:11:38,922 - INFO - Ending scheduler
+2024-04-06 12:11:43,833 - INFO - Starting scheduler
+2024-04-06 12:11:43,834 - INFO - Updater date and time: 2024-04-06 12:11:43.833567
+2024-04-06 12:11:43,835 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:11:43,835 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:11:43,835 - INFO - Scheduler started
+2024-04-06 12:11:43,836 - INFO - Current time of the scheduler: 2024-04-06 12:11:43.836583
+2024-04-06 12:11:43,836 - INFO - Ending scheduler
+2024-04-06 12:11:45,528 - INFO - Starting scheduler
+2024-04-06 12:11:45,528 - INFO - Updater date and time: 2024-04-06 12:11:45.528022
+2024-04-06 12:11:45,528 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:11:45,528 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:11:45,528 - INFO - Scheduler started
+2024-04-06 12:11:45,528 - INFO - Current time of the scheduler: 2024-04-06 12:11:45.528022
+2024-04-06 12:11:45,528 - INFO - Ending scheduler
+2024-04-06 12:11:45,558 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:11:58,479 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-04-06 12:12:00,659 - INFO - Starting scheduler
+2024-04-06 12:12:00,659 - INFO - Updater date and time: 2024-04-06 12:12:00.659302
+2024-04-06 12:12:00,659 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:12:00,659 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:12:00,659 - INFO - Scheduler started
+2024-04-06 12:12:00,659 - INFO - Current time of the scheduler: 2024-04-06 12:12:00.659302
+2024-04-06 12:12:00,659 - INFO - Ending scheduler
+2024-04-06 12:12:00,678 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:12:05,862 - ERROR - Internal Server Error: /ml_models/notes/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 487, in notes
+    return render(request, 'notes.html')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: notes.html
+2024-04-06 12:13:03,951 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-04-06 12:13:06,057 - INFO - Starting scheduler
+2024-04-06 12:13:06,057 - INFO - Updater date and time: 2024-04-06 12:13:06.057929
+2024-04-06 12:13:06,057 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:13:06,057 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:13:06,057 - INFO - Scheduler started
+2024-04-06 12:13:06,057 - INFO - Current time of the scheduler: 2024-04-06 12:13:06.057929
+2024-04-06 12:13:06,057 - INFO - Ending scheduler
+2024-04-06 12:13:06,087 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:13:07,462 - WARNING - Not Found: /ml_models/notes/images/favicon.ico
+2024-04-06 12:16:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:16:00 BST)" (scheduled at 2024-04-06 12:16:00+01:00)
+2024-04-06 12:16:00,003 - INFO - Inside the procedure sequence
+2024-04-06 12:16:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:16:00 BST)" (scheduled at 2024-04-06 12:16:00+01:00)
+2024-04-06 12:16:00,012 - INFO - Inside the procedure sequence
+2024-04-06 12:16:00,183 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:16:00,184 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:16:08,760 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:21:00 BST)" executed successfully
+2024-04-06 12:16:09,139 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:21:00 BST)" executed successfully
+2024-04-06 12:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:26:00 BST)" (scheduled at 2024-04-06 12:21:00+01:00)
+2024-04-06 12:21:00,008 - INFO - Inside the procedure sequence
+2024-04-06 12:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:26:00 BST)" (scheduled at 2024-04-06 12:21:00+01:00)
+2024-04-06 12:21:00,008 - INFO - Inside the procedure sequence
+2024-04-06 12:21:00,013 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:21:00,013 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:21:00,729 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-06 12:21:07,864 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:26:00 BST)" executed successfully
+2024-04-06 12:25:53,210 - INFO - Starting scheduler
+2024-04-06 12:25:53,210 - INFO - Updater date and time: 2024-04-06 12:25:53.210958
+2024-04-06 12:25:53,210 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:25:53,210 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:25:53,210 - INFO - Scheduler started
+2024-04-06 12:25:53,210 - INFO - Current time of the scheduler: 2024-04-06 12:25:53.210958
+2024-04-06 12:25:53,210 - INFO - Ending scheduler
+2024-04-06 12:25:55,045 - INFO - Starting scheduler
+2024-04-06 12:25:55,045 - INFO - Updater date and time: 2024-04-06 12:25:55.045999
+2024-04-06 12:25:55,047 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-06 12:25:55,047 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-06 12:25:55,047 - INFO - Scheduler started
+2024-04-06 12:25:55,048 - INFO - Current time of the scheduler: 2024-04-06 12:25:55.048019
+2024-04-06 12:25:55,048 - INFO - Ending scheduler
+2024-04-06 12:25:55,067 - INFO - Watching for file changes with StatReloader
+2024-04-06 12:26:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:31:00 BST)" (scheduled at 2024-04-06 12:26:00+01:00)
+2024-04-06 12:26:00,003 - INFO - Inside the procedure sequence
+2024-04-06 12:26:00,018 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:26:00 BST)" (scheduled at 2024-04-06 12:26:00+01:00)
+2024-04-06 12:26:00,018 - INFO - Inside the procedure sequence
+2024-04-06 12:26:00,159 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:26:00,170 - INFO - The input start time: 2024-04-06 11:00:00
+2024-04-06 12:26:03,873 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
+2024-04-06 12:26:11,523 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:31:00 BST)" executed successfully
+2024-04-06 12:26:12,926 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-06 12:31:00 BST)" executed successfully

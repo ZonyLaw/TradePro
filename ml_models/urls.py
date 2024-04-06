@@ -12,4 +12,5 @@ urlpatterns = [
     path('delete-file/<str:filename>/', views.delete_file, name='delete_file'),
     path('export-file/<str:filename>/', views.export_file, name='export_file'),
     path('model-accuracy/', views.display_model_accuracy, name='model-accuracy'),
+    path('notes/', views.notes, name='notes'),
 ]

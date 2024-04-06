@@ -198,6 +198,7 @@ def ml_report(request):
     potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
  
     potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['extra']['trade_type']
+    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['extra']['trade_type']
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -296,15 +297,26 @@ def ml_report(request):
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
     risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
 
-    pred_pl = []
+    v4_pred_pl = []
     #calculate the profit or loss according to the predictions.
     for price, direction in zip(open_prices,potential_trade_label_v4):
         if direction == "Buy":
-            pl = close_prices[-1] - price
+            pl = close_prices[-1] - price 
         else:
             pl = price - close_prices[-1]
-            
-        pred_pl.append(round(pl*100))
+    
+        v4_pred_pl.append(round(pl*100))
+        
+    v5_pred_pl = []
+    #calculate the profit or loss according to the predictions.
+    for price, direction in zip(open_prices,potential_trade_label_v5):
+        if direction == "Buy":
+            pl = close_prices[-1] - price 
+        else:
+            pl = price - close_prices[-1]
+    
+        v5_pred_pl.append(round(pl*100))
+
 
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
@@ -323,7 +335,7 @@ def ml_report(request):
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
-             'pred_pl': pred_pl, 'pred_var_list': pred_var_list,
+             'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
              "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
@@ -469,3 +481,7 @@ def export_file(request, filename):
         return response
     else:
         return HttpResponse("File does not exist.")
+    
+    
+def notes(request):
+    return render(request, 'ml_models/notes.html')   

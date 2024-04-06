@@ -120,8 +120,16 @@
             </tr>
 
             <tr>
-                <td>Profit / Loss </td>
-                {% for pl in pred_pl %}
+                <td>v4 Profit / Loss </td>
+                {% for pl in v4_pred_pl %}
+                <td>{{ pl }} pips</td>
+                {% endfor %}
+
+            </tr>
+
+            <tr>
+                <td>v5 Profit / Loss </td>
+                {% for pl in v5_pred_pl %}
                 <td>{{ pl }} pips</td>
                 {% endfor %}
 
