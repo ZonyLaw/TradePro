@@ -7,5 +7,5 @@ urlpatterns = [
     path('', views.getRoutes),
     path('tickers/', views.getTickers),
     path('tickers/<str:pk>/', views.getTicker),
-    path('tickers/ticker/<str:pk>/', views.getPrices),
+    path('prices/<str:pk>/', views.getPrices),
 ]

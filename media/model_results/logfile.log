@@ -1586,3 +1586,18 @@ KeyError: 'cst'
 2024-04-14 11:33:51,810 - INFO - Current time of the scheduler: 2024-04-14 11:33:51.810893
 2024-04-14 11:33:51,810 - INFO - Ending scheduler
 2024-04-14 11:33:51,828 - INFO - Watching for file changes with StatReloader
+2024-04-14 11:47:03,887 - INFO - Starting scheduler
+2024-04-14 11:47:03,888 - INFO - Updater date and time: 2024-04-14 11:47:03.888089
+2024-04-14 11:47:03,889 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-14 11:47:03,889 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-14 11:47:03,889 - INFO - Scheduler started
+2024-04-14 11:47:03,890 - INFO - Current time of the scheduler: 2024-04-14 11:47:03.890089
+2024-04-14 11:47:03,890 - INFO - Ending scheduler
+2024-04-14 11:47:05,645 - INFO - Starting scheduler
+2024-04-14 11:47:05,646 - INFO - Updater date and time: 2024-04-14 11:47:05.646040
+2024-04-14 11:47:05,647 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-14 11:47:05,647 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-14 11:47:05,647 - INFO - Scheduler started
+2024-04-14 11:47:05,648 - INFO - Current time of the scheduler: 2024-04-14 11:47:05.648592
+2024-04-14 11:47:05,648 - INFO - Ending scheduler
+2024-04-14 11:47:05,666 - INFO - Watching for file changes with StatReloader
