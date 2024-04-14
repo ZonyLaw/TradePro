@@ -9,5 +9,6 @@ urlpatterns = [
     path('prices/', include('prices.urls')),
     path('ml_models/', include('ml_models.urls')),
     path('', include('users.urls')),
+    path('api', include('api.urls')),
 
 ]
