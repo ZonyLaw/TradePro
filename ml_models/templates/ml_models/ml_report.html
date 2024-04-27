@@ -24,12 +24,12 @@
 
         {% if volume %}
         {% with second_volume=volume.2 %}
-            {% if second_volume > 3000 %}
-                <div class="flash-container-orange">
-                    <div class="flash-box-orange">
-                        <div class="price-notification">
+        {% if second_volume > 3000 %}
+        <div class="price-notification">
+        <div class="flash-container-orange">
+            <div class="flash-box-orange">
                             <span class="label">Previous Volume:</span>
-                            <span class="value"> {{ second_volume }}</span>
+                            <span > {{ second_volume }}</span>
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,20 @@
 
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
         <p> Model prediction for the next 4 hrs.</p>
-        <div class=="flash-container-purple">
-            <div class="flash-box-purple">
-                <p><b> {{version_comment}} </b> </p>
+    {% if potential_trade == 'Buy' %}
+        <div class="flash-container-buy">
+            <div class="flash-box-buy">
+                <p><b>{{ version_comment }}</b></p>
             </div>
         </div>
+    {% elif potential_trade == 'Sell' %}
+        <div class="flash-container-sell">
+            <div class="flash-box-sell">
+                <p><b>{{ version_comment }}</b></p>
+            </div>
+        </div>
+    {% endif %}
+
         <table>
             <tr style="color:purple;"> 
                 <td> Trade direction: </td> 
@@ -140,7 +149,7 @@
             <tr>
                 <td>v4 Profit / Loss </td>
                 {% for pl in v4_pred_pl %}
-                <td>{{ pl }} pips</td>
+                <td style="color: {% if pl > 0 %}green{% elif pl < 0 %}red{% else %}black{% endif %}">{{ pl }} pips</td>
                 {% endfor %}
 
             </tr>
@@ -148,7 +157,7 @@
             <tr>
                 <td>v5 Profit / Loss </td>
                 {% for pl in v5_pred_pl %}
-                <td>{{ pl }} pips</td>
+                <td style="color: {% if pl > 0 %}green{% elif pl < 0 %}red{% else %}black{% endif %}">{{ pl }} pips</td>
                 {% endfor %}
 
             </tr>

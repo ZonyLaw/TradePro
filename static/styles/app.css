@@ -952,32 +952,59 @@ th, td {
 }
 
 /*=======================
-  Flashing trade container - purple
+  Flashing trade container for trading
 ========================*/
 
-.flash-container-purple {
+.flash-container-buy p{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
 }
 
-.flash-box-purple {
+.flash-box-buy p{
   padding: 20px;
-  background-color: purple;
+  background-color: rgb(49, 141, 40);
   color:white;
-  animation: flash-purple 3s infinite alternate;
+  animation: flash-buy 3s infinite alternate;
   text-align: center;
 }
 
-@keyframes flash-purple {
+@keyframes flash-buy {
   0% {
     background-color: transparent;
-    color: black;
+    color: rgb(56, 56, 56);
   }
   100% {
-    background-color: purple;
-    color: rgb(209, 202, 13);
+    background-color: rgb(49, 141, 40);
+    color: white;
+  }
+}
+
+
+.flash-container-sell p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.flash-box-sell p{
+  padding: 20px;
+  background-color: rgb(238, 15, 15);
+  color:white;
+  animation: flash-sell 3s infinite alternate;
+  text-align: center;
+}
+
+@keyframes flash-sell {
+  0% {
+    background-color: transparent;
+    color: rgb(56, 56, 56);
+  }
+  100% {
+    background-color: rgb(238, 15, 15);
+    color: white;
   }
 }
 
@@ -986,17 +1013,17 @@ th, td {
   Flashing trade container - orange
 ========================*/
 
-.flash-container-orange {
+.flash-container-orange span{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 0;
 }
 
-.flash-box-orange {
+.flash-box-orange span{
   padding: 20px;
   background-color: rgb(219, 47, 44);
-  color:white !important;
+  color:white;
   animation: flash-orange 3s infinite alternate;
   text-align: center;
 }
@@ -1004,11 +1031,11 @@ th, td {
 @keyframes flash-orange {
   0% {
     background-color: transparent;
-    color: black;
+    color: rgb(56, 56, 56);
   }
   100% {
     background-color: rgb(219, 47, 44);
-    color: rgb(247, 250, 80) !important;
+    color:white;
   }
 }
 
