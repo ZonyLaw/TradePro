@@ -1879,3 +1879,82 @@ KeyError: 'cst'
 2024-04-27 17:09:54,471 - INFO - Current time of the scheduler: 2024-04-27 17:09:54.471394
 2024-04-27 17:09:54,471 - INFO - Ending scheduler
 2024-04-27 17:09:54,488 - INFO - Watching for file changes with StatReloader
+2024-04-27 17:20:34,657 - INFO - Starting scheduler
+2024-04-27 17:20:34,658 - INFO - Updater date and time: 2024-04-27 17:20:34.657031
+2024-04-27 17:20:34,659 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:20:34,659 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:20:34,659 - INFO - Scheduler started
+2024-04-27 17:20:34,660 - INFO - Current time of the scheduler: 2024-04-27 17:20:34.660065
+2024-04-27 17:20:34,660 - INFO - Ending scheduler
+2024-04-27 17:20:36,413 - INFO - Starting scheduler
+2024-04-27 17:20:36,414 - INFO - Updater date and time: 2024-04-27 17:20:36.414096
+2024-04-27 17:20:36,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:20:36,415 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:20:36,415 - INFO - Scheduler started
+2024-04-27 17:20:36,416 - INFO - Current time of the scheduler: 2024-04-27 17:20:36.416116
+2024-04-27 17:20:36,416 - INFO - Ending scheduler
+2024-04-27 17:20:36,434 - INFO - Watching for file changes with StatReloader
+2024-04-27 17:21:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:21:00 BST)" (scheduled at 2024-04-27 17:21:00+01:00)
+2024-04-27 17:21:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:26:00 BST)" (scheduled at 2024-04-27 17:21:00+01:00)
+2024-04-27 17:21:00,010 - INFO - Inside the procedure sequence
+2024-04-27 17:21:00,010 - INFO - Inside the procedure sequence
+2024-04-27 17:21:00,170 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:21:00,173 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:21:13,070 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:26:00 BST)" executed successfully
+2024-04-27 17:21:16,684 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:26:00 BST)" executed successfully
+2024-04-27 17:26:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:31:00 BST)" (scheduled at 2024-04-27 17:26:00+01:00)
+2024-04-27 17:26:00,003 - INFO - Inside the procedure sequence
+2024-04-27 17:26:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:31:00 BST)" (scheduled at 2024-04-27 17:26:00+01:00)
+2024-04-27 17:26:00,003 - INFO - Inside the procedure sequence
+2024-04-27 17:26:00,010 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:26:00,010 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:26:12,985 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:31:00 BST)" executed successfully
+2024-04-27 17:26:13,274 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:31:00 BST)" executed successfully
+2024-04-27 17:31:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:36:00 BST)" (scheduled at 2024-04-27 17:31:00+01:00)
+2024-04-27 17:31:00,003 - INFO - Inside the procedure sequence
+2024-04-27 17:31:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:36:00 BST)" (scheduled at 2024-04-27 17:31:00+01:00)
+2024-04-27 17:31:00,006 - INFO - Inside the procedure sequence
+2024-04-27 17:31:00,008 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:31:00,009 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:31:13,427 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:36:00 BST)" executed successfully
+2024-04-27 17:31:13,491 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:36:00 BST)" executed successfully
+2024-04-27 17:36:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:41:00 BST)" (scheduled at 2024-04-27 17:36:00+01:00)
+2024-04-27 17:36:00,013 - INFO - Inside the procedure sequence
+2024-04-27 17:36:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:41:00 BST)" (scheduled at 2024-04-27 17:36:00+01:00)
+2024-04-27 17:36:00,015 - INFO - Inside the procedure sequence
+2024-04-27 17:36:00,016 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:36:00,017 - INFO - The input start time: 2024-04-27 16:00:00
+2024-04-27 17:36:00,883 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-27 17:36:08,425 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:41:00 BST)" executed successfully
+2024-04-27 17:36:26,407 - INFO - Starting scheduler
+2024-04-27 17:36:26,408 - INFO - Updater date and time: 2024-04-27 17:36:26.408099
+2024-04-27 17:36:26,408 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:36:26,408 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:36:26,408 - INFO - Scheduler started
+2024-04-27 17:36:26,410 - INFO - Current time of the scheduler: 2024-04-27 17:36:26.410286
+2024-04-27 17:36:26,410 - INFO - Ending scheduler
+2024-04-27 17:36:28,227 - INFO - Starting scheduler
+2024-04-27 17:36:28,228 - INFO - Updater date and time: 2024-04-27 17:36:28.228958
+2024-04-27 17:36:28,229 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:36:28,229 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:36:28,229 - INFO - Scheduler started
+2024-04-27 17:36:28,230 - INFO - Current time of the scheduler: 2024-04-27 17:36:28.230941
+2024-04-27 17:36:28,230 - INFO - Ending scheduler
+2024-04-27 17:36:28,248 - INFO - Watching for file changes with StatReloader

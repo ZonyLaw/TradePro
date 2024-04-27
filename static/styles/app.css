@@ -983,7 +983,7 @@ th, td {
 
 
 /*=======================
-  Flashing trade container - prange
+  Flashing trade container - orange
 ========================*/
 
 .flash-container-orange {
@@ -996,7 +996,7 @@ th, td {
 .flash-box-orange {
   padding: 20px;
   background-color: rgb(219, 47, 44);
-  color:white;
+  color:white !important;
   animation: flash-orange 3s infinite alternate;
   text-align: center;
 }
@@ -1008,9 +1008,10 @@ th, td {
   }
   100% {
     background-color: rgb(219, 47, 44);
-    color: rgb(216, 219, 203);
+    color: rgb(247, 250, 80) !important;
   }
 }
+
 
 /*=======================
  list format
