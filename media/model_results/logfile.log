@@ -1601,3 +1601,251 @@ KeyError: 'cst'
 2024-04-14 11:47:05,648 - INFO - Current time of the scheduler: 2024-04-14 11:47:05.648592
 2024-04-14 11:47:05,648 - INFO - Ending scheduler
 2024-04-14 11:47:05,666 - INFO - Watching for file changes with StatReloader
+2024-04-27 16:17:47,995 - INFO - Starting scheduler
+2024-04-27 16:17:47,996 - INFO - Updater date and time: 2024-04-27 16:17:47.996968
+2024-04-27 16:17:47,997 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 16:17:47,997 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 16:17:47,997 - INFO - Scheduler started
+2024-04-27 16:17:47,998 - INFO - Current time of the scheduler: 2024-04-27 16:17:47.998970
+2024-04-27 16:17:47,998 - INFO - Ending scheduler
+2024-04-27 16:17:49,700 - INFO - Starting scheduler
+2024-04-27 16:17:49,701 - INFO - Updater date and time: 2024-04-27 16:17:49.701135
+2024-04-27 16:17:49,702 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 16:17:49,702 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 16:17:49,702 - INFO - Scheduler started
+2024-04-27 16:17:49,703 - INFO - Current time of the scheduler: 2024-04-27 16:17:49.703137
+2024-04-27 16:17:49,703 - INFO - Ending scheduler
+2024-04-27 16:17:49,723 - INFO - Watching for file changes with StatReloader
+2024-04-27 16:17:52,776 - WARNING - Not Found: /images/favicon.ico
+2024-04-27 16:18:03,448 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-04-27 16:18:08,813 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-27 16:27:13,784 - INFO - Starting scheduler
+2024-04-27 16:27:13,785 - INFO - Updater date and time: 2024-04-27 16:27:13.785285
+2024-04-27 16:27:13,786 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 16:27:13,786 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 16:27:13,786 - INFO - Scheduler started
+2024-04-27 16:27:13,787 - INFO - Current time of the scheduler: 2024-04-27 16:27:13.787301
+2024-04-27 16:27:13,787 - INFO - Ending scheduler
+2024-04-27 16:27:15,525 - INFO - Starting scheduler
+2024-04-27 16:27:15,526 - INFO - Updater date and time: 2024-04-27 16:27:15.525568
+2024-04-27 16:27:15,527 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 16:27:15,527 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 16:27:15,527 - INFO - Scheduler started
+2024-04-27 16:27:15,528 - INFO - Current time of the scheduler: 2024-04-27 16:27:15.528582
+2024-04-27 16:27:15,528 - INFO - Ending scheduler
+2024-04-27 16:27:15,545 - INFO - Watching for file changes with StatReloader
+2024-04-27 16:27:17,432 - WARNING - Not Found: /images/favicon.ico
+2024-04-27 16:27:22,481 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-04-27 16:27:32,981 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-04-27 16:27:36,115 - WARNING - Not Found: /login/images/favicon.ico
+2024-04-27 16:27:41,518 - WARNING - Not Found: /account/images/favicon.ico
+2024-04-27 16:27:46,330 - WARNING - Not Found: /tickers/update-ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-04-27 16:27:50,499 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-04-27 16:27:52,889 - WARNING - Not Found: /prices/update-price/e9083be4-1c67-4f57-9736-4026721c2224/images/favicon.ico
+2024-04-27 16:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:31:00 BST)" (scheduled at 2024-04-27 16:31:00+01:00)
+2024-04-27 16:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:31:00 BST)" (scheduled at 2024-04-27 16:31:00+01:00)
+2024-04-27 16:31:00,016 - INFO - Inside the procedure sequence
+2024-04-27 16:31:00,016 - INFO - Inside the procedure sequence
+2024-04-27 16:31:00,261 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:31:00,261 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:31:01,026 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-27 16:31:10,969 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:36:00 BST)" executed successfully
+2024-04-27 16:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:41:00 BST)" (scheduled at 2024-04-27 16:36:00+01:00)
+2024-04-27 16:36:00,005 - INFO - Inside the procedure sequence
+2024-04-27 16:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:41:00 BST)" (scheduled at 2024-04-27 16:36:00+01:00)
+2024-04-27 16:36:00,007 - INFO - Inside the procedure sequence
+2024-04-27 16:36:00,012 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:36:00,013 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:36:11,303 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:41:00 BST)" executed successfully
+2024-04-27 16:36:11,534 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:41:00 BST)" executed successfully
+2024-04-27 16:41:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:46:00 BST)" (scheduled at 2024-04-27 16:41:00+01:00)
+2024-04-27 16:41:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:46:00 BST)" (scheduled at 2024-04-27 16:41:00+01:00)
+2024-04-27 16:41:00,001 - INFO - Inside the procedure sequence
+2024-04-27 16:41:00,001 - INFO - Inside the procedure sequence
+2024-04-27 16:41:00,003 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:41:00,004 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:41:08,955 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:46:00 BST)" executed successfully
+2024-04-27 16:41:09,170 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:46:00 BST)" executed successfully
+2024-04-27 16:46:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:51:00 BST)" (scheduled at 2024-04-27 16:46:00+01:00)
+2024-04-27 16:46:00,010 - INFO - Inside the procedure sequence
+2024-04-27 16:46:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:51:00 BST)" (scheduled at 2024-04-27 16:46:00+01:00)
+2024-04-27 16:46:00,010 - INFO - Inside the procedure sequence
+2024-04-27 16:46:00,013 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:46:00,013 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:46:00,733 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-27 16:46:09,420 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:51:00 BST)" executed successfully
+2024-04-27 16:46:50,187 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: '{{volume|slice:"-2"|first}}'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 343, in ml_report
+    return render(request, 'ml_models/ml_report.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 181, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |{{volume||slice:"-2"|first}}
+2024-04-27 16:46:50,319 - WARNING - Not Found: /favicon.ico
+2024-04-27 16:49:13,668 - WARNING - Not Found: /prices/update-price/756f8d8f-5135-4498-8814-c808bf5d625d/images/favicon.ico
+2024-04-27 16:51:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:56:00 BST)" (scheduled at 2024-04-27 16:51:00+01:00)
+2024-04-27 16:51:00,007 - INFO - Inside the procedure sequence
+2024-04-27 16:51:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:56:00 BST)" (scheduled at 2024-04-27 16:51:00+01:00)
+2024-04-27 16:51:00,007 - INFO - Inside the procedure sequence
+2024-04-27 16:51:00,011 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:51:00,011 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:51:08,691 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:56:00 BST)" executed successfully
+2024-04-27 16:51:08,907 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 16:56:00 BST)" executed successfully
+2024-04-27 16:56:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:01:00 BST)" (scheduled at 2024-04-27 16:56:00+01:00)
+2024-04-27 16:56:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:01:00 BST)" (scheduled at 2024-04-27 16:56:00+01:00)
+2024-04-27 16:56:00,002 - INFO - Inside the procedure sequence
+2024-04-27 16:56:00,002 - INFO - Inside the procedure sequence
+2024-04-27 16:56:00,006 - INFO - The input start time: 2024-04-27 15:00:00
+2024-04-27 16:56:00,601 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-27 16:56:00,609 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 17:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'

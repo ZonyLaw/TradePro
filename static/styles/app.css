@@ -952,25 +952,25 @@ th, td {
 }
 
 /*=======================
-  Flashing container
+  Flashing trade container - purple
 ========================*/
 
-.flash-container {
+.flash-container-purple {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.flash-box {
+.flash-box-purple {
   padding: 20px;
   background-color: purple;
   color:white;
-  animation: flash 3s infinite alternate;
+  animation: flash-purple 3s infinite alternate;
   text-align: center;
 }
 
-@keyframes flash {
+@keyframes flash-purple {
   0% {
     background-color: transparent;
     color: black;
@@ -978,6 +978,37 @@ th, td {
   100% {
     background-color: purple;
     color: rgb(209, 202, 13);
+  }
+}
+
+
+/*=======================
+  Flashing trade container - prange
+========================*/
+
+.flash-container-orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+
+.flash-box-orange {
+  padding: 20px;
+  background-color: rgb(219, 47, 44);
+  color:white;
+  animation: flash-orange 3s infinite alternate;
+  text-align: center;
+}
+
+@keyframes flash-orange {
+  0% {
+    background-color: transparent;
+    color: black;
+  }
+  100% {
+    background-color: rgb(219, 47, 44);
+    color: rgb(216, 219, 203);
   }
 }
 

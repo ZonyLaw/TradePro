@@ -21,7 +21,20 @@
             <span class="label">Estimated Volume:</span>
             <span class="value">{{ projected_volume|floatformat:0 }}</span>
         </div>
+
+        {% if volume.2 > 3000 %}
+        <div class="flash-container-orange">
+            <div class="flash-box-orange">
+                <div class="price-notification">
+                    <span class="label">Previous Volume:</span>
+                    <span class="value"> {{volume|slice:"-2"|first}}</span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
+
+  
 
     <div class="formPage my-md">
         <form action="" method="POST">
@@ -42,8 +55,8 @@
 
         <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
         <p> Model prediction for the next 4 hrs.</p>
-        <div class=="flash-container">
-            <div class="flash-box">
+        <div class=="flash-container-purple">
+            <div class="flash-box-purple">
                 <p><b> {{version_comment}} </b> </p>
             </div>
         </div>
