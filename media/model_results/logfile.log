@@ -1849,3 +1849,33 @@ Traceback (most recent call last):
     return self._store[key.lower()][1]
            ~~~~~~~~~~~^^^^^^^^^^^^^
 KeyError: 'cst'
+2024-04-27 17:08:41,523 - INFO - Starting scheduler
+2024-04-27 17:08:41,524 - INFO - Updater date and time: 2024-04-27 17:08:41.523202
+2024-04-27 17:08:41,525 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:08:41,525 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:08:41,525 - INFO - Scheduler started
+2024-04-27 17:08:41,526 - INFO - Current time of the scheduler: 2024-04-27 17:08:41.526202
+2024-04-27 17:08:41,526 - INFO - Ending scheduler
+2024-04-27 17:08:43,208 - INFO - Starting scheduler
+2024-04-27 17:08:43,209 - INFO - Updater date and time: 2024-04-27 17:08:43.209441
+2024-04-27 17:08:43,210 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:08:43,210 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:08:43,210 - INFO - Scheduler started
+2024-04-27 17:08:43,211 - INFO - Current time of the scheduler: 2024-04-27 17:08:43.211441
+2024-04-27 17:08:43,211 - INFO - Ending scheduler
+2024-04-27 17:08:43,229 - INFO - Watching for file changes with StatReloader
+2024-04-27 17:09:52,772 - INFO - Starting scheduler
+2024-04-27 17:09:52,773 - INFO - Updater date and time: 2024-04-27 17:09:52.773557
+2024-04-27 17:09:52,774 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:09:52,774 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:09:52,774 - INFO - Scheduler started
+2024-04-27 17:09:52,775 - INFO - Current time of the scheduler: 2024-04-27 17:09:52.775690
+2024-04-27 17:09:52,775 - INFO - Ending scheduler
+2024-04-27 17:09:54,468 - INFO - Starting scheduler
+2024-04-27 17:09:54,469 - INFO - Updater date and time: 2024-04-27 17:09:54.469397
+2024-04-27 17:09:54,470 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 17:09:54,470 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 17:09:54,470 - INFO - Scheduler started
+2024-04-27 17:09:54,471 - INFO - Current time of the scheduler: 2024-04-27 17:09:54.471394
+2024-04-27 17:09:54,471 - INFO - Ending scheduler
+2024-04-27 17:09:54,488 - INFO - Watching for file changes with StatReloader

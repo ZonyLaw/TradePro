@@ -22,16 +22,21 @@
             <span class="value">{{ projected_volume|floatformat:0 }}</span>
         </div>
 
-        {% if volume.2 > 3000 %}
-        <div class="flash-container-orange">
-            <div class="flash-box-orange">
-                <div class="price-notification">
-                    <span class="label">Previous Volume:</span>
-                    <span class="value"> {{volume|slice:"-2"|first}}</span>
+        {% if volume %}
+        {% with second_volume=volume.2 %}
+            {% if second_volume > 3000 %}
+                <div class="flash-container-orange">
+                    <div class="flash-box-orange">
+                        <div class="price-notification">
+                            <span class="label">Previous Volume:</span>
+                            <span class="value"> {{ second_volume }}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        {% endif %}
+            {% endif %}
+        {% endwith %}
+    {% endif %}
+    
     </div>
 
   
