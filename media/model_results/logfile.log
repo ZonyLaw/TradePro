@@ -3195,3 +3195,58 @@ django.template.exceptions.TemplateSyntaxError: Could not parse some characters:
 2024-04-27 23:07:56,452 - WARNING - Not Found: /tickers/images/favicon.ico
 2024-04-27 23:07:59,584 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
 2024-04-27 23:08:02,177 - WARNING - Not Found: /prices/update-price/e9083be4-1c67-4f57-9736-4026721c2224/images/favicon.ico
+2024-04-27 23:10:15,187 - INFO - Starting scheduler
+2024-04-27 23:10:15,188 - INFO - Updater date and time: 2024-04-27 23:10:15.188320
+2024-04-27 23:10:15,189 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 23:10:15,189 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 23:10:15,189 - INFO - Scheduler started
+2024-04-27 23:10:15,190 - INFO - Current time of the scheduler: 2024-04-27 23:10:15.190523
+2024-04-27 23:10:15,190 - INFO - Ending scheduler
+2024-04-27 23:10:16,949 - INFO - Starting scheduler
+2024-04-27 23:10:16,951 - INFO - Updater date and time: 2024-04-27 23:10:16.951038
+2024-04-27 23:10:16,952 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-04-27 23:10:16,952 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-04-27 23:10:16,952 - INFO - Scheduler started
+2024-04-27 23:10:16,953 - INFO - Current time of the scheduler: 2024-04-27 23:10:16.953152
+2024-04-27 23:10:16,953 - INFO - Ending scheduler
+2024-04-27 23:10:16,975 - INFO - Watching for file changes with StatReloader
+2024-04-27 23:10:19,425 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-04-27 23:10:20,801 - WARNING - Not Found: /ml_models/notes/images/favicon.ico
+2024-04-27 23:11:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:11:00 BST)" (scheduled at 2024-04-27 23:11:00+01:00)
+2024-04-27 23:11:00,002 - INFO - Inside the procedure sequence
+2024-04-27 23:11:00,132 - INFO - The input start time: 2024-04-27 22:00:00
+2024-04-27 23:11:00,133 - INFO - The input start time: 2024-04-27 22:00:00
+2024-04-27 23:11:00,994 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-04-27 23:11:08,439 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:16:00 BST)" executed successfully
+2024-04-27 23:16:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:21:00 BST)" (scheduled at 2024-04-27 23:16:00+01:00)
+2024-04-27 23:16:00,002 - INFO - Inside the procedure sequence
+2024-04-27 23:16:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:21:00 BST)" (scheduled at 2024-04-27 23:16:00+01:00)
+2024-04-27 23:16:00,002 - INFO - Inside the procedure sequence
+2024-04-27 23:16:00,009 - INFO - The input start time: 2024-04-27 22:00:00
+2024-04-27 23:16:11,221 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:21:00 BST)" executed successfully
+2024-04-27 23:16:12,217 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:21:00 BST)" executed successfully
+2024-04-27 23:21:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" (scheduled at 2024-04-27 23:21:00+01:00)
+2024-04-27 23:21:00,009 - INFO - Inside the procedure sequence
+2024-04-27 23:21:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" (scheduled at 2024-04-27 23:21:00+01:00)
+2024-04-27 23:21:00,009 - INFO - Inside the procedure sequence
+2024-04-27 23:21:00,012 - INFO - The input start time: 2024-04-27 22:00:00
+2024-04-27 23:21:00,013 - INFO - The input start time: 2024-04-27 22:00:00
+2024-04-27 23:21:11,338 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
+2024-04-27 23:21:11,802 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
