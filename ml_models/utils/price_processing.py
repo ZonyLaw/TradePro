@@ -7,7 +7,11 @@ from datetime import timedelta
 from scipy.signal import find_peaks
 
 class StandardPriceProcessing():
-
+    """
+    The purpose of this is calculate the different attributes from the open, high, low, and close prices.
+    The class attribute accessiable is ticker.
+        
+    """
     def __init__(self, ticker):
         self.ticker = ticker
     
@@ -162,8 +166,15 @@ class StandardPriceProcessing():
              
         df['reverse_point'] = 0
 
-        # Identify rows where the sign of the current value is different from the sign of the previous value
-        df.loc[df[pl_header] * df[pl_header].shift(1) < 0, 'reverse_point'] = 1
+        # Corrected conditional indexing
+        condition = (df[pl_header].abs() > 0.02) & (df[pl_header].abs().shift(1) > 0.02)
+
+        # Check for sign change and update reverse_point where condition is True
+        sign_change_condition = df[pl_header] * df[pl_header].shift(1) < 0
+        df.loc[condition & sign_change_condition, 'reverse_point'] = 1
+
+        # Shift 'reverse_point' column by one position backward
+        df['reverse_point'] = df['reverse_point'].shift(-1)
         
 
         return df

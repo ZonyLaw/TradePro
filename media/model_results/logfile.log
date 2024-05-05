@@ -3250,3 +3250,85 @@ KeyError: 'cst'
 2024-04-27 23:21:00,013 - INFO - The input start time: 2024-04-27 22:00:00
 2024-04-27 23:21:11,338 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
 2024-04-27 23:21:11,802 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
+2024-05-05 19:11:38,139 - INFO - Starting scheduler
+2024-05-05 19:11:38,274 - INFO - Updater date and time: 2024-05-05 19:11:38.273975
+2024-05-05 19:11:38,286 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 19:11:38,286 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 19:11:38,286 - INFO - Scheduler started
+2024-05-05 19:11:38,287 - INFO - Current time of the scheduler: 2024-05-05 19:11:38.287554
+2024-05-05 19:11:38,287 - INFO - Ending scheduler
+2024-05-05 19:11:40,149 - INFO - Starting scheduler
+2024-05-05 19:11:40,278 - INFO - Updater date and time: 2024-05-05 19:11:40.277774
+2024-05-05 19:11:40,290 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 19:11:40,290 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 19:11:40,290 - INFO - Scheduler started
+2024-05-05 19:11:40,291 - INFO - Current time of the scheduler: 2024-05-05 19:11:40.291060
+2024-05-05 19:11:40,291 - INFO - Ending scheduler
+2024-05-05 19:11:40,311 - INFO - Watching for file changes with StatReloader
+2024-05-05 19:11:42,189 - WARNING - Not Found: /images/favicon.ico
+2024-05-05 19:11:46,829 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 322, in ml_report
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 405, in variability_analysis
+    pred_variability = model_run(model_ticker, X_live_variability, model_version)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 170, in model_run
+    model_prediction_proba = model_pipeline.predict_proba(X_live_subset)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\sklearn\pipeline.py", line 723, in predict_proba
+    return self.steps[-1][1].predict_proba(Xt, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\sklearn\ensemble\_forest.py", line 947, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\sklearn\ensemble\_forest.py", line 636, in _validate_X_predict
+    if self.estimators_[0]._support_missing_values(X):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311\Lib\site-packages\sklearn\tree\_classes.py", line 188, in _support_missing_values
+    and self.monotonic_cst is None
+        ^^^^^^^^^^^^^^^^^^
+AttributeError: 'DecisionTreeClassifier' object has no attribute 'monotonic_cst'
+2024-05-05 19:11:46,915 - WARNING - Not Found: /favicon.ico
+2024-05-05 20:39:56,625 - INFO - Starting scheduler
+2024-05-05 20:39:56,626 - INFO - Updater date and time: 2024-05-05 20:39:56.626795
+2024-05-05 20:39:56,627 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 20:39:56,628 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 20:39:56,628 - INFO - Scheduler started
+2024-05-05 20:39:56,629 - INFO - Current time of the scheduler: 2024-05-05 20:39:56.629945
+2024-05-05 20:39:56,629 - INFO - Ending scheduler
+2024-05-05 20:39:58,328 - INFO - Starting scheduler
+2024-05-05 20:39:58,328 - INFO - Updater date and time: 2024-05-05 20:39:58.328353
+2024-05-05 20:39:58,329 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 20:39:58,329 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 20:39:58,329 - INFO - Scheduler started
+2024-05-05 20:39:58,330 - INFO - Current time of the scheduler: 2024-05-05 20:39:58.330360
+2024-05-05 20:39:58,330 - INFO - Ending scheduler
+2024-05-05 20:39:58,348 - INFO - Watching for file changes with StatReloader
+2024-05-05 20:40:00,273 - WARNING - Not Found: /images/favicon.ico
+2024-05-05 20:40:04,891 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-05-05 20:47:00,582 - INFO - Starting scheduler
+2024-05-05 20:47:00,583 - INFO - Updater date and time: 2024-05-05 20:47:00.583018
+2024-05-05 20:47:00,584 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 20:47:00,584 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 20:47:00,584 - INFO - Scheduler started
+2024-05-05 20:47:00,585 - INFO - Current time of the scheduler: 2024-05-05 20:47:00.585110
+2024-05-05 20:47:00,585 - INFO - Ending scheduler
+2024-05-05 20:47:02,443 - INFO - Starting scheduler
+2024-05-05 20:47:02,443 - INFO - Updater date and time: 2024-05-05 20:47:02.443888
+2024-05-05 20:47:02,444 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-05 20:47:02,444 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-05 20:47:02,444 - INFO - Scheduler started
+2024-05-05 20:47:02,445 - INFO - Current time of the scheduler: 2024-05-05 20:47:02.445888
+2024-05-05 20:47:02,445 - INFO - Ending scheduler
+2024-05-05 20:47:02,465 - INFO - Watching for file changes with StatReloader
+2024-05-05 20:47:05,722 - WARNING - Not Found: /images/favicon.ico
+2024-05-05 20:47:11,421 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-05-05 20:48:26,444 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\env.py changed, reloading.
