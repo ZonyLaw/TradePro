@@ -3251,3 +3251,28 @@ KeyError: 'cst'
 2024-04-27 23:21:11,338 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
 2024-04-27 23:21:11,802 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-04-27 23:26:00 BST)" executed successfully
 
+2024-05-07 13:20:24,164 - INFO - Starting scheduler
+2024-05-07 13:20:24,164 - INFO - Updater date and time: 2024-05-07 13:20:24.164724
+2024-05-07 13:20:24,166 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-07 13:20:24,166 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-07 13:20:24,166 - INFO - Scheduler started
+2024-05-07 13:20:24,167 - INFO - Current time of the scheduler: 2024-05-07 13:20:24.167750
+2024-05-07 13:20:24,167 - INFO - Ending scheduler
+2024-05-07 13:20:25,938 - INFO - Starting scheduler
+2024-05-07 13:20:25,939 - INFO - Updater date and time: 2024-05-07 13:20:25.939898
+2024-05-07 13:20:25,941 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-07 13:20:25,941 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-07 13:20:25,941 - INFO - Scheduler started
+2024-05-07 13:20:25,941 - INFO - Current time of the scheduler: 2024-05-07 13:20:25.941986
+2024-05-07 13:20:25,941 - INFO - Ending scheduler
+2024-05-07 13:20:25,966 - INFO - Watching for file changes with StatReloader
+2024-05-07 13:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-07 13:26:00 BST)" (scheduled at 2024-05-07 13:21:00+01:00)
+2024-05-07 13:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-07 13:21:00 BST)" (scheduled at 2024-05-07 13:21:00+01:00)
+2024-05-07 13:21:00,009 - INFO - Inside the procedure sequence
+2024-05-07 13:21:00,009 - INFO - Inside the procedure sequence
+2024-05-07 13:21:00,214 - INFO - The input start time: 2024-05-07 12:00:00
+2024-05-07 13:21:00,214 - INFO - The input start time: 2024-05-07 12:00:00
+2024-05-07 13:21:08,617 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-07 13:26:00 BST)" executed successfully
+2024-05-07 13:21:08,901 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-07 13:26:00 BST)" executed successfully
+2024-05-07 13:22:56,898 - WARNING - Not Found: /images/favicon.ico
+2024-05-07 13:23:01,571 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
