@@ -3276,3 +3276,22 @@ KeyError: 'cst'
 2024-05-07 13:21:08,901 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-07 13:26:00 BST)" executed successfully
 2024-05-07 13:22:56,898 - WARNING - Not Found: /images/favicon.ico
 2024-05-07 13:23:01,571 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-05-08 21:13:39,068 - INFO - Starting scheduler
+2024-05-08 21:13:39,069 - INFO - Updater date and time: 2024-05-08 21:13:39.069499
+2024-05-08 21:13:39,070 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-08 21:13:39,070 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-08 21:13:39,070 - INFO - Scheduler started
+2024-05-08 21:13:39,071 - INFO - Current time of the scheduler: 2024-05-08 21:13:39.071498
+2024-05-08 21:13:39,071 - INFO - Ending scheduler
+2024-05-08 21:13:40,877 - INFO - Starting scheduler
+2024-05-08 21:13:40,878 - INFO - Updater date and time: 2024-05-08 21:13:40.878433
+2024-05-08 21:13:40,879 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-08 21:13:40,879 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-08 21:13:40,879 - INFO - Scheduler started
+2024-05-08 21:13:40,880 - INFO - Current time of the scheduler: 2024-05-08 21:13:40.880432
+2024-05-08 21:13:40,880 - INFO - Ending scheduler
+2024-05-08 21:13:40,900 - INFO - Watching for file changes with StatReloader
+2024-05-08 21:13:42,769 - WARNING - Not Found: /images/favicon.ico
+2024-05-08 21:13:48,425 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-05-08 21:14:54,614 - WARNING - Not Found: /images/favicon.ico
+2024-05-08 21:15:05,644 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
