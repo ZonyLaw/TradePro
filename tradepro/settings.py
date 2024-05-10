@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',    
     # 'cloudinary_storage',
     # 'cloudinary',
     'tickers',
@@ -68,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'tradepro.urls'
@@ -173,3 +175,5 @@ AUTH_USER_MODEL = 'custom_user.User'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 LOGIN_URL = '/login/'
+
+CORS_ALLOW_ALL_ORIGINS = True

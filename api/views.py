@@ -40,16 +40,13 @@ def getPrices(request, pk):
     ticker = get_object_or_404(Ticker, id=pk)
     prices = ticker.price_set.all()
     
-    profile = request.user.profile  # Assuming you have a one-to-one relationship between User and Profile
-    user_timezone = profile.timezone
+    #TODO: Need to add user authentication. Find out how to add token.
     
-    # Convert prices to user's timezone
     prices_user_timezone = []
     for price in prices:
-        localized_date = price.date.astimezone(user_timezone)
         prices_user_timezone.append({
             'id': price.id,
-            'date': localized_date,
+            'date': price.date,
             'open': price.open,
             'close': price.close,
             'volume': price.volume,
@@ -61,6 +58,6 @@ def getPrices(request, pk):
     serializer = TickerSerializer(ticker)
     data = serializer.data
     data['prices'] = sorted_prices
-    data['user_timezone'] = str(user_timezone)
+ 
     
     return Response(data)

@@ -3295,3 +3295,246 @@ KeyError: 'cst'
 2024-05-08 21:13:48,425 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
 2024-05-08 21:14:54,614 - WARNING - Not Found: /images/favicon.ico
 2024-05-08 21:15:05,644 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-05-11 00:36:21,071 - INFO - Starting scheduler
+2024-05-11 00:36:21,072 - INFO - Updater date and time: 2024-05-11 00:36:21.072587
+2024-05-11 00:36:21,073 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:36:21,073 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:36:21,073 - INFO - Scheduler started
+2024-05-11 00:36:21,075 - INFO - Current time of the scheduler: 2024-05-11 00:36:21.075463
+2024-05-11 00:36:21,075 - INFO - Ending scheduler
+2024-05-11 00:36:23,031 - INFO - Starting scheduler
+2024-05-11 00:36:23,031 - INFO - Updater date and time: 2024-05-11 00:36:23.031573
+2024-05-11 00:36:23,033 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:36:23,033 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:36:23,033 - INFO - Scheduler started
+2024-05-11 00:36:23,034 - INFO - Current time of the scheduler: 2024-05-11 00:36:23.034858
+2024-05-11 00:36:23,034 - INFO - Ending scheduler
+2024-05-11 00:36:23,061 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:36:25,610 - WARNING - Not Found: /images/favicon.ico
+2024-05-11 00:36:35,812 - WARNING - Not Found: /favicon.ico
+2024-05-11 00:36:53,950 - ERROR - Internal Server Error: /api/prices/9f53d106-491e-43bc-8f19-f91352ee4426/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py", line 43, in getPrices
+    profile = request.user.profile  # Assuming you have a one-to-one relationship between User and Profile
+              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'profile'
+2024-05-11 00:37:05,539 - WARNING - Not Found: /api/tickers/prices/9f53d106-491e-43bc-8f19-f91352ee4426/
+2024-05-11 00:41:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:41:00 BST)" (scheduled at 2024-05-11 00:41:00+01:00)
+2024-05-11 00:41:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:41:00 BST)" (scheduled at 2024-05-11 00:41:00+01:00)
+2024-05-11 00:41:00,006 - INFO - Inside the procedure sequence
+2024-05-11 00:41:00,006 - INFO - Inside the procedure sequence
+2024-05-11 00:41:00,299 - INFO - The input start time: 2024-05-10 23:00:00
+2024-05-11 00:41:00,299 - INFO - The input start time: 2024-05-10 23:00:00
+2024-05-11 00:41:09,298 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:46:00 BST)" executed successfully
+2024-05-11 00:41:09,722 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:46:00 BST)" executed successfully
+2024-05-11 00:46:50,457 - INFO - Starting scheduler
+2024-05-11 00:46:50,458 - INFO - Updater date and time: 2024-05-11 00:46:50.458943
+2024-05-11 00:46:50,460 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:46:50,460 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:46:50,460 - INFO - Scheduler started
+2024-05-11 00:46:50,460 - INFO - Current time of the scheduler: 2024-05-11 00:46:50.460949
+2024-05-11 00:46:50,460 - INFO - Ending scheduler
+2024-05-11 00:46:52,555 - INFO - Starting scheduler
+2024-05-11 00:46:52,556 - INFO - Updater date and time: 2024-05-11 00:46:52.556849
+2024-05-11 00:46:52,557 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:46:52,557 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:46:52,557 - INFO - Scheduler started
+2024-05-11 00:46:52,559 - INFO - Current time of the scheduler: 2024-05-11 00:46:52.559554
+2024-05-11 00:46:52,559 - INFO - Ending scheduler
+2024-05-11 00:46:52,580 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:47:11,776 - WARNING - Not Found: /api/pricers/9f53d106-491e-43bc-8f19-f91352ee4426
+2024-05-11 00:47:25,744 - ERROR - Internal Server Error: /api/prices/9f53d106-491e-43bc-8f19-f91352ee4426/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py", line 43, in getPrices
+    profile = request.user.profile  # Assuming you have a one-to-one relationship between User and Profile
+              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'profile'
+2024-05-11 00:49:16,571 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py changed, reloading.
+2024-05-11 00:49:19,127 - INFO - Starting scheduler
+2024-05-11 00:49:19,128 - INFO - Updater date and time: 2024-05-11 00:49:19.127971
+2024-05-11 00:49:19,129 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:49:19,129 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:49:19,129 - INFO - Scheduler started
+2024-05-11 00:49:19,130 - INFO - Current time of the scheduler: 2024-05-11 00:49:19.130286
+2024-05-11 00:49:19,130 - INFO - Ending scheduler
+2024-05-11 00:49:19,159 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:49:21,235 - ERROR - Internal Server Error: /api/prices/9f53d106-491e-43bc-8f19-f91352ee4426/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py", line 49, in getPrices
+    localized_date = price.date.astimezone(user_timezone)
+                                           ^^^^^^^^^^^^^
+NameError: name 'user_timezone' is not defined
+2024-05-11 00:49:38,920 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py changed, reloading.
+2024-05-11 00:49:41,500 - INFO - Starting scheduler
+2024-05-11 00:49:41,501 - INFO - Updater date and time: 2024-05-11 00:49:41.501436
+2024-05-11 00:49:41,502 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:49:41,502 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:49:41,502 - INFO - Scheduler started
+2024-05-11 00:49:41,503 - INFO - Current time of the scheduler: 2024-05-11 00:49:41.503523
+2024-05-11 00:49:41,503 - INFO - Ending scheduler
+2024-05-11 00:49:41,529 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:49:45,266 - ERROR - Internal Server Error: /api/prices/9f53d106-491e-43bc-8f19-f91352ee4426/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py", line 52, in getPrices
+    'date': localized_date,
+            ^^^^^^^^^^^^^^
+NameError: name 'localized_date' is not defined
+2024-05-11 00:50:15,193 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py changed, reloading.
+2024-05-11 00:50:17,855 - INFO - Starting scheduler
+2024-05-11 00:50:17,856 - INFO - Updater date and time: 2024-05-11 00:50:17.856153
+2024-05-11 00:50:17,857 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:50:17,857 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:50:17,857 - INFO - Scheduler started
+2024-05-11 00:50:17,858 - INFO - Current time of the scheduler: 2024-05-11 00:50:17.858155
+2024-05-11 00:50:17,858 - INFO - Ending scheduler
+2024-05-11 00:50:17,889 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:50:42,770 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py changed, reloading.
+2024-05-11 00:50:45,427 - INFO - Starting scheduler
+2024-05-11 00:50:45,428 - INFO - Updater date and time: 2024-05-11 00:50:45.428411
+2024-05-11 00:50:45,429 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:50:45,429 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:50:45,429 - INFO - Scheduler started
+2024-05-11 00:50:45,430 - INFO - Current time of the scheduler: 2024-05-11 00:50:45.430409
+2024-05-11 00:50:45,430 - INFO - Ending scheduler
+2024-05-11 00:50:45,452 - INFO - Watching for file changes with StatReloader
+2024-05-11 00:51:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:51:00 BST)" (scheduled at 2024-05-11 00:51:00+01:00)
+2024-05-11 00:51:00,005 - INFO - Inside the procedure sequence
+2024-05-11 00:51:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:56:00 BST)" (scheduled at 2024-05-11 00:51:00+01:00)
+2024-05-11 00:51:00,005 - INFO - Inside the procedure sequence
+2024-05-11 00:51:00,203 - INFO - The input start time: 2024-05-10 23:00:00
+2024-05-11 00:51:00,209 - INFO - The input start time: 2024-05-10 23:00:00
+2024-05-11 00:51:00,954 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:56:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-05-11 00:51:09,481 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views.py changed, reloading.
+2024-05-11 00:51:10,229 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-05-11 00:56:00 BST)" executed successfully
+2024-05-11 00:54:34,651 - INFO - Starting scheduler
+2024-05-11 00:54:34,652 - INFO - Updater date and time: 2024-05-11 00:54:34.652819
+2024-05-11 00:54:34,653 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:54:34,653 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:54:34,653 - INFO - Scheduler started
+2024-05-11 00:54:34,654 - INFO - Current time of the scheduler: 2024-05-11 00:54:34.654819
+2024-05-11 00:54:34,654 - INFO - Ending scheduler
+2024-05-11 00:54:36,824 - INFO - Starting scheduler
+2024-05-11 00:54:36,825 - INFO - Updater date and time: 2024-05-11 00:54:36.825298
+2024-05-11 00:54:36,826 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-05-11 00:54:36,826 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-05-11 00:54:36,826 - INFO - Scheduler started
+2024-05-11 00:54:36,827 - INFO - Current time of the scheduler: 2024-05-11 00:54:36.827298
+2024-05-11 00:54:36,827 - INFO - Ending scheduler
+2024-05-11 00:54:36,851 - INFO - Watching for file changes with StatReloader
