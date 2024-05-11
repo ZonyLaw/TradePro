@@ -58,6 +58,5 @@ def getPrices(request, pk):
     serializer = TickerSerializer(ticker)
     data = serializer.data
     data['prices'] = sorted_prices
- 
     
     return Response(data)
