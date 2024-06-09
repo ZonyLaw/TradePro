@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import TickerSerializer
+from ..serializers import TickerSerializer
 from tickers.models import Ticker
 from django.shortcuts import get_object_or_404
 

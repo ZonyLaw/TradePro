@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from api.views import ticker_views as views
 
 
 urlpatterns = [

@@ -3538,3 +3538,120 @@ KeyError: 'cst'
 2024-05-11 00:54:36,827 - INFO - Current time of the scheduler: 2024-05-11 00:54:36.827298
 2024-05-11 00:54:36,827 - INFO - Ending scheduler
 2024-05-11 00:54:36,851 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:24:54,102 - INFO - Starting scheduler
+2024-06-09 12:24:54,102 - INFO - Updater date and time: 2024-06-09 12:24:54.102536
+2024-06-09 12:24:54,103 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:24:54,104 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:24:54,104 - INFO - Scheduler started
+2024-06-09 12:24:54,104 - INFO - Current time of the scheduler: 2024-06-09 12:24:54.104559
+2024-06-09 12:24:54,105 - INFO - Ending scheduler
+2024-06-09 12:24:56,027 - INFO - Starting scheduler
+2024-06-09 12:24:56,028 - INFO - Updater date and time: 2024-06-09 12:24:56.028652
+2024-06-09 12:24:56,028 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:24:56,029 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:24:56,029 - INFO - Scheduler started
+2024-06-09 12:24:56,029 - INFO - Current time of the scheduler: 2024-06-09 12:24:56.029944
+2024-06-09 12:24:56,029 - INFO - Ending scheduler
+2024-06-09 12:24:56,048 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:26:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:26:00 BST)" (scheduled at 2024-06-09 12:26:00+01:00)
+2024-06-09 12:26:00,017 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:26:00 BST)" (scheduled at 2024-06-09 12:26:00+01:00)
+2024-06-09 12:26:00,017 - INFO - Inside the procedure sequence
+2024-06-09 12:26:00,017 - INFO - Inside the procedure sequence
+2024-06-09 12:26:00,249 - INFO - The input start time: 2024-06-09 11:00:00
+2024-06-09 12:26:08,755 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:31:00 BST)" executed successfully
+2024-06-09 12:26:08,995 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:31:00 BST)" executed successfully
+2024-06-09 12:26:53,669 - INFO - Starting scheduler
+2024-06-09 12:26:53,669 - INFO - Updater date and time: 2024-06-09 12:26:53.669810
+2024-06-09 12:26:53,670 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:26:53,670 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:26:53,670 - INFO - Scheduler started
+2024-06-09 12:26:53,671 - INFO - Current time of the scheduler: 2024-06-09 12:26:53.671816
+2024-06-09 12:26:53,671 - INFO - Ending scheduler
+2024-06-09 12:26:55,526 - INFO - Starting scheduler
+2024-06-09 12:26:55,526 - INFO - Updater date and time: 2024-06-09 12:26:55.526252
+2024-06-09 12:26:55,527 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:26:55,527 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:26:55,527 - INFO - Scheduler started
+2024-06-09 12:26:55,528 - INFO - Current time of the scheduler: 2024-06-09 12:26:55.528252
+2024-06-09 12:26:55,528 - INFO - Ending scheduler
+2024-06-09 12:26:55,551 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:28:42,787 - INFO - Starting scheduler
+2024-06-09 12:28:42,788 - INFO - Updater date and time: 2024-06-09 12:28:42.788504
+2024-06-09 12:28:42,789 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:28:42,789 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:28:42,789 - INFO - Scheduler started
+2024-06-09 12:28:42,790 - INFO - Current time of the scheduler: 2024-06-09 12:28:42.790502
+2024-06-09 12:28:42,790 - INFO - Ending scheduler
+2024-06-09 12:28:44,641 - INFO - Starting scheduler
+2024-06-09 12:28:44,642 - INFO - Updater date and time: 2024-06-09 12:28:44.642122
+2024-06-09 12:28:44,643 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:28:44,643 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:28:44,643 - INFO - Scheduler started
+2024-06-09 12:28:44,644 - INFO - Current time of the scheduler: 2024-06-09 12:28:44.644728
+2024-06-09 12:28:44,644 - INFO - Ending scheduler
+2024-06-09 12:28:44,665 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:31:00,211 - INFO - Starting scheduler
+2024-06-09 12:31:00,212 - INFO - Updater date and time: 2024-06-09 12:31:00.212996
+2024-06-09 12:31:00,213 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:31:00,213 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:31:00,213 - INFO - Scheduler started
+2024-06-09 12:31:00,214 - INFO - Current time of the scheduler: 2024-06-09 12:31:00.214998
+2024-06-09 12:31:00,214 - INFO - Ending scheduler
+2024-06-09 12:31:01,939 - INFO - Starting scheduler
+2024-06-09 12:31:01,940 - INFO - Updater date and time: 2024-06-09 12:31:01.940750
+2024-06-09 12:31:01,941 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:31:01,941 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:31:01,941 - INFO - Scheduler started
+2024-06-09 12:31:01,942 - INFO - Current time of the scheduler: 2024-06-09 12:31:01.942750
+2024-06-09 12:31:01,942 - INFO - Ending scheduler
+2024-06-09 12:31:01,959 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:32:19,548 - INFO - Starting scheduler
+2024-06-09 12:32:19,549 - INFO - Updater date and time: 2024-06-09 12:32:19.549047
+2024-06-09 12:32:19,550 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:32:19,550 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:32:19,550 - INFO - Scheduler started
+2024-06-09 12:32:19,551 - INFO - Current time of the scheduler: 2024-06-09 12:32:19.551017
+2024-06-09 12:32:19,551 - INFO - Ending scheduler
+2024-06-09 12:32:21,422 - INFO - Starting scheduler
+2024-06-09 12:32:21,423 - INFO - Updater date and time: 2024-06-09 12:32:21.423052
+2024-06-09 12:32:21,424 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:32:21,424 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:32:21,424 - INFO - Scheduler started
+2024-06-09 12:32:21,425 - INFO - Current time of the scheduler: 2024-06-09 12:32:21.425870
+2024-06-09 12:32:21,425 - INFO - Ending scheduler
+2024-06-09 12:32:21,440 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:32:32,551 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\urls.py changed, reloading.
+2024-06-09 12:32:34,660 - INFO - Starting scheduler
+2024-06-09 12:32:34,660 - INFO - Updater date and time: 2024-06-09 12:32:34.660062
+2024-06-09 12:32:34,661 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:32:34,662 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:32:34,662 - INFO - Scheduler started
+2024-06-09 12:32:34,662 - INFO - Current time of the scheduler: 2024-06-09 12:32:34.662086
+2024-06-09 12:32:34,662 - INFO - Ending scheduler
+2024-06-09 12:32:34,681 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:35:39,258 - INFO - Starting scheduler
+2024-06-09 12:35:39,259 - INFO - Updater date and time: 2024-06-09 12:35:39.259819
+2024-06-09 12:35:39,260 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:35:39,260 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:35:39,260 - INFO - Scheduler started
+2024-06-09 12:35:39,262 - INFO - Current time of the scheduler: 2024-06-09 12:35:39.262006
+2024-06-09 12:35:39,262 - INFO - Ending scheduler
+2024-06-09 12:35:40,983 - INFO - Starting scheduler
+2024-06-09 12:35:40,984 - INFO - Updater date and time: 2024-06-09 12:35:40.984492
+2024-06-09 12:35:40,985 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:35:40,985 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:35:40,985 - INFO - Scheduler started
+2024-06-09 12:35:40,986 - INFO - Current time of the scheduler: 2024-06-09 12:35:40.986397
+2024-06-09 12:35:40,986 - INFO - Ending scheduler
+2024-06-09 12:35:41,002 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:35:44,514 - WARNING - Not Found: /images/favicon.ico
+2024-06-09 12:35:49,035 - WARNING - Not Found: /favicon.ico
+2024-06-09 12:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:36:00 BST)" (scheduled at 2024-06-09 12:36:00+01:00)
+2024-06-09 12:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:36:00 BST)" (scheduled at 2024-06-09 12:36:00+01:00)
+2024-06-09 12:36:00,009 - INFO - Inside the procedure sequence
+2024-06-09 12:36:00,009 - INFO - Inside the procedure sequence
+2024-06-09 12:36:00,202 - INFO - The input start time: 2024-06-09 11:00:00
+2024-06-09 12:36:00,207 - INFO - The input start time: 2024-06-09 11:00:00
+2024-06-09 12:36:01,392 - WARNING - Not Found: /api/tikcers
+2024-06-09 12:36:11,343 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:41:00 BST)" executed successfully
+2024-06-09 12:36:12,178 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:41:00 BST)" executed successfully
