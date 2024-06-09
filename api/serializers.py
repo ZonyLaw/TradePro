@@ -1,14 +1,11 @@
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from tickers.models import Ticker
-# from django.contrib.auth.models import User
 from custom_user.models import User
-# from django_use_email_as_username.models import BaseUser as User
 
 
 class UserSerializer(serializers.ModelSerializer):
     name=serializers.SerializerMethodField(read_only=True)
-    # _id=serializers.SerializerMethodField(read_only=True)
     isAdmin = serializers.SerializerMethodField(read_only=True)
     
     class Meta:

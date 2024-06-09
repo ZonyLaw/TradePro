@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404
 
 
 from api.serializers import UserSerializer, UserSerializerWithToken
-# from django.contrib.auth.models import User
 from custom_user.models import User
 
 
