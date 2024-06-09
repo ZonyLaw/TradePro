@@ -10,6 +10,7 @@ urlpatterns = [
     path('prices/', include('prices.urls')),
     path('ml_models/', include('ml_models.urls')),
     path('', include('users.urls')),
-    path('api/', include('api.urls.ticker_urls')),
+    path('api/tickers/', include('api.urls.ticker_urls')),
+    path('api/users/', include('api.urls.user_urls')),
 
 ]

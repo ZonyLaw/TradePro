@@ -15,9 +15,15 @@ def createProfile(sender, instance, created, **kwargs):
     
     
 def deleteUser(sender, instance, **kwargs):
-    user = instance.user
-    user.delete()
-    print('Delecting user...')
+    try:
+        user = instance.user
+        if user:
+            user.delete()
+            print('Deleting user...')
+    except User.DoesNotExist:
+        print("Related user does not exist")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
     
     
 post_save.connect(createProfile, sender=User)

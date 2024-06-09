@@ -3655,3 +3655,1539 @@ KeyError: 'cst'
 2024-06-09 12:36:01,392 - WARNING - Not Found: /api/tikcers
 2024-06-09 12:36:11,343 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:41:00 BST)" executed successfully
 2024-06-09 12:36:12,178 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:41:00 BST)" executed successfully
+2024-06-09 12:45:19,318 - INFO - Starting scheduler
+2024-06-09 12:45:19,319 - INFO - Updater date and time: 2024-06-09 12:45:19.319930
+2024-06-09 12:45:19,320 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:45:19,320 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:45:19,320 - INFO - Scheduler started
+2024-06-09 12:45:19,322 - INFO - Current time of the scheduler: 2024-06-09 12:45:19.322035
+2024-06-09 12:45:19,322 - INFO - Ending scheduler
+2024-06-09 12:45:21,177 - INFO - Starting scheduler
+2024-06-09 12:45:21,178 - INFO - Updater date and time: 2024-06-09 12:45:21.177195
+2024-06-09 12:45:21,179 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:45:21,179 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:45:21,179 - INFO - Scheduler started
+2024-06-09 12:45:21,180 - INFO - Current time of the scheduler: 2024-06-09 12:45:21.180195
+2024-06-09 12:45:21,180 - INFO - Ending scheduler
+2024-06-09 12:45:21,202 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:46:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:46:00 BST)" (scheduled at 2024-06-09 12:46:00+01:00)
+2024-06-09 12:46:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:46:00 BST)" (scheduled at 2024-06-09 12:46:00+01:00)
+2024-06-09 12:46:00,012 - INFO - Inside the procedure sequence
+2024-06-09 12:46:00,012 - INFO - Inside the procedure sequence
+2024-06-09 12:46:00,188 - INFO - The input start time: 2024-06-09 11:00:00
+2024-06-09 12:46:00,188 - INFO - The input start time: 2024-06-09 11:00:00
+2024-06-09 12:46:09,205 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:51:00 BST)" executed successfully
+2024-06-09 12:46:09,265 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 12:51:00 BST)" executed successfully
+2024-06-09 12:47:02,850 - INFO - Starting scheduler
+2024-06-09 12:47:02,851 - INFO - Updater date and time: 2024-06-09 12:47:02.851699
+2024-06-09 12:47:02,852 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:47:02,852 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:47:02,852 - INFO - Scheduler started
+2024-06-09 12:47:02,853 - INFO - Current time of the scheduler: 2024-06-09 12:47:02.853699
+2024-06-09 12:47:02,853 - INFO - Ending scheduler
+2024-06-09 12:47:04,644 - INFO - Starting scheduler
+2024-06-09 12:47:04,645 - INFO - Updater date and time: 2024-06-09 12:47:04.645653
+2024-06-09 12:47:04,646 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:47:04,646 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:47:04,646 - INFO - Scheduler started
+2024-06-09 12:47:04,647 - INFO - Current time of the scheduler: 2024-06-09 12:47:04.647654
+2024-06-09 12:47:04,647 - INFO - Ending scheduler
+2024-06-09 12:47:04,667 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:47:25,299 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\user_urls.py changed, reloading.
+2024-06-09 12:47:27,335 - INFO - Starting scheduler
+2024-06-09 12:47:27,335 - INFO - Updater date and time: 2024-06-09 12:47:27.335922
+2024-06-09 12:47:27,336 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:47:27,336 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:47:27,336 - INFO - Scheduler started
+2024-06-09 12:47:27,337 - INFO - Current time of the scheduler: 2024-06-09 12:47:27.337928
+2024-06-09 12:47:27,337 - INFO - Ending scheduler
+2024-06-09 12:47:27,358 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:48:43,338 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 12:48:45,431 - INFO - Starting scheduler
+2024-06-09 12:48:45,432 - INFO - Updater date and time: 2024-06-09 12:48:45.432905
+2024-06-09 12:48:45,433 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:48:45,433 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:48:45,433 - INFO - Scheduler started
+2024-06-09 12:48:45,434 - INFO - Current time of the scheduler: 2024-06-09 12:48:45.434905
+2024-06-09 12:48:45,434 - INFO - Ending scheduler
+2024-06-09 12:48:45,451 - INFO - Watching for file changes with StatReloader
+2024-06-09 12:59:19,273 - INFO - Starting scheduler
+2024-06-09 12:59:19,275 - INFO - Updater date and time: 2024-06-09 12:59:19.274572
+2024-06-09 12:59:19,276 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:59:19,276 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:59:19,276 - INFO - Scheduler started
+2024-06-09 12:59:19,277 - INFO - Current time of the scheduler: 2024-06-09 12:59:19.277665
+2024-06-09 12:59:19,277 - INFO - Ending scheduler
+2024-06-09 12:59:21,122 - INFO - Starting scheduler
+2024-06-09 12:59:21,123 - INFO - Updater date and time: 2024-06-09 12:59:21.123206
+2024-06-09 12:59:21,124 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 12:59:21,124 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 12:59:21,124 - INFO - Scheduler started
+2024-06-09 12:59:21,125 - INFO - Current time of the scheduler: 2024-06-09 12:59:21.125232
+2024-06-09 12:59:21,125 - INFO - Ending scheduler
+2024-06-09 12:59:21,140 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:00:57,190 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:00:59,253 - INFO - Starting scheduler
+2024-06-09 13:00:59,255 - INFO - Updater date and time: 2024-06-09 13:00:59.254680
+2024-06-09 13:00:59,256 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:00:59,256 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:00:59,256 - INFO - Scheduler started
+2024-06-09 13:00:59,257 - INFO - Current time of the scheduler: 2024-06-09 13:00:59.257692
+2024-06-09 13:00:59,257 - INFO - Ending scheduler
+2024-06-09 13:00:59,277 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:01:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:01:00 BST)" (scheduled at 2024-06-09 13:01:00+01:00)
+2024-06-09 13:01:00,017 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:01:00 BST)" (scheduled at 2024-06-09 13:01:00+01:00)
+2024-06-09 13:01:00,017 - INFO - Inside the procedure sequence
+2024-06-09 13:01:00,017 - INFO - Inside the procedure sequence
+2024-06-09 13:01:00,184 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:01:00,185 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:01:08,630 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:06:00 BST)" executed successfully
+2024-06-09 13:01:08,827 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:06:00 BST)" executed successfully
+2024-06-09 13:01:15,526 - INFO - Starting scheduler
+2024-06-09 13:01:15,527 - INFO - Updater date and time: 2024-06-09 13:01:15.527372
+2024-06-09 13:01:15,528 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:01:15,528 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:01:15,528 - INFO - Scheduler started
+2024-06-09 13:01:15,529 - INFO - Current time of the scheduler: 2024-06-09 13:01:15.529370
+2024-06-09 13:01:15,529 - INFO - Ending scheduler
+2024-06-09 13:01:17,315 - INFO - Starting scheduler
+2024-06-09 13:01:17,316 - INFO - Updater date and time: 2024-06-09 13:01:17.316795
+2024-06-09 13:01:17,317 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:01:17,317 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:01:17,318 - INFO - Scheduler started
+2024-06-09 13:01:17,318 - INFO - Current time of the scheduler: 2024-06-09 13:01:17.318818
+2024-06-09 13:01:17,319 - INFO - Ending scheduler
+2024-06-09 13:01:17,342 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:03:45,487 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:03:47,567 - INFO - Starting scheduler
+2024-06-09 13:03:47,568 - INFO - Updater date and time: 2024-06-09 13:03:47.567850
+2024-06-09 13:03:47,569 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:03:47,569 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:03:47,569 - INFO - Scheduler started
+2024-06-09 13:03:47,570 - INFO - Current time of the scheduler: 2024-06-09 13:03:47.570837
+2024-06-09 13:03:47,570 - INFO - Ending scheduler
+2024-06-09 13:03:47,589 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:03:55,055 - WARNING - Not Found: /api/
+2024-06-09 13:04:11,602 - WARNING - Not Found: /api/
+2024-06-09 13:04:39,476 - WARNING - Not Found: /api/
+2024-06-09 13:06:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:06:00 BST)" (scheduled at 2024-06-09 13:06:00+01:00)
+2024-06-09 13:06:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:06:00 BST)" (scheduled at 2024-06-09 13:06:00+01:00)
+2024-06-09 13:06:00,015 - INFO - Inside the procedure sequence
+2024-06-09 13:06:00,016 - INFO - Inside the procedure sequence
+2024-06-09 13:06:00,193 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:06:00,193 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:06:09,543 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:11:00 BST)" executed successfully
+2024-06-09 13:06:09,744 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:11:00 BST)" executed successfully
+2024-06-09 13:06:09,894 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:06:25,733 - INFO - Starting scheduler
+2024-06-09 13:06:25,734 - INFO - Updater date and time: 2024-06-09 13:06:25.733261
+2024-06-09 13:06:25,735 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:06:25,735 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:06:25,735 - INFO - Scheduler started
+2024-06-09 13:06:25,736 - INFO - Current time of the scheduler: 2024-06-09 13:06:25.736715
+2024-06-09 13:06:25,736 - INFO - Ending scheduler
+2024-06-09 13:06:27,667 - INFO - Starting scheduler
+2024-06-09 13:06:27,668 - INFO - Updater date and time: 2024-06-09 13:06:27.667119
+2024-06-09 13:06:27,668 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:06:27,669 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:06:27,669 - INFO - Scheduler started
+2024-06-09 13:06:27,669 - INFO - Current time of the scheduler: 2024-06-09 13:06:27.669967
+2024-06-09 13:06:27,669 - INFO - Ending scheduler
+2024-06-09 13:06:27,688 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:06:28,561 - WARNING - Not Found: /api/
+2024-06-09 13:06:32,879 - WARNING - Not Found: /api/
+2024-06-09 13:06:49,519 - ERROR - Internal Server Error: /api/tickers/1/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\__init__.py", line 2688, in to_python
+    return uuid.UUID(**{input_form: value})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\uuid.py", line 178, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\ticker_views.py", line 33, in getTicker
+    ticker = Ticker.objects.get(id=pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\__init__.py", line 2672, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\__init__.py", line 2690, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“1” is not a valid UUID.']
+2024-06-09 13:07:09,111 - WARNING - Not Found: /api/
+2024-06-09 13:08:18,783 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\tradepro\urls.py changed, reloading.
+2024-06-09 13:08:21,129 - INFO - Starting scheduler
+2024-06-09 13:08:21,130 - INFO - Updater date and time: 2024-06-09 13:08:21.130207
+2024-06-09 13:08:21,131 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:08:21,131 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:08:21,131 - INFO - Scheduler started
+2024-06-09 13:08:21,132 - INFO - Current time of the scheduler: 2024-06-09 13:08:21.132942
+2024-06-09 13:08:21,132 - INFO - Ending scheduler
+2024-06-09 13:08:21,153 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:08:27,491 - WARNING - Not Found: /api/
+2024-06-09 13:09:24,478 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:09:26,651 - INFO - Starting scheduler
+2024-06-09 13:09:26,651 - INFO - Updater date and time: 2024-06-09 13:09:26.651227
+2024-06-09 13:09:26,652 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:09:26,652 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:09:26,652 - INFO - Scheduler started
+2024-06-09 13:09:26,653 - INFO - Current time of the scheduler: 2024-06-09 13:09:26.653506
+2024-06-09 13:09:26,653 - INFO - Ending scheduler
+2024-06-09 13:09:26,672 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:09:26,978 - WARNING - Not Found: /api/tickers/routes
+2024-06-09 13:09:31,891 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:09:36,776 - WARNING - Not Found: /api/
+2024-06-09 13:09:43,540 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:09:45,704 - INFO - Starting scheduler
+2024-06-09 13:09:45,705 - INFO - Updater date and time: 2024-06-09 13:09:45.705805
+2024-06-09 13:09:45,705 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:09:45,707 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:09:45,707 - INFO - Scheduler started
+2024-06-09 13:09:45,707 - INFO - Current time of the scheduler: 2024-06-09 13:09:45.707161
+2024-06-09 13:09:45,707 - INFO - Ending scheduler
+2024-06-09 13:09:45,722 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:09:47,368 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:09:52,702 - WARNING - Not Found: /api/
+2024-06-09 13:10:05,397 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:10:08,431 - WARNING - Not Found: /api/
+2024-06-09 13:10:55,817 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:10:57,838 - INFO - Starting scheduler
+2024-06-09 13:10:57,839 - INFO - Updater date and time: 2024-06-09 13:10:57.839871
+2024-06-09 13:10:57,841 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:10:57,841 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:10:57,841 - INFO - Scheduler started
+2024-06-09 13:10:57,842 - INFO - Current time of the scheduler: 2024-06-09 13:10:57.842472
+2024-06-09 13:10:57,842 - INFO - Ending scheduler
+2024-06-09 13:10:57,864 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:11:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:16:00 BST)" (scheduled at 2024-06-09 13:11:00+01:00)
+2024-06-09 13:11:00,004 - INFO - Inside the procedure sequence
+2024-06-09 13:11:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:11:00 BST)" (scheduled at 2024-06-09 13:11:00+01:00)
+2024-06-09 13:11:00,006 - INFO - Inside the procedure sequence
+2024-06-09 13:11:00,201 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:11:00,201 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:11:04,570 - WARNING - Not Found: /api/
+2024-06-09 13:11:09,505 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:11:11,925 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:16:00 BST)" executed successfully
+2024-06-09 13:11:12,216 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:16:00 BST)" executed successfully
+2024-06-09 13:12:05,832 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:12:14,443 - INFO - Starting scheduler
+2024-06-09 13:12:14,444 - INFO - Updater date and time: 2024-06-09 13:12:14.444454
+2024-06-09 13:12:14,446 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:12:14,446 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:12:14,446 - INFO - Scheduler started
+2024-06-09 13:12:14,447 - INFO - Current time of the scheduler: 2024-06-09 13:12:14.447498
+2024-06-09 13:12:14,447 - INFO - Ending scheduler
+2024-06-09 13:12:16,354 - INFO - Starting scheduler
+2024-06-09 13:12:16,354 - INFO - Updater date and time: 2024-06-09 13:12:16.354379
+2024-06-09 13:12:16,355 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:12:16,356 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:12:16,356 - INFO - Scheduler started
+2024-06-09 13:12:16,356 - INFO - Current time of the scheduler: 2024-06-09 13:12:16.356385
+2024-06-09 13:12:16,357 - INFO - Ending scheduler
+2024-06-09 13:12:16,375 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:12:18,607 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:12:22,665 - WARNING - Not Found: /api/tickers
+2024-06-09 13:12:25,617 - WARNING - Not Found: /api/
+2024-06-09 13:16:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:16:00 BST)" (scheduled at 2024-06-09 13:16:00+01:00)
+2024-06-09 13:16:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:16:00 BST)" (scheduled at 2024-06-09 13:16:00+01:00)
+2024-06-09 13:16:00,004 - INFO - Inside the procedure sequence
+2024-06-09 13:16:00,005 - INFO - Inside the procedure sequence
+2024-06-09 13:16:00,184 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:16:00,185 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:16:09,769 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:21:00 BST)" executed successfully
+2024-06-09 13:16:10,305 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:21:00 BST)" executed successfully
+2024-06-09 13:16:15,325 - WARNING - Not Found: /api/
+2024-06-09 13:16:22,163 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:16:32,559 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:17:07,834 - INFO - Starting scheduler
+2024-06-09 13:17:07,835 - INFO - Updater date and time: 2024-06-09 13:17:07.835114
+2024-06-09 13:17:07,836 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:17:07,836 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:17:07,836 - INFO - Scheduler started
+2024-06-09 13:17:07,837 - INFO - Current time of the scheduler: 2024-06-09 13:17:07.837113
+2024-06-09 13:17:07,837 - INFO - Ending scheduler
+2024-06-09 13:17:09,689 - INFO - Starting scheduler
+2024-06-09 13:17:09,689 - INFO - Updater date and time: 2024-06-09 13:17:09.689402
+2024-06-09 13:17:09,690 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:17:09,690 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:17:09,690 - INFO - Scheduler started
+2024-06-09 13:17:09,691 - INFO - Current time of the scheduler: 2024-06-09 13:17:09.691404
+2024-06-09 13:17:09,692 - INFO - Ending scheduler
+2024-06-09 13:17:09,710 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:17:15,658 - WARNING - Not Found: /api/
+2024-06-09 13:17:23,680 - WARNING - Not Found: /api/tickers
+2024-06-09 13:17:27,774 - WARNING - Not Found: /api/tickers/
+2024-06-09 13:18:18,684 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\ticker_urls.py changed, reloading.
+2024-06-09 13:18:20,894 - INFO - Starting scheduler
+2024-06-09 13:18:20,895 - INFO - Updater date and time: 2024-06-09 13:18:20.895613
+2024-06-09 13:18:20,896 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:18:20,897 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:18:20,897 - INFO - Scheduler started
+2024-06-09 13:18:20,898 - INFO - Current time of the scheduler: 2024-06-09 13:18:20.898837
+2024-06-09 13:18:20,898 - INFO - Ending scheduler
+2024-06-09 13:18:20,919 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:19:13,501 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\tradepro\urls.py changed, reloading.
+2024-06-09 13:19:15,664 - INFO - Starting scheduler
+2024-06-09 13:19:15,666 - INFO - Updater date and time: 2024-06-09 13:19:15.665919
+2024-06-09 13:19:15,666 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:19:15,667 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:19:15,667 - INFO - Scheduler started
+2024-06-09 13:19:15,668 - INFO - Current time of the scheduler: 2024-06-09 13:19:15.668267
+2024-06-09 13:19:15,668 - INFO - Ending scheduler
+2024-06-09 13:19:15,691 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:21:00 BST)" (scheduled at 2024-06-09 13:21:00+01:00)
+2024-06-09 13:21:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:21:00 BST)" (scheduled at 2024-06-09 13:21:00+01:00)
+2024-06-09 13:21:00,009 - INFO - Inside the procedure sequence
+2024-06-09 13:21:00,009 - INFO - Inside the procedure sequence
+2024-06-09 13:21:00,181 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:21:00,181 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:21:08,840 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:26:00 BST)" executed successfully
+2024-06-09 13:21:09,194 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:26:00 BST)" executed successfully
+2024-06-09 13:22:01,031 - INFO - Starting scheduler
+2024-06-09 13:22:01,032 - INFO - Updater date and time: 2024-06-09 13:22:01.032453
+2024-06-09 13:22:01,033 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:22:01,033 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:22:01,034 - INFO - Scheduler started
+2024-06-09 13:22:01,034 - INFO - Current time of the scheduler: 2024-06-09 13:22:01.034475
+2024-06-09 13:22:01,034 - INFO - Ending scheduler
+2024-06-09 13:22:03,046 - INFO - Starting scheduler
+2024-06-09 13:22:03,047 - INFO - Updater date and time: 2024-06-09 13:22:03.047419
+2024-06-09 13:22:03,048 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:22:03,048 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:22:03,048 - INFO - Scheduler started
+2024-06-09 13:22:03,049 - INFO - Current time of the scheduler: 2024-06-09 13:22:03.049587
+2024-06-09 13:22:03,049 - INFO - Ending scheduler
+2024-06-09 13:22:03,075 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:23:20,703 - INFO - Starting scheduler
+2024-06-09 13:23:20,704 - INFO - Updater date and time: 2024-06-09 13:23:20.704670
+2024-06-09 13:23:20,705 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:23:20,705 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:23:20,705 - INFO - Scheduler started
+2024-06-09 13:23:20,706 - INFO - Current time of the scheduler: 2024-06-09 13:23:20.706700
+2024-06-09 13:23:20,706 - INFO - Ending scheduler
+2024-06-09 13:23:22,504 - INFO - Starting scheduler
+2024-06-09 13:23:22,505 - INFO - Updater date and time: 2024-06-09 13:23:22.504897
+2024-06-09 13:23:22,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:23:22,506 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:23:22,506 - INFO - Scheduler started
+2024-06-09 13:23:22,506 - INFO - Current time of the scheduler: 2024-06-09 13:23:22.506916
+2024-06-09 13:23:22,506 - INFO - Ending scheduler
+2024-06-09 13:23:22,525 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:25:20,415 - INFO - Starting scheduler
+2024-06-09 13:25:20,416 - INFO - Updater date and time: 2024-06-09 13:25:20.415017
+2024-06-09 13:25:20,417 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:25:20,417 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:25:20,417 - INFO - Scheduler started
+2024-06-09 13:25:20,418 - INFO - Current time of the scheduler: 2024-06-09 13:25:20.418018
+2024-06-09 13:25:20,418 - INFO - Ending scheduler
+2024-06-09 13:25:22,371 - INFO - Starting scheduler
+2024-06-09 13:25:22,371 - INFO - Updater date and time: 2024-06-09 13:25:22.371483
+2024-06-09 13:25:22,372 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:25:22,372 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:25:22,372 - INFO - Scheduler started
+2024-06-09 13:25:22,373 - INFO - Current time of the scheduler: 2024-06-09 13:25:22.373488
+2024-06-09 13:25:22,373 - INFO - Ending scheduler
+2024-06-09 13:25:22,393 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:26:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:26:00 BST)" (scheduled at 2024-06-09 13:26:00+01:00)
+2024-06-09 13:26:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:31:00 BST)" (scheduled at 2024-06-09 13:26:00+01:00)
+2024-06-09 13:26:00,013 - INFO - Inside the procedure sequence
+2024-06-09 13:26:00,013 - INFO - Inside the procedure sequence
+2024-06-09 13:26:00,194 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:26:00,195 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:26:11,069 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:31:00 BST)" executed successfully
+2024-06-09 13:26:11,572 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:31:00 BST)" executed successfully
+2024-06-09 13:33:45,016 - INFO - Starting scheduler
+2024-06-09 13:33:45,016 - INFO - Updater date and time: 2024-06-09 13:33:45.016653
+2024-06-09 13:33:45,017 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:33:45,017 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:33:45,018 - INFO - Scheduler started
+2024-06-09 13:33:45,018 - INFO - Current time of the scheduler: 2024-06-09 13:33:45.018653
+2024-06-09 13:33:45,019 - INFO - Ending scheduler
+2024-06-09 13:33:46,869 - INFO - Starting scheduler
+2024-06-09 13:33:46,870 - INFO - Updater date and time: 2024-06-09 13:33:46.870949
+2024-06-09 13:33:46,871 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:33:46,871 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:33:46,871 - INFO - Scheduler started
+2024-06-09 13:33:46,872 - INFO - Current time of the scheduler: 2024-06-09 13:33:46.872949
+2024-06-09 13:33:46,872 - INFO - Ending scheduler
+2024-06-09 13:33:46,892 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:41:26,783 - INFO - Starting scheduler
+2024-06-09 13:41:26,784 - INFO - Updater date and time: 2024-06-09 13:41:26.783323
+2024-06-09 13:41:26,784 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:41:26,784 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:41:26,784 - INFO - Scheduler started
+2024-06-09 13:41:26,785 - INFO - Current time of the scheduler: 2024-06-09 13:41:26.785674
+2024-06-09 13:41:26,785 - INFO - Ending scheduler
+2024-06-09 13:41:28,510 - INFO - Starting scheduler
+2024-06-09 13:41:28,511 - INFO - Updater date and time: 2024-06-09 13:41:28.511775
+2024-06-09 13:41:28,512 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:41:28,512 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:41:28,513 - INFO - Scheduler started
+2024-06-09 13:41:28,513 - INFO - Current time of the scheduler: 2024-06-09 13:41:28.513952
+2024-06-09 13:41:28,513 - INFO - Ending scheduler
+2024-06-09 13:41:28,530 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:43:48,361 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:43:50,387 - INFO - Starting scheduler
+2024-06-09 13:43:50,387 - INFO - Updater date and time: 2024-06-09 13:43:50.387622
+2024-06-09 13:43:50,388 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:43:50,388 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:43:50,389 - INFO - Scheduler started
+2024-06-09 13:43:50,389 - INFO - Current time of the scheduler: 2024-06-09 13:43:50.389622
+2024-06-09 13:43:50,390 - INFO - Ending scheduler
+2024-06-09 13:43:50,408 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:46:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:46:00 BST)" (scheduled at 2024-06-09 13:46:00+01:00)
+2024-06-09 13:46:00,016 - INFO - Inside the procedure sequence
+2024-06-09 13:46:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:46:00 BST)" (scheduled at 2024-06-09 13:46:00+01:00)
+2024-06-09 13:46:00,016 - INFO - Inside the procedure sequence
+2024-06-09 13:46:00,206 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:46:00,217 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:46:08,890 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:51:00 BST)" executed successfully
+2024-06-09 13:46:09,250 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:51:00 BST)" executed successfully
+2024-06-09 13:46:52,074 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:46:59,756 - INFO - Starting scheduler
+2024-06-09 13:46:59,757 - INFO - Updater date and time: 2024-06-09 13:46:59.756120
+2024-06-09 13:46:59,758 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:46:59,758 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:46:59,758 - INFO - Scheduler started
+2024-06-09 13:46:59,759 - INFO - Current time of the scheduler: 2024-06-09 13:46:59.759120
+2024-06-09 13:46:59,759 - INFO - Ending scheduler
+2024-06-09 13:47:01,498 - INFO - Starting scheduler
+2024-06-09 13:47:01,499 - INFO - Updater date and time: 2024-06-09 13:47:01.498246
+2024-06-09 13:47:01,499 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:47:01,500 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:47:01,500 - INFO - Scheduler started
+2024-06-09 13:47:01,501 - INFO - Current time of the scheduler: 2024-06-09 13:47:01.501248
+2024-06-09 13:47:01,501 - INFO - Ending scheduler
+2024-06-09 13:47:01,519 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:47:19,504 - WARNING - Not Found: /api/login
+2024-06-09 13:47:24,579 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 13:47:30,669 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1078, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\utils\model_meta.py", line 39, in get_field_info
+    forward_relations = _get_forward_relationships(opts)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\utils\model_meta.py", line 96, in _get_forward_relationships
+    not field.remote_field.through._meta.auto_created
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_meta'
+2024-06-09 13:48:38,086 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 13:49:08,529 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:49:10,695 - INFO - Starting scheduler
+2024-06-09 13:49:10,695 - INFO - Updater date and time: 2024-06-09 13:49:10.695940
+2024-06-09 13:49:10,696 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:49:10,696 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:49:10,696 - INFO - Scheduler started
+2024-06-09 13:49:10,697 - INFO - Current time of the scheduler: 2024-06-09 13:49:10.697997
+2024-06-09 13:49:10,697 - INFO - Ending scheduler
+2024-06-09 13:49:10,717 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:49:13,452 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1078, in get_fields
+    info = model_meta.get_field_info(model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\utils\model_meta.py", line 39, in get_field_info
+    forward_relations = _get_forward_relationships(opts)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\utils\model_meta.py", line 96, in _get_forward_relationships
+    not field.remote_field.through._meta.auto_created
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_meta'
+2024-06-09 13:50:36,945 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:50:39,141 - INFO - Starting scheduler
+2024-06-09 13:50:39,142 - INFO - Updater date and time: 2024-06-09 13:50:39.142387
+2024-06-09 13:50:39,143 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:50:39,143 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:50:39,143 - INFO - Scheduler started
+2024-06-09 13:50:39,144 - INFO - Current time of the scheduler: 2024-06-09 13:50:39.144668
+2024-06-09 13:50:39,144 - INFO - Ending scheduler
+2024-06-09 13:50:39,169 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:50:40,635 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:50:47,314 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:50:47,563 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:50:57,470 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:50:59,729 - INFO - Starting scheduler
+2024-06-09 13:50:59,730 - INFO - Updater date and time: 2024-06-09 13:50:59.730246
+2024-06-09 13:50:59,731 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:50:59,731 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:50:59,731 - INFO - Scheduler started
+2024-06-09 13:50:59,732 - INFO - Current time of the scheduler: 2024-06-09 13:50:59.732071
+2024-06-09 13:50:59,732 - INFO - Ending scheduler
+2024-06-09 13:50:59,756 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:51:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:51:00 BST)" (scheduled at 2024-06-09 13:51:00+01:00)
+2024-06-09 13:51:00,013 - INFO - Inside the procedure sequence
+2024-06-09 13:51:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:51:00 BST)" (scheduled at 2024-06-09 13:51:00+01:00)
+2024-06-09 13:51:00,016 - INFO - Inside the procedure sequence
+2024-06-09 13:51:00,215 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:51:00,240 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:51:00,613 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:51:10,034 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:56:00 BST)" executed successfully
+2024-06-09 13:51:10,510 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:56:00 BST)" executed successfully
+2024-06-09 13:54:15,370 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:54:24,613 - INFO - Starting scheduler
+2024-06-09 13:54:24,614 - INFO - Updater date and time: 2024-06-09 13:54:24.614730
+2024-06-09 13:54:24,615 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:54:24,615 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:54:24,615 - INFO - Scheduler started
+2024-06-09 13:54:24,616 - INFO - Current time of the scheduler: 2024-06-09 13:54:24.616800
+2024-06-09 13:54:24,616 - INFO - Ending scheduler
+2024-06-09 13:54:26,323 - INFO - Starting scheduler
+2024-06-09 13:54:26,324 - INFO - Updater date and time: 2024-06-09 13:54:26.324241
+2024-06-09 13:54:26,325 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:54:26,325 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:54:26,325 - INFO - Scheduler started
+2024-06-09 13:54:26,326 - INFO - Current time of the scheduler: 2024-06-09 13:54:26.326226
+2024-06-09 13:54:26,326 - INFO - Ending scheduler
+2024-06-09 13:54:26,346 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:54:38,881 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 13:54:44,090 - WARNING - Unauthorized: /api/users/login/
+2024-06-09 13:54:49,714 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:56:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:56:00 BST)" (scheduled at 2024-06-09 13:56:00+01:00)
+2024-06-09 13:56:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 13:56:00 BST)" (scheduled at 2024-06-09 13:56:00+01:00)
+2024-06-09 13:56:00,011 - INFO - Inside the procedure sequence
+2024-06-09 13:56:00,011 - INFO - Inside the procedure sequence
+2024-06-09 13:56:00,195 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:56:00,195 - INFO - The input start time: 2024-06-09 12:00:00
+2024-06-09 13:56:11,667 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:01:00 BST)" executed successfully
+2024-06-09 13:56:12,616 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:01:00 BST)" executed successfully
+2024-06-09 13:56:25,589 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\custom_user\models.py changed, reloading.
+2024-06-09 13:57:01,056 - INFO - Starting scheduler
+2024-06-09 13:57:01,057 - INFO - Updater date and time: 2024-06-09 13:57:01.056629
+2024-06-09 13:57:01,058 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:57:01,058 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:57:01,058 - INFO - Scheduler started
+2024-06-09 13:57:01,059 - INFO - Current time of the scheduler: 2024-06-09 13:57:01.059748
+2024-06-09 13:57:01,059 - INFO - Ending scheduler
+2024-06-09 13:57:02,808 - INFO - Starting scheduler
+2024-06-09 13:57:02,810 - INFO - Updater date and time: 2024-06-09 13:57:02.809267
+2024-06-09 13:57:02,811 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:57:02,811 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:57:02,811 - INFO - Scheduler started
+2024-06-09 13:57:02,812 - INFO - Current time of the scheduler: 2024-06-09 13:57:02.812284
+2024-06-09 13:57:02,812 - INFO - Ending scheduler
+2024-06-09 13:57:02,830 - INFO - Watching for file changes with StatReloader
+2024-06-09 13:57:15,307 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 13:57:20,439 - ERROR - Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework_simplejwt\views.py", line 44, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 223, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 445, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 25, in validate
+    serializer=UserSerializerWithToken(self.user).data
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1065, in get_fields
+    raise ValueError(
+ValueError: Cannot use ModelSerializer with Abstract Models.
+2024-06-09 13:58:54,362 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\serializers.py changed, reloading.
+2024-06-09 13:58:56,445 - INFO - Starting scheduler
+2024-06-09 13:58:56,446 - INFO - Updater date and time: 2024-06-09 13:58:56.446660
+2024-06-09 13:58:56,447 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 13:58:56,447 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 13:58:56,447 - INFO - Scheduler started
+2024-06-09 13:58:56,448 - INFO - Current time of the scheduler: 2024-06-09 13:58:56.448661
+2024-06-09 13:58:56,448 - INFO - Ending scheduler
+2024-06-09 13:58:56,469 - INFO - Watching for file changes with StatReloader
+2024-06-09 14:01:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:01:00 BST)" (scheduled at 2024-06-09 14:01:00+01:00)
+2024-06-09 14:01:00,005 - INFO - Inside the procedure sequence
+2024-06-09 14:01:00,005 - INFO - Inside the procedure sequence
+2024-06-09 14:01:00,204 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:01:00,205 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:01:09,973 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:06:00 BST)" executed successfully
+2024-06-09 14:01:09,995 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:06:00 BST)" executed successfully
+2024-06-09 14:01:16,827 - INFO - Starting scheduler
+2024-06-09 14:01:16,828 - INFO - Updater date and time: 2024-06-09 14:01:16.828525
+2024-06-09 14:01:16,829 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 14:01:16,829 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 14:01:16,829 - INFO - Scheduler started
+2024-06-09 14:01:16,830 - INFO - Current time of the scheduler: 2024-06-09 14:01:16.830526
+2024-06-09 14:01:16,830 - INFO - Ending scheduler
+2024-06-09 14:01:26,992 - INFO - Starting scheduler
+2024-06-09 14:01:26,994 - INFO - Updater date and time: 2024-06-09 14:01:26.993615
+2024-06-09 14:01:26,994 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 14:01:26,995 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 14:01:26,995 - INFO - Scheduler started
+2024-06-09 14:01:26,995 - INFO - Current time of the scheduler: 2024-06-09 14:01:26.995860
+2024-06-09 14:01:26,995 - INFO - Ending scheduler
+2024-06-09 14:03:53,740 - INFO - Starting scheduler
+2024-06-09 14:03:53,742 - INFO - Updater date and time: 2024-06-09 14:03:53.742002
+2024-06-09 14:03:53,743 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 14:03:53,743 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 14:03:53,743 - INFO - Scheduler started
+2024-06-09 14:03:53,744 - INFO - Current time of the scheduler: 2024-06-09 14:03:53.744181
+2024-06-09 14:03:53,744 - INFO - Ending scheduler
+2024-06-09 14:03:55,695 - INFO - Starting scheduler
+2024-06-09 14:03:55,696 - INFO - Updater date and time: 2024-06-09 14:03:55.696593
+2024-06-09 14:03:55,697 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 14:03:55,697 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 14:03:55,697 - INFO - Scheduler started
+2024-06-09 14:03:55,698 - INFO - Current time of the scheduler: 2024-06-09 14:03:55.698589
+2024-06-09 14:03:55,698 - INFO - Ending scheduler
+2024-06-09 14:03:55,714 - INFO - Watching for file changes with StatReloader
+2024-06-09 14:04:13,003 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 14:06:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:06:00 BST)" (scheduled at 2024-06-09 14:06:00+01:00)
+2024-06-09 14:06:00,003 - INFO - Inside the procedure sequence
+2024-06-09 14:06:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:06:00 BST)" (scheduled at 2024-06-09 14:06:00+01:00)
+2024-06-09 14:06:00,004 - INFO - Inside the procedure sequence
+2024-06-09 14:06:00,178 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:06:00,178 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:06:08,515 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:11:00 BST)" executed successfully
+2024-06-09 14:06:08,984 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:11:00 BST)" executed successfully
+2024-06-09 14:11:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:16:00 BST)" (scheduled at 2024-06-09 14:11:00+01:00)
+2024-06-09 14:11:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:16:00 BST)" (scheduled at 2024-06-09 14:11:00+01:00)
+2024-06-09 14:11:00,013 - INFO - Inside the procedure sequence
+2024-06-09 14:11:00,013 - INFO - Inside the procedure sequence
+2024-06-09 14:11:00,017 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:11:00,017 - INFO - The input start time: 2024-06-09 13:00:00
+2024-06-09 14:11:07,888 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:16:00 BST)" executed successfully
+2024-06-09 14:11:08,612 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 14:16:00 BST)" executed successfully
+2024-06-09 16:30:27,224 - WARNING - Run time of job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:31:00 BST)" was missed by 0:04:27.224093
+2024-06-09 16:30:58,680 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-09 16:32:34,921 - INFO - Starting scheduler
+2024-06-09 16:32:34,922 - INFO - Updater date and time: 2024-06-09 16:32:34.922400
+2024-06-09 16:32:34,923 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:32:34,923 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:32:34,923 - INFO - Scheduler started
+2024-06-09 16:32:34,924 - INFO - Current time of the scheduler: 2024-06-09 16:32:34.924389
+2024-06-09 16:32:34,924 - INFO - Ending scheduler
+2024-06-09 16:32:36,816 - INFO - Starting scheduler
+2024-06-09 16:32:36,817 - INFO - Updater date and time: 2024-06-09 16:32:36.817892
+2024-06-09 16:32:36,818 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:32:36,818 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:32:36,819 - INFO - Scheduler started
+2024-06-09 16:32:36,820 - INFO - Current time of the scheduler: 2024-06-09 16:32:36.820893
+2024-06-09 16:32:36,820 - INFO - Ending scheduler
+2024-06-09 16:32:36,839 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:32:37,440 - WARNING - Method Not Allowed: /api/users/register/
+2024-06-09 16:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:36:00 BST)" (scheduled at 2024-06-09 16:36:00+01:00)
+2024-06-09 16:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:36:00 BST)" (scheduled at 2024-06-09 16:36:00+01:00)
+2024-06-09 16:36:00,009 - INFO - Inside the procedure sequence
+2024-06-09 16:36:00,009 - INFO - Inside the procedure sequence
+2024-06-09 16:36:00,216 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:36:00,219 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:36:12,760 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:41:00 BST)" executed successfully
+2024-06-09 16:36:12,771 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:41:00 BST)" executed successfully
+2024-06-09 16:36:55,912 - ERROR - Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/users/register/?name=Sunny&email=test@hotmail.com&password=xjkdxjkd1&username=sue (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-06-09 16:39:20,044 - ERROR - Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-06-09 16:39:29,323 - ERROR - Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-06-09 16:40:12,687 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-09 16:40:53,852 - ERROR - Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-06-09 16:41:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" (scheduled at 2024-06-09 16:41:00+01:00)
+2024-06-09 16:41:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" (scheduled at 2024-06-09 16:41:00+01:00)
+2024-06-09 16:41:00,008 - INFO - Inside the procedure sequence
+2024-06-09 16:41:00,009 - INFO - Inside the procedure sequence
+2024-06-09 16:41:00,011 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:41:00,014 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:41:00,650 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-09 16:41:04,437 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-09 16:41:08,603 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" executed successfully
+2024-06-09 16:41:17,528 - INFO - Starting scheduler
+2024-06-09 16:41:17,528 - INFO - Updater date and time: 2024-06-09 16:41:17.528780
+2024-06-09 16:41:17,529 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:41:17,529 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:41:17,529 - INFO - Scheduler started
+2024-06-09 16:41:17,530 - INFO - Current time of the scheduler: 2024-06-09 16:41:17.530779
+2024-06-09 16:41:17,530 - INFO - Ending scheduler
+2024-06-09 16:41:19,326 - INFO - Starting scheduler
+2024-06-09 16:41:19,327 - INFO - Updater date and time: 2024-06-09 16:41:19.327266
+2024-06-09 16:41:19,328 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:41:19,328 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:41:19,329 - INFO - Scheduler started
+2024-06-09 16:41:19,329 - INFO - Current time of the scheduler: 2024-06-09 16:41:19.329279
+2024-06-09 16:41:19,329 - INFO - Ending scheduler
+2024-06-09 16:41:19,346 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:41:22,551 - ERROR - Internal Server Error: /api/users/register
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2024-06-09 16:41:55,068 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:42:02,974 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:42:46,756 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:43:35,269 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-09 16:43:37,480 - INFO - Starting scheduler
+2024-06-09 16:43:37,481 - INFO - Updater date and time: 2024-06-09 16:43:37.481735
+2024-06-09 16:43:37,482 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:43:37,482 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:43:37,482 - INFO - Scheduler started
+2024-06-09 16:43:37,483 - INFO - Current time of the scheduler: 2024-06-09 16:43:37.483816
+2024-06-09 16:43:37,483 - INFO - Ending scheduler
+2024-06-09 16:43:37,503 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:43:44,736 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:46:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" (scheduled at 2024-06-09 16:46:00+01:00)
+2024-06-09 16:46:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:46:00 BST)" (scheduled at 2024-06-09 16:46:00+01:00)
+2024-06-09 16:46:00,016 - INFO - Inside the procedure sequence
+2024-06-09 16:46:00,222 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:46:00,223 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:46:08,980 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:51:00 BST)" executed successfully
+2024-06-09 16:46:09,460 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:51:00 BST)" executed successfully
+2024-06-09 16:46:21,034 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:46:32,317 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:46:41,529 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:49:20,082 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-09 16:49:32,033 - INFO - Starting scheduler
+2024-06-09 16:49:32,034 - INFO - Updater date and time: 2024-06-09 16:49:32.033226
+2024-06-09 16:49:32,035 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:49:32,035 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:49:32,035 - INFO - Scheduler started
+2024-06-09 16:49:32,036 - INFO - Current time of the scheduler: 2024-06-09 16:49:32.036302
+2024-06-09 16:49:32,036 - INFO - Ending scheduler
+2024-06-09 16:49:33,965 - INFO - Starting scheduler
+2024-06-09 16:49:33,966 - INFO - Updater date and time: 2024-06-09 16:49:33.966426
+2024-06-09 16:49:33,967 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:49:33,967 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:49:33,967 - INFO - Scheduler started
+2024-06-09 16:49:33,968 - INFO - Current time of the scheduler: 2024-06-09 16:49:33.968422
+2024-06-09 16:49:33,968 - INFO - Ending scheduler
+2024-06-09 16:49:33,991 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:49:46,487 - WARNING - Bad Request: /api/users/register/
+2024-06-09 16:51:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:51:00 BST)" (scheduled at 2024-06-09 16:51:00+01:00)
+2024-06-09 16:51:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:51:00 BST)" (scheduled at 2024-06-09 16:51:00+01:00)
+2024-06-09 16:51:00,005 - INFO - Inside the procedure sequence
+2024-06-09 16:51:00,006 - INFO - Inside the procedure sequence
+2024-06-09 16:51:00,229 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:51:00,229 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:51:02,813 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-09 16:51:09,014 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:56:00 BST)" executed successfully
+2024-06-09 16:51:09,189 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:56:00 BST)" executed successfully
+2024-06-09 16:51:20,580 - INFO - Starting scheduler
+2024-06-09 16:51:20,581 - INFO - Updater date and time: 2024-06-09 16:51:20.581336
+2024-06-09 16:51:20,582 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:51:20,582 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:51:20,582 - INFO - Scheduler started
+2024-06-09 16:51:20,583 - INFO - Current time of the scheduler: 2024-06-09 16:51:20.583335
+2024-06-09 16:51:20,583 - INFO - Ending scheduler
+2024-06-09 16:51:22,431 - INFO - Starting scheduler
+2024-06-09 16:51:22,432 - INFO - Updater date and time: 2024-06-09 16:51:22.432410
+2024-06-09 16:51:22,433 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:51:22,433 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:51:22,433 - INFO - Scheduler started
+2024-06-09 16:51:22,434 - INFO - Current time of the scheduler: 2024-06-09 16:51:22.434218
+2024-06-09 16:51:22,434 - INFO - Ending scheduler
+2024-06-09 16:51:22,494 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:51:50,753 - ERROR - Internal Server Error: /admin/custom_user/user/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 218, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\mixins.py", line 15, in get_cached_value
+    return instance._state.fields_cache[cache_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1983, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+                           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\deletion.py", line 512, in delete
+    signals.post_delete.send(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\signals.py", line 18, in deleteUser
+    user = instance.user
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 236, in __get__
+    rel_obj = self.get_object(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 366, in get_object
+    return super().get_object(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+custom_user.models.User.DoesNotExist: User matching query does not exist.
+2024-06-09 16:52:50,907 - ERROR - Internal Server Error: /admin/custom_user/user/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 218, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\mixins.py", line 15, in get_cached_value
+    return instance._state.fields_cache[cache_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1983, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+                           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\deletion.py", line 512, in delete
+    signals.post_delete.send(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\signals.py", line 18, in deleteUser
+    user = instance.user
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 236, in __get__
+    rel_obj = self.get_object(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 366, in get_object
+    return super().get_object(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+custom_user.models.User.DoesNotExist: User matching query does not exist.
+2024-06-09 16:53:17,956 - ERROR - Internal Server Error: /admin/custom_user/user/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 218, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\mixins.py", line 15, in get_cached_value
+    return instance._state.fields_cache[cache_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1983, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\contrib\admin\options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+                           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\deletion.py", line 512, in delete
+    signals.post_delete.send(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\users\signals.py", line 18, in deleteUser
+    user = instance.user
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 236, in __get__
+    rel_obj = self.get_object(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 366, in get_object
+    return super().get_object(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+custom_user.models.User.DoesNotExist: User matching query does not exist.
+2024-06-09 16:56:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 16:56:00 BST)" (scheduled at 2024-06-09 16:56:00+01:00)
+2024-06-09 16:56:00,013 - INFO - Inside the procedure sequence
+ence (trigger: interval[0:05:00], next run at: 2024-06-09 16:56:00 BST)" (scheduled at 2024-06-09 16:56:00+01:00)
+2024-06-09 16:56:00,014 - INFO - Inside the procedure sequence
+2024-06-09 16:56:00,250 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:56:00,251 - INFO - The input start time: 2024-06-09 15:00:00
+2024-06-09 16:56:01,371 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 17:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-09 16:56:08,956 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-09 17:01:00 BST)" executed successfully
+2024-06-09 16:56:54,755 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\users\signals.py changed, reloading.
+2024-06-09 16:57:01,687 - INFO - Starting scheduler
+2024-06-09 16:57:01,688 - INFO - Updater date and time: 2024-06-09 16:57:01.687607
+2024-06-09 16:57:01,688 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:57:01,689 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:57:01,689 - INFO - Scheduler started
+2024-06-09 16:57:01,690 - INFO - Current time of the scheduler: 2024-06-09 16:57:01.690570
+2024-06-09 16:57:01,690 - INFO - Ending scheduler
+2024-06-09 16:57:03,554 - INFO - Starting scheduler
+2024-06-09 16:57:03,554 - INFO - Updater date and time: 2024-06-09 16:57:03.554361
+2024-06-09 16:57:03,556 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:57:03,556 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:57:03,556 - INFO - Scheduler started
+2024-06-09 16:57:03,557 - INFO - Current time of the scheduler: 2024-06-09 16:57:03.557131
+2024-06-09 16:57:03,557 - INFO - Ending scheduler
+2024-06-09 16:57:03,575 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:57:36,418 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\users\signals.py changed, reloading.
+2024-06-09 16:57:38,548 - INFO - Starting scheduler
+2024-06-09 16:57:38,550 - INFO - Updater date and time: 2024-06-09 16:57:38.549945
+2024-06-09 16:57:38,550 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-09 16:57:38,550 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-09 16:57:38,550 - INFO - Scheduler started
+2024-06-09 16:57:38,551 - INFO - Current time of the scheduler: 2024-06-09 16:57:38.551911
+2024-06-09 16:57:38,551 - INFO - Ending scheduler
+2024-06-09 16:57:38,575 - INFO - Watching for file changes with StatReloader
+2024-06-09 16:58:44,461 - WARNING - Not Found: /images/favicon.ico
+2024-06-09 16:58:50,283 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
