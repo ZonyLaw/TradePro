@@ -60,6 +60,13 @@ INSTALLED_APPS = [
 
 ]
 
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
 from datetime import timedelta
 
 SIMPLE_JWT = {

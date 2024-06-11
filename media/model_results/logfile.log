@@ -5207,3 +5207,519 @@ KeyError: 'cst'
 2024-06-09 17:19:04,165 - INFO - Ending scheduler
 2024-06-09 17:19:04,185 - INFO - Watching for file changes with StatReloader
 2024-06-09 17:19:14,975 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-11 19:10:07,817 - INFO - Starting scheduler
+2024-06-11 19:10:07,818 - INFO - Updater date and time: 2024-06-11 19:10:07.818305
+2024-06-11 19:10:07,819 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:10:07,819 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:10:07,819 - INFO - Scheduler started
+2024-06-11 19:10:07,820 - INFO - Current time of the scheduler: 2024-06-11 19:10:07.820633
+2024-06-11 19:10:07,820 - INFO - Ending scheduler
+2024-06-11 19:10:09,628 - INFO - Starting scheduler
+2024-06-11 19:10:09,629 - INFO - Updater date and time: 2024-06-11 19:10:09.629741
+2024-06-11 19:10:09,630 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:10:09,630 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:10:09,630 - INFO - Scheduler started
+2024-06-11 19:10:09,631 - INFO - Current time of the scheduler: 2024-06-11 19:10:09.631739
+2024-06-11 19:10:09,631 - INFO - Ending scheduler
+2024-06-11 19:10:09,656 - INFO - Watching for file changes with StatReloader
+2024-06-11 19:10:11,209 - WARNING - Not Found: /images/favicon.ico
+2024-06-11 19:10:32,632 - WARNING - Method Not Allowed: /api/users/profile/update/
+2024-06-11 19:10:32,722 - WARNING - Not Found: /favicon.ico
+2024-06-11 19:10:50,526 - ERROR - Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 92, in getUsers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `token` is not valid for model `User` in `api.serializers.UserSerializer`.
+2024-06-11 19:10:57,485 - ERROR - Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 92, in getUsers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `token` is not valid for model `User` in `api.serializers.UserSerializer`.
+2024-06-11 19:11:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:11:00 BST)" (scheduled at 2024-06-11 19:11:00+01:00)
+2024-06-11 19:11:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:11:00 BST)" (scheduled at 2024-06-11 19:11:00+01:00)
+2024-06-11 19:11:00,005 - INFO - Inside the procedure sequence
+2024-06-11 19:11:00,006 - INFO - Inside the procedure sequence
+2024-06-11 19:11:00,240 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:11:00,240 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:11:09,381 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-11 19:11:17,771 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:16:00 BST)" executed successfully
+2024-06-11 19:11:18,772 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:16:00 BST)" executed successfully
+2024-06-11 19:11:56,328 - ERROR - Internal Server Error: /api/users/profile/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 84, in getUserProfile
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `token` is not valid for model `User` in `api.serializers.UserSerializer`.
+2024-06-11 19:14:32,228 - WARNING - Method Not Allowed: /api/users/login/
+2024-06-11 19:14:55,165 - WARNING - Not Found: /}//api/users/profile/
+2024-06-11 19:15:50,532 - WARNING - Not Found: /}//api/users/profile
+2024-06-11 19:16:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:21:00 BST)" (scheduled at 2024-06-11 19:16:00+01:00)
+2024-06-11 19:16:00,016 - INFO - Inside the procedure sequence
+2024-06-11 19:16:00,016 - INFO - Inside the procedure sequence
+2024-06-11 19:16:00,020 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:16:00,020 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:16:00,834 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-11 19:16:11,687 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:21:00 BST)" executed successfully
+2024-06-11 19:16:23,986 - WARNING - Not Found: /}//api/users/profile
+2024-06-11 19:17:53,291 - WARNING - Not Found: /}//api/users/profile
+2024-06-11 19:19:31,334 - WARNING - Not Found: /}//api/users/profile
+2024-06-11 19:20:15,630 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:21:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:26:00 BST)" (scheduled at 2024-06-11 19:21:00+01:00)
+2024-06-11 19:21:00,003 - INFO - Inside the procedure sequence
+2024-06-11 19:21:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:26:00 BST)" (scheduled at 2024-06-11 19:21:00+01:00)
+2024-06-11 19:21:00,003 - INFO - Inside the procedure sequence
+2024-06-11 19:21:00,008 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:21:00,009 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:21:02,874 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:21:15,919 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:26:00 BST)" executed successfully
+2024-06-11 19:21:17,176 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:26:00 BST)" executed successfully
+2024-06-11 19:24:13,516 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:25:08,651 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:25:16,701 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:31:00 BST)" (scheduled at 2024-06-11 19:26:00+01:00)
+2024-06-11 19:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:31:00 BST)" (scheduled at 2024-06-11 19:26:00+01:00)
+2024-06-11 19:26:00,010 - INFO - Inside the procedure sequence
+2024-06-11 19:26:00,010 - INFO - Inside the procedure sequence
+2024-06-11 19:26:00,017 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:26:00,017 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:26:00,722 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-11 19:26:15,657 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:31:00 BST)" executed successfully
+2024-06-11 19:32:02,327 - INFO - Starting scheduler
+2024-06-11 19:32:02,328 - INFO - Updater date and time: 2024-06-11 19:32:02.328499
+2024-06-11 19:32:02,329 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:32:02,329 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:32:02,329 - INFO - Scheduler started
+2024-06-11 19:32:02,330 - INFO - Current time of the scheduler: 2024-06-11 19:32:02.330514
+2024-06-11 19:32:02,330 - INFO - Ending scheduler
+2024-06-11 19:32:04,216 - INFO - Starting scheduler
+2024-06-11 19:32:04,217 - INFO - Updater date and time: 2024-06-11 19:32:04.217757
+2024-06-11 19:32:04,218 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:32:04,219 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:32:04,219 - INFO - Scheduler started
+2024-06-11 19:32:04,219 - INFO - Current time of the scheduler: 2024-06-11 19:32:04.219742
+2024-06-11 19:32:04,219 - INFO - Ending scheduler
+2024-06-11 19:32:04,238 - INFO - Watching for file changes with StatReloader
+2024-06-11 19:32:06,541 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:32:08,220 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:32:09,245 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:32:13,233 - WARNING - Forbidden: /api/users/profile/
+2024-06-11 19:36:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:36:00 BST)" (scheduled at 2024-06-11 19:36:00+01:00)
+2024-06-11 19:36:00,005 - INFO - Inside the procedure sequence
+2024-06-11 19:36:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:36:00 BST)" (scheduled at 2024-06-11 19:36:00+01:00)
+2024-06-11 19:36:00,008 - INFO - Inside the procedure sequence
+2024-06-11 19:36:00,177 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:36:00,179 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:36:00,922 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-11 19:36:11,038 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:41:00 BST)" executed successfully
+2024-06-11 19:38:15,134 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\tradepro\settings.py changed, reloading.
+2024-06-11 19:38:25,038 - INFO - Starting scheduler
+2024-06-11 19:38:25,039 - INFO - Updater date and time: 2024-06-11 19:38:25.039204
+2024-06-11 19:38:25,040 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:38:25,041 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:38:25,041 - INFO - Scheduler started
+2024-06-11 19:38:25,042 - INFO - Current time of the scheduler: 2024-06-11 19:38:25.042381
+2024-06-11 19:38:25,042 - INFO - Ending scheduler
+2024-06-11 19:38:27,172 - INFO - Starting scheduler
+2024-06-11 19:38:27,173 - INFO - Updater date and time: 2024-06-11 19:38:27.172247
+2024-06-11 19:38:27,173 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:38:27,174 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:38:27,174 - INFO - Scheduler started
+2024-06-11 19:38:27,174 - INFO - Current time of the scheduler: 2024-06-11 19:38:27.174247
+2024-06-11 19:38:27,175 - INFO - Ending scheduler
+2024-06-11 19:38:27,199 - INFO - Watching for file changes with StatReloader
+2024-06-11 19:41:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:46:00 BST)" (scheduled at 2024-06-11 19:41:00+01:00)
+2024-06-11 19:41:00,011 - INFO - Inside the procedure sequence
+2024-06-11 19:41:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:41:00 BST)" (scheduled at 2024-06-11 19:41:00+01:00)
+2024-06-11 19:41:00,014 - INFO - Inside the procedure sequence
+2024-06-11 19:41:00,200 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:41:00,200 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:41:16,622 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:46:00 BST)" executed successfully
+2024-06-11 19:41:18,018 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:46:00 BST)" executed successfully
+2024-06-11 19:45:51,599 - ERROR - Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 92, in getUsers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `token` is not valid for model `User` in `api.serializers.UserSerializer`.
+2024-06-11 19:46:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:51:00 BST)" (scheduled at 2024-06-11 19:46:00+01:00)
+2024-06-11 19:46:00,012 - INFO - Inside the procedure sequence
+2024-06-11 19:46:00,012 - INFO - Inside the procedure sequence
+2024-06-11 19:46:00,014 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:46:00,015 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:46:17,209 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:51:00 BST)" executed successfully
+2024-06-11 19:46:18,890 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:51:00 BST)" executed successfully
+2024-06-11 19:46:40,779 - WARNING - Unauthorized: /api/users/
+2024-06-11 19:46:44,396 - ERROR - Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py", line 92, in getUsers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `token` is not valid for model `User` in `api.serializers.UserSerializer`.
+2024-06-11 19:47:02,988 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\user_views.py changed, reloading.
+2024-06-11 19:47:25,463 - INFO - Starting scheduler
+2024-06-11 19:47:25,464 - INFO - Updater date and time: 2024-06-11 19:47:25.464320
+2024-06-11 19:47:25,465 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:47:25,465 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:47:25,465 - INFO - Scheduler started
+2024-06-11 19:47:25,466 - INFO - Current time of the scheduler: 2024-06-11 19:47:25.466921
+2024-06-11 19:47:25,466 - INFO - Ending scheduler
+2024-06-11 19:47:27,285 - INFO - Starting scheduler
+2024-06-11 19:47:27,286 - INFO - Updater date and time: 2024-06-11 19:47:27.286424
+2024-06-11 19:47:27,287 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-11 19:47:27,287 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-11 19:47:27,287 - INFO - Scheduler started
+2024-06-11 19:47:27,289 - INFO - Current time of the scheduler: 2024-06-11 19:47:27.289022
+2024-06-11 19:47:27,289 - INFO - Ending scheduler
+2024-06-11 19:47:27,308 - INFO - Watching for file changes with StatReloader
+2024-06-11 19:51:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:51:00 BST)" (scheduled at 2024-06-11 19:51:00+01:00)
+2024-06-11 19:51:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:56:00 BST)" (scheduled at 2024-06-11 19:51:00+01:00)
+2024-06-11 19:51:00,014 - INFO - Inside the procedure sequence
+2024-06-11 19:51:00,015 - INFO - Inside the procedure sequence
+2024-06-11 19:51:00,193 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:51:00,193 - INFO - The input start time: 2024-06-11 18:00:00
+2024-06-11 19:51:00,816 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:56:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-11 19:51:13,786 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-11 19:56:00 BST)" executed successfully
