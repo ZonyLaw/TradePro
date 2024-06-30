@@ -11,15 +11,16 @@ from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
 from .utils.trade_model import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
 from .utils.access_results import read_prediction_from_json, write_to_csv
-from .utils.manual_model_input import manual_price_input
+from .utils.manual_model_input import manual_price_input, news_param_input
 
-from .form import ModelParameters, ModelSelection, VersionSelection, VariabilitySize
+from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize
 from prices.models import Price
 from tickers.models import Ticker
 from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 
 from ml_models.utils.reverse_model import standard_analysis_reverse
+from ml_models.utils.news_model import news_model_run
 
 
 def about(request):
@@ -411,6 +412,65 @@ def ml_manual(request):
     context = {'form':form, 'results':results}
     
     return render(request, 'ml_models/ml_manual_analysis.html', context)
+
+
+def ml_news_model(request):
+    
+    """
+    This is a function to run the news model
+    
+    """
+    model_version = "v1_news"
+    ticker_input= "USDJPY"
+    form = NewsParameters(request.POST)
+    
+    dp = v4Processing("USDJPY")
+    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    prices_df = pd.DataFrame(list(prices.values()))
+    prices_df = prices_df.sort_values(by='date', ascending=True)
+    # last_prices_df = prices_df.tail(2)
+    last_price_stats = dp.stats_df_gen(prices_df,2)
+    
+    print(last_price_stats['hr'])
+    print(last_price_stats['weekday'])
+    print(last_price_stats['bb_status_1'])
+    
+    news_pred_str = ""
+    news_pred = -99
+    news_prob = 0
+    if request.method == 'POST':
+        form = NewsParameters(request.POST)
+        if form.is_valid():
+
+            user_input = news_param_input(form)
+            print(user_input)
+            news_pred_results = news_model_run(ticker_input, user_input, model_version)   
+            news_pred = news_pred_results['model_prediction']
+            news_prob = news_pred_results['model_prediction_proba']*100 
+            
+            if news_pred == 0:
+                news_pred_str = "Sell"
+            else:
+                news_pred_str = "Buy"
+     
+    else:
+    
+        form = NewsParameters(initial={     
+            'weekday': last_price_stats['weekday'].values[1],
+            'hour': last_price_stats['hr'].values[1], 
+            'bb_status_1': last_price_stats['bb_status_1'].values[1], 
+            'event': "CPI",
+            'output': "better",
+
+        })
+        
+        
+
+    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
+         
+    return render(request, 'ml_models/ml_news_model.html', context)
 
 
 def export_model_results(request):

@@ -5805,3 +5805,2345 @@ Traceback (most recent call last):
            ~~~~~~~~~~~^^^^^^^^^^^^^
 KeyError: 'cst'
 2024-06-23 20:46:13,519 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-23 20:51:00 BST)" executed successfully
+2024-06-30 16:13:36,612 - INFO - Starting scheduler
+2024-06-30 16:13:36,612 - INFO - Updater date and time: 2024-06-30 16:13:36.612545
+2024-06-30 16:13:36,613 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:13:36,614 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:13:36,614 - INFO - Scheduler started
+2024-06-30 16:13:36,614 - INFO - Current time of the scheduler: 2024-06-30 16:13:36.614566
+2024-06-30 16:13:36,615 - INFO - Ending scheduler
+2024-06-30 16:13:38,379 - INFO - Starting scheduler
+2024-06-30 16:13:38,379 - INFO - Updater date and time: 2024-06-30 16:13:38.379764
+2024-06-30 16:13:38,380 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:13:38,380 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:13:38,380 - INFO - Scheduler started
+2024-06-30 16:13:38,381 - INFO - Current time of the scheduler: 2024-06-30 16:13:38.381760
+2024-06-30 16:13:38,381 - INFO - Ending scheduler
+2024-06-30 16:13:38,402 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:13:41,951 - WARNING - Not Found: /images/favicon.ico
+2024-06-30 16:14:10,288 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
+2024-06-30 16:14:23,201 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-06-30 16:15:25,434 - WARNING - Not Found: /ml_models/export-model-results/images/favicon.ico
+2024-06-30 16:15:45,298 - WARNING - Not Found: /ml_models/ml-variability/images/favicon.ico
+2024-06-30 16:15:54,028 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-06-30 16:15:58,255 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-06-30 16:16:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 16:16:00 BST)" (scheduled at 2024-06-30 16:16:00+01:00)
+2024-06-30 16:16:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 16:16:00 BST)" (scheduled at 2024-06-30 16:16:00+01:00)
+2024-06-30 16:16:00,008 - INFO - Inside the procedure sequence
+2024-06-30 16:16:00,009 - INFO - Inside the procedure sequence
+2024-06-30 16:16:00,255 - INFO - The input start time: 2024-06-30 15:00:00
+2024-06-30 16:16:00,255 - INFO - The input start time: 2024-06-30 15:00:00
+2024-06-30 16:16:00,275 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 16:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000018DC0214190>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018DC0214190>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000018DC0214190>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 16:16:00,278 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 16:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001D344CA35D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001D344CA35D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001D344CA35D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 16:23:06,773 - INFO - Starting scheduler
+2024-06-30 16:23:06,774 - INFO - Updater date and time: 2024-06-30 16:23:06.774588
+2024-06-30 16:23:06,775 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:23:06,776 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:23:06,776 - INFO - Scheduler started
+2024-06-30 16:23:06,777 - INFO - Current time of the scheduler: 2024-06-30 16:23:06.777247
+2024-06-30 16:23:06,777 - INFO - Ending scheduler
+2024-06-30 16:23:08,575 - INFO - Starting scheduler
+2024-06-30 16:23:08,576 - INFO - Updater date and time: 2024-06-30 16:23:08.576870
+2024-06-30 16:23:08,577 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:23:08,577 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:23:08,577 - INFO - Scheduler started
+2024-06-30 16:23:08,578 - INFO - Current time of the scheduler: 2024-06-30 16:23:08.578938
+2024-06-30 16:23:08,578 - INFO - Ending scheduler
+2024-06-30 16:23:08,597 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:23:49,948 - WARNING - Not Found: /ml_models/ml-manual/images/favicon.ico
+2024-06-30 16:28:12,511 - INFO - Starting scheduler
+2024-06-30 16:28:12,512 - INFO - Updater date and time: 2024-06-30 16:28:12.512719
+2024-06-30 16:28:12,513 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:28:12,513 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:28:12,513 - INFO - Scheduler started
+2024-06-30 16:28:12,514 - INFO - Current time of the scheduler: 2024-06-30 16:28:12.514720
+2024-06-30 16:28:12,514 - INFO - Ending scheduler
+2024-06-30 16:28:14,344 - INFO - Starting scheduler
+2024-06-30 16:28:14,345 - INFO - Updater date and time: 2024-06-30 16:28:14.345604
+2024-06-30 16:28:14,346 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:28:14,346 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:28:14,346 - INFO - Scheduler started
+2024-06-30 16:28:14,347 - INFO - Current time of the scheduler: 2024-06-30 16:28:14.347585
+2024-06-30 16:28:14,347 - INFO - Ending scheduler
+2024-06-30 16:28:14,368 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:28:26,162 - WARNING - Not Found: /ml_models/ml-news-model/images/favicon.ico
+2024-06-30 16:51:33,419 - INFO - Starting scheduler
+2024-06-30 16:51:33,420 - INFO - Updater date and time: 2024-06-30 16:51:33.420318
+2024-06-30 16:51:33,421 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:51:33,421 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:51:33,421 - INFO - Scheduler started
+2024-06-30 16:51:33,422 - INFO - Current time of the scheduler: 2024-06-30 16:51:33.422341
+2024-06-30 16:51:33,422 - INFO - Ending scheduler
+2024-06-30 16:51:35,163 - INFO - Starting scheduler
+2024-06-30 16:51:35,164 - INFO - Updater date and time: 2024-06-30 16:51:35.164571
+2024-06-30 16:51:35,165 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:51:35,165 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:51:35,165 - INFO - Scheduler started
+2024-06-30 16:51:35,166 - INFO - Current time of the scheduler: 2024-06-30 16:51:35.166571
+2024-06-30 16:51:35,166 - INFO - Ending scheduler
+2024-06-30 16:51:35,185 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:52:19,366 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:52:21,554 - INFO - Starting scheduler
+2024-06-30 16:52:21,554 - INFO - Updater date and time: 2024-06-30 16:52:21.554040
+2024-06-30 16:52:21,555 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:52:21,555 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:52:21,555 - INFO - Scheduler started
+2024-06-30 16:52:21,556 - INFO - Current time of the scheduler: 2024-06-30 16:52:21.556041
+2024-06-30 16:52:21,556 - INFO - Ending scheduler
+2024-06-30 16:52:21,575 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:53:22,520 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:53:24,653 - INFO - Starting scheduler
+2024-06-30 16:53:24,654 - INFO - Updater date and time: 2024-06-30 16:53:24.654420
+2024-06-30 16:53:24,655 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:53:24,655 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:53:24,655 - INFO - Scheduler started
+2024-06-30 16:53:24,656 - INFO - Current time of the scheduler: 2024-06-30 16:53:24.656722
+2024-06-30 16:53:24,656 - INFO - Ending scheduler
+2024-06-30 16:53:24,680 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:53:25,966 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 444, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 16:53:26,167 - WARNING - Not Found: /favicon.ico
+2024-06-30 16:53:56,032 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:53:58,259 - INFO - Starting scheduler
+2024-06-30 16:53:58,260 - INFO - Updater date and time: 2024-06-30 16:53:58.260411
+2024-06-30 16:53:58,261 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:53:58,261 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:53:58,262 - INFO - Scheduler started
+2024-06-30 16:53:58,262 - INFO - Current time of the scheduler: 2024-06-30 16:53:58.262800
+2024-06-30 16:53:58,262 - INFO - Ending scheduler
+2024-06-30 16:53:58,282 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:54:01,632 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 444, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 16:55:15,487 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:55:17,617 - INFO - Starting scheduler
+2024-06-30 16:55:17,618 - INFO - Updater date and time: 2024-06-30 16:55:17.618526
+2024-06-30 16:55:17,619 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:55:17,619 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:55:17,619 - INFO - Scheduler started
+2024-06-30 16:55:17,620 - INFO - Current time of the scheduler: 2024-06-30 16:55:17.620747
+2024-06-30 16:55:17,620 - INFO - Ending scheduler
+2024-06-30 16:55:17,640 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:55:39,746 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:55:41,884 - INFO - Starting scheduler
+2024-06-30 16:55:41,885 - INFO - Updater date and time: 2024-06-30 16:55:41.885596
+2024-06-30 16:55:41,886 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:55:41,886 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:55:41,886 - INFO - Scheduler started
+2024-06-30 16:55:41,887 - INFO - Current time of the scheduler: 2024-06-30 16:55:41.887600
+2024-06-30 16:55:41,887 - INFO - Ending scheduler
+2024-06-30 16:55:41,908 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:56:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 16:56:00 BST)" (scheduled at 2024-06-30 16:56:00+01:00)
+2024-06-30 16:56:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:01:00 BST)" (scheduled at 2024-06-30 16:56:00+01:00)
+2024-06-30 16:56:00,009 - INFO - Inside the procedure sequence
+2024-06-30 16:56:00,009 - INFO - Inside the procedure sequence
+2024-06-30 16:56:00,191 - INFO - The input start time: 2024-06-30 15:00:00
+2024-06-30 16:56:00,197 - INFO - The input start time: 2024-06-30 15:00:00
+2024-06-30 16:56:00,200 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000024F8F287D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024F8F287D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000024F8F287D50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 16:56:00,206 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001B3D734ED50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B3D734ED50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B3D734ED50>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 16:56:14,538 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:56:16,649 - INFO - Starting scheduler
+2024-06-30 16:56:16,650 - INFO - Updater date and time: 2024-06-30 16:56:16.650512
+2024-06-30 16:56:16,651 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:56:16,651 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:56:16,651 - INFO - Scheduler started
+2024-06-30 16:56:16,653 - INFO - Current time of the scheduler: 2024-06-30 16:56:16.652530
+2024-06-30 16:56:16,653 - INFO - Ending scheduler
+2024-06-30 16:56:16,674 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:56:40,610 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:56:42,712 - INFO - Starting scheduler
+2024-06-30 16:56:42,713 - INFO - Updater date and time: 2024-06-30 16:56:42.712432
+2024-06-30 16:56:42,713 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:56:42,714 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:56:42,714 - INFO - Scheduler started
+2024-06-30 16:56:42,715 - INFO - Current time of the scheduler: 2024-06-30 16:56:42.715447
+2024-06-30 16:56:42,715 - INFO - Ending scheduler
+2024-06-30 16:56:42,737 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:58:00,131 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:58:02,205 - INFO - Starting scheduler
+2024-06-30 16:58:02,205 - INFO - Updater date and time: 2024-06-30 16:58:02.205022
+2024-06-30 16:58:02,206 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:58:02,206 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:58:02,206 - INFO - Scheduler started
+2024-06-30 16:58:02,207 - INFO - Current time of the scheduler: 2024-06-30 16:58:02.207356
+2024-06-30 16:58:02,207 - INFO - Ending scheduler
+2024-06-30 16:58:02,225 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:58:07,493 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:58:09,657 - INFO - Starting scheduler
+2024-06-30 16:58:09,658 - INFO - Updater date and time: 2024-06-30 16:58:09.658203
+2024-06-30 16:58:09,658 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:58:09,659 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:58:09,659 - INFO - Scheduler started
+2024-06-30 16:58:09,660 - INFO - Current time of the scheduler: 2024-06-30 16:58:09.660204
+2024-06-30 16:58:09,660 - INFO - Ending scheduler
+2024-06-30 16:58:09,677 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:58:10,940 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 450, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 16:58:42,286 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:58:44,514 - INFO - Starting scheduler
+2024-06-30 16:58:44,515 - INFO - Updater date and time: 2024-06-30 16:58:44.514641
+2024-06-30 16:58:44,515 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:58:44,516 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:58:44,516 - INFO - Scheduler started
+2024-06-30 16:58:44,516 - INFO - Current time of the scheduler: 2024-06-30 16:58:44.516641
+2024-06-30 16:58:44,517 - INFO - Ending scheduler
+2024-06-30 16:58:44,538 - INFO - Watching for file changes with StatReloader
+2024-06-30 16:58:47,161 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 450, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 16:58:51,655 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 16:58:53,769 - INFO - Starting scheduler
+2024-06-30 16:58:53,770 - INFO - Updater date and time: 2024-06-30 16:58:53.770708
+2024-06-30 16:58:53,771 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 16:58:53,771 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 16:58:53,771 - INFO - Scheduler started
+2024-06-30 16:58:53,772 - INFO - Current time of the scheduler: 2024-06-30 16:58:53.772708
+2024-06-30 16:58:53,772 - INFO - Ending scheduler
+2024-06-30 16:58:53,790 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:01:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:06:00 BST)" (scheduled at 2024-06-30 17:01:00+01:00)
+2024-06-30 17:01:00,014 - INFO - Inside the procedure sequence
+2024-06-30 17:01:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:06:00 BST)" (scheduled at 2024-06-30 17:01:00+01:00)
+2024-06-30 17:01:00,015 - INFO - Inside the procedure sequence
+2024-06-30 17:01:00,017 - INFO - The input start time: 2024-06-30 16:00:00
+2024-06-30 17:01:00,220 - INFO - The input start time: 2024-06-30 16:00:00
+2024-06-30 17:01:17,441 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:06:00 BST)" executed successfully
+2024-06-30 17:01:18,424 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:06:00 BST)" executed successfully
+2024-06-30 17:02:38,160 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 17:04:05,094 - INFO - Starting scheduler
+2024-06-30 17:04:05,095 - INFO - Updater date and time: 2024-06-30 17:04:05.095573
+2024-06-30 17:04:05,096 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:04:05,097 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:04:05,097 - INFO - Scheduler started
+2024-06-30 17:04:05,098 - INFO - Current time of the scheduler: 2024-06-30 17:04:05.097659
+2024-06-30 17:04:05,098 - INFO - Ending scheduler
+2024-06-30 17:04:06,851 - INFO - Starting scheduler
+2024-06-30 17:04:06,852 - INFO - Updater date and time: 2024-06-30 17:04:06.851166
+2024-06-30 17:04:06,852 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:04:06,853 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:04:06,853 - INFO - Scheduler started
+2024-06-30 17:04:06,853 - INFO - Current time of the scheduler: 2024-06-30 17:04:06.853312
+2024-06-30 17:04:06,854 - INFO - Ending scheduler
+2024-06-30 17:04:06,871 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:04:15,468 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 451, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 17:36:56,999 - INFO - Starting scheduler
+2024-06-30 17:36:57,000 - INFO - Updater date and time: 2024-06-30 17:36:56.999439
+2024-06-30 17:36:57,000 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:36:57,001 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:36:57,001 - INFO - Scheduler started
+2024-06-30 17:36:57,001 - INFO - Current time of the scheduler: 2024-06-30 17:36:57.001439
+2024-06-30 17:36:57,002 - INFO - Ending scheduler
+2024-06-30 17:36:58,723 - INFO - Starting scheduler
+2024-06-30 17:36:58,724 - INFO - Updater date and time: 2024-06-30 17:36:58.724275
+2024-06-30 17:36:58,725 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:36:58,725 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:36:58,725 - INFO - Scheduler started
+2024-06-30 17:36:58,726 - INFO - Current time of the scheduler: 2024-06-30 17:36:58.726292
+2024-06-30 17:36:58,726 - INFO - Ending scheduler
+2024-06-30 17:36:58,743 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:37:07,310 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 457, in ml_news_model
+    return render(request, 'ml_models/ml_news_model.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 84, in as_p
+    return self.render(self.template_name_p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\utils.py", line 75, in render
+    return mark_safe(renderer.render(template, context))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\renderers.py", line 29, in render
+    return template.render(context, request=request).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\utils\html.py", line 420, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 94, in as_widget
+    attrs = self.build_widget_attrs(attrs, widget)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\boundfield.py", line 269, in build_widget_attrs
+    widget.use_required_attribute(self.initial)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 783, in use_required_attribute
+    and self._choice_has_empty_value(first_choice)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\forms\widgets.py", line 766, in _choice_has_empty_value
+    value, _ = choice
+    ^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-06-30 17:41:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:41:00 BST)" (scheduled at 2024-06-30 17:41:00+01:00)
+2024-06-30 17:41:00,010 - INFO - Inside the procedure sequence
+2024-06-30 17:41:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:41:00 BST)" (scheduled at 2024-06-30 17:41:00+01:00)
+2024-06-30 17:41:00,011 - INFO - Inside the procedure sequence
+2024-06-30 17:41:00,179 - INFO - The input start time: 2024-06-30 16:00:00
+2024-06-30 17:41:00,179 - INFO - The input start time: 2024-06-30 16:00:00
+2024-06-30 17:41:15,643 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:46:00 BST)" executed successfully
+2024-06-30 17:41:15,871 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 17:46:00 BST)" executed successfully
+2024-06-30 17:42:48,195 - INFO - Starting scheduler
+2024-06-30 17:42:48,195 - INFO - Updater date and time: 2024-06-30 17:42:48.195652
+2024-06-30 17:42:48,196 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:42:48,196 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:42:48,197 - INFO - Scheduler started
+2024-06-30 17:42:48,197 - INFO - Current time of the scheduler: 2024-06-30 17:42:48.197653
+2024-06-30 17:42:48,197 - INFO - Ending scheduler
+2024-06-30 17:42:49,876 - INFO - Starting scheduler
+2024-06-30 17:42:49,876 - INFO - Updater date and time: 2024-06-30 17:42:49.876001
+2024-06-30 17:42:49,876 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:42:49,878 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:42:49,878 - INFO - Scheduler started
+2024-06-30 17:42:49,879 - INFO - Current time of the scheduler: 2024-06-30 17:42:49.879002
+2024-06-30 17:42:49,879 - INFO - Ending scheduler
+2024-06-30 17:42:49,895 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:43:30,186 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 17:43:32,399 - INFO - Starting scheduler
+2024-06-30 17:43:32,399 - INFO - Updater date and time: 2024-06-30 17:43:32.399359
+2024-06-30 17:43:32,401 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:43:32,401 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:43:32,401 - INFO - Scheduler started
+2024-06-30 17:43:32,402 - INFO - Current time of the scheduler: 2024-06-30 17:43:32.402427
+2024-06-30 17:43:32,403 - INFO - Ending scheduler
+2024-06-30 17:43:32,424 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:43:52,259 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 17:43:54,501 - INFO - Starting scheduler
+2024-06-30 17:43:54,501 - INFO - Updater date and time: 2024-06-30 17:43:54.501675
+2024-06-30 17:43:54,503 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:43:54,503 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:43:54,503 - INFO - Scheduler started
+2024-06-30 17:43:54,504 - INFO - Current time of the scheduler: 2024-06-30 17:43:54.504599
+2024-06-30 17:43:54,504 - INFO - Ending scheduler
+2024-06-30 17:43:54,521 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:52:38,427 - INFO - Starting scheduler
+2024-06-30 17:52:38,427 - INFO - Updater date and time: 2024-06-30 17:52:38.427783
+2024-06-30 17:52:38,428 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:52:38,428 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:52:38,428 - INFO - Scheduler started
+2024-06-30 17:52:38,429 - INFO - Current time of the scheduler: 2024-06-30 17:52:38.429946
+2024-06-30 17:52:38,429 - INFO - Ending scheduler
+2024-06-30 17:52:40,346 - INFO - Starting scheduler
+2024-06-30 17:52:40,346 - INFO - Updater date and time: 2024-06-30 17:52:40.346831
+2024-06-30 17:52:40,347 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 17:52:40,347 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 17:52:40,347 - INFO - Scheduler started
+2024-06-30 17:52:40,348 - INFO - Current time of the scheduler: 2024-06-30 17:52:40.348937
+2024-06-30 17:52:40,348 - INFO - Ending scheduler
+2024-06-30 17:52:40,368 - INFO - Watching for file changes with StatReloader
+2024-06-30 17:52:53,199 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 440, in ml_news_model
+    model_version = form.cleaned_data['model_version']
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'model_version'
+2024-06-30 18:01:53,551 - INFO - Starting scheduler
+2024-06-30 18:01:53,552 - INFO - Updater date and time: 2024-06-30 18:01:53.552985
+2024-06-30 18:01:53,553 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:01:53,553 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:01:53,553 - INFO - Scheduler started
+2024-06-30 18:01:53,555 - INFO - Current time of the scheduler: 2024-06-30 18:01:53.555007
+2024-06-30 18:01:53,555 - INFO - Ending scheduler
+2024-06-30 18:01:55,390 - INFO - Starting scheduler
+2024-06-30 18:01:55,391 - INFO - Updater date and time: 2024-06-30 18:01:55.390679
+2024-06-30 18:01:55,392 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:01:55,392 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:01:55,393 - INFO - Scheduler started
+2024-06-30 18:01:55,393 - INFO - Current time of the scheduler: 2024-06-30 18:01:55.393252
+2024-06-30 18:01:55,393 - INFO - Ending scheduler
+2024-06-30 18:01:55,413 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:02:07,555 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 441, in ml_news_model
+    user_input = manual_price_input(form)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\manual_model_input.py", line 12, in manual_price_input
+    model_input['open_close_diff_1'] = [form.cleaned_data['open'] - form.cleaned_data['close']]
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'open'
+2024-06-30 18:02:25,246 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 18:02:27,545 - INFO - Starting scheduler
+2024-06-30 18:02:27,545 - INFO - Updater date and time: 2024-06-30 18:02:27.545986
+2024-06-30 18:02:27,547 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:02:27,547 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:02:27,547 - INFO - Scheduler started
+2024-06-30 18:02:27,547 - INFO - Current time of the scheduler: 2024-06-30 18:02:27.547683
+2024-06-30 18:02:27,547 - INFO - Ending scheduler
+2024-06-30 18:02:27,567 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:02:31,925 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 441, in ml_news_model
+    user_input = news_param_input(form)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\manual_model_input.py", line 37, in news_param_input
+    model_input['weekday'] = [form.cleaned_data['weeldau']]
+                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'weeldau'
+2024-06-30 18:02:43,515 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\manual_model_input.py changed, reloading.
+2024-06-30 18:02:45,623 - INFO - Starting scheduler
+2024-06-30 18:02:45,624 - INFO - Updater date and time: 2024-06-30 18:02:45.623142
+2024-06-30 18:02:45,625 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:02:45,625 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:02:45,625 - INFO - Scheduler started
+2024-06-30 18:02:45,626 - INFO - Current time of the scheduler: 2024-06-30 18:02:45.626157
+2024-06-30 18:02:45,627 - INFO - Ending scheduler
+2024-06-30 18:02:45,647 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:02:50,767 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 441, in ml_news_model
+    user_input = news_param_input(form)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\manual_model_input.py", line 37, in news_param_input
+    model_input['weekday'] = [form.cleaned_data['weelday']]
+                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'weelday'
+2024-06-30 18:03:09,624 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\manual_model_input.py changed, reloading.
+2024-06-30 18:03:11,813 - INFO - Starting scheduler
+2024-06-30 18:03:11,814 - INFO - Updater date and time: 2024-06-30 18:03:11.814471
+2024-06-30 18:03:11,815 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:03:11,815 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:03:11,815 - INFO - Scheduler started
+2024-06-30 18:03:11,816 - INFO - Current time of the scheduler: 2024-06-30 18:03:11.816788
+2024-06-30 18:03:11,816 - INFO - Ending scheduler
+2024-06-30 18:03:11,834 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:25:31,180 - INFO - Starting scheduler
+2024-06-30 18:25:31,180 - INFO - Updater date and time: 2024-06-30 18:25:31.180423
+2024-06-30 18:25:31,181 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:25:31,181 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:25:31,182 - INFO - Scheduler started
+2024-06-30 18:25:31,182 - INFO - Current time of the scheduler: 2024-06-30 18:25:31.182442
+2024-06-30 18:25:31,182 - INFO - Ending scheduler
+2024-06-30 18:25:33,131 - INFO - Starting scheduler
+2024-06-30 18:25:33,132 - INFO - Updater date and time: 2024-06-30 18:25:33.131694
+2024-06-30 18:25:33,133 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:25:33,133 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:25:33,133 - INFO - Scheduler started
+2024-06-30 18:25:33,134 - INFO - Current time of the scheduler: 2024-06-30 18:25:33.134753
+2024-06-30 18:25:33,134 - INFO - Ending scheduler
+2024-06-30 18:25:33,156 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:25:44,652 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 463, in ml_news_model
+    context = {'form':form, 'news_pred':news_pred_results}
+                                        ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_pred_results' where it is not associated with a value
+2024-06-30 18:26:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:26:00 BST)" (scheduled at 2024-06-30 18:26:00+01:00)
+2024-06-30 18:26:00,005 - INFO - Inside the procedure sequence
+2024-06-30 18:26:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:26:00 BST)" (scheduled at 2024-06-30 18:26:00+01:00)
+2024-06-30 18:26:00,008 - INFO - Inside the procedure sequence
+2024-06-30 18:26:00,164 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:26:00,164 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:26:00,969 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-30 18:26:11,739 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:31:00 BST)" executed successfully
+2024-06-30 18:26:46,321 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 18:27:09,649 - INFO - Starting scheduler
+2024-06-30 18:27:09,650 - INFO - Updater date and time: 2024-06-30 18:27:09.650449
+2024-06-30 18:27:09,651 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:27:09,651 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:27:09,651 - INFO - Scheduler started
+2024-06-30 18:27:09,652 - INFO - Current time of the scheduler: 2024-06-30 18:27:09.652468
+2024-06-30 18:27:09,652 - INFO - Ending scheduler
+2024-06-30 18:27:11,607 - INFO - Starting scheduler
+2024-06-30 18:27:11,608 - INFO - Updater date and time: 2024-06-30 18:27:11.608675
+2024-06-30 18:27:11,609 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:27:11,609 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:27:11,609 - INFO - Scheduler started
+2024-06-30 18:27:11,610 - INFO - Current time of the scheduler: 2024-06-30 18:27:11.610676
+2024-06-30 18:27:11,610 - INFO - Ending scheduler
+2024-06-30 18:27:11,632 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:30:26,834 - INFO - Starting scheduler
+2024-06-30 18:30:26,834 - INFO - Updater date and time: 2024-06-30 18:30:26.834851
+2024-06-30 18:30:26,835 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:30:26,835 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:30:26,836 - INFO - Scheduler started
+2024-06-30 18:30:26,837 - INFO - Current time of the scheduler: 2024-06-30 18:30:26.837851
+2024-06-30 18:30:26,837 - INFO - Ending scheduler
+2024-06-30 18:30:28,595 - INFO - Starting scheduler
+2024-06-30 18:30:28,595 - INFO - Updater date and time: 2024-06-30 18:30:28.595804
+2024-06-30 18:30:28,596 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:30:28,596 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:30:28,596 - INFO - Scheduler started
+2024-06-30 18:30:28,597 - INFO - Current time of the scheduler: 2024-06-30 18:30:28.597876
+2024-06-30 18:30:28,597 - INFO - Ending scheduler
+2024-06-30 18:30:28,616 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:31:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:36:00 BST)" (scheduled at 2024-06-30 18:31:00+01:00)
+2024-06-30 18:31:00,006 - INFO - Inside the procedure sequence
+ence (trigger: interval[0:05:00], next run at: 2024-06-30 18:31:00 BST)" (scheduled at 2024-06-30 18:31:00+01:00)
+2024-06-30 18:31:00,006 - INFO - Inside the procedure sequence
+2024-06-30 18:31:00,181 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:31:00,187 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:31:13,769 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:36:00 BST)" executed successfully
+2024-06-30 18:31:14,007 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:36:00 BST)" executed successfully
+2024-06-30 18:34:58,629 - INFO - Starting scheduler
+2024-06-30 18:34:58,630 - INFO - Updater date and time: 2024-06-30 18:34:58.630002
+2024-06-30 18:34:58,630 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:34:58,631 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:34:58,631 - INFO - Scheduler started
+2024-06-30 18:34:58,632 - INFO - Current time of the scheduler: 2024-06-30 18:34:58.632001
+2024-06-30 18:34:58,632 - INFO - Ending scheduler
+2024-06-30 18:35:00,556 - INFO - Starting scheduler
+2024-06-30 18:35:00,556 - INFO - Updater date and time: 2024-06-30 18:35:00.556672
+2024-06-30 18:35:00,557 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:35:00,557 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:35:00,557 - INFO - Scheduler started
+2024-06-30 18:35:00,558 - INFO - Current time of the scheduler: 2024-06-30 18:35:00.558685
+2024-06-30 18:35:00,558 - INFO - Ending scheduler
+2024-06-30 18:35:00,579 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:35:03,329 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 461, in ml_news_model
+    if news_pred == 0:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_pred' where it is not associated with a value
+2024-06-30 18:35:47,111 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 18:35:49,264 - INFO - Starting scheduler
+2024-06-30 18:35:49,265 - INFO - Updater date and time: 2024-06-30 18:35:49.265412
+2024-06-30 18:35:49,266 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 18:35:49,266 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 18:35:49,266 - INFO - Scheduler started
+2024-06-30 18:35:49,267 - INFO - Current time of the scheduler: 2024-06-30 18:35:49.267414
+2024-06-30 18:35:49,267 - INFO - Ending scheduler
+2024-06-30 18:35:49,288 - INFO - Watching for file changes with StatReloader
+2024-06-30 18:35:51,132 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 468, in ml_news_model
+    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
+                                            ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_pred_str' where it is not associated with a value
+2024-06-30 18:36:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:36:00 BST)" (scheduled at 2024-06-30 18:36:00+01:00)
+2024-06-30 18:36:00,003 - INFO - Inside the procedure sequence
+2024-06-30 18:36:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:36:00 BST)" (scheduled at 2024-06-30 18:36:00+01:00)
+2024-06-30 18:36:00,016 - INFO - Inside the procedure sequence
+2024-06-30 18:36:00,176 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:36:00,179 - INFO - The input start time: 2024-06-30 17:00:00
+2024-06-30 18:36:00,804 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-30 18:36:00,973 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 18:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-06-30 20:45:23,695 - INFO - Starting scheduler
+2024-06-30 20:45:23,696 - INFO - Updater date and time: 2024-06-30 20:45:23.696482
+2024-06-30 20:45:23,697 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:45:23,697 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:45:23,698 - INFO - Scheduler started
+2024-06-30 20:45:23,698 - INFO - Current time of the scheduler: 2024-06-30 20:45:23.698128
+2024-06-30 20:45:23,698 - INFO - Ending scheduler
+2024-06-30 20:45:25,428 - INFO - Starting scheduler
+2024-06-30 20:45:25,429 - INFO - Updater date and time: 2024-06-30 20:45:25.429189
+2024-06-30 20:45:25,430 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:45:25,430 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:45:25,430 - INFO - Scheduler started
+2024-06-30 20:45:25,430 - INFO - Current time of the scheduler: 2024-06-30 20:45:25.430571
+2024-06-30 20:45:25,430 - INFO - Ending scheduler
+2024-06-30 20:45:25,447 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:45:53,615 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\form.py changed, reloading.
+2024-06-30 20:45:55,727 - INFO - Starting scheduler
+2024-06-30 20:45:55,728 - INFO - Updater date and time: 2024-06-30 20:45:55.728840
+2024-06-30 20:45:55,729 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:45:55,729 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:45:55,729 - INFO - Scheduler started
+2024-06-30 20:45:55,731 - INFO - Current time of the scheduler: 2024-06-30 20:45:55.731103
+2024-06-30 20:45:55,731 - INFO - Ending scheduler
+2024-06-30 20:45:55,750 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:46:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:51:00 BST)" (scheduled at 2024-06-30 20:46:00+01:00)
+2024-06-30 20:46:00,002 - INFO - Inside the procedure sequence
+2024-06-30 20:46:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:46:00 BST)" (scheduled at 2024-06-30 20:46:00+01:00)
+2024-06-30 20:46:00,004 - INFO - Inside the procedure sequence
+2024-06-30 20:46:00,217 - INFO - The input start time: 2024-06-30 19:00:00
+2024-06-30 20:46:00,222 - INFO - The input start time: 2024-06-30 19:00:00
+2024-06-30 20:46:00,227 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002CE55B588D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002CE55B588D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002CE55B588D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 20:46:00,229 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016C5B338650>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016C5B338650>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016C5B338650>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 20:46:19,744 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 446, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:47:39,715 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 446, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:48:09,898 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 446, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:48:16,410 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 446, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:48:23,521 - INFO - Starting scheduler
+2024-06-30 20:48:23,521 - INFO - Updater date and time: 2024-06-30 20:48:23.521207
+2024-06-30 20:48:23,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:48:23,522 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:48:23,523 - INFO - Scheduler started
+2024-06-30 20:48:23,523 - INFO - Current time of the scheduler: 2024-06-30 20:48:23.523226
+2024-06-30 20:48:23,523 - INFO - Ending scheduler
+2024-06-30 20:48:25,289 - INFO - Starting scheduler
+2024-06-30 20:48:25,290 - INFO - Updater date and time: 2024-06-30 20:48:25.290793
+2024-06-30 20:48:25,291 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:48:25,291 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:48:25,291 - INFO - Scheduler started
+2024-06-30 20:48:25,292 - INFO - Current time of the scheduler: 2024-06-30 20:48:25.292803
+2024-06-30 20:48:25,292 - INFO - Ending scheduler
+2024-06-30 20:48:25,310 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:48:36,894 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 446, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:49:35,024 - INFO - Starting scheduler
+2024-06-30 20:49:35,025 - INFO - Updater date and time: 2024-06-30 20:49:35.025355
+2024-06-30 20:49:35,025 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:49:35,026 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:49:35,026 - INFO - Scheduler started
+2024-06-30 20:49:35,027 - INFO - Current time of the scheduler: 2024-06-30 20:49:35.027920
+2024-06-30 20:49:35,027 - INFO - Ending scheduler
+2024-06-30 20:49:36,759 - INFO - Starting scheduler
+2024-06-30 20:49:36,760 - INFO - Updater date and time: 2024-06-30 20:49:36.760989
+2024-06-30 20:49:36,762 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:49:36,762 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:49:36,762 - INFO - Scheduler started
+2024-06-30 20:49:36,762 - INFO - Current time of the scheduler: 2024-06-30 20:49:36.762990
+2024-06-30 20:49:36,762 - INFO - Ending scheduler
+2024-06-30 20:49:36,780 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:49:47,961 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 468, in ml_news_model
+    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
+                                            ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_pred_str' where it is not associated with a value
+2024-06-30 20:51:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:51:00 BST)" (scheduled at 2024-06-30 20:51:00+01:00)
+2024-06-30 20:51:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:51:00 BST)" (scheduled at 2024-06-30 20:51:00+01:00)
+2024-06-30 20:51:00,009 - INFO - Inside the procedure sequence
+2024-06-30 20:51:00,009 - INFO - Inside the procedure sequence
+2024-06-30 20:51:00,282 - INFO - The input start time: 2024-06-30 19:00:00
+2024-06-30 20:51:00,283 - INFO - The input start time: 2024-06-30 19:00:00
+2024-06-30 20:51:00,293 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:56:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001F1CF9AFA10>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F1CF9AFA10>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F1CF9AFA10>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 20:51:00,293 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 20:56:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001F6CF1E8A90>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F6CF1E8A90>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F6CF1E8A90>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-06-30 20:51:03,797 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 20:51:05,944 - INFO - Starting scheduler
+2024-06-30 20:51:05,945 - INFO - Updater date and time: 2024-06-30 20:51:05.945131
+2024-06-30 20:51:05,945 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:51:05,945 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:51:05,945 - INFO - Scheduler started
+2024-06-30 20:51:05,947 - INFO - Current time of the scheduler: 2024-06-30 20:51:05.947003
+2024-06-30 20:51:05,947 - INFO - Ending scheduler
+2024-06-30 20:51:05,966 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:51:07,686 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 469, in ml_news_model
+    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
+                                                                        ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_prob' where it is not associated with a value
+2024-06-30 20:51:36,307 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 20:51:38,293 - INFO - Starting scheduler
+2024-06-30 20:51:38,293 - INFO - Updater date and time: 2024-06-30 20:51:38.293304
+2024-06-30 20:51:38,294 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:51:38,295 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:51:38,295 - INFO - Scheduler started
+2024-06-30 20:51:38,295 - INFO - Current time of the scheduler: 2024-06-30 20:51:38.295303
+2024-06-30 20:51:38,295 - INFO - Ending scheduler
+2024-06-30 20:51:38,312 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:51:49,042 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 470, in ml_news_model
+    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
+                                                                        ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'news_prob' where it is not associated with a value
+2024-06-30 20:52:00,030 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-06-30 20:52:02,051 - INFO - Starting scheduler
+2024-06-30 20:52:02,052 - INFO - Updater date and time: 2024-06-30 20:52:02.052590
+2024-06-30 20:52:02,053 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:52:02,054 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:52:02,054 - INFO - Scheduler started
+2024-06-30 20:52:02,054 - INFO - Current time of the scheduler: 2024-06-30 20:52:02.054586
+2024-06-30 20:52:02,054 - INFO - Ending scheduler
+2024-06-30 20:52:02,072 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:52:36,119 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 449, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:53:03,548 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\form.py changed, reloading.
+2024-06-30 20:53:05,713 - INFO - Starting scheduler
+2024-06-30 20:53:05,714 - INFO - Updater date and time: 2024-06-30 20:53:05.714023
+2024-06-30 20:53:05,715 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:53:05,715 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:53:05,715 - INFO - Scheduler started
+2024-06-30 20:53:05,716 - INFO - Current time of the scheduler: 2024-06-30 20:53:05.716156
+2024-06-30 20:53:05,716 - INFO - Ending scheduler
+2024-06-30 20:53:05,733 - INFO - Watching for file changes with StatReloader
+2024-06-30 20:53:29,951 - ERROR - Internal Server Error: /ml_models/ml-news-model/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 449, in ml_news_model
+    news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\news_model.py", line 73, in news_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1293, in predict
+    raw_predictions = self.decision_function(X)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_gb.py", line 1246, in decision_function
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+GradientBoostingClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-06-30 20:53:46,513 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\form.py changed, reloading.
+2024-06-30 20:53:48,625 - INFO - Starting scheduler
+2024-06-30 20:53:48,625 - INFO - Updater date and time: 2024-06-30 20:53:48.625363
+2024-06-30 20:53:48,626 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 20:53:48,626 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 20:53:48,626 - INFO - Scheduler started
+2024-06-30 20:53:48,627 - INFO - Current time of the scheduler: 2024-06-30 20:53:48.627364
+2024-06-30 20:53:48,627 - INFO - Ending scheduler
+2024-06-30 20:53:48,646 - INFO - Watching for file changes with StatReloader
+2024-06-30 21:00:42,953 - INFO - Starting scheduler
+2024-06-30 21:00:42,954 - INFO - Updater date and time: 2024-06-30 21:00:42.954104
+2024-06-30 21:00:42,955 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 21:00:42,955 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 21:00:42,955 - INFO - Scheduler started
+2024-06-30 21:00:42,955 - INFO - Current time of the scheduler: 2024-06-30 21:00:42.955941
+2024-06-30 21:00:42,955 - INFO - Ending scheduler
+2024-06-30 21:00:44,889 - INFO - Starting scheduler
+2024-06-30 21:00:44,891 - INFO - Updater date and time: 2024-06-30 21:00:44.890463
+2024-06-30 21:00:44,892 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-30 21:00:44,892 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-06-30 21:00:44,892 - INFO - Scheduler started
+2024-06-30 21:00:44,893 - INFO - Current time of the scheduler: 2024-06-30 21:00:44.893128
+2024-06-30 21:00:44,893 - INFO - Ending scheduler
+2024-06-30 21:00:44,914 - INFO - Watching for file changes with StatReloader
+2024-06-30 21:01:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 21:01:00 BST)" (scheduled at 2024-06-30 21:01:00+01:00)
+2024-06-30 21:01:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 21:06:00 BST)" (scheduled at 2024-06-30 21:01:00+01:00)
+2024-06-30 21:01:00,016 - INFO - Inside the procedure sequence
+2024-06-30 21:01:00,016 - INFO - Inside the procedure sequence
+2024-06-30 21:01:00,199 - INFO - The input start time: 2024-06-30 20:00:00
+2024-06-30 21:01:00,200 - INFO - The input start time: 2024-06-30 20:00:00
+2024-06-30 21:01:17,053 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 21:06:00 BST)" executed successfully
+2024-06-30 21:01:20,617 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-06-30 21:06:00 BST)" executed successfully

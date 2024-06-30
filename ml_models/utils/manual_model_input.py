@@ -24,3 +24,19 @@ def manual_price_input(form):
     model_input['lagged_close_1'] = [form.cleaned_data['close_lag1']]
 
     return model_input
+
+
+def news_param_input(form):
+
+    # Assuming form.cleaned_data is a dictionary containing the required keys
+
+    model_input = pd.DataFrame()
+
+    # Add columns to the DataFrame one by one using loc
+    model_input['hr'] = [form.cleaned_data['hour']]
+    model_input['weekday'] = [form.cleaned_data['weekday']]
+    model_input['bb_status_1'] = [form.cleaned_data['bb_status_1']]
+    model_input['events2'] = [form.cleaned_data['event']]
+    model_input['outcome'] = [form.cleaned_data['outcome']]
+
+    return model_input

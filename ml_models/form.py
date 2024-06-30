@@ -14,6 +14,33 @@ BB_CHOICES = [
 ]
 
 
+EVENT_CHOICES = [
+    ('CPI', 'CPI'),
+    ('Unemployment', 'Unemployment'),
+    ('employment', 'employment'),
+    ('manufacturing', 'manufacturing'),
+    ('bond', 'bond'),
+    ('trade balance', 'trade balance'),
+    ('inflation', 'inflation'),
+    ('retail', 'retail'),
+    ('housing', 'housing'),
+    ('home', 'home'),
+    ('permit', 'permit'),
+    ('policy rate', 'policy rate'),
+    ('holiday', 'holiday'),
+    ('fomc', 'fomc'),
+    ('industrial', 'industrial'),
+    ('conference', 'conference'),
+    ('order', 'order'),
+    ('Other', 'Other'),
+]
+
+OUTCOME_CHOICES = [
+    ('better', 'better'),
+    ('worse', 'worse')
+]
+
+
 MODEL_LIST = [('v4', 'v4'), ('v5', 'v5'), ('1h_v5', '1h_v5'),('v1_reverse', 'v1_reverse')]
 
 TICKER_LIST = [("USDJPY", "USDJPY"), ("EURUSD","EURUSD")]
@@ -38,6 +65,15 @@ class ModelParameters(forms.Form):
     hour = forms.IntegerField(initial=0, label='Hour')
     trend_strength_1 = forms.IntegerField(initial=0.0, label='What is the strength of trend')
     bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')
+
+
+class NewsParameters(forms.Form):
+    weekday = forms.IntegerField(initial=1, label='What is the weekday')
+    hour = forms.IntegerField(initial=13, label='What is the hour')
+    bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')#
+    event = forms.ChoiceField(choices=EVENT_CHOICES, initial='CPI', label='Select event')#
+    outcome = forms.ChoiceField(choices=OUTCOME_CHOICES, initial='better', label='Select predict outcome')#
+    
 
   
 class ModelSelection(forms.Form):
