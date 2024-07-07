@@ -1,8 +1,9 @@
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from ..serializers import TickerSerializer
+from ..serializers import TickerSerializer, PriceSerializer
 from tickers.models import Ticker
+from prices.models import Price
 from django.shortcuts import get_object_or_404
 
 
@@ -36,7 +37,7 @@ def getTicker(request, pk):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def getPrices(request, pk):
+def getPrices2(request, pk):
     ticker = get_object_or_404(Ticker, id=pk)
     prices = ticker.price_set.all()
     
@@ -59,4 +60,21 @@ def getPrices(request, pk):
     data = serializer.data
     data['prices'] = sorted_prices
     
+    return Response(data)
+
+
+@api_view(['GET'])
+def getPrices(request, pk):
+    prices = Price.objects.filter(ticker__id=pk).order_by('-date')  # Filter using the primary key
+
+    # Serialize filtered prices
+    price_serializer = PriceSerializer(prices, many=True)
+    serialized_prices = price_serializer.data
+
+    # Retrieve and serialize the ticker
+    ticker = get_object_or_404(Ticker, id=pk)
+    ticker_serializer = TickerSerializer(ticker)
+    data = ticker_serializer.data
+    data['prices'] = serialized_prices  # Attach the sorted, serialized prices
+
     return Response(data)

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from tickers.models import Ticker
+from prices.models import Price
 from custom_user.models import User
 
 
@@ -40,4 +41,13 @@ class TickerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticker
         fields = '__all__'
-        
+
+class PriceSerializer(serializers.ModelSerializer):
+    trade = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Price
+        fields = ['id', 'date', 'open', 'close', 'volume', 'trade']
+
+    def get_trade(self, obj):
+        return 'Buy' if obj.open < obj.close else 'Sell'
