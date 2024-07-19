@@ -7,5 +7,5 @@ urlpatterns = [
     # path('/', views.getRoutes),
     path('', views.getTickers),
     path('<str:pk>/', views.getTicker),
-    path('prices/<str:pk>/', views.getPrices),
+    path('prices/<str:pk>/', views.getPrices, name="get-prices"),
 ]

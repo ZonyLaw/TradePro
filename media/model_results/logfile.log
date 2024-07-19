@@ -8239,3 +8239,143 @@ GradientBoostingClassifier does not accept missing values encoded as NaN nativel
 2024-07-07 20:23:07,037 - INFO - Watching for file changes with StatReloader
 2024-07-07 20:23:09,270 - WARNING - Not Found: /images/favicon.ico
 2024-07-07 20:23:35,663 - WARNING - Not Found: /favicon.ico
+2024-07-07 20:29:46,721 - INFO - Starting scheduler
+2024-07-07 20:29:46,722 - INFO - Updater date and time: 2024-07-07 20:29:46.722407
+2024-07-07 20:29:46,723 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:29:46,723 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:29:46,723 - INFO - Scheduler started
+2024-07-07 20:29:46,724 - INFO - Current time of the scheduler: 2024-07-07 20:29:46.724500
+2024-07-07 20:29:46,724 - INFO - Ending scheduler
+2024-07-07 20:29:58,898 - INFO - Starting scheduler
+2024-07-07 20:29:58,899 - INFO - Updater date and time: 2024-07-07 20:29:58.899475
+2024-07-07 20:29:58,900 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:29:58,900 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:29:58,900 - INFO - Scheduler started
+2024-07-07 20:29:58,901 - INFO - Current time of the scheduler: 2024-07-07 20:29:58.901458
+2024-07-07 20:29:58,901 - INFO - Ending scheduler
+2024-07-07 20:30:26,375 - INFO - Starting scheduler
+2024-07-07 20:30:26,376 - INFO - Updater date and time: 2024-07-07 20:30:26.375930
+2024-07-07 20:30:26,376 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:30:26,377 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:30:26,377 - INFO - Scheduler started
+2024-07-07 20:30:26,378 - INFO - Current time of the scheduler: 2024-07-07 20:30:26.378335
+2024-07-07 20:30:26,378 - INFO - Ending scheduler
+2024-07-07 20:30:36,275 - INFO - Starting scheduler
+2024-07-07 20:30:36,275 - INFO - Updater date and time: 2024-07-07 20:30:36.275549
+2024-07-07 20:30:36,276 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:30:36,276 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:30:36,276 - INFO - Scheduler started
+2024-07-07 20:30:36,277 - INFO - Current time of the scheduler: 2024-07-07 20:30:36.277574
+2024-07-07 20:30:36,277 - INFO - Ending scheduler
+2024-07-07 20:31:24,668 - INFO - Starting scheduler
+2024-07-07 20:31:24,670 - INFO - Updater date and time: 2024-07-07 20:31:24.669270
+2024-07-07 20:31:24,670 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:31:24,671 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:31:24,671 - INFO - Scheduler started
+2024-07-07 20:31:24,672 - INFO - Current time of the scheduler: 2024-07-07 20:31:24.672057
+2024-07-07 20:31:24,672 - INFO - Ending scheduler
+2024-07-07 20:31:56,227 - INFO - Starting scheduler
+2024-07-07 20:31:56,229 - INFO - Updater date and time: 2024-07-07 20:31:56.229030
+2024-07-07 20:31:56,230 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:31:56,230 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:31:56,230 - INFO - Scheduler started
+2024-07-07 20:31:56,231 - INFO - Current time of the scheduler: 2024-07-07 20:31:56.231205
+2024-07-07 20:31:56,231 - INFO - Ending scheduler
+2024-07-07 20:32:32,540 - INFO - Starting scheduler
+2024-07-07 20:32:32,541 - INFO - Updater date and time: 2024-07-07 20:32:32.540031
+2024-07-07 20:32:32,541 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:32:32,542 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:32:32,542 - INFO - Scheduler started
+2024-07-07 20:32:32,543 - INFO - Current time of the scheduler: 2024-07-07 20:32:32.543010
+2024-07-07 20:32:32,543 - INFO - Ending scheduler
+2024-07-07 20:41:23,707 - INFO - Starting scheduler
+2024-07-07 20:41:23,707 - INFO - Updater date and time: 2024-07-07 20:41:23.707485
+2024-07-07 20:41:23,708 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:41:23,708 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:41:23,709 - INFO - Scheduler started
+2024-07-07 20:41:23,709 - INFO - Current time of the scheduler: 2024-07-07 20:41:23.709679
+2024-07-07 20:41:23,709 - INFO - Ending scheduler
+2024-07-07 20:44:58,823 - INFO - Starting scheduler
+2024-07-07 20:44:58,824 - INFO - Updater date and time: 2024-07-07 20:44:58.824896
+2024-07-07 20:44:58,825 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:44:58,825 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:44:58,825 - INFO - Scheduler started
+2024-07-07 20:44:58,826 - INFO - Current time of the scheduler: 2024-07-07 20:44:58.826896
+2024-07-07 20:44:58,826 - INFO - Ending scheduler
+2024-07-07 20:47:47,374 - INFO - Starting scheduler
+2024-07-07 20:47:47,375 - INFO - Updater date and time: 2024-07-07 20:47:47.375024
+2024-07-07 20:47:47,376 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:47:47,376 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:47:47,376 - INFO - Scheduler started
+2024-07-07 20:47:47,377 - INFO - Current time of the scheduler: 2024-07-07 20:47:47.377025
+2024-07-07 20:47:47,377 - INFO - Ending scheduler
+2024-07-07 20:49:11,672 - INFO - Starting scheduler
+2024-07-07 20:49:11,673 - INFO - Updater date and time: 2024-07-07 20:49:11.672182
+2024-07-07 20:49:11,673 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:49:11,674 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:49:11,674 - INFO - Scheduler started
+2024-07-07 20:49:11,674 - INFO - Current time of the scheduler: 2024-07-07 20:49:11.674532
+2024-07-07 20:49:11,674 - INFO - Ending scheduler
+2024-07-07 20:50:31,085 - INFO - Starting scheduler
+2024-07-07 20:50:31,086 - INFO - Updater date and time: 2024-07-07 20:50:31.086556
+2024-07-07 20:50:31,087 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:50:31,087 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:50:31,087 - INFO - Scheduler started
+2024-07-07 20:50:31,088 - INFO - Current time of the scheduler: 2024-07-07 20:50:31.088557
+2024-07-07 20:50:31,088 - INFO - Ending scheduler
+2024-07-07 20:53:49,597 - INFO - Starting scheduler
+2024-07-07 20:53:49,598 - INFO - Updater date and time: 2024-07-07 20:53:49.598374
+2024-07-07 20:53:49,599 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:53:49,599 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:53:49,599 - INFO - Scheduler started
+2024-07-07 20:53:49,600 - INFO - Current time of the scheduler: 2024-07-07 20:53:49.600374
+2024-07-07 20:53:49,600 - INFO - Ending scheduler
+2024-07-07 20:57:03,208 - INFO - Starting scheduler
+2024-07-07 20:57:03,208 - INFO - Updater date and time: 2024-07-07 20:57:03.208656
+2024-07-07 20:57:03,209 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:57:03,209 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:57:03,210 - INFO - Scheduler started
+2024-07-07 20:57:03,210 - INFO - Current time of the scheduler: 2024-07-07 20:57:03.210677
+2024-07-07 20:57:03,210 - INFO - Ending scheduler
+2024-07-07 20:58:18,858 - INFO - Starting scheduler
+2024-07-07 20:58:18,858 - INFO - Updater date and time: 2024-07-07 20:58:18.858282
+2024-07-07 20:58:18,859 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:58:18,859 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:58:18,859 - INFO - Scheduler started
+2024-07-07 20:58:18,860 - INFO - Current time of the scheduler: 2024-07-07 20:58:18.860282
+2024-07-07 20:58:18,860 - INFO - Ending scheduler
+2024-07-07 20:59:01,436 - INFO - Starting scheduler
+2024-07-07 20:59:01,437 - INFO - Updater date and time: 2024-07-07 20:59:01.436610
+2024-07-07 20:59:01,438 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 20:59:01,438 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 20:59:01,438 - INFO - Scheduler started
+2024-07-07 20:59:01,439 - INFO - Current time of the scheduler: 2024-07-07 20:59:01.439640
+2024-07-07 20:59:01,439 - INFO - Ending scheduler
+2024-07-07 21:00:12,705 - INFO - Starting scheduler
+2024-07-07 21:00:12,705 - INFO - Updater date and time: 2024-07-07 21:00:12.705250
+2024-07-07 21:00:12,706 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 21:00:12,706 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 21:00:12,706 - INFO - Scheduler started
+2024-07-07 21:00:12,707 - INFO - Current time of the scheduler: 2024-07-07 21:00:12.707250
+2024-07-07 21:00:12,707 - INFO - Ending scheduler
+2024-07-07 21:02:38,013 - INFO - Starting scheduler
+2024-07-07 21:02:38,014 - INFO - Updater date and time: 2024-07-07 21:02:38.014562
+2024-07-07 21:02:38,015 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 21:02:38,015 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 21:02:38,015 - INFO - Scheduler started
+2024-07-07 21:02:38,016 - INFO - Current time of the scheduler: 2024-07-07 21:02:38.016125
+2024-07-07 21:02:38,016 - INFO - Ending scheduler
+2024-07-07 21:05:28,342 - INFO - Starting scheduler
+2024-07-07 21:05:28,342 - INFO - Updater date and time: 2024-07-07 21:05:28.342055
+2024-07-07 21:05:28,343 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-07 21:05:28,344 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-07 21:05:28,344 - INFO - Scheduler started
+2024-07-07 21:05:28,345 - INFO - Current time of the scheduler: 2024-07-07 21:05:28.345055
+2024-07-07 21:05:28,345 - INFO - Ending scheduler
+2024-07-19 05:47:34,815 - INFO - Starting scheduler
+2024-07-19 05:47:34,816 - INFO - Updater date and time: 2024-07-19 05:47:34.816110
+2024-07-19 05:47:34,817 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-19 05:47:34,818 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-19 05:47:34,818 - INFO - Scheduler started
+2024-07-19 05:47:34,818 - INFO - Current time of the scheduler: 2024-07-19 05:47:34.818110
+2024-07-19 05:47:34,819 - INFO - Ending scheduler

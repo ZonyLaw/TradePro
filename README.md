@@ -156,6 +156,8 @@ This epic is for all documents related stories and tasks to document the lifecyc
 
 - python manage.py runserver
 
+- python manage.py test tests
+
 ### commands to clean the local database
 
 - python manage.py flush
