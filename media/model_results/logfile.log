@@ -9587,3 +9587,18 @@ KeyError: 'pred_reverse'
 2024-07-21 10:41:59,043 - INFO - Current time of the scheduler: 2024-07-21 10:41:59.043401
 2024-07-21 10:41:59,043 - INFO - Ending scheduler
 2024-07-21 10:41:59,064 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:44:12,976 - INFO - Starting scheduler
+2024-07-21 10:44:12,977 - INFO - Updater date and time: 2024-07-21 10:44:12.977624
+2024-07-21 10:44:12,978 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:44:12,978 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:44:12,978 - INFO - Scheduler started
+2024-07-21 10:44:12,979 - INFO - Current time of the scheduler: 2024-07-21 10:44:12.979615
+2024-07-21 10:44:12,979 - INFO - Ending scheduler
+2024-07-21 10:44:15,223 - INFO - Starting scheduler
+2024-07-21 10:44:15,224 - INFO - Updater date and time: 2024-07-21 10:44:15.224220
+2024-07-21 10:44:15,225 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:44:15,225 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:44:15,225 - INFO - Scheduler started
+2024-07-21 10:44:15,225 - INFO - Current time of the scheduler: 2024-07-21 10:44:15.225220
+2024-07-21 10:44:15,225 - INFO - Ending scheduler
+2024-07-21 10:44:15,243 - INFO - Watching for file changes with StatReloader

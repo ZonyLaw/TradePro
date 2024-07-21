@@ -164,7 +164,7 @@ def write_to_mongo(collection_name, data):
         # Insert the new document
         result = collection.insert_one(data)
         print("Insert operation completed.")
-        print(f"New document inserted with ID: {result.inserted_id}")
+        # print(f"New document inserted with ID: {result.inserted_id}")
 
     except OperationFailure as e:
         print(f"Operation failed: {e}")
@@ -188,7 +188,7 @@ def read_prediction_from_Mongo(collection_name):
         collection = db[collection_name]
 
         documents = list(collection.find())
-        print(documents)
+ 
         # Remove MongoDB specific '_id' field if it's not needed
         if documents:
             document = documents[0]  # Get the first document in the array
