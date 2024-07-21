@@ -51,3 +51,69 @@
 2024-07-21 11:16:00,193 - INFO - The input start time: 2024-07-21 10:00:00
 2024-07-21 11:16:21,662 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:21:00 BST)" executed successfully
 2024-07-21 11:16:27,376 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:21:00 BST)" executed successfully
+2024-07-21 11:21:26,597 - INFO - Starting scheduler
+2024-07-21 11:21:26,598 - INFO - Updater date and time: 2024-07-21 11:21:26.598244
+2024-07-21 11:21:26,599 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:21:26,599 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:21:26,599 - INFO - Scheduler started
+2024-07-21 11:21:26,599 - INFO - Current time of the scheduler: 2024-07-21 11:21:26.599755
+2024-07-21 11:21:26,599 - INFO - Ending scheduler
+2024-07-21 11:21:28,950 - INFO - Starting scheduler
+2024-07-21 11:21:28,950 - INFO - Updater date and time: 2024-07-21 11:21:28.950595
+2024-07-21 11:21:28,951 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:21:28,951 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:21:28,951 - INFO - Scheduler started
+2024-07-21 11:21:28,952 - INFO - Current time of the scheduler: 2024-07-21 11:21:28.952596
+2024-07-21 11:21:28,952 - INFO - Ending scheduler
+2024-07-21 11:21:28,972 - INFO - Watching for file changes with StatReloader
+2024-07-21 11:26:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:26:00 BST)" (scheduled at 2024-07-21 11:26:00+01:00)
+2024-07-21 11:26:00,009 - INFO - Inside the procedure sequence
+2024-07-21 11:26:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:31:00 BST)" (scheduled at 2024-07-21 11:26:00+01:00)
+2024-07-21 11:26:00,009 - INFO - Inside the procedure sequence
+2024-07-21 11:26:00,168 - INFO - The input start time: 2024-07-21 10:00:00
+2024-07-21 11:26:00,168 - INFO - The input start time: 2024-07-21 10:00:00
+2024-07-21 11:26:00,760 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-21 11:26:06,499 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 369, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 268, in standard_analysis
+    write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py", line 44, in write_to_json
+    json.dump(data, json_file, indent=4)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ObjectId is not JSON serializable
