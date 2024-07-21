@@ -1039,6 +1039,28 @@ th, td {
   }
 }
 
+/*=======================
+  Flashing text
+========================*/
+
+.flashing-text-red {
+  animation: flash 4s infinite;
+  color: red;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 /*=======================
  list format

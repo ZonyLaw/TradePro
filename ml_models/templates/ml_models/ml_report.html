@@ -52,7 +52,7 @@
     <a href = "{% url 'ml-news-model' %}" >News Tool</a>
       
     <h2>Extra Market Information</h2>
-        <p> Last Date price was extracted: <b>{{date}}</b> </p>
+        <p> Last Date price was extracted: <b class="flashing-text-red">{{date}}</b> </p>
         <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
         <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
         <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>

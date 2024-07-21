@@ -1,0 +1,53 @@
+2024-07-21 10:51:05,627 - INFO - Starting scheduler
+2024-07-21 10:51:05,627 - INFO - Updater date and time: 2024-07-21 10:51:05.627535
+2024-07-21 10:51:05,629 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:51:05,629 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:51:05,629 - INFO - Scheduler started
+2024-07-21 10:51:05,630 - INFO - Current time of the scheduler: 2024-07-21 10:51:05.630979
+2024-07-21 10:51:05,630 - INFO - Ending scheduler
+2024-07-21 10:51:08,055 - INFO - Starting scheduler
+2024-07-21 10:51:08,056 - INFO - Updater date and time: 2024-07-21 10:51:08.056755
+2024-07-21 10:51:08,058 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:51:08,058 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:51:08,058 - INFO - Scheduler started
+2024-07-21 10:51:08,058 - INFO - Current time of the scheduler: 2024-07-21 10:51:08.058917
+2024-07-21 10:51:08,058 - INFO - Ending scheduler
+2024-07-21 10:51:08,082 - INFO - Watching for file changes with StatReloader
+2024-07-21 11:14:40,859 - INFO - Starting scheduler
+2024-07-21 11:14:40,860 - INFO - Updater date and time: 2024-07-21 11:14:40.860506
+2024-07-21 11:14:40,861 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:14:40,861 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:14:40,861 - INFO - Scheduler started
+2024-07-21 11:14:40,862 - INFO - Current time of the scheduler: 2024-07-21 11:14:40.862506
+2024-07-21 11:14:40,862 - INFO - Ending scheduler
+2024-07-21 11:14:43,239 - INFO - Starting scheduler
+2024-07-21 11:14:43,239 - INFO - Updater date and time: 2024-07-21 11:14:43.239963
+2024-07-21 11:14:43,240 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:14:43,240 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:14:43,240 - INFO - Scheduler started
+2024-07-21 11:14:43,241 - INFO - Current time of the scheduler: 2024-07-21 11:14:43.241975
+2024-07-21 11:14:43,241 - INFO - Ending scheduler
+2024-07-21 11:14:43,262 - INFO - Watching for file changes with StatReloader
+2024-07-21 11:15:23,014 - INFO - Starting scheduler
+2024-07-21 11:15:23,016 - INFO - Updater date and time: 2024-07-21 11:15:23.016061
+2024-07-21 11:15:23,017 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:15:23,017 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:15:23,017 - INFO - Scheduler started
+2024-07-21 11:15:23,018 - INFO - Current time of the scheduler: 2024-07-21 11:15:23.018118
+2024-07-21 11:15:23,018 - INFO - Ending scheduler
+2024-07-21 11:15:25,344 - INFO - Starting scheduler
+2024-07-21 11:15:25,345 - INFO - Updater date and time: 2024-07-21 11:15:25.345463
+2024-07-21 11:15:25,346 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 11:15:25,347 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 11:15:25,347 - INFO - Scheduler started
+2024-07-21 11:15:25,347 - INFO - Current time of the scheduler: 2024-07-21 11:15:25.347470
+2024-07-21 11:15:25,347 - INFO - Ending scheduler
+2024-07-21 11:15:25,369 - INFO - Watching for file changes with StatReloader
+2024-07-21 11:16:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:16:00 BST)" (scheduled at 2024-07-21 11:16:00+01:00)
+2024-07-21 11:16:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:21:00 BST)" (scheduled at 2024-07-21 11:16:00+01:00)
+2024-07-21 11:16:00,013 - INFO - Inside the procedure sequence
+2024-07-21 11:16:00,013 - INFO - Inside the procedure sequence
+2024-07-21 11:16:00,193 - INFO - The input start time: 2024-07-21 10:00:00
+2024-07-21 11:16:00,193 - INFO - The input start time: 2024-07-21 10:00:00
+2024-07-21 11:16:21,662 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:21:00 BST)" executed successfully
+2024-07-21 11:16:27,376 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 11:21:00 BST)" executed successfully

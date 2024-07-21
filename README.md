@@ -72,6 +72,11 @@ This is the development of a model using machine learning based on historical da
 This epic is integrating the model into this app so it could produce hourly results giving insights what type of trades is at play (ie. buy or sell) and the probability for a range of profit and losses.
 It will also suggest some targets and stop loss. This is to help a trader to make better decision on how to place the trade.
 
+**EPIC 9 - Improving performance**
+
+This is improve the accessing of model results using MongoDB as storage. This will overcome issue of writing and reading conflicts when using a .JSON file as storage.
+Once this is confirm working, the .JSON method of saving results will be discontinue.
+
 **EPIC 9 - Subscription**
 
 This is to develop a subscription feature where users can signup to the services on this app.
@@ -134,6 +139,10 @@ The file containing this code is called, updater.py.
 **MongoDB**
 
 * To ensure access to the MongoDB, make sure setting for the network access IP is updated. This can change and produce error message relating to SLL.
+* Here is some notes on SLL in case this becomes an issue in the future. Please also refer to Udemy.
+  * https://slproweb.com/products/Win32OpenSSL.html
+  * openssl req -newkey rsa:2048 -new -x509 -days 3650 -nodes -out mongodb-cert.crt -keyout mongodb-cert.key -config "C:\Program Files\OpenSSL-Win64\openssl.cnf"
+  * type mongodb-cert.key mongodb-cert.crt > mongodb.pem
 
 # Appendix
 
@@ -214,6 +223,7 @@ os.environ['IG_USERNAME'] = ''
 os.environ['IG_PASSWORD'] = ''
 os.environ['IG_API_KEY'] =  ''
 os.environ['GMAIL_PASSWORD2'] = ''
+os.environ['MONGO_URL'] = ''
 
 making static work on heroku
 remove this variable in heroku: DISABLE_COLLECTSTATIC = 1
