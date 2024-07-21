@@ -70,8 +70,6 @@ def read_prediction_from_json(model_ticker, filename):
     with open(absolute_path, 'r') as file:
         data = json.load(file)
     
-    print(data)
-
     return data
 
 
@@ -189,17 +187,15 @@ def read_prediction_from_Mongo(collection_name):
         # Access the collection from the global db
         collection = db[collection_name]
 
-        # Query the collection to get all documents
         documents = list(collection.find())
         print(documents)
         # Remove MongoDB specific '_id' field if it's not needed
         if documents:
-            document = documents[0]  # Get the first document
+            document = documents[0]  # Get the first document in the array
             document.pop('_id', None)  # Remove '_id' field if present
-            print(document)
             return document
         
-        return {}  # Return an empty dictionary if no documents are found
+        return {}
     except Exception as e:
         print(f"An error occurred: {e}")
         return {}

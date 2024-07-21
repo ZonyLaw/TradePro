@@ -9572,3 +9572,18 @@ KeyError: 'pred_reverse'
 2024-07-21 10:38:24,678 - INFO - Ending scheduler
 2024-07-21 10:38:24,701 - INFO - Watching for file changes with StatReloader
 2024-07-21 10:38:31,278 - WARNING - Not Found: /ml_models/ml-report2/images/favicon.ico
+2024-07-21 10:41:56,643 - INFO - Starting scheduler
+2024-07-21 10:41:56,643 - INFO - Updater date and time: 2024-07-21 10:41:56.643807
+2024-07-21 10:41:56,644 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:41:56,645 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:41:56,645 - INFO - Scheduler started
+2024-07-21 10:41:56,645 - INFO - Current time of the scheduler: 2024-07-21 10:41:56.645778
+2024-07-21 10:41:56,645 - INFO - Ending scheduler
+2024-07-21 10:41:59,041 - INFO - Starting scheduler
+2024-07-21 10:41:59,041 - INFO - Updater date and time: 2024-07-21 10:41:59.041400
+2024-07-21 10:41:59,042 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:41:59,042 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:41:59,042 - INFO - Scheduler started
+2024-07-21 10:41:59,043 - INFO - Current time of the scheduler: 2024-07-21 10:41:59.043401
+2024-07-21 10:41:59,043 - INFO - Ending scheduler
+2024-07-21 10:41:59,064 - INFO - Watching for file changes with StatReloader
