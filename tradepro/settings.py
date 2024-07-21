@@ -148,10 +148,9 @@ if 'DATABASE_URL' in os.environ:
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
         'mongo': {
             'ENGINE': 'djongo',
-            'NAME': 'tradepro',  # Name of your MongoDB database
-            'ENFORCE_SCHEMA': False,
+            'NAME': 'tradepro',
             'CLIENT': {
-                'host': 'mongodb://sunny:Xjkdxjkd1@85.255.233.194:27017/my_mongo_db?authSource=admin&authMechanism=SCRAM-SHA-1',
+                'host': os.environ.get('MONGO_URL'),
             }
         }
     }
@@ -163,15 +162,9 @@ else:
         },
         'mongo': {
             'ENGINE': 'djongo',
-            'NAME': 'your_mongo_db_name',
-            'ENFORCE_SCHEMA': False,
+            'NAME': 'tradepro_dev',
             'CLIENT': {
-                'host': 'your_mongo_host',
-                'port': your_mongo_port,
-                'username': 'your_mongo_username',
-                'password': 'your_mongo_password',
-                'authSource': 'admin',
-                'authMechanism': 'SCRAM-SHA-1',
+                'host': os.environ.get('MONGO_URL'),
             }
         }
     }

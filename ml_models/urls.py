@@ -6,6 +6,7 @@ urlpatterns = [
     path('ml-predictions/', views.ml_predictions, name="ml-predictions"),
     path('about/', views.about, name="about"),
     path('ml-report/', views.ml_report, name="ml-report"),
+    path('ml-report2/', views.ml_report2, name="ml-report2"),
     path('ml-variability/', views.ml_variability, name="ml-variability"),
     path('ml-manual/', views.ml_manual, name="ml-manual"),
     path('ml-news-model/', views.ml_news_model, name="ml-news-model"),

@@ -108,6 +108,9 @@ This epic is for all documents related stories and tasks to document the lifecyc
 ``As a trader, I can view the model analysis for specific currency.``
 
 
+**CRON**
+The cron scheduler is run in the app, prices. This is most logical as the new prices will need revised calculations.
+The file containing this code is called, updater.py.
 
 <details open>
 <summary>Implementation:</summary>
@@ -127,6 +130,10 @@ This epic is for all documents related stories and tasks to document the lifecyc
   * Register -> signup.html - Visible to logged out users
   * Logout -> logout.html - Visible to logged in users
 
+
+**MongoDB**
+
+* To ensure access to the MongoDB, make sure setting for the network access IP is updated. This can change and produce error message relating to SLL.
 
 # Appendix
 

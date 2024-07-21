@@ -10,7 +10,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
 from .utils.trade_model import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
-from .utils.access_results import read_prediction_from_json, write_to_csv
+from .utils.access_results import read_prediction_from_json, write_to_csv, read_prediction_from_Mongo
 from .utils.manual_model_input import manual_price_input, news_param_input
 
 from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize
@@ -234,6 +234,221 @@ def ml_report(request):
     pred_continue_v4 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_v4.json')
     pred_continue_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_v5.json')
     pred_continue_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_1h_v5.json')
+    
+    #extracting final results
+    continue_headers = pred_continue_v4['pred_continue'][1]['heading']
+    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['item']['Potential Trade']
+    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['item']['Potential Trade']
+    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['item']['Potential Trade']
+    
+    #save array of continued results as a dictionary for frontend access
+    continue_labels = {'Periods': continue_headers}
+    continue_trade_lists = {
+    'v4': continue_trade_results_v4,
+    'v5': continue_trade_results_v5,
+    '1h_v5': continue_trade_results_1h_v5
+    }
+    
+
+    model_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+    version_comment = model_comparer.comment
+    potential_trade = model_comparer.trade_position
+    trade_target = model_comparer.trade_target
+    bb_target = model_comparer.bb_target
+          
+    #calculate entry and exit point  
+    if potential_trade == 'Buy':
+        entry_adjustment = -0.04
+        stop_adjustment = -0.1
+    else:
+        entry_adjustment = 0.04
+        stop_adjustment = 0.1
+        trade_target = -trade_target
+    
+    
+    current_time = datetime.datetime.now()
+    
+    rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
+                                                seconds=current_time.second,
+                                                microseconds=current_time.microsecond)
+
+    # Extract hour, minute, and second from the current time
+  
+    minute = current_time.minute
+    second = current_time.second
+
+    # Calculate the total number of seconds elapsed in the current hour
+    total_seconds_in_hour = 3600  # 60 seconds * 60 minutes
+
+    # Calculate the total number of seconds elapsed so far in the current hour
+    elapsed_seconds = (minute * 60) + second
+
+    # Calculate the percentage of the hour elapsed
+    percentage_elapsed = (elapsed_seconds / total_seconds_in_hour) * 100
+
+    projected_volume = volume[3] / percentage_elapsed * 100
+    
+    if projected_volume < 2000:
+        exit_adjustment = 1.2
+    else:
+        exit_adjustment = 1
+        
+    entry_point = open_prices[-1] + entry_adjustment
+    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
+    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
+    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
+
+    v4_pred_pl = []
+    #calculate the profit or loss according to the predictions.
+    for price, direction in zip(open_prices,potential_trade_label_v4):
+        if direction == "Buy":
+            pl = close_prices[-1] - price 
+        else:
+            pl = price - close_prices[-1]
+    
+        v4_pred_pl.append(round(pl*100))
+        
+    v5_pred_pl = []
+    #calculate the profit or loss according to the predictions.
+    for price, direction in zip(open_prices,potential_trade_label_v5):
+        if direction == "Buy":
+            pl = close_prices[-1] - price 
+        else:
+            pl = price - close_prices[-1]
+    
+        v5_pred_pl.append(round(pl*100))
+
+
+    #sensitivity test save as dictionary for front-end access
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+    pred_var_list = {
+        '10 pips':pred_var_pos,
+        '-10 pips':pred_var_neg,
+    }
+
+    reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
+    reverse_pred = reverse_pred_results['predictions_label']
+    reverse_prob = reverse_pred_results['model_prediction_proba']*100
+    
+    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
+             'version_comment':version_comment,
+             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
+             'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
+             'risk_reward': risk_reward, 'bb_target': bb_target,
+             'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
+             'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
+             'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
+             'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
+             "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
+    
+    return render(request, 'ml_models/ml_report.html', context)
+
+
+def ml_report2(request):
+    """
+    This is a view function that pass the model predictions to the the frontend.
+    Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
+    """
+    
+    if request.method == 'POST':
+        form = ModelSelection(request.POST)
+    else:
+        form = ModelSelection()
+        
+    if form.is_valid():
+        model_ticker = form.cleaned_data['ticker']
+    else:
+        model_ticker = 'USDJPY'
+    
+    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    # model_version = "v4"
+    # if model_version == "v4":
+    #     dp = v4Processing(ticker=model_ticker)
+    # else:
+    #     dp = StandardPriceProcessing(ticker=model_ticker)
+    
+    # X_live = dp.historical_record(4)
+    
+    # bb_status = X_live['bb_status_1'].tolist()
+
+    
+    #sort prices table in ascending so latest price on the bottom
+    #note that html likes to work with array if using indexing
+    prices_df = pd.DataFrame(list(prices.values()))
+    sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_four_prices_df = sorted_prices_df.tail(4)
+    date = last_four_prices_df.iloc[3]['date']
+    open_prices = last_four_prices_df['open'].tolist()
+    close_prices = last_four_prices_df['close'].tolist()
+    volume = last_four_prices_df['volume'].tolist()
+    
+    #looking at the 1hr and 4hr candle sticks direction
+    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
+    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
+    candle_size = {"one" :trade_diff_1hr,
+        "four": trade_diff_4hr}
+    
+    trade = {"one": trade_direction(trade_diff_1hr),
+        "four": trade_direction(trade_diff_4hr)}
+    
+    # Iterate through the last 4 rows of the DataFrame
+    trade_dict = []
+    for i in range(0, len(last_four_prices_df), 1):
+        trade_diff = last_four_prices_df.iloc[i]['close'] - last_four_prices_df.iloc[i]['open']
+        if trade_diff > 0:
+            trade_dict.append('Buy')
+        elif trade_diff < 0:
+            trade_dict.append('Sell')
+    
+    #retrieve saved results from last calculation performed by updater.py
+    pred_historical_v4 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v4')
+    pred_historical_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v5')
+    pred_historical_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_1h_v5')
+    
+    #extracting final results
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
+    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
+ 
+    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['extra']['trade_type']
+    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['extra']['trade_type']
+    
+    #save historical array as a dictionary for frontend access
+    historical_labels = {'Periods': historical_headers}
+    historical_trade_results = {
+    'v4': potential_trade_results_v4,
+    'v5': potential_trade_results_v5,
+    '1h_v5': potential_trade_results_1h_v5
+    }
+        
+
+    #retrieve saved results from last calculation performed by updater.py
+    pred_reverse_v4 = read_prediction_from_Mongo(f'{model_ticker}_pred_reverse_v4')
+    pred_reverse_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_reverse_v5')
+    pred_reverse_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_reverse_1h_v5')
+    
+    #extracting final results
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['item']['Potential Trade']
+    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['item']['Potential Trade']
+    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['item']['Potential Trade']
+    
+    #save array of reversed results as a dictionary for frontend access
+    reverse_labels = {'Periods': reverse_headers}
+    reverse_trade_lists = {
+    'v4': reverse_trade_results_v4,
+    'v5': reverse_trade_results_v5,
+    '1h_v5': reverse_trade_results_1h_v5
+    }
+    
+    
+    #retrieve saved results from last calculation performed by updater.py
+    pred_continue_v4 = read_prediction_from_Mongo(f'{model_ticker}_pred_continue_v4')
+    pred_continue_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_continue_v5')
+    pred_continue_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_continue_1h_v5')
     
     #extracting final results
     continue_headers = pred_continue_v4['pred_continue'][1]['heading']

@@ -68,6 +68,7 @@ def run_procedure_sequence():
     
     for ticker in tickers:
         #update the price table
+       
         run_IG(ticker)
         comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
         # variability_analysis(ticker)

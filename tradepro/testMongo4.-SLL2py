@@ -1,0 +1,21 @@
+from pymongo import MongoClient
+
+# MongoDB URI without tlsCAFile parameter
+uri = "mongodb+srv://Sunny:yogayoga1@cluster0.ars0ie4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+# Path to the CA certificate file
+tls_ca_file = r'C:\Users\sunny\Desktop\Development\python\TradePro\tradepro\mongodb.pem'  # Update this path to your CA certificate file
+
+# Create a new client and connect to the server with TLS/SSL configuration
+client = MongoClient(
+    uri,
+    tls=True,
+    tlsCAFile=tls_ca_file
+)
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(f"An error occurred: {e}")

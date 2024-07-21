@@ -1,6 +1,21 @@
 import os
 import json
 import csv
+from django.conf import settings
+from pymongo import MongoClient
+
+from pymongo.errors import OperationFailure
+from datetime import datetime
+from bson import ObjectId
+
+# Access the MongoDB URI from settings
+MONGO_URI = settings.DATABASES['mongo']['CLIENT']['host']
+
+# Initialize MongoClient with the URI from settings
+client = MongoClient(MONGO_URI)
+
+# Access the database
+db = client[settings.DATABASES['mongo']['NAME']]
 
 
 def write_to_json(data, model_ticker, filename):
@@ -54,6 +69,8 @@ def read_prediction_from_json(model_ticker, filename):
     
     with open(absolute_path, 'r') as file:
         data = json.load(file)
+    
+    print(data)
 
     return data
 
@@ -90,4 +107,102 @@ def write_to_csv(comment1, comment2, filename):
             writer.writerow(["Comment 1", "Comment 2"])
         # Write comments as rows
         writer.writerow([comment1, comment2])
+
+
+def write_to_mongo_new(collection_name, data):
+    """
+    Function to write data to a MongoDB collection. If the collection already exists, it is renamed with a timestamp before inserting the new data.
+    
+    Args:
+        collection_name (str): The name of the MongoDB collection.
+        data (dict): The data to be inserted into the collection.
+    """
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    new_collection_name = f"{collection_name}_archived_{timestamp}"
+    
+    # Check if the collection exists and rename it if it does
+    if collection_name in db.list_collection_names():
+        try:
+            db[collection_name].rename(new_collection_name)
+            print(f"Collection '{collection_name}' renamed to '{new_collection_name}'")
+        except OperationFailure as e:
+            print(f"Error renaming collection: {e}")
+    
+    # Insert data into the new MongoDB collection
+    collection = db[collection_name]
+    result = collection.insert_one(data)
+    
+    # Check the result
+    if result.inserted_id:
+        print(f"Data inserted successfully with ID: {result.inserted_id}")
+        
+        # Retrieve and print the inserted document
+        inserted_document = collection.find_one({"_id": result.inserted_id})
+        print("Inserted Document:", inserted_document)
+    else:
+        print("Data insertion failed.")
+        
+        
+        
+def write_to_mongo(collection_name, data):
+    """
+    Function to delete an existing collection and insert a new document into a MongoDB collection.
+
+    Args:
+        collection_name (str): The name of the MongoDB collection.
+        data (dict): The document to be inserted into the collection.
+    """
+    try:
+        # Check if the collection exists
+        if collection_name in db.list_collection_names():
+            # Drop the existing collection
+            db.drop_collection(collection_name)
+            print(f"Collection '{collection_name}' deleted successfully.")
+
+        # Access the collection
+        collection = db[collection_name]
+
+        # Insert the new document
+        result = collection.insert_one(data)
+        print("Insert operation completed.")
+        print(f"New document inserted with ID: {result.inserted_id}")
+
+    except OperationFailure as e:
+        print(f"Operation failed: {e}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+def read_prediction_from_Mongo(collection_name):
+    """
+    Reads prediction data from MongoDB for a given collection.
+
+    Args:
+        collection_name (string): The name of the collection in the database.
+
+    Returns:
+        list: A list of dictionaries containing the data from the collection.
+    """
+
+    try:
+        # Access the collection from the global db
+        collection = db[collection_name]
+
+        # Query the collection to get all documents
+        documents = list(collection.find())
+        print(documents)
+        # Remove MongoDB specific '_id' field if it's not needed
+        if documents:
+            document = documents[0]  # Get the first document
+            document.pop('_id', None)  # Remove '_id' field if present
+            print(document)
+            return document
+        
+        return {}  # Return an empty dictionary if no documents are found
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return {}
+
+
 

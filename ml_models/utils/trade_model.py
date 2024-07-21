@@ -10,7 +10,7 @@ from prices.models import Price
 from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results, ModelComparer
 from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
-from .access_results import write_to_json, read_prediction_from_json, write_to_csv
+from .access_results import write_to_json, write_to_mongo, read_prediction_from_json, write_to_csv
 from django.shortcuts import get_object_or_404
 from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
@@ -221,7 +221,7 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     pred_continue_results = model_run(ticker, X_live_continue, model_version)
     pred_historical_results = model_run(ticker, X_live_historical, model_version)
     pred_variability_results = model_run(ticker, X_live_variability, model_version)
-      
+         
 
     pred_reverse = format_model_results(
                         pred_name="pred_reverse", 
@@ -256,11 +256,17 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
                         model_input_data=pred_variability_results['X_live_discretized']
                     )
     
-    
+    print("json file starts here:")
     write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
     write_to_json(pred_continue, ticker, f"{ticker}_pred_continue_{model_version}.json")
     write_to_json(pred_historical, ticker, f"{ticker}_pred_historical_{model_version}.json")
     write_to_json(pred_variability, ticker, f"{ticker}_pred_variability_{model_version}.json")
+    
+    print("mongodb starts here:>>>>>")
+    write_to_mongo(f'{ticker}_pred_reverse_{model_version}', pred_reverse)
+    write_to_mongo(f'{ticker}_pred_continue_{model_version}', pred_continue)
+    write_to_mongo(f'{ticker}_pred_historical_{model_version}', pred_historical)
+    write_to_mongo(f'{ticker}_pred_variability_{model_version}', pred_variability)
      
     return pred_reverse, pred_continue, pred_historical, pred_variability
 
@@ -356,6 +362,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
     """
     
+    print("forecast Started......")
     pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
     pred_reverse_v5, _, _, _ = standard_analysis(model_ticker,"v5")
     pred_reverse_1h_v5, _, _, _ = standard_analysis(model_ticker, "1h_v5")

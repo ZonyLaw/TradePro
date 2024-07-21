@@ -8379,3 +8379,1196 @@ GradientBoostingClassifier does not accept missing values encoded as NaN nativel
 2024-07-19 05:47:34,818 - INFO - Scheduler started
 2024-07-19 05:47:34,818 - INFO - Current time of the scheduler: 2024-07-19 05:47:34.818110
 2024-07-19 05:47:34,819 - INFO - Ending scheduler
+2024-07-20 08:19:31,830 - INFO - Starting scheduler
+2024-07-20 08:19:31,830 - INFO - Updater date and time: 2024-07-20 08:19:31.830982
+2024-07-20 08:19:31,833 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:19:31,833 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:19:31,833 - INFO - Scheduler started
+2024-07-20 08:19:31,833 - INFO - Current time of the scheduler: 2024-07-20 08:19:31.833495
+2024-07-20 08:19:31,833 - INFO - Ending scheduler
+2024-07-20 08:19:33,794 - INFO - Starting scheduler
+2024-07-20 08:19:33,794 - INFO - Updater date and time: 2024-07-20 08:19:33.794572
+2024-07-20 08:19:33,795 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:19:33,795 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:19:33,795 - INFO - Scheduler started
+2024-07-20 08:19:33,796 - INFO - Current time of the scheduler: 2024-07-20 08:19:33.796573
+2024-07-20 08:19:33,796 - INFO - Ending scheduler
+2024-07-20 08:19:33,859 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:19:37,799 - WARNING - Not Found: /images/favicon.ico
+2024-07-20 08:19:53,319 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-20 08:21:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 08:21:00 BST)" (scheduled at 2024-07-20 08:21:00+01:00)
+2024-07-20 08:21:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 08:21:00 BST)" (scheduled at 2024-07-20 08:21:00+01:00)
+2024-07-20 08:21:00,004 - INFO - Inside the procedure sequence
+2024-07-20 08:21:00,004 - INFO - Inside the procedure sequence
+2024-07-20 08:21:00,221 - INFO - The input start time: 2024-07-20 07:00:00
+2024-07-20 08:21:00,222 - INFO - The input start time: 2024-07-20 07:00:00
+2024-07-20 08:21:38,220 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 08:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 364, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 265, in standard_analysis
+    write_to_mongo(f'pred_reverse_{model_version}', pred_reverse)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py", line 116, in write_to_mongo
+    collection.insert_one(data)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 658, in insert_one
+    self._insert_one(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 598, in _insert_one
+    self.__database.client._retryable_write(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1575, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1461, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2456, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 669b6503603e3989391f9b70, topology_type: Unknown, servers: [<ServerDescription ('85.255.233.194', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2024-07-20 08:21:38,731 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 08:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 364, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 265, in standard_analysis
+    write_to_mongo(f'pred_reverse_{model_version}', pred_reverse)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py", line 116, in write_to_mongo
+    collection.insert_one(data)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 658, in insert_one
+    self._insert_one(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 598, in _insert_one
+    self.__database.client._retryable_write(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1575, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1461, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2456, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 669b6505b2f7e95eadac8aab, topology_type: Unknown, servers: [<ServerDescription ('85.255.233.194', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2024-07-20 08:29:36,247 - INFO - Starting scheduler
+2024-07-20 08:29:36,249 - INFO - Updater date and time: 2024-07-20 08:29:36.248312
+2024-07-20 08:29:36,250 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:29:36,250 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:29:36,250 - INFO - Scheduler started
+2024-07-20 08:29:36,251 - INFO - Current time of the scheduler: 2024-07-20 08:29:36.251122
+2024-07-20 08:29:36,251 - INFO - Ending scheduler
+2024-07-20 08:29:38,156 - INFO - Starting scheduler
+2024-07-20 08:29:38,157 - INFO - Updater date and time: 2024-07-20 08:29:38.157448
+2024-07-20 08:29:38,158 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:29:38,158 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:29:38,158 - INFO - Scheduler started
+2024-07-20 08:29:38,159 - INFO - Current time of the scheduler: 2024-07-20 08:29:38.159449
+2024-07-20 08:29:38,159 - INFO - Ending scheduler
+2024-07-20 08:29:38,230 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:33:01,703 - INFO - Starting scheduler
+2024-07-20 08:33:01,704 - INFO - Updater date and time: 2024-07-20 08:33:01.704748
+2024-07-20 08:33:01,705 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:33:01,705 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:33:01,705 - INFO - Scheduler started
+2024-07-20 08:33:01,706 - INFO - Current time of the scheduler: 2024-07-20 08:33:01.706425
+2024-07-20 08:33:01,706 - INFO - Ending scheduler
+2024-07-20 08:33:03,593 - INFO - Starting scheduler
+2024-07-20 08:33:03,593 - INFO - Updater date and time: 2024-07-20 08:33:03.593398
+2024-07-20 08:33:03,594 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:33:03,595 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:33:03,595 - INFO - Scheduler started
+2024-07-20 08:33:03,595 - INFO - Current time of the scheduler: 2024-07-20 08:33:03.595411
+2024-07-20 08:33:03,595 - INFO - Ending scheduler
+2024-07-20 08:33:03,659 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:36:35,736 - INFO - Starting scheduler
+2024-07-20 08:36:35,736 - INFO - Updater date and time: 2024-07-20 08:36:35.736979
+2024-07-20 08:36:35,737 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:36:35,737 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:36:35,738 - INFO - Scheduler started
+2024-07-20 08:36:35,738 - INFO - Current time of the scheduler: 2024-07-20 08:36:35.738981
+2024-07-20 08:36:35,738 - INFO - Ending scheduler
+2024-07-20 08:36:37,690 - INFO - Starting scheduler
+2024-07-20 08:36:37,690 - INFO - Updater date and time: 2024-07-20 08:36:37.690879
+2024-07-20 08:36:37,691 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:36:37,691 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:36:37,691 - INFO - Scheduler started
+2024-07-20 08:36:37,692 - INFO - Current time of the scheduler: 2024-07-20 08:36:37.692966
+2024-07-20 08:36:37,692 - INFO - Ending scheduler
+2024-07-20 08:36:37,764 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:37:20,193 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-20 08:37:23,335 - INFO - Starting scheduler
+2024-07-20 08:37:23,336 - INFO - Updater date and time: 2024-07-20 08:37:23.336134
+2024-07-20 08:37:23,337 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:37:23,337 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:37:23,337 - INFO - Scheduler started
+2024-07-20 08:37:23,337 - INFO - Current time of the scheduler: 2024-07-20 08:37:23.337134
+2024-07-20 08:37:23,337 - INFO - Ending scheduler
+2024-07-20 08:37:23,404 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:47:10,711 - INFO - Starting scheduler
+2024-07-20 08:47:10,712 - INFO - Updater date and time: 2024-07-20 08:47:10.712433
+2024-07-20 08:47:10,713 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:47:10,713 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:47:10,713 - INFO - Scheduler started
+2024-07-20 08:47:10,714 - INFO - Current time of the scheduler: 2024-07-20 08:47:10.714433
+2024-07-20 08:47:10,714 - INFO - Ending scheduler
+2024-07-20 08:47:12,611 - INFO - Starting scheduler
+2024-07-20 08:47:12,612 - INFO - Updater date and time: 2024-07-20 08:47:12.611502
+2024-07-20 08:47:12,613 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:47:12,613 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:47:12,613 - INFO - Scheduler started
+2024-07-20 08:47:12,613 - INFO - Current time of the scheduler: 2024-07-20 08:47:12.613483
+2024-07-20 08:47:12,613 - INFO - Ending scheduler
+2024-07-20 08:47:12,676 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:47:53,038 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-07-20 08:48:06,780 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-20 08:48:13,602 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-07-20 08:48:22,707 - INFO - The input start time: 2024-07-18 08:00:00+00:00
+2024-07-20 08:51:48,386 - INFO - Starting scheduler
+2024-07-20 08:51:48,387 - INFO - Updater date and time: 2024-07-20 08:51:48.387383
+2024-07-20 08:51:48,388 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:51:48,388 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:51:48,388 - INFO - Scheduler started
+2024-07-20 08:51:48,388 - INFO - Current time of the scheduler: 2024-07-20 08:51:48.388337
+2024-07-20 08:51:48,389 - INFO - Ending scheduler
+2024-07-20 08:51:50,322 - INFO - Starting scheduler
+2024-07-20 08:51:50,323 - INFO - Updater date and time: 2024-07-20 08:51:50.323657
+2024-07-20 08:51:50,323 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:51:50,324 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:51:50,324 - INFO - Scheduler started
+2024-07-20 08:51:50,324 - INFO - Current time of the scheduler: 2024-07-20 08:51:50.324657
+2024-07-20 08:51:50,324 - INFO - Ending scheduler
+2024-07-20 08:51:50,384 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:52:12,599 - INFO - The input start time: 2024-07-18 08:00:00+00:00
+2024-07-20 08:52:13,445 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 156, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-20 08:52:13,558 - WARNING - Not Found: /favicon.ico
+2024-07-20 08:53:04,377 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py changed, reloading.
+2024-07-20 08:53:07,629 - INFO - Starting scheduler
+2024-07-20 08:53:07,629 - INFO - Updater date and time: 2024-07-20 08:53:07.629196
+2024-07-20 08:53:07,630 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:53:07,630 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:53:07,630 - INFO - Scheduler started
+2024-07-20 08:53:07,630 - INFO - Current time of the scheduler: 2024-07-20 08:53:07.630946
+2024-07-20 08:53:07,631 - INFO - Ending scheduler
+2024-07-20 08:53:07,697 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:53:24,793 - WARNING - Not Found: /login/images/favicon.ico
+2024-07-20 08:53:39,937 - WARNING - Not Found: /account/images/favicon.ico
+2024-07-20 08:53:53,274 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 08:53:53,982 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-20 08:54:03,043 - ERROR - Internal Server Error: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 366, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 266, in standard_analysis
+    write_to_mongo(f'pred_reverse', pred_reverse)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py", line 115, in write_to_mongo
+    print(collection)
+          ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'collection' where it is not associated with a value
+2024-07-20 08:54:38,438 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-20 08:54:41,792 - INFO - Starting scheduler
+2024-07-20 08:54:41,794 - INFO - Updater date and time: 2024-07-20 08:54:41.794040
+2024-07-20 08:54:41,795 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 08:54:41,795 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 08:54:41,795 - INFO - Scheduler started
+2024-07-20 08:54:41,795 - INFO - Current time of the scheduler: 2024-07-20 08:54:41.795155
+2024-07-20 08:54:41,795 - INFO - Ending scheduler
+2024-07-20 08:54:41,866 - INFO - Watching for file changes with StatReloader
+2024-07-20 08:55:20,792 - ERROR - Internal Server Error: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 366, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 266, in standard_analysis
+    write_to_mongo(f'pred_reverse', pred_reverse)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py", line 120, in write_to_mongo
+    result = collection.insert_one(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 658, in insert_one
+    self._insert_one(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\collection.py", line 598, in _insert_one
+    self.__database.client._retryable_write(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1575, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1461, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1507, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2353, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2456, in _write
+    self._server = self._get_server()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 2439, in _get_server
+    return self._client._select_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\mongo_client.py", line 1322, in _select_server
+    server = topology.select_server(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 368, in select_server
+    server = self._select_server(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 346, in _select_server
+    servers = self.select_servers(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 253, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pymongo\topology.py", line 303, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 669b6d41fad55aa716176852, topology_type: Unknown, servers: [<ServerDescription ('85.255.233.194', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('85.255.233.194:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2024-07-20 08:55:27,773 - WARNING - Not Found: /prices/
+2024-07-20 09:02:39,340 - INFO - Starting scheduler
+2024-07-20 09:02:39,340 - INFO - Updater date and time: 2024-07-20 09:02:39.340253
+2024-07-20 09:02:39,342 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 09:02:39,342 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 09:02:39,342 - INFO - Scheduler started
+2024-07-20 09:02:39,343 - INFO - Current time of the scheduler: 2024-07-20 09:02:39.343256
+2024-07-20 09:02:39,343 - INFO - Ending scheduler
+2024-07-20 09:02:41,717 - INFO - Starting scheduler
+2024-07-20 09:02:41,718 - INFO - Updater date and time: 2024-07-20 09:02:41.717807
+2024-07-20 09:02:41,719 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 09:02:41,719 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 09:02:41,719 - INFO - Scheduler started
+2024-07-20 09:02:41,719 - INFO - Current time of the scheduler: 2024-07-20 09:02:41.719809
+2024-07-20 09:02:41,719 - INFO - Ending scheduler
+2024-07-20 09:02:41,744 - INFO - Watching for file changes with StatReloader
+2024-07-20 09:06:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 09:06:00 BST)" (scheduled at 2024-07-20 09:06:00+01:00)
+2024-07-20 09:06:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 09:11:00 BST)" (scheduled at 2024-07-20 09:06:00+01:00)
+2024-07-20 09:06:00,013 - INFO - Inside the procedure sequence
+2024-07-20 09:06:00,013 - INFO - Inside the procedure sequence
+2024-07-20 09:06:00,191 - INFO - The input start time: 2024-07-20 08:00:00
+2024-07-20 09:06:00,191 - INFO - The input start time: 2024-07-20 08:00:00
+2024-07-20 09:06:00,925 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 09:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 71, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-20 09:06:15,474 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 09:11:00 BST)" executed successfully
+2024-07-20 09:14:39,889 - INFO - Starting scheduler
+2024-07-20 09:14:39,889 - INFO - Updater date and time: 2024-07-20 09:14:39.889852
+2024-07-20 09:14:39,890 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 09:14:39,890 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 09:14:39,891 - INFO - Scheduler started
+2024-07-20 09:14:39,891 - INFO - Current time of the scheduler: 2024-07-20 09:14:39.891852
+2024-07-20 09:14:39,891 - INFO - Ending scheduler
+2024-07-20 09:14:42,224 - INFO - Starting scheduler
+2024-07-20 09:14:42,225 - INFO - Updater date and time: 2024-07-20 09:14:42.225692
+2024-07-20 09:14:42,226 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 09:14:42,226 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 09:14:42,226 - INFO - Scheduler started
+2024-07-20 09:14:42,227 - INFO - Current time of the scheduler: 2024-07-20 09:14:42.227691
+2024-07-20 09:14:42,227 - INFO - Ending scheduler
+2024-07-20 09:14:42,246 - INFO - Watching for file changes with StatReloader
+2024-07-20 09:14:57,137 - WARNING - Not Found: /tickers/update-ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 14:05:34,081 - INFO - Starting scheduler
+2024-07-20 14:05:34,081 - INFO - Updater date and time: 2024-07-20 14:05:34.081984
+2024-07-20 14:05:34,082 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:05:34,083 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:05:34,083 - INFO - Scheduler started
+2024-07-20 14:05:34,084 - INFO - Current time of the scheduler: 2024-07-20 14:05:34.084419
+2024-07-20 14:05:34,084 - INFO - Ending scheduler
+2024-07-20 14:05:36,307 - INFO - Starting scheduler
+2024-07-20 14:05:36,308 - INFO - Updater date and time: 2024-07-20 14:05:36.307426
+2024-07-20 14:05:36,308 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:05:36,308 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:05:36,308 - INFO - Scheduler started
+2024-07-20 14:05:36,309 - INFO - Current time of the scheduler: 2024-07-20 14:05:36.309909
+2024-07-20 14:05:36,309 - INFO - Ending scheduler
+2024-07-20 14:05:36,334 - INFO - Watching for file changes with StatReloader
+2024-07-20 14:05:38,338 - WARNING - Not Found: /images/favicon.ico
+2024-07-20 14:05:41,221 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-20 14:05:44,956 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 14:05:46,012 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-20 14:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:06:00 BST)" (scheduled at 2024-07-20 14:06:00+01:00)
+2024-07-20 14:06:00,005 - INFO - Inside the procedure sequence
+2024-07-20 14:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:06:00 BST)" (scheduled at 2024-07-20 14:06:00+01:00)
+2024-07-20 14:06:00,006 - INFO - Inside the procedure sequence
+2024-07-20 14:06:00,184 - INFO - The input start time: 2024-07-20 13:00:00
+2024-07-20 14:06:00,206 - INFO - The input start time: 2024-07-20 13:00:00
+2024-07-20 14:06:19,737 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:11:00 BST)" executed successfully
+2024-07-20 14:06:25,040 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:11:00 BST)" executed successfully
+2024-07-20 14:15:07,053 - INFO - Starting scheduler
+2024-07-20 14:15:07,054 - INFO - Updater date and time: 2024-07-20 14:15:07.054583
+2024-07-20 14:15:07,055 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:15:07,055 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:15:07,055 - INFO - Scheduler started
+2024-07-20 14:15:07,056 - INFO - Current time of the scheduler: 2024-07-20 14:15:07.056583
+2024-07-20 14:15:07,056 - INFO - Ending scheduler
+2024-07-20 14:15:09,999 - INFO - Starting scheduler
+2024-07-20 14:15:10,000 - INFO - Updater date and time: 2024-07-20 14:15:09.999564
+2024-07-20 14:15:10,001 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:15:10,001 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:15:10,001 - INFO - Scheduler started
+2024-07-20 14:15:10,001 - INFO - Current time of the scheduler: 2024-07-20 14:15:10.001576
+2024-07-20 14:15:10,001 - INFO - Ending scheduler
+2024-07-20 14:15:10,022 - INFO - Watching for file changes with StatReloader
+2024-07-20 14:15:19,456 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-20 14:15:22,634 - INFO - Starting scheduler
+2024-07-20 14:15:22,635 - INFO - Updater date and time: 2024-07-20 14:15:22.635048
+2024-07-20 14:15:22,636 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:15:22,636 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:15:22,636 - INFO - Scheduler started
+2024-07-20 14:15:22,636 - INFO - Current time of the scheduler: 2024-07-20 14:15:22.636313
+2024-07-20 14:15:22,636 - INFO - Ending scheduler
+2024-07-20 14:15:22,655 - INFO - Watching for file changes with StatReloader
+2024-07-20 14:16:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:16:00 BST)" (scheduled at 2024-07-20 14:16:00+01:00)
+2024-07-20 14:16:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:21:00 BST)" (scheduled at 2024-07-20 14:16:00+01:00)
+2024-07-20 14:16:00,010 - INFO - Inside the procedure sequence
+2024-07-20 14:16:00,010 - INFO - Inside the procedure sequence
+2024-07-20 14:16:00,165 - INFO - The input start time: 2024-07-20 13:00:00
+2024-07-20 14:16:00,169 - INFO - The input start time: 2024-07-20 13:00:00
+2024-07-20 14:16:18,725 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:21:00 BST)" executed successfully
+2024-07-20 14:16:19,473 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 14:21:00 BST)" executed successfully
+2024-07-20 14:18:40,169 - INFO - Starting scheduler
+2024-07-20 14:18:40,170 - INFO - Updater date and time: 2024-07-20 14:18:40.170266
+2024-07-20 14:18:40,171 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:18:40,171 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:18:40,171 - INFO - Scheduler started
+2024-07-20 14:18:40,172 - INFO - Current time of the scheduler: 2024-07-20 14:18:40.172267
+2024-07-20 14:18:40,172 - INFO - Ending scheduler
+2024-07-20 14:18:42,448 - INFO - Starting scheduler
+2024-07-20 14:18:42,448 - INFO - Updater date and time: 2024-07-20 14:18:42.448682
+2024-07-20 14:18:42,450 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 14:18:42,450 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 14:18:42,450 - INFO - Scheduler started
+2024-07-20 14:18:42,450 - INFO - Current time of the scheduler: 2024-07-20 14:18:42.450398
+2024-07-20 14:18:42,450 - INFO - Ending scheduler
+2024-07-20 14:18:42,468 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:09:57,290 - INFO - Starting scheduler
+2024-07-20 15:09:57,290 - INFO - Updater date and time: 2024-07-20 15:09:57.290858
+2024-07-20 15:09:57,291 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:09:57,291 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:09:57,291 - INFO - Scheduler started
+2024-07-20 15:09:57,292 - INFO - Current time of the scheduler: 2024-07-20 15:09:57.292878
+2024-07-20 15:09:57,292 - INFO - Ending scheduler
+2024-07-20 15:09:59,648 - INFO - Starting scheduler
+2024-07-20 15:09:59,649 - INFO - Updater date and time: 2024-07-20 15:09:59.649415
+2024-07-20 15:09:59,650 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:09:59,650 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:09:59,650 - INFO - Scheduler started
+2024-07-20 15:09:59,651 - INFO - Current time of the scheduler: 2024-07-20 15:09:59.651415
+2024-07-20 15:09:59,651 - INFO - Ending scheduler
+2024-07-20 15:09:59,674 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:11:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:11:00 BST)" (scheduled at 2024-07-20 15:11:00+01:00)
+2024-07-20 15:11:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:16:00 BST)" (scheduled at 2024-07-20 15:11:00+01:00)
+2024-07-20 15:11:00,009 - INFO - Inside the procedure sequence
+2024-07-20 15:11:00,221 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:11:00,222 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:11:19,125 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:16:00 BST)" executed successfully
+2024-07-20 15:11:19,717 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:16:00 BST)" executed successfully
+2024-07-20 15:27:36,309 - INFO - Starting scheduler
+2024-07-20 15:27:36,309 - INFO - Updater date and time: 2024-07-20 15:27:36.309176
+2024-07-20 15:27:36,310 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:27:36,311 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:27:36,311 - INFO - Scheduler started
+2024-07-20 15:27:36,311 - INFO - Current time of the scheduler: 2024-07-20 15:27:36.311177
+2024-07-20 15:27:36,311 - INFO - Ending scheduler
+2024-07-20 15:27:38,697 - INFO - Starting scheduler
+2024-07-20 15:27:38,698 - INFO - Updater date and time: 2024-07-20 15:27:38.698403
+2024-07-20 15:27:38,699 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:27:38,699 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:27:38,699 - INFO - Scheduler started
+2024-07-20 15:27:38,700 - INFO - Current time of the scheduler: 2024-07-20 15:27:38.700448
+2024-07-20 15:27:38,700 - INFO - Ending scheduler
+2024-07-20 15:27:38,723 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:31:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:31:00 BST)" (scheduled at 2024-07-20 15:31:00+01:00)
+2024-07-20 15:31:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:36:00 BST)" (scheduled at 2024-07-20 15:31:00+01:00)
+2024-07-20 15:31:00,006 - INFO - Inside the procedure sequence
+2024-07-20 15:31:00,006 - INFO - Inside the procedure sequence
+2024-07-20 15:31:00,164 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:31:00,164 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:31:16,262 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:36:00 BST)" executed successfully
+2024-07-20 15:31:16,387 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:36:00 BST)" executed successfully
+2024-07-20 15:40:33,440 - INFO - Starting scheduler
+2024-07-20 15:40:33,441 - INFO - Updater date and time: 2024-07-20 15:40:33.441712
+2024-07-20 15:40:33,443 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:40:33,443 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:40:33,443 - INFO - Scheduler started
+2024-07-20 15:40:33,444 - INFO - Current time of the scheduler: 2024-07-20 15:40:33.444144
+2024-07-20 15:40:33,444 - INFO - Ending scheduler
+2024-07-20 15:40:35,797 - INFO - Starting scheduler
+2024-07-20 15:40:35,798 - INFO - Updater date and time: 2024-07-20 15:40:35.798479
+2024-07-20 15:40:35,799 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:40:35,799 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:40:35,799 - INFO - Scheduler started
+2024-07-20 15:40:35,799 - INFO - Current time of the scheduler: 2024-07-20 15:40:35.799479
+2024-07-20 15:40:35,799 - INFO - Ending scheduler
+2024-07-20 15:40:35,819 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:40:37,832 - WARNING - Not Found: /images/favicon.ico
+2024-07-20 15:40:39,549 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-20 15:40:42,695 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 15:40:43,111 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-20 15:40:51,440 - ERROR - Internal Server Error: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 366, in run_model_predictions
+    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 266, in standard_analysis
+    upsert_to_mongo(f'{ticker}_pred_reverse_{model_version}', pred_reverse)
+TypeError: upsert_to_mongo() missing 1 required positional argument: 'data'
+2024-07-20 15:40:51,548 - WARNING - Not Found: /favicon.ico
+2024-07-20 15:41:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:41:00 BST)" (scheduled at 2024-07-20 15:41:00+01:00)
+2024-07-20 15:41:00,014 - INFO - Inside the procedure sequence
+2024-07-20 15:41:00,014 - INFO - Inside the procedure sequence
+2024-07-20 15:41:00,162 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:41:00,162 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:41:01,123 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-20 15:41:01,146 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-20 15:45:10,153 - INFO - Starting scheduler
+2024-07-20 15:45:10,154 - INFO - Updater date and time: 2024-07-20 15:45:10.154500
+2024-07-20 15:45:10,155 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:45:10,155 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:45:10,155 - INFO - Scheduler started
+2024-07-20 15:45:10,156 - INFO - Current time of the scheduler: 2024-07-20 15:45:10.156523
+2024-07-20 15:45:10,156 - INFO - Ending scheduler
+2024-07-20 15:45:12,455 - INFO - Starting scheduler
+2024-07-20 15:45:12,456 - INFO - Updater date and time: 2024-07-20 15:45:12.455870
+2024-07-20 15:45:12,457 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:45:12,457 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:45:12,457 - INFO - Scheduler started
+2024-07-20 15:45:12,457 - INFO - Current time of the scheduler: 2024-07-20 15:45:12.457872
+2024-07-20 15:45:12,457 - INFO - Ending scheduler
+2024-07-20 15:45:12,482 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:46:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:46:00 BST)" (scheduled at 2024-07-20 15:46:00+01:00)
+2024-07-20 15:46:00,001 - INFO - Inside the procedure sequence
+2024-07-20 15:46:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:51:00 BST)" (scheduled at 2024-07-20 15:46:00+01:00)
+2024-07-20 15:46:00,016 - INFO - Inside the procedure sequence
+2024-07-20 15:46:00,156 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:46:00,164 - INFO - The input start time: 2024-07-20 14:00:00
+2024-07-20 15:46:19,419 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:51:00 BST)" executed successfully
+2024-07-20 15:46:19,880 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 15:51:00 BST)" executed successfully
+2024-07-20 15:51:03,218 - INFO - Starting scheduler
+2024-07-20 15:51:03,219 - INFO - Updater date and time: 2024-07-20 15:51:03.219513
+2024-07-20 15:51:03,220 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:51:03,220 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:51:03,220 - INFO - Scheduler started
+2024-07-20 15:51:03,221 - INFO - Current time of the scheduler: 2024-07-20 15:51:03.221499
+2024-07-20 15:51:03,221 - INFO - Ending scheduler
+2024-07-20 15:51:05,448 - INFO - Starting scheduler
+2024-07-20 15:51:05,449 - INFO - Updater date and time: 2024-07-20 15:51:05.448270
+2024-07-20 15:51:05,450 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:51:05,450 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:51:05,450 - INFO - Scheduler started
+2024-07-20 15:51:05,450 - INFO - Current time of the scheduler: 2024-07-20 15:51:05.450262
+2024-07-20 15:51:05,450 - INFO - Ending scheduler
+2024-07-20 15:51:05,470 - INFO - Watching for file changes with StatReloader
+2024-07-20 15:51:06,979 - WARNING - Not Found: /images/favicon.ico
+2024-07-20 15:51:09,361 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-20 15:51:12,527 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 15:51:14,395 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-20 15:58:16,238 - INFO - Starting scheduler
+2024-07-20 15:58:16,239 - INFO - Updater date and time: 2024-07-20 15:58:16.239579
+2024-07-20 15:58:16,240 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:58:16,240 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:58:16,240 - INFO - Scheduler started
+2024-07-20 15:58:16,241 - INFO - Current time of the scheduler: 2024-07-20 15:58:16.241701
+2024-07-20 15:58:16,241 - INFO - Ending scheduler
+2024-07-20 15:58:18,440 - INFO - Starting scheduler
+2024-07-20 15:58:18,441 - INFO - Updater date and time: 2024-07-20 15:58:18.440161
+2024-07-20 15:58:18,442 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 15:58:18,442 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 15:58:18,442 - INFO - Scheduler started
+2024-07-20 15:58:18,442 - INFO - Current time of the scheduler: 2024-07-20 15:58:18.442167
+2024-07-20 15:58:18,442 - INFO - Ending scheduler
+2024-07-20 15:58:18,463 - INFO - Watching for file changes with StatReloader
+2024-07-20 16:05:18,983 - INFO - Starting scheduler
+2024-07-20 16:05:18,984 - INFO - Updater date and time: 2024-07-20 16:05:18.983740
+2024-07-20 16:05:18,984 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:05:18,985 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:05:18,985 - INFO - Scheduler started
+2024-07-20 16:05:18,985 - INFO - Current time of the scheduler: 2024-07-20 16:05:18.985767
+2024-07-20 16:05:18,985 - INFO - Ending scheduler
+2024-07-20 16:05:21,259 - INFO - Starting scheduler
+2024-07-20 16:05:21,259 - INFO - Updater date and time: 2024-07-20 16:05:21.259372
+2024-07-20 16:05:21,260 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:05:21,260 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:05:21,260 - INFO - Scheduler started
+2024-07-20 16:05:21,261 - INFO - Current time of the scheduler: 2024-07-20 16:05:21.261394
+2024-07-20 16:05:21,261 - INFO - Ending scheduler
+2024-07-20 16:05:21,278 - INFO - Watching for file changes with StatReloader
+2024-07-20 16:06:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:06:00 BST)" (scheduled at 2024-07-20 16:06:00+01:00)
+2024-07-20 16:06:00,003 - INFO - Inside the procedure sequence
+2024-07-20 16:06:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:11:00 BST)" (scheduled at 2024-07-20 16:06:00+01:00)
+2024-07-20 16:06:00,004 - INFO - Inside the procedure sequence
+2024-07-20 16:06:00,160 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:06:00,160 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:06:19,196 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:11:00 BST)" executed successfully
+2024-07-20 16:06:33,293 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:11:00 BST)" executed successfully
+2024-07-20 16:08:54,419 - INFO - Starting scheduler
+2024-07-20 16:08:54,419 - INFO - Updater date and time: 2024-07-20 16:08:54.419344
+2024-07-20 16:08:54,420 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:08:54,421 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:08:54,421 - INFO - Scheduler started
+2024-07-20 16:08:54,421 - INFO - Current time of the scheduler: 2024-07-20 16:08:54.421344
+2024-07-20 16:08:54,421 - INFO - Ending scheduler
+2024-07-20 16:08:56,913 - INFO - Starting scheduler
+2024-07-20 16:08:56,914 - INFO - Updater date and time: 2024-07-20 16:08:56.914946
+2024-07-20 16:08:56,915 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:08:56,915 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:08:56,915 - INFO - Scheduler started
+2024-07-20 16:08:56,916 - INFO - Current time of the scheduler: 2024-07-20 16:08:56.916946
+2024-07-20 16:08:56,916 - INFO - Ending scheduler
+2024-07-20 16:08:56,938 - INFO - Watching for file changes with StatReloader
+2024-07-20 16:10:05,531 - WARNING - Not Found: /prices/update-price/26086db0-8fd2-4559-ac41-e6282f0c197f/images/favicon.ico
+2024-07-20 16:11:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:11:00 BST)" (scheduled at 2024-07-20 16:11:00+01:00)
+2024-07-20 16:11:00,004 - INFO - Inside the procedure sequence
+2024-07-20 16:11:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:11:00 BST)" (scheduled at 2024-07-20 16:11:00+01:00)
+2024-07-20 16:11:00,004 - INFO - Inside the procedure sequence
+2024-07-20 16:11:00,151 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:11:00,156 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:11:13,118 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:16:00 BST)" executed successfully
+2024-07-20 16:11:13,839 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:16:00 BST)" executed successfully
+2024-07-20 16:41:34,728 - INFO - Starting scheduler
+2024-07-20 16:41:34,729 - INFO - Updater date and time: 2024-07-20 16:41:34.729514
+2024-07-20 16:41:34,730 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:41:34,730 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:41:34,730 - INFO - Scheduler started
+2024-07-20 16:41:34,731 - INFO - Current time of the scheduler: 2024-07-20 16:41:34.731513
+2024-07-20 16:41:34,731 - INFO - Ending scheduler
+2024-07-20 16:41:36,942 - INFO - Starting scheduler
+2024-07-20 16:41:36,943 - INFO - Updater date and time: 2024-07-20 16:41:36.943891
+2024-07-20 16:41:36,944 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 16:41:36,944 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 16:41:36,944 - INFO - Scheduler started
+2024-07-20 16:41:36,945 - INFO - Current time of the scheduler: 2024-07-20 16:41:36.945911
+2024-07-20 16:41:36,945 - INFO - Ending scheduler
+2024-07-20 16:41:36,968 - INFO - Watching for file changes with StatReloader
+2024-07-20 16:41:40,987 - WARNING - Not Found: /images/favicon.ico
+2024-07-20 16:41:43,493 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-20 16:41:46,691 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-20 16:41:50,581 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-20 16:46:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:46:00 BST)" (scheduled at 2024-07-20 16:46:00+01:00)
+2024-07-20 16:46:00,007 - INFO - Inside the procedure sequence
+2024-07-20 16:46:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:46:00 BST)" (scheduled at 2024-07-20 16:46:00+01:00)
+2024-07-20 16:46:00,008 - INFO - Inside the procedure sequence
+2024-07-20 16:46:00,175 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:46:00,175 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:46:00,883 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-20 16:46:17,041 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:51:00 BST)" executed successfully
+2024-07-20 16:51:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:56:00 BST)" (scheduled at 2024-07-20 16:51:00+01:00)
+2024-07-20 16:51:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:56:00 BST)" (scheduled at 2024-07-20 16:51:00+01:00)
+2024-07-20 16:51:00,007 - INFO - Inside the procedure sequence
+2024-07-20 16:51:00,007 - INFO - Inside the procedure sequence
+2024-07-20 16:51:00,012 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:51:00,012 - INFO - The input start time: 2024-07-20 15:00:00
+2024-07-20 16:51:17,555 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:56:00 BST)" executed successfully
+2024-07-20 16:51:17,562 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 16:56:00 BST)" executed successfully
+2024-07-20 17:02:38,127 - WARNING - Run time of job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 17:06:00 BST)" was missed by 0:01:38.127774
+2024-07-20 17:10:51,055 - INFO - Starting scheduler
+2024-07-20 17:10:51,056 - INFO - Updater date and time: 2024-07-20 17:10:51.056225
+2024-07-20 17:10:51,057 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 17:10:51,057 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 17:10:51,057 - INFO - Scheduler started
+2024-07-20 17:10:51,058 - INFO - Current time of the scheduler: 2024-07-20 17:10:51.058225
+2024-07-20 17:10:51,058 - INFO - Ending scheduler
+2024-07-20 17:10:53,435 - INFO - Starting scheduler
+2024-07-20 17:10:53,436 - INFO - Updater date and time: 2024-07-20 17:10:53.436376
+2024-07-20 17:10:53,437 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 17:10:53,437 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 17:10:53,437 - INFO - Scheduler started
+2024-07-20 17:10:53,438 - INFO - Current time of the scheduler: 2024-07-20 17:10:53.438378
+2024-07-20 17:10:53,438 - INFO - Ending scheduler
+2024-07-20 17:10:53,456 - INFO - Watching for file changes with StatReloader
+2024-07-20 17:11:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 17:11:00 BST)" (scheduled at 2024-07-20 17:11:00+01:00)
+2024-07-20 17:11:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 17:16:00 BST)" (scheduled at 2024-07-20 17:11:00+01:00)
+2024-07-20 17:11:00,011 - INFO - Inside the procedure sequence
+2024-07-20 17:11:00,011 - INFO - Inside the procedure sequence
+2024-07-20 17:11:00,172 - INFO - The input start time: 2024-07-20 16:00:00
+2024-07-20 17:11:00,172 - INFO - The input start time: 2024-07-20 16:00:00
+2024-07-20 17:11:20,026 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 17:16:00 BST)" executed successfully
+2024-07-20 17:11:32,118 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 17:16:00 BST)" executed successfully
+2024-07-20 21:10:57,761 - INFO - Starting scheduler
+2024-07-20 21:10:57,761 - INFO - Updater date and time: 2024-07-20 21:10:57.761043
+2024-07-20 21:10:57,762 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 21:10:57,762 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 21:10:57,762 - INFO - Scheduler started
+2024-07-20 21:10:57,763 - INFO - Current time of the scheduler: 2024-07-20 21:10:57.763044
+2024-07-20 21:10:57,763 - INFO - Ending scheduler
+2024-07-20 21:10:59,923 - INFO - Starting scheduler
+2024-07-20 21:10:59,923 - INFO - Updater date and time: 2024-07-20 21:10:59.923580
+2024-07-20 21:10:59,924 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 21:10:59,925 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 21:10:59,925 - INFO - Scheduler started
+2024-07-20 21:10:59,925 - INFO - Current time of the scheduler: 2024-07-20 21:10:59.925580
+2024-07-20 21:10:59,925 - INFO - Ending scheduler
+2024-07-20 21:10:59,949 - INFO - Watching for file changes with StatReloader
+2024-07-20 21:11:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:11:00 BST)" (scheduled at 2024-07-20 21:11:00+01:00)
+2024-07-20 21:11:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:11:00 BST)" (scheduled at 2024-07-20 21:11:00+01:00)
+2024-07-20 21:11:00,008 - INFO - Inside the procedure sequence
+2024-07-20 21:11:00,008 - INFO - Inside the procedure sequence
+2024-07-20 21:11:00,181 - INFO - The input start time: 2024-07-20 20:00:00
+2024-07-20 21:11:00,263 - INFO - The input start time: 2024-07-20 20:00:00
+2024-07-20 21:11:19,176 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-20 21:16:00,003 - WARNING - Execution of job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:16:00 BST)" skipped: maximum number of running instances reached (1)
+2024-07-20 21:16:00,003 - WARNING - Execution of job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:16:00 BST)" skipped: maximum number of running instances reached (1)
+2024-07-20 21:17:17,180 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:21:00 BST)" executed successfully
+2024-07-20 21:17:19,510 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-20 21:21:00 BST)" executed successfully
+2024-07-20 21:17:30,868 - INFO - Starting scheduler
+2024-07-20 21:17:30,869 - INFO - Updater date and time: 2024-07-20 21:17:30.869694
+2024-07-20 21:17:30,870 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 21:17:30,870 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 21:17:30,870 - INFO - Scheduler started
+2024-07-20 21:17:30,871 - INFO - Current time of the scheduler: 2024-07-20 21:17:30.871694
+2024-07-20 21:17:30,871 - INFO - Ending scheduler
+2024-07-20 21:17:33,010 - INFO - Starting scheduler
+2024-07-20 21:17:33,011 - INFO - Updater date and time: 2024-07-20 21:17:33.011396
+2024-07-20 21:17:33,012 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-20 21:17:33,012 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-20 21:17:33,012 - INFO - Scheduler started
+2024-07-20 21:17:33,012 - INFO - Current time of the scheduler: 2024-07-20 21:17:33.012395
+2024-07-20 21:17:33,013 - INFO - Ending scheduler
+2024-07-20 21:17:33,032 - INFO - Watching for file changes with StatReloader
+2024-07-21 09:30:27,009 - INFO - Starting scheduler
+2024-07-21 09:30:27,010 - INFO - Updater date and time: 2024-07-21 09:30:27.009475
+2024-07-21 09:30:27,011 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 09:30:27,011 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 09:30:27,011 - INFO - Scheduler started
+2024-07-21 09:30:27,012 - INFO - Current time of the scheduler: 2024-07-21 09:30:27.012194
+2024-07-21 09:30:27,012 - INFO - Ending scheduler
+2024-07-21 09:30:29,303 - INFO - Starting scheduler
+2024-07-21 09:30:29,303 - INFO - Updater date and time: 2024-07-21 09:30:29.303140
+2024-07-21 09:30:29,304 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 09:30:29,304 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 09:30:29,304 - INFO - Scheduler started
+2024-07-21 09:30:29,305 - INFO - Current time of the scheduler: 2024-07-21 09:30:29.305142
+2024-07-21 09:30:29,305 - INFO - Ending scheduler
+2024-07-21 09:30:29,322 - INFO - Watching for file changes with StatReloader
+2024-07-21 09:30:31,613 - WARNING - Not Found: /images/favicon.ico
+2024-07-21 09:30:43,310 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-21 09:30:46,221 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-21 09:30:50,318 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-21 09:30:51,170 - WARNING - Not Found: /prices/update-price/868e4aec-9141-410c-a612-3e282b9e2c38/images/favicon.ico
+2024-07-21 09:31:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:31:00 BST)" (scheduled at 2024-07-21 09:31:00+01:00)
+2024-07-21 09:31:00,009 - INFO - Inside the procedure sequence
+2024-07-21 09:31:00,009 - INFO - Inside the procedure sequence
+2024-07-21 09:31:00,282 - INFO - The input start time: 2024-07-21 08:00:00
+2024-07-21 09:31:00,282 - INFO - The input start time: 2024-07-21 08:00:00
+2024-07-21 09:31:57,644 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\tradepro\settings.py changed, reloading.
+2024-07-21 09:32:40,637 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:36:00 BST)" executed successfully
+2024-07-21 09:32:48,359 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:36:00 BST)" executed successfully
+2024-07-21 09:34:32,802 - INFO - Starting scheduler
+2024-07-21 09:34:32,802 - INFO - Updater date and time: 2024-07-21 09:34:32.802458
+2024-07-21 09:34:32,803 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 09:34:32,804 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 09:34:32,804 - INFO - Scheduler started
+2024-07-21 09:34:32,804 - INFO - Current time of the scheduler: 2024-07-21 09:34:32.804551
+2024-07-21 09:34:32,804 - INFO - Ending scheduler
+2024-07-21 09:34:35,060 - INFO - Starting scheduler
+2024-07-21 09:34:35,061 - INFO - Updater date and time: 2024-07-21 09:34:35.060549
+2024-07-21 09:34:35,062 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 09:34:35,062 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 09:34:35,062 - INFO - Scheduler started
+2024-07-21 09:34:35,062 - INFO - Current time of the scheduler: 2024-07-21 09:34:35.062531
+2024-07-21 09:34:35,062 - INFO - Ending scheduler
+2024-07-21 09:34:35,082 - INFO - Watching for file changes with StatReloader
+2024-07-21 09:36:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:36:00 BST)" (scheduled at 2024-07-21 09:36:00+01:00)
+2024-07-21 09:36:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:41:00 BST)" (scheduled at 2024-07-21 09:36:00+01:00)
+2024-07-21 09:36:00,015 - INFO - Inside the procedure sequence
+2024-07-21 09:36:00,015 - INFO - Inside the procedure sequence
+2024-07-21 09:36:00,212 - INFO - The input start time: 2024-07-21 08:00:00
+2024-07-21 09:36:00,212 - INFO - The input start time: 2024-07-21 08:00:00
+2024-07-21 09:36:01,068 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-21 09:36:18,421 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 09:41:00 BST)" executed successfully
+2024-07-21 10:08:35,453 - INFO - Starting scheduler
+2024-07-21 10:08:35,454 - INFO - Updater date and time: 2024-07-21 10:08:35.454452
+2024-07-21 10:08:35,455 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:08:35,455 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:08:35,455 - INFO - Scheduler started
+2024-07-21 10:08:35,456 - INFO - Current time of the scheduler: 2024-07-21 10:08:35.456481
+2024-07-21 10:08:35,456 - INFO - Ending scheduler
+2024-07-21 10:08:37,596 - INFO - Starting scheduler
+2024-07-21 10:08:37,596 - INFO - Updater date and time: 2024-07-21 10:08:37.596224
+2024-07-21 10:08:37,597 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:08:37,598 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:08:37,598 - INFO - Scheduler started
+2024-07-21 10:08:37,598 - INFO - Current time of the scheduler: 2024-07-21 10:08:37.598264
+2024-07-21 10:08:37,598 - INFO - Ending scheduler
+2024-07-21 10:08:37,617 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:08:42,004 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-07-21 10:08:42,117 - WARNING - Not Found: /favicon.ico
+2024-07-21 10:12:24,726 - INFO - Starting scheduler
+2024-07-21 10:12:24,727 - INFO - Updater date and time: 2024-07-21 10:12:24.727539
+2024-07-21 10:12:24,728 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:12:24,728 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:12:24,728 - INFO - Scheduler started
+2024-07-21 10:12:24,728 - INFO - Current time of the scheduler: 2024-07-21 10:12:24.728540
+2024-07-21 10:12:24,728 - INFO - Ending scheduler
+2024-07-21 10:12:27,053 - INFO - Starting scheduler
+2024-07-21 10:12:27,054 - INFO - Updater date and time: 2024-07-21 10:12:27.054176
+2024-07-21 10:12:27,055 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:12:27,056 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:12:27,056 - INFO - Scheduler started
+2024-07-21 10:12:27,056 - INFO - Current time of the scheduler: 2024-07-21 10:12:27.056182
+2024-07-21 10:12:27,056 - INFO - Ending scheduler
+2024-07-21 10:12:27,075 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:12:35,319 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-07-21 10:15:02,266 - INFO - Starting scheduler
+2024-07-21 10:15:02,266 - INFO - Updater date and time: 2024-07-21 10:15:02.266575
+2024-07-21 10:15:02,267 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:15:02,268 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:15:02,268 - INFO - Scheduler started
+2024-07-21 10:15:02,268 - INFO - Current time of the scheduler: 2024-07-21 10:15:02.268595
+2024-07-21 10:15:02,268 - INFO - Ending scheduler
+2024-07-21 10:15:04,521 - INFO - Starting scheduler
+2024-07-21 10:15:04,521 - INFO - Updater date and time: 2024-07-21 10:15:04.521806
+2024-07-21 10:15:04,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:15:04,523 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:15:04,523 - INFO - Scheduler started
+2024-07-21 10:15:04,523 - INFO - Current time of the scheduler: 2024-07-21 10:15:04.523806
+2024-07-21 10:15:04,523 - INFO - Ending scheduler
+2024-07-21 10:15:04,546 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:16:19,416 - INFO - Starting scheduler
+2024-07-21 10:16:19,417 - INFO - Updater date and time: 2024-07-21 10:16:19.416982
+2024-07-21 10:16:19,418 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:16:19,418 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:16:19,418 - INFO - Scheduler started
+2024-07-21 10:16:19,419 - INFO - Current time of the scheduler: 2024-07-21 10:16:19.418989
+2024-07-21 10:16:19,419 - INFO - Ending scheduler
+2024-07-21 10:16:21,757 - INFO - Starting scheduler
+2024-07-21 10:16:21,758 - INFO - Updater date and time: 2024-07-21 10:16:21.758183
+2024-07-21 10:16:21,759 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:16:21,759 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:16:21,759 - INFO - Scheduler started
+2024-07-21 10:16:21,759 - INFO - Current time of the scheduler: 2024-07-21 10:16:21.759184
+2024-07-21 10:16:21,760 - INFO - Ending scheduler
+2024-07-21 10:16:21,779 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:16:25,783 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-07-21 10:16:41,611 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:16:44,237 - INFO - Starting scheduler
+2024-07-21 10:16:44,238 - INFO - Updater date and time: 2024-07-21 10:16:44.238765
+2024-07-21 10:16:44,239 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:16:44,239 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:16:44,239 - INFO - Scheduler started
+2024-07-21 10:16:44,240 - INFO - Current time of the scheduler: 2024-07-21 10:16:44.240766
+2024-07-21 10:16:44,240 - INFO - Ending scheduler
+2024-07-21 10:16:44,257 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:16:47,727 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-07-21 10:21:21,674 - INFO - Starting scheduler
+2024-07-21 10:21:21,675 - INFO - Updater date and time: 2024-07-21 10:21:21.675545
+2024-07-21 10:21:21,676 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:21:21,676 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:21:21,677 - INFO - Scheduler started
+2024-07-21 10:21:21,677 - INFO - Current time of the scheduler: 2024-07-21 10:21:21.677565
+2024-07-21 10:21:21,677 - INFO - Ending scheduler
+2024-07-21 10:21:23,981 - INFO - Starting scheduler
+2024-07-21 10:21:23,982 - INFO - Updater date and time: 2024-07-21 10:21:23.981806
+2024-07-21 10:21:23,982 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:21:23,983 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:21:23,983 - INFO - Scheduler started
+2024-07-21 10:21:23,983 - INFO - Current time of the scheduler: 2024-07-21 10:21:23.983785
+2024-07-21 10:21:23,983 - INFO - Ending scheduler
+2024-07-21 10:21:24,004 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:21:30,184 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-07-21 10:22:12,265 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:22:15,032 - INFO - Starting scheduler
+2024-07-21 10:22:15,033 - INFO - Updater date and time: 2024-07-21 10:22:15.033648
+2024-07-21 10:22:15,034 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:22:15,034 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:22:15,034 - INFO - Scheduler started
+2024-07-21 10:22:15,035 - INFO - Current time of the scheduler: 2024-07-21 10:22:15.035632
+2024-07-21 10:22:15,035 - INFO - Ending scheduler
+2024-07-21 10:22:15,054 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:22:18,218 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2024-07-21 10:22:25,413 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:22:28,450 - INFO - Starting scheduler
+2024-07-21 10:22:28,451 - INFO - Updater date and time: 2024-07-21 10:22:28.450252
+2024-07-21 10:22:28,451 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:22:28,452 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:22:28,452 - INFO - Scheduler started
+2024-07-21 10:22:28,452 - INFO - Current time of the scheduler: 2024-07-21 10:22:28.452253
+2024-07-21 10:22:28,452 - INFO - Ending scheduler
+2024-07-21 10:22:28,480 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:22:29,298 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 411, in ml_report2
+    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-07-21 10:22:45,688 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:22:48,566 - INFO - Starting scheduler
+2024-07-21 10:22:48,567 - INFO - Updater date and time: 2024-07-21 10:22:48.567271
+2024-07-21 10:22:48,568 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:22:48,568 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:22:48,568 - INFO - Scheduler started
+2024-07-21 10:22:48,569 - INFO - Current time of the scheduler: 2024-07-21 10:22:48.569398
+2024-07-21 10:22:48,569 - INFO - Ending scheduler
+2024-07-21 10:22:48,587 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:22:50,668 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 434, in ml_report2
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-07-21 10:28:43,965 - INFO - Starting scheduler
+2024-07-21 10:28:43,966 - INFO - Updater date and time: 2024-07-21 10:28:43.966030
+2024-07-21 10:28:43,967 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:28:43,967 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:28:43,967 - INFO - Scheduler started
+2024-07-21 10:28:43,968 - INFO - Current time of the scheduler: 2024-07-21 10:28:43.968029
+2024-07-21 10:28:43,968 - INFO - Ending scheduler
+2024-07-21 10:28:46,164 - INFO - Starting scheduler
+2024-07-21 10:28:46,165 - INFO - Updater date and time: 2024-07-21 10:28:46.164265
+2024-07-21 10:28:46,165 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:28:46,166 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:28:46,166 - INFO - Scheduler started
+2024-07-21 10:28:46,166 - INFO - Current time of the scheduler: 2024-07-21 10:28:46.166274
+2024-07-21 10:28:46,166 - INFO - Ending scheduler
+2024-07-21 10:28:46,186 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:29:19,496 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 434, in ml_report2
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-07-21 10:34:07,081 - INFO - Starting scheduler
+2024-07-21 10:34:07,082 - INFO - Updater date and time: 2024-07-21 10:34:07.082065
+2024-07-21 10:34:07,083 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:34:07,083 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:34:07,084 - INFO - Scheduler started
+2024-07-21 10:34:07,084 - INFO - Current time of the scheduler: 2024-07-21 10:34:07.084084
+2024-07-21 10:34:07,084 - INFO - Ending scheduler
+2024-07-21 10:34:09,414 - INFO - Starting scheduler
+2024-07-21 10:34:09,415 - INFO - Updater date and time: 2024-07-21 10:34:09.415513
+2024-07-21 10:34:09,416 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:34:09,416 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:34:09,416 - INFO - Scheduler started
+2024-07-21 10:34:09,417 - INFO - Current time of the scheduler: 2024-07-21 10:34:09.417408
+2024-07-21 10:34:09,417 - INFO - Ending scheduler
+2024-07-21 10:34:09,434 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:34:13,478 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 434, in ml_report2
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'pred_reverse'
+2024-07-21 10:35:52,409 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:35:55,595 - INFO - Starting scheduler
+2024-07-21 10:35:55,596 - INFO - Updater date and time: 2024-07-21 10:35:55.595227
+2024-07-21 10:35:55,596 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:35:55,597 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:35:55,597 - INFO - Scheduler started
+2024-07-21 10:35:55,597 - INFO - Current time of the scheduler: 2024-07-21 10:35:55.597208
+2024-07-21 10:35:55,597 - INFO - Ending scheduler
+2024-07-21 10:35:55,616 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 10:36:00 BST)" (scheduled at 2024-07-21 10:36:00+01:00)
+2024-07-21 10:36:00,005 - INFO - Inside the procedure sequence
+2024-07-21 10:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 10:41:00 BST)" (scheduled at 2024-07-21 10:36:00+01:00)
+2024-07-21 10:36:00,006 - INFO - Inside the procedure sequence
+2024-07-21 10:36:00,170 - INFO - The input start time: 2024-07-21 09:00:00
+2024-07-21 10:36:00,170 - INFO - The input start time: 2024-07-21 09:00:00
+2024-07-21 10:36:06,950 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-07-21 10:36:13,459 - ERROR - Internal Server Error: /ml_models/ml-report2/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 434, in ml_report2
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'pred_reverse'
+2024-07-21 10:36:19,840 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 10:41:00 BST)" executed successfully
+2024-07-21 10:36:20,981 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-21 10:41:00 BST)" executed successfully
+2024-07-21 10:38:22,306 - INFO - Starting scheduler
+2024-07-21 10:38:22,306 - INFO - Updater date and time: 2024-07-21 10:38:22.306617
+2024-07-21 10:38:22,308 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:38:22,308 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:38:22,308 - INFO - Scheduler started
+2024-07-21 10:38:22,309 - INFO - Current time of the scheduler: 2024-07-21 10:38:22.309559
+2024-07-21 10:38:22,309 - INFO - Ending scheduler
+2024-07-21 10:38:24,676 - INFO - Starting scheduler
+2024-07-21 10:38:24,676 - INFO - Updater date and time: 2024-07-21 10:38:24.676713
+2024-07-21 10:38:24,677 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-21 10:38:24,677 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-21 10:38:24,677 - INFO - Scheduler started
+2024-07-21 10:38:24,678 - INFO - Current time of the scheduler: 2024-07-21 10:38:24.678731
+2024-07-21 10:38:24,678 - INFO - Ending scheduler
+2024-07-21 10:38:24,701 - INFO - Watching for file changes with StatReloader
+2024-07-21 10:38:31,278 - WARNING - Not Found: /ml_models/ml-report2/images/favicon.ico
