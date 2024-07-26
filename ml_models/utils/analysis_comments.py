@@ -22,9 +22,9 @@ class ModelComparer:
     This class compares results from three different models and provides comments based on consistency.
     
     Attributes:
-        model_dict1 (dict): Results from the first model.
-        model_dict2 (dict): Results from the second model.
-        model_dict3 (dict): Results from the third model.
+        model_dict1 (dict): Results from the short term model.
+        model_dict2 (dict): Results from the second model, typically for long-term.
+        model_dict3 (dict): Results from the third model, typically for long-term.
         arr_index (int): An index in the array to extract model results for comparison.
         newline_syntax (int): 1 for '\n', otherwise <br>.
         comment (str): Analysis comments based on comparison results.
@@ -60,6 +60,8 @@ class ModelComparer:
     def compare_versions(self):
         """
         Compares the results from three different models and sets the comment and send_email attributes accordingly.
+         - current_trade reports the buy or sell call
+         - pip_size reports the size of the movement
         """
         
         key_label1 = list(self.model_dict1.keys())[0]

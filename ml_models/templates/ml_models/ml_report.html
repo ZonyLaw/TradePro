@@ -110,8 +110,7 @@
         <p>NOTE:</p>
         <p>1) Risk Reward greater than 1 is a good risk</p>
         <p>2) Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry.</p>
-        <p>3) If PL is in red, assess number of predictions in red to give you an ideal if there are any chance to turn green based on current prediction.</p>
-        <p>4) If current prediction is weak, check if next candle prediction is much stronger which could support prediction.</p>
+
 
     <h1>Analysis Report</h1>
     <h2>History to Current</h2>
@@ -176,6 +175,15 @@
             
         </tbody>
     </table>
+    <p>NOTE:</p>
+    <p>Assess if the PL for the last four hours is negative or positive. These are some of the interpretations:</p>
+        <ul class="list_indent">
+            <li>1. Negative PL could mean projection is expected to be realized within the 4-hour timeframe.</li>
+            <li>2. Negative PL means the model may be invalidated, indicating potential contrarian trade.</li>
+            <li>3. Mixed PL means oscillation is occurring so consider the extreme points of the Bollinger Bands.</li>
+            <li>4. Positive PL means movement is getting strong but watch for any resistance; this include MA and bollinger band.</li>
+        <ul>
+
 
     <h2>Sensitivity Test</h2>
         <p>What if scenarios:</p>
@@ -248,7 +256,7 @@
     <hr>
     <h1> Next Candle Stick Predictions</h1>
     <h2 style="color: green;">Continuation of a {{potential_trade}} </h2>
-    <p>This looks at how strong the movement. If it is strong, we would see same predictions of the same direction.</p>
+    <p>This looks at how strong the movement in the coming hour. It is good indication if the current movement will continue.</p>
 
     <table>
         <thead>
@@ -279,7 +287,7 @@
 
 
     <h2 style="color: red;">Reversal of a {{potential_trade}} </h2>
-    <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then reversed candle stick is only a retracement.</p>
+    <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then a reversed candle stick is a sign of retracement.</p>
     <table>
         <thead>
 
