@@ -256,6 +256,13 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
                         model_input_data=pred_variability_results['X_live_discretized']
                     )
     
+    #This can be removed in the future but save it in case MongoDB fails
+    # print("JSON file saving starts here: >>>>>")
+    # write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
+    # write_to_json(pred_continue, ticker, f"{ticker}_pred_continue_{model_version}.json")
+    # write_to_json(pred_historical, ticker, f"{ticker}_pred_historical_{model_version}.json")
+    # write_to_json(pred_variability, ticker, f"{ticker}_pred_variability_{model_version}.json")
+    
     print("MongoDB saving starts here: >>>>>")
     write_to_mongo(f'{ticker}_pred_reverse_{model_version}', pred_reverse)
     write_to_mongo(f'{ticker}_pred_continue_{model_version}', pred_continue)
@@ -263,12 +270,6 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     write_to_mongo(f'{ticker}_pred_variability_{model_version}', pred_variability)
     
     
-    #This can be removed in the future but save it in case MongoDB fails
-    print("JSON file saving starts here: >>>>>")
-    write_to_json(pred_reverse, ticker, f"{ticker}_pred_reverse_{model_version}.json")
-    write_to_json(pred_continue, ticker, f"{ticker}_pred_continue_{model_version}.json")
-    write_to_json(pred_historical, ticker, f"{ticker}_pred_historical_{model_version}.json")
-    write_to_json(pred_variability, ticker, f"{ticker}_pred_variability_{model_version}.json")
     
      
     return pred_reverse, pred_continue, pred_historical, pred_variability

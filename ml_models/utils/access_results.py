@@ -162,7 +162,7 @@ def write_to_mongo(collection_name, data):
         collection = db[collection_name]
 
         # Insert the new document
-        result = collection.insert_one(data)
+        collection.insert_one(data)
         print("Insert operation completed.")
         # print(f"New document inserted with ID: {result.inserted_id}")
 

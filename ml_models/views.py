@@ -379,7 +379,7 @@ def ml_report2(request):
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
-    date = last_four_prices_df.iloc[3]['date']
+    # date = last_four_prices_df.iloc[3]['date']
     open_prices = last_four_prices_df['open'].tolist()
     close_prices = last_four_prices_df['close'].tolist()
     volume = last_four_prices_df['volume'].tolist()
@@ -407,6 +407,11 @@ def ml_report2(request):
     pred_historical_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v5')
     pred_historical_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_1h_v5')
     
+    # Parse the original date string
+    original_date_str = pred_historical_v4['pred_historical'][0]['date']
+    date = datetime.datetime.strptime(original_date_str, "%d-%m-%Y %H:%M:%S")
+
+    
     #extracting final results
     historical_headers = pred_historical_v4['pred_historical'][1]['heading']
     potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
@@ -419,9 +424,9 @@ def ml_report2(request):
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
     historical_trade_results = {
-    'v4': potential_trade_results_v4,
-    'v5': potential_trade_results_v5,
-    '1h_v5': potential_trade_results_1h_v5
+    '4hr Proj (v4)': potential_trade_results_v4,
+    '4hr Proj (v5)': potential_trade_results_v5,
+    '1hr Proj (1h_v5)': potential_trade_results_1h_v5
     }
         
 
