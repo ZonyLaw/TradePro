@@ -837,3 +837,922 @@ Traceback (most recent call last):
                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
 KeyError: 'pred_historical'
 2024-07-26 20:53:30,052 - WARNING - Not Found: /favicon.ico
+2024-07-26 21:04:19,109 - INFO - Starting scheduler
+2024-07-26 21:04:19,109 - INFO - Updater date and time: 2024-07-26 21:04:19.109213
+2024-07-26 21:04:19,110 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-26 21:04:19,110 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-26 21:04:19,111 - INFO - Scheduler started
+2024-07-26 21:04:19,111 - INFO - Current time of the scheduler: 2024-07-26 21:04:19.111228
+2024-07-26 21:04:19,111 - INFO - Ending scheduler
+2024-07-26 21:04:21,265 - INFO - Starting scheduler
+2024-07-26 21:04:21,265 - INFO - Updater date and time: 2024-07-26 21:04:21.265541
+2024-07-26 21:04:21,266 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-26 21:04:21,266 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-26 21:04:21,266 - INFO - Scheduler started
+2024-07-26 21:04:21,267 - INFO - Current time of the scheduler: 2024-07-26 21:04:21.267564
+2024-07-26 21:04:21,267 - INFO - Ending scheduler
+2024-07-26 21:04:21,286 - INFO - Watching for file changes with StatReloader
+2024-07-26 21:04:22,693 - WARNING - Not Found: /images/favicon.ico
+2024-07-26 21:04:30,547 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-26 21:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-26 21:06:00 BST)" (scheduled at 2024-07-26 21:06:00+01:00)
+2024-07-26 21:06:00,010 - INFO - Inside the procedure sequence
+2024-07-26 21:06:00,011 - INFO - Inside the procedure sequence
+2024-07-26 21:06:00,164 - INFO - The input start time: 2024-07-26 20:00:00
+2024-07-26 21:06:00,165 - INFO - The input start time: 2024-07-26 20:00:00
+2024-07-26 21:06:15,819 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-26 21:11:00 BST)" executed successfully
+2024-07-26 21:06:16,304 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-26 21:11:00 BST)" executed successfully
+2024-07-27 08:17:31,383 - INFO - Starting scheduler
+2024-07-27 08:17:31,383 - INFO - Updater date and time: 2024-07-27 08:17:31.383131
+2024-07-27 08:17:31,385 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:17:31,385 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:17:31,385 - INFO - Scheduler started
+2024-07-27 08:17:31,385 - INFO - Current time of the scheduler: 2024-07-27 08:17:31.385167
+2024-07-27 08:17:31,386 - INFO - Ending scheduler
+2024-07-27 08:17:33,825 - INFO - Starting scheduler
+2024-07-27 08:17:33,826 - INFO - Updater date and time: 2024-07-27 08:17:33.826409
+2024-07-27 08:17:33,827 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:17:33,828 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:17:33,828 - INFO - Scheduler started
+2024-07-27 08:17:33,828 - INFO - Current time of the scheduler: 2024-07-27 08:17:33.828273
+2024-07-27 08:17:33,828 - INFO - Ending scheduler
+2024-07-27 08:17:33,852 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:17:35,603 - WARNING - Not Found: /images/favicon.ico
+2024-07-27 08:17:39,211 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
+2024-07-27 08:18:30,819 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:18:34,339 - INFO - Starting scheduler
+2024-07-27 08:18:34,341 - INFO - Updater date and time: 2024-07-27 08:18:34.340312
+2024-07-27 08:18:34,342 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:18:34,342 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:18:34,342 - INFO - Scheduler started
+2024-07-27 08:18:34,343 - INFO - Current time of the scheduler: 2024-07-27 08:18:34.343396
+2024-07-27 08:18:34,343 - INFO - Ending scheduler
+2024-07-27 08:18:34,367 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:19:38,896 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:19:42,398 - INFO - Starting scheduler
+2024-07-27 08:19:42,399 - INFO - Updater date and time: 2024-07-27 08:19:42.399793
+2024-07-27 08:19:42,400 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:19:42,400 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:19:42,400 - INFO - Scheduler started
+2024-07-27 08:19:42,401 - INFO - Current time of the scheduler: 2024-07-27 08:19:42.401797
+2024-07-27 08:19:42,401 - INFO - Ending scheduler
+2024-07-27 08:19:42,427 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:20:02,696 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:20:05,987 - INFO - Starting scheduler
+2024-07-27 08:20:05,988 - INFO - Updater date and time: 2024-07-27 08:20:05.988442
+2024-07-27 08:20:05,989 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:20:05,989 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:20:05,989 - INFO - Scheduler started
+2024-07-27 08:20:05,989 - INFO - Current time of the scheduler: 2024-07-27 08:20:05.989441
+2024-07-27 08:20:05,990 - INFO - Ending scheduler
+2024-07-27 08:20:06,014 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:20:43,811 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:20:47,292 - INFO - Starting scheduler
+2024-07-27 08:20:47,294 - INFO - Updater date and time: 2024-07-27 08:20:47.293985
+2024-07-27 08:20:47,294 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:20:47,294 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:20:47,294 - INFO - Scheduler started
+2024-07-27 08:20:47,295 - INFO - Current time of the scheduler: 2024-07-27 08:20:47.295966
+2024-07-27 08:20:47,295 - INFO - Ending scheduler
+2024-07-27 08:20:47,325 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:21:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:21:00 BST)" (scheduled at 2024-07-27 08:21:00+01:00)
+2024-07-27 08:21:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:26:00 BST)" (scheduled at 2024-07-27 08:21:00+01:00)
+2024-07-27 08:21:00,015 - INFO - Inside the procedure sequence
+2024-07-27 08:21:00,015 - INFO - Inside the procedure sequence
+2024-07-27 08:21:00,293 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:21:00,293 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:21:01,192 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 08:21:01,206 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 08:23:35,398 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:23:38,663 - INFO - Starting scheduler
+2024-07-27 08:23:38,664 - INFO - Updater date and time: 2024-07-27 08:23:38.664563
+2024-07-27 08:23:38,665 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:23:38,665 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:23:38,666 - INFO - Scheduler started
+2024-07-27 08:23:38,666 - INFO - Current time of the scheduler: 2024-07-27 08:23:38.666548
+2024-07-27 08:23:38,666 - INFO - Ending scheduler
+2024-07-27 08:23:38,694 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:25:47,646 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:25:50,885 - INFO - Starting scheduler
+2024-07-27 08:25:50,885 - INFO - Updater date and time: 2024-07-27 08:25:50.885140
+2024-07-27 08:25:50,887 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:25:50,887 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:25:50,887 - INFO - Scheduler started
+2024-07-27 08:25:50,887 - INFO - Current time of the scheduler: 2024-07-27 08:25:50.887655
+2024-07-27 08:25:50,887 - INFO - Ending scheduler
+2024-07-27 08:25:50,914 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:26:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:31:00 BST)" (scheduled at 2024-07-27 08:26:00+01:00)
+2024-07-27 08:26:00,004 - INFO - Inside the procedure sequence
+2024-07-27 08:26:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:31:00 BST)" (scheduled at 2024-07-27 08:26:00+01:00)
+2024-07-27 08:26:00,005 - INFO - Inside the procedure sequence
+2024-07-27 08:26:00,007 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:26:00,244 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:26:20,308 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:31:00 BST)" executed successfully
+2024-07-27 08:26:21,660 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:31:00 BST)" executed successfully
+2024-07-27 08:27:27,725 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:27:38,351 - INFO - Starting scheduler
+2024-07-27 08:27:38,352 - INFO - Updater date and time: 2024-07-27 08:27:38.351147
+2024-07-27 08:27:38,353 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:27:38,353 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:27:38,353 - INFO - Scheduler started
+2024-07-27 08:27:38,353 - INFO - Current time of the scheduler: 2024-07-27 08:27:38.353148
+2024-07-27 08:27:38,354 - INFO - Ending scheduler
+2024-07-27 08:27:40,852 - INFO - Starting scheduler
+2024-07-27 08:27:40,853 - INFO - Updater date and time: 2024-07-27 08:27:40.853110
+2024-07-27 08:27:40,854 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:27:40,854 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:27:40,854 - INFO - Scheduler started
+2024-07-27 08:27:40,855 - INFO - Current time of the scheduler: 2024-07-27 08:27:40.855060
+2024-07-27 08:27:40,855 - INFO - Ending scheduler
+2024-07-27 08:27:40,880 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:27:46,585 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual, "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 368, in calc_matches
+    sell_matches = df[:, 0] == df[:, 1] & df['col_name']==0
+                   ~~^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 82, in pandas._libs.index.IndexEngine.get_loc
+TypeError: '(slice(None, None, None), 0)' is an invalid key
+2024-07-27 08:27:46,737 - WARNING - Not Found: /favicon.ico
+2024-07-27 08:28:19,002 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:28:22,421 - INFO - Starting scheduler
+2024-07-27 08:28:22,422 - INFO - Updater date and time: 2024-07-27 08:28:22.422106
+2024-07-27 08:28:22,423 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:28:22,423 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:28:22,423 - INFO - Scheduler started
+2024-07-27 08:28:22,424 - INFO - Current time of the scheduler: 2024-07-27 08:28:22.424098
+2024-07-27 08:28:22,424 - INFO - Ending scheduler
+2024-07-27 08:28:22,452 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:28:25,951 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'col_name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual, "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 368, in calc_matches
+    sell_matches = df.iloc[:, 0] == df.iloc[:, 1] & df['col_name']==0
+                                                    ~~^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'col_name'
+2024-07-27 08:28:43,075 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:28:46,797 - INFO - Starting scheduler
+2024-07-27 08:28:46,797 - INFO - Updater date and time: 2024-07-27 08:28:46.797145
+2024-07-27 08:28:46,798 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:28:46,799 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:28:46,799 - INFO - Scheduler started
+2024-07-27 08:28:46,799 - INFO - Current time of the scheduler: 2024-07-27 08:28:46.799143
+2024-07-27 08:28:46,799 - INFO - Ending scheduler
+2024-07-27 08:28:46,824 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:28:48,620 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual, "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 368, in calc_matches
+    sell_matches = df.iloc[:, 0] == df.iloc[:, 1] & df[col_name]==0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 1537, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2024-07-27 08:29:46,899 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:29:50,294 - INFO - Starting scheduler
+2024-07-27 08:29:50,295 - INFO - Updater date and time: 2024-07-27 08:29:50.295601
+2024-07-27 08:29:50,296 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:29:50,296 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:29:50,296 - INFO - Scheduler started
+2024-07-27 08:29:50,297 - INFO - Current time of the scheduler: 2024-07-27 08:29:50.296600
+2024-07-27 08:29:50,297 - INFO - Ending scheduler
+2024-07-27 08:29:50,323 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:30:24,964 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:30:28,205 - INFO - Starting scheduler
+2024-07-27 08:30:28,205 - INFO - Updater date and time: 2024-07-27 08:30:28.205160
+2024-07-27 08:30:28,206 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:30:28,207 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:30:28,207 - INFO - Scheduler started
+2024-07-27 08:30:28,207 - INFO - Current time of the scheduler: 2024-07-27 08:30:28.207266
+2024-07-27 08:30:28,207 - INFO - Ending scheduler
+2024-07-27 08:30:28,232 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:31:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:31:00 BST)" (scheduled at 2024-07-27 08:31:00+01:00)
+2024-07-27 08:31:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:36:00 BST)" (scheduled at 2024-07-27 08:31:00+01:00)
+2024-07-27 08:31:00,007 - INFO - Inside the procedure sequence
+2024-07-27 08:31:00,008 - INFO - Inside the procedure sequence
+2024-07-27 08:31:00,175 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:31:00,175 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:31:17,724 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:36:00 BST)" executed successfully
+2024-07-27 08:31:18,691 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:36:00 BST)" executed successfully
+2024-07-27 08:31:36,856 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:31:50,107 - INFO - Starting scheduler
+2024-07-27 08:31:50,108 - INFO - Updater date and time: 2024-07-27 08:31:50.108817
+2024-07-27 08:31:50,109 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:31:50,109 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:31:50,109 - INFO - Scheduler started
+2024-07-27 08:31:50,110 - INFO - Current time of the scheduler: 2024-07-27 08:31:50.110816
+2024-07-27 08:31:50,110 - INFO - Ending scheduler
+2024-07-27 08:31:52,841 - INFO - Starting scheduler
+2024-07-27 08:31:52,842 - INFO - Updater date and time: 2024-07-27 08:31:52.842672
+2024-07-27 08:31:52,844 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:31:52,844 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:31:52,844 - INFO - Scheduler started
+2024-07-27 08:31:52,845 - INFO - Current time of the scheduler: 2024-07-27 08:31:52.845144
+2024-07-27 08:31:52,845 - INFO - Ending scheduler
+2024-07-27 08:31:52,875 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:33:08,347 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:33:11,929 - INFO - Starting scheduler
+2024-07-27 08:33:11,930 - INFO - Updater date and time: 2024-07-27 08:33:11.930533
+2024-07-27 08:33:11,931 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:33:11,931 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:33:11,931 - INFO - Scheduler started
+2024-07-27 08:33:11,932 - INFO - Current time of the scheduler: 2024-07-27 08:33:11.932514
+2024-07-27 08:33:11,932 - INFO - Ending scheduler
+2024-07-27 08:33:11,952 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:33:13,404 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual_binary, "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 365, in calc_matches
+    df[col_name] = array
+    ~~^^^^^^^^^^
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2024-07-27 08:35:11,299 - INFO - Starting scheduler
+2024-07-27 08:35:11,299 - INFO - Updater date and time: 2024-07-27 08:35:11.299579
+2024-07-27 08:35:11,301 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:35:11,301 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:35:11,301 - INFO - Scheduler started
+2024-07-27 08:35:11,301 - INFO - Current time of the scheduler: 2024-07-27 08:35:11.301581
+2024-07-27 08:35:11,301 - INFO - Ending scheduler
+2024-07-27 08:35:14,108 - INFO - Starting scheduler
+2024-07-27 08:35:14,110 - INFO - Updater date and time: 2024-07-27 08:35:14.109887
+2024-07-27 08:35:14,111 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:35:14,111 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:35:14,111 - INFO - Scheduler started
+2024-07-27 08:35:14,111 - INFO - Current time of the scheduler: 2024-07-27 08:35:14.111019
+2024-07-27 08:35:14,111 - INFO - Ending scheduler
+2024-07-27 08:35:14,133 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:35:20,670 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual_binary.flatten(), "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 365, in calc_matches
+    df[col_name] = array
+    ~~^^^^^^^^^^
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+2024-07-27 08:36:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:36:00 BST)" (scheduled at 2024-07-27 08:36:00+01:00)
+2024-07-27 08:36:00,011 - INFO - Inside the procedure sequence
+2024-07-27 08:36:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:36:00 BST)" (scheduled at 2024-07-27 08:36:00+01:00)
+2024-07-27 08:36:00,011 - INFO - Inside the procedure sequence
+2024-07-27 08:36:00,194 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:36:00,194 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:36:20,452 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:41:00 BST)" executed successfully
+2024-07-27 08:36:21,873 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:41:00 BST)" executed successfully
+2024-07-27 08:37:54,667 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:38:01,685 - INFO - Starting scheduler
+2024-07-27 08:38:01,685 - INFO - Updater date and time: 2024-07-27 08:38:01.685009
+2024-07-27 08:38:01,686 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:38:01,687 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:38:01,687 - INFO - Scheduler started
+2024-07-27 08:38:01,687 - INFO - Current time of the scheduler: 2024-07-27 08:38:01.687052
+2024-07-27 08:38:01,687 - INFO - Ending scheduler
+2024-07-27 08:38:04,371 - INFO - Starting scheduler
+2024-07-27 08:38:04,372 - INFO - Updater date and time: 2024-07-27 08:38:04.372620
+2024-07-27 08:38:04,374 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:38:04,374 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:38:04,374 - INFO - Scheduler started
+2024-07-27 08:38:04,375 - INFO - Current time of the scheduler: 2024-07-27 08:38:04.375531
+2024-07-27 08:38:04,375 - INFO - Ending scheduler
+2024-07-27 08:38:04,401 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:38:06,665 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'model_pred'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 341, in trade_forecast_assessment
+    buy_sell_percentages = calc_matches(y_actual_binary.flatten(), "model_pred", model_prediction_binary)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 368, in calc_matches
+    sell_matches = (df.iloc[:, 0] == df.iloc[:, 1]) & (df[col_name]==0)
+                                                       ~~^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'model_pred'
+2024-07-27 08:38:28,030 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:38:31,679 - INFO - Starting scheduler
+2024-07-27 08:38:31,679 - INFO - Updater date and time: 2024-07-27 08:38:31.679644
+2024-07-27 08:38:31,680 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:38:31,680 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:38:31,680 - INFO - Scheduler started
+2024-07-27 08:38:31,681 - INFO - Current time of the scheduler: 2024-07-27 08:38:31.681817
+2024-07-27 08:38:31,681 - INFO - Ending scheduler
+2024-07-27 08:38:31,706 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:41:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:41:00 BST)" (scheduled at 2024-07-27 08:41:00+01:00)
+2024-07-27 08:41:00,002 - INFO - Inside the procedure sequence
+ence (trigger: interval[0:05:00], next run at: 2024-07-27 08:46:00 BST)" (scheduled at 2024-07-27 08:41:00+01:00)
+2024-07-27 08:41:00,002 - INFO - Inside the procedure sequence
+2024-07-27 08:41:00,183 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:41:00,184 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:41:00,895 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 08:41:00,899 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 08:41:57,844 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:42:01,174 - INFO - Starting scheduler
+2024-07-27 08:42:01,174 - INFO - Updater date and time: 2024-07-27 08:42:01.174541
+2024-07-27 08:42:01,175 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:42:01,175 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:42:01,175 - INFO - Scheduler started
+2024-07-27 08:42:01,176 - INFO - Current time of the scheduler: 2024-07-27 08:42:01.176541
+2024-07-27 08:42:01,176 - INFO - Ending scheduler
+2024-07-27 08:42:01,198 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:42:12,849 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:42:16,121 - INFO - Starting scheduler
+2024-07-27 08:42:16,122 - INFO - Updater date and time: 2024-07-27 08:42:16.121555
+2024-07-27 08:42:16,123 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:42:16,123 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:42:16,123 - INFO - Scheduler started
+2024-07-27 08:42:16,124 - INFO - Current time of the scheduler: 2024-07-27 08:42:16.124547
+2024-07-27 08:42:16,124 - INFO - Ending scheduler
+2024-07-27 08:42:16,152 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:42:39,566 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:42:42,965 - INFO - Starting scheduler
+2024-07-27 08:42:42,966 - INFO - Updater date and time: 2024-07-27 08:42:42.966114
+2024-07-27 08:42:42,967 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:42:42,967 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:42:42,967 - INFO - Scheduler started
+2024-07-27 08:42:42,967 - INFO - Current time of the scheduler: 2024-07-27 08:42:42.967102
+2024-07-27 08:42:42,967 - INFO - Ending scheduler
+2024-07-27 08:42:42,986 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:43:19,321 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:43:22,787 - INFO - Starting scheduler
+2024-07-27 08:43:22,787 - INFO - Updater date and time: 2024-07-27 08:43:22.787681
+2024-07-27 08:43:22,789 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:43:22,789 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:43:22,789 - INFO - Scheduler started
+2024-07-27 08:43:22,790 - INFO - Current time of the scheduler: 2024-07-27 08:43:22.790012
+2024-07-27 08:43:22,790 - INFO - Ending scheduler
+2024-07-27 08:43:22,818 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:44:37,512 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:44:40,908 - INFO - Starting scheduler
+2024-07-27 08:44:40,909 - INFO - Updater date and time: 2024-07-27 08:44:40.909551
+2024-07-27 08:44:40,910 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:44:40,910 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:44:40,910 - INFO - Scheduler started
+2024-07-27 08:44:40,911 - INFO - Current time of the scheduler: 2024-07-27 08:44:40.911814
+2024-07-27 08:44:40,911 - INFO - Ending scheduler
+2024-07-27 08:44:40,937 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:45:37,656 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-07-27 08:45:40,761 - INFO - Starting scheduler
+2024-07-27 08:45:40,762 - INFO - Updater date and time: 2024-07-27 08:45:40.761063
+2024-07-27 08:45:40,763 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:45:40,763 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:45:40,763 - INFO - Scheduler started
+2024-07-27 08:45:40,764 - INFO - Current time of the scheduler: 2024-07-27 08:45:40.764063
+2024-07-27 08:45:40,764 - INFO - Ending scheduler
+2024-07-27 08:45:40,791 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:45:51,443 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-07-27 08:45:54,505 - INFO - Starting scheduler
+2024-07-27 08:45:54,505 - INFO - Updater date and time: 2024-07-27 08:45:54.505121
+2024-07-27 08:45:54,506 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:45:54,507 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:45:54,507 - INFO - Scheduler started
+2024-07-27 08:45:54,507 - INFO - Current time of the scheduler: 2024-07-27 08:45:54.507182
+2024-07-27 08:45:54,507 - INFO - Ending scheduler
+2024-07-27 08:45:54,529 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:46:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:51:00 BST)" (scheduled at 2024-07-27 08:46:00+01:00)
+2024-07-27 08:46:00,015 - INFO - Inside the procedure sequence
+2024-07-27 08:46:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:51:00 BST)" (scheduled at 2024-07-27 08:46:00+01:00)
+2024-07-27 08:46:00,018 - INFO - Inside the procedure sequence
+2024-07-27 08:46:00,018 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:46:00,186 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:46:17,106 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:51:00 BST)" executed successfully
+2024-07-27 08:46:18,794 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:51:00 BST)" executed successfully
+2024-07-27 08:46:21,888 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-07-27 08:47:38,330 - INFO - Starting scheduler
+2024-07-27 08:47:38,331 - INFO - Updater date and time: 2024-07-27 08:47:38.330571
+2024-07-27 08:47:38,332 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:47:38,332 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:47:38,332 - INFO - Scheduler started
+2024-07-27 08:47:38,332 - INFO - Current time of the scheduler: 2024-07-27 08:47:38.332592
+2024-07-27 08:47:38,332 - INFO - Ending scheduler
+2024-07-27 08:47:40,884 - INFO - Starting scheduler
+2024-07-27 08:47:40,885 - INFO - Updater date and time: 2024-07-27 08:47:40.885038
+2024-07-27 08:47:40,887 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:47:40,887 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:47:40,887 - INFO - Scheduler started
+2024-07-27 08:47:40,888 - INFO - Current time of the scheduler: 2024-07-27 08:47:40.888036
+2024-07-27 08:47:40,888 - INFO - Ending scheduler
+2024-07-27 08:47:40,918 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:47:43,162 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy, buy_sell_split = trade_forecast_assessment(ticker, model_version)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 339, in trade_forecast_assessment
+    buy_sell_split = calc_matches(y_actual_binary.flatten(), model_prediction_binary)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 365, in calc_matches
+    sell_matches = (df.iloc[:, 0] == df.iloc[:, 1]) & (df[col_name]==0)
+                                                          ^^^^^^^^
+NameError: name 'col_name' is not defined
+2024-07-27 08:48:07,624 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 729, in display_model_accuracy
+    model_results, profit_accuracy, trade_accuracy, buy_sell_split = trade_forecast_assessment(ticker, model_version)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 339, in trade_forecast_assessment
+    buy_sell_split = calc_matches(y_actual_binary.flatten(), model_prediction_binary)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 365, in calc_matches
+    sell_matches = (df.iloc[:, 0] == df.iloc[:, 1]) & (df[col_name]==0)
+                                                          ^^^^^^^^
+NameError: name 'col_name' is not defined
+2024-07-27 08:49:18,710 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 08:49:21,999 - INFO - Starting scheduler
+2024-07-27 08:49:21,999 - INFO - Updater date and time: 2024-07-27 08:49:21.999502
+2024-07-27 08:49:22,000 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:49:22,001 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:49:22,001 - INFO - Scheduler started
+2024-07-27 08:49:22,002 - INFO - Current time of the scheduler: 2024-07-27 08:49:22.002418
+2024-07-27 08:49:22,002 - INFO - Ending scheduler
+2024-07-27 08:49:22,030 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:51:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:51:00 BST)" (scheduled at 2024-07-27 08:51:00+01:00)
+2024-07-27 08:51:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:56:00 BST)" (scheduled at 2024-07-27 08:51:00+01:00)
+2024-07-27 08:51:00,015 - INFO - Inside the procedure sequence
+2024-07-27 08:51:00,015 - INFO - Inside the procedure sequence
+2024-07-27 08:51:00,244 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:51:00,245 - INFO - The input start time: 2024-07-27 07:00:00
+2024-07-27 08:51:18,150 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:56:00 BST)" executed successfully
+2024-07-27 08:51:18,157 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 08:56:00 BST)" executed successfully
+2024-07-27 08:53:45,393 - INFO - Starting scheduler
+2024-07-27 08:53:45,394 - INFO - Updater date and time: 2024-07-27 08:53:45.394181
+2024-07-27 08:53:45,395 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:53:45,396 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:53:45,396 - INFO - Scheduler started
+2024-07-27 08:53:45,396 - INFO - Current time of the scheduler: 2024-07-27 08:53:45.396128
+2024-07-27 08:53:45,396 - INFO - Ending scheduler
+2024-07-27 08:53:47,964 - INFO - Starting scheduler
+2024-07-27 08:53:47,965 - INFO - Updater date and time: 2024-07-27 08:53:47.965550
+2024-07-27 08:53:47,966 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:53:47,967 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:53:47,967 - INFO - Scheduler started
+2024-07-27 08:53:47,967 - INFO - Current time of the scheduler: 2024-07-27 08:53:47.967550
+2024-07-27 08:53:47,967 - INFO - Ending scheduler
+2024-07-27 08:53:47,993 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:53:57,302 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-27 08:54:10,682 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 08:54:28,659 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 08:54:31,135 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 08:54:54,683 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 08:57:09,067 - INFO - Starting scheduler
+2024-07-27 08:57:09,068 - INFO - Updater date and time: 2024-07-27 08:57:09.068361
+2024-07-27 08:57:09,070 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:57:09,070 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:57:09,070 - INFO - Scheduler started
+2024-07-27 08:57:09,071 - INFO - Current time of the scheduler: 2024-07-27 08:57:09.071422
+2024-07-27 08:57:09,071 - INFO - Ending scheduler
+2024-07-27 08:57:11,701 - INFO - Starting scheduler
+2024-07-27 08:57:11,701 - INFO - Updater date and time: 2024-07-27 08:57:11.701938
+2024-07-27 08:57:11,702 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 08:57:11,702 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 08:57:11,702 - INFO - Scheduler started
+2024-07-27 08:57:11,704 - INFO - Current time of the scheduler: 2024-07-27 08:57:11.704146
+2024-07-27 08:57:11,704 - INFO - Ending scheduler
+2024-07-27 08:57:11,729 - INFO - Watching for file changes with StatReloader
+2024-07-27 08:57:17,385 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 08:59:59,374 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 09:00:02,835 - INFO - Starting scheduler
+2024-07-27 09:00:02,836 - INFO - Updater date and time: 2024-07-27 09:00:02.836933
+2024-07-27 09:00:02,838 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:00:02,838 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:00:02,838 - INFO - Scheduler started
+2024-07-27 09:00:02,838 - INFO - Current time of the scheduler: 2024-07-27 09:00:02.838097
+2024-07-27 09:00:02,839 - INFO - Ending scheduler
+2024-07-27 09:00:02,859 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:00:08,288 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:00:47,281 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:00:49,844 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:01:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:01:00 BST)" (scheduled at 2024-07-27 09:01:00+01:00)
+2024-07-27 09:01:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:01:00 BST)" (scheduled at 2024-07-27 09:01:00+01:00)
+2024-07-27 09:01:00,004 - INFO - Inside the procedure sequence
+2024-07-27 09:01:00,004 - INFO - Inside the procedure sequence
+2024-07-27 09:01:00,177 - INFO - The input start time: 2024-07-27 08:00:00
+2024-07-27 09:01:00,177 - INFO - The input start time: 2024-07-27 08:00:00
+2024-07-27 09:01:01,024 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 09:01:04,882 - WARNING - Not Found: /ml_models/
+2024-07-27 09:01:14,520 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:01:18,008 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:06:00 BST)" executed successfully
+2024-07-27 09:05:30,564 - INFO - Starting scheduler
+2024-07-27 09:05:30,565 - INFO - Updater date and time: 2024-07-27 09:05:30.565019
+2024-07-27 09:05:30,565 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:05:30,565 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:05:30,566 - INFO - Scheduler started
+2024-07-27 09:05:30,567 - INFO - Current time of the scheduler: 2024-07-27 09:05:30.567183
+2024-07-27 09:05:30,567 - INFO - Ending scheduler
+2024-07-27 09:05:33,420 - INFO - Starting scheduler
+2024-07-27 09:05:33,421 - INFO - Updater date and time: 2024-07-27 09:05:33.421198
+2024-07-27 09:05:33,421 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:05:33,422 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:05:33,422 - INFO - Scheduler started
+2024-07-27 09:05:33,422 - INFO - Current time of the scheduler: 2024-07-27 09:05:33.422704
+2024-07-27 09:05:33,422 - INFO - Ending scheduler
+2024-07-27 09:05:33,456 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:05:39,549 - WARNING - Not Found: /images/favicon.ico
+2024-07-27 09:05:41,912 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:05:42,032 - WARNING - Not Found: /favicon.ico
+2024-07-27 09:06:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:06:00 BST)" (scheduled at 2024-07-27 09:06:00+01:00)
+2024-07-27 09:06:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:06:00 BST)" (scheduled at 2024-07-27 09:06:00+01:00)
+2024-07-27 09:06:00,010 - INFO - Inside the procedure sequence
+2024-07-27 09:06:00,010 - INFO - Inside the procedure sequence
+2024-07-27 09:06:00,166 - INFO - The input start time: 2024-07-27 08:00:00
+2024-07-27 09:06:00,166 - INFO - The input start time: 2024-07-27 08:00:00
+2024-07-27 09:06:00,826 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 09:06:00,826 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-27 09:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 72, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-07-27 09:07:23,347 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 09:07:26,774 - INFO - Starting scheduler
+2024-07-27 09:07:26,774 - INFO - Updater date and time: 2024-07-27 09:07:26.774265
+2024-07-27 09:07:26,775 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:07:26,776 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:07:26,776 - INFO - Scheduler started
+2024-07-27 09:07:26,776 - INFO - Current time of the scheduler: 2024-07-27 09:07:26.776301
+2024-07-27 09:07:26,776 - INFO - Ending scheduler
+2024-07-27 09:07:26,804 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:07:27,165 - ERROR - Internal Server Error: /ml_models/model-accuracy/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 736, in display_model_accuracy
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
+                                                                                                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not associated with a value
+2024-07-27 09:08:15,740 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-07-27 09:08:19,048 - INFO - Starting scheduler
+2024-07-27 09:08:19,048 - INFO - Updater date and time: 2024-07-27 09:08:19.048979
+2024-07-27 09:08:19,050 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:08:19,050 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:08:19,050 - INFO - Scheduler started
+2024-07-27 09:08:19,051 - INFO - Current time of the scheduler: 2024-07-27 09:08:19.051428
+2024-07-27 09:08:19,051 - INFO - Ending scheduler
+2024-07-27 09:08:19,083 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:08:21,639 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
+2024-07-27 09:08:55,219 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-07-27 09:08:58,813 - INFO - Starting scheduler
+2024-07-27 09:08:58,814 - INFO - Updater date and time: 2024-07-27 09:08:58.814915
+2024-07-27 09:08:58,816 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:08:58,816 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:08:58,816 - INFO - Scheduler started
+2024-07-27 09:08:58,817 - INFO - Current time of the scheduler: 2024-07-27 09:08:58.817942
+2024-07-27 09:08:58,817 - INFO - Ending scheduler
+2024-07-27 09:08:58,846 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:09:11,092 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-27 09:09:11,986 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-07-27 09:09:28,749 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-27 09:09:32,091 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-27 09:09:52,738 - WARNING - Not Found: /ml_models/ml-predictions/images/favicon.ico
+2024-07-27 09:13:04,476 - INFO - Starting scheduler
+2024-07-27 09:13:04,477 - INFO - Updater date and time: 2024-07-27 09:13:04.477838
+2024-07-27 09:13:04,478 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:13:04,478 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:13:04,478 - INFO - Scheduler started
+2024-07-27 09:13:04,479 - INFO - Current time of the scheduler: 2024-07-27 09:13:04.479840
+2024-07-27 09:13:04,479 - INFO - Ending scheduler
+2024-07-27 09:13:07,228 - INFO - Starting scheduler
+2024-07-27 09:13:07,228 - INFO - Updater date and time: 2024-07-27 09:13:07.228762
+2024-07-27 09:13:07,229 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-27 09:13:07,229 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-27 09:13:07,229 - INFO - Scheduler started
+2024-07-27 09:13:07,230 - INFO - Current time of the scheduler: 2024-07-27 09:13:07.230902
+2024-07-27 09:13:07,231 - INFO - Ending scheduler
+2024-07-27 09:13:07,267 - INFO - Watching for file changes with StatReloader
+2024-07-27 09:14:19,592 - WARNING - Not Found: /profile/images/favicon.ico

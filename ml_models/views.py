@@ -703,7 +703,7 @@ def export_model_results(request):
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
             ticker = form.cleaned_data['ticker']
-            model_results, _, _ = trade_forecast_assessment(ticker, model_version)
+            model_results, _, _, _ = trade_forecast_assessment(ticker, model_version)
 
             response = HttpResponse(content_type='text/csv')
             response['Content-Disposition'] = f'attachment; filename="model_results_{model_version}.csv"'
@@ -719,6 +719,7 @@ def display_model_accuracy(request):
     
     profit_accuracy = None
     trade_accuracy = None
+    buy_sell_split = {}
     
     if request.method == 'POST':
         form = VersionSelection(request.POST)
@@ -726,14 +727,14 @@ def display_model_accuracy(request):
         if form.is_valid():
             model_version = form.cleaned_data['model_version']
             ticker = form.cleaned_data['ticker']
-            model_results, profit_accuracy, trade_accuracy= trade_forecast_assessment(ticker, model_version)
+            model_results, profit_accuracy, trade_accuracy, buy_sell_split = trade_forecast_assessment(ticker, model_version)
             profit_accuracy = profit_accuracy * 100
             trade_accuracy = trade_accuracy * 100
 
     else:
         form = VersionSelection()
         
-    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy}
+    context = {'form': form, "profit_accuracy": profit_accuracy, "trade_accuracy": trade_accuracy, "buy_sell_split": buy_sell_split}
 
     return render(request, 'ml_models/model_accuracy.html', context )
 

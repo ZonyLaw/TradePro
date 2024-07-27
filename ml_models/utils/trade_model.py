@@ -336,8 +336,54 @@ def trade_forecast_assessment(ticker, model_version):
     model_prediction_binary = np.where(model_prediction > 2, 0, 1)
     trade_accuracy = calculate_accuracy(model_prediction_binary, y_actual_binary)
 
-    
-    return model_results, profit_accuracy, trade_accuracy
+    buy_sell_split = calc_matches(y_actual_binary.flatten(), model_prediction_binary)
+ 
+    return model_results, profit_accuracy, trade_accuracy, buy_sell_split
+
+
+def calc_matches(actual_array, model_array):
+    """
+    Takes in two arrays containing the actual and model results. These are compared to calculate
+    the percentages of matches and mismatches. This information is intended to give an indication
+    of the sentiment.
+
+    Parameters:
+    actual_array (array): Actual results (binary values).
+    model_array (array): Model predictions (binary values).
+
+    Returns:
+    dict: A dictionary containing the percentage of sell matches, buy matches, and unmatched.
+    """
+
+    # Check if the lengths of the arrays match
+    if len(actual_array) != len(model_array):
+        raise ValueError("The lengths of actual_array and model_array must be the same.")
+
+    # Create a DataFrame from the arrays
+    df = pd.DataFrame({
+        'actual': actual_array,
+        'model_pred': model_array
+    })
+
+    # Compare the two columns to find matches
+    sell_matches = (df['actual'] == df['model_pred']) & (df['model_pred'] == 0)
+    buy_matches = (df['actual'] == df['model_pred']) & (df['model_pred'] == 1)
+
+    # Count matches and calculate percentages
+    total_elements = len(df)
+    total_sell_matches = sell_matches.sum()
+    total_buy_matches = buy_matches.sum()
+
+    per_sell_matches = (total_sell_matches / total_elements) * 100 if total_elements > 0 else 0
+    per_buy_matches = (total_buy_matches / total_elements) * 100 if total_elements > 0 else 0
+    unmatched = 100 - per_sell_matches - per_buy_matches
+
+    # Return the results in a dictionary
+    return {
+        "sell_matches": per_sell_matches,
+        "buy_matches": per_buy_matches,
+        "unmatched": unmatched
+    }
 
 
 def calculate_accuracy(predictions, y_actual):

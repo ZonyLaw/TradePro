@@ -50,9 +50,12 @@
     </div>
 
     <a href = "{% url 'ml-news-model' %}" >News Tool</a>
+
+    <p> The model is best used at the beginning of the hour; although currecy movement is often volatile, you may be able to enter the recommened entry point during the hour.</p>
+    <p> This tool is to help confirm some of your observation and indicate when to focus on a trade.</p>
       
     <h2>Extra Market Information</h2>
-        <p> Last Date price was extracted: <b class="flashing-text-red">{{date}}</b> </p>
+        <p> Last Date model was updated: <b class="flashing-text-red">{{date}}</b> </p>
         <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
         <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
         <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
@@ -182,7 +185,7 @@
             <li>2. Negative PL means the model may be invalidated, indicating potential contrarian trade.</li>
             <li>3. Mixed PL means oscillation is occurring so consider the extreme points of the Bollinger Bands.</li>
             <li>4. Positive PL means movement is getting strong but watch for any resistance; this include MA and bollinger band.</li>
-        <ul>
+        </ul>
 
 
     <h2>Sensitivity Test</h2>
@@ -192,6 +195,7 @@
             <li>What happens if price move 10 pips down?</li>
             <li>Does the prediction become stronger or weaker?</li>
         </ul>
+
         <table>
             <thead>
                 <tr>
