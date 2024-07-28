@@ -1,0 +1,378 @@
+date,time,currency,impact,event,actual,forecast,previous,outcome
+2023-01-01,All Day,NZD,gray,Bank Holiday,,,,
+2023-01-01,All Day,AUD,gray,Bank Holiday,,,,
+2023-01-02,All Day,JPY,gray,Bank Holiday,,,,
+2023-01-02,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-02,All Day,CHF,gray,Bank Holiday,,,,
+2023-01-02,All Day,GBP,gray,Bank Holiday,,,,
+2023-01-02,8:15am,EUR,yellow,Spanish Manufacturing PMI,46.4,45.9,45.7,better
+2023-01-02,8:45am,EUR,yellow,Italian Manufacturing PMI,48.5,48.5,48.4,
+2023-01-02,8:50am,EUR,yellow,French Final Manufacturing PMI,49.2,48.9,48.9,
+2023-01-02,8:55am,EUR,yellow,German Final Manufacturing PMI,47.1,47.4,47.4,
+2023-01-02,9:00am,EUR,yellow,Final Manufacturing PMI,47.8,47.8,47.8,
+2023-01-02,All Day,CAD,gray,Bank Holiday,,,,
+2023-01-02,All Day,USD,gray,Bank Holiday,,,,
+2023-01-02,All Day,NZD,gray,Bank Holiday,,,,
+2023-01-03,All Day,JPY,gray,Bank Holiday,,,,
+2023-01-03,1:45am,CNY,yellow,Caixin Manufacturing PMI,49.0,49.2,49.4,
+2023-01-03,5:30am,AUD,yellow,Commodity Prices y/y,15.6,,19.6,
+2023-01-03,All Day,EUR,yellow,German Prelim CPI m/m,-0.8,-0.6,-0.5,worse
+2023-01-03,8:00am,EUR,yellow,Spanish Unemployment Change,-43.7,-40.3,-33.5,
+2023-01-03,8:30am,CHF,yellow,Manufacturing PMI,54.1,53.0,53.9,better
+2023-01-03,8:55am,EUR,yellow,German Unemployment Change,-13,15,15,better
+2023-01-03,9:30am,GBP,yellow,Final Manufacturing PMI,45.3,44.7,44.7,better
+2023-01-03,2:30pm,CAD,yellow,Manufacturing PMI,49.2,,49.6,
+2023-01-03,2:39pm,NZD,yellow,GDT Price Index,-2.8,,-3.8,
+2023-01-03,2:45pm,USD,yellow,Final Manufacturing PMI,46.2,46.2,46.2,
+2023-01-03,3:00pm,USD,yellow,Construction Spending m/m,0.2,-0.4,-0.2,better
+2023-01-04,12:01am,GBP,yellow,BRC Shop Price Index y/y,7.3,,7.4,
+2023-01-04,12:30am,JPY,yellow,Final Manufacturing PMI,48.9,48.8,48.8,
+2023-01-04,7:00am,EUR,yellow,German Import Prices m/m,-4.5,-1.7,-1.2,worse
+2023-01-04,7:30am,CHF,red,CPI m/m,-0.2,-0.1,0.0,worse
+2023-01-04,7:45am,EUR,yellow,French Prelim CPI m/m,-0.1,0.5,0.3,worse
+2023-01-04,8:15am,EUR,yellow,Spanish Services PMI,51.6,50.8,51.2,better
+2023-01-04,8:45am,EUR,yellow,Italian Services PMI,49.9,49.5,49.5,better
+2023-01-04,8:50am,EUR,yellow,French Final Services PMI,49.5,48.1,48.1,better
+2023-01-04,8:55am,EUR,yellow,German Final Services PMI,49.2,49.0,49.0,
+2023-01-04,9:00am,EUR,yellow,Final Services PMI,49.8,49.1,49.1,better
+2023-01-04,9:30am,GBP,yellow,M4 Money Supply m/m,-1.6,0.2,0.1,worse
+2023-01-04,9:30am,GBP,yellow,Mortgage Approvals,46,54,58,worse
+2023-01-04,9:30am,GBP,yellow,Net Lending to Individuals m/m,5.9,4.5,4.3,better
+2023-01-04,3:00pm,USD,red,ISM Manufacturing PMI,48.4,48.5,49.0,
+2023-01-04,3:00pm,USD,red,JOLTS Job Openings,10.46,10.04,10.51,better
+2023-01-04,3:00pm,USD,yellow,ISM Manufacturing Prices,39.4,42.9,43.0,worse
+2023-01-04,All Day,USD,yellow,Wards Total Vehicle Sales,13.3,13.4,14.1,
+2023-01-04,7:00pm,USD,red,FOMC Meeting Minutes,,,,
+2023-01-04,11:50pm,JPY,yellow,Monetary Base y/y,-6.1,-6.1,-6.4,
+2023-01-05,1:45am,CNY,yellow,Caixin Services PMI,48.0,46.8,46.7,better
+2023-01-05,3:35am,JPY,yellow,10-y Bond Auction,0.50,,0.25,
+2023-01-05,5:00am,JPY,yellow,Consumer Confidence,30.3,28.2,28.6,better
+2023-01-05,7:00am,EUR,yellow,German Trade Balance,10.8,7.5,6.8,better
+2023-01-05,9:30am,GBP,yellow,Final Services PMI,49.9,50.0,50.0,
+2023-01-05,9:58am,EUR,yellow,French 10-y Bond Auction,2.77,,2.19,
+2023-01-05,10:00am,EUR,yellow,PPI m/m,-0.9,-0.8,-3.0,worse
+2023-01-05,10:00am,EUR,yellow,Italian Prelim CPI m/m,0.3,0.2,0.5,better
+2023-01-05,12:30pm,USD,yellow,Challenger Job Cuts y/y,129.1,,416.5,
+2023-01-05,1:15pm,USD,red,ADP Non-Farm Employment Change,235,152,182,better
+2023-01-05,1:30pm,CAD,yellow,Trade Balance,0.0,1.3,0.1,worse
+2023-01-05,1:30pm,USD,orange,Unemployment Claims,204,230,223,better
+2023-01-05,1:30pm,USD,yellow,Trade Balance,-61.5,-64.2,-77.8,better
+2023-01-05,2:45pm,USD,yellow,Final Services PMI,44.7,44.4,44.4,
+2023-01-05,3:30pm,USD,yellow,Natural Gas Storage,-221,-230,-213,worse
+2023-01-05,4:00pm,USD,yellow,Crude Oil Inventories,1.7,1.5,0.7,
+2023-01-05,11:30pm,JPY,yellow,Average Cash Earnings y/y,0.5,1.7,1.4,worse
+2023-01-06,7:00am,EUR,yellow,German Factory Orders m/m,-5.3,-0.5,0.6,worse
+2023-01-06,7:00am,EUR,yellow,German Retail Sales m/m,1.1,1.5,-2.8,worse
+2023-01-06,7:00am,GBP,yellow,Halifax HPI m/m,-1.5,-0.6,-2.4,worse
+2023-01-06,All Day,EUR,gray,Italian Bank Holiday,,,,
+2023-01-06,7:36am,CHF,yellow,Retail Sales y/y,-1.3,-1.0,-2.6,worse
+2023-01-06,7:45am,EUR,yellow,French Consumer Spending m/m,0.5,1.0,-2.7,worse
+2023-01-06,9:30am,GBP,yellow,Construction PMI,48.8,50.6,50.4,worse
+2023-01-06,10:00am,EUR,orange,Core CPI Flash Estimate y/y,5.2,5.1,5.0,better
+2023-01-06,10:00am,EUR,orange,CPI Flash Estimate y/y,9.2,9.6,10.1,worse
+2023-01-06,10:00am,EUR,yellow,Retail Sales m/m,0.8,0.5,-1.5,better
+2023-01-06,1:30pm,CAD,red,Employment Change,104.0,5.5,10.1,better
+2023-01-06,1:30pm,CAD,red,Unemployment Rate,5.0,5.2,5.1,better
+2023-01-06,1:30pm,USD,red,Average Hourly Earnings m/m,0.3,0.4,0.4,worse
+2023-01-06,1:30pm,USD,red,Non-Farm Employment Change,223,200,256,better
+2023-01-06,1:30pm,USD,red,Unemployment Rate,3.5,3.7,3.7,better
+2023-01-06,3:00pm,CAD,orange,Ivey PMI,33.4,51.0,51.4,worse
+2023-01-06,3:00pm,USD,red,ISM Services PMI,49.6,55.0,56.5,worse
+2023-01-06,3:00pm,USD,yellow,Factory Orders m/m,-1.8,-0.9,0.4,worse
+2023-01-06,4:15pm,USD,yellow,FOMC Member Cook Speaks,,,,
+2023-01-07,4:15pm,GBP,yellow,MPC Member Mann Speaks,,,,
+2023-01-08,1:00pm,GBP,yellow,MPC Member Pill Speaks,,,,
+2023-01-09,All Day,JPY,gray,Bank Holiday,,,,
+2023-01-09,12:30am,AUD,yellow,Building Approvals m/m,-9.0,0.1,-5.6,worse
+2023-01-09,6:45am,CHF,yellow,Unemployment Rate,1.9,2.1,2.0,better
+2023-01-09,7:00am,EUR,yellow,German Industrial Production m/m,0.2,0.2,-0.4,
+2023-01-09,7:45am,EUR,yellow,French Trade Balance,-13.8,-11.3,-11.6,worse
+2023-01-09,8:00am,CHF,yellow,Foreign Currency Reserves,784,,790,
+2023-01-09,9:00am,EUR,yellow,Italian Monthly Unemployment Rate,7.8,7.8,7.9,
+2023-01-09,9:30am,EUR,yellow,Sentix Investor Confidence,-17.5,-18.1,-21.0,better
+2023-01-09,10:00am,EUR,yellow,Unemployment Rate,6.5,6.5,6.5,
+2023-01-09,1:30pm,CAD,yellow,Building Permits m/m,14.1,0.4,-5.3,better
+2023-01-09,3:30pm,GBP,yellow,MPC Member Pill Speaks,,,,
+2023-01-09,8:00pm,USD,yellow,Consumer Credit m/m,28.0,25.0,29.1,better
+2023-01-09,11:30pm,JPY,yellow,Household Spending y/y,-1.2,0.6,1.2,worse
+2023-01-09,11:30pm,JPY,yellow,Tokyo Core CPI y/y,4.0,3.8,3.6,better
+2023-01-10,12:01am,GBP,yellow,BRC Retail Sales Monitor y/y,6.5,2.4,4.1,better
+2023-01-10,7:45am,EUR,yellow,French Industrial Production m/m,2.0,0.9,-2.5,better
+2023-01-10,9:05am,CNY,yellow,M2 Money Supply y/y,11.8,12.4,12.4,worse
+2023-01-10,9:05am,CNY,yellow,New Loans,1400,1150,1210,better
+2023-01-10,10:02am,GBP,yellow,10-y Bond Auction,3.70,,3.33,
+2023-01-10,10:10am,CAD,red,BOC Gov Macklem Speaks,,,,
+2023-01-10,10:10am,JPY,orange,BOJ Gov Kuroda Speaks,,,,
+2023-01-10,10:59am,USD,yellow,NFIB Small Business Index,89.8,91.6,91.9,worse
+2023-01-10,2:00pm,USD,red,Fed Chair Powell Speaks,,,,
+2023-01-10,3:00pm,USD,yellow,Final Wholesale Inventories m/m,1.0,1.0,1.0,
+2023-01-10,3:00pm,USD,yellow,RCM/TIPP Economic Optimism,42.3,41.7,42.9,better
+2023-01-11,12:00am,NZD,yellow,ANZ Commodity Prices m/m,-0.1,,-4.0,
+2023-01-11,12:30am,AUD,red,CPI y/y,7.3,7.2,6.9,better
+2023-01-11,12:30am,AUD,yellow,Retail Sales m/m,1.4,0.6,0.3,better
+2023-01-11,3:35am,JPY,yellow,30-y Bond Auction,1.65,,1.48,
+2023-01-11,5:00am,JPY,yellow,Leading Indicators,97.6,97.5,98.6,
+2023-01-11,8:57am,EUR,yellow,Italian Retail Sales m/m,0.8,-0.3,-0.3,better
+2023-01-11,10:33am,EUR,yellow,German 10-y Bond Auction,2.25,,1.95,
+2023-01-11,3:30pm,USD,yellow,Crude Oil Inventories,19.0,-2.0,1.7,worse
+2023-01-11,6:01pm,USD,orange,10-y Bond Auction,3.58,,3.63,
+2023-01-11,9:45pm,NZD,yellow,Building Consents m/m,7.0,,-10.7,
+2023-01-11,11:50pm,JPY,yellow,Bank Lending y/y,2.7,2.8,2.7,worse
+2023-01-11,11:50pm,JPY,yellow,Current Account,1.92,0.65,-0.61,better
+2023-01-12,12:30am,AUD,yellow,Goods Trade Balance,13.20,11.35,12.74,better
+2023-01-12,1:30am,CNY,yellow,CPI y/y,1.8,1.8,1.6,
+2023-01-12,1:30am,CNY,yellow,PPI y/y,-0.7,-0.1,-1.3,worse
+2023-01-12,5:00am,JPY,yellow,Economy Watchers Sentiment,47.9,47.8,48.1,
+2023-01-12,9:00am,EUR,yellow,ECB Economic Bulletin,,,,
+2023-01-12,12:30pm,USD,yellow,FOMC Member Harker Speaks,,,,
+2023-01-12,1:30pm,USD,red,Core CPI m/m,0.3,0.3,0.2,
+2023-01-12,1:30pm,USD,red,CPI m/m,-0.1,-0.1,0.1,
+2023-01-12,1:30pm,USD,red,CPI y/y,6.5,6.5,7.1,
+2023-01-12,1:30pm,USD,orange,Unemployment Claims,205,216,206,better
+2023-01-12,3:30pm,USD,yellow,Natural Gas Storage,11,-15,-221,worse
+2023-01-12,5:00pm,GBP,yellow,MPC Member Mann Speaks,,,,
+2023-01-12,6:01pm,USD,yellow,30-y Bond Auction,3.59,,3.51,
+2023-01-12,7:00pm,USD,yellow,Federal Budget Balance,-85.0,-59.5,-248.5,worse
+2023-01-12,11:50pm,JPY,yellow,M2 Money Stock y/y,2.9,3.2,3.1,worse
+2023-01-13,3:18am,CNY,yellow,USD-Denominated Trade Balance,78.0,77.9,69.8,
+2023-01-13,3:22am,CNY,yellow,Trade Balance,550,533,494,better
+2023-01-13,7:00am,GBP,red,GDP m/m,0.1,-0.2,0.5,better
+2023-01-13,7:00am,GBP,yellow,Construction Output m/m,0.0,-0.3,0.4,better
+2023-01-13,7:00am,GBP,yellow,Goods Trade Balance,-15.6,-14.9,-12.3,worse
+2023-01-13,7:00am,GBP,yellow,Index of Services 3m/3m,-0.1,-0.3,-0.1,better
+2023-01-13,7:00am,GBP,yellow,Industrial Production m/m,-0.2,-0.2,-0.1,
+2023-01-13,7:00am,GBP,yellow,Manufacturing Production m/m,-0.5,-0.2,0.7,worse
+2023-01-13,7:45am,EUR,yellow,French Final CPI m/m,-0.1,-0.1,-0.1,
+2023-01-13,9:00am,EUR,yellow,Italian Industrial Production m/m,-0.3,0.4,-1.1,worse
+2023-01-13,10:00am,EUR,yellow,Industrial Production m/m,1.0,0.6,-1.9,better
+2023-01-13,10:00am,EUR,yellow,Trade Balance,-15.2,-21.1,-28.1,better
+2023-01-13,12:01pm,GBP,yellow,NIESR GDP Estimate,0.1,,-0.3,
+2023-01-13,1:30pm,USD,yellow,Import Prices m/m,0.4,-0.9,-0.7,better
+2023-01-13,3:00pm,USD,red,Prelim UoM Consumer Sentiment,64.6,60.8,59.7,better
+2023-01-13,3:00pm,USD,orange,Prelim UoM Inflation Expectations,4.0,,4.4,
+2023-01-15,11:50pm,JPY,yellow,PPI y/y,10.2,9.5,9.7,better
+2023-01-16,12:01am,GBP,yellow,Rightmove HPI m/m,0.9,,-2.1,
+2023-01-16,12:02am,AUD,yellow,MI Inflation Gauge m/m,0.2,,1.0,
+2023-01-16,1:30am,CNY,yellow,New Home Prices m/m,-0.25,,-0.25,
+2023-01-16,6:00am,JPY,yellow,Prelim Machine Tool Orders y/y,1.0,,-7.7,
+2023-01-16,7:00am,EUR,yellow,German WPI m/m,-1.6,-0.3,-0.9,worse
+2023-01-16,Day 1,All,orange,WEF Annual Meetings,,,,
+2023-01-16,10:05am,EUR,yellow,French Gov Budget Balance,-159.3,,-143.2,
+2023-01-16,All Day,EUR,yellow,Eurogroup Meetings,,,,
+2023-01-16,All Day,USD,gray,Bank Holiday,,,,
+2023-01-16,1:30pm,CAD,yellow,Manufacturing Sales m/m,0.0,0.4,2.4,worse
+2023-01-16,3:00pm,GBP,red,BOE Gov Bailey Speaks,,,,
+2023-01-16,3:30pm,CAD,orange,BOC Business Outlook Survey,,,,
+2023-01-16,9:00pm,NZD,yellow,NZIER Business Confidence,-70,,-42,
+2023-01-16,11:20pm,AUD,yellow,Westpac Consumer Sentiment,5.0,,3.0,
+2023-01-17,2:00am,CNY,red,GDP q/y,2.9,1.6,3.9,better
+2023-01-17,2:00am,CNY,yellow,Fixed Asset Investment ytd/y,5.1,5.0,5.3,
+2023-01-17,2:00am,CNY,yellow,Industrial Production y/y,1.3,0.2,2.2,better
+2023-01-17,2:00am,CNY,yellow,NBS Press Conference,,,,
+2023-01-17,2:00am,CNY,yellow,Retail Sales y/y,-1.8,-9.5,-5.9,better
+2023-01-17,2:00am,CNY,yellow,Unemployment Rate,5.5,5.8,5.7,better
+2023-01-17,4:30am,JPY,yellow,Tertiary Industry Activity m/m,-0.2,0.2,0.5,worse
+2023-01-17,7:00am,EUR,yellow,German Final CPI m/m,-0.8,-0.8,-0.8,
+2023-01-17,7:00am,GBP,red,Claimant Count Change,19.7,19.8,16.1,
+2023-01-17,7:00am,GBP,orange,Average Earnings Index 3m/y,6.4,6.2,6.2,better
+2023-01-17,7:00am,GBP,yellow,Unemployment Rate,3.7,3.7,3.7,
+2023-01-17,Day 2,All,orange,WEF Annual Meetings,,,,
+2023-01-17,10:00am,EUR,orange,German ZEW Economic Sentiment,16.9,-15.0,-23.3,better
+2023-01-17,10:00am,EUR,yellow,ZEW Economic Sentiment,16.7,-14.3,-23.6,better
+2023-01-17,All Day,EUR,yellow,ECOFIN Meetings,,,,
+2023-01-17,1:13pm,CAD,yellow,Housing Starts,249,257,263,worse
+2023-01-17,1:30pm,CAD,red,CPI m/m,-0.6,-0.6,0.1,
+2023-01-17,1:30pm,CAD,red,Median CPI y/y,5.0,4.9,5.1,better
+2023-01-17,1:30pm,CAD,red,Trimmed CPI y/y,5.3,5.2,5.4,better
+2023-01-17,1:30pm,CAD,yellow,Foreign Securities Purchases,12.76,2.73,9.09,better
+2023-01-17,1:30pm,USD,red,Empire State Manufacturing Index,-32.9,-8.7,-11.2,worse
+2023-01-17,1:32pm,CAD,orange,Common CPI y/y,6.6,6.6,6.8,
+2023-01-17,1:32pm,CAD,yellow,Core CPI m/m,-0.3,,0.0,
+2023-01-17,2:39pm,NZD,yellow,GDT Price Index,-0.1,,-2.8,
+2023-01-17,8:00pm,USD,yellow,FOMC Member Williams Speaks,,,,
+2023-01-17,11:50pm,JPY,yellow,Core Machinery Orders m/m,-8.3,-1.3,5.4,worse
+2023-01-18,2:04am,CNY,yellow,Foreign Direct Investment ytd/y,6.3,,9.9,
+2023-01-18,2:40am,JPY,red,BOJ Outlook Report,,,,
+2023-01-18,2:40am,JPY,red,Monetary Policy Statement,,,,
+2023-01-18,2:40am,JPY,yellow,BOJ Policy Rate,-0.10,-0.10,-0.10,
+2023-01-18,4:30am,JPY,yellow,Revised Industrial Production m/m,0.2,-0.1,-0.1,better
+2023-01-18,6:30am,JPY,red,BOJ Press Conference,,,,
+2023-01-18,7:00am,GBP,red,CPI y/y,10.5,10.5,10.7,
+2023-01-18,7:00am,GBP,yellow,Core CPI y/y,6.3,6.2,6.3,better
+2023-01-18,7:00am,GBP,yellow,RPI y/y,13.4,13.6,14.0,worse
+2023-01-18,9:00am,EUR,yellow,Italian Trade Balance,1.45,-1.80,-2.06,better
+2023-01-18,Day 3,All,orange,WEF Annual Meetings,,,,
+2023-01-18,9:30am,GBP,yellow,Housing Equity Withdrawal q/q,-5.8,-7.9,-6.1,better
+2023-01-18,9:30am,GBP,yellow,HPI y/y,10.3,10.4,12.4,
+2023-01-18,10:00am,EUR,yellow,Final Core CPI y/y,5.2,5.2,5.2,
+2023-01-18,10:00am,EUR,yellow,Final CPI y/y,9.2,9.2,9.2,
+2023-01-18,10:39am,EUR,yellow,German 30-y Bond Auction,2.05,,1.94,
+2023-01-18,1:30pm,CAD,yellow,IPPI m/m,-1.1,0.7,-0.4,worse
+2023-01-18,1:30pm,CAD,yellow,RMPI m/m,-3.1,-0.9,-0.8,worse
+2023-01-18,1:30pm,USD,red,Core PPI m/m,0.1,0.1,0.2,
+2023-01-18,1:30pm,USD,red,Core Retail Sales m/m,-1.1,-0.5,-0.6,worse
+2023-01-18,1:30pm,USD,red,PPI m/m,-0.5,-0.1,0.2,worse
+2023-01-18,1:30pm,USD,red,Retail Sales m/m,-1.1,-0.8,-1.0,worse
+2023-01-18,2:15pm,USD,yellow,Capacity Utilization Rate,78.8,79.6,79.4,worse
+2023-01-18,2:15pm,USD,yellow,Industrial Production m/m,-0.7,-0.1,-0.6,worse
+2023-01-18,2:30pm,GBP,yellow,CB Leading Index m/m,-0.6,,-0.9,
+2023-01-18,3:00pm,USD,yellow,Business Inventories m/m,0.4,0.4,0.2,
+2023-01-18,3:00pm,USD,yellow,NAHB Housing Market Index,35,31,31,better
+2023-01-18,7:00pm,USD,yellow,Beige Book,,,,
+2023-01-18,8:15pm,USD,yellow,FOMC Member Harker Speaks,,,,
+2023-01-18,9:00pm,USD,yellow,TIC Long-Term Purchases,171.5,127.9,67.8,better
+2023-01-18,9:45pm,NZD,yellow,FPI m/m,1.1,,0.0,
+2023-01-18,10:00pm,USD,yellow,FOMC Member Logan Speaks,,,,
+2023-01-18,11:50pm,JPY,yellow,Trade Balance,-1.72,-1.60,-1.78,worse
+2023-01-19,12:00am,AUD,yellow,MI Inflation Expectations,5.6,,5.2,
+2023-01-19,12:01am,GBP,yellow,RICS House Price Balance,-42,-30,-26,worse
+2023-01-19,12:30am,AUD,orange,Employment Change,-14.6,26.5,58.3,worse
+2023-01-19,12:30am,AUD,orange,Unemployment Rate,3.5,3.4,3.5,worse
+2023-01-19,7:30am,CHF,yellow,PPI m/m,-0.7,-0.4,-0.5,worse
+2023-01-19,9:00am,EUR,yellow,Current Account,13.6,-11.6,-0.5,better
+2023-01-19,Day 4,All,orange,WEF Annual Meetings,,,,
+2023-01-19,9:30am,GBP,yellow,BOE Credit Conditions Survey,,,,
+2023-01-19,10:30am,EUR,orange,ECB President Lagarde Speaks,,,,
+2023-01-19,12:30pm,EUR,yellow,ECB Monetary Policy Meeting Accounts,,,,
+2023-01-19,1:30pm,CAD,yellow,Wholesale Sales m/m,0.5,2.0,1.9,worse
+2023-01-19,1:30pm,USD,orange,Philly Fed Manufacturing Index,-8.9,-10.9,-13.8,better
+2023-01-19,1:30pm,USD,orange,Unemployment Claims,190,214,205,better
+2023-01-19,1:30pm,USD,yellow,Building Permits,1.33,1.37,1.35,worse
+2023-01-19,1:30pm,USD,yellow,Housing Starts,1.38,1.36,1.40,
+2023-01-19,3:30pm,AUD,yellow,CB Leading Index m/m,0.1,,0.4,
+2023-01-19,3:30pm,USD,yellow,Natural Gas Storage,-82,-76,11,better
+2023-01-19,4:00pm,USD,yellow,Crude Oil Inventories,8.4,-2.1,19.0,worse
+2023-01-19,6:15pm,USD,orange,FOMC Member Brainard Speaks,,,,
+2023-01-19,9:30pm,NZD,yellow,BusinessNZ Manufacturing Index,47.2,,47.2,
+2023-01-19,9:45pm,NZD,yellow,Visitor Arrivals m/m,43.1,,6.8,
+2023-01-19,11:30pm,JPY,yellow,National Core CPI y/y,4.0,4.0,3.7,
+2023-01-19,11:35pm,USD,yellow,FOMC Member Williams Speaks,,,,
+2023-01-20,12:01am,GBP,yellow,GfK Consumer Confidence,-45,-41,-42,worse
+2023-01-20,1:15am,CNY,orange,1-y Loan Prime Rate,3.65,3.65,3.65,
+2023-01-20,1:15am,CNY,orange,5-y Loan Prime Rate,4.30,4.30,4.30,
+2023-01-20,7:00am,EUR,yellow,German PPI m/m,-0.4,-1.2,-3.9,better
+2023-01-20,7:00am,GBP,orange,Retail Sales m/m,-1.0,0.5,-0.5,worse
+2023-01-20,8:00am,CHF,orange,SNB Chairman Jordan Speaks,,,,
+2023-01-20,Day 5,All,orange,WEF Annual Meetings,,,,
+2023-01-20,10:00am,EUR,orange,ECB President Lagarde Speaks,,,,
+2023-01-20,1:30pm,CAD,orange,Core Retail Sales m/m,-0.6,-0.6,1.6,
+2023-01-20,1:30pm,CAD,orange,Retail Sales m/m,-0.1,-0.5,1.3,better
+2023-01-20,2:00pm,USD,yellow,FOMC Member Harker Speaks,,,,
+2023-01-20,3:00pm,USD,orange,Existing Home Sales,4.02,3.95,4.08,better
+2023-01-20,6:00pm,USD,orange,FOMC Member Waller Speaks,,,,
+2023-01-22,11:50pm,JPY,yellow,Monetary Policy Meeting Minutes,,,,
+2023-01-23,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-23,11:00am,EUR,yellow,German Buba Monthly Report,,,,
+2023-01-23,1:30pm,CAD,yellow,NHPI m/m,0.0,-0.2,-0.2,better
+2023-01-23,3:00pm,EUR,yellow,Consumer Confidence,-21,-20,-22,worse
+2023-01-23,3:00pm,USD,yellow,CB Leading Index m/m,-1.0,-0.7,-1.1,worse
+2023-01-23,6:10pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2023-01-23,9:30pm,NZD,yellow,BusinessNZ Services Index,52.1,,53.8,
+2023-01-23,10:00pm,AUD,yellow,Flash Manufacturing PMI,49.8,,50.2,
+2023-01-23,10:00pm,AUD,yellow,Flash Services PMI,48.3,,47.3,
+2023-01-24,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-24,12:30am,AUD,yellow,NAB Business Confidence,-1,,-4,
+2023-01-24,12:30am,JPY,yellow,Flash Manufacturing PMI,48.9,49.4,48.9,worse
+2023-01-24,5:00am,JPY,yellow,BOJ Core CPI y/y,3.1,2.9,2.9,better
+2023-01-24,7:00am,CHF,yellow,Trade Balance,2.83,3.23,2.40,worse
+2023-01-24,7:00am,EUR,yellow,German GfK Consumer Climate,-33.9,-33.2,-37.6,worse
+2023-01-24,7:00am,GBP,yellow,Public Sector Net Borrowing,26.6,22.3,18.8,worse
+2023-01-24,8:15am,EUR,orange,French Flash Manufacturing PMI,50.8,49.6,49.2,better
+2023-01-24,8:15am,EUR,orange,French Flash Services PMI,49.2,49.7,49.5,worse
+2023-01-24,8:30am,EUR,orange,German Flash Manufacturing PMI,47.0,48.0,47.1,worse
+2023-01-24,8:30am,EUR,orange,German Flash Services PMI,50.4,49.6,49.2,better
+2023-01-24,9:00am,EUR,yellow,Flash Manufacturing PMI,48.8,48.6,47.8,
+2023-01-24,9:00am,EUR,yellow,Flash Services PMI,50.7,50.0,49.8,better
+2023-01-24,9:30am,GBP,red,Flash Manufacturing PMI,46.7,45.4,45.3,better
+2023-01-24,9:30am,GBP,red,Flash Services PMI,48.0,49.6,49.9,worse
+2023-01-24,11:00am,GBP,yellow,CBI Industrial Order Expectations,-17,-7,-6,worse
+2023-01-24,2:45pm,USD,red,Flash Services PMI,46.6,45.3,44.7,better
+2023-01-24,2:45pm,USD,orange,Flash Manufacturing PMI,46.8,46.0,46.2,better
+2023-01-24,2:59pm,USD,orange,Richmond Manufacturing Index,-11,-5,1,worse
+2023-01-24,4:30pm,CHF,yellow,Gov Board Member Schlegel Speaks,,,,
+2023-01-24,9:45pm,NZD,red,CPI q/q,1.4,1.3,2.2,better
+2023-01-24,11:30pm,AUD,yellow,MI Leading Index m/m,-0.1,,-0.2,
+2023-01-25,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-25,12:30am,AUD,red,CPI q/q,1.9,1.6,1.8,better
+2023-01-25,12:30am,AUD,red,CPI y/y,8.4,7.6,7.3,better
+2023-01-25,12:30am,AUD,red,Trimmed Mean CPI q/q,1.7,1.5,1.9,better
+2023-01-25,2:00am,NZD,yellow,Credit Card Spending y/y,12.4,,16.2,
+2023-01-25,Nov Data,GBP,yellow,PPI Input m/m,-0.2,,0.9,
+2023-01-25,Nov Data,GBP,yellow,PPI Output m/m,-0.1,,0.9,
+2023-01-25,7:00am,GBP,yellow,PPI Input m/m,-1.1,-0.8,-0.2,worse
+2023-01-25,7:00am,GBP,yellow,PPI Output m/m,-0.8,0.1,-0.1,worse
+2023-01-25,9:00am,CHF,yellow,UBS Economic Expectations,-40.0,,-42.8,
+2023-01-25,9:00am,EUR,orange,German ifo Business Climate,90.2,90.2,88.6,
+2023-01-25,1:58pm,EUR,yellow,Belgian NBB Business Climate,-13.5,-12.0,-13.6,worse
+2023-01-25,3:00pm,CAD,red,BOC Monetary Policy Report,,,,
+2023-01-25,3:00pm,CAD,red,BOC Rate Statement,,,,
+2023-01-25,3:00pm,CAD,red,Overnight Rate,4.50,4.50,4.25,
+2023-01-25,3:30pm,USD,yellow,Crude Oil Inventories,0.5,1.2,8.4,better
+2023-01-25,4:00pm,CAD,red,BOC Press Conference,,,,
+2023-01-25,All Day,AUD,gray,Bank Holiday,,,,
+2023-01-25,11:50pm,JPY,yellow,BOJ Summary of Opinions,,,,
+2023-01-25,11:50pm,JPY,yellow,SPPI y/y,1.5,1.6,1.7,worse
+2023-01-26,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-26,8:00am,EUR,yellow,Spanish Unemployment Rate,12.9,12.4,12.7,worse
+2023-01-26,11:00am,GBP,yellow,CBI Realized Sales,-23,2,11,worse
+2023-01-26,1:30pm,USD,red,Advance GDP q/q,2.9,2.6,3.2,better
+2023-01-26,1:30pm,USD,orange,Advance GDP Price Index q/q,3.5,3.2,4.4,better
+2023-01-26,1:30pm,USD,orange,Core Durable Goods Orders m/m,-0.1,-0.2,0.1,
+2023-01-26,1:30pm,USD,orange,Durable Goods Orders m/m,5.6,2.4,-1.7,better
+2023-01-26,1:30pm,USD,orange,Unemployment Claims,186,203,192,better
+2023-01-26,1:30pm,USD,yellow,Goods Trade Balance,-90.3,-88.4,-82.9,worse
+2023-01-26,1:30pm,USD,yellow,Prelim Wholesale Inventories m/m,0.1,0.5,0.9,better
+2023-01-26,3:00pm,USD,orange,New Home Sales,616,610,602,better
+2023-01-26,3:30pm,USD,yellow,Natural Gas Storage,-91,-79,-82,better
+2023-01-26,7:45pm,USD,yellow,President Biden Speaks,,,,
+2023-01-26,11:30pm,JPY,yellow,Tokyo Core CPI y/y,4.3,4.2,3.9,better
+2023-01-27,12:00am,NZD,yellow,ANZ Business Confidence,-52.0,,-70.2,
+2023-01-27,All Day,CNY,gray,Bank Holiday,,,,
+2023-01-27,12:30am,AUD,yellow,Import Prices q/q,1.8,1.3,3.0,better
+2023-01-27,12:30am,AUD,yellow,PPI q/q,0.7,1.7,1.9,worse
+2023-01-27,8:00am,EUR,yellow,Spanish Flash GDP q/q,0.2,0.1,0.1,better
+2023-01-27,9:00am,EUR,yellow,M3 Money Supply y/y,4.1,4.6,4.8,worse
+2023-01-27,9:00am,EUR,yellow,Private Loans y/y,3.8,4.1,4.1,worse
+2023-01-27,1:30pm,USD,red,Core PCE Price Index m/m,0.3,0.3,0.2,
+2023-01-27,1:30pm,USD,yellow,Personal Income m/m,0.2,0.2,0.3,
+2023-01-27,1:30pm,USD,yellow,Personal Spending m/m,-0.2,-0.1,-0.1,worse
+2023-01-27,3:00pm,USD,orange,Pending Home Sales m/m,2.5,-1.0,-2.6,better
+2023-01-27,3:00pm,USD,orange,Revised UoM Consumer Sentiment,64.9,64.6,64.6,
+2023-01-27,3:00pm,USD,yellow,Revised UoM Inflation Expectations,3.9,,4.0,
+2023-01-29,9:45pm,NZD,yellow,Trade Balance,-475,-1750,-2180,better
+2023-01-30,8:00am,CHF,yellow,KOF Economic Barometer,97.2,93.3,91.5,better
+2023-01-30,8:00am,EUR,yellow,Spanish Flash CPI y/y,5.8,4.9,5.7,better
+2023-01-30,9:00am,EUR,yellow,German Prelim GDP q/q,-0.2,0.0,0.4,worse
+2023-01-30,2:00pm,CNY,yellow,CB Leading Index m/m,-0.8,,-1.4,
+2023-01-30,11:30pm,JPY,yellow,Unemployment Rate,2.5,2.5,2.5,
+2023-01-30,11:50pm,JPY,yellow,Prelim Industrial Production m/m,-0.1,-1.1,0.2,better
+2023-01-30,11:50pm,JPY,yellow,Retail Sales y/y,3.8,3.2,2.5,better
+2023-01-31,12:30am,AUD,yellow,Private Sector Credit m/m,0.3,0.5,0.5,worse
+2023-01-31,12:30am,AUD,yellow,Retail Sales m/m,-3.9,-0.2,1.7,worse
+2023-01-31,1:30am,CNY,yellow,Manufacturing PMI,50.1,50.2,47.0,
+2023-01-31,1:30am,CNY,yellow,Non-Manufacturing PMI,54.4,52.0,41.6,better
+2023-01-31,5:00am,JPY,yellow,Housing Starts y/y,-1.7,0.5,-1.4,worse
+2023-01-31,5:02am,JPY,yellow,Consumer Confidence,31.0,30.5,30.3,better
+2023-01-31,6:30am,EUR,yellow,French Consumer Spending m/m,-1.3,0.2,0.6,worse
+2023-01-31,6:30am,EUR,yellow,French Flash GDP q/q,0.1,0.0,0.2,better
+2023-01-31,7:00am,EUR,yellow,German Import Prices m/m,-1.6,-2.4,-4.5,better
+2023-01-31,7:00am,EUR,yellow,German Retail Sales m/m,-5.3,-0.1,1.9,worse
+2023-01-31,7:30am,CHF,yellow,Retail Sales y/y,-2.8,-0.7,-1.4,worse
+2023-01-31,7:45am,EUR,yellow,French Prelim CPI m/m,0.4,0.5,-0.1,worse
+2023-01-31,8:55am,EUR,yellow,German Unemployment Change,-22,5,-13,better
+2023-01-31,9:00am,EUR,yellow,Italian Monthly Unemployment Rate,7.8,7.8,7.8,
+2023-01-31,9:30am,GBP,yellow,M4 Money Supply m/m,-0.8,1.2,-1.5,worse
+2023-01-31,9:30am,GBP,yellow,Mortgage Approvals,36,44,46,worse
+2023-01-31,9:30am,GBP,yellow,Net Lending to Individuals m/m,3.7,5.1,5.7,worse
+2023-01-31,10:00am,EUR,yellow,Prelim Flash GDP q/q,0.1,-0.1,0.3,better
+2023-01-31,10:00am,EUR,yellow,Italian Prelim GDP q/q,-0.1,-0.2,0.5,better
+2023-01-31,10:19am,EUR,yellow,Italian 10-y Bond Auction,4.28,,3.96,
+2023-01-31,1:30pm,CAD,red,GDP m/m,0.1,0.1,0.1,
+2023-01-31,1:30pm,USD,yellow,Employment Cost Index q/q,1.0,1.1,1.2,worse
+2023-01-31,2:00pm,USD,yellow,HPI m/m,-0.1,-0.4,0.0,better
+2023-01-31,2:00pm,USD,yellow,S&P/CS Composite-20 HPI y/y,6.8,6.8,8.6,
+2023-01-31,2:45pm,USD,orange,Chicago PMI,44.3,45.1,44.9,worse
+2023-01-31,3:00pm,USD,red,CB Consumer Confidence,107.1,109.1,109.0,worse
+2023-01-31,9:45pm,NZD,red,Employment Change q/q,0.2,0.3,1.3,worse
+2023-01-31,9:45pm,NZD,red,Unemployment Rate,3.4,3.3,3.3,worse
+2023-01-31,9:45pm,NZD,yellow,Labor Cost Index q/q,1.1,1.2,1.1,worse

@@ -1,0 +1,13 @@
+{% extends 'main.html' %} {% block content %}
+
+
+  <h2>Upload File with News</h2>
+  <form method="POST" enctype="multipart/form-data" >
+      {% csrf_token %}
+    
+      {{ form.file.label_tag }}
+      {{ form.file }}
+      <button type="submit">Upload</button>
+  </form>
+
+{% endblock content %}

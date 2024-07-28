@@ -1,0 +1,388 @@
+date,time,currency,impact,event,actual,forecast,previous,outcome
+2024-07-01,12:50am,JPY,yellow,Tankan Manufacturing Index,13,11,11,better
+2024-07-01,12:50am,JPY,yellow,Tankan Non-Manufacturing Index,33,33,34,
+2024-07-01,1:30am,JPY,yellow,Final Manufacturing PMI,50.0,50.1,50.1,
+2024-07-01,2:00am,AUD,yellow,MI Inflation Gauge m/m,0.3,,0.3,
+2024-07-01,2:30am,AUD,yellow,ANZ Job Advertisements m/m,-2.2,,-1.9,
+2024-07-01,2:45am,CNY,yellow,Caixin Manufacturing PMI,51.8,51.5,51.7,
+2024-07-01,6:00am,JPY,yellow,Consumer Confidence,36.4,36.4,36.2,
+2024-07-01,7:25am,GBP,yellow,Nationwide HPI m/m,0.2,0.0,0.4,better
+2024-07-01,All Day,EUR,red,German Prelim CPI m/m,0.1,0.2,0.1,worse
+2024-07-01,7:30am,AUD,yellow,Commodity Prices y/y,-4.1,,-6.0,
+2024-07-01,7:30am,CHF,yellow,Retail Sales y/y,0.4,2.5,2.2,worse
+2024-07-01,8:15am,EUR,yellow,Spanish Manufacturing PMI,52.3,53.1,54.0,worse
+2024-07-01,8:30am,CHF,yellow,Manufacturing PMI,43.9,45.2,46.4,worse
+2024-07-01,8:45am,EUR,yellow,Italian Manufacturing PMI,45.7,44.3,45.6,better
+2024-07-01,8:50am,EUR,yellow,French Final Manufacturing PMI,45.4,45.3,45.3,
+2024-07-01,8:55am,EUR,yellow,German Final Manufacturing PMI,43.5,43.4,43.4,
+2024-07-01,9:00am,EUR,yellow,Final Manufacturing PMI,45.8,45.6,45.6,
+2024-07-01,9:30am,GBP,yellow,Final Manufacturing PMI,50.9,51.4,51.4,worse
+2024-07-01,9:30am,GBP,yellow,M4 Money Supply m/m,-0.1,0.2,0.0,worse
+2024-07-01,9:30am,GBP,yellow,Mortgage Approvals,60,60,61,
+2024-07-01,9:30am,GBP,yellow,Net Lending to Individuals m/m,2.7,3.3,3.0,worse
+2024-07-01,All Day,CAD,gray,Bank Holiday,,,,
+2024-07-01,1:15pm,EUR,yellow,German Buba President Nagel Speaks,,,,
+2024-07-01,2:45pm,USD,orange,Final Manufacturing PMI,51.6,51.7,51.7,
+2024-07-01,3:00pm,USD,red,ISM Manufacturing PMI,48.5,49.2,48.7,worse
+2024-07-01,3:00pm,USD,orange,ISM Manufacturing Prices,52.1,55.8,57.0,worse
+2024-07-01,3:00pm,USD,yellow,Construction Spending m/m,-0.1,0.3,0.3,worse
+2024-07-01,8:00pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2024-07-01,11:00pm,NZD,yellow,NZIER Business Confidence,-44,,-25,
+2024-07-01,11:45pm,NZD,yellow,Building Consents m/m,-1.7,,-2.1,
+2024-07-02,12:01am,GBP,yellow,BRC Shop Price Index y/y,0.2,,0.6,
+2024-07-02,12:50am,JPY,yellow,Monetary Base y/y,0.6,1.0,0.9,
+2024-07-02,2:30am,AUD,orange,Monetary Policy Meeting Minutes,,,,
+2024-07-02,4:35am,JPY,yellow,10-y Bond Auction,1.09,,1.05,
+2024-07-02,8:00am,EUR,yellow,Spanish Unemployment Change,-46.8,-50.9,-58.7,worse
+2024-07-02,9:00am,EUR,yellow,Italian Monthly Unemployment Rate,6.8,6.9,6.8,better
+2024-07-02,10:00am,EUR,red,Core CPI Flash Estimate y/y,2.9,2.8,2.9,better
+2024-07-02,10:00am,EUR,red,CPI Flash Estimate y/y,2.5,2.5,2.6,
+2024-07-02,10:00am,EUR,yellow,Unemployment Rate,6.4,6.4,6.4,
+2024-07-02,2:30pm,CAD,yellow,Manufacturing PMI,49.3,,49.3,
+2024-07-02,2:30pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2024-07-02,2:30pm,USD,red,Fed Chair Powell Speaks,,,,
+2024-07-02,3:00pm,USD,red,JOLTS Job Openings,8.14,7.96,7.92,better
+2024-07-02,All Day,USD,yellow,Wards Total Vehicle Sales,15.3,15.8,15.9,worse
+2024-07-02,3:40pm,USD,yellow,RCM/TIPP Economic Optimism,44.2,41.2,40.5,better
+2024-07-02,3:48pm,NZD,yellow,GDT Price Index,-6.9,,-0.5,
+2024-07-03,2:00am,NZD,yellow,ANZ Commodity Prices m/m,1.5,,1.1,
+2024-07-03,2:30am,AUD,orange,Retail Sales m/m,0.6,0.3,0.1,better
+2024-07-03,2:30am,AUD,yellow,Building Approvals m/m,5.5,1.5,1.9,better
+2024-07-03,2:45am,CNY,yellow,Caixin Services PMI,51.2,53.4,54.0,worse
+2024-07-03,7:45am,EUR,yellow,French Gov Budget Balance,-113.5,,-91.6,
+2024-07-03,8:15am,EUR,yellow,Spanish Services PMI,56.8,56.5,56.9,
+2024-07-03,8:45am,EUR,yellow,Italian Services PMI,53.7,53.9,54.2,
+2024-07-03,8:50am,EUR,yellow,French Final Services PMI,49.6,48.8,48.8,better
+2024-07-03,8:55am,EUR,yellow,German Final Services PMI,53.1,53.5,53.5,worse
+2024-07-03,9:00am,EUR,yellow,Final Services PMI,52.8,52.6,52.6,
+2024-07-03,9:30am,GBP,yellow,Final Services PMI,52.1,51.2,51.2,better
+2024-07-03,10:00am,EUR,yellow,PPI m/m,-0.2,-0.1,-1.0,worse
+2024-07-03,10:39am,EUR,yellow,German 10-y Bond Auction,2.63,,2.60,
+2024-07-03,11:30am,USD,yellow,FOMC Member Williams Speaks,,,,
+2024-07-03,12:30pm,CHF,yellow,Gov Board Member Martin Speaks,,,,
+2024-07-03,12:30pm,USD,yellow,Challenger Job Cuts y/y,19.8,,-20.3,
+2024-07-03,1:15pm,USD,red,ADP Non-Farm Employment Change,150,163,157,worse
+2024-07-03,1:30pm,CAD,yellow,Trade Balance,-1.9,-1.3,-1.3,worse
+2024-07-03,1:30pm,USD,red,Unemployment Claims,238,234,234,
+2024-07-03,1:30pm,USD,yellow,Trade Balance,-75.1,-76.3,-74.5,better
+2024-07-03,2:45pm,USD,orange,Final Services PMI,55.3,55.0,55.1,
+2024-07-03,3:00pm,USD,red,ISM Services PMI,48.8,52.6,53.8,worse
+2024-07-03,3:00pm,USD,yellow,Factory Orders m/m,-0.5,0.2,0.4,worse
+2024-07-03,3:15pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2024-07-03,3:30pm,USD,yellow,Crude Oil Inventories,-12.2,-0.4,3.6,better
+2024-07-03,5:00pm,USD,yellow,Natural Gas Storage,32,31,52,
+2024-07-03,7:00pm,USD,red,FOMC Meeting Minutes,,,,
+2024-07-04,2:30am,AUD,yellow,Goods Trade Balance,5.77,6.20,6.03,worse
+2024-07-04,4:35am,JPY,yellow,30-y Bond Auction,2.19,,2.16,
+2024-07-04,6:45am,CHF,yellow,Unemployment Rate,2.4,2.4,2.4,
+2024-07-04,7:00am,EUR,yellow,German Factory Orders m/m,-1.6,0.5,-0.6,worse
+2024-07-04,7:30am,CHF,red,CPI m/m,0.0,0.1,0.3,worse
+2024-07-04,All Day,GBP,red,Parliamentary Elections,,,,
+2024-07-04,9:30am,GBP,orange,Construction PMI,52.2,54.0,54.7,worse
+2024-07-04,9:41am,EUR,yellow,Spanish 10-y Bond Auction,3.42,,3.35,
+2024-07-04,10:01am,EUR,yellow,French 10-y Bond Auction,3.23,,3.05,
+2024-07-04,12:30pm,EUR,yellow,ECB Monetary Policy Meeting Accounts,,,,
+2024-07-04,All Day,USD,gray,Bank Holiday,,,,
+2024-07-05,12:30am,JPY,yellow,Household Spending y/y,-1.8,0.2,0.5,worse
+2024-07-05,6:00am,JPY,yellow,Leading Indicators,111.1,111.1,110.9,
+2024-07-05,7:00am,EUR,yellow,German Industrial Production m/m,-2.5,0.2,0.1,worse
+2024-07-05,7:00am,GBP,yellow,Halifax HPI m/m,-0.2,0.2,0.0,worse
+2024-07-05,7:45am,EUR,yellow,French Industrial Production m/m,-2.1,-0.6,0.6,worse
+2024-07-05,7:45am,EUR,yellow,French Trade Balance,-8.0,-7.2,-7.6,worse
+2024-07-05,8:00am,CHF,yellow,Foreign Currency Reserves,711,,718,
+2024-07-05,8:00am,CHF,yellow,SECO Consumer Climate,-37,-35,-38,worse
+2024-07-05,8:00am,EUR,yellow,German Buba President Nagel Speaks,,,,
+2024-07-05,9:00am,EUR,yellow,Italian Retail Sales m/m,0.4,0.2,-0.1,better
+2024-07-05,9:30am,GBP,yellow,Housing Equity Withdrawal q/q,-23.9,-20.3,-24.7,worse
+2024-07-05,10:00am,EUR,yellow,Retail Sales m/m,0.1,0.2,-0.2,worse
+2024-07-05,10:40am,USD,yellow,FOMC Member Williams Speaks,,,,
+2024-07-05,1:30pm,CAD,red,Employment Change,-1.4,27.3,26.7,worse
+2024-07-05,1:30pm,CAD,red,Unemployment Rate,6.4,6.3,6.2,worse
+2024-07-05,1:30pm,USD,red,Average Hourly Earnings m/m,0.3,0.3,0.4,
+2024-07-05,1:30pm,USD,red,Non-Farm Employment Change,206,191,218,better
+2024-07-05,1:30pm,USD,red,Unemployment Rate,4.1,4.0,4.0,worse
+2024-07-05,3:00pm,CAD,orange,Ivey PMI,62.5,53.0,52.0,better
+2024-07-05,4:00pm,USD,yellow,Fed Monetary Policy Report,,,,
+2024-07-05,6:15pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2024-07-07,All Day,EUR,red,French Parliamentary Elections,,,,
+2024-07-08,12:30am,JPY,yellow,Average Cash Earnings y/y,1.9,2.1,1.6,worse
+2024-07-08,12:50am,JPY,yellow,Bank Lending y/y,3.2,3.1,2.9,better
+2024-07-08,12:50am,JPY,yellow,Current Account,2.41,2.07,2.52,better
+2024-07-08,6:00am,JPY,yellow,Economy Watchers Sentiment,47.0,46.1,45.7,better
+2024-07-08,7:00am,EUR,yellow,German Trade Balance,24.9,19.9,22.2,better
+2024-07-08,9:30am,EUR,yellow,Sentix Investor Confidence,-7.3,-0.6,0.3,worse
+2024-07-08,12:00pm,GBP,yellow,MPC Member Haskel Speaks,,,,
+2024-07-08,8:00pm,USD,yellow,Consumer Credit m/m,11.4,9.7,6.5,better
+2024-07-09,12:01am,GBP,yellow,BRC Retail Sales Monitor y/y,-0.5,0.9,0.4,worse
+2024-07-09,12:50am,JPY,yellow,M2 Money Stock y/y,1.5,2.0,1.9,worse
+2024-07-09,1:30am,AUD,yellow,Westpac Consumer Sentiment,-1.1,,1.7,
+2024-07-09,2:30am,AUD,yellow,NAB Business Confidence,4,,-2,
+2024-07-09,6:58am,JPY,yellow,Prelim Machine Tool Orders y/y,9.7,,4.2,
+2024-07-09,11:00am,USD,yellow,NFIB Small Business Index,91.5,90.3,90.5,better
+2024-07-09,2:15pm,USD,yellow,FOMC Member Barr Speaks,,,,
+2024-07-09,3:00pm,USD,red,Fed Chair Powell Testifies,,,,
+2024-07-09,3:00pm,USD,orange,Treasury Sec Yellen Speaks,,,,
+2024-07-09,6:30pm,USD,yellow,FOMC Member Bowman Speaks,,,,
+2024-07-09,11:45pm,NZD,yellow,Visitor Arrivals m/m,4.0,,-8.8,
+2024-07-10,12:50am,JPY,yellow,PPI y/y,2.9,2.9,2.6,
+2024-07-10,2:30am,CNY,orange,CPI y/y,0.2,0.4,0.3,worse
+2024-07-10,2:30am,CNY,orange,PPI y/y,-0.8,-0.8,-1.4,
+2024-07-10,3:00am,NZD,red,Official Cash Rate,5.50,5.50,5.50,
+2024-07-10,3:00am,NZD,red,RBNZ Rate Statement,,,,
+2024-07-10,9:00am,EUR,yellow,German Buba President Nagel Speaks,,,,
+2024-07-10,9:00am,EUR,yellow,Italian Industrial Production m/m,0.5,0.0,-1.0,better
+2024-07-10,2:30pm,GBP,yellow,MPC Member Pill Speaks,,,,
+2024-07-10,3:00pm,EUR,yellow,German Buba President Nagel Speaks,,,,
+2024-07-10,3:00pm,USD,red,Fed Chair Powell Testifies,,,,
+2024-07-10,3:00pm,USD,yellow,Final Wholesale Inventories m/m,0.6,0.6,0.6,
+2024-07-10,3:30pm,USD,yellow,Crude Oil Inventories,-3.4,0.7,-12.2,better
+2024-07-10,4:30pm,GBP,yellow,MPC Member Mann Speaks,,,,
+2024-07-10,6:01pm,USD,orange,10-y Bond Auction,4.28,,4.44,
+2024-07-10,7:30pm,USD,yellow,FOMC Member Bowman Speaks,,,,
+2024-07-10,7:30pm,USD,yellow,FOMC Member Goolsbee Speaks,,,,
+2024-07-10,11:45pm,NZD,yellow,FPI m/m,1.0,,-0.2,
+2024-07-11,12:01am,GBP,yellow,RICS House Price Balance,-17,-14,-17,worse
+2024-07-11,12:30am,USD,yellow,FOMC Member Cook Speaks,,,,
+2024-07-11,12:50am,JPY,yellow,Core Machinery Orders m/m,-3.2,0.9,-2.9,worse
+2024-07-11,2:00am,AUD,yellow,MI Inflation Expectations,4.3,,4.4,
+2024-07-11,7:00am,EUR,yellow,German Final CPI m/m,0.1,0.1,0.1,
+2024-07-11,7:00am,GBP,red,GDP m/m,0.4,0.2,0.0,better
+2024-07-11,7:00am,GBP,yellow,Construction Output m/m,1.9,0.5,-1.1,better
+2024-07-11,7:00am,GBP,yellow,Goods Trade Balance,-17.9,-15.6,-19.4,worse
+2024-07-11,7:00am,GBP,yellow,Index of Services 3m/3m,1.1,1.0,1.0,better
+2024-07-11,7:00am,GBP,yellow,Industrial Production m/m,0.2,0.3,-0.9,worse
+2024-07-11,7:00am,GBP,yellow,Manufacturing Production m/m,0.4,0.4,-1.6,
+2024-07-11,9:30am,GBP,yellow,BOE Credit Conditions Survey,,,,
+2024-07-11,11:50am,GBP,yellow,NIESR GDP Estimate,0.6,,0.8,
+2024-07-11,1:30pm,USD,red,Core CPI m/m,0.1,0.2,0.2,worse
+2024-07-11,1:30pm,USD,red,CPI m/m,-0.1,0.1,0.0,worse
+2024-07-11,1:30pm,USD,red,CPI y/y,3.0,3.1,3.3,worse
+2024-07-11,1:30pm,USD,red,Unemployment Claims,222,236,239,better
+2024-07-11,2:30pm,GBP,yellow,CB Leading Index m/m,-0.3,,-0.1,
+2024-07-11,3:30pm,USD,yellow,Natural Gas Storage,65,56,32,worse
+2024-07-11,4:30pm,USD,yellow,FOMC Member Bostic Speaks,,,,
+2024-07-11,6:00pm,USD,yellow,FOMC Member Musalem Speaks,,,,
+2024-07-11,6:01pm,USD,orange,30-y Bond Auction,4.41,,4.40,
+2024-07-11,7:00pm,USD,yellow,Federal Budget Balance,-66.0,-71.2,-347.1,better
+2024-07-11,11:30pm,NZD,yellow,BusinessNZ Manufacturing Index,41.1,,46.6,
+2024-07-11,11:30pm,USD,yellow,President Biden Speaks,,,,
+2024-07-12,4:08am,CNY,yellow,USD-Denominated Trade Balance,99.1,85.1,82.6,better
+2024-07-12,4:09am,CNY,yellow,Trade Balance,704,590,586,better
+2024-07-12,5:30am,JPY,yellow,Revised Industrial Production m/m,3.6,2.8,2.8,better
+2024-07-12,7:00am,EUR,yellow,German WPI m/m,-0.3,0.2,0.1,worse
+2024-07-12,7:45am,EUR,yellow,French Final CPI m/m,0.1,0.1,0.1,
+2024-07-12,10:02am,CNY,yellow,M2 Money Supply y/y,6.2,6.8,7.0,worse
+2024-07-12,10:03am,CNY,orange,New Loans,2130,1050,950,better
+2024-07-12,10:08am,CNY,yellow,Foreign Direct Investment ytd/y,-29.1,,-28.2,
+2024-07-12,1:30pm,CAD,yellow,Building Permits m/m,-12.2,-5.0,23.4,worse
+2024-07-12,1:30pm,USD,red,Core PPI m/m,0.4,0.2,0.3,better
+2024-07-12,1:30pm,USD,red,PPI m/m,0.2,0.1,0.0,better
+2024-07-12,3:00pm,USD,red,Prelim UoM Consumer Sentiment,66.0,68.5,68.2,worse
+2024-07-12,3:00pm,USD,orange,Prelim UoM Inflation Expectations,2.9,,3.0,
+2024-07-14,11:30pm,NZD,yellow,BusinessNZ Services Index,40.2,,42.6,
+2024-07-15,All Day,JPY,gray,Bank Holiday,,,,
+2024-07-15,12:01am,GBP,yellow,Rightmove HPI m/m,-0.4,,0.0,
+2024-07-15,2:30am,CNY,yellow,New Home Prices m/m,-0.67,,-0.71,
+2024-07-15,3:00am,CNY,orange,GDP q/y,4.7,5.1,5.3,worse
+2024-07-15,3:00am,CNY,orange,Industrial Production y/y,5.3,4.9,5.6,better
+2024-07-15,3:00am,CNY,yellow,NBS Press Conference,,,,
+2024-07-15,3:02am,CNY,yellow,Fixed Asset Investment ytd/y,3.9,3.9,4.0,
+2024-07-15,3:02am,CNY,yellow,Retail Sales y/y,2.0,3.3,3.7,worse
+2024-07-15,3:02am,CNY,yellow,Unemployment Rate,5.0,5.0,5.0,
+2024-07-15,7:30am,CHF,yellow,PPI m/m,0.0,0.1,-0.3,worse
+2024-07-15,10:00am,EUR,yellow,Industrial Production m/m,-0.6,-0.9,0.0,better
+2024-07-15,All Day,EUR,yellow,Eurogroup Meetings,,,,
+2024-07-15,1:30pm,CAD,yellow,Manufacturing Sales m/m,0.4,0.3,1.4,
+2024-07-15,1:30pm,CAD,yellow,Wholesale Sales m/m,-0.8,2.0,2.0,worse
+2024-07-15,1:30pm,USD,red,Empire State Manufacturing Index,-6.6,-5.5,-6.0,worse
+2024-07-15,3:30pm,CAD,yellow,BOC Business Outlook Survey,,,,
+2024-07-15,5:30pm,USD,red,Fed Chair Powell Speaks,,,,
+2024-07-15,9:35pm,USD,yellow,FOMC Member Daly Speaks,,,,
+2024-07-16,5:30am,JPY,yellow,Tertiary Industry Activity m/m,-0.4,0.1,2.2,worse
+2024-07-16,10:00am,EUR,yellow,Italian Trade Balance,6.43,3.55,4.83,better
+2024-07-16,10:00am,EUR,yellow,Trade Balance,12.3,18.0,18.5,worse
+2024-07-16,10:00am,EUR,yellow,ZEW Economic Sentiment,43.7,48.1,51.3,worse
+2024-07-16,10:00am,EUR,yellow,German ZEW Economic Sentiment,41.8,41.2,47.5,better
+2024-07-16,All Day,EUR,yellow,ECOFIN Meetings,,,,
+2024-07-16,1:15pm,CAD,yellow,Housing Starts,242,255,265,worse
+2024-07-16,1:30pm,CAD,red,CPI m/m,-0.1,0.1,0.6,worse
+2024-07-16,1:30pm,CAD,red,Median CPI y/y,2.6,2.7,2.7,worse
+2024-07-16,1:30pm,CAD,red,Trimmed CPI y/y,2.9,2.8,2.9,better
+2024-07-16,1:30pm,CAD,orange,Common CPI y/y,2.3,2.4,2.4,worse
+2024-07-16,1:30pm,USD,red,Core Retail Sales m/m,0.4,0.1,0.1,better
+2024-07-16,1:30pm,USD,red,Retail Sales m/m,0.0,-0.3,0.3,better
+2024-07-16,1:30pm,USD,yellow,Import Prices m/m,0.0,0.2,-0.2,worse
+2024-07-16,1:32pm,CAD,yellow,Core CPI m/m,-0.1,,0.6,
+2024-07-16,3:00pm,USD,yellow,Business Inventories m/m,0.5,0.4,0.3,worse
+2024-07-16,3:00pm,USD,yellow,NAHB Housing Market Index,42,43,43,worse
+2024-07-16,3:57pm,NZD,yellow,GDT Price Index,0.4,,-6.9,
+2024-07-16,7:45pm,USD,yellow,FOMC Member Kugler Speaks,,,,
+2024-07-16,11:45pm,NZD,red,CPI q/q,0.4,0.5,0.6,worse
+2024-07-17,1:30am,AUD,yellow,MI Leading Index m/m,0.0,,0.0,
+2024-07-17,7:00am,GBP,red,CPI y/y,2.0,1.9,2.0,better
+2024-07-17,7:00am,GBP,yellow,Core CPI y/y,3.5,3.4,3.5,better
+2024-07-17,7:00am,GBP,yellow,PPI Input m/m,-0.8,0.1,-0.6,worse
+2024-07-17,7:00am,GBP,yellow,PPI Output m/m,-0.3,0.1,0.0,worse
+2024-07-17,7:00am,GBP,yellow,RPI y/y,2.9,2.9,3.0,
+2024-07-17,9:30am,GBP,yellow,HPI y/y,2.2,1.5,1.3,better
+2024-07-17,10:00am,EUR,yellow,Final Core CPI y/y,2.9,2.9,2.9,
+2024-07-17,10:00am,EUR,yellow,Final CPI y/y,2.5,2.5,2.5,
+2024-07-17,10:36am,EUR,yellow,German 30-y Bond Auction,2.59,,2.54,
+2024-07-17,1:30pm,CAD,yellow,Foreign Securities Purchases,20.89,,41.05,
+2024-07-17,1:30pm,USD,orange,Building Permits,1.45,1.40,1.40,better
+2024-07-17,1:30pm,USD,yellow,Housing Starts,1.35,1.30,1.31,better
+2024-07-17,2:00pm,USD,yellow,FOMC Member Barkin Speaks,,,,
+2024-07-17,2:15pm,USD,orange,Industrial Production m/m,0.6,0.3,0.9,better
+2024-07-17,2:15pm,USD,yellow,Capacity Utilization Rate,78.8,78.5,78.3,better
+2024-07-17,2:35pm,USD,orange,FOMC Member Waller Speaks,,,,
+2024-07-17,3:30pm,USD,yellow,Crude Oil Inventories,-4.9,-0.9,-3.4,better
+2024-07-17,7:00pm,USD,yellow,Beige Book,,,,
+2024-07-18,12:50am,JPY,yellow,Trade Balance,-0.82,-0.82,-0.64,
+2024-07-18,2:30am,AUD,red,Employment Change,50.2,19.9,39.5,better
+2024-07-18,2:30am,AUD,red,Unemployment Rate,4.1,4.1,4.0,
+2024-07-18,2:30am,AUD,yellow,NAB Quarterly Business Confidence,-1,,-2,
+2024-07-18,2:30am,AUD,yellow,RBA Bulletin,,,,
+2024-07-18,7:00am,CHF,yellow,Trade Balance,6.18,5.05,5.79,better
+2024-07-18,7:00am,GBP,red,Claimant Count Change,32.3,23.4,51.9,worse
+2024-07-18,7:00am,GBP,orange,Average Earnings Index 3m/y,5.7,5.7,5.9,
+2024-07-18,7:00am,GBP,yellow,Unemployment Rate,4.4,4.4,4.4,
+2024-07-18,9:42am,EUR,yellow,Spanish 10-y Bond Auction,3.19,,3.42,
+2024-07-18,11:00am,EUR,yellow,German Buba Monthly Report,,,,
+2024-07-18,1:15pm,EUR,red,Main Refinancing Rate,4.25,4.25,4.25,
+2024-07-18,1:15pm,EUR,red,Monetary Policy Statement,,,,
+2024-07-18,1:30pm,USD,red,Unemployment Claims,243,229,223,worse
+2024-07-18,1:30pm,USD,orange,Philly Fed Manufacturing Index,13.9,2.7,1.3,better
+2024-07-18,1:45pm,EUR,red,ECB Press Conference,,,,
+2024-07-18,3:00pm,USD,yellow,CB Leading Index m/m,-0.2,-0.3,-0.4,better
+2024-07-18,3:30pm,USD,yellow,Natural Gas Storage,10,27,65,better
+2024-07-18,6:45pm,USD,yellow,FOMC Member Logan Speaks,,,,
+2024-07-18,9:00pm,USD,yellow,TIC Long-Term Purchases,-54.6,98.4,123.3,worse
+2024-07-18,11:05pm,USD,orange,FOMC Member Daly Speaks,,,,
+2024-07-19,12:01am,GBP,yellow,GfK Consumer Confidence,-13,-12,-14,worse
+2024-07-19,12:30am,JPY,yellow,National Core CPI y/y,2.6,2.7,2.5,worse
+2024-07-19,12:45am,USD,yellow,FOMC Member Bowman Speaks,,,,
+2024-07-19,4:00am,NZD,yellow,Credit Card Spending y/y,-3.1,,-0.2,
+2024-07-19,7:00am,EUR,yellow,German PPI m/m,0.2,0.1,0.0,better
+2024-07-19,7:00am,GBP,red,Retail Sales m/m,-1.2,-0.6,2.9,worse
+2024-07-19,7:00am,GBP,yellow,Public Sector Net Borrowing,13.6,10.8,15.6,worse
+2024-07-19,9:05am,EUR,yellow,Current Account,36.7,34.6,36.7,better
+2024-07-19,1:30pm,CAD,red,Core Retail Sales m/m,-1.3,-0.5,1.7,worse
+2024-07-19,1:30pm,CAD,red,Retail Sales m/m,-0.8,-0.5,0.6,worse
+2024-07-19,1:30pm,CAD,yellow,IPPI m/m,0.0,0.2,0.2,worse
+2024-07-19,1:30pm,CAD,yellow,RMPI m/m,-1.4,-0.7,-1.5,worse
+2024-07-19,3:30pm,AUD,yellow,CB Leading Index m/m,0.2,,-0.4,
+2024-07-19,3:40pm,USD,orange,FOMC Member Williams Speaks,,,,
+2024-07-19,6:00pm,USD,yellow,FOMC Member Bostic Speaks,,,,
+2024-07-21,11:45pm,NZD,yellow,Trade Balance,699,294,54,better
+2024-07-22,2:03am,CNY,orange,1-y Loan Prime Rate,3.35,3.45,3.45,worse
+2024-07-22,2:03am,CNY,orange,5-y Loan Prime Rate,3.85,3.95,3.95,worse
+2024-07-23,6:00am,JPY,yellow,BOJ Core CPI y/y,2.1,,2.1,
+2024-07-23,2:59pm,USD,orange,Richmond Manufacturing Index,-17,-7,-10,worse
+2024-07-23,3:00pm,EUR,yellow,Consumer Confidence,-13,-13,-14,
+2024-07-23,3:00pm,USD,orange,Existing Home Sales,3.89,3.99,4.11,worse
+2024-07-24,12:00am,AUD,yellow,Flash Manufacturing PMI,47.4,,47.2,
+2024-07-24,12:00am,AUD,yellow,Flash Services PMI,50.8,,51.2,
+2024-07-24,1:30am,JPY,yellow,Flash Manufacturing PMI,49.2,50.5,50.0,worse
+2024-07-24,7:00am,EUR,yellow,German GfK Consumer Climate,-18.4,-21.1,-21.6,better
+2024-07-24,8:15am,EUR,red,French Flash Manufacturing PMI,44.1,45.8,45.4,worse
+2024-07-24,8:15am,EUR,red,French Flash Services PMI,50.7,49.7,49.6,better
+2024-07-24,8:30am,EUR,red,German Flash Manufacturing PMI,42.6,44.1,43.5,worse
+2024-07-24,8:30am,EUR,red,German Flash Services PMI,52.0,53.2,53.1,worse
+2024-07-24,9:00am,EUR,orange,Flash Manufacturing PMI,45.6,46.0,45.8,worse
+2024-07-24,9:00am,EUR,orange,Flash Services PMI,51.9,52.9,52.8,worse
+2024-07-24,9:30am,GBP,red,Flash Manufacturing PMI,51.8,51.1,50.9,better
+2024-07-24,9:30am,GBP,red,Flash Services PMI,52.4,52.5,52.1,
+2024-07-24,10:02am,GBP,yellow,30-y Bond Auction,4.64,,4.55,
+2024-07-24,10:32am,EUR,yellow,German 10-y Bond Auction,2.43,,2.63,
+2024-07-24,1:30pm,CAD,yellow,NHPI m/m,-0.2,0.1,0.2,worse
+2024-07-24,1:30pm,USD,yellow,Goods Trade Balance,-96.8,-98.8,-99.4,better
+2024-07-24,1:30pm,USD,yellow,Prelim Wholesale Inventories m/m,0.2,0.5,0.6,better
+2024-07-24,2:45pm,CAD,red,BOC Monetary Policy Report,,,,
+2024-07-24,2:45pm,CAD,red,BOC Rate Statement,,,,
+2024-07-24,2:45pm,CAD,red,Overnight Rate,4.50,4.50,4.75,
+2024-07-24,2:45pm,USD,red,Flash Manufacturing PMI,49.5,51.7,51.6,worse
+2024-07-24,2:45pm,USD,red,Flash Services PMI,56.0,54.7,55.3,better
+2024-07-24,3:00pm,USD,orange,New Home Sales,617,639,621,worse
+2024-07-24,3:30pm,CAD,red,BOC Press Conference,,,,
+2024-07-24,3:30pm,USD,yellow,Crude Oil Inventories,-3.7,-2.6,-4.9,better
+2024-07-24,9:05pm,USD,yellow,FOMC Member Bowman Speaks,,,,
+2024-07-24,9:05pm,USD,yellow,FOMC Member Logan Speaks,,,,
+2024-07-25,12:50am,JPY,yellow,SPPI y/y,3.0,2.6,2.7,better
+2024-07-25,1:00am,USD,yellow,President Biden Speaks,,,,
+2024-07-25,9:00am,EUR,orange,German ifo Business Climate,87.0,88.9,88.6,worse
+2024-07-25,9:00am,EUR,yellow,M3 Money Supply y/y,2.2,1.9,1.5,better
+2024-07-25,9:00am,EUR,yellow,Private Loans y/y,0.3,0.5,0.3,worse
+2024-07-25,11:00am,GBP,yellow,CBI Industrial Order Expectations,-32,-19,-18,worse
+2024-07-25,1:30pm,USD,red,Advance GDP q/q,2.8,2.0,1.4,better
+2024-07-25,1:30pm,USD,red,Unemployment Claims,235,237,245,
+2024-07-25,1:30pm,USD,orange,Advance GDP Price Index q/q,2.3,2.6,3.1,worse
+2024-07-25,1:30pm,USD,orange,Core Durable Goods Orders m/m,0.5,0.2,-0.1,better
+2024-07-25,1:30pm,USD,orange,Durable Goods Orders m/m,-6.6,0.3,0.1,worse
+2024-07-25,2:00pm,CNY,yellow,CB Leading Index m/m,-0.7,,-0.5,
+2024-07-25,2:00pm,EUR,yellow,Belgian NBB Business Climate,-12.3,-11.0,-11.1,worse
+2024-07-25,3:30pm,USD,yellow,Natural Gas Storage,22,13,10,worse
+2024-07-25,4:00pm,EUR,orange,ECB President Lagarde Speaks,,,,
+2024-07-25,Day 1,All,orange,G20 Meetings,,,,
+2024-07-26,12:30am,JPY,orange,Tokyo Core CPI y/y,2.2,2.2,2.1,
+2024-07-26,8:00am,EUR,yellow,Spanish Unemployment Rate,11.3,11.4,12.3,
+2024-07-26,1:30pm,USD,red,Core PCE Price Index m/m,0.2,0.2,0.1,
+2024-07-26,1:30pm,USD,yellow,Personal Income m/m,0.2,0.4,0.4,worse
+2024-07-26,1:30pm,USD,yellow,Personal Spending m/m,0.3,0.3,0.4,
+2024-07-26,3:00pm,USD,orange,Revised UoM Consumer Sentiment,66.4,66.3,66.0,
+2024-07-26,3:00pm,USD,yellow,Revised UoM Inflation Expectations,2.9,,2.9,
+2024-07-26,Day 2,All,orange,G20 Meetings,,,,
+2024-07-29,9:30am,GBP,yellow,M4 Money Supply m/m,,0.2,-0.1,
+2024-07-29,9:30am,GBP,yellow,Mortgage Approvals,,60,60,
+2024-07-29,9:30am,GBP,yellow,Net Lending to Individuals m/m,,2.2,2.7,
+2024-07-29,11:00am,GBP,yellow,CBI Realized Sales,,-20,-24,
+2024-07-30,12:01am,GBP,yellow,BRC Shop Price Index y/y,,,0.2,
+2024-07-30,12:30am,JPY,yellow,Unemployment Rate,,2.6,2.6,
+2024-07-30,2:30am,AUD,yellow,Building Approvals m/m,,-2.3,5.5,
+2024-07-30,6:30am,EUR,yellow,French Consumer Spending m/m,,-0.4,1.5,
+2024-07-30,6:30am,EUR,yellow,French Flash GDP q/q,,0.2,0.2,
+2024-07-30,All Day,EUR,red,German Prelim CPI m/m,,0.3,0.1,
+2024-07-30,8:00am,CHF,yellow,KOF Economic Barometer,,102.6,102.7,
+2024-07-30,8:00am,EUR,orange,Spanish Flash CPI y/y,,3.1,3.4,
+2024-07-30,8:00am,EUR,yellow,Spanish Flash GDP q/q,,0.5,0.8,
+2024-07-30,9:00am,EUR,yellow,Italian Prelim GDP q/q,,0.2,0.3,
+2024-07-30,9:00am,EUR,yellow,German Prelim GDP q/q,,0.1,0.2,
+2024-07-30,10:00am,EUR,yellow,Prelim Flash GDP q/q,,0.2,0.3,
+2024-07-30,Tentative,EUR,yellow,Italian 10-y Bond Auction,,,4.01,
+2024-07-30,Tentative,GBP,yellow,10-y Bond Auction,,,4.07,
+2024-07-30,2:00pm,USD,orange,S&P/CS Composite-20 HPI y/y,,7.4,7.2,
+2024-07-30,2:00pm,USD,yellow,HPI m/m,,0.2,0.2,
+2024-07-30,3:00pm,USD,red,CB Consumer Confidence,,99.8,100.4,
+2024-07-30,3:00pm,USD,red,JOLTS Job Openings,,,8.14,
+2024-07-30,11:45pm,NZD,yellow,Building Consents m/m,,,-1.7,
+2024-07-31,12:50am,JPY,yellow,Prelim Industrial Production m/m,,-4.2,3.6,
+2024-07-31,12:50am,JPY,yellow,Retail Sales y/y,,3.3,2.8,
+2024-07-31,2:00am,NZD,yellow,ANZ Business Confidence,,,6.1,
+2024-07-31,2:30am,AUD,red,CPI q/q,,1.0,1.0,
+2024-07-31,2:30am,AUD,red,CPI y/y,,3.8,4.0,
+2024-07-31,2:30am,AUD,red,Trimmed Mean CPI q/q,,1.0,1.0,
+2024-07-31,2:30am,AUD,orange,Retail Sales m/m,,0.3,0.6,
+2024-07-31,2:30am,AUD,yellow,Private Sector Credit m/m,,0.4,0.4,
+2024-07-31,2:30am,CNY,red,Manufacturing PMI,,49.3,49.5,
+2024-07-31,2:30am,CNY,orange,Non-Manufacturing PMI,,50.2,50.5,
+2024-07-31,Tentative,JPY,red,BOJ Policy Rate,,,0.10,
+2024-07-31,Tentative,JPY,red,Monetary Policy Statement,,,,
+2024-07-31,Tentative,JPY,red,BOJ Outlook Report,,,,
+2024-07-31,6:00am,JPY,yellow,Consumer Confidence,,36.5,36.4,
+2024-07-31,6:00am,JPY,yellow,Housing Starts y/y,,-2.3,-5.3,
+2024-07-31,Tentative,JPY,red,BOJ Press Conference,,,,
+2024-07-31,7:00am,EUR,yellow,German Import Prices m/m,,0.1,0.0,
+2024-07-31,7:45am,EUR,yellow,French Prelim CPI m/m,,0.3,0.1,
+2024-07-31,8:55am,EUR,yellow,German Unemployment Change,,16,19,
+2024-07-31,9:00am,CHF,yellow,UBS Economic Expectations,,,17.5,
+2024-07-31,10:00am,EUR,red,Core CPI Flash Estimate y/y,,2.8,2.9,
+2024-07-31,10:00am,EUR,red,CPI Flash Estimate y/y,,2.4,2.5,
+2024-07-31,10:00am,EUR,yellow,Italian Prelim CPI m/m,,,0.1,
+2024-07-31,1:15pm,USD,red,ADP Non-Farm Employment Change,,166,150,
+2024-07-31,1:30pm,CAD,red,GDP m/m,,0.2,0.3,
+2024-07-31,1:30pm,USD,red,Employment Cost Index q/q,,1.0,1.2,
+2024-07-31,2:45pm,USD,orange,Chicago PMI,,44.1,47.4,
+2024-07-31,3:00pm,USD,red,Pending Home Sales m/m,,1.6,-2.1,
+2024-07-31,3:30pm,USD,yellow,Crude Oil Inventories,,,-3.7,
+2024-07-31,7:00pm,USD,red,Federal Funds Rate,,5.50,5.50,
+2024-07-31,7:00pm,USD,red,FOMC Statement,,,,
+2024-07-31,7:30pm,USD,red,FOMC Press Conference,,,,
