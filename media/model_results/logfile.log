@@ -1756,3 +1756,95 @@ UnboundLocalError: cannot access local variable 'buy_sell_split' where it is not
 2024-07-27 09:13:07,231 - INFO - Ending scheduler
 2024-07-27 09:13:07,267 - INFO - Watching for file changes with StatReloader
 2024-07-27 09:14:19,592 - WARNING - Not Found: /profile/images/favicon.ico
+2024-07-28 15:13:26,846 - INFO - Starting scheduler
+2024-07-28 15:13:26,847 - INFO - Updater date and time: 2024-07-28 15:13:26.847996
+2024-07-28 15:13:26,850 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:13:26,850 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:13:26,850 - INFO - Scheduler started
+2024-07-28 15:13:26,850 - INFO - Current time of the scheduler: 2024-07-28 15:13:26.850047
+2024-07-28 15:13:26,850 - INFO - Ending scheduler
+2024-07-28 15:13:29,297 - INFO - Starting scheduler
+2024-07-28 15:13:29,298 - INFO - Updater date and time: 2024-07-28 15:13:29.298725
+2024-07-28 15:13:29,299 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:13:29,299 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:13:29,299 - INFO - Scheduler started
+2024-07-28 15:13:29,300 - INFO - Current time of the scheduler: 2024-07-28 15:13:29.300725
+2024-07-28 15:13:29,300 - INFO - Ending scheduler
+2024-07-28 15:13:29,318 - INFO - Watching for file changes with StatReloader
+2024-07-28 15:13:31,253 - WARNING - Not Found: /images/favicon.ico
+2024-07-28 15:13:38,165 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-07-28 15:13:39,676 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-07-28 15:13:43,459 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-28 15:13:44,728 - WARNING - Not Found: /prices/update-price/a425290a-46a4-41b5-92a2-a2bb77cdbfe3/images/favicon.ico
+2024-07-28 15:14:12,678 - ERROR - Internal Server Error: /prices/update-price/a425290a-46a4-41b5-92a2-a2bb77cdbfe3/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 439, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 0, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 249, in compare_version_results
+    model_dict1 = pred_collection.pred_reverse_v4
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'pred_reverse_v4'
+2024-07-28 15:14:12,794 - WARNING - Not Found: /favicon.ico
+2024-07-28 15:17:12,577 - INFO - Starting scheduler
+2024-07-28 15:17:12,578 - INFO - Updater date and time: 2024-07-28 15:17:12.578174
+2024-07-28 15:17:12,579 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:17:12,579 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:17:12,579 - INFO - Scheduler started
+2024-07-28 15:17:12,580 - INFO - Current time of the scheduler: 2024-07-28 15:17:12.580213
+2024-07-28 15:17:12,580 - INFO - Ending scheduler
+2024-07-28 15:17:14,966 - INFO - Starting scheduler
+2024-07-28 15:17:14,967 - INFO - Updater date and time: 2024-07-28 15:17:14.967597
+2024-07-28 15:17:14,968 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:17:14,968 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:17:14,968 - INFO - Scheduler started
+2024-07-28 15:17:14,968 - INFO - Current time of the scheduler: 2024-07-28 15:17:14.968597
+2024-07-28 15:17:14,968 - INFO - Ending scheduler
+2024-07-28 15:17:14,990 - INFO - Watching for file changes with StatReloader
+2024-07-28 15:33:22,562 - INFO - Starting scheduler
+2024-07-28 15:33:22,563 - INFO - Updater date and time: 2024-07-28 15:33:22.563069
+2024-07-28 15:33:22,564 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:33:22,564 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:33:22,564 - INFO - Scheduler started
+2024-07-28 15:33:22,565 - INFO - Current time of the scheduler: 2024-07-28 15:33:22.565068
+2024-07-28 15:33:22,565 - INFO - Ending scheduler
+2024-07-28 15:33:24,921 - INFO - Starting scheduler
+2024-07-28 15:33:24,922 - INFO - Updater date and time: 2024-07-28 15:33:24.921877
+2024-07-28 15:33:24,922 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:33:24,923 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:33:24,923 - INFO - Scheduler started
+2024-07-28 15:33:24,923 - INFO - Current time of the scheduler: 2024-07-28 15:33:24.923878
+2024-07-28 15:33:24,923 - INFO - Ending scheduler
+2024-07-28 15:33:24,948 - INFO - Watching for file changes with StatReloader
+2024-07-28 15:39:09,219 - INFO - Starting scheduler
+2024-07-28 15:39:09,220 - INFO - Updater date and time: 2024-07-28 15:39:09.220389
+2024-07-28 15:39:09,221 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:39:09,221 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:39:09,221 - INFO - Scheduler started
+2024-07-28 15:39:09,221 - INFO - Current time of the scheduler: 2024-07-28 15:39:09.221581
+2024-07-28 15:39:09,221 - INFO - Ending scheduler
+2024-07-28 15:39:11,502 - INFO - Starting scheduler
+2024-07-28 15:39:11,503 - INFO - Updater date and time: 2024-07-28 15:39:11.502849
+2024-07-28 15:39:11,503 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 15:39:11,504 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 15:39:11,504 - INFO - Scheduler started
+2024-07-28 15:39:11,504 - INFO - Current time of the scheduler: 2024-07-28 15:39:11.504851
+2024-07-28 15:39:11,504 - INFO - Ending scheduler
+2024-07-28 15:39:11,526 - INFO - Watching for file changes with StatReloader
+2024-07-28 15:39:23,983 - WARNING - Not Found: /tickers/update-ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-07-28 15:41:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:41:00 BST)" (scheduled at 2024-07-28 15:41:00+01:00)
+2024-07-28 15:41:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:41:00 BST)" (scheduled at 2024-07-28 15:41:00+01:00)
+2024-07-28 15:41:00,010 - INFO - Inside the procedure sequence
+2024-07-28 15:41:00,010 - INFO - Inside the procedure sequence
+2024-07-28 15:41:00,296 - INFO - The input start time: 2024-07-28 14:00:00
+2024-07-28 15:41:00,297 - INFO - The input start time: 2024-07-28 14:00:00
+2024-07-28 15:41:25,204 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:46:00 BST)" executed successfully
+2024-07-28 15:41:26,600 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:46:00 BST)" executed successfully

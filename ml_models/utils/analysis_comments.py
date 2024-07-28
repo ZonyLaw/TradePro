@@ -142,17 +142,17 @@ class ModelComparer:
             self.bb_target = upper_bb[self.arr_index]
             
 
-def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):
+def compare_version_results2(model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):
     """
     The function provides comments based on consistency of models output. 
 
     Args:
-        model_dict1 (dictionary): results from first model
-        model_dict2 (dictionary): results from the second model
-        model_dict3 (dictionary): results from the third model
+        model_dict1 (dictionary): results from long term model
+        model_dict2 (dictionary): results from long term model
+        model_dict3 (dictionary): results from short term model
         prices_df (dataframe): a list of prices in dataframe
         arr_index (integer): an index in the array to extract model results for comparison - refer to the json file
-        newline_syntax (integer): 1 for '\n' otherwise <br> 
+        newline_syntax (integer): 1 for '\n' otherwise <br> for website usage
 
     Returns:
         string: analysis comments
@@ -216,12 +216,95 @@ def compare_version_results(model_dict1, model_dict2, model_dict3, arr_index, ne
             comment = (
                 f"4hr LAGGED model has a strong prediction for {current_trade1}.{next_line}"
             )
-            send_email=True
+            send_email=False
         else:
             comment = (
             f"WARNING: Not a good time to trade!{next_line}"
             )
             send_email=False
+             
+    else:
+        comment = (
+            f"WARNING: Not a good time to trade!{next_line}"
+        )
+        send_email=False
+        
+    return comment, send_email
+
+
+def compare_version_results(pred_collection, arr_index, newline_syntax):
+    """
+    The function provides comments based on consistency of models output. 
+
+    Args:
+        pred_collection (dictionary) : dictonary containing the predictions for different models
+        prices_df (dataframe): a list of prices in dataframe
+        arr_index (integer): an index in the array to extract model results for comparison - refer to the json file
+        newline_syntax (integer): 1 for '\n' otherwise <br> for website usage
+
+    Returns:
+        string: analysis comments
+    """
+    
+    model_rev1 = pred_collection["pred_reverse_v4"]
+    model_rev2 = pred_collection["pred_reverse_v5"]
+    model_rev3 = pred_collection["pred_reverse_1h_v5"]
+       
+    rev_label1 = list(model_rev1.keys())[0]
+    rev_array1 = model_rev1[rev_label1][2]['item']['Potential Trade']
+    rev_10pip_trade1 = rev_array1[arr_index].split()[0]
+    rev_pip_size1 = abs(int(rev_array1[arr_index].split()[2]))
+    
+    rev_label2 = list(model_rev2.keys())[0]
+    rev_array2 = model_rev2[rev_label2][2]['item']['Potential Trade']
+    rev_10pip_trade2 = rev_array2[arr_index].split()[0]
+    rev_pip_size2 = abs(int(rev_array2[arr_index].split()[2]))
+    
+    rev_label3 = list(model_rev3.keys())[0]
+    rev_array3 = model_rev3[rev_label3][2]['item']['Potential Trade']
+    rev_10pip_trade3 = rev_array3[arr_index].split()[0]
+    rev_pip_size3 = abs(int(rev_array3[arr_index].split()[2]))
+    
+    model_cont1 = pred_collection["pred_continue_v4"]
+    model_cont2 = pred_collection["pred_continue_v5"]
+    model_cont3 = pred_collection["pred_continue_1h_v5"]
+       
+    cont_label1 = list(model_cont1.keys())[0]
+    cont_array1 = model_cont1[cont_label1][2]['item']['Potential Trade']
+    cont_10pip_trade1 = cont_array1[arr_index].split()[0]
+    cont_pip_size1 = abs(int(cont_array1[arr_index].split()[2]))
+    
+    cont_label2 = list(model_cont2.keys())[0]
+    cont_array2 = model_cont2[cont_label2][2]['item']['Potential Trade']
+    cont_10pip_trade2 = cont_array2[arr_index].split()[0]
+    cont_pip_size2 = abs(int(cont_array2[arr_index].split()[2]))
+    
+    cont_label3 = list(model_cont3.keys())[0]
+    cont_array3 = model_cont3[cont_label3][2]['item']['Potential Trade']
+    cont_10pip_trade3 = cont_array3[arr_index].split()[0]
+    cont_pip_size3 = abs(int(cont_array3[arr_index].split()[2]))
+    
+        
+    if newline_syntax:
+        next_line = "\n"
+    else:
+        next_line = "<br>"
+    
+    comment = ""
+    send_email=False
+    if (rev_10pip_trade1 == rev_10pip_trade2 == rev_10pip_trade3) & (cont_10pip_trade1 == cont_10pip_trade2 == cont_10pip_trade3) :
+        if rev_pip_size2 >= 5:
+            comment = (
+                f"For NEXT candle stick, all model versions predict a STRONG {rev_10pip_trade1}{next_line}"
+            )
+            send_email=True
+                       
+    elif (rev_10pip_trade1 == rev_10pip_trade2) & (cont_10pip_trade1 == cont_10pip_trade2) :
+        if rev_pip_size2 >= 5:
+            comment = (
+                f"For Next candle stick, Both 4hr models predict a STRONG {rev_10pip_trade1}.{next_line}"
+            )
+            send_email=True
              
     else:
         comment = (

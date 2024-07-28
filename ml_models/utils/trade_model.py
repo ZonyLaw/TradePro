@@ -413,9 +413,19 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     """
     
     print("forecast Started......")
-    pred_reverse_v4, _, _, _ = standard_analysis(model_ticker, "v4")
-    pred_reverse_v5, _, _, _ = standard_analysis(model_ticker,"v5")
-    pred_reverse_1h_v5, _, _, _ = standard_analysis(model_ticker, "1h_v5")
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+    pred_reverse_v5, pred_continue_v5, pred_historical_v5, _ = standard_analysis(model_ticker,"v5")
+    pred_reverse_1h_v5, pred_continue_1h_v5, pred_historical_1h_v5, _ = standard_analysis(model_ticker, "1h_v5")
+
+    pred_collection = {
+        "pred_reverse_v4": pred_reverse_v4,
+        "pred_reverse_v5": pred_reverse_v5,
+        "pred_reverse_1h_v5": pred_reverse_1h_v5,
+        "pred_continue_v4": pred_continue_v4,
+        "pred_continue_v5": pred_continue_v5,
+        "pred_continue_1h_v5": pred_continue_1h_v5,
+                       
+                       }
 
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
@@ -426,7 +436,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
         
-    comparison_comment, send_email_enabled = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 1 )
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
     general_ticker_info = general_ticker_results(last_four_prices_df, 1)
 
     print("test>>>>>>>>", comparison_comment)
