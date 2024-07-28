@@ -1848,3 +1848,50 @@ AttributeError: 'dict' object has no attribute 'pred_reverse_v4'
 2024-07-28 15:41:00,297 - INFO - The input start time: 2024-07-28 14:00:00
 2024-07-28 15:41:25,204 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:46:00 BST)" executed successfully
 2024-07-28 15:41:26,600 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-07-28 15:46:00 BST)" executed successfully
+2024-07-28 16:03:06,576 - INFO - Starting scheduler
+2024-07-28 16:03:06,577 - INFO - Updater date and time: 2024-07-28 16:03:06.577956
+2024-07-28 16:03:06,578 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 16:03:06,578 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 16:03:06,578 - INFO - Scheduler started
+2024-07-28 16:03:06,579 - INFO - Current time of the scheduler: 2024-07-28 16:03:06.579958
+2024-07-28 16:03:06,579 - INFO - Ending scheduler
+2024-07-28 16:03:09,002 - INFO - Starting scheduler
+2024-07-28 16:03:09,003 - INFO - Updater date and time: 2024-07-28 16:03:09.003080
+2024-07-28 16:03:09,003 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 16:03:09,004 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 16:03:09,004 - INFO - Scheduler started
+2024-07-28 16:03:09,004 - INFO - Current time of the scheduler: 2024-07-28 16:03:09.004594
+2024-07-28 16:03:09,004 - INFO - Ending scheduler
+2024-07-28 16:03:09,023 - INFO - Watching for file changes with StatReloader
+2024-07-28 16:03:36,619 - ERROR - Internal Server Error: /ml_models/ml-predictions/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 98, in ml_predictions
+    version_comment, _ = compare_version_results(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 0 )
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: compare_version_results() takes 3 positional arguments but 5 were given
+2024-07-28 16:08:35,325 - INFO - Starting scheduler
+2024-07-28 16:08:35,326 - INFO - Updater date and time: 2024-07-28 16:08:35.326882
+2024-07-28 16:08:35,327 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 16:08:35,328 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 16:08:35,328 - INFO - Scheduler started
+2024-07-28 16:08:35,328 - INFO - Current time of the scheduler: 2024-07-28 16:08:35.328881
+2024-07-28 16:08:35,328 - INFO - Ending scheduler
+2024-07-28 16:08:37,587 - INFO - Starting scheduler
+2024-07-28 16:08:37,587 - INFO - Updater date and time: 2024-07-28 16:08:37.587197
+2024-07-28 16:08:37,588 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-07-28 16:08:37,588 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-07-28 16:08:37,588 - INFO - Scheduler started
+2024-07-28 16:08:37,589 - INFO - Current time of the scheduler: 2024-07-28 16:08:37.589197
+2024-07-28 16:08:37,589 - INFO - Ending scheduler
+2024-07-28 16:08:37,608 - INFO - Watching for file changes with StatReloader
+2024-07-28 16:08:45,152 - WARNING - Not Found: /ml_models/ml-variability/images/favicon.ico
+2024-07-28 16:09:23,589 - WARNING - Not Found: /ml_models/ml-manual/images/favicon.ico
+2024-07-28 16:09:25,206 - WARNING - Not Found: /users-list/images/favicon.ico
+2024-07-28 16:09:36,340 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-07-28 16:09:50,627 - WARNING - Not Found: /profile/images/favicon.ico
