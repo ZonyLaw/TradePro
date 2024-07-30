@@ -107,6 +107,17 @@ This epic is for all documents related stories and tasks to document the lifecyc
 ``As a developer , I edit, export of a specific currency.``
 
 
+**models**
+``As a user, I can view a report on the projections of market trend.``
+
+**email alert**
+``As a user, I receive alert of potential trade coming up.``
+
+**news**
+``As a user, I have a view of news coming out for the week.``
+``As a user, I have the news model to find out if there are any potential impact on market trends.``
+
+
 **Report**
 
 *User Story*
