@@ -1,0 +1,36 @@
+{% extends 'main.html' %} {% block content %}
+
+<head>
+    <title>News</title>
+</head>
+<body>
+    <h1>News</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Filter</button>
+    </form>
+    <h2>News for this week</h2>
+    <div>
+        {% if news_data %}
+            {% for date, news_list in news_data.items %}
+                <h3>{{ date }}</h3>
+                <ul>
+                    {% for news in news_list %}
+                        <li>
+                            <strong>Event:</strong> {{ news.event }}<br>
+                            <strong>Impact:</strong> {{ news.impact }}<br>
+                            <strong>Actual:</strong> {{ news.actual }}<br>
+                            <strong>Forecast:</strong> {{ news.forecast }}<br>
+                            <strong>Previous:</strong> {{ news.previous }}<br>
+                            <strong>Outcome:</strong> {{ news.outcome }}<br>
+                            <strong>Time:</strong> {{ news.time }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p>No news available for the selected currency and date range.</p>
+        {% endif %}
+    </div>
+</body>
+{% endblock content %}
