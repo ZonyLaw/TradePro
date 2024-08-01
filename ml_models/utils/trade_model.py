@@ -293,6 +293,7 @@ def trade_forecast_assessment(ticker, model_version):
     
     
     X_live_historical = dp.historical_record(10)
+  
     
     if model_version == "v1_reverse":
         pred_historical = reverse_model_run(ticker, X_live_historical, model_version)
@@ -310,6 +311,7 @@ def trade_forecast_assessment(ticker, model_version):
     df2 = X_live_discretized.reset_index(drop=True)
     model_results = pd.concat([df1, df2 ], axis=1)
     model_results['prediction'] = model_prediction
+
  
     # combined_df.to_csv(r"C:\Users\sunny\Desktop\Development\model_assessment_data.csv", index=False)
     
@@ -332,8 +334,8 @@ def trade_forecast_assessment(ticker, model_version):
     profit_accuracy = calculate_accuracy(model_prediction, y_actual)
 
     # this examine the accuracy of the trade predictions converted to buy(1) or sell(0)
-    y_actual_binary = np.where(y_actual > 2, 0, 1)
-    model_prediction_binary = np.where(model_prediction > 2, 0, 1)
+    y_actual_binary = np.where(y_actual > 2, 1, 0)
+    model_prediction_binary = np.where(model_prediction > 2, 1, 0)
     trade_accuracy = calculate_accuracy(model_prediction_binary, y_actual_binary)
 
     buy_sell_split = calc_matches(y_actual_binary.flatten(), model_prediction_binary)

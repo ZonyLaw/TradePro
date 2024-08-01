@@ -581,9 +581,10 @@ class StandardPriceProcessing():
         df_4hr = df_4hr.drop(columns, axis=1)
         df_4hr = df_4hr.dropna()
 
+       
         # merged the content from 4hr table into 1 hr.
         merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
-        # merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
+        #merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
         merged_df = merged_df.dropna()
 
         # Check the last two rows

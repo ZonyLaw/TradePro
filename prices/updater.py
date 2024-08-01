@@ -8,9 +8,10 @@ from tradepro.utils.read_json import read_ticker_list
 
 # https://stackoverflow.com/questions/69387768/running-apscheduler-cron-at-certain-interval-combining-minutes-and-seconds
 
-
 import logging
 import os
+
+# the logging has been turned off.
 
 #getting directory of the script.
 base_dir = os.path.dirname(os.path.abspath(__file__))  
@@ -20,7 +21,7 @@ relative_path = os.path.join(base_dir_up_one_level, 'media', 'model_results', "l
 logging.basicConfig(filename=relative_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def start():
-    logging.info("Starting scheduler")
+    #logging.info("Starting scheduler")
     print("starting scheduler")
     
 
@@ -33,7 +34,7 @@ def start():
     print("updater date and time", current_time)
     
      
-    logging.info("Updater date and time: %s", current_time)
+    #logging.info("Updater date and time: %s", current_time)
     # Method 1: call the scheduler when app is loaded
     # scheduler.add_job(run_procedure_sequence, 'date', run_date=datetime.now() + timedelta(seconds=1))
 
@@ -54,12 +55,12 @@ def start():
     scheduler.start()
     
     current_time = datetime.now()
-    logging.info(f"Current time of the scheduler: {current_time}")
-    logging.info("Ending scheduler")
+    #logging.info(f"Current time of the scheduler: {current_time}")
+    #logging.info("Ending scheduler")
 
 
 def run_procedure_sequence():
-    logging.info("Inside the procedure sequence")
+    #logging.info("Inside the procedure sequence")
     print("inside the procedure sequence!!!!")
     # tickers = ["USDJPY","EURUSD"]
     #defines the list of tickers
