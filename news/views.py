@@ -28,8 +28,6 @@ def upload_news(request):
             fs = FileSystemStorage()
             filename = fs.save(file.name, file)
             file_path = fs.path(filename)
-            print("path below")
-            print(file_path)
             collection = db['news_collection']
             
  # Create indexes for faster retrieval
@@ -38,10 +36,6 @@ def upload_news(request):
             # Read and process the CSV file
             with open(file_path, newline='') as csvfile:
                 reader = csv.DictReader(csvfile)
-                
-                # Print out the reader content for debugging
-                for row in reader:
-                    print(row)  # Print each row as a dictionary
                 
                 # Rewind the reader to the beginning of the file
                 csvfile.seek(0)
@@ -109,6 +103,4 @@ def get_news(request):
         except OperationFailure as e:
             print(f"Error retrieving data from MongoDB: {e}")
             
-    print(news_data)
-    
     return render(request, 'news/get_news.html', {'news_data': news_data, 'form': form})

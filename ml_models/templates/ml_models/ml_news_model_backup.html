@@ -1,0 +1,24 @@
+{% extends 'main.html' %} {% block content %}
+
+<main class="formPage my-xl">
+
+  <div class="content-box">
+    <div class="formWrapper">
+      <h1>News model parameters entry</h1>
+
+      <form  class="form" action="" method="POST">
+        {%csrf_token%} 
+        {{form.as_p}}
+        <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+      </form>
+ 
+    <p>The prediction is {{news_pred_str}} </p>
+
+
+
+  </div>
+</div>
+<br>  <br> 
+
+</main>
+{% endblock content %}

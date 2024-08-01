@@ -4,23 +4,39 @@
 
   <div class="content-box">
     <div class="formWrapper">
-      <h1>News model parameters entry</h1>
+      <h1>News Model Parameters Entry</h1>
 
-      <form  class="form" action="" method="POST">
-        {%csrf_token%} 
-        {{form.as_p}}
-        <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+      <form class="form" action="" method="POST">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <input class="btn btn--sub btn--lg my-md" type="submit" value="Submit" />
       </form>
- 
-  {% if news_pred_str %}
-    <p>The prediction is {{news_pred_str}} </p>
 
-  {% endif %}
-
-
+      {% if news_pred_str %}
+        <h2>Prediction Results</h2>
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>BB Status</th>
+              <th>Prediction</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for status, prediction in news_pred_str.items %}
+              <tr>
+                <td>{{ status }}</td>
+                <td>{{ prediction }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>No predictions available.</p>
+      {% endif %}
+      
+    </div>
   </div>
-</div>
-<br>  <br> 
+  <br><br> 
 
 </main>
 {% endblock content %}

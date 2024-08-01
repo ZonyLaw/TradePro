@@ -556,7 +556,7 @@ def ml_manual(request):
     return render(request, 'ml_models/ml_manual_analysis.html', context)
 
 
-def ml_news_model(request):
+def ml_news_model_backup(request):
     
     """
     This is a function to run the news model
@@ -612,6 +612,69 @@ def ml_news_model(request):
 
     context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
          
+    return render(request, 'ml_models/ml_news_model.html', context)
+
+
+def ml_news_model(request):
+    """
+    This is a function to run the news model.
+    """
+    model_version = "v1_news"
+    ticker_input = "USDJPY"
+    form = NewsParameters(request.POST)
+    
+    dp = v4Processing(ticker_input)
+    ticker_instance = get_object_or_404(Ticker, symbol=ticker_input)
+    prices = Price.objects.filter(ticker=ticker_instance)
+    
+    prices_df = pd.DataFrame(list(prices.values()))
+    prices_df = prices_df.sort_values(by='date', ascending=True)
+    last_price_stats = dp.stats_df_gen(prices_df, 2)
+    
+      
+    news_pred_str = {}
+    news_prob_list = {}
+    news_pred = -99
+    news_prob = 0
+    
+    bb_status_list = [
+        'upper_near',
+        'upper_crossover', 
+        'upper_hit',
+        'lower_hit', 
+        'lower_near', 
+        'lower_crossover',
+        ]
+    
+    if request.method == 'POST':
+        form = NewsParameters(request.POST)
+        if form.is_valid():
+            user_input = news_param_input(form)
+            print(user_input)
+            
+            for bb_status in bb_status_list:
+                user_input['bb_status_1'] = bb_status
+                news_pred_results = news_model_run(ticker_input, user_input, model_version)
+                news_pred = news_pred_results['model_prediction']
+                news_prob = news_pred_results['model_prediction_proba'] * 100
+                news_prob_list[bb_status] = news_prob
+                
+                if news_pred == 0:
+                    news_pred_str[bb_status] = "Sell"
+                else:
+                    news_pred_str[bb_status] = "Buy"
+                
+    else:
+        form = NewsParameters(initial={
+            'weekday': last_price_stats['weekday'].values[1],
+            'hour': last_price_stats['hr'].values[1],
+            'bb_status_1': last_price_stats['bb_status_1'].values[1],
+            'event': "CPI",
+            'output': "better",
+        })
+        
+    print(news_pred_str)
+    context = {'form': form, 'news_pred_str': news_pred_str, 'news_prob': news_prob}
     return render(request, 'ml_models/ml_news_model.html', context)
 
 

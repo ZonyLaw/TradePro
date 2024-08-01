@@ -49,7 +49,6 @@
         </form>
     </div>
 
-    <a href = "{% url 'ml-news-model' %}" >News Tool</a>
 
     <p> The model is best used at the beginning of the hour; although currecy movement is often volatile, you may be able to enter the recommened entry point during the hour.</p>
     <p> This tool is to help confirm some of your observation and indicate when to focus on a trade.</p>
@@ -105,14 +104,18 @@
                 <td>Risk Reward ratio: </td>
                 <td> <b> {{risk_reward|floatformat:2}}</b></td>
             </tr>
-            <tr style="color:orange;">
-                <td>Entry at Bollinger Band: </td>
-                <td> <b> £{{bb_target|floatformat:2}} </b></td>
+            <tr>
+                <td>4hr Upper Bollinger Band: </td>
+                <td> <b> £{{bb_target.upper_bb|floatformat:2}} </b></td>
+            </tr>
+            <tr>
+                <td>4hr Lower Bollinger Band: </td>
+                <td> <b> £{{bb_target.lower_bb|floatformat:2}} </b></td>
             </tr>
         </table>
         <p>NOTE:</p>
         <p>1) Risk Reward greater than 1 is a good risk</p>
-        <p>2) Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry.</p>
+        <p>2) 4hr Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry. These values may be different from offical charts which is due to raw prices being different.</p>
 
 
     <h1>Analysis Report</h1>
