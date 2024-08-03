@@ -4,6 +4,7 @@ import sys
 import importlib.util
 
 import datetime
+import pytz
 
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
@@ -331,8 +332,13 @@ def ml_report2(request):
     
     # Parse the original date string
     original_date_str = pred_historical_v4['pred_historical'][0]['date']
-    date = datetime.datetime.strptime(original_date_str, "%d-%m-%Y %H:%M:%S")
-
+    original_date = datetime.datetime.strptime(original_date_str, "%d-%m-%Y %H:%M:%S")
+    # Get the user's timezone, default to UTC if not set
+    original_date = original_date.replace(tzinfo=pytz.utc)
+    user_timezone = request.COOKIES.get('user_timezone', 'UTC')  # Use cookie or default
+    user_tz = pytz.timezone(user_timezone)
+    # Convert original date to the user's timezone
+    date = original_date.astimezone(user_tz)
     
     #extracting final results
     historical_headers = pred_historical_v4['pred_historical'][1]['heading']
