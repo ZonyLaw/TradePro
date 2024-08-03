@@ -70,7 +70,7 @@ class ModelParameters(forms.Form):
 class NewsParameters(forms.Form):
     weekday = forms.IntegerField(initial=1, label='What is the weekday')
     hour = forms.IntegerField(initial=13, label='What is the hour')
-    bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')#
+  #  bb_status_1 = forms.ChoiceField(choices=BB_CHOICES, initial='inside_bb', label='Select the situation of the candle stick')#
     event = forms.ChoiceField(choices=EVENT_CHOICES, initial='CPI', label='Select event')#
     outcome = forms.ChoiceField(choices=OUTCOME_CHOICES, initial='better', label='Select predict outcome')#
     

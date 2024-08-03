@@ -644,6 +644,7 @@ def ml_news_model(request):
     news_prob = 0
     
     bb_status_list = [
+        'inside_bb',
         'upper_near',
         'upper_crossover', 
         'upper_hit',
@@ -674,7 +675,7 @@ def ml_news_model(request):
         form = NewsParameters(initial={
             'weekday': last_price_stats['weekday'].values[1],
             'hour': last_price_stats['hr'].values[1],
-            'bb_status_1': last_price_stats['bb_status_1'].values[1],
+          #  'bb_status_1': last_price_stats['bb_status_1'].values[1],
             'event': "CPI",
             'output': "better",
         })

@@ -380,7 +380,7 @@ img {
 
 .devInfo__about,
 .devSkill__info {
-  font-size: 1.45rem;
+/*  font-size: 1.45rem; */
   line-height: 1.7;
   text-align: justify;
 }

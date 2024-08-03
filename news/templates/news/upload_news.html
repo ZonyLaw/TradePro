@@ -1,13 +1,19 @@
 {% extends 'main.html' %} {% block content %}
+<main class="formPage my-xl">
+  <div class="content-box">
+    <div class="formWrapper">
 
+      <h2>Upload current month News</h2>
+      <form method="POST" enctype="multipart/form-data" >
+          {% csrf_token %}
+        
+          {{ form.file.label_tag }}
+          {{ form.file }}
+          <button type="submit">Upload</button>
+        </form>
 
-  <h2>Upload File with News</h2>
-  <form method="POST" enctype="multipart/form-data" >
-      {% csrf_token %}
-    
-      {{ form.file.label_tag }}
-      {{ form.file }}
-      <button type="submit">Upload</button>
-  </form>
+    </div>
+  </div>
+</main>
 
 {% endblock content %}

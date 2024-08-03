@@ -2,52 +2,69 @@
 
 <div class="container container--narrow">
 
-    <head>
-        <title>News</title>
-    </head>
-    <body>
-        <h1>News</h1>
+    <div class="container">
 
-        <h2>Upload news</h2>
-        <a href="{% url 'upload-news' %}">Upload News</a>
+        <head>
+            <title>News</title>
+        </head>
+        <body>
+            
+            {% if request.user.is_superuser %}
 
-        <h1>News Model</h1>
-        <a href = "{% url 'ml-news-model' %}" >News Tool</a>
+                <h1>Upload news</h1>
+                <p>This is the administration area where the latest monthly news is updated in the backend.
+                    This provide the source for the weekly summary news.</p>
+                <a href="{% url 'upload-news' %}">Upload News</a>
 
-        <h2> Select the currecy for this week news </h2>
-        <form method="get">
-            {{ form.as_p }}
-            <button type="submit">Filter</button>
-        </form>
-        <h2>News for this week</h2>
-        <div>
-            {% if news_data %}
-                {% for date, news_list in news_data.items %}
-                    <h3>{{ date }}</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Event</th>
-                                <th>Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for news in news_list %}
-                                <tr>
-                                    <td>{{ news.time }}</td>
-                                    <td>{{ news.event }}</td>
-                                    <td>{{ news.impact }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                {% endfor %}
-            {% else %}
-                <p>No news available for the selected currency and date range.</p>
             {% endif %}
-        </div>
-    </body>
+            <h1>News</h1>
 
+            <h2>News Model</h2>
+                <p>This section features a news model trained to analyse news impacting currency.
+                    It will show the potential outcomes of both positive and negative news.</p>
+                <a href = "{% url 'ml-news-model' %}" >News Model</a>
+
+                
+            <h2>Weekly News</h2>
+
+                <p>What currency news are you interested?</p>
+                    <form method="get">
+                        {{ form.as_p }}
+                        <button type="submit">Get News</button>
+                    </form>
+
+                    <div>
+                        {% if news_data %}
+                        {% for date, news_list in news_data.items %}
+                        <h3>{{ date }}</h3>
+                        
+                            <p>Please keep in mind the weekly news during your trade!</p>
+                            <p> Here are the color code for importance: Red - high , orange - medium, yellow - low</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Event</th>
+                                        <th>Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for news in news_list %}
+                                        <tr>
+                                            <td>{{ news.time }}</td>
+                                            <td>{{ news.event }}</td>
+                                            <td>{{ news.impact }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endfor %}
+                    {% else %}
+                        <p>No news available for the selected currency and date range.</p>
+                    {% endif %}
+                </div>
+            </body>
+        
+    </div>
 </div>
 {% endblock content %}

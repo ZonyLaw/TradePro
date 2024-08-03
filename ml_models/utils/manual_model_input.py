@@ -35,7 +35,7 @@ def news_param_input(form):
     # Add columns to the DataFrame one by one using loc
     model_input['hr'] = [form.cleaned_data['hour']]
     model_input['weekday'] = [form.cleaned_data['weekday']]
-    model_input['bb_status_1'] = [form.cleaned_data['bb_status_1']]
+ #   model_input['bb_status_1'] = [form.cleaned_data['bb_status_1']]
     model_input['events2'] = [form.cleaned_data['event']]
     model_input['outcome'] = [form.cleaned_data['outcome']]
 
