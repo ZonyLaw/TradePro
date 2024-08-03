@@ -1,0 +1,25 @@
+
+{% extends 'main.html' %} {% block content %}
+
+<div class="container container--narrow">
+    
+    <div class="container">
+        <h1>Backend Control</h1>
+            
+            <h2>Export log file</h2>
+                <p>Use log files to record backend operations. Ensure the code includes appropriate 
+                    logging statements to capture relevant information.</p>
+
+                <br>
+                    <a href="{% url 'export_file' filename='logfile.log' %}">Export Log File</a>
+
+            <h2>Delete log file</h2>
+                <p>Remove all records: <a href="{% url 'delete_file' filename='logfile.log' %}">Reset save file</a></p> 
+            
+            <h2>Personal Notes</h2>
+            <p>For developer to record notes for further ideas.</p>
+                <a href="{% url 'notes' %}">Notes</a>
+    </div>
+</div>
+
+{% endblock content %}

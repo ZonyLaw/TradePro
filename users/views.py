@@ -99,3 +99,9 @@ def editProfile(request):
 
     context = {'form': form}
     return render(request, 'users/profile_form.html', context)
+
+
+def backend_control(request):
+  
+    context = {}
+    return render(request, 'users/backend_control.html', context)

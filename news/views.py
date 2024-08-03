@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from collections import defaultdict
 import csv
 import datetime
+import os
 
 
 # Create your views here.
@@ -30,7 +31,9 @@ def upload_news(request):
             file_path = fs.path(filename)
             collection = db['news_collection']
             
- # Create indexes for faster retrieval
+            collection.drop()
+            
+            # Create indexes for faster retrieval
             collection.create_index([('currency', 1), ('date', 1), ('time', 1)])
             
             # Read and process the CSV file
@@ -64,6 +67,8 @@ def upload_news(request):
 
                 # Insert the combined data as one document in MongoDB
                 collection.insert_one(final_document)
+            
+            os.remove(file_path)
             
             return render(request, 'news/upload_success.html', {'file_url': fs.url(filename)})
     else:

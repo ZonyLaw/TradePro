@@ -4,9 +4,28 @@
 
     <div class="container">
         <h1>About</h1>
-    
-        <p>This tool provides insights on the direction of trade within the next 4 hours. 
-            There are three version of the models trained on key parameters relating to: </p>
+
+        <br>
+        <img class="trade_image" src="/static/images/about_AI.jpg" alt="about AI" />
+        <p>  
+            Whether you're an amateur or professional trader, market direction can sometimes be confusing. 
+            You might find yourself second-guessing your decisions, stubbornly holding onto a position 
+            despite contrary evidence, or convinced that a market reversal is imminent because 
+            you believe it has peaked or bottomed out. What’s really going on? </p>
+        
+        <p> 
+            At TradePRO, we provide powerful tools that offer in-depth analysis and potential predictions 
+            for the next 4 hours, helping you trade with greater confidence. Our machine learning-powered 
+            tools analyze historical market patterns and market reactions to news. With these insights, 
+            you’ll know when to secure profits, cut losses, and prepare for your next trade.
+        </p>
+
+        <br>
+
+        <h2>Tool Information</h2>
+        <p>The main tools provide insights into the direction of trade for the next 4 hours. There are three versions of the models, trained on key parameters listed below. 
+            Two models provide 4-hour predictions, each trained using slight variations of the data, 
+            and the remaining model provides a 1-hour prediction. It has been found that combining the results of these models increases confidence when there is consistency among the predictions. </p>
 
         <ul class="list_indent">
             <li>
@@ -20,24 +39,8 @@
             </li>
         </ul>
 
-        <p>  Traders use technical indicators and fundamentals to confirm a direction, but these trades are based on experience and there are 
-            many different combinations. With machine model, it helps decipher these patterns and provide an indication of the direction. 
-            Why technical analysis works because it captures the behaviour of the commercial trader who already have execute their view while retail 
-            trader try to make sense of the direction. 
-            
-            This tool will help provide some clarity and give you a sense what is going to unfold.
-        </p>
-
-
-        <h2>Export log file</h2>
-            <p>File contains records of the variability tests: <a href="{% url 'export_file' filename='logfile.log' %}">Export</a></p>
-         <h2>Delete log file</h2>
-            <p>Remove all records: <a href="{% url 'delete_file' filename='logfile.log' %}">Reset save file</a></p> 
-
-            <br>
-            <br>
-
-        <a href="{% url 'notes' %}">Notes</a>
+        <br>
+        <br>
     </div>
 </div>
 
