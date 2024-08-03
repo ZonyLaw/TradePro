@@ -7,7 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from collections import defaultdict
 import csv
 import datetime
-import os
+import pandas as pd
 
 
 # Create your views here.
@@ -25,52 +25,42 @@ def upload_news(request):
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
             file = request.FILES['file']
-            print(file)
-            fs = FileSystemStorage()
-            filename = fs.save(file.name, file)
-            file_path = fs.path(filename)
+
+            # Use pandas to read the uploaded file directly into a DataFrame
+            df = pd.read_csv(file)
+
+            # Drop the existing collection to start fresh
             collection = db['news_collection']
-            
             collection.drop()
-            
+
             # Create indexes for faster retrieval
             collection.create_index([('currency', 1), ('date', 1), ('time', 1)])
-            
-            # Read and process the CSV file
-            with open(file_path, newline='') as csvfile:
-                reader = csv.DictReader(csvfile)
-                
-                # Rewind the reader to the beginning of the file
-                csvfile.seek(0)
-                reader = csv.DictReader(csvfile)
 
-                # Create a nested structure to hold news items by currency and date
-                data = defaultdict(lambda: defaultdict(list))
+            # Create a nested structure to hold news items by currency and date
+            data = defaultdict(lambda: defaultdict(list))
 
-                for row in reader:
-                    news_item = {
-                        'impact': row['impact'],
-                        'event': row['event'],
-                        'actual': row['actual'],
-                        'forecast': row['forecast'],
-                        'previous': row['previous'],
-                        'outcome': row['outcome'],
-                        'time': row['time']  # Keep time if needed for future reference
-                    }
-                    # Append news item to the corresponding currency and date
-                    data[row['currency']][row['date']].append(news_item)
-                
-                # Prepare the final document structure
-                final_document = {
-                    'data': data
+            for index, row in df.iterrows():
+                news_item = {
+                    'impact': row['impact'],
+                    'event': row['event'],
+                    'actual': row['actual'],
+                    'forecast': row['forecast'],
+                    'previous': row['previous'],
+                    'outcome': row['outcome'],
+                    'time': row['time']  # Keep time if needed for future reference
                 }
+                # Append news item to the corresponding currency and date
+                data[row['currency']][row['date']].append(news_item)
+            
+            # Prepare the final document structure
+            final_document = {
+                'data': data
+            }
 
-                # Insert the combined data as one document in MongoDB
-                collection.insert_one(final_document)
-            
-            os.remove(file_path)
-            
-            return render(request, 'news/upload_success.html', {'file_url': fs.url(filename)})
+            # Insert the combined data as one document in MongoDB
+            collection.insert_one(final_document)
+
+            return render(request, 'news/upload_success.html')
     else:
         form = FileUploadForm()
     return render(request, 'news/upload_news.html', {'form': form})
