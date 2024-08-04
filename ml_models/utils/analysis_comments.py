@@ -303,7 +303,7 @@ def compare_version_results(pred_collection, arr_index, newline_syntax):
             comment = (
                 f"For Next candle stick, Both 4hr models predict a STRONG {rev_10pip_trade1}.{next_line}"
             )
-            send_email=True
+            send_email=False
              
     else:
         comment = (

@@ -52,7 +52,7 @@ def ml_variability(request):
     return render(request, 'ml_models/ml_variability.html', context)
 
 
-def ml_report(request):
+def ml_report_backup(request):
     """
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
@@ -240,6 +240,7 @@ def ml_report(request):
             pl = price - close_prices[-1]
     
         v5_pred_pl.append(round(pl*100))
+
 
 
     #sensitivity test save as dictionary for front-end access
@@ -467,6 +468,13 @@ def ml_report2(request):
         v5_pred_pl.append(round(pl*100))
 
 
+    average_open_price = sum(open_prices) / len(open_prices)
+    if potential_trade == "Buy":
+        final_exit_price = min(open_prices)  - 0.2
+    else:
+        final_exit_price = max(open_prices) + 0.2
+        
+
     #sensitivity test save as dictionary for front-end access
     pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
     pred_var_list = {
@@ -484,6 +492,7 @@ def ml_report2(request):
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
+             'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,

@@ -90,11 +90,14 @@ def get_news(request):
             })
            
             if result:
-                news_data = {
-                    date: news_list
-                    for date, news_list in result['data'][currency].items()
-                    if start_of_week <= datetime.datetime.strptime(date, '%Y-%m-%d').date() <= end_of_week
-                }
+                # Convert date strings to date objects
+                parsed_news_data = {}
+                for date_str, news_list in result['data'][currency].items():
+                    date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
+                    if start_of_week <= date_obj <= end_of_week:
+                        parsed_news_data[date_obj] = news_list
+                
+                news_data = parsed_news_data
         except OperationFailure as e:
             print(f"Error retrieving data from MongoDB: {e}")
             

@@ -55,7 +55,7 @@
     
     <br>
     <p>Be sure to review the accuracy of the models and see which direction the model is predicting with greater reliability.</p> 
-    <a href="{% url 'model-accuracy' %}">Model Accuracy</a>
+    <a class="singleProject__liveLink" href="{% url 'model-accuracy' %}">Model Accuracy</a>
 
     <h2>Extra Market Information</h2>
         <p> Last date model was updated: <b class="flashing-text-red">{{date}}</b> </p>
@@ -116,6 +116,14 @@
                 <td>4hr Lower Bollinger Band: </td>
                 <td> <b> £{{bb_target.lower_bb|floatformat:2}} </b></td>
             </tr>
+            <tr>
+                <td>Average Open Price </td>
+                <td> <b> £{{average_open_price|floatformat:2}} </b></td>
+            </tr>
+            <tr>
+                <td>Final Exit Price </td>
+                <td> <b> £{{final_exit_price|floatformat:2}} </b></td>
+            </tr>
         </table>
         <p>NOTE:</p>
         <p>1) Risk Reward greater than 1 is a good risk</p>
@@ -154,7 +162,7 @@
             <tr>
                 <td>Open price</td>
                 {% for price in open_prices %}
-                <td>£{{ price|floatformat:2 }}</td>
+                <td style="color:blue;">£{{ price|floatformat:2 }}</td>
                 {% endfor %}
 
             </tr>
@@ -178,7 +186,7 @@
             <tr>
                 <td>Volume</td>
                 {% for vol in volume %}
-                <td>{{ vol }}</td>
+                <td style="color:blue;">{{ vol }}</td>
                 {% endfor %}
 
             </tr>

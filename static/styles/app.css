@@ -431,6 +431,7 @@ img {
 
 .singleProject__liveLink {
   font-weight: 500;
+  font-size: 2rem;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid transparent;
 }
@@ -518,6 +519,7 @@ img {
 }
 
 .trade_image {
+  padding-top: 5rem;
   height: 20rem;
   object-fit: contain;
   object-position: top center;

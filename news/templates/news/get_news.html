@@ -36,7 +36,7 @@
                     <div>
                         {% if news_data %}
                         {% for date, news_list in news_data.items %}
-                        <h3>{{ date }}</h3>
+                        <h3>{{ date|date:"D, M j, Y" }}</h3>
                         
                             <p>Please keep in mind the weekly news during your trade!</p>
                             <p> Here are the color code for importance: Red - high , orange - medium, yellow - low</p>
