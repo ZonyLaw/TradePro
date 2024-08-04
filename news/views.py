@@ -90,11 +90,18 @@ def get_news(request):
             })
            
             if result:
-                # Convert date strings to date objects
+                # Convert date strings to date objects and map impact values
+                impact_mapping = {
+                    'red': 'High',
+                    'orange': 'Medium',
+                    'yellow': 'Low'
+                }
                 parsed_news_data = {}
                 for date_str, news_list in result['data'][currency].items():
                     date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
                     if start_of_week <= date_obj <= end_of_week:
+                        for news in news_list:
+                            news['impact'] = impact_mapping.get(news['impact'], news['impact'])
                         parsed_news_data[date_obj] = news_list
                 
                 news_data = parsed_news_data
@@ -102,3 +109,4 @@ def get_news(request):
             print(f"Error retrieving data from MongoDB: {e}")
             
     return render(request, 'news/get_news.html', {'news_data': news_data, 'form': form})
+

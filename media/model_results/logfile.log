@@ -1389,3 +1389,100 @@ AttributeError: module 'datetime' has no attribute 'strptime'
 2024-08-04 04:39:44,726 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-08-04 04:39:44,726 - INFO - Scheduler started
 2024-08-04 04:39:44,754 - INFO - Watching for file changes with StatReloader
+2024-08-04 04:47:25,373 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:47:25,374 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:47:25,374 - INFO - Scheduler started
+2024-08-04 04:47:27,934 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:47:27,934 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:47:27,934 - INFO - Scheduler started
+2024-08-04 04:47:27,957 - INFO - Watching for file changes with StatReloader
+2024-08-04 04:49:53,333 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:49:53,334 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:49:53,334 - INFO - Scheduler started
+2024-08-04 04:49:56,010 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:49:56,010 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:49:56,010 - INFO - Scheduler started
+2024-08-04 04:49:56,037 - INFO - Watching for file changes with StatReloader
+2024-08-04 04:51:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 04:51:00 BST)" (scheduled at 2024-08-04 04:51:00+01:00)
+2024-08-04 04:51:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 04:56:00 BST)" (scheduled at 2024-08-04 04:51:00+01:00)
+2024-08-04 04:51:00,226 - INFO - The input start time: 2024-08-04 03:00:00
+2024-08-04 04:51:00,228 - INFO - The input start time: 2024-08-04 03:00:00
+2024-08-04 04:51:01,127 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 04:56:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-08-04 04:51:19,268 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 04:56:00 BST)" executed successfully
+2024-08-04 04:54:25,847 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:54:25,847 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:54:25,847 - INFO - Scheduler started
+2024-08-04 04:54:28,598 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:54:28,598 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:54:28,598 - INFO - Scheduler started
+2024-08-04 04:54:28,621 - INFO - Watching for file changes with StatReloader
+2024-08-04 04:54:33,844 - ERROR - Internal Server Error: /news/get-news/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\news\views.py", line 101, in get_news
+    date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
+               ^^^^^^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'strptime'
+2024-08-04 04:55:04,001 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\news\views.py changed, reloading.
+2024-08-04 04:55:07,433 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 04:55:07,434 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 04:55:07,434 - INFO - Scheduler started
+2024-08-04 04:55:07,469 - INFO - Watching for file changes with StatReloader
+2024-08-04 04:56:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 04:56:00 BST)" (scheduled at 2024-08-04 04:56:00+01:00)
+2024-08-04 04:56:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 05:01:00 BST)" (scheduled at 2024-08-04 04:56:00+01:00)
+2024-08-04 04:56:00,181 - INFO - The input start time: 2024-08-04 03:00:00
+2024-08-04 04:56:00,181 - INFO - The input start time: 2024-08-04 03:00:00
+2024-08-04 04:56:01,044 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 05:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-08-04 04:56:16,130 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-04 05:01:00 BST)" executed successfully
+2024-08-04 04:57:50,875 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-08-04 04:58:54,652 - WARNING - Not Found: /login/images/favicon.ico
+2024-08-04 04:59:06,846 - WARNING - Not Found: /prices/upload-prices/images/favicon.ico
+2024-08-04 04:59:57,687 - WARNING - Not Found: /account/images/favicon.ico
+2024-08-04 05:00:03,267 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-08-04 05:03:02,504 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 05:03:02,504 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 05:03:02,504 - INFO - Scheduler started
+2024-08-04 05:03:05,216 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-04 05:03:05,216 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-04 05:03:05,216 - INFO - Scheduler started
+2024-08-04 05:03:05,236 - INFO - Watching for file changes with StatReloader
+2024-08-04 05:03:29,638 - WARNING - Not Found: /ml_models/ml-news-model/images/favicon.ico

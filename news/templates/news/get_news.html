@@ -39,7 +39,7 @@
                         <h3>{{ date|date:"D, M j, Y" }}</h3>
                         
                             <p>Please keep in mind the weekly news during your trade!</p>
-                            <p> Here are the color code for importance: Red - high , orange - medium, yellow - low</p>
+                            <p>Impact of importance below:</p>
                             <table>
                                 <thead>
                                     <tr>
@@ -53,7 +53,10 @@
                                         <tr>
                                             <td>{{ news.time }}</td>
                                             <td>{{ news.event }}</td>
-                                            <td>{{ news.impact }}</td>
+
+                                            <td style="{% if news.impact == 'High' %}background-color: red; color: white;{% elif news.impact == 'Medium' %}background-color: orange; color: white;{% elif news.impact == 'Low' %}background-color: yellow; color: black;{% endif %}">
+                                                {{ news.impact }}
+                                            </td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
