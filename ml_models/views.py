@@ -404,7 +404,20 @@ def ml_report2(request):
     potential_trade = model_comparer.trade_position
     trade_target = model_comparer.trade_target
     bb_target = model_comparer.bb_target
-          
+    
+    model_comparer_con = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
+    version_comment_con = model_comparer_con.comment
+    potential_trade_con = model_comparer_con.trade_position
+    trade_target_con = model_comparer_con.trade_target
+    bb_target_con = model_comparer_con.bb_target
+    
+    model_comparer_rev = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
+    version_comment_rev = model_comparer_rev.comment
+    potential_trade_rev = model_comparer_rev.trade_position
+    trade_target_rev = model_comparer_rev.trade_target
+    bb_target_rev = model_comparer_rev.bb_target
+        
+    print(version_comment_rev)
     #calculate entry and exit point  
     if potential_trade == 'Buy':
         entry_adjustment = -0.04
@@ -487,10 +500,12 @@ def ml_report2(request):
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
     context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
-             'version_comment':version_comment,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
-             'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
-             'risk_reward': risk_reward, 'bb_target': bb_target,
+             'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
+             'risk_reward': risk_reward, 
+             'bb_target': bb_target, 'potential_trade': potential_trade, 'version_comment':version_comment,
+             'potential_trade_con': potential_trade_con, 'version_comment_con':version_comment_con,
+             'potential_trade_rev': potential_trade_rev, 'version_comment_rev':version_comment_rev,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,

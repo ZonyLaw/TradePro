@@ -277,6 +277,20 @@
     <h2 style="color: green;">Continuation of a {{potential_trade}} </h2>
     <p>This looks at how strong the movement in the coming hour. It is good indication if the current movement will continue.</p>
 
+    {% if potential_trade_con == 'Buy' %}
+    <div class="flash-container-buy">
+        <div class="flash-box-buy">
+            <p><b>NEXT: {{ version_comment_con }}</b></p>
+        </div>
+    </div>
+    {% elif potential_trade_con == 'Sell' %}
+        <div class="flash-container-sell">
+            <div class="flash-box-sell">
+                <p><b>NEXT: {{ version_comment_con }}</b></p>
+            </div>
+        </div>
+    {% endif %}
+
     <table>
         <thead>
 
@@ -307,6 +321,21 @@
 
     <h2 style="color: red;">Reversal of a {{potential_trade}} </h2>
     <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then a reversed candle stick is a sign of retracement.</p>
+
+    {% if potential_trade_rev == 'Buy' %}
+    <div class="flash-container-buy">
+        <div class="flash-box-buy">
+            <p><b>NEXT: {{ version_comment_rev }}</b></p>
+        </div>
+    </div>
+    {% elif potential_trade_rev == 'Sell' %}
+        <div class="flash-container-sell">
+            <div class="flash-box-sell">
+                <p><b>NEXT: {{ version_comment_rev }}</b></p>
+            </div>
+        </div>
+    {% endif %}
+   
     <table>
         <thead>
 
