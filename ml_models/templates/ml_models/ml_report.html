@@ -50,24 +50,31 @@
     </div>
 
     
-    <p>The model predicts new trades at the start of each hour. While currency movements can be volatile, you may find opportunities to enter the recommended entry point during this timeframe.</p>  
-    <p>This tool is designed to validate your observations and indicate optimal times to focus on a trade.</p>  
+    <div class="expandable-content">
+        <button onclick="toggleText()" class="btn btn--sub--outline btn--md my-md">Extra Information</button>
+        <div id="hidden-text" style="display: none;">
+            <h2>Model Information</h2>
+            <p>The model predicts new trades at the start of each hour. While currency movements can be volatile, you may find opportunities to enter the recommended entry point during this timeframe.</p>
+            <p>This tool is designed to validate your observations and indicate optimal times to focus on a trade.</p>
+            
+            <h2>Extra Market Information</h2>
+                <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
+                <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+                <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
+        </div>
+    </div>  
     
-    <br>
+
     <p>Be sure to review the accuracy of the models and see which direction the model is predicting with greater reliability.</p> 
     <a class="singleProject__liveLink" href="{% url 'model-accuracy' %}">Model Accuracy</a>
 
-    <h2>Extra Market Information</h2>
-        <p> Last date model was updated: <b class="flashing-text-red">{{date}}</b> </p>
-        <p><big>Current 1 hr Candle Stick size: {{ candle_size.one|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
-        <p><big>Current 4 hr Candle Stick size: {{ candle_size.four|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
-        <p>Last open price 4 hrs ago: £{{ open_prices.0|floatformat:2 }} </p>
-
-
+    
+    
     <h1>Trade Opportunity</h1>
-
-        <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
-        <p> Model prediction for the next 4 hrs.</p>
+    
+    <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
+    <p> Model prediction for the next 4 hrs.</p>
+    <p> Last date model was updated: <b class="flashing-text-red">{{date}}</b> </p>
     {% if potential_trade == 'Buy' %}
         <div class="flash-container-buy">
             <div class="flash-box-buy">
@@ -128,6 +135,7 @@
         <p>NOTE:</p>
         <p>1) Risk Reward greater than 1 is a good risk</p>
         <p>2) 4hr Bollinger Band entry is provided for medium and long term entry. Here you can set a 'limit' or 'stop' entry. These values may be different from offical charts which is due to raw prices being different.</p>
+        <p>3) Big spread means you may need to take 70% of the target!</p>
 
 
     <h1>Analysis Report</h1>
@@ -368,5 +376,16 @@
 
 
 </div>
+
+<script>
+    function toggleText() {
+        var text = document.getElementById("hidden-text");
+        if (text.style.display === "none") {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
 
 {% endblock content %}

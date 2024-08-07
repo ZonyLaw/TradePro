@@ -1664,3 +1664,40 @@ KeyError: 'cst'
 2024-08-06 20:01:23,100 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-08-06 20:01:23,100 - INFO - Scheduler started
 2024-08-06 20:01:23,117 - INFO - Watching for file changes with StatReloader
+2024-08-07 18:50:16,167 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 18:50:16,168 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 18:50:16,168 - INFO - Scheduler started
+2024-08-07 18:50:18,381 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 18:50:18,381 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 18:50:18,381 - INFO - Scheduler started
+2024-08-07 18:50:18,399 - INFO - Watching for file changes with StatReloader
+2024-08-07 18:50:20,668 - WARNING - Not Found: /images/favicon.ico
+2024-08-07 18:50:29,822 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-08-07 19:16:01,899 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 19:16:01,899 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 19:16:01,899 - INFO - Scheduler started
+2024-08-07 19:16:04,070 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 19:16:04,070 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 19:16:04,070 - INFO - Scheduler started
+2024-08-07 19:16:04,092 - INFO - Watching for file changes with StatReloader
+2024-08-07 19:16:06,278 - WARNING - Not Found: /images/favicon.ico
+2024-08-07 19:16:18,700 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-08-07 19:19:12,343 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 19:19:12,343 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 19:19:12,343 - INFO - Scheduler started
+2024-08-07 19:19:14,753 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 19:19:14,754 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 19:19:14,754 - INFO - Scheduler started
+2024-08-07 19:19:14,775 - INFO - Watching for file changes with StatReloader
+2024-08-07 19:19:16,503 - WARNING - Not Found: /images/favicon.ico
+2024-08-07 19:19:24,644 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-08-07 20:17:59,012 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 20:17:59,012 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 20:17:59,012 - INFO - Scheduler started
+2024-08-07 20:18:01,238 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-07 20:18:01,239 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-07 20:18:01,239 - INFO - Scheduler started
+2024-08-07 20:18:01,259 - INFO - Watching for file changes with StatReloader
+2024-08-07 20:18:02,927 - WARNING - Not Found: /images/favicon.ico
+2024-08-07 20:18:11,071 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-08-07 20:18:24,414 - WARNING - Not Found: /ml_models/model-accuracy/images/favicon.ico
