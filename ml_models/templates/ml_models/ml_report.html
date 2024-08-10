@@ -117,11 +117,11 @@
             </tr>
             <tr>
                 <td>4hr Upper Bollinger Band: </td>
-                <td> <b> £{{bb_target.upper_bb|floatformat:2}} </b></td>
+                <td> <b> £{{bb_target.upper_bb4|floatformat:2}} </b></td>
             </tr>
             <tr>
                 <td>4hr Lower Bollinger Band: </td>
-                <td> <b> £{{bb_target.lower_bb|floatformat:2}} </b></td>
+                <td> <b> £{{bb_target.lower_bb4|floatformat:2}} </b></td>
             </tr>
             <tr>
                 <td>Average Open Price </td>
@@ -210,14 +210,14 @@
         </tbody>
     </table>
     <p>NOTE:</p>
-    <p>Assess if the PL for the last four hours is negative or positive. These are some of the interpretations:</p>
+    <p>1. Assess if the PL for the last four hours is negative or positive. These are some of the interpretations:</p>
         <ul class="list_indent">
             <li>1. Negative PL could mean projection is expected to be realized within the 4-hour timeframe.</li>
             <li>2. Negative PL means the model may be invalidated, indicating potential contrarian trade.</li>
             <li>3. Mixed PL means oscillation is occurring so consider the extreme points of the Bollinger Bands.</li>
             <li>4. Positive PL means movement is getting strong but watch for any resistance; this include MA and bollinger band.</li>
         </ul>
-    <p>The higher the flatness value, the more it is an oscillating strategy.</p>
+    <p>2. The higher the flatness value, the more it is an oscillating strategy.</p>
 
 
     <h2>Sensitivity Test</h2>

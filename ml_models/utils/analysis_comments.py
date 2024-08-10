@@ -53,8 +53,8 @@ class ModelComparer:
         self.send_email = False
         self.trade_position = ""
         self.trade_target = 0
-        self.bb_target4 = {}
         self.bb_target1 = {}
+        self.bb_target4 = {}
         self.flatness = {}
         
         self.compare_versions()  # Call the comparison method during initialization
@@ -148,7 +148,7 @@ class ModelComparer:
         upper_bb4 = self.model_dict1[key_label1][5]['bb4_results']['upper_bb4']
         lower_bb4 = self.model_dict1[key_label1][5]['bb4_results']['lower_bb4']
         self.bb_target4 = {"lower_bb4":lower_bb4[self.arr_index], "upper_bb4":upper_bb4[self.arr_index]}
-        
+        print(self.bb_target4)
 
         
         
