@@ -519,11 +519,52 @@ class StandardPriceProcessing():
 
         return df
 
+
+    @staticmethod
+    def calculate_flatness_column(df, ori_col, new_col, window_size=10):
+        """
+        Calculate the flatness for each position in the specified column of the DataFrame where there are 
+        at least `window_size` preceding values. Flatness is measured by the sum of absolute differences 
+        between consecutive numbers in the last `window_size` values.
+
+        Args:
+            df (pd.DataFrame): The DataFrame containing the data.
+            ori_col (str): The name of the original column to calculate flatness for.
+            new_col (str): The name of the new column to store flatness values.
+            window_size (int): The number of preceding values to consider for calculating flatness.
+
+        Returns:
+            pd.DataFrame: The original DataFrame with a new column for flatness values.
+
+        Raises:
+            ValueError: If the DataFrame has fewer elements than `window_size`.
+        """
+        # Ensure the DataFrame has at least `window_size` numbers in the specified column
+        if len(df) < window_size:
+            raise ValueError(f"The DataFrame must contain at least {window_size} rows.")
+        
+        # Create a new column for flatness values
+        df[new_col] = None
+        
+        # Iterate over the DataFrame starting from the `window_size`-th row
+        for i in range(window_size - 1, len(df)):
+            # Get the last `window_size` values from the specified column
+            last_n_numbers = df[ori_col].iloc[i - window_size + 1:i + 1].values
+            
+            # Calculate the flatness as the sum of absolute differences between consecutive numbers
+            flatness = sum(abs(last_n_numbers[j + 1] - last_n_numbers[j]) for j in range(window_size - 1))
+            
+            # Store the flatness value in the new column
+            df.at[df.index[i], new_col] = flatness
+        
+        return df
+
         
     def stats_df_gen(self, df, subset_rows):
         """
         This is a function for generating general statistics results based on the scenario prices.
-        It pulls all the standard functions together.
+        It pulls all the standard functions together. NOTE any update here need to be brought over to the 
+        bespoke_model.py!
 
         Args:
             df (dataframe): this is expecting prices for the scenario to generate the stats
@@ -544,6 +585,7 @@ class StandardPriceProcessing():
         df = self.profit_calc(df, "open", "open", 4)
         df = self.reverse_point(df, "open", -1)
         
+        df = self.calculate_flatness_column(df, 'upper_bb20_1', 'up_bb20_1_flat_5', 5)
         df = self.price_difference(df, "upper_bb20_1", "lower_bb20_1", 1, "up_bb20", "low_bb20"  )
         df = self.price_difference(df, "close", "ma20_1", 1 )
         df = self.price_difference(df, "close", "ma50_1", 1 )
@@ -592,7 +634,7 @@ class StandardPriceProcessing():
         # print("Last two rows of dataframe>>>>",last_row_df)
     
         X_live = merged_df.tail(subset_rows)
-        
+               
         return X_live
 
         

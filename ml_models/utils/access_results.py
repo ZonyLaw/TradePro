@@ -107,42 +107,6 @@ def write_to_csv(comment1, comment2, filename):
         writer.writerow([comment1, comment2])
 
 
-def write_to_mongo_new(collection_name, data):
-    """
-    Function to write data to a MongoDB collection. If the collection already exists, it is renamed with a timestamp before inserting the new data.
-    
-    Args:
-        collection_name (str): The name of the MongoDB collection.
-        data (dict): The data to be inserted into the collection.
-    """
-    
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    new_collection_name = f"{collection_name}_archived_{timestamp}"
-    
-    # Check if the collection exists and rename it if it does
-    if collection_name in db.list_collection_names():
-        try:
-            db[collection_name].rename(new_collection_name)
-            print(f"Collection '{collection_name}' renamed to '{new_collection_name}'")
-        except OperationFailure as e:
-            print(f"Error renaming collection: {e}")
-    
-    # Insert data into the new MongoDB collection
-    collection = db[collection_name]
-    result = collection.insert_one(data)
-    
-    # Check the result
-    if result.inserted_id:
-        print(f"Data inserted successfully with ID: {result.inserted_id}")
-        
-        # Retrieve and print the inserted document
-        inserted_document = collection.find_one({"_id": result.inserted_id})
-        print("Inserted Document:", inserted_document)
-    else:
-        print("Data insertion failed.")
-        
-        
-        
 def write_to_mongo(collection_name, data):
     """
     Function to delete an existing collection and insert a new document into a MongoDB collection.

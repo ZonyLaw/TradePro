@@ -53,7 +53,9 @@ class ModelComparer:
         self.send_email = False
         self.trade_position = ""
         self.trade_target = 0
-        self.bb_target = {}
+        self.bb_target4 = {}
+        self.bb_target1 = {}
+        self.flatness = {}
         
         self.compare_versions()  # Call the comparison method during initialization
 
@@ -64,11 +66,13 @@ class ModelComparer:
          - pip_size reports the size of the movement
         """
         
+        #key_label is the type of prediction (e.g. historical, reverse, continue)
         key_label1 = list(self.model_dict1.keys())[0]
         array1 = self.model_dict1[key_label1][2]['item']['Potential Trade']
         current_trade1 = array1[self.arr_index].split()[0]
         pip_size1 = abs(int(array1[self.arr_index].split()[2]))
-
+        flatness1 = self.model_dict1[key_label1][6]['flatness_indicator']['flatness']
+ 
         key_label2 = list(self.model_dict2.keys())[0]
         array2 = self.model_dict2[key_label2][2]['item']['Potential Trade']
         current_trade2 = array2[self.arr_index].split()[0]
@@ -129,17 +133,27 @@ class ModelComparer:
             self.trade_position = current_trade3
             self.trade_target = pip_size3
             
+        self.flatness =  flatness1
         self.bb_entry()
+
+        
 
     def bb_entry(self):
         key_label1 = list(self.model_dict1.keys())[0]
-        upper_bb = self.model_dict1[key_label1][4]['bb4_results']['upper_bb4']
-        lower_bb = self.model_dict1[key_label1][4]['bb4_results']['lower_bb4']
-        
-      
-        self.bb_target = {"lower_bb":lower_bb[self.arr_index], "upper_bb":upper_bb[self.arr_index]}
      
-            
+        upper_bb1 = self.model_dict1[key_label1][4]['bb1_results']['upper_bb1']
+        lower_bb1 = self.model_dict1[key_label1][4]['bb1_results']['lower_bb1']
+        self.bb_target1 = {"lower_bb1":lower_bb1[self.arr_index], "upper_bb1":upper_bb1[self.arr_index]}
+        
+        upper_bb4 = self.model_dict1[key_label1][5]['bb4_results']['upper_bb4']
+        lower_bb4 = self.model_dict1[key_label1][5]['bb4_results']['lower_bb4']
+        self.bb_target4 = {"lower_bb4":lower_bb4[self.arr_index], "upper_bb4":upper_bb4[self.arr_index]}
+        
+
+        
+        
+
+     
 
 def compare_version_results2(model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):
     """

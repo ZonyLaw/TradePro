@@ -64,12 +64,17 @@ def format_model_results(
     trade_target = []
     upper_bb4 =[]
     lower_bb4 =[]
+    upper_bb1 =[]
+    lower_bb1 =[]
+    flatness_up_bb1_5=[]
 
-    for row in model_input_data['upper_bb20_4']:
-        upper_bb4.append(row)
-        
-    for row in model_input_data['lower_bb20_4']:
-        lower_bb4.append(row)
+   
+    for i in range(len(model_input_data['upper_bb20_4'])):
+        upper_bb4.append(model_input_data['upper_bb20_4'][i])
+        lower_bb4.append(model_input_data['lower_bb20_4'][i])
+        upper_bb1.append(model_input_data['upper_bb20_1'][i])
+        lower_bb1.append(model_input_data['lower_bb20_1'][i])
+        flatness_up_bb1_5.append(model_input_data['up_bb20_1_flat_5'][i])
  
     for prediction in model_prediction:
         direction = "Sell" if prediction < 3 else "Buy"
@@ -83,9 +88,19 @@ def format_model_results(
         "trade_type": trade_type,
         "trade_target": trade_target
     }
+    
+    bb1_results = {
+        "upper_bb1": upper_bb1,
+        "lower_bb1": lower_bb1
+    }
+    
     bb4_results = {
         "upper_bb4": upper_bb4,
         "lower_bb4": lower_bb4
+    }
+    
+    flatness_indicator = {
+        "flatness": flatness_up_bb1_5,
     }
 
     # Adding the current timestamp in the format: day-month-year hour:minute:second
@@ -97,7 +112,9 @@ def format_model_results(
             {"heading": heading_labels},
             {"item": main_results},
             {"extra": extra_results},
+            {"bb1_results": bb1_results},
             {"bb4_results": bb4_results},
+            {"flatness_indicator": flatness_indicator},
         ]
     }
     
@@ -174,7 +191,7 @@ def model_run(ticker, X_live, model_version):
     
     # # format the results of the model
     # results, extra_results = format_model_results(model_prediction_proba, model_prediction, model_labels_map)
-    
+
     return {
             'model_prediction_proba': model_prediction_proba,
             'model_prediction': model_prediction,

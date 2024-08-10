@@ -198,6 +198,14 @@
                 {% endfor %}
 
             </tr>
+
+            <tr>
+                <td>Flatness</td>
+                {% for flat_indicator in flatness1 %}
+                <td style="color:purple;">{{ flat_indicator|floatformat:2 }}</td>
+                {% endfor %}
+
+            </tr>
             
         </tbody>
     </table>
@@ -209,6 +217,7 @@
             <li>3. Mixed PL means oscillation is occurring so consider the extreme points of the Bollinger Bands.</li>
             <li>4. Positive PL means movement is getting strong but watch for any resistance; this include MA and bollinger band.</li>
         </ul>
+    <p>The higher the flatness value, the more it is an oscillating strategy.</p>
 
 
     <h2>Sensitivity Test</h2>
