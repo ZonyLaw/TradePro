@@ -16,6 +16,10 @@ BB_CHOICES = [
 
 EVENT_CHOICES = [
     ('CPI', 'CPI'),
+    ('PMI', 'PMI'),
+    ('PPI', 'PPI'),
+    ('retail', 'retail'),
+    ('GDP', 'GDP'),
     ('Unemployment', 'Unemployment'),
     ('employment', 'employment'),
     ('manufacturing', 'manufacturing'),

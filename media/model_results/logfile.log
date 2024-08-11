@@ -1,0 +1,38 @@
+2024-08-11 21:50:19,966 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-11 21:50:19,966 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-11 21:50:19,966 - INFO - Scheduler started
+2024-08-11 21:50:22,223 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-08-11 21:50:22,224 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-08-11 21:50:22,224 - INFO - Scheduler started
+2024-08-11 21:50:22,244 - INFO - Watching for file changes with StatReloader
+2024-08-11 21:51:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 21:51:00 BST)" (scheduled at 2024-08-11 21:51:00+01:00)
+2024-08-11 21:51:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 21:56:00 BST)" (scheduled at 2024-08-11 21:51:00+01:00)
+2024-08-11 21:51:00,243 - INFO - The input start time: 2024-08-11 20:00:00
+2024-08-11 21:51:01,902 - INFO - The input start time: 2024-08-11 20:00:00
+2024-08-11 21:51:30,160 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 21:56:00 BST)" executed successfully
+2024-08-11 21:51:42,658 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 21:56:00 BST)" executed successfully
+2024-08-11 21:52:58,947 - WARNING - Not Found: /news/get-news/images/favicon.ico
+2024-08-11 21:53:08,728 - WARNING - Not Found: /ml_models/ml-news-model/images/favicon.ico
+2024-08-11 21:56:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 22:01:00 BST)" (scheduled at 2024-08-11 21:56:00+01:00)
+2024-08-11 21:56:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 22:01:00 BST)" (scheduled at 2024-08-11 21:56:00+01:00)
+2024-08-11 21:56:00,015 - INFO - The input start time: 2024-08-11 20:00:00
+2024-08-11 21:56:00,090 - INFO - The input start time: 2024-08-11 20:00:00
+2024-08-11 21:56:00,921 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 22:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 165, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-08-11 21:56:24,411 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 22:01:00 BST)" executed successfully
