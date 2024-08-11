@@ -7,7 +7,7 @@ def comment_model_results(model_results_dict, model_results_label):
         trade = "Buy"
         
     if trade in array:
-        print(trade)
+     
         comment = f"Scenario {model_results_label} - indicates there could be oscilation pattern or near-term retracement!"
     else:
         comment = f"Scenario {model_results_label} - indicates consistent {current_trade.split()[0]} direction up to 40pips!"
@@ -148,7 +148,7 @@ class ModelComparer:
         upper_bb4 = self.model_dict1[key_label1][5]['bb4_results']['upper_bb4']
         lower_bb4 = self.model_dict1[key_label1][5]['bb4_results']['lower_bb4']
         self.bb_target4 = {"lower_bb4":lower_bb4[self.arr_index], "upper_bb4":upper_bb4[self.arr_index]}
-        print(self.bb_target4)
+  
 
         
         
