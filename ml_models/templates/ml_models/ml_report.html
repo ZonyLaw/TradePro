@@ -116,20 +116,30 @@
                 <td> <b> {{risk_reward|floatformat:2}}</b></td>
             </tr>
             <tr>
-                <td>4hr Upper Bollinger Band: </td>
-                <td> <b> £{{bb_target.upper_bb4|floatformat:2}} </b></td>
-            </tr>
-            <tr>
-                <td>4hr Lower Bollinger Band: </td>
-                <td> <b> £{{bb_target.lower_bb4|floatformat:2}} </b></td>
-            </tr>
-            <tr>
                 <td>Average Open Price </td>
                 <td> <b> £{{average_open_price|floatformat:2}} </b></td>
             </tr>
-            <tr>
+            <tr style="color:#e75480;background-color: #d3d3d3;">
                 <td>Final Exit Price </td>
-                <td> <b> £{{final_exit_price|floatformat:2}} </b></td>
+                <td> 
+                    <b> £{{final_exit_price|floatformat:2}} </b>
+                </td>
+            </tr>
+            <tr style="color:#e75480;background-color: #d3d3d3;">
+                <td>1hr Upper Bollinger Band: </td>
+                <td> <b> £{{bb_target1.upper_bb1|floatformat:2}}</b></td>
+            </tr>
+            <tr style="color:#e75480;background-color: #d3d3d3;">
+                <td>1hr Lower Bollinger Band: </td>
+                <td> <b> £{{bb_target1.lower_bb1|floatformat:2}} </b></td>
+            </tr>
+            <tr style="color:#e75480;background-color: #d3d3d3;">
+                <td>4hr Upper Bollinger Band: </td>
+                <td> <b> £{{bb_target.upper_bb4|floatformat:2}} </b></td>
+            </tr>
+            <tr style="color:#e75480;background-color: #d3d3d3;">
+                <td>4hr Lower Bollinger Band: </td>
+                <td> <b> £{{bb_target.lower_bb4|floatformat:2}} </b></td>
             </tr>
         </table>
         <p>NOTE:</p>
@@ -200,7 +210,7 @@
             </tr>
 
             <tr>
-                <td>Flatness</td>
+                <td>Volatility Indicator</td>
                 {% for flat_indicator in flatness1 %}
                 <td style="color:purple;">{{ flat_indicator|floatformat:2 }}</td>
                 {% endfor %}
@@ -297,13 +307,13 @@
     {% if potential_trade_con == 'Buy' %}
     <div class="flash-container-buy">
         <div class="flash-box-buy">
-            <p><b>NEXT: {{ version_comment_con }}</b></p>
+            <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_con }}</b></p>
         </div>
     </div>
     {% elif potential_trade_con == 'Sell' %}
         <div class="flash-container-sell">
             <div class="flash-box-sell">
-                <p><b>NEXT: {{ version_comment_con }}</b></p>
+                <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_con }}</b></p>
             </div>
         </div>
     {% endif %}
@@ -342,13 +352,13 @@
     {% if potential_trade_rev == 'Buy' %}
     <div class="flash-container-buy">
         <div class="flash-box-buy">
-            <p><b>NEXT: {{ version_comment_rev }}</b></p>
+            <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_rev }}</b></p>
         </div>
     </div>
     {% elif potential_trade_rev == 'Sell' %}
         <div class="flash-container-sell">
             <div class="flash-box-sell">
-                <p><b>NEXT: {{ version_comment_rev }}</b></p>
+                <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_rev }}</b></p>
             </div>
         </div>
     {% endif %}

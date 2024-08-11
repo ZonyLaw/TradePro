@@ -403,7 +403,7 @@ def ml_report2(request):
     potential_trade = model_comparer.trade_position
     trade_target = model_comparer.trade_target
     bb_target = model_comparer.bb_target4
-    #bb_target1 = model_comparer.bb_target1 #example of pulling the 1 hour bb
+    bb_target1 = model_comparer.bb_target1 #example of pulling the 1 hour bb
     flatness1 = model_comparer.flatness
     
     model_comparer_con = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
@@ -503,7 +503,9 @@ def ml_report2(request):
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 
-             'bb_target': bb_target, 'potential_trade': potential_trade, 'version_comment':version_comment, 'flatness1':flatness1,
+             'bb_target': bb_target, 'bb_target1':bb_target1, 
+             'potential_trade': potential_trade, 'version_comment':version_comment,
+             'flatness1':flatness1,
              'potential_trade_con': potential_trade_con, 'version_comment_con':version_comment_con,
              'potential_trade_rev': potential_trade_rev, 'version_comment_rev':version_comment_rev,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
