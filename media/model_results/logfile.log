@@ -36,3 +36,58 @@ Traceback (most recent call last):
            ~~~~~~~~~~~^^^^^^^^^^^^^
 KeyError: 'cst'
 2024-08-11 21:56:24,411 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-08-11 22:01:00 BST)" executed successfully
+2024-09-01 09:45:01,251 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-01 09:45:01,252 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-01 09:45:01,252 - INFO - Scheduler started
+2024-09-01 09:45:03,382 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-01 09:45:03,383 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-01 09:45:03,383 - INFO - Scheduler started
+2024-09-01 09:45:03,404 - INFO - Watching for file changes with StatReloader
+2024-09-01 09:45:09,430 - WARNING - Not Found: /images/favicon.ico
+2024-09-01 09:45:22,294 - WARNING - Bad Request: /api/users/register/
+2024-09-01 09:45:31,112 - WARNING - Bad Request: /api/users/register/
+2024-09-01 09:45:32,504 - WARNING - Bad Request: /api/users/register/
+2024-09-01 09:45:48,694 - WARNING - Unauthorized: /api/users/profile/
+2024-09-01 09:46:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 09:46:00 BST)" (scheduled at 2024-09-01 09:46:00+01:00)
+2024-09-01 09:46:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 09:46:00 BST)" (scheduled at 2024-09-01 09:46:00+01:00)
+2024-09-01 09:46:00,254 - INFO - The input start time: 2024-09-01 08:00:00
+2024-09-01 09:46:00,255 - INFO - The input start time: 2024-09-01 08:00:00
+2024-09-01 09:46:03,707 - WARNING - Unauthorized: /api/users/
+2024-09-01 09:46:24,588 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 09:51:00 BST)" executed successfully
+2024-09-01 09:46:25,620 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 09:51:00 BST)" executed successfully
+2024-09-01 20:40:58,859 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-01 20:40:58,859 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-01 20:40:58,859 - INFO - Scheduler started
+2024-09-01 20:41:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 20:41:00 BST)" (scheduled at 2024-09-01 20:41:00+01:00)
+2024-09-01 20:41:00,223 - INFO - The input start time: 2024-09-01 19:00:00
+2024-09-01 20:41:01,015 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-01 20:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-01 20:41:01,111 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-01 20:41:01,111 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-01 20:41:01,111 - INFO - Scheduler started
+2024-09-01 20:41:01,130 - INFO - Watching for file changes with StatReloader
+2024-09-01 20:41:12,006 - WARNING - Not Found: /images/favicon.ico
+2024-09-01 20:41:18,547 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-01 20:41:20,014 - WARNING - Not Found: /login/images/favicon.ico
+2024-09-01 20:41:33,917 - WARNING - Not Found: /account/images/favicon.ico
+2024-09-01 20:41:37,295 - WARNING - Not Found: /tickers/update-ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-01 20:41:44,081 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-01 20:41:49,501 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-09-01 20:41:59,743 - INFO - The input start time: 2024-08-30 20:00:00+00:00
+2024-09-01 20:45:09,986 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico

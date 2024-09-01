@@ -14,6 +14,7 @@ from ..models import Price
 from django.db.models import Count
 from tradepro.utils.read_json import read_ticker_list
 import logging
+from tradepro.utils.email_alert import email_alert
 
 if os.path.isfile('env.py'):
     import env
@@ -177,6 +178,13 @@ def run_IG(ticker, start_date=None, end_date=None):
         
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+        email_alert(
+            model_ticker=ticker,
+            comment=str(e),
+            general_ticker_info="Error occurred while fetching data.",
+            send_email_enabled=True,  # Adjust based on your needs
+            email_freq_enabler=1  # Adjust based on your needs
+        )
 
 
 
