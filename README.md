@@ -70,7 +70,10 @@ This is the development of a model using machine learning based on historical da
 **EPIC 8 - Integrating model with app to display results**
 
 This epic is integrating the model into this app so it could produce hourly results giving insights what type of trades is at play (ie. buy or sell) and the probability for a range of profit and losses.
-It will also suggest some targets and stop loss. This is to help a trader to make better decision on how to place the trade.
+It will also suggest some targets and stop loss. This is to help a trader to make better decision on how to place the trade. 
+
+This also look into using REACT to build the frontend. Initially, it will be build using Django to test how to best the results. Once a more structure process is established, REACT will be used to 
+provide more flexiability how to layout the webpage.
 
 **EPIC 9 - Improving performance**
 
@@ -146,6 +149,10 @@ The file containing this code is called, updater.py.
   * Register -> signup.html - Visible to logged out users
   * Logout -> logout.html - Visible to logged in users
 
+
+**Front End**
+* React is leveraged to create a dynamic and flexible front-end experience. Additionally, React's virtual DOM ensures optimal rendering performance, providing a smoother and more responsive user experience.
+* A development version of the application can be found here: https://tradeprotool.netlify.app/.
 
 **MongoDB**
 

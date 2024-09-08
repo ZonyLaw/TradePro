@@ -91,3 +91,82 @@ KeyError: 'cst'
 2024-09-01 20:41:49,501 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
 2024-09-01 20:41:59,743 - INFO - The input start time: 2024-08-30 20:00:00+00:00
 2024-09-01 20:45:09,986 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-08 20:54:58,545 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:54:58,545 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:54:58,545 - INFO - Scheduler started
+2024-09-08 20:55:01,163 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:55:01,163 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:55:01,163 - INFO - Scheduler started
+2024-09-08 20:55:01,181 - INFO - Watching for file changes with StatReloader
+2024-09-08 20:56:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 20:56:00 BST)" (scheduled at 2024-09-08 20:56:00+01:00)
+2024-09-08 20:56:00,250 - INFO - The input start time: 2024-09-08 19:00:00
+2024-09-08 20:56:00,250 - INFO - The input start time: 2024-09-08 19:00:00
+2024-09-08 20:56:25,365 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:01:00 BST)" executed successfully
+2024-09-08 20:56:26,375 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:01:00 BST)" executed successfully
+2024-09-08 20:57:09,831 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:57:09,831 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:57:09,831 - INFO - Scheduler started
+2024-09-08 20:57:12,131 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:57:12,132 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:57:12,132 - INFO - Scheduler started
+2024-09-08 20:57:12,153 - INFO - Watching for file changes with StatReloader
+2024-09-08 20:58:33,207 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\report_urls.py changed, reloading.
+2024-09-08 20:58:36,259 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:58:36,259 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:58:36,260 - INFO - Scheduler started
+2024-09-08 20:58:36,285 - INFO - Watching for file changes with StatReloader
+2024-09-08 20:59:08,468 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\report_urls.py changed, reloading.
+2024-09-08 20:59:11,555 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 20:59:11,555 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 20:59:11,555 - INFO - Scheduler started
+2024-09-08 20:59:11,574 - INFO - Watching for file changes with StatReloader
+2024-09-08 20:59:14,637 - WARNING - Not Found: /images/favicon.ico
+2024-09-08 20:59:54,825 - WARNING - Not Found: /api/reports/USDJPY_pred_historical_1h_v5
+2024-09-08 20:59:54,872 - WARNING - Not Found: /favicon.ico
+2024-09-08 21:00:18,899 - WARNING - Not Found: /api/report/USDJPY_pred_historical_1h_v5
+2024-09-08 21:00:23,148 - WARNING - Not Found: /api/report/USDJPY_pred_historical_1h_v5
+2024-09-08 21:00:40,069 - WARNING - Not Found: /api/report/USDJPY_pred_historical_1h_v5
+2024-09-08 21:01:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:01:00 BST)" (scheduled at 2024-09-08 21:01:00+01:00)
+2024-09-08 21:01:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:01:00 BST)" (scheduled at 2024-09-08 21:01:00+01:00)
+2024-09-08 21:01:00,173 - INFO - The input start time: 2024-09-08 20:00:00
+2024-09-08 21:01:00,174 - INFO - The input start time: 2024-09-08 20:00:00
+2024-09-08 21:01:00,802 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-08 21:01:07,424 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\views\report_view.py changed, reloading.
+2024-09-08 21:01:09,512 - WARNING - Not Found: /api/report/USDJPY_pred_historical_1h_v5
+2024-09-08 21:01:17,886 - WARNING - Not Found: /api/report/USDJPY_pred_historical_4h
+2024-09-08 21:01:20,457 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-08 21:06:00 BST)" executed successfully
+2024-09-08 21:01:23,534 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 21:01:23,534 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 21:01:23,534 - INFO - Scheduler started
+2024-09-08 21:01:23,555 - INFO - Watching for file changes with StatReloader
+2024-09-08 21:01:39,731 - WARNING - Not Found: /api/report/USDJPY_pred_historical_v4
+2024-09-08 21:03:43,538 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 21:03:43,538 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 21:03:43,538 - INFO - Scheduler started
+2024-09-08 21:03:45,678 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 21:03:45,679 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 21:03:45,679 - INFO - Scheduler started
+2024-09-08 21:03:45,700 - INFO - Watching for file changes with StatReloader
+2024-09-08 21:03:54,909 - WARNING - Not Found: /api/report/USDJPY_pred_historical_v4
+2024-09-08 21:04:21,796 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\api\urls\report_urls.py changed, reloading.
+2024-09-08 21:04:24,771 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-08 21:04:24,771 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-08 21:04:24,771 - INFO - Scheduler started
+2024-09-08 21:04:24,794 - INFO - Watching for file changes with StatReloader

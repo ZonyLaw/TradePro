@@ -13,5 +13,6 @@ urlpatterns = [
     path('', include('users.urls')),
     path('api/tickers/', include('api.urls.ticker_urls')),
     path('api/users/', include('api.urls.user_urls')),
+    path('api/report/', include('api.urls.report_urls')),
 
 ]
