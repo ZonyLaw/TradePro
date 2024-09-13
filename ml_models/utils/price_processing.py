@@ -626,7 +626,7 @@ class StandardPriceProcessing():
        
         # merged the content from 4hr table into 1 hr.
         merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
-        #merged_df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
+        
         merged_df = merged_df.dropna()
 
         # Check the last two rows
@@ -636,8 +636,8 @@ class StandardPriceProcessing():
         X_live = merged_df.tail(subset_rows)
                
         return X_live
-
-        
+      
+          
     def scenario_reverse(self):
         """
         This function is to generate a reverse scneario based on reversal of candle sticks.
@@ -712,6 +712,8 @@ class StandardPriceProcessing():
         """
         This function is to test the sensitivity of the model predictions by flipping direction of the candle stick.
         A consistent predictions means a stronger confidence.
+        The last two rows are increase and decrease by the adjustment. This is because the last row is dropped in the process 
+        due to NA content. Therefore calculation takes the 2nd last row to produce model results.
         
         Args:
             adjustment (float): adjustment is the amount to flip the candle movement to test the sensitivity of the model results
@@ -722,20 +724,23 @@ class StandardPriceProcessing():
         
         ticker = Ticker.objects.get(symbol="USDJPY")
         df = self.priceDB_to_df(ticker)
-        
+
         # Make adjustments directly to the last row in the DataFrame
         variability_df = df.copy()
         variability_df['scenario'] = 0.0 
-        last_row = variability_df.iloc[-1]
+        last_row1 = variability_df.iloc[-1]
+        last_row2 = variability_df.iloc[-2]
 
         
         #Prediction based on positive candle stick
         # print("looking at var>>>>>>>>", variability_df)
         variability_df.loc[variability_df.index[-1], 'scenario'] = adjustment
-        variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] + adjustment
+        variability_df.loc[variability_df.index[-1], 'close'] = last_row1['open'] + adjustment
+        variability_df.loc[variability_df.index[-2], 'close'] = last_row2['open'] + adjustment
         variability_df_pos = self.stats_df_gen(variability_df,2)
+      
         # print("last row", variability_df.loc[last_row.id])
-        # print("AFTER>>>>>>>>", variability_df_pos)
+        # print("AFTER POS>>>>>>>>", variability_df_pos[['day','month','year', 'open','close']])
     
         #Takes the last trend strength to minismise the overly switching
         # variability_df_pos.loc[variability_df_pos.index[1], 'trend_strength_1'] = variability_df_pos.loc[variability_df_pos.index[0], 'trend_strength_1']
@@ -743,16 +748,17 @@ class StandardPriceProcessing():
         #Prediction based on positive candle stick
         # print("looking at var>>>>>>>>", variability_df)
         variability_df.loc[variability_df.index[-1], 'scenario'] = -adjustment
-        variability_df.loc[variability_df.index[-1], 'close'] = last_row['open'] - adjustment
+        variability_df.loc[variability_df.index[-1], 'close'] = last_row1['open'] - adjustment
+        variability_df.loc[variability_df.index[-2], 'close'] = last_row2['open'] - adjustment
         variability_df_neg = self.stats_df_gen(variability_df,2)
-        # print("last row", variability_df.loc[last_row.id])
-        # print("AFTER>>>>>>>>", variability_df_neg)
-    
+        # print("last row", variability_df.loc[last_row.id])   
+        #print("AFTER NEG>>>>>>>>", variability_df_neg['close'])
         #Takes the last trend strength to minismise the overly switching
         # variability_df_neg.loc[variability_df_neg.index[1], 'trend_strength_1'] = variability_df_neg.loc[variability_df_neg.index[0], 'trend_strength_1']
         
     
         variability_all = pd.concat([variability_df_pos.tail(1), variability_df_neg.tail(1)])
+        # variability_all.to_csv(r"C:\Users\sunny\Downloads\variability_all.csv")
         # print("variability all >>>>>>" ,variability_all['scenario']) 
         
         return (variability_all)
