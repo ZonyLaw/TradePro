@@ -742,7 +742,9 @@ class StandardPriceProcessing():
         ticker = Ticker.objects.get(symbol="USDJPY")
         df = self.priceDB_to_df(ticker)
 
-        # Make adjustments directly to the last row in the DataFrame
+        # Make adjustments directly to the last two rows in the DataFrame.
+        # it seems the stats_df_gen() function ignores the last row because of NA so the 2nd last row is used.
+        # TODO: review the code so it handle last row better and should this be called from view?
         variability_df = df.copy()
         variability_df['scenario'] = 0.0 
         last_row1 = variability_df.iloc[-1]

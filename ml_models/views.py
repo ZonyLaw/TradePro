@@ -249,6 +249,8 @@ def ml_report_backup(request):
         '10 pips':pred_var_pos,
         '-10 pips':pred_var_neg,
     }
+    
+
 
     reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
     reverse_pred = reverse_pred_results['predictions_label']
@@ -260,7 +262,7 @@ def ml_report_backup(request):
              'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 'bb_target': bb_target,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
-             'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
+             'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list, 
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
              "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
@@ -489,10 +491,10 @@ def ml_report2(request):
         
 
     #sensitivity test save as dictionary for front-end access
-    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+    pred_var_pos, pred_var_neg, pos_trade, neg_trade = variability_analysis(model_ticker, 0.1)
     pred_var_list = {
-        '10 pips':pred_var_pos,
-        '-10 pips':pred_var_neg,
+        '10 pips':{'prediction': pred_var_pos, 'trade':pos_trade},
+        '-10 pips':{'prediction': pred_var_neg, 'trade': neg_trade}
     }
 
     reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")

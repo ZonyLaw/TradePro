@@ -150,11 +150,6 @@ class ModelComparer:
         self.bb_target4 = {"lower_bb4":lower_bb4[self.arr_index], "upper_bb4":upper_bb4[self.arr_index]}
   
 
-        
-        
-
-     
-
 def compare_version_results2(model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):
     """
     The function provides comments based on consistency of models output. 

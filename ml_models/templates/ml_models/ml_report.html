@@ -250,8 +250,12 @@
                 {% for variability, result  in pred_var_list.items %}
                 <tr>
                     <td>{{ variability }}</td>
-                
-                        <td>{{ result }}</td>
+                        
+                    {% if result.trade == 'Buy'%}
+                        <td style = "color:green; font-size: 20px">{{ result.prediction }}</td>
+                    {% else %}
+                        <td style = "color:red; font-size: 20px">{{ result.prediction }}</td>
+                    {%endif%}
                 </tr>
                 {% endfor %}
                 

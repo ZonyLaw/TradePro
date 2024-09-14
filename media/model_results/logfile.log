@@ -2344,3 +2344,255 @@ PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\com
 2024-09-14 13:56:00,159 - INFO - The input start time: 2024-09-14 12:00:00
 2024-09-14 13:56:17,901 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:01:00 BST)" executed successfully
 2024-09-14 13:56:18,396 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:01:00 BST)" executed successfully
+2024-09-14 14:30:28,382 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:30:28,382 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:30:28,383 - INFO - Scheduler started
+2024-09-14 14:30:30,875 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:30:30,875 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:30:30,875 - INFO - Scheduler started
+2024-09-14 14:30:30,896 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:30:40,817 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 492, in ml_report2
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-09-14 14:30:54,176 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-14 14:30:57,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:30:57,505 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:30:57,505 - INFO - Scheduler started
+2024-09-14 14:30:57,528 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:31:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:31:00 BST)" (scheduled at 2024-09-14 14:31:00+01:00)
+2024-09-14 14:31:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:36:00 BST)" (scheduled at 2024-09-14 14:31:00+01:00)
+2024-09-14 14:31:00,206 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:31:01,107 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:31:01,792 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-14 14:31:18,995 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:36:00 BST)" executed successfully
+2024-09-14 14:31:27,175 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-14 14:47:41,779 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:47:41,779 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:47:41,779 - INFO - Scheduler started
+2024-09-14 14:47:44,173 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:47:44,173 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:47:44,173 - INFO - Scheduler started
+2024-09-14 14:47:44,195 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:47:46,073 - WARNING - Not Found: /images/favicon.ico
+2024-09-14 14:47:53,454 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 494, in ml_report2
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-09-14 14:47:53,563 - WARNING - Not Found: /favicon.ico
+2024-09-14 14:48:53,152 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-14 14:48:56,397 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:48:56,397 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:48:56,397 - INFO - Scheduler started
+2024-09-14 14:48:56,417 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:49:05,123 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-14 14:49:08,722 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:49:08,722 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:49:08,723 - INFO - Scheduler started
+2024-09-14 14:49:08,741 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:49:17,421 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-14 14:49:20,385 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:49:20,385 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:49:20,385 - INFO - Scheduler started
+2024-09-14 14:49:20,404 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:50:04,908 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 494, in ml_report2
+    pred_var_pos, pred_var_neg = variability_analysis(model_ticker, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-09-14 14:51:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:51:00 BST)" (scheduled at 2024-09-14 14:51:00+01:00)
+2024-09-14 14:51:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:51:00 BST)" (scheduled at 2024-09-14 14:51:00+01:00)
+2024-09-14 14:51:00,181 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:51:00,182 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:51:14,611 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-14 14:51:21,011 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:56:00 BST)" executed successfully
+2024-09-14 14:51:24,344 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 494, in ml_report2
+    pred_var_pos, pred_var_neg, pos_trade, neg_trade = variability_analysis(model_ticker, 0.1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2024-09-14 14:51:25,754 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:56:00 BST)" executed successfully
+2024-09-14 14:51:33,869 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:51:33,869 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:51:33,869 - INFO - Scheduler started
+2024-09-14 14:51:36,704 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:51:36,704 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:51:36,704 - INFO - Scheduler started
+2024-09-14 14:51:36,724 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:51:46,156 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'result[1]'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 520, in ml_report2
+    return render(request, 'ml_models/ml_report.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\smartif.py", line 181, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[1]' from 'result[1]'
+2024-09-14 14:56:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:56:00 BST)" (scheduled at 2024-09-14 14:56:00+01:00)
+2024-09-14 14:56:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:56:00 BST)" (scheduled at 2024-09-14 14:56:00+01:00)
+2024-09-14 14:56:00,166 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:56:00,167 - INFO - The input start time: 2024-09-14 13:00:00
+2024-09-14 14:56:00,716 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 15:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-14 14:56:17,802 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 15:01:00 BST)" executed successfully
+2024-09-14 14:56:46,091 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-14 14:57:25,630 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:57:25,630 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:57:25,630 - INFO - Scheduler started
+2024-09-14 14:57:27,938 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 14:57:27,938 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 14:57:27,938 - INFO - Scheduler started
+2024-09-14 14:57:27,958 - INFO - Watching for file changes with StatReloader
+2024-09-14 14:57:34,472 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico

@@ -506,5 +506,8 @@ def variability_analysis(model_ticker, sensitivity_adjustment):
     model_comparer_neg = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 1, 1 )
     version_comment_pos = model_comparer_pos.comment
     version_comment_neg = model_comparer_neg.comment
+    pos_trade = model_comparer_pos.trade_position
+    neg_trade = model_comparer_neg.trade_position
     
-    return version_comment_pos, version_comment_neg
+   
+    return version_comment_pos, version_comment_neg, pos_trade, neg_trade
