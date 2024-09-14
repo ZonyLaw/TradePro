@@ -1437,3 +1437,910 @@ PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\var
 2024-09-13 21:08:43,210 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
 2024-09-13 21:08:44,784 - WARNING - Not Found: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/images/favicon.ico
 2024-09-13 21:09:19,549 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-13 21:12:58,303 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:12:58,303 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:12:58,303 - INFO - Scheduler started
+2024-09-13 21:13:00,601 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:13:00,601 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:13:00,601 - INFO - Scheduler started
+2024-09-13 21:13:00,623 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:13:03,334 - WARNING - Not Found: /images/favicon.ico
+2024-09-13 21:13:06,122 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-13 21:13:10,351 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-13 21:13:14,506 - WARNING - Not Found: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/images/favicon.ico
+2024-09-13 21:13:45,073 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-13 21:17:34,325 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:17:34,325 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:17:34,325 - INFO - Scheduler started
+2024-09-13 21:17:36,661 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:17:36,662 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:17:36,662 - INFO - Scheduler started
+2024-09-13 21:17:36,681 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:20:32,952 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-13 21:20:36,071 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:20:36,071 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:20:36,071 - INFO - Scheduler started
+2024-09-13 21:20:36,097 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:20:49,359 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-13 21:20:52,635 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:20:52,635 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:20:52,635 - INFO - Scheduler started
+2024-09-13 21:20:52,655 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:21:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:21:00 BST)" (scheduled at 2024-09-13 21:21:00+01:00)
+2024-09-13 21:21:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:26:00 BST)" (scheduled at 2024-09-13 21:21:00+01:00)
+2024-09-13 21:21:00,173 - INFO - The input start time: 2024-09-13 20:00:00
+2024-09-13 21:21:00,183 - INFO - The input start time: 2024-09-13 20:00:00
+2024-09-13 21:21:24,152 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:26:00 BST)" executed successfully
+2024-09-13 21:21:45,234 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:26:00 BST)" executed successfully
+2024-09-13 21:24:37,651 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-13 21:25:08,630 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:25:08,630 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:25:08,630 - INFO - Scheduler started
+2024-09-13 21:25:11,100 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:25:11,100 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:25:11,100 - INFO - Scheduler started
+2024-09-13 21:25:11,121 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:25:21,858 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 657, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 519, in scenario_builder
+    df.iloc[len(df.index)] = last_row
+    ~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexing.py", line 720, in __setitem__
+    self._has_valid_setitem_indexer(key)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexing.py", line 1461, in _has_valid_setitem_indexer
+    raise IndexError("iloc cannot enlarge its target object")
+IndexError: iloc cannot enlarge its target object
+2024-09-13 21:25:21,973 - WARNING - Not Found: /favicon.ico
+2024-09-13 21:25:37,073 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-13 21:25:40,263 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 21:25:40,263 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 21:25:40,263 - INFO - Scheduler started
+2024-09-13 21:25:40,284 - INFO - Watching for file changes with StatReloader
+2024-09-13 21:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:26:00 BST)" (scheduled at 2024-09-13 21:26:00+01:00)
+2024-09-13 21:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:31:00 BST)" (scheduled at 2024-09-13 21:26:00+01:00)
+2024-09-13 21:26:00,193 - INFO - The input start time: 2024-09-13 20:00:00
+2024-09-13 21:26:02,092 - INFO - The input start time: 2024-09-13 20:00:00
+2024-09-13 21:26:02,189 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 657, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 519, in scenario_builder
+    df.loc[len(df.index)] = last_row
+    ~~~~~~^^^^^^^^^^^^^^^~
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexing.py", line 720, in __setitem__
+    self._has_valid_setitem_indexer(key)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexing.py", line 1461, in _has_valid_setitem_indexer
+    raise IndexError("iloc cannot enlarge its target object")
+IndexError: iloc cannot enlarge its target object
+2024-09-13 21:26:26,265 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 21:31:00 BST)" executed successfully
+2024-09-13 22:29:53,876 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 22:29:53,877 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 22:29:53,877 - INFO - Scheduler started
+2024-09-13 22:29:56,788 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 22:29:56,788 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 22:29:56,789 - INFO - Scheduler started
+2024-09-13 22:29:56,810 - INFO - Watching for file changes with StatReloader
+2024-09-13 22:29:58,688 - WARNING - Not Found: /images/favicon.ico
+2024-09-13 22:30:02,262 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-13 22:30:05,332 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-13 22:30:05,857 - WARNING - Not Found: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/images/favicon.ico
+2024-09-13 22:30:06,953 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 693, in scenario_reverse
+    df = self.scenario_builder_r(df, 0.1, "reverse")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StandardPriceProcessing.scenario_builder_r() takes 3 positional arguments but 4 were given
+2024-09-13 22:30:07,065 - WARNING - Not Found: /favicon.ico
+2024-09-13 22:31:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:31:00 BST)" (scheduled at 2024-09-13 22:31:00+01:00)
+2024-09-13 22:31:00,220 - INFO - The input start time: 2024-09-13 21:00:00
+2024-09-13 22:31:00,220 - INFO - The input start time: 2024-09-13 21:00:00
+2024-09-13 22:31:02,261 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 693, in scenario_reverse
+    df = self.scenario_builder_r(df, 0.1, "reverse")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StandardPriceProcessing.scenario_builder_r() takes 3 positional arguments but 4 were given
+2024-09-13 22:31:02,293 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 693, in scenario_reverse
+    df = self.scenario_builder_r(df, 0.1, "reverse")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: StandardPriceProcessing.scenario_builder_r() takes 3 positional arguments but 4 were given
+2024-09-13 22:31:10,185 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-13 22:31:13,441 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 22:31:13,441 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 22:31:13,441 - INFO - Scheduler started
+2024-09-13 22:31:13,463 - INFO - Watching for file changes with StatReloader
+2024-09-13 22:35:01,312 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 22:35:01,312 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 22:35:01,313 - INFO - Scheduler started
+2024-09-13 22:35:03,604 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-13 22:35:03,604 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-13 22:35:03,604 - INFO - Scheduler started
+2024-09-13 22:35:03,625 - INFO - Watching for file changes with StatReloader
+2024-09-13 22:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:36:00 BST)" (scheduled at 2024-09-13 22:36:00+01:00)
+2024-09-13 22:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:41:00 BST)" (scheduled at 2024-09-13 22:36:00+01:00)
+2024-09-13 22:36:00,190 - INFO - The input start time: 2024-09-13 21:00:00
+2024-09-13 22:36:00,190 - INFO - The input start time: 2024-09-13 21:00:00
+2024-09-13 22:36:00,874 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-13 22:36:24,915 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-13 22:41:00 BST)" executed successfully
+2024-09-14 08:09:35,459 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 08:09:35,459 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 08:09:35,459 - INFO - Scheduler started
+2024-09-14 08:09:37,983 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 08:09:37,983 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 08:09:37,983 - INFO - Scheduler started
+2024-09-14 08:09:38,006 - INFO - Watching for file changes with StatReloader
+2024-09-14 08:09:39,959 - WARNING - Not Found: /images/favicon.ico
+2024-09-14 08:09:46,979 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-14 08:09:51,944 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-14 08:09:53,344 - WARNING - Not Found: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/images/favicon.ico
+2024-09-14 08:11:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 08:11:00 BST)" (scheduled at 2024-09-14 08:11:00+01:00)
+2024-09-14 08:11:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 08:11:00 BST)" (scheduled at 2024-09-14 08:11:00+01:00)
+2024-09-14 08:11:00,247 - INFO - The input start time: 2024-09-14 07:00:00
+2024-09-14 08:11:00,247 - INFO - The input start time: 2024-09-14 07:00:00
+2024-09-14 08:11:01,041 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 08:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-14 08:11:29,554 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 08:16:00 BST)" executed successfully
+2024-09-14 09:25:19,755 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:25:19,756 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:25:19,756 - INFO - Scheduler started
+2024-09-14 09:25:22,085 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:25:22,086 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:25:22,086 - INFO - Scheduler started
+2024-09-14 09:25:22,106 - INFO - Watching for file changes with StatReloader
+2024-09-14 09:26:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 09:26:00 BST)" (scheduled at 2024-09-14 09:26:00+01:00)
+2024-09-14 09:26:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 09:31:00 BST)" (scheduled at 2024-09-14 09:26:00+01:00)
+2024-09-14 09:26:00,219 - INFO - The input start time: 2024-09-14 08:00:00
+2024-09-14 09:26:00,219 - INFO - The input start time: 2024-09-14 08:00:00
+2024-09-14 09:26:20,476 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 09:31:00 BST)" executed successfully
+2024-09-14 09:26:21,315 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 09:31:00 BST)" executed successfully
+2024-09-14 09:27:58,031 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-14 09:33:14,911 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:33:14,911 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:33:14,911 - INFO - Scheduler started
+2024-09-14 09:33:17,387 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:33:17,387 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:33:17,387 - INFO - Scheduler started
+2024-09-14 09:33:17,410 - INFO - Watching for file changes with StatReloader
+2024-09-14 09:33:35,310 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 715, in scenario_reverse
+    df = self.scenario_builder_r(df, 0.1, "reverse",-1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 578, in scenario_builder_r
+    df.to_csv(r"C:\Users\sunny\Downloads\df_end-4_rev.csv", index=False)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\df_end-4_rev.csv'
+2024-09-14 09:33:35,417 - WARNING - Not Found: /favicon.ico
+2024-09-14 09:37:17,965 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:37:17,965 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:37:17,965 - INFO - Scheduler started
+2024-09-14 09:37:20,234 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:37:20,234 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:37:20,234 - INFO - Scheduler started
+2024-09-14 09:37:20,253 - INFO - Watching for file changes with StatReloader
+2024-09-14 09:39:45,517 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:39:45,517 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:39:45,517 - INFO - Scheduler started
+2024-09-14 09:39:47,753 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:39:47,753 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:39:47,753 - INFO - Scheduler started
+2024-09-14 09:39:47,774 - INFO - Watching for file changes with StatReloader
+2024-09-14 09:41:01,845 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:41:01,846 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:41:01,846 - INFO - Scheduler started
+2024-09-14 09:41:04,111 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 09:41:04,111 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 09:41:04,111 - INFO - Scheduler started
+2024-09-14 09:41:04,138 - INFO - Watching for file changes with StatReloader
+2024-09-14 12:43:25,948 - INFO - Watching for file changes with StatReloader
+2024-09-14 12:47:17,911 - INFO - Watching for file changes with StatReloader
+2024-09-14 12:54:11,486 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 12:54:11,486 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 12:54:11,486 - INFO - Scheduler started
+2024-09-14 12:54:13,683 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 12:54:13,683 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 12:54:13,683 - INFO - Scheduler started
+2024-09-14 12:54:13,703 - INFO - Watching for file changes with StatReloader
+2024-09-14 12:54:34,148 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 12:54:37,107 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 12:54:37,107 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 12:54:37,107 - INFO - Scheduler started
+2024-09-14 12:54:37,125 - INFO - Watching for file changes with StatReloader
+2024-09-14 12:54:39,061 - WARNING - Not Found: /images/favicon.ico
+2024-09-14 12:54:40,969 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-14 12:54:44,176 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-14 12:54:45,089 - WARNING - Not Found: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/images/favicon.ico
+2024-09-14 12:56:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 12:56:00 BST)" (scheduled at 2024-09-14 12:56:00+01:00)
+2024-09-14 12:56:00,196 - INFO - The input start time: 2024-09-14 11:00:00
+2024-09-14 12:56:00,197 - INFO - The input start time: 2024-09-14 11:00:00
+2024-09-14 12:56:24,566 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:01:00 BST)" executed successfully
+2024-09-14 12:56:26,278 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:01:00 BST)" executed successfully
+2024-09-14 13:01:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:06:00 BST)" (scheduled at 2024-09-14 13:01:00+01:00)
+2024-09-14 13:01:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:06:00 BST)" (scheduled at 2024-09-14 13:01:00+01:00)
+2024-09-14 13:01:00,008 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:01:00,008 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:01:00,677 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-14 13:01:19,201 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:06:00 BST)" executed successfully
+2024-09-14 13:01:23,183 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:01:36,467 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:01:36,467 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:01:36,467 - INFO - Scheduler started
+2024-09-14 13:01:38,830 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:01:38,830 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:01:38,830 - INFO - Scheduler started
+2024-09-14 13:01:38,854 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:02:07,918 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 458, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 268, in compare_version_results
+    rev_10pip_trade1 = rev_array1[arr_index].split()[0]
+                       ~~~~~~~~~~^^^^^^^^^^^
+IndexError: list index out of range
+2024-09-14 13:02:08,023 - WARNING - Not Found: /favicon.ico
+2024-09-14 13:03:33,986 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:03:37,284 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:03:37,284 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:03:37,284 - INFO - Scheduler started
+2024-09-14 13:03:37,304 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:06:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:06:00 BST)" (scheduled at 2024-09-14 13:06:00+01:00)
+2024-09-14 13:06:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:11:00 BST)" (scheduled at 2024-09-14 13:06:00+01:00)
+2024-09-14 13:06:00,162 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:06:00,162 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:06:14,915 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:11:00 BST)" executed successfully
+2024-09-14 13:06:14,915 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 458, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 268, in compare_version_results
+    rev_10pip_trade1 = rev_array1[arr_index].split()[0]
+                       ~~~~~~~~~~^^^^^^^^^^^
+IndexError: list index out of range
+2024-09-14 13:11:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:16:00 BST)" (scheduled at 2024-09-14 13:11:00+01:00)
+2024-09-14 13:11:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:16:00 BST)" (scheduled at 2024-09-14 13:11:00+01:00)
+2024-09-14 13:11:00,012 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:11:00,012 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:11:14,607 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 458, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 268, in compare_version_results
+    rev_10pip_trade1 = rev_array1[arr_index].split()[0]
+                       ~~~~~~~~~~^^^^^^^^^^^
+IndexError: list index out of range
+2024-09-14 13:11:14,610 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:16:00 BST)" executed successfully
+2024-09-14 13:13:20,838 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-14 13:15:55,435 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:16:03,282 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:16:03,283 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:16:03,283 - INFO - Scheduler started
+2024-09-14 13:16:05,643 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:16:05,643 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:16:05,643 - INFO - Scheduler started
+2024-09-14 13:16:05,665 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:16:19,938 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 720, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse",-1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 536, in scenario_builder
+    df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\df_scenario.csv'
+2024-09-14 13:21:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:21:00 BST)" (scheduled at 2024-09-14 13:21:00+01:00)
+2024-09-14 13:21:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:21:00 BST)" (scheduled at 2024-09-14 13:21:00+01:00)
+2024-09-14 13:21:00,184 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:21:00,190 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:21:02,394 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 720, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse",-1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 536, in scenario_builder
+    df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\df_scenario.csv'
+2024-09-14 13:21:02,397 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 720, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse",-1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 536, in scenario_builder
+    df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\df_scenario.csv'
+2024-09-14 13:21:55,578 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:21:58,770 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:21:58,770 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:21:58,770 - INFO - Scheduler started
+2024-09-14 13:21:58,802 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:22:08,105 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 720, in scenario_reverse
+    df = self.scenario_builder(df, 0.1, "reverse",-1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 536, in scenario_builder
+    df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\df_scenario.csv'
+2024-09-14 13:23:08,687 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:23:11,783 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:23:11,783 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:23:11,783 - INFO - Scheduler started
+2024-09-14 13:23:11,804 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:25:24,299 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:25:27,437 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:25:40,536 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:25:43,775 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:25:55,880 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:25:58,816 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:26:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:31:00 BST)" (scheduled at 2024-09-14 13:26:00+01:00)
+2024-09-14 13:26:00,007 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:26:20,353 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:31:00 BST)" executed successfully
+2024-09-14 13:26:42,818 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:27:08,265 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:27:11,193 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:27:25,285 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:27:28,431 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:27:28,432 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:27:28,432 - INFO - Scheduler started
+2024-09-14 13:27:28,465 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:31:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:36:00 BST)" (scheduled at 2024-09-14 13:31:00+01:00)
+2024-09-14 13:31:00,181 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:31:02,900 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 728, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:34:34,739 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:34:37,908 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:34:37,908 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:34:37,908 - INFO - Scheduler started
+2024-09-14 13:34:37,931 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:36:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:41:00 BST)" (scheduled at 2024-09-14 13:36:00+01:00)
+2024-09-14 13:36:00,176 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:36:02,797 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:39:32,072 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:39:32,072 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:39:32,072 - INFO - Scheduler started
+2024-09-14 13:39:34,269 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:39:34,269 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:39:34,269 - INFO - Scheduler started
+2024-09-14 13:39:34,289 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:39:46,322 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:41:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:41:00 BST)" (scheduled at 2024-09-14 13:41:00+01:00)
+2024-09-14 13:41:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:41:00 BST)" (scheduled at 2024-09-14 13:41:00+01:00)
+2024-09-14 13:41:00,165 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:41:00,166 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:41:03,308 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:41:03,399 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:43:14,381 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py changed, reloading.
+2024-09-14 13:43:17,582 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:43:17,583 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:43:17,583 - INFO - Scheduler started
+2024-09-14 13:43:17,603 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:43:29,135 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:43:57,648 - ERROR - Internal Server Error: /prices/update-price/7690fb2a-5135-4212-b8b5-400b60b0357d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 437, in run_model_predictions
+    pred_reverse_1h_v5, pred_continue_1h_v5, pred_historical_1h_v5, _ = standard_analysis(model_ticker, "1h_v5")
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:46:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:51:00 BST)" (scheduled at 2024-09-14 13:46:00+01:00)
+2024-09-14 13:46:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:46:00 BST)" (scheduled at 2024-09-14 13:46:00+01:00)
+2024-09-14 13:46:00,010 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:46:00,183 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:46:04,298 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:46:04,806 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 435, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 231, in standard_analysis
+    X_live_reverse = dp.scenario_reverse()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\price_processing.py", line 723, in scenario_reverse
+    combined_df.to_csv(r"C:\Users\sunny\Downloads\combined_df.csv")
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\generic.py", line 3466, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\format.py", line 1105, in to_csv
+    csv_formatter.save()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\formats\csvs.py", line 237, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\io\common.py", line 702, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\sunny\\Downloads\\combined_df.csv'
+2024-09-14 13:54:05,027 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:54:05,027 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:54:05,027 - INFO - Scheduler started
+2024-09-14 13:54:07,280 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-14 13:54:07,280 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-14 13:54:07,280 - INFO - Scheduler started
+2024-09-14 13:54:07,301 - INFO - Watching for file changes with StatReloader
+2024-09-14 13:56:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 13:56:00 BST)" (scheduled at 2024-09-14 13:56:00+01:00)
+2024-09-14 13:56:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:01:00 BST)" (scheduled at 2024-09-14 13:56:00+01:00)
+2024-09-14 13:56:00,159 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:56:00,159 - INFO - The input start time: 2024-09-14 12:00:00
+2024-09-14 13:56:17,901 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:01:00 BST)" executed successfully
+2024-09-14 13:56:18,396 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-14 14:01:00 BST)" executed successfully

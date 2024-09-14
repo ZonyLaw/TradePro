@@ -487,35 +487,48 @@ class StandardPriceProcessing():
     @staticmethod
     def scenario_builder(df, close_adjustment, scenario):
         """
-        This function is to build a scenario of price data set for the next hour. This can be feed into a new
+        Build a scenario of price data for the next hour. This can be fed into a new
         model run to see what results are generated. There are two scenarios:
-            1) continue, &
-            2) reverse.
+            1) continue
+            2) reverse
 
         Args:
-            df (dataframe): this is the dataframe containing the original prices
-            close_adjustment (float): specfy the pips to create the scenario 
-            scneario (string): continue and reverse are the scenarios that can be examined.
+            df (pd.DataFrame): DataFrame containing the original prices.
+            close_adjustment (float): Specify the pips to create the scenario.
+            scenario (str): Either 'continue' or 'reverse' scenario.
 
         Returns:
-            dataframe: new dataframe with extra row of forecast price for the next hour.
+            pd.DataFrame: DataFrame with two extra rows of forecast prices for the next hour.
         """
         
-        #if it is continue the sign is switched as the default calculation is used for generating reversal candle stick
+        # Adjust close_adjustment for 'continue' or 'reverse' scenario
         if scenario == 'continue':
             close_adjustment = -close_adjustment
         
+        # Get the last row of the DataFrame and set direction, then generate another 
+        # row continue the direction.
         last_row = df.iloc[-1].copy()
         last_row['date'] += timedelta(hours=1)
         if(last_row['close'] > last_row['open']):
             last_row['open'] = last_row['close']
             last_row['close'] = last_row['open'] - close_adjustment
+            df.loc[len(df.index)] = last_row
+            last_row = df.iloc[-1].copy()
+            last_row['open'] = last_row['close']
+            last_row['close'] = last_row['open'] - close_adjustment
+            df.loc[len(df.index)] = last_row
+            
         else:
             last_row['open'] = last_row['close']
             last_row['close'] = last_row['open'] + close_adjustment
+            df.loc[len(df.index)] = last_row
+            last_row = df.iloc[-1].copy()
+            last_row['open'] = last_row['close']
+            last_row['close'] = last_row['open'] + close_adjustment
+            df.loc[len(df.index)] = last_row
         
-        df.loc[len(df.index)] = last_row
-        # df.to_csv(r"C:\Users\sunny\Desktop\Development\df_end-4.csv", index=False)
+        # Optionally save the new DataFrame to CSV
+        # df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)
 
         return df
 
@@ -626,8 +639,8 @@ class StandardPriceProcessing():
        
         # merged the content from 4hr table into 1 hr.
         merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
-        
         merged_df = merged_df.dropna()
+ 
 
         # Check the last two rows
         last_row_df = merged_df.tail(2)[0:1]
@@ -652,15 +665,17 @@ class StandardPriceProcessing():
         
         #build the reverse candle stick scenario
         #the base scenario is retained for the first dataframe
-        df = self.scenario_builder(df, 0.1, "reverse")
-        reverse_df_2pips = self.stats_df_gen(df, 2)
+        reverse_df = self.scenario_builder(df.copy(), 0.1, "reverse")
+        reverse_df_2pips = self.stats_df_gen(reverse_df, 2)
         
-        df = self.scenario_builder(df, 0.2, "reverse")
-        reverse_df_4pips = self.stats_df_gen(df, 2)
+        #this is looking at 20 pips movement.
+        reverse_df = self.scenario_builder(df.copy(), 0.2, "reverse")
+        reverse_df_4pips = self.stats_df_gen(reverse_df, 2)
         
+        #collect all the two sensitivity scenarios to feed into the model
         last_row = reverse_df_4pips.tail(1)
         combined_df = pd.concat([reverse_df_2pips, last_row])
-        
+
         return (combined_df)
 
     
@@ -677,12 +692,14 @@ class StandardPriceProcessing():
         df = self.priceDB_to_df(ticker)
         #build the reverse candle stick scenario
         #the base scenario is retained for the first dataframe
-        df = self.scenario_builder(df, 0.1, "continue")
-        continue_df_2pips = self.stats_df_gen(df, 2)
-            
-        df = self.scenario_builder(df, 0.2, "continue")
-        continue_df_4pips = self.stats_df_gen(df, 2)
+        continue_df = self.scenario_builder(df.copy(), 0.1, "continue")
+        continue_df_2pips = self.stats_df_gen(continue_df, 2)
         
+        #this is looking at 20 pips movement.
+        continue_df = self.scenario_builder(df.copy(), 0.2, "continue")
+        continue_df_4pips = self.stats_df_gen(continue_df, 2)
+        
+        #collect all the two sensitivity scenarios to feed into the model
         last_row = continue_df_4pips.tail(1)
         combined_df = pd.concat([continue_df_2pips, last_row])
         

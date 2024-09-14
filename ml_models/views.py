@@ -406,7 +406,7 @@ def ml_report2(request):
     bb_target1 = model_comparer.bb_target1 #example of pulling the 1 hour bb
     flatness1 = model_comparer.flatness
     
-    model_comparer_con = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
+    model_comparer_con = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 1, 1 )
     version_comment_con = model_comparer_con.comment
     potential_trade_con = model_comparer_con.trade_position
     trade_target_con = model_comparer_con.trade_target
