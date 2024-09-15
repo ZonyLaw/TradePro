@@ -2596,3 +2596,47 @@ KeyError: 'cst'
 2024-09-14 14:57:27,938 - INFO - Scheduler started
 2024-09-14 14:57:27,958 - INFO - Watching for file changes with StatReloader
 2024-09-14 14:57:34,472 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-15 11:52:58,703 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 11:52:58,704 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 11:52:58,704 - INFO - Scheduler started
+2024-09-15 11:53:01,247 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 11:53:01,248 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 11:53:01,248 - INFO - Scheduler started
+2024-09-15 11:53:01,279 - INFO - Watching for file changes with StatReloader
+2024-09-15 11:53:54,403 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 11:53:57,897 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 11:53:57,897 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 11:53:57,897 - INFO - Scheduler started
+2024-09-15 11:53:57,926 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:01:39,004 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:01:39,004 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:01:39,004 - INFO - Scheduler started
+2024-09-15 12:01:41,534 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:01:41,534 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:01:41,534 - INFO - Scheduler started
+2024-09-15 12:01:41,558 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:02:00,568 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 12:02:04,091 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:02:04,091 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:02:04,091 - INFO - Scheduler started
+2024-09-15 12:02:04,115 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:02:22,687 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 12:02:26,184 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:02:26,184 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:02:26,185 - INFO - Scheduler started
+2024-09-15 12:02:26,206 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:03:05,482 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 12:03:09,026 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:03:09,027 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:03:09,027 - INFO - Scheduler started
+2024-09-15 12:03:09,054 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:04:20,407 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 12:04:23,876 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:04:23,876 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:04:23,876 - INFO - Scheduler started
+2024-09-15 12:04:23,899 - INFO - Watching for file changes with StatReloader
+2024-09-15 12:04:44,928 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-15 12:04:48,376 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-15 12:04:48,376 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-15 12:04:48,376 - INFO - Scheduler started
+2024-09-15 12:04:48,400 - INFO - Watching for file changes with StatReloader

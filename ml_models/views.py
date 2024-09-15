@@ -5,6 +5,7 @@ import importlib.util
 
 import datetime
 import pytz
+import zoneinfo
 
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, HttpResponse
@@ -17,6 +18,7 @@ from .utils.manual_model_input import manual_price_input, news_param_input
 from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize
 from prices.models import Price
 from tickers.models import Ticker
+from users.models import Profile
 from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 
@@ -333,15 +335,35 @@ def ml_report2(request):
     pred_historical_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v5')
     pred_historical_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_1h_v5')
     
+    user = request.user
+
+    if user.is_authenticated:  # Check if the user is authenticated
+        try:
+            # Try to get the user's profile
+            profile = Profile.objects.get(user=user)
+            # Use the user's timezone if available
+            user_timezone = profile.timezone
+        except Profile.DoesNotExist:
+            # If no profile exists, fallback to UTC
+            user_timezone = zoneinfo.ZoneInfo("UTC")
+    else:
+        # Handle anonymous user by using a default timezone
+        user_timezone = zoneinfo.ZoneInfo("UTC")
+
+    # Extract the timezone string
+    user_timezone = str(user_timezone)  
+    
     # Parse the original date string
     original_date_str = pred_historical_v4['pred_historical'][0]['date']
     original_date = datetime.datetime.strptime(original_date_str, "%d-%m-%Y %H:%M:%S")
     # Get the user's timezone, default to UTC if not set
     original_date = original_date.replace(tzinfo=pytz.utc)
-    user_timezone = request.COOKIES.get('user_timezone', 'UTC')  # Use cookie or default
+    # user_timezone = "UTC"
     user_tz = pytz.timezone(user_timezone)
     # Convert original date to the user's timezone
     date = original_date.astimezone(user_tz)
+    
+    formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
     
     #extracting final results
     historical_headers = pred_historical_v4['pred_historical'][1]['heading']
@@ -501,7 +523,7 @@ def ml_report2(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
+    context={'form': form,  'date': formatted_date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 
