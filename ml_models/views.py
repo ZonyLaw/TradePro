@@ -335,23 +335,25 @@ def ml_report2(request):
     pred_historical_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v5')
     pred_historical_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_1h_v5')
     
-    user = request.user
+    # user = request.user
 
-    if user.is_authenticated:  # Check if the user is authenticated
-        try:
-            # Try to get the user's profile
-            profile = Profile.objects.get(user=user)
-            # Use the user's timezone if available
-            user_timezone = profile.timezone
-        except Profile.DoesNotExist:
-            # If no profile exists, fallback to UTC
-            user_timezone = zoneinfo.ZoneInfo("UTC")
-    else:
-        # Handle anonymous user by using a default timezone
-        user_timezone = zoneinfo.ZoneInfo("UTC")
+    # if user.is_authenticated:  # Check if the user is authenticated
+    #     try:
+    #         # Try to get the user's profile
+    #         profile = Profile.objects.get(user=user)
+    #         # Use the user's timezone if available
+    #         user_timezone = profile.timezone
+    #     except Profile.DoesNotExist:
+    #         # If no profile exists, fallback to UTC
+    #         user_timezone = zoneinfo.ZoneInfo("UTC")
+    # else:
+    #     # Handle anonymous user by using a default timezone
+    #     user_timezone = zoneinfo.ZoneInfo("UTC")
 
-    # Extract the timezone string
-    user_timezone = str(user_timezone)  
+    # # Extract the timezone string
+    # user_timezone = str(user_timezone)  
+    
+    user_timezone = "GB"
     
     # Parse the original date string
     original_date_str = pred_historical_v4['pred_historical'][0]['date']
@@ -363,7 +365,7 @@ def ml_report2(request):
     # Convert original date to the user's timezone
     date = original_date.astimezone(user_tz)
     
-    formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
+    # formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
     
     #extracting final results
     historical_headers = pred_historical_v4['pred_historical'][1]['heading']
@@ -523,7 +525,7 @@ def ml_report2(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-    context={'form': form,  'date': formatted_date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
+    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 
