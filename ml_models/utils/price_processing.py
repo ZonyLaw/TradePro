@@ -616,9 +616,12 @@ class StandardPriceProcessing():
         df['pl_open_1_hr'] = df['pl_open_1_hr'].ffill()
         df['pl_open_4_hr'] = df['pl_open_4_hr'].ffill()
         columns = ['dev20_1', 'dev50_1', 'dev100_1', 'lead_open_1', 'lead_open_4']
-        df = df.drop(columns, axis=1)
-        df = df.dropna()
         
+        df = df.drop(columns, axis=1)
+        #fill empty cell with zero, may need to review as this may not be appropriate.
+        df['reverse_point'] = df['reverse_point'].fillna(0)
+        df = df.dropna()
+   
         # create 4hr table with indicators
         df_4hr = self.create_4hr_table(df)
         df_4hr = self.calc_moving_average(df_4hr, 4)
@@ -636,6 +639,7 @@ class StandardPriceProcessing():
         df_4hr = df_4hr.drop(columns, axis=1)
         df_4hr = df_4hr.dropna()
 
+       
        
         # merged the content from 4hr table into 1 hr.
         merged_df = pd.merge(df, df_4hr, on=['day', 'month', 'year','4hr_tf'], how='left')
