@@ -118,13 +118,13 @@ def ml_report_backup(request):
     pred_historical_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_historical_1h_v5.json')
     
     #extracting final results
-    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
-    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
+    historical_headers = pred_historical_v4['pred_historical'][1]['trade_headers']
+    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['trade_results']['Potential Trade']
+    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['trade_results']['Potential Trade']
+    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['trade_results']['Potential Trade']
  
-    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['extra']['trade_type']
-    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['extra']['trade_type']
+    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['trade_breakdown']['trade_type']
+    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['trade_breakdown']['trade_type']
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -141,10 +141,10 @@ def ml_report_backup(request):
     pred_reverse_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_reverse_1h_v5.json')
     
     #extracting final results
-    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
-    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['item']['Potential Trade']
-    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['item']['Potential Trade']
-    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['item']['Potential Trade']
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['trade_headers']
+    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['trade_results']['Potential Trade']
+    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['trade_results']['Potential Trade']
+    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['trade_results']['Potential Trade']
     
     #save array of reversed results as a dictionary for frontend access
     reverse_labels = {'Periods': reverse_headers}
@@ -161,10 +161,10 @@ def ml_report_backup(request):
     pred_continue_1h_v5 = read_prediction_from_json(model_ticker, f'{model_ticker}_pred_continue_1h_v5.json')
     
     #extracting final results
-    continue_headers = pred_continue_v4['pred_continue'][1]['heading']
-    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['item']['Potential Trade']
-    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['item']['Potential Trade']
-    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['item']['Potential Trade']
+    continue_headers = pred_continue_v4['pred_continue'][1]['trade_headers']
+    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['trade_results']['Potential Trade']
+    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['trade_results']['Potential Trade']
+    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['trade_results']['Potential Trade']
     
     #save array of continued results as a dictionary for frontend access
     continue_labels = {'Periods': continue_headers}
@@ -368,13 +368,13 @@ def ml_report2(request):
     # formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
     
     #extracting final results
-    historical_headers = pred_historical_v4['pred_historical'][1]['heading']
-    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['item']['Potential Trade']
-    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['item']['Potential Trade']
+    historical_headers = pred_historical_v4['pred_historical'][1]['trade_headers']
+    potential_trade_results_v4 = pred_historical_v4['pred_historical'][2]['trade_results']['Potential Trade']
+    potential_trade_results_v5 = pred_historical_v5['pred_historical'][2]['trade_results']['Potential Trade']
+    potential_trade_results_1h_v5 = pred_historical_1h_v5['pred_historical'][2]['trade_results']['Potential Trade']
  
-    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['extra']['trade_type']
-    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['extra']['trade_type']
+    potential_trade_label_v4 = pred_historical_v4['pred_historical'][3]['trade_breakdown']['trade_type']
+    potential_trade_label_v5 = pred_historical_v5['pred_historical'][3]['trade_breakdown']['trade_type']
     
     #save historical array as a dictionary for frontend access
     historical_labels = {'Periods': historical_headers}
@@ -391,10 +391,10 @@ def ml_report2(request):
     pred_reverse_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_reverse_1h_v5')
     
     #extracting final results
-    reverse_headers = pred_reverse_v4['pred_reverse'][1]['heading']
-    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['item']['Potential Trade']
-    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['item']['Potential Trade']
-    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['item']['Potential Trade']
+    reverse_headers = pred_reverse_v4['pred_reverse'][1]['trade_headers']
+    reverse_trade_results_v4 = pred_reverse_v4['pred_reverse'][2]['trade_results']['Potential Trade']
+    reverse_trade_results_v5 = pred_reverse_v5['pred_reverse'][2]['trade_results']['Potential Trade']
+    reverse_trade_results_1h_v5 = pred_reverse_1h_v5['pred_reverse'][2]['trade_results']['Potential Trade']
     
     #save array of reversed results as a dictionary for frontend access
     reverse_labels = {'Periods': reverse_headers}
@@ -410,10 +410,10 @@ def ml_report2(request):
     pred_continue_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_continue_1h_v5')
     
     #extracting final results
-    continue_headers = pred_continue_v4['pred_continue'][1]['heading']
-    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['item']['Potential Trade']
-    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['item']['Potential Trade']
-    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['item']['Potential Trade']
+    continue_headers = pred_continue_v4['pred_continue'][1]['trade_headers']
+    continue_trade_results_v4 = pred_continue_v4['pred_continue'][2]['trade_results']['Potential Trade']
+    continue_trade_results_v5 = pred_continue_v5['pred_continue'][2]['trade_results']['Potential Trade']
+    continue_trade_results_1h_v5 = pred_continue_1h_v5['pred_continue'][2]['trade_results']['Potential Trade']
     
     #save array of continued results as a dictionary for frontend access
     continue_labels = {'Periods': continue_headers}

@@ -51,7 +51,7 @@ def format_model_results(
     for i in range(len(model_labels_map)):
         
                 main_results.update({
-                f"{model_labels_map[i]}": [
+                f"prob{model_labels_map[i]}": [
                     round(model_prediction_proba[j, i] * 100, 2) 
                     for j in range(model_prediction_proba.shape[0])
                 ]
@@ -109,9 +109,9 @@ def format_model_results(
     group_results = {
         pred_name: [
             {"date": current_timestamp},
-            {"heading": heading_labels},
-            {"item": main_results},
-            {"extra": extra_results},
+            {"trade_headers": heading_labels},
+            {"trade_results": main_results},
+            {"trade_breakdown": extra_results},
             {"bb1_results": bb1_results},
             {"bb4_results": bb4_results},
             {"flatness_indicator": flatness_indicator},

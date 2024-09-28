@@ -1,5 +1,5 @@
 def comment_model_results(model_results_dict, model_results_label):
-    array = model_results_dict[model_results_label][2]['item']['Potential Trade']
+    array = model_results_dict[model_results_label][2]['trade_results']['Potential Trade']
     current_trade = array[0]
     if "Buy" in current_trade:
         trade = "Sell"
@@ -68,18 +68,18 @@ class ModelComparer:
         
         #key_label is the type of prediction (e.g. historical, reverse, continue)
         key_label1 = list(self.model_dict1.keys())[0]
-        array1 = self.model_dict1[key_label1][2]['item']['Potential Trade']
+        array1 = self.model_dict1[key_label1][2]['trade_results']['Potential Trade']
         current_trade1 = array1[self.arr_index].split()[0]
         pip_size1 = abs(int(array1[self.arr_index].split()[2]))
         flatness1 = self.model_dict1[key_label1][6]['flatness_indicator']['flatness']
  
         key_label2 = list(self.model_dict2.keys())[0]
-        array2 = self.model_dict2[key_label2][2]['item']['Potential Trade']
+        array2 = self.model_dict2[key_label2][2]['trade_results']['Potential Trade']
         current_trade2 = array2[self.arr_index].split()[0]
         pip_size2 = abs(int(array2[self.arr_index].split()[2]))
 
         key_label3 = list(self.model_dict3.keys())[0]
-        array3 = self.model_dict3[key_label3][2]['item']['Potential Trade']
+        array3 = self.model_dict3[key_label3][2]['trade_results']['Potential Trade']
         current_trade3 = array3[self.arr_index].split()[0]
         pip_size3 = abs(int(array3[self.arr_index].split()[2]))
 
@@ -167,17 +167,17 @@ def compare_version_results2(model_dict1, model_dict2, model_dict3, arr_index, n
     """
     
     key_label1 = list(model_dict1.keys())[0]
-    array1 = model_dict1[key_label1][2]['item']['Potential Trade']
+    array1 = model_dict1[key_label1][2]['trade_results']['Potential Trade']
     current_trade1 = array1[arr_index].split()[0]
     pip_size1 = abs(int(array1[arr_index].split()[2]))
     
     key_label2 = list(model_dict2.keys())[0]
-    array2 = model_dict2[key_label2][2]['item']['Potential Trade']
+    array2 = model_dict2[key_label2][2]['trade_results']['Potential Trade']
     current_trade2 = array2[arr_index].split()[0]
     pip_size2 = abs(int(array2[arr_index].split()[2]))
     
     key_label3 = list(model_dict3.keys())[0]
-    array3 = model_dict3[key_label3][2]['item']['Potential Trade']
+    array3 = model_dict3[key_label3][2]['trade_results']['Potential Trade']
     current_trade3 = array3[arr_index].split()[0]
     pip_size3 = abs(int(array3[arr_index].split()[2]))
     
@@ -259,17 +259,17 @@ def compare_version_results(pred_collection, arr_index, newline_syntax):
     model_rev3 = pred_collection["pred_reverse_1h_v5"]
        
     rev_label1 = list(model_rev1.keys())[0]
-    rev_array1 = model_rev1[rev_label1][2]['item']['Potential Trade']
+    rev_array1 = model_rev1[rev_label1][2]['trade_results']['Potential Trade']
     rev_10pip_trade1 = rev_array1[arr_index].split()[0]
     rev_pip_size1 = abs(int(rev_array1[arr_index].split()[2]))
     
     rev_label2 = list(model_rev2.keys())[0]
-    rev_array2 = model_rev2[rev_label2][2]['item']['Potential Trade']
+    rev_array2 = model_rev2[rev_label2][2]['trade_results']['Potential Trade']
     rev_10pip_trade2 = rev_array2[arr_index].split()[0]
     rev_pip_size2 = abs(int(rev_array2[arr_index].split()[2]))
     
     rev_label3 = list(model_rev3.keys())[0]
-    rev_array3 = model_rev3[rev_label3][2]['item']['Potential Trade']
+    rev_array3 = model_rev3[rev_label3][2]['trade_results']['Potential Trade']
     rev_10pip_trade3 = rev_array3[arr_index].split()[0]
     rev_pip_size3 = abs(int(rev_array3[arr_index].split()[2]))
     
@@ -278,17 +278,17 @@ def compare_version_results(pred_collection, arr_index, newline_syntax):
     model_cont3 = pred_collection["pred_continue_1h_v5"]
        
     cont_label1 = list(model_cont1.keys())[0]
-    cont_array1 = model_cont1[cont_label1][2]['item']['Potential Trade']
+    cont_array1 = model_cont1[cont_label1][2]['trade_results']['Potential Trade']
     cont_10pip_trade1 = cont_array1[arr_index].split()[0]
     cont_pip_size1 = abs(int(cont_array1[arr_index].split()[2]))
     
     cont_label2 = list(model_cont2.keys())[0]
-    cont_array2 = model_cont2[cont_label2][2]['item']['Potential Trade']
+    cont_array2 = model_cont2[cont_label2][2]['trade_results']['Potential Trade']
     cont_10pip_trade2 = cont_array2[arr_index].split()[0]
     cont_pip_size2 = abs(int(cont_array2[arr_index].split()[2]))
     
     cont_label3 = list(model_cont3.keys())[0]
-    cont_array3 = model_cont3[cont_label3][2]['item']['Potential Trade']
+    cont_array3 = model_cont3[cont_label3][2]['trade_results']['Potential Trade']
     cont_10pip_trade3 = cont_array3[arr_index].split()[0]
     cont_pip_size3 = abs(int(cont_array3[arr_index].split()[2]))
     
