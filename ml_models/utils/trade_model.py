@@ -107,15 +107,16 @@ def format_model_results(
     current_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
     
     group_results = {
-        pred_name: [
-            {"date": current_timestamp},
-            {"trade_headers": heading_labels},
-            {"trade_results": main_results},
-            {"trade_breakdown": extra_results},
-            {"bb1_results": bb1_results},
-            {"bb4_results": bb4_results},
-            {"flatness_indicator": flatness_indicator},
-        ]
+        pred_name: 
+            {"date": current_timestamp,
+            "trade_headers": heading_labels,
+            "trade_results": main_results,
+            "trade_breakdown": extra_results,
+            "bb1_results": bb1_results,
+            "bb4_results": bb4_results,
+            "flatness_indicator": flatness_indicator
+             }
+        
     }
     
     return group_results

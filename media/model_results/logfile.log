@@ -1,0 +1,125 @@
+2024-09-29 16:38:22,806 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:38:22,807 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:38:22,807 - INFO - Scheduler started
+2024-09-29 16:38:24,984 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:38:24,984 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:38:24,984 - INFO - Scheduler started
+2024-09-29 16:38:25,006 - INFO - Watching for file changes with StatReloader
+2024-09-29 16:38:27,453 - WARNING - Not Found: /images/favicon.ico
+2024-09-29 16:38:35,231 - WARNING - Not Found: /login/images/favicon.ico
+2024-09-29 16:39:14,602 - WARNING - Not Found: /account/images/favicon.ico
+2024-09-29 16:40:18,367 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-09-29 16:40:21,501 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:40:21,502 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:40:21,502 - INFO - Scheduler started
+2024-09-29 16:40:21,522 - INFO - Watching for file changes with StatReloader
+2024-09-29 16:41:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:41:00 BST)" (scheduled at 2024-09-29 16:41:00+01:00)
+2024-09-29 16:41:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:46:00 BST)" (scheduled at 2024-09-29 16:41:00+01:00)
+2024-09-29 16:41:00,191 - INFO - The input start time: 2024-09-29 15:00:00
+2024-09-29 16:41:00,191 - INFO - The input start time: 2024-09-29 15:00:00
+2024-09-29 16:41:18,707 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:46:00 BST)" executed successfully
+2024-09-29 16:41:20,200 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 460, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 262, in compare_version_results
+    rev_array1 = model_rev1[rev_label1][2]['trade_results']['Potential Trade']
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 2
+2024-09-29 16:41:21,011 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-09-29 16:42:36,374 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:42:36,375 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:42:36,375 - INFO - Scheduler started
+2024-09-29 16:42:38,623 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:42:38,623 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:42:38,623 - INFO - Scheduler started
+2024-09-29 16:42:38,642 - INFO - Watching for file changes with StatReloader
+2024-09-29 16:42:42,099 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-09-29 16:42:45,757 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-09-29 16:42:46,473 - WARNING - Not Found: /prices/update-price/f3886890-7b8c-4e7e-b819-3b80b0245e2e/images/favicon.ico
+2024-09-29 16:43:09,957 - ERROR - Internal Server Error: /prices/update-price/f3886890-7b8c-4e7e-b819-3b80b0245e2e/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 460, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 262, in compare_version_results
+    rev_array1 = model_rev1[rev_label1][2]['trade_results']['Potential Trade']
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 2
+2024-09-29 16:43:10,095 - WARNING - Not Found: /favicon.ico
+2024-09-29 16:43:58,443 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-29 16:44:28,332 - ERROR - Internal Server Error: /prices/update-price/f3886890-7b8c-4e7e-b819-3b80b0245e2e/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 460, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 262, in compare_version_results
+    rev_array1 = model_rev1[rev_label1][2]['trade_results']['Potential Trade']
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^
+KeyError: 2
+2024-09-29 16:46:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:46:00 BST)" (scheduled at 2024-09-29 16:46:00+01:00)
+2024-09-29 16:46:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:46:00 BST)" (scheduled at 2024-09-29 16:46:00+01:00)
+2024-09-29 16:46:00,018 - INFO - The input start time: 2024-09-29 15:00:00
+2024-09-29 16:46:00,162 - INFO - The input start time: 2024-09-29 15:00:00
+2024-09-29 16:46:00,787 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-09-29 16:46:06,384 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py changed, reloading.
+2024-09-29 16:46:17,531 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-09-29 16:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 460, in run_model_predictions
+    comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 262, in compare_version_results
+    rev_array1 = model_rev1[rev_label1]['trade_results']['Potential Trade']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 2
+2024-09-29 16:46:20,913 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-29 16:46:20,913 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-29 16:46:20,913 - INFO - Scheduler started
+2024-09-29 16:46:20,935 - INFO - Watching for file changes with StatReloader
+2024-09-29 16:46:24,145 - WARNING - Not Found: /prices/
