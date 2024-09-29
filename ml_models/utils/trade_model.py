@@ -286,7 +286,7 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     write_to_mongo(f'{ticker}_pred_historical_{model_version}', pred_historical)
     write_to_mongo(f'{ticker}_pred_variability_{model_version}', pred_variability)
     
-    
+
     
      
     return pred_reverse, pred_continue, pred_historical, pred_variability
@@ -422,6 +422,7 @@ def calculate_accuracy(predictions, y_actual):
     accuracy = accuracy_score(y_actual, predictions)
     return accuracy
 
+from .access_results import write_to_mongo
 
 def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     """
@@ -457,8 +458,26 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
         
     comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
     general_ticker_info = general_ticker_results(last_four_prices_df, 1)
+    
+    hist_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+    hist_comment = hist_comparer.comment
+    cont_comparer = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 2, 1 )
+    cont_comment = cont_comparer.comment
+    rev_comparer = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 2, 1 )
+    rev_comment = rev_comparer.comment
+    
+    print("Comments>>>>>>>>")
+    data = {
+        "comments": 
+            {
+            "hist_comment": hist_comment,
+            "cont_comment": cont_comment,
+            "rev_comment": rev_comment
+            }
+            }
 
-    print("test>>>>>>>>", comparison_comment)
+    write_to_mongo(f"{model_ticker}_key_results", data)
+
     return comparison_comment, general_ticker_info, send_email_enabled
 
 
