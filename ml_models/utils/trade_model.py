@@ -462,19 +462,67 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     
     hist_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
     hist_comment = hist_comparer.comment
+    hist_potential_trade = hist_comparer.trade_position
+    hist_trade_target = hist_comparer.trade_target
+    hist_bb_target1 = hist_comparer.bb_target1
+    hist_bb_target4 = hist_comparer.bb_target4
+    hist_flatness = hist_comparer.flatness
+    
     cont_comparer = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 2, 1 )
     cont_comment = cont_comparer.comment
+    cont_potential_trade = cont_comparer.trade_position
+    cont_trade_target = cont_comparer.trade_target
+    cont_bb_target1 = hist_comparer.bb_target1
+    cont_bb_target4 = cont_comparer.bb_target4
+    cont_flatness = cont_comparer.flatness
+    
     rev_comparer = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 2, 1 )
     rev_comment = rev_comparer.comment
+    rev_potential_trade = rev_comparer.trade_position
+    rev_trade_target = rev_comparer.trade_target
+    rev_bb_target1 = hist_comparer.bb_target1
+    rev_bb_target4 = rev_comparer.bb_target4
+    rev_flatness = rev_comparer.flatness
     
     print("Comments>>>>>>>>")
     data = {
         "comments": 
             {
-            "hist_comment": hist_comment,
-            "cont_comment": cont_comment,
-            "rev_comment": rev_comment
-            }
+            "hist": hist_comment,
+            "cont": cont_comment,
+            "rev": rev_comment
+            },
+            
+        "potential_trade":
+            {
+                "hist": hist_potential_trade,
+                "cont": cont_potential_trade,
+                "rev": rev_potential_trade,
+            },
+        "trade_target":
+            {
+                "hist": hist_trade_target,
+                "cont": cont_trade_target,
+                "rev": rev_trade_target,
+            },
+        "bb_target1":
+            {
+                "hist": hist_bb_target1,
+                "cont": cont_bb_target1,
+                "rev": rev_bb_target1,
+            },
+        "bb_target4":
+            {
+                "hist": hist_bb_target4,
+                "cont": cont_bb_target4,
+                "rev": rev_bb_target4,
+            },
+        "flatness":
+            {
+                "hist": hist_flatness,
+                "cont": cont_flatness,
+                "rev": rev_flatness,
+            },
             }
 
     write_to_mongo(f"{model_ticker}_key_results", data)

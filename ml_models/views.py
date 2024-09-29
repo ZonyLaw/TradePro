@@ -330,10 +330,14 @@ def ml_report2(request):
         elif trade_diff < 0:
             trade_dict.append('Sell')
     
+    key_results = read_prediction_from_Mongo(f'{model_ticker}_key_results')
+    
+    
     #retrieve saved results from last calculation performed by updater.py
     pred_historical_v4 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v4')
     pred_historical_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_v5')
     pred_historical_1h_v5 = read_prediction_from_Mongo(f'{model_ticker}_pred_historical_1h_v5')
+    
     
     # user = request.user
 
@@ -422,30 +426,10 @@ def ml_report2(request):
     'v5': continue_trade_results_v5,
     '1h_v5': continue_trade_results_1h_v5
     }
-    
-
-    model_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
-    version_comment = model_comparer.comment
-    potential_trade = model_comparer.trade_position
-    trade_target = model_comparer.trade_target
-    bb_target = model_comparer.bb_target4
-    bb_target1 = model_comparer.bb_target1 #example of pulling the 1 hour bb
-    flatness1 = model_comparer.flatness
-    
-    model_comparer_con = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 1, 1 )
-    version_comment_con = model_comparer_con.comment
-    potential_trade_con = model_comparer_con.trade_position
-    trade_target_con = model_comparer_con.trade_target
-    bb_target_con = model_comparer_con.bb_target4
-    
-    model_comparer_rev = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
-    version_comment_rev = model_comparer_rev.comment
-    potential_trade_rev = model_comparer_rev.trade_position
-    trade_target_rev = model_comparer_rev.trade_target
-    bb_target_rev = model_comparer_rev.bb_target4
-    
-    #calculate entry and exit point  
-    if potential_trade == 'Buy':
+       
+    #calculate entry and exit point 
+    trade_target = key_results['trade_target']['hist']
+    if key_results['potential_trade']['hist'] == 'Buy':
         entry_adjustment = -0.04
         stop_adjustment = -0.1
     else:
@@ -508,7 +492,7 @@ def ml_report2(request):
 
 
     average_open_price = sum(open_prices) / len(open_prices)
-    if potential_trade == "Buy":
+    if key_results['potential_trade']['hist'] == "Buy":
         final_exit_price = min(open_prices)  - 0.2
     else:
         final_exit_price = max(open_prices) + 0.2
@@ -529,17 +513,12 @@ def ml_report2(request):
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 
-             'bb_target': bb_target, 'bb_target1':bb_target1, 
-             'potential_trade': potential_trade, 'version_comment':version_comment,
-             'flatness1':flatness1,
-             'potential_trade_con': potential_trade_con, 'version_comment_con':version_comment_con,
-             'potential_trade_rev': potential_trade_rev, 'version_comment_rev':version_comment_rev,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
-             "reverse_pred": reverse_pred, "reverse_prob": reverse_prob}
+             "reverse_pred": reverse_pred, "reverse_prob": reverse_prob, "key_results": key_results}
     
     return render(request, 'ml_models/ml_report.html', context)
 

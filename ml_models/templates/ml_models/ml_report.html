@@ -75,16 +75,16 @@
     <p> v4 model seems to be more reliable and 1h_v5 model gives you immediate direction but could switch easily. Combine this with other readings.</p>
     <p> Model prediction for the next 4 hrs.</p>
     <p> Last date model was updated: <b class="flashing-text-red">{{date}}</b> </p>
-    {% if potential_trade == 'Buy' %}
+    {% if key_results.potential_trade.hist == 'Buy' %}
         <div class="flash-container-buy">
             <div class="flash-box-buy">
-                <p><b>{{ version_comment }}</b></p>
+                <p><b>{{ key_results.comments.hist }}</b></p>
             </div>
         </div>
-    {% elif potential_trade == 'Sell' %}
+    {% elif key_results.potential_trade.hist == 'Sell' %}
         <div class="flash-container-sell">
             <div class="flash-box-sell">
-                <p><b>{{ version_comment }}</b></p>
+                <p><b>{{ key_results.comments.hist }}</b></p>
             </div>
         </div>
     {% endif %}
@@ -127,19 +127,19 @@
             </tr>
             <tr style="color:#e75480;background-color: #d3d3d3;">
                 <td>1hr Upper Bollinger Band: </td>
-                <td> <b> £{{bb_target1.upper_bb1|floatformat:2}}</b></td>
+                <td> <b> £{{key_results.bb_target1.hist.upper_bb1|floatformat:2}}</b></td>
             </tr>
             <tr style="color:#e75480;background-color: #d3d3d3;">
                 <td>1hr Lower Bollinger Band: </td>
-                <td> <b> £{{bb_target1.lower_bb1|floatformat:2}} </b></td>
+                <td> <b> £{{key_results.bb_target1.hist.lower_bb1|floatformat:2}} </b></td>
             </tr>
             <tr style="color:#e75480;background-color: #d3d3d3;">
                 <td>4hr Upper Bollinger Band: </td>
-                <td> <b> £{{bb_target.upper_bb4|floatformat:2}} </b></td>
+                <td> <b> £{{key_results.bb_target4.hist.upper_bb4|floatformat:2}} </b></td>
             </tr>
             <tr style="color:#e75480;background-color: #d3d3d3;">
                 <td>4hr Lower Bollinger Band: </td>
-                <td> <b> £{{bb_target.lower_bb4|floatformat:2}} </b></td>
+                <td> <b> £{{key_results.bb_target4.hist.lower_bb4|floatformat:2}} </b></td>
             </tr>
         </table>
         <p>NOTE:</p>
@@ -211,7 +211,7 @@
 
             <tr>
                 <td>Volatility Indicator</td>
-                {% for flat_indicator in flatness1 %}
+                {% for flat_indicator in key_results.flatness.hist %}
                 <td style="color:purple;">{{ flat_indicator|floatformat:2 }}</td>
                 {% endfor %}
 
@@ -305,19 +305,19 @@
     <br>
     <hr>
     <h1> Next Candle Stick Predictions</h1>
-    <h2 style="color: green;">Continuation of a {{potential_trade}} </h2>
+    <h2 style="color: green;">Continuation of a {{key_results.potential_trade.hist}} </h2>
     <p>This looks at how strong the movement in the coming hour. It is good indication if the current movement will continue.</p>
 
-    {% if potential_trade_con == 'Buy' %}
+    {% if key_results.potential_trade.cont == 'Buy' %}
     <div class="flash-container-buy">
         <div class="flash-box-buy">
-            <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_con }}</b></p>
+            <p><b><i class="fa-solid fa-forward-fast"></i> {{ key_results.comments.cont }}</b></p>
         </div>
     </div>
-    {% elif potential_trade_con == 'Sell' %}
+    {% elif key_results.potential_trade.cont == 'Sell' %}
         <div class="flash-container-sell">
             <div class="flash-box-sell">
-                <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_con }}</b></p>
+                <p><b><i class="fa-solid fa-forward-fast"></i> {{ key_results.comments.cont }}</b></p>
             </div>
         </div>
     {% endif %}
@@ -350,19 +350,19 @@
     </table>
 
 
-    <h2 style="color: red;">Reversal of a {{potential_trade}} </h2>
+    <h2 style="color: red;">Reversal of a {{key_results.potential_trade.hist}} </h2>
     <p>This shows if the current prediction still holds when the next candle stick reversed. If it continues in the same direction, then a reversed candle stick is a sign of retracement.</p>
 
-    {% if potential_trade_rev == 'Buy' %}
+    {% if key_results.potential_trade.rev == 'Buy' %}
     <div class="flash-container-buy">
         <div class="flash-box-buy">
-            <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_rev }}</b></p>
+            <p><b><i class="fa-solid fa-forward-fast"></i> {{ key_results.comments.rev }}</b></p>
         </div>
     </div>
-    {% elif potential_trade_rev == 'Sell' %}
+    {% elif key_results.potential_trade.rev == 'Sell' %}
         <div class="flash-container-sell">
             <div class="flash-box-sell">
-                <p><b><i class="fa-solid fa-forward-fast"></i> {{ version_comment_rev }}</b></p>
+                <p><b><i class="fa-solid fa-forward-fast"></i> {{ key_results.comments.rev }}</b></p>
             </div>
         </div>
     {% endif %}
