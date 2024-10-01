@@ -26,9 +26,7 @@ class ModelComparer:
         model_dict2 (dict): Results from the second model, typically for long-term.
         model_dict3 (dict): Results from the third model, typically for long-term.
         arr_index (int): An index in the array to extract model results for comparison.
-        newline_syntax (int): 1 for '\n', otherwise <br>.
-        comment (str): Analysis comments based on comparison results.
-        send_email (bool): Indicates whether an email should be sent based on the comparison results.
+        newline_syntax (int): 1 for '\n', otherwise <br>. The reason for this is html require different syntax.
     """
     
     def __init__(self, model_dict1, model_dict2, model_dict3, arr_index, newline_syntax):

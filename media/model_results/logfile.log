@@ -351,3 +351,13 @@ NameError: name 'flatness1' is not defined
 2024-09-29 20:44:21,052 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-09-29 20:44:21,052 - INFO - Scheduler started
 2024-09-29 20:44:21,074 - INFO - Watching for file changes with StatReloader
+2024-09-30 19:09:16,219 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-30 19:09:16,220 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-30 19:09:16,220 - INFO - Scheduler started
+2024-09-30 19:09:19,374 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-30 19:09:19,374 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-09-30 19:09:19,374 - INFO - Scheduler started
+2024-09-30 19:09:19,405 - INFO - Watching for file changes with StatReloader
+2024-09-30 19:09:24,942 - WARNING - Not Found: /images/favicon.ico
+2024-09-30 19:09:36,378 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-09-30 19:09:37,278 - WARNING - Not Found: /tickers/images/favicon.ico
