@@ -456,6 +456,31 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
+    open_prices = last_four_prices_df['open'].tolist()
+    open_prices_1hr = open_prices[-1]
+    open_prices_4hr = open_prices[0]
+    
+      #calculate entry and exit point 
+    trade_target = hist_trade_target
+    if hist_potential_trade == 'Buy':
+        entry_adjustment = -0.04
+        stop_adjustment = -0.1
+    else:
+        entry_adjustment = 0.04
+        stop_adjustment = 0.1
+        trade_target = -trade_target
+        
+    projected_volume = 3000
+    if projected_volume < 2000:
+        exit_adjustment = 1.2
+    else:
+        exit_adjustment = 1
+    
+    entry_point = open_prices[-1] + entry_adjustment
+    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
+    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
+    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
+    
         
     comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
     general_ticker_info = general_ticker_results(last_four_prices_df, 1)
@@ -484,13 +509,15 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     rev_bb_target4 = rev_comparer.bb_target4
     rev_flatness = rev_comparer.flatness
     
+  
+    
     print("Comments>>>>>>>>")
     data = {
         "comments": 
             {
-            "hist": hist_comment,
-            "cont": cont_comment,
-            "rev": rev_comment
+                "hist": hist_comment,
+                "cont": cont_comment,
+                "rev": rev_comment
             },
             
         "potential_trade":
@@ -504,6 +531,19 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "hist": hist_trade_target,
                 "cont": cont_trade_target,
                 "rev": rev_trade_target,
+            },
+        "trade_strategy":
+            {
+                "open_price": open_prices_1hr,
+                "entry": entry_point,
+                "exit": exit_point,
+                "stop_loss": stop_loss,
+                "risk_reward": risk_reward,
+            },
+        "current_market":
+            {
+                "open_prices_1hr": open_prices_1hr,
+                "open_prices_4hr": open_prices_4hr,
             },
         "bb_target1":
             {

@@ -361,3 +361,38 @@ NameError: name 'flatness1' is not defined
 2024-09-30 19:09:24,942 - WARNING - Not Found: /images/favicon.ico
 2024-09-30 19:09:36,378 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
 2024-09-30 19:09:37,278 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-06 21:54:45,164 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-06 21:54:45,165 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-06 21:54:45,165 - INFO - Scheduler started
+2024-10-06 21:54:47,523 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-06 21:54:47,523 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-06 21:54:47,523 - INFO - Scheduler started
+2024-10-06 21:54:47,542 - INFO - Watching for file changes with StatReloader
+2024-10-06 21:54:49,770 - WARNING - Not Found: /images/favicon.ico
+2024-10-06 21:54:59,581 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-06 21:55:03,029 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-06 21:55:03,839 - WARNING - Not Found: /prices/update-price/f3886890-7b8c-4e7e-b819-3b80b0245e2e/images/favicon.ico
+2024-10-06 21:55:32,576 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-10-06 21:56:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 21:56:00 BST)" (scheduled at 2024-10-06 21:56:00+01:00)
+2024-10-06 21:56:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 21:56:00 BST)" (scheduled at 2024-10-06 21:56:00+01:00)
+2024-10-06 21:56:00,019 - INFO - The input start time: 2024-10-06 20:00:00
+2024-10-06 21:56:00,166 - INFO - The input start time: 2024-10-06 20:00:00
+2024-10-06 21:56:00,734 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-06 21:56:18,195 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:01:00 BST)" executed successfully
