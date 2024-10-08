@@ -396,3 +396,111 @@ Traceback (most recent call last):
            ~~~~~~~~~~~^^^^^^^^^^^^^
 KeyError: 'cst'
 2024-10-06 21:56:18,195 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:01:00 BST)" executed successfully
+2024-10-06 22:14:33,485 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-06 22:14:33,486 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-06 22:14:33,486 - INFO - Scheduler started
+2024-10-06 22:14:35,854 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-06 22:14:35,854 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-06 22:14:35,855 - INFO - Scheduler started
+2024-10-06 22:14:35,880 - INFO - Watching for file changes with StatReloader
+2024-10-06 22:15:03,837 - ERROR - Internal Server Error: /prices/update-price/f3886890-7b8c-4e7e-b819-3b80b0245e2e/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 464, in run_model_predictions
+    trade_target = hist_trade_target
+                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'hist_trade_target' where it is not associated with a value
+2024-10-06 22:15:03,942 - WARNING - Not Found: /favicon.ico
+2024-10-06 22:16:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:16:00 BST)" (scheduled at 2024-10-06 22:16:00+01:00)
+2024-10-06 22:16:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:16:00 BST)" (scheduled at 2024-10-06 22:16:00+01:00)
+2024-10-06 22:16:00,168 - INFO - The input start time: 2024-10-06 21:00:00
+2024-10-06 22:16:00,168 - INFO - The input start time: 2024-10-06 21:00:00
+2024-10-06 22:16:23,738 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 464, in run_model_predictions
+    trade_target = hist_trade_target
+                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'hist_trade_target' where it is not associated with a value
+2024-10-06 22:16:24,393 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-06 22:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 464, in run_model_predictions
+    trade_target = hist_trade_target
+                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'hist_trade_target' where it is not associated with a value
+2024-10-08 20:24:56,458 - INFO - Watching for file changes with StatReloader
+2024-10-08 20:25:37,251 - INFO - Watching for file changes with StatReloader
+2024-10-08 20:26:53,541 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-08 20:26:53,541 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-08 20:26:53,541 - INFO - Scheduler started
+2024-10-08 20:26:56,112 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-08 20:26:56,112 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-08 20:26:56,112 - INFO - Scheduler started
+2024-10-08 20:26:56,138 - INFO - Watching for file changes with StatReloader
+2024-10-08 20:26:58,497 - WARNING - Not Found: /images/favicon.ico
+2024-10-08 20:27:00,282 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-08 20:27:04,757 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-08 20:27:06,667 - WARNING - Not Found: /prices/update-price/a9bdc8f9-8583-4b8b-805b-b4c94fe549e9/images/favicon.ico
+2024-10-08 20:27:37,137 - ERROR - Internal Server Error: /prices/update-price/a9bdc8f9-8583-4b8b-805b-b4c94fe549e9/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 489, in run_model_predictions
+    trade_target = hist_trade_target
+                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'hist_trade_target' where it is not associated with a value
+2024-10-08 20:27:37,419 - WARNING - Not Found: /favicon.ico
+2024-10-08 20:30:51,072 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-08 20:30:51,072 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-08 20:30:51,072 - INFO - Scheduler started
+2024-10-08 20:30:53,463 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-08 20:30:53,463 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-08 20:30:53,463 - INFO - Scheduler started
+2024-10-08 20:30:53,484 - INFO - Watching for file changes with StatReloader
+2024-10-08 20:31:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 20:31:00 BST)" (scheduled at 2024-10-08 20:31:00+01:00)
+2024-10-08 20:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 20:36:00 BST)" (scheduled at 2024-10-08 20:31:00+01:00)
+2024-10-08 20:31:00,304 - INFO - The input start time: 2024-10-08 19:00:00
+2024-10-08 20:31:00,304 - INFO - The input start time: 2024-10-08 19:00:00
+2024-10-08 20:31:01,096 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 20:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-08 20:31:57,445 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 20:36:00 BST)" executed successfully

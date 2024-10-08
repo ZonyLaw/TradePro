@@ -451,35 +451,41 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
     
+    
+    current_time = datetime.datetime.now()
+    
+    rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
+                                                seconds=current_time.second,
+                                                microseconds=current_time.microsecond)
+
+    # Extract hour, minute, and second from the current time
+  
+    minute = current_time.minute
+    second = current_time.second
+
+    # Calculate the total number of seconds elapsed in the current hour
+    total_seconds_in_hour = 3600  # 60 seconds * 60 minutes
+
+    # Calculate the total number of seconds elapsed so far in the current hour
+    elapsed_seconds = (minute * 60) + second
+
+    # Calculate the percentage of the hour elapsed
+    percentage_elapsed = (elapsed_seconds / total_seconds_in_hour) * 100
+    
     #sort prices table in ascending so latest price on the bottom
     #note that html likes to work with array if using indexing
     prices_df = pd.DataFrame(list(prices.values()))
     sorted_prices_df = prices_df.sort_values(by='date', ascending=True)
     last_four_prices_df = sorted_prices_df.tail(4)
     open_prices = last_four_prices_df['open'].tolist()
+    volume = last_four_prices_df['volume'].tolist()
+    close_prices = last_four_prices_df['close'].tolist()
     open_prices_1hr = open_prices[-1]
     open_prices_4hr = open_prices[0]
+    candle_size_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
+    candle_size_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     
-      #calculate entry and exit point 
-    trade_target = hist_trade_target
-    if hist_potential_trade == 'Buy':
-        entry_adjustment = -0.04
-        stop_adjustment = -0.1
-    else:
-        entry_adjustment = 0.04
-        stop_adjustment = 0.1
-        trade_target = -trade_target
-        
-    projected_volume = 3000
-    if projected_volume < 2000:
-        exit_adjustment = 1.2
-    else:
-        exit_adjustment = 1
-    
-    entry_point = open_prices[-1] + entry_adjustment
-    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
-    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
-    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
+  
     
         
     comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
@@ -509,7 +515,26 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     rev_bb_target4 = rev_comparer.bb_target4
     rev_flatness = rev_comparer.flatness
     
-  
+    #calculate entry and exit point 
+    trade_target = hist_trade_target
+    if hist_potential_trade == 'Buy':
+        entry_adjustment = -0.04
+        stop_adjustment = -0.1
+    else:
+        entry_adjustment = 0.04
+        stop_adjustment = 0.1
+        trade_target = -trade_target
+        
+    projected_volume = volume[3] / percentage_elapsed * 100
+    if projected_volume < 2000:
+        exit_adjustment = 1.2
+    else:
+        exit_adjustment = 1
+    
+    entry_point = open_prices[-1] + entry_adjustment
+    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
+    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
+    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
     
     print("Comments>>>>>>>>")
     data = {
@@ -544,6 +569,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             {
                 "open_prices_1hr": open_prices_1hr,
                 "open_prices_4hr": open_prices_4hr,
+                "candle_size_1hr": candle_size_1hr,
+                "candle_size_4hr": candle_size_4hr,
             },
         "bb_target1":
             {
