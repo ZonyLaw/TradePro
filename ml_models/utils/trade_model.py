@@ -567,6 +567,10 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             },
         "current_market":
             {
+                "open_prices": open_prices,
+                "close_prices": close_prices,
+                "volume": volume,
+                "projected_volume": projected_volume,
                 "open_prices_1hr": open_prices_1hr,
                 "open_prices_4hr": open_prices_4hr,
                 "candle_size_1hr": candle_size_1hr,

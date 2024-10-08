@@ -259,10 +259,10 @@ def ml_report_backup(request):
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
     context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
-             'version_comment':version_comment,
-             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
-             'potential_trade': potential_trade, 'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
-             'risk_reward': risk_reward, 'bb_target': bb_target,
+    
+             
+   
+            
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list, 
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
@@ -509,7 +509,7 @@ def ml_report2(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
+    context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade': trade, 'trade_dict':trade_dict,
              'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
              'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
              'risk_reward': risk_reward, 
