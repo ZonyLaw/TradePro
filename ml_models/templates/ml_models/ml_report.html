@@ -288,13 +288,13 @@
                 </tr>
                 <tr>
                     <td>Confirmation of Direction</td>
-                    {% for pred in reverse_pred %}
+                    {% for pred in key_results.reversal_model.reverse_pred %}
                         <td>{{ pred }}</td>
                     {% endfor %}
                 </tr>
                 <tr>
                     <td>Accuracy</td>
-                    {% for prob in reverse_prob%}
+                    {% for prob in key_results.reversal_model.reverse_prob %}
                         <td>{{ prob|floatformat:2 }}%</td>
                     {% endfor %}
                 </tr>

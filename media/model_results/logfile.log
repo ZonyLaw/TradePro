@@ -39,3 +39,348 @@
 2024-10-10 17:29:26,606 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-10-10 17:29:26,606 - INFO - Scheduler started
 2024-10-10 17:29:26,633 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:26:53,287 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:26:53,287 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:26:53,287 - INFO - Scheduler started
+2024-10-10 18:26:53,321 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:30:46,254 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:30:46,255 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:30:46,255 - INFO - Scheduler started
+2024-10-10 18:30:48,900 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:30:48,900 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:30:48,900 - INFO - Scheduler started
+2024-10-10 18:30:48,921 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:31:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:31:00 BST)" (scheduled at 2024-10-10 18:31:00+01:00)
+2024-10-10 18:31:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:36:00 BST)" (scheduled at 2024-10-10 18:31:00+01:00)
+2024-10-10 18:31:00,194 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:31:00,194 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:31:50,199 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:32:25,929 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:32:27,477 - ERROR - Internal Server Error: /prices/update-price/39df8bbf-6216-4d1d-951a-ec48ca87a96d/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:34:52,462 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:35:48,301 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:35:48,301 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:35:48,302 - INFO - Scheduler started
+2024-10-10 18:35:50,593 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:35:50,594 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:35:50,594 - INFO - Scheduler started
+2024-10-10 18:35:50,613 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:36:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:36:00 BST)" (scheduled at 2024-10-10 18:36:00+01:00)
+2024-10-10 18:36:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:41:00 BST)" (scheduled at 2024-10-10 18:36:00+01:00)
+2024-10-10 18:36:00,188 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:36:00,189 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:36:00,909 - WARNING - Not Found: /prices/update-price/2650fd27-c388-40b6-aa18-7a52001bb7fd/images/favicon.ico
+2024-10-10 18:36:39,450 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:37:38,131 - ERROR - Internal Server Error: /prices/update-price/2650fd27-c388-40b6-aa18-7a52001bb7fd/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:37:42,364 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:37:43,910 - ERROR - Internal Server Error: /prices/update-price/2650fd27-c388-40b6-aa18-7a52001bb7fd/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 573, in run_model_predictions
+    reverse_pred = reverse_pred_results['predictions_label'].to_list()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_list'
+2024-10-10 18:38:11,082 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:38:21,401 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:38:21,401 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:38:21,401 - INFO - Scheduler started
+2024-10-10 18:38:23,640 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:38:23,640 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:38:23,640 - INFO - Scheduler started
+2024-10-10 18:38:23,664 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:39:03,962 - ERROR - Internal Server Error: /prices/update-price/2650fd27-c388-40b6-aa18-7a52001bb7fd/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 575, in run_model_predictions
+    reverse_prob = reverse_prob.to_list()
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'to_list'
+2024-10-10 18:39:23,654 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:39:26,685 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:39:26,685 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:39:26,685 - INFO - Scheduler started
+2024-10-10 18:39:26,706 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:39:51,356 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:39:54,623 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:39:54,624 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:39:54,624 - INFO - Scheduler started
+2024-10-10 18:39:54,643 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:40:46,045 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 392, in ml_report2
+    if key_results['potential_trade']['hist'] == "Buy":
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'potential_trade'
+2024-10-10 18:41:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:41:00 BST)" (scheduled at 2024-10-10 18:41:00+01:00)
+2024-10-10 18:41:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:41:00 BST)" (scheduled at 2024-10-10 18:41:00+01:00)
+2024-10-10 18:41:00,018 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:41:00,164 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:41:00,838 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 18:41:00,935 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 18:42:22,745 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:42:25,812 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:42:25,812 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:42:25,812 - INFO - Scheduler started
+2024-10-10 18:42:25,833 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:42:40,924 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 392, in ml_report2
+    if key_results['potential_trade']['hist'] == "Buy":
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'potential_trade'
+2024-10-10 18:46:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:51:00 BST)" (scheduled at 2024-10-10 18:46:00+01:00)
+2024-10-10 18:46:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:46:00 BST)" (scheduled at 2024-10-10 18:46:00+01:00)
+2024-10-10 18:46:00,010 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:46:00,013 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:46:37,307 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 575, in run_model_predictions
+    print(reverse_pred)
+                   ^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'to_list'
+2024-10-10 18:46:38,414 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:46:38,554 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:51:00 BST)" executed successfully
+2024-10-10 18:46:45,768 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:46:45,769 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:46:45,769 - INFO - Scheduler started
+2024-10-10 18:46:48,003 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:46:48,004 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:46:48,004 - INFO - Scheduler started
+2024-10-10 18:46:48,025 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:48:05,813 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:48:08,982 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:48:08,982 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:48:08,982 - INFO - Scheduler started
+2024-10-10 18:48:09,006 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:50:00,878 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:50:03,854 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:50:03,855 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:50:03,855 - INFO - Scheduler started
+2024-10-10 18:50:03,874 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:51:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:51:00 BST)" (scheduled at 2024-10-10 18:51:00+01:00)
+2024-10-10 18:51:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:56:00 BST)" (scheduled at 2024-10-10 18:51:00+01:00)
+2024-10-10 18:51:00,165 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:51:00,168 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:51:36,981 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:56:00 BST)" executed successfully
+2024-10-10 18:51:39,133 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:56:00 BST)" executed successfully
+2024-10-10 18:52:21,914 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:52:28,734 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:52:28,734 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:52:28,734 - INFO - Scheduler started
+2024-10-10 18:52:30,967 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:52:30,967 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:52:30,967 - INFO - Scheduler started
+2024-10-10 18:52:30,985 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:56:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 18:56:00 BST)" (scheduled at 2024-10-10 18:56:00+01:00)
+2024-10-10 18:56:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:01:00 BST)" (scheduled at 2024-10-10 18:56:00+01:00)
+2024-10-10 18:56:00,167 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:56:00,170 - INFO - The input start time: 2024-10-10 17:00:00
+2024-10-10 18:56:17,738 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:56:37,613 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:01:00 BST)" executed successfully
+2024-10-10 18:56:44,162 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:01:00 BST)" executed successfully
+2024-10-10 18:57:22,037 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:57:22,037 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:57:22,037 - INFO - Scheduler started
+2024-10-10 18:57:24,335 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:57:24,335 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:57:24,335 - INFO - Scheduler started
+2024-10-10 18:57:24,357 - INFO - Watching for file changes with StatReloader
+2024-10-10 18:58:54,293 - ERROR - Internal Server Error: /prices/update-price/2650fd27-c388-40b6-aa18-7a52001bb7fd/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 574, in run_model_predictions
+    reverse_prob = reverse_pred_results['model_prediction_proba'].values*100
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'values'
+2024-10-10 18:59:54,322 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 18:59:57,374 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 18:59:57,375 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 18:59:57,375 - INFO - Scheduler started
+2024-10-10 18:59:57,397 - INFO - Watching for file changes with StatReloader
+2024-10-10 19:01:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:01:00 BST)" (scheduled at 2024-10-10 19:01:00+01:00)
+2024-10-10 19:01:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:06:00 BST)" (scheduled at 2024-10-10 19:01:00+01:00)
+2024-10-10 19:01:00,013 - INFO - The input start time: 2024-10-10 18:00:00
+2024-10-10 19:01:00,163 - INFO - The input start time: 2024-10-10 18:00:00
+2024-10-10 19:01:00,776 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 19:01:30,577 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 19:06:00 BST)" executed successfully
+2024-10-10 19:14:41,708 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:14:41,708 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:14:41,708 - INFO - Scheduler started
+2024-10-10 19:14:43,928 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:14:43,928 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:14:43,928 - INFO - Scheduler started
+2024-10-10 19:14:43,947 - INFO - Watching for file changes with StatReloader
+2024-10-10 19:17:24,006 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:17:24,006 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:17:24,006 - INFO - Scheduler started
+2024-10-10 19:17:26,319 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:17:26,319 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:17:26,319 - INFO - Scheduler started
+2024-10-10 19:17:26,337 - INFO - Watching for file changes with StatReloader
+2024-10-10 19:18:39,293 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:18:39,293 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:18:39,293 - INFO - Scheduler started
+2024-10-10 19:18:41,690 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 19:18:41,691 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 19:18:41,691 - INFO - Scheduler started
+2024-10-10 19:18:41,709 - INFO - Watching for file changes with StatReloader

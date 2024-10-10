@@ -8,6 +8,7 @@ from django.conf import settings
 from tickers.models import Ticker
 from prices.models import Price
 from ml_models.utils.analysis_comments import compare_version_results, general_ticker_results, ModelComparer
+from ml_models.utils.reverse_model import standard_analysis_reverse
 from pathlib import Path
 from feature_engine.discretisation import EqualFrequencyDiscretiser
 from .access_results import write_to_json, write_to_mongo, read_prediction_from_json, write_to_csv
@@ -564,8 +565,15 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
         v5_pred_pl.append(round(pl*100))
         
         
-    #sensitivity test to see how stable model is
+    # sensitivity test to see how stable model is
     pred_var_pos, pred_var_neg, pos_trade, neg_trade = variability_analysis(model_ticker, 0.1)
+    
+    # model predicts reversal
+    reverse_pred_results = standard_analysis_reverse(model_ticker, "v1_reverse")
+    reverse_pred = reverse_pred_results['predictions_label']
+    reverse_prob = reverse_pred_results['model_prediction_proba']*100
+    reverse_prob = reverse_prob.tolist()
+    print(reverse_prob)
     
     print("Comments>>>>>>>>")
     data = {
@@ -620,6 +628,12 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             {
                 '10pips':{'prediction': pred_var_pos, 'trade':pos_trade},
                 '-10pips':{'prediction': pred_var_neg, 'trade': neg_trade}
+            },
+        "reversal_model":
+            {
+                "reverse_pred": reverse_pred,
+                "reverse_prob": reverse_prob,
+                
             },
         "bb_target1":
             {
