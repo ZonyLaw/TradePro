@@ -58,8 +58,8 @@
             <p>This tool is designed to validate your observations and indicate optimal times to focus on a trade.</p>
             
             <h2>Extra Market Information</h2>
-                <p><big>Current 1 hr Candle Stick size: {{ key_results.current_market.candle_size_1hr|floatformat:3 }}, direction: <b> {{trade.one}} </b> </big></p>
-                <p><big>Current 4 hr Candle Stick size: {{ key_results.current_market.candle_size_4hr|floatformat:3 }}, direction: <b> {{trade.four}} </b> </big></p>
+                <p><big>Current 1 hr Candle Stick size: {{ key_results.current_market.candle_size_1hr|floatformat:3 }}, direction: <b> {{key_results.current_market.trade_1hr}} </b> </big></p>
+                <p><big>Current 4 hr Candle Stick size: {{ key_results.current_market.candle_size_4hr|floatformat:3 }}, direction: <b> {{key_results.current_market.trade_4hr}} </b> </big></p>
                 <p>Last open price 4 hrs ago: £{{ key_results.current_market.open_prices_4hr|floatformat:2 }} </p>
         </div>
     </div>  

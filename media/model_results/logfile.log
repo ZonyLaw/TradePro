@@ -677,3 +677,56 @@ KeyError: 'cst'
 2024-10-08 21:31:00,214 - INFO - The input start time: 2024-10-08 20:00:00
 2024-10-08 21:31:31,888 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 21:36:00 BST)" executed successfully
 2024-10-08 21:31:32,754 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-08 21:36:00 BST)" executed successfully
+2024-10-10 11:17:59,349 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:17:59,350 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:17:59,350 - INFO - Scheduler started
+2024-10-10 11:18:01,715 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:18:01,715 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:18:01,715 - INFO - Scheduler started
+2024-10-10 11:18:01,736 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:18:05,328 - WARNING - Not Found: /images/favicon.ico
+2024-10-10 11:18:13,393 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-10 11:18:17,498 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-10 11:18:18,418 - WARNING - Not Found: /prices/update-price/ae7d4b5a-827b-4e0a-ad86-57adc03e60da/images/favicon.ico
+2024-10-10 11:29:56,949 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:29:56,949 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:29:56,949 - INFO - Scheduler started
+2024-10-10 11:29:59,199 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:29:59,199 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:29:59,199 - INFO - Scheduler started
+2024-10-10 11:29:59,218 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:30:11,548 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-10-10 11:34:07,763 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:34:07,763 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:34:07,764 - INFO - Scheduler started
+2024-10-10 11:34:10,072 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:34:10,072 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:34:10,073 - INFO - Scheduler started
+2024-10-10 11:34:10,096 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:36:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:36:00 BST)" (scheduled at 2024-10-10 11:36:00+01:00)
+2024-10-10 11:36:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:41:00 BST)" (scheduled at 2024-10-10 11:36:00+01:00)
+2024-10-10 11:36:00,048 - INFO - The input start time: 2024-10-10 10:00:00
+2024-10-10 11:36:00,226 - INFO - The input start time: 2024-10-10 10:00:00
+2024-10-10 11:36:21,597 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:41:00 BST)" executed successfully
+2024-10-10 11:36:21,953 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:41:00 BST)" executed successfully
+2024-10-10 11:41:59,075 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:41:59,075 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:41:59,075 - INFO - Scheduler started
+2024-10-10 11:42:01,532 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:42:01,533 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:42:01,533 - INFO - Scheduler started
+2024-10-10 11:42:01,554 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:46:15,847 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:46:15,847 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:46:15,847 - INFO - Scheduler started
+2024-10-10 11:46:18,234 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:46:18,235 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:46:18,235 - INFO - Scheduler started
+2024-10-10 11:46:18,251 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:48:07,840 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:48:07,842 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:48:07,842 - INFO - Scheduler started
+2024-10-10 11:48:10,154 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:48:10,154 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:48:10,154 - INFO - Scheduler started
+2024-10-10 11:48:10,174 - INFO - Watching for file changes with StatReloader

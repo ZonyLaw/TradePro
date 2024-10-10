@@ -92,7 +92,7 @@ def ml_report_backup(request):
     date = last_four_prices_df.iloc[3]['date']
     open_prices = last_four_prices_df['open'].tolist()
     close_prices = last_four_prices_df['close'].tolist()
-    volume = last_four_prices_df['volume'].tolist()
+
     
     #looking at the 1hr and 4hr candle sticks direction
     trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
@@ -174,55 +174,15 @@ def ml_report_backup(request):
     '1h_v5': continue_trade_results_1h_v5
     }
     
+      
 
-    model_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
-    version_comment = model_comparer.comment
-    potential_trade = model_comparer.trade_position
-    trade_target = model_comparer.trade_target
-    bb_target = model_comparer.bb_target
-          
-    #calculate entry and exit point  
-    if potential_trade == 'Buy':
-        entry_adjustment = -0.04
-        stop_adjustment = -0.1
-    else:
-        entry_adjustment = 0.04
-        stop_adjustment = 0.1
-        trade_target = -trade_target
-    
-    
     current_time = datetime.datetime.now()
     
     rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
                                                 seconds=current_time.second,
                                                 microseconds=current_time.microsecond)
 
-    # Extract hour, minute, and second from the current time
-  
-    minute = current_time.minute
-    second = current_time.second
-
-    # Calculate the total number of seconds elapsed in the current hour
-    total_seconds_in_hour = 3600  # 60 seconds * 60 minutes
-
-    # Calculate the total number of seconds elapsed so far in the current hour
-    elapsed_seconds = (minute * 60) + second
-
-    # Calculate the percentage of the hour elapsed
-    percentage_elapsed = (elapsed_seconds / total_seconds_in_hour) * 100
-
-    projected_volume = volume[3] / percentage_elapsed * 100
     
-    if projected_volume < 2000:
-        exit_adjustment = 1.2
-    else:
-        exit_adjustment = 1
-        
-    entry_point = open_prices[-1] + entry_adjustment
-    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
-    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
-    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
-
     v4_pred_pl = []
     #calculate the profit or loss according to the predictions.
     for price, direction in zip(open_prices,potential_trade_label_v4):
@@ -258,11 +218,9 @@ def ml_report_backup(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 'trade': trade, 'trade_dict':trade_dict,
-    
-             
-   
-            
+    context={'form': form,  'date': date, 'rounded_time': rounded_time, 'candle_size':candle_size, 
+             'trade': trade, 'trade_dict':trade_dict,
+      
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list, 
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
@@ -312,14 +270,8 @@ def ml_report2(request):
     close_prices = last_four_prices_df['close'].tolist()
     volume = last_four_prices_df['volume'].tolist()
     
-    #looking at the 1hr and 4hr candle sticks direction
-    trade_diff_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
-    trade_diff_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
-    candle_size = {"one" :trade_diff_1hr,
-        "four": trade_diff_4hr}
-    
-    trade = {"one": trade_direction(trade_diff_1hr),
-        "four": trade_direction(trade_diff_4hr)}
+
+  
     
     # Iterate through the last 4 rows of the DataFrame
     trade_dict = []
@@ -509,10 +461,8 @@ def ml_report2(request):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
-    context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade': trade, 'trade_dict':trade_dict,
-             'open_prices': open_prices, 'close_prices': close_prices, 'volume': volume, 'projected_volume': projected_volume,
-             'entry_point': entry_point, 'exit_point': exit_point, 'stop_loss': stop_loss,  
-             'risk_reward': risk_reward, 
+    context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade_dict':trade_dict,
+            
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,

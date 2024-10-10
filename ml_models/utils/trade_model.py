@@ -15,6 +15,7 @@ from django.shortcuts import get_object_or_404
 from ml_models.utils.bespoke_model import v4Processing
 from ml_models.utils.price_processing import StandardPriceProcessing
 from ml_models.utils.reverse_model import reverse_model_run
+from ml_models.utils.trade import trade_direction
 
 
 
@@ -438,6 +439,9 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     pred_reverse_v5, pred_continue_v5, pred_historical_v5, _ = standard_analysis(model_ticker,"v5")
     pred_reverse_1h_v5, pred_continue_1h_v5, pred_historical_1h_v5, _ = standard_analysis(model_ticker, "1h_v5")
 
+    historical_headers = pred_historical_v4['pred_historical']['trade_headers']
+    historical_labels = {'Periods': historical_headers}
+    
     pred_collection = {
         "pred_reverse_v4": pred_reverse_v4,
         "pred_reverse_v5": pred_reverse_v5,
@@ -575,6 +579,9 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "open_prices_4hr": open_prices_4hr,
                 "candle_size_1hr": candle_size_1hr,
                 "candle_size_4hr": candle_size_4hr,
+                "trade_1hr": trade_direction(candle_size_1hr),
+                "trade_4hr": trade_direction(candle_size_4hr),
+      
             },
         "bb_target1":
             {
