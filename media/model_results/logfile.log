@@ -384,3 +384,58 @@ KeyError: 'cst'
 2024-10-10 19:18:41,691 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-10-10 19:18:41,691 - INFO - Scheduler started
 2024-10-10 19:18:41,709 - INFO - Watching for file changes with StatReloader
+2024-10-10 20:25:54,368 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 20:25:54,368 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 20:25:54,368 - INFO - Scheduler started
+2024-10-10 20:25:56,750 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 20:25:56,750 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 20:25:56,750 - INFO - Scheduler started
+2024-10-10 20:25:56,776 - INFO - Watching for file changes with StatReloader
+2024-10-10 20:26:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 20:26:00 BST)" (scheduled at 2024-10-10 20:26:00+01:00)
+2024-10-10 20:26:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 20:31:00 BST)" (scheduled at 2024-10-10 20:26:00+01:00)
+2024-10-10 20:26:00,181 - INFO - The input start time: 2024-10-10 19:00:00
+2024-10-10 20:26:00,181 - INFO - The input start time: 2024-10-10 19:00:00
+2024-10-10 20:26:00,992 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 20:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 20:26:00,992 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 20:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 20:26:35,616 - WARNING - Not Found: /favicon.ico
+2024-10-10 20:26:40,356 - WARNING - Not Found: /images/favicon.ico
+2024-10-10 20:26:42,131 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-10 20:26:43,627 - WARNING - Not Found: /login/images/favicon.ico
+2024-10-10 20:26:59,318 - WARNING - Not Found: /account/images/favicon.ico
+2024-10-10 20:27:05,200 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-10 20:27:05,851 - WARNING - Not Found: /prices/update-price/296c9b32-0630-443c-afbd-f269cfe92cca/images/favicon.ico
+2024-10-10 20:27:48,683 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico

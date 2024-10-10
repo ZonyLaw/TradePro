@@ -379,8 +379,6 @@ def ml_report2(request):
     '1h_v5': continue_trade_results_1h_v5
     }
        
-    
-    
     current_time = datetime.datetime.now()
     
     rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
@@ -393,16 +391,11 @@ def ml_report2(request):
         final_exit_price = min(open_prices)  - 0.2
     else:
         final_exit_price = max(open_prices) + 0.2
-        
-
-    reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
-    reverse_pred = reverse_pred_results['predictions_label']
-    reverse_prob = reverse_pred_results['model_prediction_proba']*100
+          
     
     context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade_dict':trade_dict,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
-            
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
               'key_results': key_results}

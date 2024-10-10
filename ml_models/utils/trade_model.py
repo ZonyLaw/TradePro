@@ -573,7 +573,9 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     reverse_prob = reverse_prob.tolist()
-    print(reverse_prob)
+    
+    average_open_price = sum(open_prices) / len(open_prices)
+    
     
     print("Comments>>>>>>>>")
     data = {
@@ -611,6 +613,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "close_prices": close_prices,
                 "volume": volume,
                 "projected_volume": projected_volume,
+                "average_open_price": average_open_price,
                 "open_prices_1hr": open_prices_1hr,
                 "open_prices_4hr": open_prices_4hr,
                 "candle_size_1hr": candle_size_1hr,
