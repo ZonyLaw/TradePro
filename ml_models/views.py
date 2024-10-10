@@ -394,14 +394,6 @@ def ml_report2(request):
     else:
         final_exit_price = max(open_prices) + 0.2
         
-
-    #sensitivity test save as dictionary for front-end access
-    pred_var_pos, pred_var_neg, pos_trade, neg_trade = variability_analysis(model_ticker, 0.1)
-    pred_var_list = {
-        '10 pips':{'prediction': pred_var_pos, 'trade':pos_trade},
-        '-10 pips':{'prediction': pred_var_neg, 'trade': neg_trade}
-    }
-
     reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
     reverse_pred = reverse_pred_results['predictions_label']
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
@@ -409,7 +401,6 @@ def ml_report2(request):
     context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade_dict':trade_dict,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
-             'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
              "reverse_pred": reverse_pred, "reverse_prob": reverse_prob, "key_results": key_results}

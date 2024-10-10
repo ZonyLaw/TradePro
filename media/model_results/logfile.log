@@ -1,0 +1,41 @@
+2024-10-10 16:46:00,387 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 16:46:00,388 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 16:46:00,388 - INFO - Scheduler started
+2024-10-10 16:46:03,022 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 16:46:03,022 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 16:46:03,022 - INFO - Scheduler started
+2024-10-10 16:46:03,048 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:02:11,566 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:02:11,566 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:02:11,566 - INFO - Scheduler started
+2024-10-10 17:02:14,342 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:02:14,342 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:02:14,343 - INFO - Scheduler started
+2024-10-10 17:02:14,365 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:26:37,183 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:26:37,183 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:26:37,183 - INFO - Scheduler started
+2024-10-10 17:26:39,721 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:26:39,721 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:26:39,722 - INFO - Scheduler started
+2024-10-10 17:26:39,747 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:27:53,215 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 17:27:57,199 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:27:57,200 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:27:57,200 - INFO - Scheduler started
+2024-10-10 17:27:57,231 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:28:10,869 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-10 17:28:14,531 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:28:14,531 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:28:14,531 - INFO - Scheduler started
+2024-10-10 17:28:14,554 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:29:14,980 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-10 17:29:18,940 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:29:18,941 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:29:18,941 - INFO - Scheduler started
+2024-10-10 17:29:18,969 - INFO - Watching for file changes with StatReloader
+2024-10-10 17:29:22,749 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-10 17:29:26,606 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 17:29:26,606 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 17:29:26,606 - INFO - Scheduler started
+2024-10-10 17:29:26,633 - INFO - Watching for file changes with StatReloader

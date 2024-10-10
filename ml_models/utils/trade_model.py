@@ -562,6 +562,10 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             pl = price - close_prices[-1]
     
         v5_pred_pl.append(round(pl*100))
+        
+        
+    #sensitivity test to see how stable model is
+    pred_var_pos, pred_var_neg, pos_trade, neg_trade = variability_analysis(model_ticker, 0.1)
     
     print("Comments>>>>>>>>")
     data = {
@@ -607,6 +611,16 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "trade_4hr": trade_direction(candle_size_4hr),
       
             },
+        "hist_trade_outcome": #to access the model predictions
+            {
+                "v4_pl":  v4_pred_pl,
+                "v5_pl":  v5_pred_pl,
+            },
+        "sensitivity_hist_model":
+            {
+                '10pips':{'prediction': pred_var_pos, 'trade':pos_trade},
+                '-10pips':{'prediction': pred_var_neg, 'trade': neg_trade}
+            },
         "bb_target1":
             {
                 "hist": hist_bb_target1,
@@ -624,11 +638,6 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "hist": hist_flatness,
                 "cont": cont_flatness,
                 "rev": rev_flatness,
-            },
-        "hist_trade_outcome":
-            {
-                "v4_pl":  v4_pred_pl,
-                "v5_pl":  v5_pred_pl,
             },
     }
 
