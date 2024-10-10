@@ -379,15 +379,6 @@ def ml_report2(request):
     '1h_v5': continue_trade_results_1h_v5
     }
        
-    #calculate entry and exit point 
-    trade_target = key_results['trade_target']['hist']
-    if key_results['potential_trade']['hist'] == 'Buy':
-        entry_adjustment = -0.04
-        stop_adjustment = -0.1
-    else:
-        entry_adjustment = 0.04
-        stop_adjustment = 0.1
-        trade_target = -trade_target
     
     
     current_time = datetime.datetime.now()
@@ -395,52 +386,6 @@ def ml_report2(request):
     rounded_time = current_time - datetime.timedelta(minutes=current_time.minute % 5,
                                                 seconds=current_time.second,
                                                 microseconds=current_time.microsecond)
-
-    # Extract hour, minute, and second from the current time
-  
-    minute = current_time.minute
-    second = current_time.second
-
-    # Calculate the total number of seconds elapsed in the current hour
-    total_seconds_in_hour = 3600  # 60 seconds * 60 minutes
-
-    # Calculate the total number of seconds elapsed so far in the current hour
-    elapsed_seconds = (minute * 60) + second
-
-    # Calculate the percentage of the hour elapsed
-    percentage_elapsed = (elapsed_seconds / total_seconds_in_hour) * 100
-
-    projected_volume = volume[3] / percentage_elapsed * 100
-    
-    if projected_volume < 2000:
-        exit_adjustment = 1.2
-    else:
-        exit_adjustment = 1
-        
-    entry_point = open_prices[-1] + entry_adjustment
-    exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
-    stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
-    risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
-
-    v4_pred_pl = []
-    #calculate the profit or loss according to the predictions.
-    for price, direction in zip(open_prices,potential_trade_label_v4):
-        if direction == "Buy":
-            pl = close_prices[-1] - price 
-        else:
-            pl = price - close_prices[-1]
-    
-        v4_pred_pl.append(round(pl*100))
-        
-    v5_pred_pl = []
-    #calculate the profit or loss according to the predictions.
-    for price, direction in zip(open_prices,potential_trade_label_v5):
-        if direction == "Buy":
-            pl = close_prices[-1] - price 
-        else:
-            pl = price - close_prices[-1]
-    
-        v5_pred_pl.append(round(pl*100))
 
 
     average_open_price = sum(open_prices) / len(open_prices)
@@ -464,7 +409,7 @@ def ml_report2(request):
     context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade_dict':trade_dict,
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
-             'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,
+             'pred_var_list': pred_var_list,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
              "reverse_pred": reverse_pred, "reverse_prob": reverse_prob, "key_results": key_results}

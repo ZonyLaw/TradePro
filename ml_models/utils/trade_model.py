@@ -83,6 +83,7 @@ def format_model_results(
         potential_trade.append(f"{direction} target: {profit_label}")
         trade_type.append(direction)
         trade_target.append(profit_label)
+        
 
     main_results["Potential Trade"] = potential_trade
     extra_results = {
@@ -428,8 +429,9 @@ from .access_results import write_to_mongo
 
 def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     """
-    This function set off model run for three different versions and compares results.
-    It will return the comments and ticker info which can be sent out by email if enabled.
+    This function set off by model runs and summarise results to be used on the front end.
+    It does all the calculations once an update of prices is detected.
+    This is to avoid too much dynamic calculation in the frontend.
     
     TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
     """
@@ -441,6 +443,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
 
     historical_headers = pred_historical_v4['pred_historical']['trade_headers']
     historical_labels = {'Periods': historical_headers}
+    potential_trade_v4 = pred_historical_v4['pred_historical']['trade_breakdown']['trade_type']
+    potential_trade_v5 = pred_historical_v5['pred_historical']['trade_breakdown']['trade_type']
     
     pred_collection = {
         "pred_reverse_v4": pred_reverse_v4,
@@ -538,6 +542,27 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
     risk_reward = abs(entry_point - exit_point) / abs(entry_point - stop_loss)
     
+    
+    v4_pred_pl = []
+    #calculate the profit or loss according to the model prediction based on open price compared to current price.
+    for price, direction in zip(open_prices, potential_trade_v4):
+        if direction == "Buy":
+            pl = close_prices[-1] - price 
+        else:
+            pl = price - close_prices[-1]
+    
+        v4_pred_pl.append(round(pl*100))
+
+    v5_pred_pl = []
+    #calculate the profit or loss according to the predictions.
+    for price, direction in zip(open_prices,potential_trade_v5):
+        if direction == "Buy":
+            pl = close_prices[-1] - price 
+        else:
+            pl = price - close_prices[-1]
+    
+        v5_pred_pl.append(round(pl*100))
+    
     print("Comments>>>>>>>>")
     data = {
         "comments": 
@@ -569,6 +594,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             },
         "current_market":
             {
+                "hist_label": historical_labels,
                 "open_prices": open_prices,
                 "close_prices": close_prices,
                 "volume": volume,
@@ -598,6 +624,11 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "hist": hist_flatness,
                 "cont": cont_flatness,
                 "rev": rev_flatness,
+            },
+        "hist_trade_outcome":
+            {
+                "v4_pl":  v4_pred_pl,
+                "v5_pl":  v5_pred_pl,
             },
     }
 

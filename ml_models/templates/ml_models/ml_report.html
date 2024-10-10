@@ -187,7 +187,7 @@
 
             <tr>
                 <td>v4 Profit / Loss </td>
-                {% for pl in v4_pred_pl %}
+                {% for pl in key_results.hist_trade_outcome.v4_pl %}
                 <td style="color: {% if pl > 0 %}green{% elif pl < 0 %}red{% else %}black{% endif %}">{{ pl }} pips</td>
                 {% endfor %}
 
@@ -195,7 +195,7 @@
 
             <tr>
                 <td>v5 Profit / Loss </td>
-                {% for pl in v5_pred_pl %}
+                {% for pl in key_results.hist_trade_outcome.v5_pl %}
                 <td style="color: {% if pl > 0 %}green{% elif pl < 0 %}red{% else %}black{% endif %}">{{ pl }} pips</td>
                 {% endfor %}
 

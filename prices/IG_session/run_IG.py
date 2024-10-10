@@ -172,7 +172,7 @@ def run_IG(ticker, start_date=None, end_date=None):
         data = ig_service.fetch_historical_prices_by_epic_and_date_range(f"{ticker_definitions[ticker]}", "HOUR",start_time_str, end_time_str )
         # data = ig_service.fetch_historical_prices_by_epic_and_date_range(ticker_definition[ticker], "HOUR","2023:12:25-12:00:00", "2023:12:25-13:00:00" )
         df = data['prices']
-        print("This is df retrieved>>>", df)
+        # print("This is df retrieved>>>", df)
         ig_service.logout()
         recordIGPrice(ticker, df, 100)
         

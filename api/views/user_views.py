@@ -37,7 +37,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 @api_view(['POST'])
 def registerUser(request):
     data = request.data
-    print("data>>>>>", data)
+    # print("data>>>>>", data)
     
     try:
         if User.objects.filter(email=data['email']).exists():
