@@ -489,8 +489,6 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     candle_size_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
     candle_size_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     
-  
-    
         
     comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
     general_ticker_info = general_ticker_results(last_four_prices_df, 1)
@@ -601,7 +599,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "cont": cont_flatness,
                 "rev": rev_flatness,
             },
-            }
+    }
 
     write_to_mongo(f"{model_ticker}_key_results", data)
 

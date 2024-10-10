@@ -462,7 +462,6 @@ def ml_report2(request):
     reverse_prob = reverse_pred_results['model_prediction_proba']*100
     
     context={'form': form,  'date': date, 'rounded_time': rounded_time,  'trade_dict':trade_dict,
-            
              'historical_labels': historical_labels, 'historical_trade_results': historical_trade_results,
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'v4_pred_pl': v4_pred_pl, 'v5_pred_pl': v5_pred_pl,'pred_var_list': pred_var_list,

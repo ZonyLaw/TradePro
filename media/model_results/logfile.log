@@ -730,3 +730,185 @@ KeyError: 'cst'
 2024-10-10 11:48:10,154 - INFO - Added job "run_procedure_sequence" to job store "default"
 2024-10-10 11:48:10,154 - INFO - Scheduler started
 2024-10-10 11:48:10,174 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:54:18,129 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:54:18,129 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:54:18,129 - INFO - Scheduler started
+2024-10-10 11:54:20,485 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 11:54:20,485 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 11:54:20,485 - INFO - Scheduler started
+2024-10-10 11:54:20,505 - INFO - Watching for file changes with StatReloader
+2024-10-10 11:54:27,450 - WARNING - Not Found: /prices/get-IG-prices/images/favicon.ico
+2024-10-10 11:54:42,199 - INFO - The input start time: 2024-10-09 11:00:00+00:00
+2024-10-10 11:56:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:56:00 BST)" (scheduled at 2024-10-10 11:56:00+01:00)
+2024-10-10 11:56:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 11:56:00 BST)" (scheduled at 2024-10-10 11:56:00+01:00)
+2024-10-10 11:56:00,023 - INFO - The input start time: 2024-10-10 10:00:00
+2024-10-10 11:56:00,231 - INFO - The input start time: 2024-10-10 10:00:00
+2024-10-10 11:56:01,055 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 11:56:22,516 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:01:00 BST)" executed successfully
+2024-10-10 11:56:47,107 - WARNING - Not Found: /prices/create-price/images/favicon.ico
+2024-10-10 11:57:25,483 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 460, in ml_report2
+    reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 106, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 73, in reverse_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 823, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 865, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 599, in _validate_X_predict
+    X = self._validate_data(X, dtype=DTYPE, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+RandomForestClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-10-10 11:57:25,623 - WARNING - Not Found: /favicon.ico
+2024-10-10 11:57:42,748 - WARNING - Not Found: /prices/update-price/a9bf5cb2-39dc-452c-afaf-87dc988be06d/images/favicon.ico
+2024-10-10 11:58:44,842 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 460, in ml_report2
+    reverse_pred_results = standard_analysis_reverse("USDJPY", "v1_reverse")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 106, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 73, in reverse_model_run
+    model_prediction = model_pipeline.predict(X_live_subset)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\pipeline.py", line 515, in predict
+    return self.steps[-1][1].predict(Xt, **predict_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 823, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 865, in predict_proba
+    X = self._validate_X_predict(X)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\ensemble\_forest.py", line 599, in _validate_X_predict
+    X = self._validate_data(X, dtype=DTYPE, accept_sparse="csr", reset=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\base.py", line 605, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 957, in check_array
+    _assert_all_finite(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 122, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\sklearn\utils\validation.py", line 171, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+RandomForestClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2024-10-10 11:59:05,717 - WARNING - Not Found: /prices/delete-price/a9bf5cb2-39dc-452c-afaf-87dc988be06d/images/favicon.ico
+2024-10-10 12:02:28,262 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 12:02:28,262 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 12:02:28,262 - INFO - Scheduler started
+2024-10-10 12:02:30,570 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 12:02:30,570 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 12:02:30,570 - INFO - Scheduler started
+2024-10-10 12:02:30,594 - INFO - Watching for file changes with StatReloader
+2024-10-10 12:03:05,428 - INFO - The input start time: 2024-10-08 12:00:00+00:00
+2024-10-10 12:03:06,485 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 156, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 12:03:26,585 - INFO - The input start time: 2024-10-08 12:00:00+00:00
+2024-10-10 12:03:27,418 - ERROR - Internal Server Error: /prices/get-IG-prices/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 156, in get_IG_prices
+    run_IG(ticker_symbol, start_date, end_date)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-10 12:23:47,175 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 12:23:47,175 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 12:23:47,175 - INFO - Scheduler started
+2024-10-10 12:23:49,933 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-10 12:23:49,933 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-10 12:23:49,933 - INFO - Scheduler started
+2024-10-10 12:23:49,953 - INFO - Watching for file changes with StatReloader
+2024-10-10 12:23:55,594 - WARNING - Not Found: /prices/upload-prices/images/favicon.ico
+2024-10-10 12:24:40,972 - WARNING - Not Found: /prices/update-price/1dc38fa6-d197-40c7-a20f-3534cf1ba05b/images/favicon.ico
+2024-10-10 12:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:26:00 BST)" (scheduled at 2024-10-10 12:26:00+01:00)
+2024-10-10 12:26:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:26:00 BST)" (scheduled at 2024-10-10 12:26:00+01:00)
+2024-10-10 12:26:00,019 - INFO - The input start time: 2024-10-10 11:00:00
+2024-10-10 12:26:00,203 - INFO - The input start time: 2024-10-10 11:00:00
+2024-10-10 12:26:30,523 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:31:00 BST)" executed successfully
+2024-10-10 12:26:31,068 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-10 12:31:00 BST)" executed successfully
