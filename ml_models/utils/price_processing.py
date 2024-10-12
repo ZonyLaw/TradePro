@@ -491,10 +491,15 @@ class StandardPriceProcessing():
         model run to see what results are generated. There are two scenarios:
             1) continue
             2) reverse
+        
+        The assumption is that the current candle will close with the close_adjustment applied. 
+        This sets the stage for the next candlestick to be created with the same close_adjustment. 
+        As a result, the current prediction differs from the actual historical close. 
+        The historical close represents the actual closing price
 
         Args:
             df (pd.DataFrame): DataFrame containing the original prices.
-            close_adjustment (float): Specify the pips to create the scenario.
+            close_adjustment (float): Specify the pips to create the scenario. 
             scenario (str): Either 'continue' or 'reverse' scenario.
 
         Returns:
@@ -506,26 +511,21 @@ class StandardPriceProcessing():
             close_adjustment = -close_adjustment
         
         # Get the last row of the DataFrame and set direction, then generate another 
-        # row continue the direction.
+        # row continuing the direction. 
         last_row = df.iloc[-1].copy()
+        print(len(df.index))
         last_row['date'] += timedelta(hours=1)
         if(last_row['close'] > last_row['open']):
             last_row['open'] = last_row['close']
             last_row['close'] = last_row['open'] - close_adjustment
             df.loc[len(df.index)] = last_row
-            last_row = df.iloc[-1].copy()
-            last_row['open'] = last_row['close']
-            last_row['close'] = last_row['open'] - close_adjustment
-            df.loc[len(df.index)] = last_row
+       
             
         else:
             last_row['open'] = last_row['close']
             last_row['close'] = last_row['open'] + close_adjustment
             df.loc[len(df.index)] = last_row
-            last_row = df.iloc[-1].copy()
-            last_row['open'] = last_row['close']
-            last_row['close'] = last_row['open'] + close_adjustment
-            df.loc[len(df.index)] = last_row
+     
         
         # Optionally save the new DataFrame to CSV
         # df.to_csv(r"C:\Users\sunny\Downloads\df_scenario.csv", index=False)

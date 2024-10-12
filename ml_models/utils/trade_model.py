@@ -237,7 +237,7 @@ def standard_analysis(ticker, model_version, sensitivity_adjustment=0.1):
     X_live_historical = dp.historical_record(4)
     X_live_variability = dp.prediction_variability(sensitivity_adjustment)
     
-    
+
     pred_reverse_results = model_run(ticker, X_live_reverse, model_version)
     pred_continue_results = model_run(ticker, X_live_continue, model_version)
     pred_historical_results = model_run(ticker, X_live_historical, model_version)
@@ -506,7 +506,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     hist_bb_target4 = hist_comparer.bb_target4
     hist_flatness = hist_comparer.flatness
     
-    cont_comparer = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 0, 1 )
+    cont_comparer = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 1, 1 )
     cont_comment = cont_comparer.comment
     cont_potential_trade = cont_comparer.trade_position
     cont_trade_target = cont_comparer.trade_target
@@ -514,7 +514,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     cont_bb_target4 = cont_comparer.bb_target4
     cont_flatness = cont_comparer.flatness
     
-    rev_comparer = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 0, 1 )
+    rev_comparer = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
     rev_comment = rev_comparer.comment
     rev_potential_trade = rev_comparer.trade_position
     rev_trade_target = rev_comparer.trade_target

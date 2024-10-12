@@ -76,6 +76,7 @@ class v4Processing(StandardPriceProcessing):
         df['pl_close_4_hr'] = df['pl_close_4_hr'].ffill()
         columns = ['dev20_1', 'dev50_1', 'dev100_1' ]
         df = df.drop(columns, axis=1)
+        df['reverse_point'] = df['reverse_point'].fillna(0)
         df = df.dropna()
         # df.to_csv(r"C:\Users\sunny\Desktop\Development\before_df-1.csv", index=False)
         # columns = ['dev20_1', 'dev50_1', 'dev100_1', "lower_bb20_1",  "upper_bb20_1" ]
