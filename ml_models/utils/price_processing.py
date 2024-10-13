@@ -513,7 +513,7 @@ class StandardPriceProcessing():
         # Get the last row of the DataFrame and set direction, then generate another 
         # row continuing the direction. 
         last_row = df.iloc[-1].copy()
-        print(len(df.index))
+   
         last_row['date'] += timedelta(hours=1)
         if(last_row['close'] > last_row['open']):
             last_row['open'] = last_row['close']

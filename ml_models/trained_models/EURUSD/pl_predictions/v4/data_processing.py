@@ -533,7 +533,7 @@ def historical_record(num_rows):
     ticker = Ticker.objects.get(symbol="USDJPY")
     df = priceDB_to_df(ticker)
     historical_df = stats_df_gen(df, num_rows)
-    historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
+    # historical_df.to_csv(r"C:\Users\sunny\Desktop\Development\history4_df-1.csv", index=False)
    
     return (historical_df)
 

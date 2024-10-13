@@ -494,6 +494,16 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     candle_size_1hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[3]['open']
     candle_size_4hr = last_four_prices_df.iloc[3]['close'] - last_four_prices_df.iloc[0]['open']
     
+    if candle_size_4hr < 0.210:
+        proportion_1hr_vs_4hr = candle_size_1hr / candle_size_4hr * 100
+        # Round the proportion to 2 decimal places
+        proportion_1hr_vs_4hr = round(proportion_1hr_vs_4hr, 2)
+        candlestick_comment = f"200 pips movement can reverse the trend! Currently the 1hr candle stick is {proportion_1hr_vs_4hr}% " \
+        "of the 4hr candle stick. (Check against prediction targets)"
+    else:
+        candlestick_comment = ""
+
+    
         
     comparison_comment, send_email_enabled = compare_version_results(pred_collection, 1, 1 )
     general_ticker_info = general_ticker_results(last_four_prices_df, 1)
@@ -620,6 +630,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "candle_size_4hr": candle_size_4hr,
                 "trade_1hr": trade_direction(candle_size_1hr),
                 "trade_4hr": trade_direction(candle_size_4hr),
+                "candlestick_comment": candlestick_comment,
       
             },
         "hist_trade_outcome": #to access the model predictions
