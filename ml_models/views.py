@@ -12,10 +12,10 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
 from .utils.trade_model import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
-from .utils.access_results import read_prediction_from_json, write_to_csv, read_prediction_from_Mongo
+from .utils.access_results import read_prediction_from_json, read_prediction_from_Mongo, write_append_to_mongo
 from .utils.manual_model_input import manual_price_input, news_param_input
 
-from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize
+from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize, CommentForm
 from prices.models import Price
 from tickers.models import Ticker
 from users.models import Profile
@@ -235,19 +235,39 @@ def ml_report2(request):
     This is a view function that pass the model predictions to the the frontend.
     Model predictions is saved as dictionary of array containing the probabilities for each profit/loss cateogires.
     """
-    
+    comment = ""
+
+
+    # If the request is a POST, process the form data
     if request.method == 'POST':
         form = ModelSelection(request.POST)
+        comment_form = CommentForm(request.POST)  # Initialize comment form with POST data
+
+        # Validate the model selection form
+        if form.is_valid():
+            model_ticker = form.cleaned_data['ticker']
+            print(f"Selected ticker: {model_ticker}")
+
+
+        # Validate the comment form
+        if comment_form.is_valid():
+            model_ticker = form.cleaned_data['ticker']
+            comment = comment_form.cleaned_data['comment']
+            print(f"User comment: {comment}")
+        else:
+            # Handle invalid comment form if needed
+            print("Comment form is invalid")
+
     else:
+        # If it's a GET request, create empty forms
         form = ModelSelection()
-        
-    if form.is_valid():
-        model_ticker = form.cleaned_data['ticker']
-    else:
-        model_ticker = 'USDJPY'
-    
+        comment_form = CommentForm()
+        model_ticker = 'USDJPY'  # Default ticker value
+   
     ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
     prices = Price.objects.filter(ticker=ticker_instance)
+    
+
     
     # model_version = "v4"
     # if model_version == "v4":
@@ -398,7 +418,18 @@ def ml_report2(request):
              'average_open_price': average_open_price, 'final_exit_price': final_exit_price,
              'reverse_labels': reverse_labels, 'reverse_trade_results': reverse_trade_lists,
              'continue_labels': continue_labels, 'continue_trade_results': continue_trade_lists,
-              'key_results': key_results}
+              'key_results': key_results, 'comment_form': comment_form, 'model_ticker': model_ticker}
+    
+    results_to_save = {
+     
+        'trade_comment': comment,  # Add user comment on trade
+        'results': key_results, # key results used
+        'created_at': datetime.datetime.now()  # Timestamp 
+    }
+    
+    if comment != "":
+        write_append_to_mongo(f"{model_ticker}_saved_records", results_to_save)
+    
     
     return render(request, 'ml_models/ml_report.html', context)
 
@@ -469,6 +500,11 @@ def ml_manual(request):
         })
 
     context = {'form':form, 'results':results}
+    
+
+
+
+
     
     return render(request, 'ml_models/ml_manual_analysis.html', context)
 

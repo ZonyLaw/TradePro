@@ -434,7 +434,6 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     It does all the calculations once an update of prices is detected.
     This is to avoid too much dynamic calculation in the frontend.
     
-    TODO: Currently set as USDJPY, but for future update the ticker probably need to be dynamic.
     """
     
     print("forecast Started......")
@@ -501,7 +500,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
         candlestick_comment = f"200 pips movement can reverse the trend! Currently the 1hr candle stick is {proportion_1hr_vs_4hr}% " \
         "of the 4hr candle stick. (Check against prediction targets)"
     else:
-        candlestick_comment = ""
+        candlestick_comment = "Currently the 1hr candle stick is {proportion_1hr_vs_4hr}% " \
+        "of the 4hr candle stick. (Check against prediction targets)"
 
     
         
@@ -548,6 +548,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     else:
         exit_adjustment = 1
     
+    
     entry_point = open_prices[-1] + entry_adjustment
     exit_point = open_prices[-1] + trade_target/100/exit_adjustment + entry_adjustment
     stop_loss = open_prices[-1] + stop_adjustment + entry_adjustment
@@ -586,6 +587,10 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     
     average_open_price = sum(open_prices) / len(open_prices)
     
+    if hist_potential_trade == cont_potential_trade:
+        assessment = f"Current and future continue prediction points to {hist_potential_trade} trade."
+    else:
+        assessment = "There is contradiction between 1hr & 4hr candle and prediction trend."
     
     print("Comments>>>>>>>>")
     data = {
@@ -631,6 +636,7 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
                 "trade_1hr": trade_direction(candle_size_1hr),
                 "trade_4hr": trade_direction(candle_size_4hr),
                 "candlestick_comment": candlestick_comment,
+                "assessment": assessment,
       
             },
         "hist_trade_outcome": #to access the model predictions

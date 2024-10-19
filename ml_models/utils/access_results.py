@@ -134,6 +134,31 @@ def write_to_mongo(collection_name, data):
         print(f"Operation failed: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
+        
+
+def write_append_to_mongo(collection_name, data):
+    """
+    Function to delete an existing collection and insert a new document into a MongoDB collection.
+
+    Args:
+        collection_name (str): The name of the MongoDB collection.
+        data (dict): The document to be inserted into the collection.
+    """
+    try:
+
+
+        # Access the collection
+        collection = db[collection_name]
+
+        # Insert the new document
+        collection.insert_one(data)
+        print("Insert operation completed.")
+        # print(f"New document inserted with ID: {result.inserted_id}")
+
+    except OperationFailure as e:
+        print(f"Operation failed: {e}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 def read_prediction_from_Mongo(collection_name):

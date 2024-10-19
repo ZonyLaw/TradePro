@@ -79,7 +79,6 @@ class NewsParameters(forms.Form):
     outcome = forms.ChoiceField(choices=OUTCOME_CHOICES, initial='better', label='Select predict outcome')#
     
 
-  
 class ModelSelection(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ModelSelection, self).__init__(*args, **kwargs)
@@ -115,3 +114,8 @@ class VariabilitySize(forms.Form):
         self.fields['sensitivity_adjustment'] = forms.FloatField(
             label='Enter sensitivity adjustment in pips:'
         )
+
+
+class CommentForm(forms.Form):
+    ticker = forms.ChoiceField(choices=TICKER_LIST, label='Select the ticker')
+    comment = forms.CharField(label='Your Comment', max_length=255, required=True)

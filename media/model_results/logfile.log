@@ -679,3 +679,1668 @@ KeyError: 'cst'
 2024-10-13 07:01:00,173 - INFO - The input start time: 2024-10-13 06:00:00
 2024-10-13 07:01:38,271 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-13 07:06:00 BST)" executed successfully
 2024-10-13 07:01:40,355 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-13 07:06:00 BST)" executed successfully
+2024-10-16 20:57:31,391 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-16 20:57:31,391 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-16 20:57:31,391 - INFO - Scheduler started
+2024-10-16 20:57:33,670 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-16 20:57:33,670 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-16 20:57:33,670 - INFO - Scheduler started
+2024-10-16 20:57:33,692 - INFO - Watching for file changes with StatReloader
+2024-10-16 20:57:35,500 - WARNING - Not Found: /images/favicon.ico
+2024-10-16 20:57:38,392 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-10-16 20:57:39,407 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-16 20:57:42,039 - WARNING - Not Found: /login/images/favicon.ico
+2024-10-16 20:57:51,840 - WARNING - Not Found: /account/images/favicon.ico
+2024-10-16 20:57:58,137 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-16 20:57:58,758 - WARNING - Not Found: /prices/update-price/296c9b32-0630-443c-afbd-f269cfe92cca/images/favicon.ico
+2024-10-16 20:58:34,068 - ERROR - Internal Server Error: /prices/update-price/296c9b32-0630-443c-afbd-f269cfe92cca/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-16 20:58:34,179 - WARNING - Not Found: /favicon.ico
+2024-10-16 21:01:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:01:00 BST)" (scheduled at 2024-10-16 21:01:00+01:00)
+2024-10-16 21:01:00,027 - INFO - The input start time: 2024-10-16 20:00:00
+2024-10-16 21:01:00,192 - INFO - The input start time: 2024-10-16 20:00:00
+2024-10-16 21:01:00,765 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-16 21:01:34,754 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-16 21:06:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:11:00 BST)" (scheduled at 2024-10-16 21:06:00+01:00)
+2024-10-16 21:06:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:11:00 BST)" (scheduled at 2024-10-16 21:06:00+01:00)
+2024-10-16 21:06:00,018 - INFO - The input start time: 2024-10-16 20:00:00
+2024-10-16 21:06:00,018 - INFO - The input start time: 2024-10-16 20:00:00
+2024-10-16 21:06:00,041 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000026891BC36D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026891BC36D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026891BC36D0>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-10-16 21:06:00,065 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-16 21:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002350D22B290>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002350D22B290>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 392, in create_session
+    response = requests.post(self.BASE_URL  + '/session', data=json.dumps(params), headers=self.BASIC_HEADERS)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.ig.com', port=443): Max retries exceeded with url: /gateway/deal/session (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002350D22B290>: Failed to resolve 'api.ig.com' ([Errno 11001] getaddrinfo failed)"))
+2024-10-16 21:47:40,083 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-16 21:47:50,478 - INFO - Watching for file changes with StatReloader
+2024-10-16 21:48:13,026 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-16 21:48:13,026 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-16 21:48:13,026 - INFO - Scheduler started
+2024-10-16 21:48:15,220 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-16 21:48:15,221 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-16 21:48:15,221 - INFO - Scheduler started
+2024-10-16 21:48:15,241 - INFO - Watching for file changes with StatReloader
+2024-10-16 21:48:26,603 - WARNING - Not Found: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/images/favicon.ico
+2024-10-16 21:49:20,941 - ERROR - Internal Server Error: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 12:32:31,987 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 12:32:31,987 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 12:32:31,987 - INFO - Scheduler started
+2024-10-19 12:32:34,353 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 12:32:34,353 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 12:32:34,353 - INFO - Scheduler started
+2024-10-19 12:32:34,375 - INFO - Watching for file changes with StatReloader
+2024-10-19 12:32:40,728 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-10-19 13:01:10,149 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:01:10,149 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:01:10,149 - INFO - Scheduler started
+2024-10-19 13:01:12,562 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:01:12,562 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:01:12,562 - INFO - Scheduler started
+2024-10-19 13:01:12,580 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:06:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:06:00 BST)" (scheduled at 2024-10-19 13:06:00+01:00)
+2024-10-19 13:06:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:11:00 BST)" (scheduled at 2024-10-19 13:06:00+01:00)
+2024-10-19 13:06:00,018 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:06:00,169 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:06:00,931 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 13:06:33,073 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:13:16,186 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:13:16,186 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:13:16,186 - INFO - Scheduler started
+2024-10-19 13:13:18,421 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:13:18,421 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:13:18,421 - INFO - Scheduler started
+2024-10-19 13:13:18,439 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:13:41,194 - ERROR - Internal Server Error: /ml_models/save-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 254, in save_results
+    return render(request, 'template.html')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: template.html
+2024-10-19 13:15:35,615 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:15:38,804 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:15:38,804 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:15:38,804 - INFO - Scheduler started
+2024-10-19 13:15:38,824 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:15:41,304 - ERROR - Internal Server Error: /ml_models/save-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 254, in save_results
+    return render(request, 'ml-report.html')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ml-report.html
+2024-10-19 13:16:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:16:00 BST)" (scheduled at 2024-10-19 13:16:00+01:00)
+2024-10-19 13:16:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:16:00 BST)" (scheduled at 2024-10-19 13:16:00+01:00)
+2024-10-19 13:16:00,202 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:16:00,203 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:16:01,204 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 13:16:50,750 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:17:48,049 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:17:51,208 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:17:51,209 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:17:51,209 - INFO - Scheduler started
+2024-10-19 13:17:51,230 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:18:21,847 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:18:25,139 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:18:25,139 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:18:25,139 - INFO - Scheduler started
+2024-10-19 13:18:25,161 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:18:32,217 - ERROR - Internal Server Error: /ml_models/save-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 256, in save_results
+    return render(request, 'ml-report.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: ml-report.html
+2024-10-19 13:19:33,196 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:19:36,446 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:19:36,447 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:19:36,447 - INFO - Scheduler started
+2024-10-19 13:19:36,468 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:19:37,202 - WARNING - Not Found: /ml_models/save-results/images/favicon.ico
+2024-10-19 13:21:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:26:00 BST)" (scheduled at 2024-10-19 13:21:00+01:00)
+2024-10-19 13:21:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:21:00 BST)" (scheduled at 2024-10-19 13:21:00+01:00)
+2024-10-19 13:21:00,015 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:21:00,160 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:21:06,755 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:21:31,404 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:21:31,660 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:22:03,901 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:22:03,901 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:22:03,901 - INFO - Scheduler started
+2024-10-19 13:22:06,212 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:22:06,213 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:22:06,213 - INFO - Scheduler started
+2024-10-19 13:22:06,234 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:23:26,358 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:23:29,606 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:23:29,606 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:23:29,606 - INFO - Scheduler started
+2024-10-19 13:23:29,628 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:23:46,567 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:23:49,765 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:23:49,765 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:23:49,765 - INFO - Scheduler started
+2024-10-19 13:23:49,786 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:52:23,438 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:52:23,438 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:52:23,438 - INFO - Scheduler started
+2024-10-19 13:52:25,669 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:52:25,669 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:52:25,669 - INFO - Scheduler started
+2024-10-19 13:52:25,687 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:52:35,350 - ERROR - Internal Server Error: /ml_models/save-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 253, in save_results
+    return redirect('ml_report')
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ml_report' not found. 'ml_report' is not a valid view function or pattern name.
+2024-10-19 13:53:47,964 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:53:51,217 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:53:51,217 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:53:51,217 - INFO - Scheduler started
+2024-10-19 13:53:51,236 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:53:55,889 - WARNING - Not Found: /ml_models/save-results/ml/models/ml_report
+2024-10-19 13:54:06,876 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:54:10,009 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:54:10,009 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:54:10,009 - INFO - Scheduler started
+2024-10-19 13:54:10,029 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:54:12,757 - WARNING - Not Found: /ml_models/save-results/ml/models/ml_report.html
+2024-10-19 13:54:22,072 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:54:25,267 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:54:25,268 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:54:25,268 - INFO - Scheduler started
+2024-10-19 13:54:25,288 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:54:25,906 - WARNING - Not Found: /ml_models/save-results/ml/models/ml_report.html
+2024-10-19 13:54:30,739 - WARNING - Not Found: /ml_models/save-results/ml_models/ml_report.html
+2024-10-19 13:54:37,880 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:54:41,031 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:54:41,032 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:54:41,032 - INFO - Scheduler started
+2024-10-19 13:54:41,052 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:54:43,411 - WARNING - Not Found: /ml_models/save-results/ml_models/ml_report
+2024-10-19 13:55:08,055 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\urls.py changed, reloading.
+2024-10-19 13:55:11,516 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:55:11,516 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:55:11,516 - INFO - Scheduler started
+2024-10-19 13:55:11,535 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:55:15,729 - WARNING - Not Found: /ml_models/save-results/
+2024-10-19 13:55:40,358 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\urls.py changed, reloading.
+2024-10-19 13:55:43,507 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:55:43,507 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:55:43,508 - INFO - Scheduler started
+2024-10-19 13:55:43,528 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:55:47,955 - WARNING - Not Found: /ml_models/save-results/ml_models/ml_report
+2024-10-19 13:56:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:56:00 BST)" (scheduled at 2024-10-19 13:56:00+01:00)
+2024-10-19 13:56:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 13:56:00 BST)" (scheduled at 2024-10-19 13:56:00+01:00)
+2024-10-19 13:56:00,161 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:56:00,161 - INFO - The input start time: 2024-10-19 12:00:00
+2024-10-19 13:56:12,237 - WARNING - Not Found: /ml_models/save-results/ml_models/ml_report
+2024-10-19 13:56:18,185 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:56:45,179 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:56:45,826 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:01:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 13:57:54,797 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:57:54,797 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:57:54,798 - INFO - Scheduler started
+2024-10-19 13:57:57,046 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:57:57,046 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:57:57,046 - INFO - Scheduler started
+2024-10-19 13:57:57,065 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:58:06,317 - ERROR - Internal Server Error: /ml_models/save-results/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 253, in save_results
+    return redirect('ml_report')
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ml_report' not found. 'ml_report' is not a valid view function or pattern name.
+2024-10-19 13:59:40,167 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 13:59:43,362 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 13:59:43,362 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 13:59:43,362 - INFO - Scheduler started
+2024-10-19 13:59:43,380 - INFO - Watching for file changes with StatReloader
+2024-10-19 13:59:44,769 - WARNING - Not Found: /ml_models/ml_report/
+2024-10-19 13:59:45,628 - WARNING - Not Found: /ml_models/
+2024-10-19 13:59:52,663 - WARNING - Not Found: /ml_models/ml_report/
+2024-10-19 14:00:15,202 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 14:00:18,446 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:00:18,447 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:00:18,447 - INFO - Scheduler started
+2024-10-19 14:00:18,468 - INFO - Watching for file changes with StatReloader
+2024-10-19 14:01:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:01:00 BST)" (scheduled at 2024-10-19 14:01:00+01:00)
+2024-10-19 14:01:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:06:00 BST)" (scheduled at 2024-10-19 14:01:00+01:00)
+2024-10-19 14:01:00,025 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:01:00,165 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:01:00,771 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 14:01:46,149 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:06:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:11:00 BST)" (scheduled at 2024-10-19 14:06:00+01:00)
+2024-10-19 14:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:11:00 BST)" (scheduled at 2024-10-19 14:06:00+01:00)
+2024-10-19 14:06:00,011 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:06:00,012 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:06:58,267 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:07:01,736 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:11:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:16:00 BST)" (scheduled at 2024-10-19 14:11:00+01:00)
+2024-10-19 14:11:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:16:00 BST)" (scheduled at 2024-10-19 14:11:00+01:00)
+2024-10-19 14:11:00,023 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:11:00,024 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:11:56,853 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:11:59,238 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:12:17,741 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\form.py changed, reloading.
+2024-10-19 14:20:08,183 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:20:08,183 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:20:08,183 - INFO - Scheduler started
+2024-10-19 14:20:10,638 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:20:10,638 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:20:10,639 - INFO - Scheduler started
+2024-10-19 14:20:10,662 - INFO - Watching for file changes with StatReloader
+2024-10-19 14:21:32,729 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:21:32,730 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:21:32,730 - INFO - Scheduler started
+2024-10-19 14:21:34,972 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:21:34,972 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:21:34,972 - INFO - Scheduler started
+2024-10-19 14:21:34,993 - INFO - Watching for file changes with StatReloader
+2024-10-19 14:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:26:00 BST)" (scheduled at 2024-10-19 14:26:00+01:00)
+2024-10-19 14:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:31:00 BST)" (scheduled at 2024-10-19 14:26:00+01:00)
+2024-10-19 14:26:00,023 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:26:00,169 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:26:00,607 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 14:26:48,556 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:26:48,786 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:28:54,212 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:28:54,212 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:28:54,212 - INFO - Scheduler started
+2024-10-19 14:28:56,601 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:28:56,601 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:28:56,601 - INFO - Scheduler started
+2024-10-19 14:28:56,622 - INFO - Watching for file changes with StatReloader
+2024-10-19 14:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:31:00 BST)" (scheduled at 2024-10-19 14:31:00+01:00)
+2024-10-19 14:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:36:00 BST)" (scheduled at 2024-10-19 14:31:00+01:00)
+2024-10-19 14:31:00,026 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:31:00,531 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:31:59,569 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:32:02,715 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:36:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:41:00 BST)" (scheduled at 2024-10-19 14:36:00+01:00)
+2024-10-19 14:36:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:41:00 BST)" (scheduled at 2024-10-19 14:36:00+01:00)
+2024-10-19 14:36:00,017 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:36:00,017 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:36:59,141 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:37:02,281 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:41:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:46:00 BST)" (scheduled at 2024-10-19 14:41:00+01:00)
+2024-10-19 14:41:00,013 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:41:00,014 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:41:30,474 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:41:31,574 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:41:33,936 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\access_results.py changed, reloading.
+2024-10-19 14:43:38,513 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:43:38,514 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:43:38,514 - INFO - Scheduler started
+2024-10-19 14:43:40,798 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 14:43:40,798 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 14:43:40,798 - INFO - Scheduler started
+2024-10-19 14:43:40,816 - INFO - Watching for file changes with StatReloader
+2024-10-19 14:45:44,706 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-19 14:46:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:46:00 BST)" (scheduled at 2024-10-19 14:46:00+01:00)
+2024-10-19 14:46:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:46:00 BST)" (scheduled at 2024-10-19 14:46:00+01:00)
+2024-10-19 14:46:00,017 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:46:00,173 - INFO - The input start time: 2024-10-19 13:00:00
+2024-10-19 14:46:30,009 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 14:46:30,399 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 14:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:04:46,175 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:04:46,175 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:04:46,175 - INFO - Scheduler started
+2024-10-19 15:04:48,659 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:04:48,659 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:04:48,659 - INFO - Scheduler started
+2024-10-19 15:04:48,683 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:05:02,236 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 431, in ml_report2
+    return render(request, 'ml_models/ml_report.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'save_results' not found. 'save_results' is not a valid view function or pattern name.
+2024-10-19 15:06:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:06:00 BST)" (scheduled at 2024-10-19 15:06:00+01:00)
+2024-10-19 15:06:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:06:00 BST)" (scheduled at 2024-10-19 15:06:00+01:00)
+2024-10-19 15:06:00,011 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:06:00,158 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:06:00,721 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 15:06:32,593 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:11:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:16:00 BST)" (scheduled at 2024-10-19 15:11:00+01:00)
+2024-10-19 15:11:00,014 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:16:00 BST)" (scheduled at 2024-10-19 15:11:00+01:00)
+2024-10-19 15:11:00,016 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:11:00,016 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:11:00,618 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 15:11:00,620 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 15:11:02,256 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:11:05,353 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:11:05,353 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:11:05,353 - INFO - Scheduler started
+2024-10-19 15:11:05,376 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:11:10,886 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:11:13,868 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:11:13,868 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:11:13,868 - INFO - Scheduler started
+2024-10-19 15:11:13,887 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:11:17,498 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:11:20,550 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:11:20,551 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:11:20,551 - INFO - Scheduler started
+2024-10-19 15:11:20,569 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:11:24,923 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:11:27,859 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:11:27,859 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:11:27,859 - INFO - Scheduler started
+2024-10-19 15:11:27,882 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:11:58,286 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:12:01,357 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:12:01,358 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:12:01,358 - INFO - Scheduler started
+2024-10-19 15:12:01,378 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:12:35,957 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:12:39,190 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:12:39,190 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:12:39,190 - INFO - Scheduler started
+2024-10-19 15:12:39,209 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:12:43,782 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 15:12:46,819 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:12:46,819 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:12:46,819 - INFO - Scheduler started
+2024-10-19 15:12:46,837 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:13:40,350 - WARNING - Not Found: /tickers/ticker/aa433766-dd42-44c3-a075-fb7a2421c22a/images/favicon.ico
+2024-10-19 15:13:42,201 - WARNING - Not Found: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/images/favicon.ico
+2024-10-19 15:14:10,963 - ERROR - Internal Server Error: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 584, in run_model_predictions
+    reverse_pred_results = standard_analysis_reverse(model_ticker, "v1_reverse")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 106, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 51, in reverse_model_run
+    model_pipeline = load_file(
+                     ^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 22, in load_file
+    return joblib.load(filename=file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/EURUSD/pl_predictions/v1_reverse/reverse_pipeline_model.pkl'
+2024-10-19 15:16:00,001 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:21:00 BST)" (scheduled at 2024-10-19 15:16:00+01:00)
+2024-10-19 15:16:00,006 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:16:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:16:00 BST)" (scheduled at 2024-10-19 15:16:00+01:00)
+2024-10-19 15:16:00,145 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:16:10,049 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 407, in ml_report2
+    if key_results['potential_trade']['hist'] == "Buy":
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'potential_trade'
+2024-10-19 15:16:29,031 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:16:30,896 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:21:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:20:59,663 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:20:59,663 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:20:59,663 - INFO - Scheduler started
+2024-10-19 15:21:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:21:00 BST)" (scheduled at 2024-10-19 15:21:00+01:00)
+2024-10-19 15:21:00,145 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:21:01,897 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:21:01,897 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:21:01,897 - INFO - Scheduler started
+2024-10-19 15:21:01,919 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:21:32,249 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:26:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 591, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:22:34,564 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-19 15:27:49,868 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:27:49,868 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:27:49,868 - INFO - Scheduler started
+2024-10-19 15:27:52,145 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:27:52,146 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:27:52,146 - INFO - Scheduler started
+2024-10-19 15:27:52,166 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:28:42,531 - ERROR - Internal Server Error: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 583, in run_model_predictions
+    reverse_pred_results = standard_analysis_reverse(model_ticker, "v1_reverse")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 106, in standard_analysis_reverse
+    pred_reverse_results = reverse_model_run(ticker, X_live_reverse, model_version)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 51, in reverse_model_run
+    model_pipeline = load_file(
+                     ^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\reverse_model.py", line 22, in load_file
+    return joblib.load(filename=file_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'trained_models/EURUSD/pl_predictions/v1_reverse/reverse_pipeline_model.pkl'
+2024-10-19 15:30:35,314 - ERROR - Internal Server Error: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:31:00 BST)" (scheduled at 2024-10-19 15:31:00+01:00)
+2024-10-19 15:31:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:31:00 BST)" (scheduled at 2024-10-19 15:31:00+01:00)
+2024-10-19 15:31:00,175 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:31:00,175 - INFO - The input start time: 2024-10-19 14:00:00
+2024-10-19 15:31:40,924 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:31:42,510 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 15:36:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:31:50,814 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 407, in ml_report2
+    if key_results['potential_trade']['hist'] == "Buy":
+       ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'potential_trade'
+2024-10-19 15:32:51,550 - ERROR - Internal Server Error: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 15:37:57,809 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:37:57,809 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:37:57,809 - INFO - Scheduler started
+2024-10-19 15:38:00,020 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 15:38:00,020 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 15:38:00,020 - INFO - Scheduler started
+2024-10-19 15:38:00,041 - INFO - Watching for file changes with StatReloader
+2024-10-19 15:39:25,701 - ERROR - Internal Server Error: /prices/update-price/10ac0ca1-ede1-47e5-a99e-458e3935021f/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:05:56,293 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:05:56,293 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:05:56,293 - INFO - Scheduler started
+2024-10-19 16:05:58,667 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:05:58,668 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:05:58,668 - INFO - Scheduler started
+2024-10-19 16:05:58,692 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:06:00 BST)" (scheduled at 2024-10-19 16:06:00+01:00)
+2024-10-19 16:06:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:11:00 BST)" (scheduled at 2024-10-19 16:06:00+01:00)
+2024-10-19 16:06:00,299 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:06:00,308 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:06:01,091 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 16:06:01,099 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 16:06:08,945 - WARNING - Not Found: /prices/export-prices/images/favicon.ico
+2024-10-19 16:08:24,774 - WARNING - Not Found: /tickers/delete-ticker/aa433766-dd42-44c3-a075-fb7a2421c22a/images/favicon.ico
+2024-10-19 16:08:28,478 - WARNING - Not Found: /tickers/create-ticker/images/favicon.ico
+2024-10-19 16:08:55,870 - WARNING - Not Found: /prices/upload-prices/images/favicon.ico
+2024-10-19 16:10:05,600 - WARNING - Not Found: /tickers/ticker/07154d28-2799-4732-a144-c0e0da8978ee/images/favicon.ico
+2024-10-19 16:10:08,158 - WARNING - Not Found: /prices/update-price/7f9117b5-492a-41b7-8e29-80caa2057576/images/favicon.ico
+2024-10-19 16:10:54,482 - ERROR - Internal Server Error: /prices/update-price/7f9117b5-492a-41b7-8e29-80caa2057576/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:11:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:16:00 BST)" (scheduled at 2024-10-19 16:11:00+01:00)
+2024-10-19 16:11:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:16:00 BST)" (scheduled at 2024-10-19 16:11:00+01:00)
+2024-10-19 16:11:00,015 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:11:00,016 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:11:51,537 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:11:52,397 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:16:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:23:37,203 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:23:37,203 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:23:37,203 - INFO - Scheduler started
+2024-10-19 16:23:40,000 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:23:40,000 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:23:40,000 - INFO - Scheduler started
+2024-10-19 16:23:40,027 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:23:40,878 - WARNING - Not Found: /prices
+2024-10-19 16:24:20,655 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-19 16:24:21,177 - WARNING - Not Found: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/images/favicon.ico
+2024-10-19 16:26:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:26:00 BST)" (scheduled at 2024-10-19 16:26:00+01:00)
+2024-10-19 16:26:00,016 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:26:00 BST)" (scheduled at 2024-10-19 16:26:00+01:00)
+2024-10-19 16:26:00,209 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:26:01,378 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:26:01,877 - ERROR - Internal Server Error: /prices/update-price/7f9117b5-492a-41b7-8e29-80caa2057576/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:26:33,785 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:26:35,647 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == open_prices_1hr & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'float' and 'float'
+2024-10-19 16:32:32,740 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:32:32,740 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:32:32,740 - INFO - Scheduler started
+2024-10-19 16:32:35,131 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:32:35,131 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:32:35,131 - INFO - Scheduler started
+2024-10-19 16:32:35,152 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:33:15,290 - ERROR - Internal Server Error: /prices/update-price/7f9117b5-492a-41b7-8e29-80caa2057576/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == cont_potential_trade & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'str' and 'float'
+2024-10-19 16:36:00,008 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:36:00 BST)" (scheduled at 2024-10-19 16:36:00+01:00)
+2024-10-19 16:36:00,009 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:36:00 BST)" (scheduled at 2024-10-19 16:36:00+01:00)
+2024-10-19 16:36:00,165 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:36:00,165 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:36:01,081 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 16:36:32,309 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == cont_potential_trade & open_prices_1hr == open_prices_4hr:
+                               ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'str' and 'float'
+2024-10-19 16:38:39,796 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py changed, reloading.
+2024-10-19 16:38:43,394 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:38:43,394 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:38:43,394 - INFO - Scheduler started
+2024-10-19 16:38:43,416 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:38:53,251 - WARNING - Not Found: /prices
+2024-10-19 16:41:00,002 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:46:00 BST)" (scheduled at 2024-10-19 16:41:00+01:00)
+2024-10-19 16:41:00,003 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:41:00 BST)" (scheduled at 2024-10-19 16:41:00+01:00)
+2024-10-19 16:41:00,008 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:41:00,013 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:41:00,954 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 16:41:32,155 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:46:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == cont_potential_trade:
+                               ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for &: 'str' and 'float'
+2024-10-19 16:46:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:51:00 BST)" (scheduled at 2024-10-19 16:46:00+01:00)
+2024-10-19 16:46:00,012 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:51:00 BST)" (scheduled at 2024-10-19 16:46:00+01:00)
+2024-10-19 16:46:00,019 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:46:00,019 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:46:31,187 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:51:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 590, in run_model_predictions
+    if hist_potential_trade == cont_potential_trade:
+                               ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for &: 'str' and 'float'
+2024-10-19 16:46:32,855 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:51:00 BST)" executed successfully
+2024-10-19 16:47:00,900 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 16:47:16,793 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:47:16,793 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:47:16,793 - INFO - Scheduler started
+2024-10-19 16:47:19,243 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:47:19,244 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:47:19,244 - INFO - Scheduler started
+2024-10-19 16:47:19,268 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:47:29,106 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 255, in ml_report2
+    prices_df = pd.DataFrame(list(prices.values()))
+                                  ^^^^^^
+UnboundLocalError: cannot access local variable 'prices' where it is not associated with a value
+2024-10-19 16:48:42,499 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 16:48:45,581 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:48:45,581 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:48:45,581 - INFO - Scheduler started
+2024-10-19 16:48:45,602 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:51:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:51:00 BST)" (scheduled at 2024-10-19 16:51:00+01:00)
+2024-10-19 16:51:00,015 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:56:00 BST)" (scheduled at 2024-10-19 16:51:00+01:00)
+2024-10-19 16:51:00,019 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:51:00,163 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:51:29,641 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:56:00 BST)" executed successfully
+2024-10-19 16:51:31,160 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:56:00 BST)" executed successfully
+2024-10-19 16:52:29,747 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 16:52:50,592 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:52:50,593 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:52:50,593 - INFO - Scheduler started
+2024-10-19 16:52:52,944 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:52:52,944 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:52:52,944 - INFO - Scheduler started
+2024-10-19 16:52:52,972 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:55:40,983 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 16:55:44,047 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 16:55:44,047 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 16:55:44,047 - INFO - Scheduler started
+2024-10-19 16:55:44,070 - INFO - Watching for file changes with StatReloader
+2024-10-19 16:56:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 16:56:00 BST)" (scheduled at 2024-10-19 16:56:00+01:00)
+2024-10-19 16:56:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:01:00 BST)" (scheduled at 2024-10-19 16:56:00+01:00)
+2024-10-19 16:56:00,018 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:56:00,177 - INFO - The input start time: 2024-10-19 15:00:00
+2024-10-19 16:56:41,065 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:01:00 BST)" executed successfully
+2024-10-19 16:56:41,778 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:01:00 BST)" executed successfully
+2024-10-19 17:00:08,111 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 17:00:16,062 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:00:16,063 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:00:16,063 - INFO - Scheduler started
+2024-10-19 17:00:18,450 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:00:18,450 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:00:18,451 - INFO - Scheduler started
+2024-10-19 17:00:18,474 - INFO - Watching for file changes with StatReloader
+2024-10-19 17:00:22,206 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 283, in ml_report2
+    prices_df = pd.DataFrame(list(prices.values()))
+                                  ^^^^^^
+NameError: name 'prices' is not defined
+2024-10-19 17:00:56,901 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 17:01:00,011 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:01:00 BST)" (scheduled at 2024-10-19 17:01:00+01:00)
+2024-10-19 17:01:00,075 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:01:00,075 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:01:00,075 - INFO - Scheduler started
+2024-10-19 17:01:00,097 - INFO - Watching for file changes with StatReloader
+2024-10-19 17:01:00,175 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:01:33,256 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:06:00 BST)" executed successfully
+2024-10-19 17:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:11:00 BST)" (scheduled at 2024-10-19 17:06:00+01:00)
+2024-10-19 17:06:00,004 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:11:00 BST)" (scheduled at 2024-10-19 17:06:00+01:00)
+2024-10-19 17:06:00,006 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:06:00,008 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:06:00,712 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:11:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-19 17:06:24,832 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:11:00 BST)" executed successfully
+2024-10-19 17:06:50,730 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 17:07:02,043 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:07:02,043 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:07:02,043 - INFO - Scheduler started
+2024-10-19 17:07:04,424 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:07:04,425 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:07:04,425 - INFO - Scheduler started
+2024-10-19 17:07:04,445 - INFO - Watching for file changes with StatReloader
+2024-10-19 17:07:38,270 - ERROR - Internal Server Error: /ml_models/ml-report/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py", line 267, in ml_report2
+    ticker_instance = get_object_or_404(Ticker, symbol=model_ticker)
+                                                       ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'model_ticker' where it is not associated with a value
+2024-10-19 17:08:18,348 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\views.py changed, reloading.
+2024-10-19 17:08:21,400 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:08:21,400 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:08:21,400 - INFO - Scheduler started
+2024-10-19 17:08:21,420 - INFO - Watching for file changes with StatReloader
+2024-10-19 17:11:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:11:00 BST)" (scheduled at 2024-10-19 17:11:00+01:00)
+2024-10-19 17:11:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:16:00 BST)" (scheduled at 2024-10-19 17:11:00+01:00)
+2024-10-19 17:11:00,149 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:11:00,150 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:11:30,417 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:16:00 BST)" executed successfully
+2024-10-19 17:11:31,700 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:16:00 BST)" executed successfully
+2024-10-19 17:11:46,233 - INFO - C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\form.py changed, reloading.
+2024-10-19 17:12:28,175 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:12:28,175 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:12:28,175 - INFO - Scheduler started
+2024-10-19 17:12:30,581 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-19 17:12:30,581 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-19 17:12:30,581 - INFO - Scheduler started
+2024-10-19 17:12:30,602 - INFO - Watching for file changes with StatReloader
+2024-10-19 17:16:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:16:00 BST)" (scheduled at 2024-10-19 17:16:00+01:00)
+2024-10-19 17:16:00,007 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:21:00 BST)" (scheduled at 2024-10-19 17:16:00+01:00)
+2024-10-19 17:16:00,013 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:16:00,154 - INFO - The input start time: 2024-10-19 16:00:00
+2024-10-19 17:16:42,625 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:21:00 BST)" executed successfully
+2024-10-19 17:16:43,134 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-19 17:21:00 BST)" executed successfully
+2024-10-19 17:18:56,091 - WARNING - Not Found: /news/get-news/images/favicon.ico
+2024-10-19 17:18:58,999 - WARNING - Not Found: /ml_models/about/images/favicon.ico
+2024-10-19 17:19:01,952 - WARNING - Not Found: /ml_models/ml-variability/images/favicon.ico
+2024-10-19 17:19:03,009 - WARNING - Not Found: /backend-control/images/favicon.ico
+2024-10-19 17:19:06,448 - WARNING - Not Found: /ml_models/ml-manual/images/favicon.ico

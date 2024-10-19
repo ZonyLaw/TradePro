@@ -38,7 +38,6 @@
     {% endif %}
     
     </div>
-
   
 
     <div class="formPage my-md">
@@ -49,7 +48,7 @@
         </form>
     </div>
 
-    
+
     <div class="expandable-content">
         <button onclick="toggleText()" class="btn btn--sub--outline btn--md my-md">Extra Information</button>
         <div id="hidden-text" style="display: none;">
@@ -396,6 +395,16 @@
     </table>
 
     <br>
+
+
+    <div class="formPage my-md">
+        <h1>Comment current trade</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <input class="btn btn--sub btn--lg my-md" type="submit" value="Save Results" />
+        </form>
+    </div>
 
 
 </div>
