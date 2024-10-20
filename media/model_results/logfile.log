@@ -2344,3 +2344,155 @@ UnboundLocalError: cannot access local variable 'model_ticker' where it is not a
 2024-10-19 17:19:01,952 - WARNING - Not Found: /ml_models/ml-variability/images/favicon.ico
 2024-10-19 17:19:03,009 - WARNING - Not Found: /backend-control/images/favicon.ico
 2024-10-19 17:19:06,448 - WARNING - Not Found: /ml_models/ml-manual/images/favicon.ico
+2024-10-20 05:21:55,650 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:21:55,650 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:21:55,650 - INFO - Scheduler started
+2024-10-20 05:21:57,817 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:21:57,818 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:21:57,818 - INFO - Scheduler started
+2024-10-20 05:21:57,839 - INFO - Watching for file changes with StatReloader
+2024-10-20 05:22:02,465 - WARNING - Not Found: /images/favicon.ico
+2024-10-20 05:22:04,466 - WARNING - Not Found: /tickers/images/favicon.ico
+2024-10-20 05:22:09,299 - WARNING - Not Found: /tickers/ticker/9f53d106-491e-43bc-8f19-f91352ee4426/images/favicon.ico
+2024-10-20 05:22:09,988 - WARNING - Not Found: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/images/favicon.ico
+2024-10-20 05:22:37,418 - ERROR - Internal Server Error: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 511, in run_model_predictions
+    hist_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 58, in __init__
+    self.compare_versions()  # Call the comparison method during initialization
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 72, in compare_versions
+    upper_flatness = self.model_dict1[key_label1]['flatness_indicator']['upper_flatness']
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'upper_flatness'
+2024-10-20 05:22:37,538 - WARNING - Not Found: /favicon.ico
+2024-10-20 05:26:00,013 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:26:00 BST)" (scheduled at 2024-10-20 05:26:00+01:00)
+2024-10-20 05:26:00,012 - ERROR - Error submitting job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:26:00 BST)" to executor "default"
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\schedulers\base.py", line 988, in _process_jobs
+    executor.submit_job(job, run_times)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 71, in submit_job
+    self._do_submit_job(job, run_times)
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\pool.py", line 28, in _do_submit_job
+    f = self._pool.submit(run_job, job, job._jobstore_alias, run_times, self._logger.name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\concurrent\futures\thread.py", line 169, in submit
+    raise RuntimeError('cannot schedule new futures after '
+RuntimeError: cannot schedule new futures after interpreter shutdown
+2024-10-20 05:26:00,195 - INFO - The input start time: 2024-10-20 04:00:00
+2024-10-20 05:26:25,312 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:31:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 74, in run_procedure_sequence
+    comparison_comment, general_ticker_info, send_email_enabled = run_model_predictions(ticker)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 511, in run_model_predictions
+    hist_comparer = ModelComparer(pred_historical_v4, pred_historical_v5, pred_historical_1h_v5, 3, 1 )
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 58, in __init__
+    self.compare_versions()  # Call the comparison method during initialization
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\analysis_comments.py", line 72, in compare_versions
+    upper_flatness = self.model_dict1[key_label1]['flatness_indicator']['upper_flatness']
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'upper_flatness'
+2024-10-20 05:34:19,013 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:34:19,013 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:34:19,013 - INFO - Scheduler started
+2024-10-20 05:34:21,339 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:34:21,340 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:34:21,340 - INFO - Scheduler started
+2024-10-20 05:34:21,360 - INFO - Watching for file changes with StatReloader
+2024-10-20 05:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:36:00 BST)" (scheduled at 2024-10-20 05:36:00+01:00)
+2024-10-20 05:36:00,005 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:41:00 BST)" (scheduled at 2024-10-20 05:36:00+01:00)
+2024-10-20 05:36:00,181 - INFO - The input start time: 2024-10-20 04:00:00
+2024-10-20 05:36:00,181 - INFO - The input start time: 2024-10-20 04:00:00
+2024-10-20 05:36:00,919 - ERROR - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:41:00 BST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\updater.py", line 73, in run_procedure_sequence
+    run_IG(ticker)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\run_IG.py", line 166, in run_IG
+    ig_service.create_session()
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 393, in create_session
+    self._set_headers(response.headers, True)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\IG_session\ig_service.py", line 450, in _set_headers
+    self.CLIENT_TOKEN = response_headers['CST']
+                        ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\requests\structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+           ~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'cst'
+2024-10-20 05:36:34,240 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:41:00 BST)" executed successfully
+2024-10-20 05:38:18,865 - WARNING - Not Found: /ml_models/ml-report/images/favicon.ico
+2024-10-20 05:51:43,077 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:51:43,077 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:51:43,077 - INFO - Scheduler started
+2024-10-20 05:51:45,426 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:51:45,426 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:51:45,426 - INFO - Scheduler started
+2024-10-20 05:51:45,445 - INFO - Watching for file changes with StatReloader
+2024-10-20 05:52:03,794 - ERROR - Internal Server Error: /prices/update-price/2ca3d386-b99d-44fa-9cce-f1b320d9f44a/
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas\_libs\index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'low_bb20_1_flat_5'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\prices\views.py", line 58, in updatePrice
+    run_model_predictions(price_instance.ticker.symbol)
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 443, in run_model_predictions
+    pred_reverse_v4, pred_continue_v4, pred_historical_v4, _ = standard_analysis(model_ticker, "v4")
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 250, in standard_analysis
+    pred_reverse = format_model_results(
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\Desktop\Development\python\TradePro\ml_models\utils\trade_model.py", line 81, in format_model_results
+    flatness_low_bb1_5.append(model_input_data['low_bb20_1_flat_5'][i])
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\pandas\core\indexes\base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'low_bb20_1_flat_5'
+2024-10-20 05:53:46,007 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:53:46,007 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:53:46,007 - INFO - Scheduler started
+2024-10-20 05:53:48,170 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 05:53:48,170 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 05:53:48,170 - INFO - Scheduler started
+2024-10-20 05:53:48,192 - INFO - Watching for file changes with StatReloader
+2024-10-20 05:56:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 05:56:00 BST)" (scheduled at 2024-10-20 05:56:00+01:00)
+2024-10-20 05:56:00,006 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 06:01:00 BST)" (scheduled at 2024-10-20 05:56:00+01:00)
+2024-10-20 05:56:00,177 - INFO - The input start time: 2024-10-20 04:00:00
+2024-10-20 05:56:00,178 - INFO - The input start time: 2024-10-20 04:00:00
+2024-10-20 05:56:44,582 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 06:01:00 BST)" executed successfully
+2024-10-20 05:56:46,944 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 06:01:00 BST)" executed successfully

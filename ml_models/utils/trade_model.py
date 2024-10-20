@@ -69,6 +69,7 @@ def format_model_results(
     upper_bb1 =[]
     lower_bb1 =[]
     flatness_up_bb1_5=[]
+    flatness_low_bb1_5=[]
 
    
     for i in range(len(model_input_data['upper_bb20_4'])):
@@ -77,6 +78,7 @@ def format_model_results(
         upper_bb1.append(model_input_data['upper_bb20_1'][i])
         lower_bb1.append(model_input_data['lower_bb20_1'][i])
         flatness_up_bb1_5.append(model_input_data['up_bb20_1_flat_5'][i])
+        flatness_low_bb1_5.append(model_input_data['low_bb20_1_flat_5'][i])
  
     for prediction in model_prediction:
         direction = "Sell" if prediction < 3 else "Buy"
@@ -103,7 +105,8 @@ def format_model_results(
     }
     
     flatness_indicator = {
-        "flatness": flatness_up_bb1_5,
+        "upper_flatness": flatness_up_bb1_5,
+        "lower_flatness": flatness_low_bb1_5,
     }
 
     # Adding the current timestamp in the format: day-month-year hour:minute:second
@@ -514,7 +517,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     hist_trade_target = hist_comparer.trade_target
     hist_bb_target1 = hist_comparer.bb_target1
     hist_bb_target4 = hist_comparer.bb_target4
-    hist_flatness = hist_comparer.flatness
+    hist_upper_flatness = hist_comparer.upper_flatness
+    hist_lower_flatness = hist_comparer.lower_flatness
     
     cont_comparer = ModelComparer(pred_continue_v4, pred_continue_v5, pred_continue_1h_v5, 1, 1 )
     cont_comment = cont_comparer.comment
@@ -522,7 +526,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     cont_trade_target = cont_comparer.trade_target
     cont_bb_target1 = hist_comparer.bb_target1
     cont_bb_target4 = cont_comparer.bb_target4
-    cont_flatness = cont_comparer.flatness
+    cont_upper_flatness = cont_comparer.upper_flatness
+    cont_lower_flatness = cont_comparer.lower_flatness
     
     rev_comparer = ModelComparer(pred_reverse_v4, pred_reverse_v5, pred_reverse_1h_v5, 1, 1 )
     rev_comment = rev_comparer.comment
@@ -530,7 +535,8 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
     rev_trade_target = rev_comparer.trade_target
     rev_bb_target1 = hist_comparer.bb_target1
     rev_bb_target4 = rev_comparer.bb_target4
-    rev_flatness = rev_comparer.flatness
+    rev_upper_flatness = rev_comparer.upper_flatness
+    rev_lower_flatness = rev_comparer.lower_flatness
     
     #calculate entry and exit point 
     trade_target = hist_trade_target
@@ -669,10 +675,17 @@ def run_model_predictions(model_ticker, sensitivity_adjustment=0.1):
             },
         "flatness":
             {
-                "hist": hist_flatness,
-                "cont": cont_flatness,
-                "rev": rev_flatness,
-            },
+                "upper": {
+                    "hist": hist_upper_flatness,
+                    "cont": cont_upper_flatness,
+                    "rev": rev_upper_flatness,
+                },
+                "lower": {
+                    "hist": hist_lower_flatness,
+                    "cont": cont_lower_flatness,
+                    "rev": rev_lower_flatness,
+                },
+            }
     }
 
     write_to_mongo(f"{model_ticker}_key_results", data)

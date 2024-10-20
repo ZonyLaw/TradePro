@@ -53,7 +53,8 @@ class ModelComparer:
         self.trade_target = 0
         self.bb_target1 = {}
         self.bb_target4 = {}
-        self.flatness = {}
+        self.upper_flatness = {}
+        self.lower_flatness = {}
         
         self.compare_versions()  # Call the comparison method during initialization
 
@@ -69,7 +70,8 @@ class ModelComparer:
         array1 = self.model_dict1[key_label1]['trade_results']['Potential Trade']
         current_trade1 = array1[self.arr_index].split()[0]
         pip_size1 = abs(int(array1[self.arr_index].split()[2]))
-        flatness1 = self.model_dict1[key_label1]['flatness_indicator']['flatness']
+        upper_flatness = self.model_dict1[key_label1]['flatness_indicator']['upper_flatness']
+        lower_flatness = self.model_dict1[key_label1]['flatness_indicator']['lower_flatness']
  
         key_label2 = list(self.model_dict2.keys())[0]
         array2 = self.model_dict2[key_label2]['trade_results']['Potential Trade']
@@ -131,7 +133,8 @@ class ModelComparer:
             self.trade_position = current_trade3
             self.trade_target = pip_size3
             
-        self.flatness =  flatness1
+        self.upper_flatness =  upper_flatness
+        self.lower_flatness =  lower_flatness
         self.bb_entry()
 
         

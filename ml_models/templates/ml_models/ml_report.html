@@ -209,8 +209,16 @@
             </tr>
 
             <tr>
-                <td>Volatility Indicator</td>
-                {% for flat_indicator in key_results.flatness.hist %}
+                <td>Upper Volatility</td>
+                {% for flat_indicator in key_results.flatness.upper.hist %}
+                <td style="color:purple;">{{ flat_indicator|floatformat:2 }}</td>
+                {% endfor %}
+
+            </tr>
+
+            <tr>
+                <td>Lower Volatility</td>
+                {% for flat_indicator in key_results.flatness.lower.hist %}
                 <td style="color:purple;">{{ flat_indicator|floatformat:2 }}</td>
                 {% endfor %}
 

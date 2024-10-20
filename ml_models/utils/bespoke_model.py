@@ -61,6 +61,7 @@ class v4Processing(StandardPriceProcessing):
         df = self.reverse_point(df, "close", 1)
         
         df = self.calculate_flatness_column(df, 'upper_bb20_1', 'up_bb20_1_flat_5', 5)
+        df = self.calculate_flatness_column(df, 'lower_bb20_1', 'low_bb20_1_flat_5', 5)
         df = self.price_difference(df, "upper_bb20_1", "lower_bb20_1",1, "up_bb20", "low_bb20"  )
         df = self.price_difference(df, "close", "ma20_1", 1 )
         df = self.price_difference(df, "close", "ma50_1", 1 )
