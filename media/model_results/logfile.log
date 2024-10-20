@@ -3307,3 +3307,17 @@ Traceback (most recent call last):
   File "C:\Users\sunny\anaconda3\envs\myenv311test\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for '/ml-records' not found. '/ml-records' is not a valid view function or pattern name.
+2024-10-20 18:23:30,836 - INFO - Watching for file changes with StatReloader
+2024-10-20 18:23:57,248 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 18:23:57,249 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 18:23:57,249 - INFO - Scheduler started
+2024-10-20 18:24:00,174 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-10-20 18:24:00,174 - INFO - Added job "run_procedure_sequence" to job store "default"
+2024-10-20 18:24:00,175 - INFO - Scheduler started
+2024-10-20 18:24:00,201 - INFO - Watching for file changes with StatReloader
+2024-10-20 18:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 18:26:00 BST)" (scheduled at 2024-10-20 18:26:00+01:00)
+2024-10-20 18:26:00,010 - INFO - Running job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 18:31:00 BST)" (scheduled at 2024-10-20 18:26:00+01:00)
+2024-10-20 18:26:00,019 - INFO - The input start time: 2024-10-20 17:00:00
+2024-10-20 18:26:00,164 - INFO - The input start time: 2024-10-20 17:00:00
+2024-10-20 18:26:52,281 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 18:31:00 BST)" executed successfully
+2024-10-20 18:26:54,446 - INFO - Job "run_procedure_sequence (trigger: interval[0:05:00], next run at: 2024-10-20 18:31:00 BST)" executed successfully

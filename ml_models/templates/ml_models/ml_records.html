@@ -21,12 +21,9 @@
     
                 <tr>
                     <td> Date </td>
-                    <td> History </td>
-                    <td> Continuation </td>
-                    <td> Reversal </td>
+                    <td> History, Continuation, Reversal </td>
                     <td> Record Comments </td>
-                    <td> open price </td>
-                    <td> close price </td>
+                    <td> Price </td>
                     <td> direction </td>
                 </tr>
                 
@@ -36,12 +33,19 @@
                 {% for record in trade_records %}
                     <tr>
                         <td>{{ record.created_at }}</td>
-                        <td>{{ record.results.comments.hist }}</td>
-                        <td>{{ record.results.comments.cont }}</td>
-                        <td>{{ record.results.comments.rev }}</td>
+                        <td>
+                            <ul class="list_indent">
+
+                                <li>{{ record.results.comments.hist }}</li>
+                                <li>{{ record.results.comments.cont }}</li>
+                                <li>{{ record.results.comments.rev }}</li>
+
+                            </ul> 
+                        </td>
                         <td>{{ record.trade_comment }}</td>
-                        <td>£{{ record.results.current_market.open_prices_1hr|floatformat:2 }}</td>
-                        <td>£{{ record.results.current_market.close_prices.3|floatformat:2 }}</td>
+                        <td>£{{ record.results.current_market.open_prices_1hr|floatformat:2 }} to 
+                            £{{ record.results.current_market.close_prices.3|floatformat:2 }}
+                        </td>
                         <td>{{ record.results.current_market.trade_1hr }}</td>
 
                     </tr>
