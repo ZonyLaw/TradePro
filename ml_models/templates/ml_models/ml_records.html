@@ -1,0 +1,58 @@
+{% extends 'main.html' %} {% block content %}
+
+<div class="container container--narrow">
+
+    <div class="container">
+        <h1>Select the currency</h1>
+        <div class="formPage my-md">
+            <form action="" method="POST">
+                {%csrf_token%} 
+                {{form.as_p}}
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+        
+
+        <h1>Trade Records</h1>
+
+        <table>
+            <tbody>
+            <thead>
+    
+                <tr>
+                    <td> Date </td>
+                    <td> History </td>
+                    <td> Continuation </td>
+                    <td> Reversal </td>
+                    <td> Record Comments </td>
+                    <td> open price </td>
+                    <td> close price </td>
+                    <td> direction </td>
+                </tr>
+                
+                    
+            </thead>
+    
+                {% for record in trade_records %}
+                    <tr>
+                        <td>{{ record.created_at }}</td>
+                        <td>{{ record.results.comments.hist }}</td>
+                        <td>{{ record.results.comments.cont }}</td>
+                        <td>{{ record.results.comments.rev }}</td>
+                        <td>{{ record.trade_comment }}</td>
+                        <td>£{{ record.results.current_market.open_prices_1hr|floatformat:2 }}</td>
+                        <td>£{{ record.results.current_market.close_prices.3|floatformat:2 }}</td>
+                        <td>{{ record.results.current_market.trade_1hr }}</td>
+
+                    </tr>
+                {% endfor %}
+    
+               
+                
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock content %}

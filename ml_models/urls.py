@@ -13,4 +13,5 @@ urlpatterns = [
     path('export-file/<str:filename>/', views.export_file, name='export_file'),
     path('model-accuracy/', views.display_model_accuracy, name='model-accuracy'),
     path('notes/', views.notes, name='notes'),
+    path('ml-records/', views.ml_records, name='ml-records'),
 ]

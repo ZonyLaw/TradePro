@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from .utils.trade import trade_direction
 from .utils.analysis_comments import comment_model_results, compare_version_results, ModelComparer
 from .utils.trade_model import standard_analysis, model_run, trade_forecast_assessment, variability_analysis
-from .utils.access_results import read_prediction_from_json, read_prediction_from_Mongo, write_append_to_mongo
+from .utils.access_results import read_prediction_from_json, read_prediction_from_Mongo, write_append_to_mongo, read_list_from_Mongo
 from .utils.manual_model_input import manual_price_input, news_param_input
 
 from .form import ModelParameters, NewsParameters, ModelSelection, VersionSelection, VariabilitySize, CommentForm
@@ -509,65 +509,6 @@ def ml_manual(request):
     return render(request, 'ml_models/ml_manual_analysis.html', context)
 
 
-def ml_news_model_backup(request):
-    
-    """
-    This is a function to run the news model
-    
-    """
-    model_version = "v1_news"
-    ticker_input= "USDJPY"
-    form = NewsParameters(request.POST)
-    
-    dp = v4Processing("USDJPY")
-    ticker_instance = get_object_or_404(Ticker, symbol="USDJPY")
-    prices = Price.objects.filter(ticker=ticker_instance)
-    
-    prices_df = pd.DataFrame(list(prices.values()))
-    prices_df = prices_df.sort_values(by='date', ascending=True)
-    # last_prices_df = prices_df.tail(2)
-    last_price_stats = dp.stats_df_gen(prices_df,2)
-    
-    print(last_price_stats['hr'])
-    print(last_price_stats['weekday'])
-    print(last_price_stats['bb_status_1'])
-    
-    news_pred_str = ""
-    news_pred = -99
-    news_prob = 0
-    if request.method == 'POST':
-        form = NewsParameters(request.POST)
-        if form.is_valid():
-
-            user_input = news_param_input(form)
-            print(user_input)
-            news_pred_results = news_model_run(ticker_input, user_input, model_version)   
-            news_pred = news_pred_results['model_prediction']
-            news_prob = news_pred_results['model_prediction_proba']*100 
-            
-            if news_pred == 0:
-                news_pred_str = "Sell"
-            else:
-                news_pred_str = "Buy"
-     
-    else:
-    
-        form = NewsParameters(initial={     
-            'weekday': last_price_stats['weekday'].values[1],
-            'hour': last_price_stats['hr'].values[1], 
-            'bb_status_1': last_price_stats['bb_status_1'].values[1], 
-            'event': "CPI",
-            'output': "better",
-
-        })
-        
-        
-
-    context = {'form':form, 'news_pred_str':news_pred_str, 'news_prob': news_prob}
-         
-    return render(request, 'ml_models/ml_news_model.html', context)
-
-
 def ml_news_model(request):
     """
     This is a function to run the news model.
@@ -705,3 +646,29 @@ def export_file(request, filename):
     
 def notes(request):
     return render(request, 'ml_models/notes.html')   
+
+
+def ml_records(request):
+    
+    
+    if request.method == 'POST':
+        form = ModelSelection(request.POST)
+
+        # Validate the model selection form
+        if form.is_valid():
+            model_ticker = form.cleaned_data['ticker']
+            print(f"Selected ticker: {model_ticker}")
+
+    else:
+        # If it's a GET request, create empty forms
+        form = ModelSelection()
+        model_ticker = 'USDJPY'  # Default ticker value
+   
+
+    
+    trade_records = read_list_from_Mongo(f'{model_ticker}_saved_records')
+    
+    context = {"trade_records": trade_records, "form": form}
+
+    return render(request, 'ml_models/ml_records.html',context)
+    

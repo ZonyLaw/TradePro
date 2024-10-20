@@ -190,4 +190,17 @@ def read_prediction_from_Mongo(collection_name):
         return {}
 
 
+def read_list_from_Mongo(collection_name):
+    try:
+        # Access the collection from the global db
+        collection = db[collection_name]
+
+        documents = list(collection.find())
+ 
+        
+        return documents
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return {}
+    
 
